@@ -12,7 +12,7 @@ extension CollectionVC {
             presentPopupViewToMarkEvents(column: column, row: row)
         }
         else {                                                                               //print("paths to process empty")
-            self.downcastLayout?.autoFitHScale = 0.995
+            self.downcastLayout?.autoFitHScale = 1
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {self.reloadCV()}
             defaultSaveData(showDate: true)
             defaultLoadData(showDate: false)            ; print("✔︎ Done processing events")

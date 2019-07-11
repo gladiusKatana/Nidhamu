@@ -24,10 +24,10 @@ extension CollectionVC {
                 if eventArraysToProcess.count > 0 { // or could have used pathsToProcess.count > 0
                     
                     if !savedTimeBlocksForProcessing {
-                        self.downcastLayout?.autoFitHScale = 0.85
+                        //self.downcastLayout?.autoFitHScale = 0.85
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                             classifierVC.collectionView.reloadData()
-                            self.reloadCV()
+                            //self.reloadCV()
                         }
                     }
                     

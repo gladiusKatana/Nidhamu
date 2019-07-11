@@ -22,9 +22,9 @@
  
  
  
+ *pinchNavBack
  
- 
- *settings            TtVcAsOption,darkMode
+ *settings                      TtVcOptional,darkMode
  
  *buttons
  
