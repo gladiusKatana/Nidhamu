@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06164A3022D6D19000DA608D /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164A2C22D6D19000DA608D /* Dates.swift */; };
+		06164A3122D6D19000DA608D /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164A2D22D6D19000DA608D /* DateData.swift */; };
+		06164A3222D6D19000DA608D /* CellDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164A2E22D6D19000DA608D /* CellDates.swift */; };
+		06164A3322D6D19000DA608D /* DateRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164A2F22D6D19000DA608D /* DateRefresh.swift */; };
 		0625163E22D6C71900EBB4C8 /* nidhamu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0625163C22D6C71900EBB4C8 /* nidhamu.xcdatamodeld */; };
 		0625164E22D6C71B00EBB4C8 /* nidhamuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625164D22D6C71B00EBB4C8 /* nidhamuTests.swift */; };
 		0625165922D6C71B00EBB4C8 /* nidhamuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625165822D6C71B00EBB4C8 /* nidhamuUITests.swift */; };
@@ -56,10 +60,6 @@
 		062516D622D6CF4200EBB4C8 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A922D6CF4200EBB4C8 /* Orientation.swift */; };
 		062516D722D6CF4200EBB4C8 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516AA22D6CF4200EBB4C8 /* DeviceType.swift */; };
 		062516D822D6CF4200EBB4C8 /* VCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516AB22D6CF4200EBB4C8 /* VCType.swift */; };
-		062516D922D6CF4200EBB4C8 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516AD22D6CF4200EBB4C8 /* Dates.swift */; };
-		062516DA22D6CF4200EBB4C8 /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516AE22D6CF4200EBB4C8 /* DateData.swift */; };
-		062516DB22D6CF4200EBB4C8 /* CellDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516AF22D6CF4200EBB4C8 /* CellDates.swift */; };
-		062516DC22D6CF4200EBB4C8 /* DateRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516B022D6CF4200EBB4C8 /* DateRefresh.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +80,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06164A2C22D6D19000DA608D /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
+		06164A2D22D6D19000DA608D /* DateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateData.swift; sourceTree = "<group>"; };
+		06164A2E22D6D19000DA608D /* CellDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDates.swift; sourceTree = "<group>"; };
+		06164A2F22D6D19000DA608D /* DateRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRefresh.swift; sourceTree = "<group>"; };
 		0625163222D6C71900EBB4C8 /* nidhamu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nidhamu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0625163D22D6C71900EBB4C8 /* nidhamu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nidhamu.xcdatamodel; sourceTree = "<group>"; };
 		0625164422D6C71A00EBB4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,10 +139,6 @@
 		062516A922D6CF4200EBB4C8 /* Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		062516AA22D6CF4200EBB4C8 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		062516AB22D6CF4200EBB4C8 /* VCType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCType.swift; sourceTree = "<group>"; };
-		062516AD22D6CF4200EBB4C8 /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
-		062516AE22D6CF4200EBB4C8 /* DateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateData.swift; sourceTree = "<group>"; };
-		062516AF22D6CF4200EBB4C8 /* CellDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDates.swift; sourceTree = "<group>"; };
-		062516B022D6CF4200EBB4C8 /* DateRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRefresh.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +166,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06164A2B22D6D19000DA608D /* Dates */ = {
+			isa = PBXGroup;
+			children = (
+				06164A2C22D6D19000DA608D /* Dates.swift */,
+				06164A2D22D6D19000DA608D /* DateData.swift */,
+				06164A2F22D6D19000DA608D /* DateRefresh.swift */,
+				06164A2E22D6D19000DA608D /* CellDates.swift */,
+			);
+			path = Dates;
+			sourceTree = "<group>";
+		};
 		0625162922D6C71900EBB4C8 = {
 			isa = PBXGroup;
 			children = (
@@ -189,21 +200,20 @@
 		0625163422D6C71900EBB4C8 /* nidhamu */ = {
 			isa = PBXGroup;
 			children = (
-				0625167222D6CF2A00EBB4C8 /* AppDelegate.swift */,
-				0625167322D6CF2A00EBB4C8 /* AppLifecycle.swift */,
 				0625167422D6CF2B00EBB4C8 /* Notes.swift */,
-				0625166F22D6CF2A00EBB4C8 /* TimetableVars.swift */,
 				0625167122D6CF2A00EBB4C8 /* Vars.swift */,
 				0625167022D6CF2A00EBB4C8 /* VCs.swift */,
-				0625169222D6CF4200EBB4C8 /* C */,
-				062516A722D6CF4200EBB4C8 /* Checks */,
-				062516AC22D6CF4200EBB4C8 /* Dates */,
+				0625166F22D6CF2A00EBB4C8 /* TimetableVars.swift */,
+				0625167222D6CF2A00EBB4C8 /* AppDelegate.swift */,
+				0625167322D6CF2A00EBB4C8 /* AppLifecycle.swift */,
+				06164A2B22D6D19000DA608D /* Dates */,
 				0625167B22D6CF4100EBB4C8 /* M */,
 				0625168C22D6CF4200EBB4C8 /* V */,
 				0625168122D6CF4100EBB4C8 /* Vm */,
-				0625166622D6CE6500EBB4C8 /* Dates */,
-				0625168822D6CF4100EBB4C8 /* Assets.xcassets */,
+				0625169222D6CF4200EBB4C8 /* C */,
+				062516A722D6CF4200EBB4C8 /* Checks */,
 				0625168922D6CF4100EBB4C8 /* Base.lproj */,
+				0625168822D6CF4100EBB4C8 /* Assets.xcassets */,
 				0625164422D6C71A00EBB4C8 /* Info.plist */,
 				0625163C22D6C71900EBB4C8 /* nidhamu.xcdatamodeld */,
 			);
@@ -228,22 +238,14 @@
 			path = nidhamuUITests;
 			sourceTree = "<group>";
 		};
-		0625166622D6CE6500EBB4C8 /* Dates */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Dates;
-			path = "../../../../Dropbox/nidhamu copy/nidhamu/Dates";
-			sourceTree = "<group>";
-		};
 		0625167B22D6CF4100EBB4C8 /* M */ = {
 			isa = PBXGroup;
 			children = (
-				0625167C22D6CF4100EBB4C8 /* Cell.swift */,
-				0625167D22D6CF4100EBB4C8 /* DefaultLoad.swift */,
-				0625167E22D6CF4100EBB4C8 /* TimeBlock.swift */,
-				0625167F22D6CF4100EBB4C8 /* SimpleEvent.swift */,
 				0625168022D6CF4100EBB4C8 /* DefaultSave.swift */,
+				0625167D22D6CF4100EBB4C8 /* DefaultLoad.swift */,
+				0625167F22D6CF4100EBB4C8 /* SimpleEvent.swift */,
+				0625167E22D6CF4100EBB4C8 /* TimeBlock.swift */,
+				0625167C22D6CF4100EBB4C8 /* Cell.swift */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -251,12 +253,12 @@
 		0625168122D6CF4100EBB4C8 /* Vm */ = {
 			isa = PBXGroup;
 			children = (
-				0625168222D6CF4100EBB4C8 /* Sizes.swift */,
-				0625168322D6CF4100EBB4C8 /* Attributes.swift */,
-				0625168422D6CF4100EBB4C8 /* ZIndex.swift */,
 				0625168522D6CF4100EBB4C8 /* Layout.swift */,
-				0625168622D6CF4100EBB4C8 /* CellSizing.swift */,
+				0625168322D6CF4100EBB4C8 /* Attributes.swift */,
 				0625168722D6CF4100EBB4C8 /* Prepare.swift */,
+				0625168222D6CF4100EBB4C8 /* Sizes.swift */,
+				0625168622D6CF4100EBB4C8 /* CellSizing.swift */,
+				0625168422D6CF4100EBB4C8 /* ZIndex.swift */,
 			);
 			path = Vm;
 			sourceTree = "<group>";
@@ -272,11 +274,11 @@
 		0625168C22D6CF4200EBB4C8 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				0625169022D6CF4200EBB4C8 /* Prynts.swift */,
 				0625168D22D6CF4200EBB4C8 /* Colours.swift */,
+				0625169122D6CF4200EBB4C8 /* Fonts.swift */,
 				0625168E22D6CF4200EBB4C8 /* ShowScrollBars.swift */,
 				0625168F22D6CF4200EBB4C8 /* Animations.swift */,
-				0625169022D6CF4200EBB4C8 /* Prynts.swift */,
-				0625169122D6CF4200EBB4C8 /* Fonts.swift */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -284,15 +286,15 @@
 		0625169222D6CF4200EBB4C8 /* C */ = {
 			isa = PBXGroup;
 			children = (
-				0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */,
-				0625169422D6CF4200EBB4C8 /* PopupVC.swift */,
-				0625169522D6CF4200EBB4C8 /* io */,
+				062516A622D6CF4200EBB4C8 /* CellContents.swift */,
 				0625169A22D6CF4200EBB4C8 /* CellUI.swift */,
 				0625169B22D6CF4200EBB4C8 /* VCCellPath.swift */,
-				0625169C22D6CF4200EBB4C8 /* PCellPath.swift */,
+				0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */,
 				0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */,
 				0625169E22D6CF4200EBB4C8 /* nav */,
-				062516A622D6CF4200EBB4C8 /* CellContents.swift */,
+				0625169522D6CF4200EBB4C8 /* io */,
+				0625169422D6CF4200EBB4C8 /* PopupVC.swift */,
+				0625169C22D6CF4200EBB4C8 /* PCellPath.swift */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -300,10 +302,10 @@
 		0625169522D6CF4200EBB4C8 /* io */ = {
 			isa = PBXGroup;
 			children = (
-				0625169622D6CF4200EBB4C8 /* PopupTap.swift */,
 				0625169722D6CF4200EBB4C8 /* CellTap.swift */,
-				0625169822D6CF4200EBB4C8 /* MarkEvent.swift */,
 				0625169922D6CF4200EBB4C8 /* TextField.swift */,
+				0625169822D6CF4200EBB4C8 /* MarkEvent.swift */,
+				0625169622D6CF4200EBB4C8 /* PopupTap.swift */,
 			);
 			path = io;
 			sourceTree = "<group>";
@@ -311,13 +313,13 @@
 		0625169E22D6CF4200EBB4C8 /* nav */ = {
 			isa = PBXGroup;
 			children = (
+				062516A222D6CF4200EBB4C8 /* NavBar.swift */,
 				0625169F22D6CF4200EBB4C8 /* NavTitle.swift */,
 				062516A022D6CF4200EBB4C8 /* Notifications.swift */,
-				062516A122D6CF4200EBB4C8 /* RePresent.swift */,
-				062516A222D6CF4200EBB4C8 /* NavBar.swift */,
 				062516A322D6CF4200EBB4C8 /* SetTopVC.swift */,
-				062516A422D6CF4200EBB4C8 /* Reload.swift */,
 				062516A522D6CF4200EBB4C8 /* GoToVC.swift */,
+				062516A422D6CF4200EBB4C8 /* Reload.swift */,
+				062516A122D6CF4200EBB4C8 /* RePresent.swift */,
 			);
 			path = nav;
 			sourceTree = "<group>";
@@ -326,22 +328,11 @@
 			isa = PBXGroup;
 			children = (
 				062516A822D6CF4200EBB4C8 /* TestSquare.swift */,
+				062516AB22D6CF4200EBB4C8 /* VCType.swift */,
 				062516A922D6CF4200EBB4C8 /* Orientation.swift */,
 				062516AA22D6CF4200EBB4C8 /* DeviceType.swift */,
-				062516AB22D6CF4200EBB4C8 /* VCType.swift */,
 			);
 			path = Checks;
-			sourceTree = "<group>";
-		};
-		062516AC22D6CF4200EBB4C8 /* Dates */ = {
-			isa = PBXGroup;
-			children = (
-				062516AD22D6CF4200EBB4C8 /* Dates.swift */,
-				062516AE22D6CF4200EBB4C8 /* DateData.swift */,
-				062516AF22D6CF4200EBB4C8 /* CellDates.swift */,
-				062516B022D6CF4200EBB4C8 /* DateRefresh.swift */,
-			);
-			path = Dates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,14 +477,14 @@
 				0625167722D6CF2B00EBB4C8 /* Vars.swift in Sources */,
 				062516CB22D6CF4200EBB4C8 /* PCellPath.swift in Sources */,
 				062516D322D6CF4200EBB4C8 /* GoToVC.swift in Sources */,
-				062516DB22D6CF4200EBB4C8 /* CellDates.swift in Sources */,
+				06164A3222D6D19000DA608D /* CellDates.swift in Sources */,
 				062516C122D6CF4200EBB4C8 /* Prynts.swift in Sources */,
 				062516C422D6CF4200EBB4C8 /* PopupVC.swift in Sources */,
 				062516D522D6CF4200EBB4C8 /* TestSquare.swift in Sources */,
 				062516B922D6CF4200EBB4C8 /* Layout.swift in Sources */,
 				062516B622D6CF4200EBB4C8 /* Sizes.swift in Sources */,
 				062516D122D6CF4200EBB4C8 /* SetTopVC.swift in Sources */,
-				062516D922D6CF4200EBB4C8 /* Dates.swift in Sources */,
+				06164A3022D6D19000DA608D /* Dates.swift in Sources */,
 				062516D422D6CF4200EBB4C8 /* CellContents.swift in Sources */,
 				062516C222D6CF4200EBB4C8 /* Fonts.swift in Sources */,
 				062516D022D6CF4200EBB4C8 /* NavBar.swift in Sources */,
@@ -505,7 +496,7 @@
 				062516C322D6CF4200EBB4C8 /* VCLifecycle.swift in Sources */,
 				062516B422D6CF4200EBB4C8 /* SimpleEvent.swift in Sources */,
 				0625163E22D6C71900EBB4C8 /* nidhamu.xcdatamodeld in Sources */,
-				062516DC22D6CF4200EBB4C8 /* DateRefresh.swift in Sources */,
+				06164A3322D6D19000DA608D /* DateRefresh.swift in Sources */,
 				062516C922D6CF4200EBB4C8 /* CellUI.swift in Sources */,
 				0625167822D6CF2B00EBB4C8 /* AppDelegate.swift in Sources */,
 				062516BA22D6CF4200EBB4C8 /* CellSizing.swift in Sources */,
@@ -516,7 +507,7 @@
 				062516B522D6CF4200EBB4C8 /* DefaultSave.swift in Sources */,
 				062516C822D6CF4200EBB4C8 /* TextField.swift in Sources */,
 				062516B122D6CF4200EBB4C8 /* Cell.swift in Sources */,
-				062516DA22D6CF4200EBB4C8 /* DateData.swift in Sources */,
+				06164A3122D6D19000DA608D /* DateData.swift in Sources */,
 				062516C722D6CF4200EBB4C8 /* MarkEvent.swift in Sources */,
 				062516C522D6CF4200EBB4C8 /* PopupTap.swift in Sources */,
 				0625167922D6CF2B00EBB4C8 /* AppLifecycle.swift in Sources */,
