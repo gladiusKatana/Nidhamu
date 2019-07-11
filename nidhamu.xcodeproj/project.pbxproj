@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0625163622D6C71900EBB4C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625163522D6C71900EBB4C8 /* AppDelegate.swift */; };
-		0625163822D6C71900EBB4C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625163722D6C71900EBB4C8 /* ViewController.swift */; };
-		0625163B22D6C71900EBB4C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0625163922D6C71900EBB4C8 /* Main.storyboard */; };
 		0625163E22D6C71900EBB4C8 /* nidhamu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0625163C22D6C71900EBB4C8 /* nidhamu.xcdatamodeld */; };
 		0625164022D6C71A00EBB4C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0625163F22D6C71A00EBB4C8 /* Assets.xcassets */; };
 		0625164322D6C71A00EBB4C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0625164122D6C71A00EBB4C8 /* LaunchScreen.storyboard */; };
@@ -36,9 +33,6 @@
 
 /* Begin PBXFileReference section */
 		0625163222D6C71900EBB4C8 /* nidhamu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nidhamu.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0625163522D6C71900EBB4C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0625163722D6C71900EBB4C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0625163A22D6C71900EBB4C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0625163D22D6C71900EBB4C8 /* nidhamu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nidhamu.xcdatamodel; sourceTree = "<group>"; };
 		0625163F22D6C71A00EBB4C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0625164222D6C71A00EBB4C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,9 +93,6 @@
 		0625163422D6C71900EBB4C8 /* nidhamu */ = {
 			isa = PBXGroup;
 			children = (
-				0625163522D6C71900EBB4C8 /* AppDelegate.swift */,
-				0625163722D6C71900EBB4C8 /* ViewController.swift */,
-				0625163922D6C71900EBB4C8 /* Main.storyboard */,
 				0625163F22D6C71A00EBB4C8 /* Assets.xcassets */,
 				0625164122D6C71A00EBB4C8 /* LaunchScreen.storyboard */,
 				0625164422D6C71A00EBB4C8 /* Info.plist */,
@@ -234,7 +225,6 @@
 			files = (
 				0625164322D6C71A00EBB4C8 /* LaunchScreen.storyboard in Resources */,
 				0625164022D6C71A00EBB4C8 /* Assets.xcassets in Resources */,
-				0625163B22D6C71900EBB4C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0625163822D6C71900EBB4C8 /* ViewController.swift in Sources */,
 				0625163E22D6C71900EBB4C8 /* nidhamu.xcdatamodeld in Sources */,
-				0625163622D6C71900EBB4C8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +285,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0625163922D6C71900EBB4C8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0625163A22D6C71900EBB4C8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0625164122D6C71A00EBB4C8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -471,7 +451,6 @@
 		0625166122D6C71B00EBB4C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KX84NTAHJ6;
@@ -492,7 +471,6 @@
 		0625166222D6C71B00EBB4C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KX84NTAHJ6;
@@ -513,7 +491,6 @@
 		0625166422D6C71B00EBB4C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KX84NTAHJ6;
 				INFOPLIST_FILE = nidhamuUITests/Info.plist;
@@ -533,7 +510,6 @@
 		0625166522D6C71B00EBB4C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KX84NTAHJ6;
 				INFOPLIST_FILE = nidhamuUITests/Info.plist;
