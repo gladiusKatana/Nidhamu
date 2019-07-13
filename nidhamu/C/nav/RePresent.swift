@@ -4,11 +4,16 @@ import UIKit
 
 extension UICollectionViewController {
     
-    @objc func reloadAfterVCIsPossiblyPresentedAgainFromCallToPrepare(vc: CollectionVC) { //---------reload again (and potentially re-present) for...
-        classifierVC.view.removeFromSuperview()                     // ...visual continuity (needed when, e.g., toggling views while in landscape)
+    // reload again (and potentially re-present) for visual continuity (needed when, e.g., toggling views while in landscape)
+    
+    @objc func reloadAfterVCIsPossiblyPresentedAgainFromCallToPrepare(vc: CollectionVC) {
+        classifierVC.view.removeFromSuperview()
         
         if previousOrientation == "landscape" && currentOrientation == "portrait" || firstReenteredForeground {
-            rePresentedVCFromButton = false                         //; print("\n---------presented then reloaded \(vc.collectionViewType) cv ")
+            rePresentedVCFromButton = false
+            
+            print("\n---------presented then reloaded \(vc.vcType) cv ")
+            
             setupTitleAndPresentViewController(vc: vc) { () -> () in
                 previousOrientation = currentOrientation //* should probably factor out
                 reloadWithDelay(after: 0.05) //0.1 //0.2

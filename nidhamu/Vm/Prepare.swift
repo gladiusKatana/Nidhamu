@@ -5,7 +5,10 @@ import UIKit
 extension CustomFlowLayout {
     
     override func prepare() {
-        calculateSizes();   cellWidth = cellWd;     cellHeight = cellHt
+        
+        calculateSizes()
+        cellWidth = cellWd; cellHeight = cellHt
+        
         widthPlusSpace = cellWidth! + hSpace
         heightPlusSpace = cellHeight! + vSpace
         
@@ -13,12 +16,15 @@ extension CustomFlowLayout {
         if UIApplication.shared.statusBarFrame.size.height > 20 {
             statusBarDelta = Double(UIApplication.shared.statusBarFrame.size.height - 20)
         }
+        
         yOffset = collectionView!.contentOffset.y + CGFloat(navBarHeight + statusBarHeight - statusBarDelta)    //print("yo: \(yOffSet)")
         xOffSet = collectionView!.contentOffset.x
         textFieldY = CGFloat(navBarHeight + statusBarHeight - statusBarDelta)               //; print("textFieldY = \(textFieldY)")
         
-        checkOrientation() //; print("---------------------prepare \(topVC.vcType)-cv")
-        //print("---------------------prepare \(currentTopVC.collectionViewType)-cv    \n                     cell width: \(cellWidth!)\n                     nav bar height: \(navBarHeight)")
+        checkOrientation()
+        
+        print("---------------------prepare \(topVC.vcType)-cv")
+        //print("---------------------prepare \(topVC.vcType)-cv)    \n                     cell width: \(cellWidth!)\n                     nav bar height: \(navBarHeight)")
         
         if previousOrientation != currentOrientation {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { //0.2
