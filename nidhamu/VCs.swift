@@ -2,6 +2,7 @@
 //  nidhamu  ∙  1st commit July. 08, 2019  ∙  Created by Garth Snyder, aka gladiusKatana ⚔️
 import UIKit
 
+
 var cellGap = CGFloat(0)                            //* if nonzero, do not make this smaller than: 0.5 (iphone7), or lines drawn inconsistently
 
 var timetableLayout = CustomFlowLayout(

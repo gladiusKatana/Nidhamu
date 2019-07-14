@@ -50,10 +50,9 @@
 		062516CC22D6CF4200EBB4C8 /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */; };
 		062516CD22D6CF4200EBB4C8 /* NavTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169F22D6CF4200EBB4C8 /* NavTitle.swift */; };
 		062516CE22D6CF4200EBB4C8 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A022D6CF4200EBB4C8 /* Notifications.swift */; };
-		062516CF22D6CF4200EBB4C8 /* RePresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A122D6CF4200EBB4C8 /* RePresent.swift */; };
 		062516D022D6CF4200EBB4C8 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A222D6CF4200EBB4C8 /* NavBar.swift */; };
 		062516D122D6CF4200EBB4C8 /* SetTopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A322D6CF4200EBB4C8 /* SetTopVC.swift */; };
-		062516D222D6CF4200EBB4C8 /* Reload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A422D6CF4200EBB4C8 /* Reload.swift */; };
+		062516D222D6CF4200EBB4C8 /* RefreshUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A422D6CF4200EBB4C8 /* RefreshUI.swift */; };
 		062516D322D6CF4200EBB4C8 /* GoToVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A522D6CF4200EBB4C8 /* GoToVC.swift */; };
 		062516D422D6CF4200EBB4C8 /* CellContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A622D6CF4200EBB4C8 /* CellContents.swift */; };
 		062516D522D6CF4200EBB4C8 /* TestSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A822D6CF4200EBB4C8 /* TestSquare.swift */; };
@@ -129,10 +128,9 @@
 		0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		0625169F22D6CF4200EBB4C8 /* NavTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavTitle.swift; sourceTree = "<group>"; };
 		062516A022D6CF4200EBB4C8 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		062516A122D6CF4200EBB4C8 /* RePresent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RePresent.swift; sourceTree = "<group>"; };
 		062516A222D6CF4200EBB4C8 /* NavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		062516A322D6CF4200EBB4C8 /* SetTopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTopVC.swift; sourceTree = "<group>"; };
-		062516A422D6CF4200EBB4C8 /* Reload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reload.swift; sourceTree = "<group>"; };
+		062516A422D6CF4200EBB4C8 /* RefreshUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshUI.swift; sourceTree = "<group>"; };
 		062516A522D6CF4200EBB4C8 /* GoToVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoToVC.swift; sourceTree = "<group>"; };
 		062516A622D6CF4200EBB4C8 /* CellContents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellContents.swift; sourceTree = "<group>"; };
 		062516A822D6CF4200EBB4C8 /* TestSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSquare.swift; sourceTree = "<group>"; };
@@ -318,8 +316,7 @@
 				062516A022D6CF4200EBB4C8 /* Notifications.swift */,
 				062516A322D6CF4200EBB4C8 /* SetTopVC.swift */,
 				062516A522D6CF4200EBB4C8 /* GoToVC.swift */,
-				062516A422D6CF4200EBB4C8 /* Reload.swift */,
-				062516A122D6CF4200EBB4C8 /* RePresent.swift */,
+				062516A422D6CF4200EBB4C8 /* RefreshUI.swift */,
 			);
 			path = nav;
 			sourceTree = "<group>";
@@ -468,7 +465,6 @@
 			files = (
 				062516B322D6CF4200EBB4C8 /* TimeBlock.swift in Sources */,
 				062516BB22D6CF4200EBB4C8 /* Prepare.swift in Sources */,
-				062516CF22D6CF4200EBB4C8 /* RePresent.swift in Sources */,
 				062516D622D6CF4200EBB4C8 /* Orientation.swift in Sources */,
 				0625167622D6CF2B00EBB4C8 /* VCs.swift in Sources */,
 				062516B222D6CF4200EBB4C8 /* DefaultLoad.swift in Sources */,
@@ -500,7 +496,7 @@
 				062516C922D6CF4200EBB4C8 /* CellUI.swift in Sources */,
 				0625167822D6CF2B00EBB4C8 /* AppDelegate.swift in Sources */,
 				062516BA22D6CF4200EBB4C8 /* CellSizing.swift in Sources */,
-				062516D222D6CF4200EBB4C8 /* Reload.swift in Sources */,
+				062516D222D6CF4200EBB4C8 /* RefreshUI.swift in Sources */,
 				062516CD22D6CF4200EBB4C8 /* NavTitle.swift in Sources */,
 				062516C622D6CF4200EBB4C8 /* CellTap.swift in Sources */,
 				062516BF22D6CF4200EBB4C8 /* ShowScrollBars.swift in Sources */,
