@@ -17,23 +17,24 @@ extension CustomFlowLayout {
             statusBarDelta = Double(UIApplication.shared.statusBarFrame.size.height - 20)
         }
         
-        yOffset = collectionView!.contentOffset.y + CGFloat(navBarHeight + statusBarHeight - statusBarDelta)    //print("yo: \(yOffSet)")
+        yOffset = collectionView!.contentOffset.y + CGFloat(navBarHeight + statusBarHeight - statusBarDelta)      //print("yo: \(yOffSet)")
         xOffSet = collectionView!.contentOffset.x
-        textFieldY = CGFloat(navBarHeight + statusBarHeight - statusBarDelta)               //; print("textFieldY = \(textFieldY)")
+        
+        textFieldY = CGFloat(navBarHeight + statusBarHeight - statusBarDelta)                       //; print("textFieldY = \(textFieldY)")
         
         checkOrientation()
         
-        print("---------------------prepare \(topVC.vcType)-cv")
-        //print("---------------------prepare \(topVC.vcType)-cv)    \n                     cell width: \(cellWidth!)\n                     nav bar height: \(navBarHeight)")
-        
-        if previousOrientation != currentOrientation {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { //0.2
-                topVC.reloadAfterVCIsPossiblyPresentedAgainFromCallToPrepare(vc: topVC)
+        if embeddedInNavController {
+            if previousOrientation != currentOrientation {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {  //+ 0.2
+                    topVC.re_Reload__PossiblyAfterRe_Presenting(vc: topVC)
+                }
             }
-        }
-        else {
-            if topVC.vcType == .hours {
-                processCurrentDate()                                                        //; print("process date from prepare")
+                
+            else {
+                if topVC.vcType == .hours {
+                    processCurrentDate()                                                                //; print("process date from prepare")
+                }
             }
         }
         

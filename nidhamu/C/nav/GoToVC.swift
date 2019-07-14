@@ -14,17 +14,11 @@ extension UICollectionViewController {
                 }
             }
             
-            //if currentOrientation == "landscape" {
-            
             setupTitleAndPresentViewController(vc: vc) { () -> () in
                 reloadWithDelay(after: 0.02)
             }
             
-            //} else {setupAndPresent(vc: vc)}
-            
-        } else {
-            print("you're already looking at the \(vc.vcType)-view   nav'd by button?\(rePresentedVCFromButton)")//collectionViewType
-        }
+        } else {print("you're already looking at the \(vc.vcType)-view   nav'd by button?\(rePresentedVCFromButton)")}
     }
 }
 

@@ -2,23 +2,15 @@
 //  nidhamu  ∙  1st commit July. 08, 2019  ∙  Created by Garth Snyder, aka gladiusKatana ⚔️
 import UIKit
 
-extension UICollectionViewController {  
+extension UICollectionViewController {
     
-    @objc func reloadCV() {self.collectionView.reloadData() /*; print("↺")*/}
-    
-    func reloadWithDelay(after timeDelay: Double) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + timeDelay) {
-            self.reloadCV()
-        }
-    }
-    
-    func setupTitleAndPresentViewController(vc: CollectionVC, completion: () -> ()) {               //print("\ndismissing/presenting") // vc: \(vc)
+    func setupTitleAndPresentViewController(vc: CollectionVC, completion: () -> ()) {           //print("\ndismissing/presenting") // vc: \(vc)
         setupAndPresent(vc: vc)
         completion()
     }
     
-    func setupAndPresent(vc: UICollectionViewController) {//setupAndPresent(vc: CollectionVC) {
-        setupViewTitle("", numLines: 1, alignment: .left) // header titles is changed promptly from "" anyway
+    func setupAndPresent(vc: UICollectionViewController) {
+        setupViewTitle("", numLines: 1, alignment: .left)                           //* header titles is changed promptly from "" anyway
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.dismissNavController {
                 let newVC = UINavigationController(rootViewController: vc)
@@ -28,7 +20,20 @@ extension UICollectionViewController {
     }
     
     func dismissNavController(completion: @escaping () -> ()) {
-        navController?.dismiss(animated: false, completion: nil); completion()
+        navController?.dismiss(animated: false, completion: nil)
+        completion()
+    }
+    
+    
+    //-------------------------------------------------------------------------------------------------------
+    @objc func reloadCV() {
+        self.collectionView.reloadData()                                                        //; print("↺")
+    }
+    
+    func reloadWithDelay(after timeDelay: Double) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + timeDelay) {
+            self.reloadCV()
+        }
     }
 }
 
