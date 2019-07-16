@@ -14,7 +14,7 @@ extension CollectionVC {
                 cell.titleLabel.textColor = .clear
                 UIView.transition(with: cell.titleLabel, duration: 1, options: UIView.AnimationOptions.transitionCrossDissolve,
                                   animations: {
-                                    cell.titleLabel.textColor = platinum
+                                    cell.titleLabel.textColor = cellTextDefaultColour
                 }, completion: nil)
             }
         }

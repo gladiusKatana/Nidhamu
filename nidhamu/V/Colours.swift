@@ -4,10 +4,13 @@ import UIKit
 var windowBackgroundColour = icyBlue
 var cellDefaultColour = icyBlue
 var lastWeekColour = darkerIce
-var cellTextDefaultColour = platinum
 
-let num = CGFloat(42)
-var headerColour = UIColor.rgb(num, g: num, b: num, a: 1)
+//let num = CGFloat(42)
+var headerColour = iosSettingsGray //UIColor.rgb(num, g: num, b: num, a: 1)
+
+var cellTextDefaultColour = graySeven
+var headerTextDefaultColour = UIColor.black
+
 
 var icyBlue = UIColor.rgb(160, g: 190, b: 230, a: 1)                //(150, g: 180, b: 220, a: 1)
 var darkerIce = UIColor.rgb(130, g: 160, b: 200, a: 1)              //(150, g: 180, b: 220, a: 0.7) //(120, g: 150, b: 180, a: 1)
@@ -23,6 +26,7 @@ var darkerIce = UIColor.rgb(130, g: 160, b: 200, a: 1)              //(150, g: 1
 var bluishGray = UIColor.white //UIColor.rgb(60, g: 80, b: 120, a: 1)
 var grayTwo = UIColor.rgb(0, g: 0, b: 0, a: 0.2)
 var graySeven = UIColor.rgb(0, g: 0, b: 0, a: 0.7)
+var iosSettingsGray = UIColor.rgb(240, g: 240, b: 247, a: 1)
 
 var platinum = UIColor.rgb(214, g: 214, b: 214, a: 1)
 var platinumLite = UIColor.rgb(214, g: 214, b: 255, a: 0.25)

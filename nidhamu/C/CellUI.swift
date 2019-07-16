@@ -4,17 +4,20 @@ import UIKit
 extension CollectionVC {
     
     func setCellColours (cell: CustomCell, cellIsInHeader: Bool) {
+        
         if cellIsInHeader {
-            cell.backgroundColor = headerColour;    cell.layer.borderColor = UIColor.clear.cgColor
-            cell.titleLabel.textColor = platinum;   cell.titleLabel.font = defaultTimetableCellFont
+            cell.backgroundColor = headerColour;                //cell.layer.borderColor = UIColor.clear.cgColor
+            cell.titleLabel.font = defaultTimetableCellFont;    cell.titleLabel.textColor = headerTextDefaultColour
         }
         else {
-            guard cell.xyCoordinate != selectedTimeBlockPath else {
-                cell.backgroundColor = headerColour; return
-            }
-            cell.backgroundColor = cellDefaultColour; cell.cellColour = cellDefaultColour
-            animateCellColourBack(cell:cell, originalColour: cell.cellColour)
-            cell.titleLabel.textColor = cellTextDefaultColour
+//            if cell.xyCoordinate == selectedTimeBlockPath {
+//                cell.backgroundColor = headerColour; return
+//            }
+//            else {
+                cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
+                animateCellColourBack(cell:cell, originalColour: cell.cellColour)
+                cell.titleLabel.textColor = cellTextDefaultColour
+//            }
         }
     }
     

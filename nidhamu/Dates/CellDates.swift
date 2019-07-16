@@ -11,7 +11,9 @@ extension CollectionVC {
         if looping {weekAheadInt = setCellWeek(cell: cell, column: column, row: row, layout: layout, withColours: withColours)}
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
         cell.cellDate = Date() + hoursFromNow + daysFromNow + potentialWeekAhead // dates never actually rounded: just displayed rounded sometimes
-        //        showDateInTitleLabels(cell: cell);    //showNowCell(cell: cell, column: column, row: row)
+        //        showDateInTitleLabels(cell: cell);        //showNowCell(cell: cell, column: column, row: row)
+        //        cell.titleLabel.text = "\(cell.xyCoordinate)"
+        cell.titleLabel.font = defaultTimetableCellFont
         processEventBasedOnDateRange(cell: cell, column: column, row: row, layout: layout)
     }
     
@@ -45,8 +47,7 @@ extension CollectionVC {
     }
     
     func prepareToProcessEventsSinceLastLogin(column: Int, row: Int) {
-        if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {
-            //cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
+        if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {        //cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             if !savedTimeBlocksForProcessing {
                 if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}
                 if !pathsToProcess.contains([column, row]) {pathsToProcess.append([column, row])}
@@ -54,15 +55,15 @@ extension CollectionVC {
         }
     }
     
-    //    func showNowCell(cell: CustomCell, column: Int, row: Int) {
-    //        if row == nowRow && column == nowColumn { print("now-cell is at [\(column), \(row)]")}
-    //        //presentPopupViewToMarkEvents(column: column, row: row) //! // testing popup window; not the typical condition under which it pops up
-    //    }
+    func showNowCell(cell: CustomCell, column: Int, row: Int) {
+        if row == nowRow && column == nowColumn { print("now-cell is at [\(column), \(row)]")}
+        //presentPopupViewToMarkEvents(column: column, row: row) //! // testing popup window; not the typical condition under which it pops up
+    }
     
-    //    func showDateInTitleLabels(cell: CustomCell) {
-    //        let mo = months[Calendar.current.component(.month, from: cell.cellDate) - 1]
-    //        let dy = Calendar.current.component(.day, from: cell.cellDate)
-    //        cell.titleLabel.text = "\(mo) \(dy)"
-    //    }
+    func showDateInTitleLabels(cell: CustomCell) {
+        let mo = months[Calendar.current.component(.month, from: cell.cellDate) - 1]
+        let dy = Calendar.current.component(.day, from: cell.cellDate)
+        cell.titleLabel.text = "\(mo) \(dy)"
+    }
 }
 
