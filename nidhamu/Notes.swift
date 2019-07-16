@@ -10,6 +10,7 @@
  pinch to quit todoListVC
  popup view position accommodation
  header row: week-dates
+ optimize navigation
                                                 July 16
  
                                                                                                     //data model

@@ -11,12 +11,7 @@ extension CollectionVC {
         if looping {weekAheadInt = setCellWeek(cell: cell, column: column, row: row, layout: layout, withColours: withColours)}
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
         cell.cellDate = Date() + hoursFromNow + daysFromNow + potentialWeekAhead // dates never actually rounded: just displayed rounded sometimes
-        //showNowCell(cell: cell, column: column, row: row)
-        //        let mo = months[Calendar.current.component(.month, from: cell.cellDate) - 1]
-        //        let dy = Calendar.current.component(.day, from: cell.cellDate)
-        //        cell.titleLabel.text = "\(mo) \(dy)"
-        
-        cell.titleLabel.font = defaultTimetableCellFont
+        //        showDateInTitleLabels(cell: cell);    //showNowCell(cell: cell, column: column, row: row)
         processEventBasedOnDateRange(cell: cell, column: column, row: row, layout: layout)
     }
     
@@ -31,10 +26,8 @@ extension CollectionVC {
     
     func processEventBasedOnDateRange(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
         let oneWeekAgo = cell.cellDate - TimeInterval(86400 * 7)
-        
         if oneWeekAgo >= lastLoggedInDate && oneWeekAgo <= Date() {
             cell.backgroundColor = niceOrangeLight                                  //! shows up momentarily after launch on ipad mini 4, landscape
-            
             if formattedDateString(lastLoggedInDate, roundedDown: true, prefix: "", suffix: "", short: true)
                 == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
                 cell.titleLabel.text = "last login"
@@ -46,8 +39,7 @@ extension CollectionVC {
         if formattedDateString(Date(), roundedDown: true, prefix: "", suffix: "", short: true)
             == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
             cell.backgroundColor = niceOrangeLight
-            cell.titleLabel.text = "now"
-            cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
+            cell.titleLabel.text = "now";  cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
             prepareToProcessEventsSinceLastLogin(column: column, row: row)
         }
     }
@@ -65,6 +57,12 @@ extension CollectionVC {
     //    func showNowCell(cell: CustomCell, column: Int, row: Int) {
     //        if row == nowRow && column == nowColumn { print("now-cell is at [\(column), \(row)]")}
     //        //presentPopupViewToMarkEvents(column: column, row: row) //! // testing popup window; not the typical condition under which it pops up
+    //    }
+    
+    //    func showDateInTitleLabels(cell: CustomCell) {
+    //        let mo = months[Calendar.current.component(.month, from: cell.cellDate) - 1]
+    //        let dy = Calendar.current.component(.day, from: cell.cellDate)
+    //        cell.titleLabel.text = "\(mo) \(dy)"
     //    }
 }
 
