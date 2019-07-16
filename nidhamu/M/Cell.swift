@@ -1,5 +1,4 @@
-//  Cell.swift
-//  nidhamu  ∙  1st commit July. 08, 2019  ∙  Created by Garth Snyder, aka gladiusKatana ⚔️
+// Cell             ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 class CustomCell: UICollectionViewCell {

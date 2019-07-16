@@ -1,9 +1,7 @@
-//  SimpleEvent.swift
-//  nidhamu  ∙  1st commit July. 08, 2019  ∙  Created by Garth Snyder, aka gladiusKatana ⚔️
+// SimpleEvent      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 class SimpleEvent: NSObject {
-    
     var eventDescription = ""               // description of an event coming up (or todo-list item) on this day
     var eventDate = Date()                  // date the event/action occurs or must be done by
     var eventStatus = EventStatus.upcoming  ///var recurring = false //* will add soon

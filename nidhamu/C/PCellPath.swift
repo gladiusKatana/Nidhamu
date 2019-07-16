@@ -1,5 +1,4 @@
-//  PCellPath.swift //* P for popup         (ie popup menu to process todo list items whose deadlines passed since last login)
-//  nidhamu  ∙  1st commit July. 08, 2019  ∙  Created by Garth Snyder, aka gladiusKatana ⚔️
+// PCellPath        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension PopupMenuVC {

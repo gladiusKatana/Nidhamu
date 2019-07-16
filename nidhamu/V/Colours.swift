@@ -1,5 +1,4 @@
-//  Colours.swift   // Yes I'm Canadian so I spell 'colour' with 'our'
-//  nidhamu  ∙  1st commit July. 08, 2019  ∙  Created by Garth Snyder, aka gladiusKatana ⚔️
+// Colours          ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 var windowBackgroundColour = icyBlue

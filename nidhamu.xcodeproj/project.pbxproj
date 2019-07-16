@@ -34,7 +34,7 @@
 		062516BC22D6CF4200EBB4C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0625168822D6CF4100EBB4C8 /* Assets.xcassets */; };
 		062516BD22D6CF4200EBB4C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0625168A22D6CF4100EBB4C8 /* LaunchScreen.storyboard */; };
 		062516BE22D6CF4200EBB4C8 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625168D22D6CF4200EBB4C8 /* Colours.swift */; };
-		062516BF22D6CF4200EBB4C8 /* ShowScrollBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625168E22D6CF4200EBB4C8 /* ShowScrollBars.swift */; };
+		062516BF22D6CF4200EBB4C8 /* ScrollBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625168E22D6CF4200EBB4C8 /* ScrollBars.swift */; };
 		062516C022D6CF4200EBB4C8 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625168F22D6CF4200EBB4C8 /* Animations.swift */; };
 		062516C122D6CF4200EBB4C8 /* Prynts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169022D6CF4200EBB4C8 /* Prynts.swift */; };
 		062516C222D6CF4200EBB4C8 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169122D6CF4200EBB4C8 /* Fonts.swift */; };
@@ -49,7 +49,7 @@
 		062516CB22D6CF4200EBB4C8 /* PCellPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169C22D6CF4200EBB4C8 /* PCellPath.swift */; };
 		062516CC22D6CF4200EBB4C8 /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */; };
 		062516CD22D6CF4200EBB4C8 /* NavTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169F22D6CF4200EBB4C8 /* NavTitle.swift */; };
-		062516CE22D6CF4200EBB4C8 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A022D6CF4200EBB4C8 /* Notifications.swift */; };
+		062516CE22D6CF4200EBB4C8 /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A022D6CF4200EBB4C8 /* StatusBar.swift */; };
 		062516D022D6CF4200EBB4C8 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A222D6CF4200EBB4C8 /* NavBar.swift */; };
 		062516D122D6CF4200EBB4C8 /* SetTopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A322D6CF4200EBB4C8 /* SetTopVC.swift */; };
 		062516D222D6CF4200EBB4C8 /* RefreshUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A422D6CF4200EBB4C8 /* RefreshUI.swift */; };
@@ -112,7 +112,7 @@
 		0625168822D6CF4100EBB4C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0625168B22D6CF4100EBB4C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0625168D22D6CF4200EBB4C8 /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
-		0625168E22D6CF4200EBB4C8 /* ShowScrollBars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowScrollBars.swift; sourceTree = "<group>"; };
+		0625168E22D6CF4200EBB4C8 /* ScrollBars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollBars.swift; sourceTree = "<group>"; };
 		0625168F22D6CF4200EBB4C8 /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		0625169022D6CF4200EBB4C8 /* Prynts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prynts.swift; sourceTree = "<group>"; };
 		0625169122D6CF4200EBB4C8 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		0625169C22D6CF4200EBB4C8 /* PCellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCellPath.swift; sourceTree = "<group>"; };
 		0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		0625169F22D6CF4200EBB4C8 /* NavTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavTitle.swift; sourceTree = "<group>"; };
-		062516A022D6CF4200EBB4C8 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		062516A022D6CF4200EBB4C8 /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		062516A222D6CF4200EBB4C8 /* NavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		062516A322D6CF4200EBB4C8 /* SetTopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTopVC.swift; sourceTree = "<group>"; };
 		062516A422D6CF4200EBB4C8 /* RefreshUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshUI.swift; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 				0625169022D6CF4200EBB4C8 /* Prynts.swift */,
 				0625168D22D6CF4200EBB4C8 /* Colours.swift */,
 				0625169122D6CF4200EBB4C8 /* Fonts.swift */,
-				0625168E22D6CF4200EBB4C8 /* ShowScrollBars.swift */,
+				0625168E22D6CF4200EBB4C8 /* ScrollBars.swift */,
 				0625168F22D6CF4200EBB4C8 /* Animations.swift */,
 			);
 			path = V;
@@ -313,7 +313,7 @@
 			children = (
 				062516A222D6CF4200EBB4C8 /* NavBar.swift */,
 				0625169F22D6CF4200EBB4C8 /* NavTitle.swift */,
-				062516A022D6CF4200EBB4C8 /* Notifications.swift */,
+				062516A022D6CF4200EBB4C8 /* StatusBar.swift */,
 				062516A322D6CF4200EBB4C8 /* SetTopVC.swift */,
 				062516A522D6CF4200EBB4C8 /* GoToVC.swift */,
 				062516A422D6CF4200EBB4C8 /* RefreshUI.swift */,
@@ -487,7 +487,7 @@
 				062516CC22D6CF4200EBB4C8 /* CollectionVC.swift in Sources */,
 				062516D822D6CF4200EBB4C8 /* VCType.swift in Sources */,
 				062516B822D6CF4200EBB4C8 /* ZIndex.swift in Sources */,
-				062516CE22D6CF4200EBB4C8 /* Notifications.swift in Sources */,
+				062516CE22D6CF4200EBB4C8 /* StatusBar.swift in Sources */,
 				062516B722D6CF4200EBB4C8 /* Attributes.swift in Sources */,
 				062516C322D6CF4200EBB4C8 /* VCLifecycle.swift in Sources */,
 				062516B422D6CF4200EBB4C8 /* SimpleEvent.swift in Sources */,
@@ -499,7 +499,7 @@
 				062516D222D6CF4200EBB4C8 /* RefreshUI.swift in Sources */,
 				062516CD22D6CF4200EBB4C8 /* NavTitle.swift in Sources */,
 				062516C622D6CF4200EBB4C8 /* CellTap.swift in Sources */,
-				062516BF22D6CF4200EBB4C8 /* ShowScrollBars.swift in Sources */,
+				062516BF22D6CF4200EBB4C8 /* ScrollBars.swift in Sources */,
 				062516B522D6CF4200EBB4C8 /* DefaultSave.swift in Sources */,
 				062516C822D6CF4200EBB4C8 /* TextField.swift in Sources */,
 				062516B122D6CF4200EBB4C8 /* Cell.swift in Sources */,

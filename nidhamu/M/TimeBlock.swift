@@ -1,5 +1,4 @@
-//  TimeBlock.swift
-//  nidhamu  ∙  1st commit July. 08, 2019  ∙  Created by Garth Snyder, aka gladiusKatana ⚔️
+// TimeBlock        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 struct TimeBlock<T: Hashable, U: Hashable>: Hashable {

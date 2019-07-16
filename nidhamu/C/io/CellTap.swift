@@ -1,5 +1,4 @@
-//  CellTap.swift
-//  nidhamu  ∙  1st commit July. 08, 2019  ∙  Created by Garth Snyder, aka gladiusKatana ⚔️
+// CellTap          ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension CollectionVC {
@@ -9,10 +8,12 @@ extension CollectionVC {
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
         let layout = downcastLayout!
         let row = indexPath.item;   let column = indexPath.section
-//        if indexPath.item >= layout.lockedHeaderRows && indexPath.section >= layout.lockedHeaderSections {
-//            print("\nselected date (unformatted gmt)  \(cell.cellDate)")
-//            print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
-//        }
+        
+        /*if indexPath.item >= layout.lockedHeaderRows && indexPath.section >= layout.lockedHeaderSections {
+            print("\nselected date (unformatted gmt)  \(cell.cellDate)")
+            print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
+        }*/
+        
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             selectedCellDate = cell.cellDate
             let dateString = formattedDateString(selectedCellDate, roundedDown: false, prefix: "New event on", suffix: "", short: false)

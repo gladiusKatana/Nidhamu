@@ -1,5 +1,4 @@
-//  NavTitle.swift
-//  nidhamu  ∙  1st commit July. 08, 2019  ∙  Created by Garth Snyder, aka gladiusKatana ⚔️
+// NavTitle         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension UICollectionViewController {
@@ -15,6 +14,6 @@ extension UICollectionViewController {
         navbarTitleLabel.isUserInteractionEnabled = false
         navigationItem.titleView = navbarTitleLabel
     }
-
+    
 }
 

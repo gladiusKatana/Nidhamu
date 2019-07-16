@@ -1,5 +1,4 @@
-//  Attributes.swift
-//  nidhamu  ∙  1st commit July. 08, 2019  ∙  Created by Garth Snyder, aka gladiusKatana ⚔️
+// Attributes       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension CustomFlowLayout { 
@@ -34,7 +33,7 @@ extension CustomFlowLayout {
                     
                 else if j < lockedHeaderSections {
                     xO = xOffSet + CGFloat(j) * widthPlusSpace;     yO = yDefault}
-               
+                    
                 else {
                     xO = xDefault;                                  yO = yDefault}
                 

@@ -1,5 +1,4 @@
-//  DefaultLoad.swift
-//  nidhamu  ∙  1st commit July. 08, 2019  ∙  Created by Garth Snyder, aka gladiusKatana ⚔️
+// DefaultLoad      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 func defaultLoadData(showDate: Bool) {                                                      //print("(load using defaults)\n")

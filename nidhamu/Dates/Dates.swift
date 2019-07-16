@@ -1,5 +1,4 @@
-//  Dates.swift
-//  nidhamu  ∙  1st commit July. 08, 2019  ∙  Created by Garth Snyder, aka gladiusKatana ⚔️
+// Dates            ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 func displayDate(_ inputDate: Date, roundedDown: Bool)

@@ -1,5 +1,4 @@
-//  CellDates.swift
-//  nidhamu  ∙  1st commit July. 08, 2019  ∙  Created by Garth Snyder, aka gladiusKatana ⚔️
+// CellDates        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension CollectionVC {
@@ -13,9 +12,9 @@ extension CollectionVC {
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
         cell.cellDate = Date() + hoursFromNow + daysFromNow + potentialWeekAhead // dates never actually rounded: just displayed rounded sometimes
         //showNowCell(cell: cell, column: column, row: row)
-//        let mo = months[Calendar.current.component(.month, from: cell.cellDate) - 1]
-//        let dy = Calendar.current.component(.day, from: cell.cellDate)
-//        cell.titleLabel.text = "\(mo) \(dy)"
+        //        let mo = months[Calendar.current.component(.month, from: cell.cellDate) - 1]
+        //        let dy = Calendar.current.component(.day, from: cell.cellDate)
+        //        cell.titleLabel.text = "\(mo) \(dy)"
         
         cell.titleLabel.font = defaultTimetableCellFont
         processEventBasedOnDateRange(cell: cell, column: column, row: row, layout: layout)
