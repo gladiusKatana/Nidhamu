@@ -15,6 +15,8 @@
                                                                                                     //data model
  mark item as recurring
  handle deadlines upon deferring
+ cascading deferrals
+ deferral-date selection mode on timetableVC
                                                 July 19
  
  
@@ -31,7 +33,7 @@
                                                 week of 15th
  
                                                                                                     //UI
- settings: TtVCOptional, darkMode
+ settings: TtVCOptional, darkMode, cascading deferrals
  buttons
  launchScreen
  icon
@@ -42,7 +44,6 @@
  
  
 
- //Realized an obvious feature: ...
  
  
  
