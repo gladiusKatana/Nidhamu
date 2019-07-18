@@ -5,18 +5,16 @@
 
  todo                                           deadline                                            //(todos are organized by deadline & by ~kind)
  
-
                                                                                                     //current topVC todos
- popup view position accommodation
  header row: week-dates
  optimize navigation
                                                 July 18
  
                                                                                                     //data model
  mark item as recurring
+ deferral-date selection mode on timetableVC
  handle deadlines upon deferring
  cascading deferrals
- deferral-date selection mode on timetableVC
                                                 July 20
  
  
@@ -25,7 +23,6 @@
                                                 July 21
  
                                                                                                     //views
- nav to todoListVC only from timeBlock
  calendarVC; populate with eventsAtDate
  morn/aft/eve/night VC
  list VC (today items)
