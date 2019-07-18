@@ -40,11 +40,7 @@ extension CollectionVC { //* will try to shorten this one, soon
     override func viewDidAppear(_ animated: Bool) {     //print("path to time block\(selectedTimeBlockPath)")
         if vcType != .eventClassifier {setTopViewController()}
         setupNavBarButtons(grayTwo, atIndex: colourIndex)
-        if vcType == .todoList {
-            let dismissPinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
-            self.view.addGestureRecognizer(dismissPinch)
-        }
-        if vcType == .hours {justPinched = false}
+        addPinchRecognizer()
     }
     
     override func viewWillDisappear(_ animated: Bool) { //print("...\(vcType) will disappear...")
@@ -53,12 +49,6 @@ extension CollectionVC { //* will try to shorten this one, soon
                 eventField.removeFromSuperview()        //; print("removed text field")
                 textFieldDisplayed = false
             }
-        }
-    }
-    
-    @objc func handlePinch() {
-        if !justPinched { justPinched = true
-            self.gotoView(vc: timetableVC)
         }
     }
 }

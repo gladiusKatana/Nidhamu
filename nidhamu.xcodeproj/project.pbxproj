@@ -59,6 +59,7 @@
 		062516D622D6CF4200EBB4C8 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A922D6CF4200EBB4C8 /* Orientation.swift */; };
 		062516D722D6CF4200EBB4C8 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516AA22D6CF4200EBB4C8 /* DeviceType.swift */; };
 		062516D822D6CF4200EBB4C8 /* VCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516AB22D6CF4200EBB4C8 /* VCType.swift */; };
+		062CDAA122E0033400848D78 /* Pinching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CDAA022E0033400848D78 /* Pinching.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		062516A922D6CF4200EBB4C8 /* Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		062516AA22D6CF4200EBB4C8 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		062516AB22D6CF4200EBB4C8 /* VCType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCType.swift; sourceTree = "<group>"; };
+		062CDAA022E0033400848D78 /* Pinching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinching.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				0625169722D6CF4200EBB4C8 /* CellTap.swift */,
+				062CDAA022E0033400848D78 /* Pinching.swift */,
 				0625169922D6CF4200EBB4C8 /* TextField.swift */,
 				0625169822D6CF4200EBB4C8 /* MarkEvent.swift */,
 				0625169622D6CF4200EBB4C8 /* PopupTap.swift */,
@@ -501,6 +504,7 @@
 				062516C622D6CF4200EBB4C8 /* CellTap.swift in Sources */,
 				062516BF22D6CF4200EBB4C8 /* ScrollBars.swift in Sources */,
 				062516B522D6CF4200EBB4C8 /* DefaultSave.swift in Sources */,
+				062CDAA122E0033400848D78 /* Pinching.swift in Sources */,
 				062516C822D6CF4200EBB4C8 /* TextField.swift in Sources */,
 				062516B122D6CF4200EBB4C8 /* Cell.swift in Sources */,
 				06164A3122D6D19000DA608D /* DateData.swift in Sources */,
