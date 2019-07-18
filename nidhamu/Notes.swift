@@ -17,12 +17,12 @@
  handle deadlines upon deferring
  cascading deferrals
  deferral-date selection mode on timetableVC
-                                                July 19
+                                                July 20
  
  
  archive data (eventsAtDate & AtIndexPath)
  CSV emails of archive data
-                                                July 20
+                                                July 21
  
                                                                                                     //views
  nav to todoListVC only from timeBlock
