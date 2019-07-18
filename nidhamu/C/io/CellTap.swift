@@ -19,7 +19,7 @@ extension CollectionVC {
             let dateString = formattedDateString(selectedCellDate, roundedDown: false, prefix: "New event on", suffix: "", short: false)
             
             if vcType == .hours {
-                selectedTimeBlockPath = [column, row]                               ; print("selected time block path \(selectedTimeBlockPath)")
+                selectedTimeBlockPath = [column, row]                               //; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
                 
                 previousSelectedTimeBlockPath = [column, row]

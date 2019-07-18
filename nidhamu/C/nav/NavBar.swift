@@ -5,12 +5,12 @@ extension UICollectionViewController { //CollectionVC {//***
     
     func setupNavBarButtons(_ withCustomColour: UIColor?, atIndex: Int?) {
         let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableImage")
-        let todoListButton = setupButton(selector: #selector(buttonWrapperMethodforTodoListVC), title: "calendarImage")
-        let reloadButton = setupButton(selector: #selector(reloadCV), title: "reloadButton")
+        //let todoListButton = setupButton(selector: #selector(buttonWrapperMethodforTodoListVC), title: "calendarImage")
+        let hiddenReloadButton = setupButton(selector: #selector(reloadCV), title: "reloadButton") // for developer use: user should never need it
         
-        navigationItem.rightBarButtonItems = [todoListButton, timetableButton, reloadButton]
+        navigationItem.rightBarButtonItems = [timetableButton, hiddenReloadButton]
         
-        var barButtonColours = [graySeven, graySeven, .clear]
+        var barButtonColours = [graySeven, .clear]
         
         for button in navigationItem.rightBarButtonItems! {
             if let index = navigationItem.rightBarButtonItems?.firstIndex(of: button) {
@@ -32,7 +32,7 @@ extension UICollectionViewController { //CollectionVC {//***
     }
     
     @objc func buttonWrapperMethodforTimetableVC() {presentViaVCButton(vc: timetableVC)}
-    @objc func buttonWrapperMethodforTodoListVC() {presentViaVCButton(vc: todoListVC)}
+    //@objc func buttonWrapperMethodforTodoListVC() {presentViaVCButton(vc: todoListVC)}
     
     func presentViaVCButton(vc: CollectionVC) {
         rePresentedVCFromButton = true

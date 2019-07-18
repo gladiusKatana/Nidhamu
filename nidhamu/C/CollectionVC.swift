@@ -3,8 +3,8 @@ import UIKit
 
 class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
-    var vcType = CollectionViewType.days;       var downcastLayout : CustomFlowLayout?
-    var colourIndex: Int = Int()
+    var vcType = CollectionViewType.days;       var downcastLayout: CustomFlowLayout?
+    var colourIndex: Int?
     var demarcateWeeksByColour = false;         var loopWeeks = false
     
     lazy var eventField: UITextField = {
@@ -22,7 +22,7 @@ class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRe
     }()
     
     init(_ vcType: CollectionViewType, loopWeeks: Bool, demarcateWeeksByColour: Bool,
-         colourIndex: Int, collectionViewLayout layout: UICollectionViewLayout) {
+         colourIndex: Int?, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(collectionViewLayout: layout)
         self.vcType = vcType
         self.loopWeeks = loopWeeks
