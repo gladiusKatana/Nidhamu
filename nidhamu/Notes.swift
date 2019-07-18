@@ -7,21 +7,20 @@
  
 
                                                                                                     //current topVC todos
- pinch to quit todoListVC
  popup view position accommodation
  header row: week-dates
  optimize navigation
-                                                July 16
+                                                July 18
  
                                                                                                     //data model
  mark item as recurring
  handle deadlines upon deferring
-                                                July 17
+                                                July 19
  
  
  archive data (eventsAtDate & AtIndexPath)
  CSV emails of archive data
-                                                July 18
+                                                July 20
  
                                                                                                     //views
  nav to todoListVC only from timeBlock
