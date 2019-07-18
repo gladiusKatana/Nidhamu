@@ -52,6 +52,9 @@ extension CollectionVC {
                 if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}
                 if !pathsToProcess.contains([column, row]) {pathsToProcess.append([column, row])}
             }
+            if row >= 19 {
+                thereWillBeARowException = true
+            }
         }
     }
     
