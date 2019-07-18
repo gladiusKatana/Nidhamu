@@ -36,6 +36,7 @@
  buttons
  launchScreen
  icon
+ ⁌o⁍rotating with text field presented
                                                 asap
  
  

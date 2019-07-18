@@ -1,7 +1,7 @@
 // PopupVC          ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-class PopupMenuVC: UICollectionViewController {
+class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
     
     var downcastLayout : CustomFlowLayout? 
     

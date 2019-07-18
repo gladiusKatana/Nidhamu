@@ -14,7 +14,7 @@ var navBarHeight = 0.0;                 var launchWidth = 0.0
 
 
 var rePresentedVCFromButton = true;     var firstReenteredForeground = false
-var consoleLegendAppeared = false
+var consoleLegendAppeared = false;      var justPinched = false
 
 
 var currentOrientation = "orientation (landscape or portrait) for prepare-layout logic"             //* will change this to an enum at some point

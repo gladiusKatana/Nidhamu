@@ -1,7 +1,7 @@
 // CollectionVC     ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-class CollectionVC: UICollectionViewController, UITextFieldDelegate {
+class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     var vcType = CollectionViewType.days;       var downcastLayout : CustomFlowLayout?
     var colourIndex: Int = Int()
