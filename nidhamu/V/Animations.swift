@@ -25,7 +25,7 @@ extension CollectionVC {
                        options: UIView.AnimationOptions.curveEaseOut, animations: {
                         cell.backgroundColor = originalColour
         }, completion: nil)
-//        selectedTimeBlockPath = [-3, -3]
+        selectedTimeBlockPath = [-3, -3]
     }
     
 }

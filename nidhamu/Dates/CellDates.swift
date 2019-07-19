@@ -15,8 +15,6 @@ extension CollectionVC {
         //        cell.titleLabel.text = "\(cell.xyCoordinate)"
         cell.titleLabel.font = defaultTimetableCellFont
         processEventBasedOnDateRange(cell: cell, column: column, row: row, layout: layout)
-        
-        if [column, row] == selectedTimeBlockPath {cell.backgroundColor = headerColour} //else {cell.backgroundColor = cellDefaultColour}
     }
     
     func setCellWeek(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, withColours: Bool) -> Int {
@@ -29,22 +27,26 @@ extension CollectionVC {
     }
     
     func processEventBasedOnDateRange(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
-        let oneWeekAgo = cell.cellDate - TimeInterval(86400 * 7)
-        if oneWeekAgo >= lastLoggedInDate && oneWeekAgo <= Date() {
-            cell.backgroundColor = niceOrangeLight                                  //! shows up momentarily after launch on ipad mini 4, landscape
-            if formattedDateString(lastLoggedInDate, roundedDown: true, prefix: "", suffix: "", short: true)
-                == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
-                cell.titleLabel.text = "last login"
-                cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
+        if [column, row] == selectedTimeBlockPath {
+            if textFieldDisplayed { cell.backgroundColor = headerColour} }
+        else {
+            let oneWeekAgo = cell.cellDate - TimeInterval(86400 * 7)
+            if oneWeekAgo >= lastLoggedInDate && oneWeekAgo <= Date() {
+                cell.backgroundColor = niceOrangeLight                                  //! shows up momentarily after launch on ipad mini 4, landscape
+                if formattedDateString(lastLoggedInDate, roundedDown: true, prefix: "", suffix: "", short: true)
+                    == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
+                    cell.titleLabel.text = "last login"
+                    cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
+                }
+                prepareToProcessEventsSinceLastLogin(column: column, row: row)
             }
-            prepareToProcessEventsSinceLastLogin(column: column, row: row)
-        }
-        
-        if formattedDateString(Date(), roundedDown: true, prefix: "", suffix: "", short: true)
-            == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
-            cell.backgroundColor = niceOrangeLight
-            cell.titleLabel.text = "now";  cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
-            prepareToProcessEventsSinceLastLogin(column: column, row: row)
+            
+            if formattedDateString(Date(), roundedDown: true, prefix: "", suffix: "", short: true)
+                == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
+                cell.backgroundColor = niceOrangeLight
+                cell.titleLabel.text = "now";  cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
+                prepareToProcessEventsSinceLastLogin(column: column, row: row)
+            }
         }
     }
     

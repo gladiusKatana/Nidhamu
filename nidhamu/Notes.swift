@@ -30,11 +30,11 @@
                                                 week of 15th
  
                                                                                                     //UI
+  ⁌o⁍rotating with text field presented: keep text partially entered
  settings: TtVCOptional, darkMode, cascading deferrals
  buttons
  launchScreen
  icon
- ⁌o⁍rotating with text field presented
                                                 asap
  
  
