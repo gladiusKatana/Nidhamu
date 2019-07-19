@@ -28,7 +28,7 @@ extension UICollectionViewController {
         
         if previousOrientation == "landscape" && currentOrientation == "portrait"       // (needed when, e.g., toggling views while in landscape)
             || firstReenteredForeground {
-            rePresentedVCFromButton = false                            ; print("\n---------------------presented then reloaded \(vc.vcType) cv ")
+            rePresentedVCFromButton = false                            //; print("\n---------------------presented then reloaded \(vc.vcType) cv ")
             
             setupTitleAndPresentViewController(vc: vc) { () -> () in
                 previousOrientation = currentOrientation               //* check whether able to factor out
@@ -40,9 +40,9 @@ extension UICollectionViewController {
         }
     }
     
-    //--------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------- reloading
     @objc func reloadCV() {
-        self.collectionView.reloadData()                                                        //; print("↺")
+        self.collectionView.reloadData()                                //; print("↺")
     }
     
     func reloadWithDelay(after timeDelay: Double) {

@@ -10,14 +10,9 @@ extension CollectionVC {
             cell.titleLabel.font = defaultTimetableCellFont;    cell.titleLabel.textColor = headerTextDefaultColour
         }
         else {
-//            if cell.xyCoordinate == selectedTimeBlockPath {
-//                cell.backgroundColor = headerColour; return
-//            }
-//            else {
-                cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
-                animateCellColourBack(cell:cell, originalColour: cell.cellColour)
-                cell.titleLabel.textColor = cellTextDefaultColour
-//            }
+            cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
+            animateCellColourBack(cell:cell, originalColour: cell.cellColour)
+            cell.titleLabel.textColor = cellTextDefaultColour
         }
     }
     

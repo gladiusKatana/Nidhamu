@@ -20,8 +20,8 @@ extension UICollectionViewController { //CollectionVC {//***
         if let customColour = withCustomColour {
             if let colourIndex = atIndex {
                 navigationItem.rightBarButtonItems?[colourIndex].tintColor = customColour
-            } else {print("<no custom colour index>")}
-        } else {print("<no custom colour>")}
+            } //else {print("<no custom colour index>")}
+        } //else {print("<no custom colour>")}
     }
     
     func setupButton(selector: Selector, title: String) -> UIBarButtonItem {

@@ -4,7 +4,6 @@ import UIKit
 extension CollectionVC {
     
     func processEventsSinceLastLogin(layout: CustomFlowLayout) {
-        
         if !pathsToProcess.isEmpty {
             let column = pathsToProcess.first![0]; let row = pathsToProcess.first![1]
             globalEventIdentifier = "\(eventArraysToProcess.first![eventIndex].eventDescription)"  //; print("event identifier: \(globalEventIdentifier)")
@@ -14,15 +13,11 @@ extension CollectionVC {
             if row >= 19 {rowException = true}
             
             if !savedTimeBlocksForProcessing {
-                if thereWillBeARowException {
-                    self.downcastLayout?.autoFitHScale = 0.85
-                }
+                if thereWillBeARowException {self.downcastLayout?.autoFitHScale = 0.85}
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    ///classifierVC.collectionView.reloadData()
                     self.reloadCV()
                 }
             }
-            
             presentPopupViewToMarkEvents(column: column, row: row, rowException: rowException, columnException: columnException)
         }
         else {                                                                               //print("paths to process empty")
