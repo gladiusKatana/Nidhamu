@@ -15,6 +15,8 @@ extension CollectionVC {
         //        cell.titleLabel.text = "\(cell.xyCoordinate)"
         cell.titleLabel.font = defaultTimetableCellFont
         processEventBasedOnDateRange(cell: cell, column: column, row: row, layout: layout)
+        
+        if [column, row] == selectedTimeBlockPath {cell.backgroundColor = headerColour} //else {cell.backgroundColor = cellDefaultColour}
     }
     
     func setCellWeek(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, withColours: Bool) -> Int {
