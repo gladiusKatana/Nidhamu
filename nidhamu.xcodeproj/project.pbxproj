@@ -37,7 +37,6 @@
 		062516BF22D6CF4200EBB4C8 /* ScrollBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625168E22D6CF4200EBB4C8 /* ScrollBars.swift */; };
 		062516C022D6CF4200EBB4C8 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625168F22D6CF4200EBB4C8 /* Animations.swift */; };
 		062516C122D6CF4200EBB4C8 /* Prynts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169022D6CF4200EBB4C8 /* Prynts.swift */; };
-		062516C222D6CF4200EBB4C8 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169122D6CF4200EBB4C8 /* Fonts.swift */; };
 		062516C322D6CF4200EBB4C8 /* VCLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */; };
 		062516C422D6CF4200EBB4C8 /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169422D6CF4200EBB4C8 /* PopupVC.swift */; };
 		062516C522D6CF4200EBB4C8 /* PopupTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169622D6CF4200EBB4C8 /* PopupTap.swift */; };
@@ -116,7 +115,6 @@
 		0625168E22D6CF4200EBB4C8 /* ScrollBars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollBars.swift; sourceTree = "<group>"; };
 		0625168F22D6CF4200EBB4C8 /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		0625169022D6CF4200EBB4C8 /* Prynts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prynts.swift; sourceTree = "<group>"; };
-		0625169122D6CF4200EBB4C8 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCLifecycle.swift; sourceTree = "<group>"; };
 		0625169422D6CF4200EBB4C8 /* PopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
 		0625169622D6CF4200EBB4C8 /* PopupTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTap.swift; sourceTree = "<group>"; };
@@ -276,7 +274,6 @@
 			children = (
 				0625169022D6CF4200EBB4C8 /* Prynts.swift */,
 				0625168D22D6CF4200EBB4C8 /* Colours.swift */,
-				0625169122D6CF4200EBB4C8 /* Fonts.swift */,
 				0625168E22D6CF4200EBB4C8 /* ScrollBars.swift */,
 				0625168F22D6CF4200EBB4C8 /* Animations.swift */,
 			);
@@ -485,7 +482,6 @@
 				062516D122D6CF4200EBB4C8 /* SetTopVC.swift in Sources */,
 				06164A3022D6D19000DA608D /* Dates.swift in Sources */,
 				062516D422D6CF4200EBB4C8 /* CellContents.swift in Sources */,
-				062516C222D6CF4200EBB4C8 /* Fonts.swift in Sources */,
 				062516D022D6CF4200EBB4C8 /* NavBar.swift in Sources */,
 				062516CC22D6CF4200EBB4C8 /* CollectionVC.swift in Sources */,
 				062516D822D6CF4200EBB4C8 /* VCType.swift in Sources */,

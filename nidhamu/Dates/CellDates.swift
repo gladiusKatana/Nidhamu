@@ -7,12 +7,12 @@ extension CollectionVC {
         let hoursFromNow = TimeInterval(3600 * (row - nowRow))
         let daysFromNow = TimeInterval(86400 * (column - nowColumn))
         var weekAheadInt = 0
-        
+
         if looping {weekAheadInt = setCellWeek(cell: cell, column: column, row: row, layout: layout, withColours: withColours)}
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
         cell.cellDate = Date() + hoursFromNow + daysFromNow + potentialWeekAhead // dates never actually rounded: just displayed rounded sometimes
-        //        showDateInTitleLabels(cell: cell);        //showNowCell(cell: cell, column: column, row: row)
-        //        cell.titleLabel.text = "\(cell.xyCoordinate)"
+        //showDateInTitleLabels(cell: cell);        //showNowCell(cell: cell, column: column, row: row)
+        //cell.titleLabel.text = "\(cell.xyCoordinate)"
         cell.titleLabel.font = defaultTimetableCellFont
         processEventBasedOnDateRange(cell: cell, column: column, row: row, layout: layout)
     }
@@ -40,7 +40,6 @@ extension CollectionVC {
                 }
                 prepareToProcessEventsSinceLastLogin(column: column, row: row)
             }
-            
             if formattedDateString(Date(), roundedDown: true, prefix: "", suffix: "", short: true)
                 == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
                 cell.backgroundColor = niceOrangeLight

@@ -4,7 +4,7 @@ import UIKit
 extension CollectionVC { //* will try to shorten this one, soon
     
     override func viewDidLoad() {
-        collectionView.backgroundColor = windowBackgroundColour // shown on top of UIWindow's background colour
+        collectionView.backgroundColor = windowBackgroundColour                 // shown on top of UIWindow's background colour
         if vcType == .todoList {collectionView.backgroundColor = bluishGray}
         collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.reuseIdentifier)
         collectionView.bounces = false
@@ -12,7 +12,7 @@ extension CollectionVC { //* will try to shorten this one, soon
         
         if vcType != .initial { var str = ""
             if !consoleLegendAppeared {str = loadSymbolLegend} else {str = ""}
-            print("💾\(vcType)\(str)") // disk emoji means loaded
+            print("💾\(vcType)\(str)")                  // disk emoji means loaded
             setTopViewController()
         }
         
@@ -24,7 +24,7 @@ extension CollectionVC { //* will try to shorten this one, soon
         if vcType == .hours {
             setupViewTitle("Timetable", numLines: 1, alignment: .left)
         }
-        else { //if vcType is the other nav-controller-embedded one, ie todoList VC
+        else {                                          // if vcType is the other nav-controller-embedded one, ie todoList VC
             setupViewTitle(formattedDateString(selectedCellDate, roundedDown: true, prefix: "Tasks", suffix: "", short: true), numLines: 1, alignment: .left)
         }
         
@@ -32,21 +32,21 @@ extension CollectionVC { //* will try to shorten this one, soon
             rePresentedVCFromButton = false
             reloadCV()
             if !consoleLegendAppeared {str = appearSymbolLegend} else {str = ""}
-            print("🏞\(vcType)\(str)") // picture-emoji means appeared
+            print("🏞\(vcType)\(str)")                  // picture-emoji means appeared
             consoleLegendAppeared = true
-        } //above method called early (before actually appears) to print on first appearance + avoid an additional reset of rePresentedVCFromButton
+        } //cabove method called early (before actually appears) to print on first appearance + avoid an additional reset of rePresentedVCFromButton
     }
     
-    override func viewDidAppear(_ animated: Bool) {     //print("path to time block\(selectedTimeBlockPath)")
+    override func viewDidAppear(_ animated: Bool) {             //print("path to time block\(selectedTimeBlockPath)")
         if vcType != .eventClassifier {setTopViewController()}
         setupNavBarButtons(grayTwo, atIndex: colourIndex)
         addPinchRecognizer()
     }
     
-    override func viewWillDisappear(_ animated: Bool) { //print("...\(vcType) will disappear...")
+    override func viewWillDisappear(_ animated: Bool) {         //print("...\(vcType) will disappear...")
         if vcType == .todoList {
             if textFieldDisplayed {
-                eventField.removeFromSuperview()        //; print("removed text field")
+                eventField.removeFromSuperview()                //; print("removed text field")
                 textFieldDisplayed = false
             }
         }

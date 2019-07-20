@@ -20,7 +20,7 @@ extension CollectionVC {
             }
             presentPopupViewToMarkEvents(column: column, row: row, rowException: rowException, columnException: columnException)
         }
-        else {                                                                               //print("paths to process empty")
+        else {                                                                                      //print("paths to process empty")
             self.downcastLayout?.autoFitHScale = 1
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {self.reloadCV()}
             defaultSaveData(showDate: true)
@@ -29,7 +29,7 @@ extension CollectionVC {
     }
     
     func presentPopupViewToMarkEvents(column: Int, row: Int, rowException: Bool, columnException: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now()) { //time delay of 0.3 works stably (thus far) on my iPhone 7
+        DispatchQueue.main.asyncAfter(deadline: .now()) { // time delay of 0.3 works stably (thus far) on my iPhone 7
             
             let layout = self.downcastLayout!
             let cellWidth = layout.widthPlusSpace;      let cellHeight = layout.heightPlusSpace

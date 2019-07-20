@@ -3,23 +3,14 @@ import UIKit
 
 extension CollectionVC {
     
-    func rePresentTextField() {                 //print("rePresent")
+    func rePresentTextField() {
         if textFieldDisplayed {
             let customLayout = downcastLayout!
-//            if let text = eventField.text {     //print("in field: \(text)")
-////                eventField.removeFromSuperview()    //; print("removed")
-//                formatAndPresentTextField(layout: customLayout, dateString: text)
-//            }
-//            else {
-//                eventField.removeFromSuperview()    //; print("removed")
-                formatAndPresentTextField(layout: customLayout, dateString: eventField.placeholder!)
-//            }
+            formatAndPresentTextField(layout: customLayout, dateString: eventField.placeholder!)
         }
     }
     
     func formatAndPresentTextField(layout: CustomFlowLayout, dateString: String) {   // may remove argument  customLayout
-//        print("ok, in field: \(dateString)")
-        
         let fieldWidth = CGFloat(325)
         let fieldHeight = CGFloat(2 * timetableLayout.cellHeight!)
         let halfWidth = (timetableLayout.cellWidth! + globalKeyWindow.frame.width - fieldWidth) / 2

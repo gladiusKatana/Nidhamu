@@ -5,10 +5,9 @@
 
  todo                                           deadline                                            //(todos are organized by deadline & by ~kind)
  
-                                                                                                    //current topVC todos
+ 
  header row: week-dates
- optimize navigation
-                                                July 19
+                                                July 20
  
                                                                                                     //data model
  mark item as recurring
@@ -30,17 +29,19 @@
                                                 week of 15th
  
                                                                                                     //UI
- settings: TtVCOptional, darkMode, cascading deferrals
+ optimize navigation
+ settings
  buttons
  launchScreen
  icon
                                                 asap
  
  
- 
- 
 
- 
+ settings
+ timetable VC, hourly blocks
+ cascading deferrals
+ darkMode
  
  
  
