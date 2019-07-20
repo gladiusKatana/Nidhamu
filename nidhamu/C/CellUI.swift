@@ -5,7 +5,7 @@ extension CollectionVC {
     
     func setCellColours (cell: CustomCell, cellIsInHeader: Bool) {
         
-        if cellIsInHeader {
+        if cellIsInHeader || cell.xyCoordinate[1] == 1 {
             cell.backgroundColor = headerColour;                //cell.layer.borderColor = UIColor.clear.cgColor
             cell.titleLabel.font = defaultTimetableCellFont;    cell.titleLabel.textColor = headerTextDefaultColour
         }

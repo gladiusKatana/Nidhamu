@@ -9,12 +9,11 @@ extension CollectionVC {
         let layout = downcastLayout!
         let row = indexPath.item;   let column = indexPath.section
         
-        /*if indexPath.item >= layout.lockedHeaderRows && indexPath.section >= layout.lockedHeaderSections {
+        if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
+            
             print("\nselected date (unformatted gmt)  \(cell.cellDate)")
             print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
-        }*/
-        
-        if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
+            
             selectedCellDate = cell.cellDate
             let dateString = formattedDateString(selectedCellDate, roundedDown: true, prefix: "New event on", suffix: "", short: false)
             
@@ -39,10 +38,12 @@ extension CollectionVC {
                     cell.markedForItems = true
                 }
             }
+                
             else if vcType == .todoList {
                 formatAndPresentTextField(layout: layout, dateString: dateString)
                 textFieldDisplayed = true
             }
+                
             else {print("unrecognized collection view type's cell selected")}
         } else {print("selected header")}
     }

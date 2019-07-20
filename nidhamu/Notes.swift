@@ -5,7 +5,7 @@
 
  todo                                           deadline                                            //(todos are organized by deadline & by ~kind)
  
- 
+ ⁌o⁍ no highlight multiple cells w/textfield
  header row: week-dates
                                                 July 20
  
