@@ -11,17 +11,34 @@ extension CollectionVC {
         }
         else {
             cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
-//            animateCellColourBack(cell:cell, originalColour: cell.cellColour)
+            //animateCellColourBack(cell:cell, originalColour: cell.cellColour)
             cell.titleLabel.textColor = cellTextDefaultColour
         }
     }
     
     func setTimeAndDayLabels (cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
-        if column == 0 && row > 0 {
-            var ampm = ""; if row < 13 {ampm = "am"} else {ampm = "pm"}
-            cell.titleLabel.text = "\(hoursOfTheDay[row - 1])\(ampm)"
+        
+        let headerRows = layout.lockedHeaderRows
+        
+        if column == 0
+            && row > (headerRows - 1)
+            && row < layout.rows {
+            
+            var ampm = ""
+            
+            if row < 13 {
+                ampm = "am"
+            }
+            else {
+                ampm = "pm"
+            }
+            
+            cell.titleLabel.text = "\(hoursOfTheDay[row - headerRows])\(ampm)"
         }
-        else if row == 0 && column > 0 {cell.titleLabel.text = weekdaysAbbreviated[column - 1]}
+            
+        else if row == 0 && column > 0 {
+            cell.titleLabel.text = weekdaysAbbreviated[column - 1]
+        }
     }
     
 }
