@@ -23,12 +23,9 @@ extension CollectionVC {
             cell.cellDate = Date() + hoursFromNow + daysFromNow + potentialWeekAhead // dates not actually rounded: just displayed rounded sometimes
             processEventBasedOnDateRange(cell: cell, column: column, row: row, layout: layout)
         }
-        
         //cell.titleLabel.text = "\(cell.xyCoordinate)"
         //showDateInTitleLabels(cell: cell)
         //showNowCell(cell: cell, column: column, row: row)
-        
-        
     }
     
     

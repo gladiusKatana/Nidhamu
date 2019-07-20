@@ -11,8 +11,8 @@ extension CollectionVC {
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
-            print("\nselected date (unformatted gmt)  \(cell.cellDate)")
-            print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
+//            print("\nselected date (unformatted gmt)  \(cell.cellDate)")
+//            print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
             
             selectedCellDate = cell.cellDate
             let dateString = formattedDateString(selectedCellDate, roundedDown: true, prefix: "New event on", suffix: "", short: false)
@@ -45,6 +45,7 @@ extension CollectionVC {
             }
                 
             else {print("unrecognized collection view type's cell selected")}
+            
         } else {print("selected header")}
     }
 }
