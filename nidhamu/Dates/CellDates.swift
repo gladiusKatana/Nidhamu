@@ -27,7 +27,7 @@ extension CollectionVC {
     }
     
     func processEventBasedOnDateRange(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
-        if [column, row] == selectedTimeBlockPath {
+        if [column, row] == selectedTimeBlockPath && eventsAtIndexPath[TimeBlock(values:(column, row))] == nil {
             if textFieldDisplayed { cell.backgroundColor = headerColour} }
         else {
             let oneWeekAgo = cell.cellDate - TimeInterval(86400 * 7)

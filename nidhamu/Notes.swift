@@ -8,7 +8,7 @@
                                                                                                     //current topVC todos
  header row: week-dates
  optimize navigation
-                                                July 18
+                                                July 19
  
                                                                                                     //data model
  mark item as recurring
@@ -30,7 +30,6 @@
                                                 week of 15th
  
                                                                                                     //UI
-  ⁌o⁍rotating with text field presented: keep text partially entered
  settings: TtVCOptional, darkMode, cascading deferrals
  buttons
  launchScreen

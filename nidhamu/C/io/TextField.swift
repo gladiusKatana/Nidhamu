@@ -31,7 +31,7 @@ extension CollectionVC {
         eventField.becomeFirstResponder()
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {      //print("TF_return")
         textField.resignFirstResponder()
         textField.removeFromSuperview(); textFieldDisplayed = false
         let textEntered = textField.text!
