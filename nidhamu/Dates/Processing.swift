@@ -2,7 +2,7 @@
 import UIKit
 
 extension CollectionVC {
-
+    
     func processEventBasedOnDateRange(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
         
         if [column, row] == selectedTimeBlockPath && eventsAtIndexPath[TimeBlock(values:(column, row))] == nil {
@@ -43,8 +43,6 @@ extension CollectionVC {
                 if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}
                 if !pathsToProcess.contains([column, row]) {
                     pathsToProcess.append([column, row])
-//                    cell.layer.borderColor = UIColor.white.cgColor
-//                    cell.backgroundColor = .green
                 }
             }
             if row > 21 {

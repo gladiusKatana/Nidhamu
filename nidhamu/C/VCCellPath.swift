@@ -25,18 +25,13 @@ extension CollectionVC {
                 if eventArraysToProcess.count > 0 { // or could have used pathsToProcess.count > 0
                     
                     if !savedTimeBlocksForProcessing {
-                        eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
-                        
-                        print("\neventsInBlock first set to \(eventsInBlockToBeProcessed)")// initial value
+                        eventsInBlockToBeProcessed = eventArraysToProcess.first!.count //print("\neventsInBlock first set to \(eventsInBlockToBeProcessed)")
                     }
                     
                     //print("block events remaining (initial): \(eventsInBlockToBeProcessed)\n"); print("paths to process: \(pathsToProcess)")
                     processEventsSinceLastLogin(layout: customLayout)
                     savedTimeBlocksForProcessing = true
                 }
-//                else {
-//                    defaultSaveData(showDate: true)
-//                }
             }
         }
         return cell

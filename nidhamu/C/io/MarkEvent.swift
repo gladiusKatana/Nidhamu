@@ -9,30 +9,13 @@ extension CollectionVC {
             globalEventIdentifier = "\(eventArraysToProcess.first![eventIndex].eventDescription)"
             ///; print("event identifier: \(globalEventIdentifier)")
             
-            var (rowException, columnException) = (false, false)
-            
-//            if column >= 6 {columnException = true}
-//            if row > limit {rowException = true}
-            
-
-            presentPopupViewToMarkEvents(column: column, row: row, rowException: rowException, columnException: columnException)
-            ///print("presented popup at [\(column), \(row)]")
-            
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-//                self.reloadCV()
-//                //print("paths to process: \(pathsToProcess)")
-//            }
+            presentPopupViewToMarkEvents(column: column, row: row)
             
             if !savedTimeBlocksForProcessing {
                 if thereWillBeARowException {
                     self.downcastLayout?.autoFitHScale = CGFloat(layout.rows) / CGFloat(layout.rows + 4) //+ 0.01
                 }
-                
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-//                    self.reloadCV()
-//                }
             }
-            
         }
         else {                                                                                      //print("paths to process empty")
             self.downcastLayout?.autoFitHScale = 1
@@ -42,12 +25,12 @@ extension CollectionVC {
         }
     }
     
-    func presentPopupViewToMarkEvents(column: Int, row: Int, rowException: Bool, columnException: Bool) {
+    func presentPopupViewToMarkEvents(column: Int, row: Int) {
         DispatchQueue.main.asyncAfter(deadline: .now()) { // time delay of 0.3 works stably (thus far) on my iPhone 7
             
-            let layout = self.downcastLayout!
-            let cellWidth = layout.widthPlusSpace;      let cellHeight = layout.heightPlusSpace
-            let widthMultiplier = CGFloat(2)
+            let layout = self.downcastLayout!;      let widthMultiplier = CGFloat(2)
+            let cellWidth = layout.widthPlusSpace;  let cellHeight = layout.heightPlusSpace
+            
             
             let classifierLayout = classifierVC.downcastLayout!
             classifierLayout.cellWidth = cellWidth * widthMultiplier;  classifierLayout.cellHeight = cellHeight
@@ -55,9 +38,6 @@ extension CollectionVC {
             let cols = CGFloat(classifierLayout.cols)
             var x = cellWidth * CGFloat(column + 1)
             var y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)
-            
-//            if columnException {x = cellWidth * CGFloat(column - 2)}
-//            if rowException {y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)}
             
             if column >= 6 {x = cellWidth * CGFloat(column - 2)}
             if row > 21 {y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)}

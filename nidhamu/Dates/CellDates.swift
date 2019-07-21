@@ -29,9 +29,7 @@ extension CollectionVC {
         
         if let earliestEventAddress = pathsToProcess.first {
             if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
-//                cell.backgroundColor = .green
-                cell.layer.borderColor = UIColor.white.cgColor
-                cell.layer.borderWidth = 2
+                cell.layer.borderColor = UIColor.white.cgColor;     cell.layer.borderWidth = 2
             }
             else {cell.layer.borderColor = UIColor.clear.cgColor}
         }
