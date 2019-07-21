@@ -40,7 +40,7 @@
 		062516C322D6CF4200EBB4C8 /* VCLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */; };
 		062516C422D6CF4200EBB4C8 /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169422D6CF4200EBB4C8 /* PopupVC.swift */; };
 		062516C522D6CF4200EBB4C8 /* PopupTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169622D6CF4200EBB4C8 /* PopupTap.swift */; };
-		062516C622D6CF4200EBB4C8 /* CellTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169722D6CF4200EBB4C8 /* CellTap.swift */; };
+		062516C622D6CF4200EBB4C8 /* TapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169722D6CF4200EBB4C8 /* TapCell.swift */; };
 		062516C722D6CF4200EBB4C8 /* MarkEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169822D6CF4200EBB4C8 /* MarkEvent.swift */; };
 		062516C822D6CF4200EBB4C8 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169922D6CF4200EBB4C8 /* TextField.swift */; };
 		062516C922D6CF4200EBB4C8 /* CellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169A22D6CF4200EBB4C8 /* CellUI.swift */; };
@@ -119,7 +119,7 @@
 		0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCLifecycle.swift; sourceTree = "<group>"; };
 		0625169422D6CF4200EBB4C8 /* PopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
 		0625169622D6CF4200EBB4C8 /* PopupTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupTap.swift; sourceTree = "<group>"; };
-		0625169722D6CF4200EBB4C8 /* CellTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTap.swift; sourceTree = "<group>"; };
+		0625169722D6CF4200EBB4C8 /* TapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapCell.swift; sourceTree = "<group>"; };
 		0625169822D6CF4200EBB4C8 /* MarkEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkEvent.swift; sourceTree = "<group>"; };
 		0625169922D6CF4200EBB4C8 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		0625169A22D6CF4200EBB4C8 /* CellUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellUI.swift; sourceTree = "<group>"; };
@@ -302,7 +302,7 @@
 		0625169522D6CF4200EBB4C8 /* io */ = {
 			isa = PBXGroup;
 			children = (
-				0625169722D6CF4200EBB4C8 /* CellTap.swift */,
+				0625169722D6CF4200EBB4C8 /* TapCell.swift */,
 				062CDAA022E0033400848D78 /* Pinching.swift */,
 				0625169922D6CF4200EBB4C8 /* TextField.swift */,
 				0625169822D6CF4200EBB4C8 /* MarkEvent.swift */,
@@ -501,7 +501,7 @@
 				062516BA22D6CF4200EBB4C8 /* CellSizing.swift in Sources */,
 				062516D222D6CF4200EBB4C8 /* RefreshUI.swift in Sources */,
 				062516CD22D6CF4200EBB4C8 /* NavTitle.swift in Sources */,
-				062516C622D6CF4200EBB4C8 /* CellTap.swift in Sources */,
+				062516C622D6CF4200EBB4C8 /* TapCell.swift in Sources */,
 				062516BF22D6CF4200EBB4C8 /* ScrollBars.swift in Sources */,
 				062516B522D6CF4200EBB4C8 /* DefaultSave.swift in Sources */,
 				062CDAA122E0033400848D78 /* Pinching.swift in Sources */,

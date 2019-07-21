@@ -6,7 +6,7 @@ extension CollectionVC {
     func processEventBasedOnDateRange(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
         
         if [column, row] == selectedTimeBlockPath && eventsAtIndexPath[TimeBlock(values:(column, row))] == nil {
-            if textFieldDisplayed {cell.backgroundColor = headerColour}
+            if textFieldDisplayed {cell.backgroundColor = eventAddingColour}
         }
         else {
             let oneWeekAgo = cell.cellDate - TimeInterval(86400 * 7)
@@ -21,7 +21,7 @@ extension CollectionVC {
                     cell.titleLabel.text = "last login"
                     cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
                 }
-                prepareToProcessEventsSinceLastLogin(column: column, row: row)
+                prepareToProcessEventsSinceLastLogin(cell: cell, column: column, row: row)
             }
             
             if formattedDateString(Date(), roundedDown: true, prefix: "", suffix: "", short: true)
@@ -30,21 +30,27 @@ extension CollectionVC {
                 cell.backgroundColor = niceOrangeLight
                 cell.cellColour = niceOrangeLight
                 
-                cell.titleLabel.text = "now";  cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
-                prepareToProcessEventsSinceLastLogin(column: column, row: row)
+                cell.titleLabel.text = "now"                                                //; print("now-cell: [\(column), \(row)]")
+                cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
+                prepareToProcessEventsSinceLastLogin(cell: cell, column: column, row: row)
             }
         }
     }
     
-    func prepareToProcessEventsSinceLastLogin(column: Int, row: Int) {
+    func prepareToProcessEventsSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
         if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {        //cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             if !savedTimeBlocksForProcessing {
                 if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}
-                if !pathsToProcess.contains([column, row]) {pathsToProcess.append([column, row])}
+                if !pathsToProcess.contains([column, row]) {
+                    pathsToProcess.append([column, row])
+//                    cell.layer.borderColor = UIColor.white.cgColor
+//                    cell.backgroundColor = .green
+                }
             }
-            if row >= 19 {
+            if row > 21 {
                 thereWillBeARowException = true
             }
         }
     }
 }
+

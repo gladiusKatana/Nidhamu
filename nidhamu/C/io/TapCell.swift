@@ -1,4 +1,4 @@
-// CellTap          ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// TapCell          ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension CollectionVC {
@@ -24,19 +24,19 @@ extension CollectionVC {
                 previousSelectedTimeBlockPath = [column, row]
                 previousTimeBlock = TimeBlock(values:(column, row))
                 
+                if !cell.markedForItems {
+                    UIView.animate(withDuration: 1, delay: 0, // will factor/put in Animations.swift
+                        usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                            cell.backgroundColor = eventAddingColour
+                    }, completion: nil)
+                    cell.markedForItems = true
+                }
+                
                 if eventsAtIndexPath[timeBlock] == nil {
                     formatAndPresentTextField(layout: layout, dateString: dateString)
                     textFieldDisplayed = true
                 }
                 else {gotoView(vc: todoListVC)}
-                
-                if !cell.markedForItems {
-                    UIView.animate(withDuration: 1, delay: 0, // will factor/put in Animations.swift
-                        usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveEaseOut, animations: {
-                            cell.backgroundColor = headerColour
-                    }, completion: nil)
-                    cell.markedForItems = true
-                }
             }
                 
             else if vcType == .todoList {

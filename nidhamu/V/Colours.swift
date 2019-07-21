@@ -7,6 +7,7 @@ var lastWeekColour = darkerIce
 
 //let num = CGFloat(42)
 var headerColour = iosSettingsGray //UIColor.rgb(num, g: num, b: num, a: 1)
+var eventAddingColour = navyBlue
 
 var cellTextDefaultColour = graySeven
 var headerTextDefaultColour = UIColor.black
@@ -18,7 +19,7 @@ var darkerIce = UIColor.rgb(130, g: 160, b: 200, a: 1)              //(150, g: 1
 //var eventTextBlue = UIColor.rgb(50, g: 50, b: 250, a: 1)
 
 //var darkNavy = UIColor.rgb(0, g: 36, b: 82, a: 1)
-//var navyBlue = UIColor.rgb(0, g: 50, b: 96, a: 1)
+var navyBlue = UIColor.rgb(0, g: 50, b: 96, a: 1)
 //var lightNavy = UIColor.rgb(0, g: 56, b: 116, a: 1)
 
 //var jadeGreen = UIColor.rgb(22, g: 134, b: 79, a: 1)

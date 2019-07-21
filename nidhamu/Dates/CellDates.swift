@@ -26,6 +26,16 @@ extension CollectionVC {
         //cell.titleLabel.text = "\(cell.xyCoordinate)"
         //showDateInTitleLabels(cell: cell)
         //showNowCell(cell: cell, column: column, row: row)
+        
+        if let earliestEventAddress = pathsToProcess.first {
+            if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
+//                cell.backgroundColor = .green
+                cell.layer.borderColor = UIColor.white.cgColor
+                cell.layer.borderWidth = 2
+            }
+            else {cell.layer.borderColor = UIColor.clear.cgColor}
+        }
+        else {cell.layer.borderColor = UIColor.clear.cgColor}
     }
     
     
