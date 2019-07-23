@@ -10,24 +10,19 @@ extension CollectionVC {
         let row = indexPath.item;   let column = indexPath.section
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
-            
-            //print("\nselected date (unformatted gmt)  \(cell.cellDate)")
-            //print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
+//            print("\nselected date (unformatted gmt)  \(cell.cellDate)")
+//            print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
             
             selectedCellDate = cell.cellDate
             let dateString = formattedDateString(selectedCellDate, roundedDown: true, prefix: "New event on", suffix: "", short: false)
             
             if vcType == .hours {
-                
                 if !cell.markedForItems { cell.markedForItems = true
                     if selectedTimeBlockPath == defaultPathOffOfView {
-                        //if !cell.markedForItems {
                         UIView.animate(withDuration: 1, delay: 0, // will factor/put in Animations.swift
                             usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveEaseOut, animations: {
                                 cell.backgroundColor = eventAddingColour
                         }, completion: nil)
-                        //cell.markedForItems = true
-                        //}
                     }
                     else {
                         DispatchQueue.main.asyncAfter(deadline: .now()) {
@@ -56,7 +51,6 @@ extension CollectionVC {
             }
                 
             else {print("unrecognized collection view type's cell selected")}
-            
         } else {print("selected header")}
     }
 }

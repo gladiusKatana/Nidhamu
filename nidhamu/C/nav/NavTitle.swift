@@ -14,6 +14,5 @@ extension UICollectionViewController {
         navbarTitleLabel.isUserInteractionEnabled = false
         navigationItem.titleView = navbarTitleLabel
     }
-    
 }
 

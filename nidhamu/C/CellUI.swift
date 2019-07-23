@@ -40,6 +40,5 @@ extension CollectionVC {
             cell.titleLabel.text = weekdaysAbbreviated[column - 1]
         }
     }
-    
 }
 

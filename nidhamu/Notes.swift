@@ -5,28 +5,24 @@
 
  todo                                           deadline                                            //(todos are organized by deadline & by ~kind)
  
- ⁌o⁍ no highlight multiple cells w/textfield
- header row: week-dates
-                                                July 20
- 
                                                                                                     //data model
  mark item as recurring
  deferral-date selection mode on timetableVC
  handle deadlines upon deferring
  cascading deferrals
-                                                July 20
+                                                July 23
  
  
  archive data (eventsAtDate & AtIndexPath)
  CSV emails of archive data
-                                                July 21
+                                                July 24
  
                                                                                                     //views
  calendarVC; populate with eventsAtDate
  morn/aft/eve/night VC
  list VC (today items)
  list VC (deadlineless items)
-                                                week of 15th
+                                                July 29
  
                                                                                                     //UI
  optimize navigation

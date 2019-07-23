@@ -16,5 +16,5 @@ extension CollectionVC {
             self.gotoView(vc: timetableVC)
         }
     }
-    
 }
+
