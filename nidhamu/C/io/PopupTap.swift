@@ -1,8 +1,6 @@
 // PopupTap         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-var eventIndex = 0
-
 extension PopupMenuVC {
     
     override func collectionView(_ collectionView: UICollectionView,

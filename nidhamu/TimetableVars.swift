@@ -14,11 +14,11 @@ var (year, month, day, weekday, weekdayLong, hour, minute) = (Int(), String(), I
 //--------------------------------------------------------------------
 var eventsAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleEvent]>()
 
-var timeBlock = TimeBlock(values:(0, 0));       var previousTimeBlock = TimeBlock(values:(0, 0))
+var timeBlock = TimeBlock(values:(0, 0));           var previousTimeBlock = TimeBlock(values:(0, 0))
 
-var eventArraysToProcess = [[SimpleEvent]]();   var pathsToProcess = [[Int]]()
+var eventArraysToProcess = [[SimpleEvent]]();       var pathsToProcess = [[Int]]()
 
-var eventStatusArrays = [[Int]]()               //* Populated with raw values of enum EventStatus
+var eventStatusArrays = [[Int]]()   //* Populated with raw values of enum EventStatus
 var eventPathArrays = [[Int]]()
 var eventDescriptionArrays = [[String]]()
 var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]] // or  [[[0, "", 0, "", 0, 0] as [Any]]]
@@ -27,14 +27,15 @@ var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int(
 
 var timerForShowScrollIndicator: Timer?
 
-var selectedTimeBlockPath = [-1, -1];           var previousSelectedTimeBlockPath = [0, 0]
+var defaultPathOffOfView = [-3, -3];
+var selectedTimeBlockPath = defaultPathOffOfView;   var previousSelectedTimeBlockPath = [0, 0]
 
-var nowRow = 0;                                 var nowColumn = 0
-var eventsInBlockToBeProcessed = 0
+var nowRow = 0;                                     var nowColumn = 0
+var eventIndex = 0;                                 var eventsInBlockToBeProcessed = 0
 
-var reloadedFromHourTickingOver = false;        var textFieldDisplayed = false;             var savedTimeBlocksForProcessing = false
+var reloadedFromHourTickingOver = false;            var textFieldDisplayed = false;             var savedTimeBlocksForProcessing = false
 
-var globalEventIdentifier = "(event)";          var defaultEmptyEventDescription = "❒"
+var globalEventIdentifier = "(event)";              var defaultEmptyEventDescription = "❒"
 
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 var weekdaysAbbreviated = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]

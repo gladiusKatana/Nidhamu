@@ -11,26 +11,37 @@ extension CollectionVC {
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
-//            print("\nselected date (unformatted gmt)  \(cell.cellDate)")
-//            print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
+            //print("\nselected date (unformatted gmt)  \(cell.cellDate)")
+            //print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
             
             selectedCellDate = cell.cellDate
             let dateString = formattedDateString(selectedCellDate, roundedDown: true, prefix: "New event on", suffix: "", short: false)
             
             if vcType == .hours {
-                selectedTimeBlockPath = [column, row]                               //; print("selected time block path \(selectedTimeBlockPath)")
+                
+                if !cell.markedForItems { cell.markedForItems = true
+                    if selectedTimeBlockPath == defaultPathOffOfView {
+                        //if !cell.markedForItems {
+                        UIView.animate(withDuration: 1, delay: 0, // will factor/put in Animations.swift
+                            usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                                cell.backgroundColor = eventAddingColour
+                        }, completion: nil)
+                        //cell.markedForItems = true
+                        //}
+                    }
+                    else {
+                        DispatchQueue.main.asyncAfter(deadline: .now()) {
+                            cell.backgroundColor = eventAddingColour
+                            self.reloadCV()
+                        }
+                    }
+                }
+                
+                selectedTimeBlockPath = [column, row]           //; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
                 
                 previousSelectedTimeBlockPath = [column, row]
                 previousTimeBlock = TimeBlock(values:(column, row))
-                
-                if !cell.markedForItems {
-                    UIView.animate(withDuration: 1, delay: 0, // will factor/put in Animations.swift
-                        usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveEaseOut, animations: {
-                            cell.backgroundColor = eventAddingColour
-                    }, completion: nil)
-                    cell.markedForItems = true
-                }
                 
                 if eventsAtIndexPath[timeBlock] == nil {
                     formatAndPresentTextField(layout: layout, dateString: dateString)
