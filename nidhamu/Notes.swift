@@ -3,14 +3,13 @@
                                                 July. 08, 2019                                      //1st commit
 
 
- todo                                           deadline                                            //(todos are organized by deadline & by ~kind)
+ todo                                           deadline                                            //(todos organized by deadline & ~kind)
  
                                                                                                     //data model
- handle deadlines upon deferring
- cascading deferrals
  ⁌o⁍ process dates:wrongtaplogic
+ timetableVC deferral-date selection mode
+ cascading deferrals
  mark item as recurring
- deferral-date selection mode on timetableVC
 
                                                 July 25
  

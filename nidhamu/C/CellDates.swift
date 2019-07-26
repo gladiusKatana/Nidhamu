@@ -11,7 +11,6 @@ extension CollectionVC {
         
         if looping {weekAheadInt = setCellWeek(cell: cell, column: column, row: row, layout: layout, withColours: withColours)}
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
-        
         cell.titleLabel.font = defaultTimetableCellFont
         
         if row == 1 {
@@ -26,11 +25,10 @@ extension CollectionVC {
         
         if let earliestEventAddress = pathsToProcess.first {
             if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
-                cell.layer.borderColor = UIColor.white.cgColor;     cell.layer.borderWidth = 2
-            }
-            else {cell.layer.borderColor = UIColor.clear.cgColor}
-        }
-        else {cell.layer.borderColor = UIColor.clear.cgColor}
+                cell.layer.borderColor = UIColor.white.cgColor
+                cell.layer.borderWidth = 2
+            } else {cell.layer.borderColor = UIColor.clear.cgColor}
+        } else {cell.layer.borderColor = UIColor.clear.cgColor}
     }
     
     func setCellWeek(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, withColours: Bool) -> Int {
