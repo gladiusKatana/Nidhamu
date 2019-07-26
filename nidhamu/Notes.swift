@@ -8,7 +8,6 @@
                                                                                                     //data model
  handle deadlines upon deferring
  cascading deferrals
- *month abbrev
  *process dates in landscape
  mark item as recurring
  deferral-date selection mode on timetableVC

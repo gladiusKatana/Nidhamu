@@ -15,7 +15,6 @@ extension CollectionVC {
         cell.titleLabel.font = defaultTimetableCellFont
         
         if row == 1 {
-            ///cell.cellDate = Date() + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600)
             let displayCellDate = Date() + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600)
             showDateInTitleLabels(date: displayCellDate, cell: cell)
         }
@@ -23,9 +22,8 @@ extension CollectionVC {
             cell.cellDate = Date() + hoursFromNow + daysFromNow + potentialWeekAhead // dates not actually rounded: just displayed rounded sometimes
             processEventBasedOnDateRange(cell: cell, column: column, row: row, layout: layout)
         }
-//        cell.titleLabel.text = "\(cell.xyCoordinate)"
-//        showDateInTitleLabels(cell: cell)
-//        showNowCell(cell: cell, column: column, row: row)
+        //showDateInTitleLabels(cell: cell)
+        
         if let earliestEventAddress = pathsToProcess.first {
             if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
                 cell.layer.borderColor = UIColor.white.cgColor;     cell.layer.borderWidth = 2
@@ -48,11 +46,12 @@ extension CollectionVC {
     }
     
     func showDateInTitleLabels(date: Date, cell: CustomCell) {
-        let mo = months[Calendar.current.component(.month, from: date) - 1]
+        let mo = monthsAbbreviated[Calendar.current.component(.month, from: date) - 1]
         let dy = Calendar.current.component(.day, from: date)
         cell.titleLabel.text = "\(mo) \(dy)"
     }
 }
+
 
 
 
