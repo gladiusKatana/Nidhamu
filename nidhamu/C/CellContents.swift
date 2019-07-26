@@ -25,7 +25,7 @@ extension CollectionVC {
             
             cell.cellDate = selectedCellDate
             
-            guard let eventAtTimeBlock = eventsAtIndexPath[previousTimeBlock] else {
+            guard let eventAtTimeBlock = eventsAtIndexPath[timeBlock] else {    //eventsAtIndexPath[previous TimeBlock]
                 cell.titleLabel.text = "(no items yet)"; return
             }
             

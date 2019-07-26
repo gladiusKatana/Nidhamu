@@ -6,16 +6,19 @@
  todo                                           deadline                                            //(todos are organized by deadline & by ~kind)
  
                                                                                                     //data model
- mark item as recurring
- deferral-date selection mode on timetableVC
  handle deadlines upon deferring
  cascading deferrals
-                                                July 23
+ *month abbrev
+ *process dates in landscape
+ mark item as recurring
+ deferral-date selection mode on timetableVC
+
+                                                July 25
  
  
  archive data (eventsAtDate & AtIndexPath)
  CSV emails of archive data
-                                                July 24
+                                                July 26
  
                                                                                                     //views
  calendarVC; populate with eventsAtDate
