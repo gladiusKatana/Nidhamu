@@ -9,9 +9,7 @@ extension CollectionVC {
             
             setupHourlyCells(cell: cell, column: column, row: row, layout: layout, looping: loopWeeks, withColours: demarcateWeeksByColour)
             
-            let cellTimeBlock = TimeBlock(values:(column, row))
-            
-            if let events = eventsAtIndexPath[cellTimeBlock] {
+            if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {
                 if events.count == 1 {
                     cell.titleLabel.text = events[0].eventDescription
                 }
@@ -25,7 +23,7 @@ extension CollectionVC {
             
             cell.cellDate = selectedCellDate
             
-            guard let eventAtTimeBlock = eventsAtIndexPath[timeBlock] else {    //eventsAtIndexPath[previous TimeBlock]
+            guard let eventAtTimeBlock = eventsAtIndexPath[timeBlock] else {    //eventsAt IndexPath[previous TimeBlock]
                 cell.titleLabel.text = "(no items yet)"; return
             }
             

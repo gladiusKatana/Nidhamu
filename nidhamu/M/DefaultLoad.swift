@@ -35,8 +35,7 @@ func populateDictionaryFromDefaults() {
             events.append(event)
             j += 1
         }
-        let timeBlock = TimeBlock(values: (path[0], path[1]))
-        eventsAtIndexPath[timeBlock] = events
+        eventsAtIndexPath[TimeBlock(values: (path[0], path[1]))] = events
         i += 1
     }
 }

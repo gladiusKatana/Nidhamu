@@ -19,19 +19,19 @@ extension CollectionVC {
     
     func addToTimeBlocks(column: Int, row: Int, textEntered: String) {
         
-        let timeBlock = TimeBlock(values:(column, row))
+        let timeBlockToAdd = TimeBlock(values:(column, row))
         let simpleEvent = SimpleEvent(eventDescription: textEntered, eventDate: selectedCellDate, eventStatus: .upcoming)
         
-        if eventsAtIndexPath[timeBlock] != nil {
-            if eventsAtIndexPath[timeBlock]?.last!.eventDescription == defaultEmptyEventDescription {
-                eventsAtIndexPath[timeBlock] = [simpleEvent]
+        if eventsAtIndexPath[timeBlockToAdd] != nil {
+            if eventsAtIndexPath[timeBlockToAdd]?.last!.eventDescription == defaultEmptyEventDescription {
+                eventsAtIndexPath[timeBlockToAdd] = [simpleEvent]
             }
             else {
-                eventsAtIndexPath[timeBlock]!.append(simpleEvent)
+                eventsAtIndexPath[timeBlockToAdd]!.append(simpleEvent)
             }
         }
             
-        else {eventsAtIndexPath[timeBlock] = [simpleEvent]}
+        else {eventsAtIndexPath[timeBlockToAdd] = [simpleEvent]}
     }
 }
 
