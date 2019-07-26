@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func setCellContents (cell: CustomCell, row: Int, column: Int, layout: CustomFlowLayout) {         //cell. titleLabel.text = "\(column),\(row)"
+    func setCellContents (cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {         //cell. titleLabel.text = "\(column),\(row)"
         
         if vcType == .hours {
             
@@ -29,9 +29,18 @@ extension CollectionVC {
                 cell.titleLabel.text = "(no items yet)"; return
             }
             
-            if column == 0 {cell.titleLabel.text = eventAtTimeBlock[row].eventDescription}
+            if column == 0 {
+                cell.titleLabel.text = eventAtTimeBlock[row].eventDescription
+                cell.titleLabel.textColor = .black
+            }
             else {
-                cell.titleLabel.text = "\(eventAtTimeBlock[row].eventStatus)"
+                cell.titleLabel.textColor = grayTwo
+                if column == 1 {
+                    cell.titleLabel.text = formattedDateString(eventAtTimeBlock[row].eventDate, roundedDown: true, prefix: "", suffix: "", short: true)
+                }
+                else {
+                    cell.titleLabel.text = "\(eventAtTimeBlock[row].eventStatus)"
+                }
             }
             
         } else {print("[setCellContents(:)] unrecognized collection view type")}//not called, but will add more vcs from project DMY-Tabs-Calendar

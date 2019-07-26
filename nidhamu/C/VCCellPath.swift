@@ -19,7 +19,7 @@ extension CollectionVC {
         }
         else {
             setCellColours(cell: cell, cellIsInHeader: false)
-            setCellContents(cell: cell, row: row, column: column, layout: customLayout)
+            setCellContents(cell: cell, column: column, row: row, layout: customLayout)
             
             if row == customLayout.rows - 1 && column == customLayout.cols - 1 {              //; print("events to process: \(events ToProcess)")//*
                 if eventArraysToProcess.count > 0 { // or could have used pathsToProcess.count > 0

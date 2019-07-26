@@ -16,7 +16,7 @@ var timetableLayout = CustomFlowLayout(
 
 var todoListLayout = CustomFlowLayout(embeddedInNavController: true,
                                       customFrame: globalKeyWindow.frame,
-                                      rows: 1, cols: 2, lockedHeaderRows: 0, lockedHeaderSections: 0,
+                                      rows: 1, cols: 3, lockedHeaderRows: 0, lockedHeaderSections: 0,
                                       cellWidth: nil, cellHeight: nil,
                                       autoFitWScale: 1, autoFitHScale: 0.667,
                                       hSpace: cellGap, vSpace: cellGap,
