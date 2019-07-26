@@ -8,8 +8,7 @@ extension CollectionVC {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
         let customLayout = downcastLayout!
-        let row = indexPath.item; let column = indexPath.section
-        cell.xyCoordinate = [column, row]
+        let row = indexPath.item;   let column = indexPath.section;   cell.xyCoordinate = [column, row]
         
         if row < customLayout.lockedHeaderRows && row != 1
             || column < customLayout.lockedHeaderSections {

@@ -50,15 +50,11 @@ extension CollectionVC {
         let dy = Calendar.current.component(.day, from: date)
         cell.titleLabel.text = "\(mo) \(dy)"
     }
+    
+    //    func showNowCell(cell: CustomCell, column: Int, row: Int) {
+    //        if row == nowRow && column == nowColumn { print("now-cell is at [\(column), \(row)]")}
+    //        //presentPopupViewToMarkEvents(column: column, row: row) //! // testing popup window; not the typical condition under which it pops up
+    //    }
 }
 
-
-
-
-
-
-//    func showNowCell(cell: CustomCell, column: Int, row: Int) {
-//        if row == nowRow && column == nowColumn { print("now-cell is at [\(column), \(row)]")}
-//        //presentPopupViewToMarkEvents(column: column, row: row) //! // testing popup window; not the typical condition under which it pops up
-//    }
 

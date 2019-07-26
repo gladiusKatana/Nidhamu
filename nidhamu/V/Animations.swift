@@ -27,6 +27,5 @@ extension CollectionVC {
         }, completion: nil)
         selectedTimeBlockPath = defaultPathOffOfView
     }
-    
 }
 

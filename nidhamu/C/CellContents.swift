@@ -35,7 +35,8 @@ extension CollectionVC {
             else {
                 cell.titleLabel.textColor = grayTwo
                 if column == 1 {
-                    cell.titleLabel.text = formattedDateString(eventAtTimeBlock[row].eventDate, roundedDown: true, prefix: "", suffix: "", short: true)
+                    cell.titleLabel.text = formattedDateString(eventAtTimeBlock[row].eventDate,
+                                                               roundedDown: true, prefix: "", suffix: "", short: false)
                 }
                 else {
                     cell.titleLabel.text = "\(eventAtTimeBlock[row].eventStatus)"
