@@ -15,7 +15,6 @@ extension CollectionVC { //* will try to shorten this one, soon
             print("💾\(vcType)\(str)")                          // disk emoji means loaded
             setTopViewController()
         }
-        
         periodicDateRefresh(){kickoffTimer()}   // if you want to check the date then do the timer kickoff ('start on the 0th callback')
         //kickoffTimer()                        // if you want to do the timer kickoff then check the date ('start on the 1st callback')
     }

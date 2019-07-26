@@ -8,8 +8,10 @@ extension CollectionVC {
             let dismissPinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
             self.view.addGestureRecognizer(dismissPinch)
         }
+        
         if vcType == .hours {justPinched = false}
     }
+    
     
     @objc func handlePinch() {
         if !justPinched { justPinched = true

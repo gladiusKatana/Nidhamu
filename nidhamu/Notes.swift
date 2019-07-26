@@ -8,7 +8,7 @@
                                                                                                     //data model
  handle deadlines upon deferring
  cascading deferrals
- *process dates in landscape
+ ⁌o⁍ process dates:wrongtaplogic
  mark item as recurring
  deferral-date selection mode on timetableVC
 

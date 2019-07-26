@@ -56,6 +56,7 @@ extension CollectionVC {
 
 
 
+
 //    func showNowCell(cell: CustomCell, column: Int, row: Int) {
 //        if row == nowRow && column == nowColumn { print("now-cell is at [\(column), \(row)]")}
 //        //presentPopupViewToMarkEvents(column: column, row: row) //! // testing popup window; not the typical condition under which it pops up

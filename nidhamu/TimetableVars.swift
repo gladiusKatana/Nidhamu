@@ -14,7 +14,7 @@ var (year, month, day, weekday, weekdayLong, hour, minute) = (Int(), String(), I
 //--------------------------------------------------------------------
 var eventsAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleEvent]>()
 
-var timeBlock = TimeBlock(values:(0, 0));           //var previousTimeBlock = TimeBlock(values:(0, 0))
+var timeBlock = TimeBlock(values:(0, 0))
 
 var eventArraysToProcess = [[SimpleEvent]]();       var pathsToProcess = [[Int]]()
 

@@ -172,7 +172,6 @@
 				06164A2C22D6D19000DA608D /* Dates.swift */,
 				06164A2D22D6D19000DA608D /* DateData.swift */,
 				06164A2F22D6D19000DA608D /* DateRefresh.swift */,
-				06164A2E22D6D19000DA608D /* CellDates.swift */,
 				0631914322E2C5F5004DE476 /* Processing.swift */,
 			);
 			path = Dates;
@@ -286,11 +285,12 @@
 		0625169222D6CF4200EBB4C8 /* C */ = {
 			isa = PBXGroup;
 			children = (
-				062516A622D6CF4200EBB4C8 /* CellContents.swift */,
-				0625169A22D6CF4200EBB4C8 /* CellUI.swift */,
-				0625169B22D6CF4200EBB4C8 /* VCCellPath.swift */,
-				0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */,
 				0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */,
+				0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */,
+				0625169B22D6CF4200EBB4C8 /* VCCellPath.swift */,
+				0625169A22D6CF4200EBB4C8 /* CellUI.swift */,
+				062516A622D6CF4200EBB4C8 /* CellContents.swift */,
+				06164A2E22D6D19000DA608D /* CellDates.swift */,
 				0625169E22D6CF4200EBB4C8 /* nav */,
 				0625169522D6CF4200EBB4C8 /* io */,
 				0625169422D6CF4200EBB4C8 /* PopupVC.swift */,

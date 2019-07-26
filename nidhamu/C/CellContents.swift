@@ -5,7 +5,9 @@ extension CollectionVC {
     
     func setCellContents (cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {         //cell. titleLabel.text = "\(column),\(row)"
         
-        if vcType == .hours {
+        switch vcType {
+            
+        case .hours:
             
             setupHourlyCells(cell: cell, column: column, row: row, layout: layout, looping: loopWeeks, withColours: demarcateWeeksByColour)
             
@@ -17,9 +19,8 @@ extension CollectionVC {
                     cell.titleLabel.text = "(\(events.count) items)"
                 }
             }
-        }
             
-        else if vcType == .todoList {
+        case .todoList:
             
             cell.cellDate = selectedCellDate
             
@@ -41,7 +42,7 @@ extension CollectionVC {
                 }
             }
             
-        } else {print("[setCellContents(:)] unrecognized collection view type")}//not called, but will add more vcs from project DMY-Tabs-Calendar
+        default: print("[setCellContents(:)] unrecognized collection view type")}
     }
 }
 

@@ -6,17 +6,18 @@ extension CollectionVC {
     override func collectionView(_ collectionView: UICollectionView,
                                  didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
-        let layout = downcastLayout!
-        let row = indexPath.item;   let column = indexPath.section
+        let layout = downcastLayout!;       let row = indexPath.item;       let column = indexPath.section
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
-//            print("\nselected date (unformatted gmt)  \(cell.cellDate)")
-//            print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
-            
+            //print("\nselected date (unformatted gmt)  \(cell.cellDate)")
+            //print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
             selectedCellDate = cell.cellDate
             let dateString = formattedDateString(selectedCellDate, roundedDown: true, prefix: "New event on", suffix: "", short: false)
             
-            if vcType == .hours {
+            switch vcType {
+                
+            case .hours:
+                
                 if !cell.markedForItems { cell.markedForItems = true
                     if selectedTimeBlockPath == defaultPathOffOfView {
                         UIView.animate(withDuration: 1, delay: 0, // will factor/put in Animations.swift
@@ -36,21 +37,20 @@ extension CollectionVC {
                 timeBlock = TimeBlock(values:(column, row))
                 
                 previousSelectedTimeBlockPath = [column, row]
-                //previousTimeBlock = TimeBlock(values:(column, row))
                 
                 if eventsAtIndexPath[timeBlock] == nil {
                     formatAndPresentTextField(layout: layout, dateString: dateString)
                     textFieldDisplayed = true
                 }
                 else {gotoView(vc: todoListVC)}
-            }
                 
-            else if vcType == .todoList {
+            case .todoList:
+                
                 formatAndPresentTextField(layout: layout, dateString: dateString)
                 textFieldDisplayed = true
-            }
                 
-            else {print("unrecognized collection view type's cell selected")}
+            default: print("unrecognized collection view type's cell selected")}
+            
         } else {print("selected header")}
     }
 }
