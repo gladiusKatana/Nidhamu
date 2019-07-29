@@ -1,7 +1,7 @@
 // GoToVC           ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-extension UICollectionViewController {
+extension CollectionVC { //UICollectionViewController {
     
     func gotoView(vc: CollectionVC) {                                               //print("\nshowing vc \(vc)")
         

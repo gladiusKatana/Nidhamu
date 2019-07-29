@@ -11,7 +11,7 @@ extension CollectionVC {
         else {
             let oneWeekAgo = cell.cellDate - TimeInterval(86400 * 7)
             
-            if oneWeekAgo >= lastLoggedInDate && oneWeekAgo <= Date() {
+            if oneWeekAgo >= lastLoggedInDate && oneWeekAgo <= Date() - TimeInterval(3600) { // stop 1 time block short of the now-cell
                 
                 cell.backgroundColor = niceOrangeLight                      //! shows up momentarily after launch on ipad mini 4, landscape
                 cell.cellColour = niceOrangeLight
@@ -26,13 +26,8 @@ extension CollectionVC {
             
             if formattedDateString(Date(), roundedDown: true, prefix: "", suffix: "", short: true)
                 == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
-                
-                cell.backgroundColor = niceOrangeLight
-                cell.cellColour = niceOrangeLight
-                
                 cell.titleLabel.text = "now"                                                //; print("now-cell: [\(column), \(row)]")
                 cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
-                prepareToProcessEventsSinceLastLogin(cell: cell, column: column, row: row)
             }
         }
     }

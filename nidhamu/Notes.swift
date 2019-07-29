@@ -6,24 +6,22 @@
  todo                                           deadline                                            //(todos organized by deadline & ~kind)
  
                                                                                                     //data model
- ⁌o⁍ process dates:wrongtaplogic
+ ⁌o⁍ classifierVC no longer first responder after landscape/update date
  timetableVC deferral-date selection mode
  cascading deferrals
  mark item as recurring
-
-                                                July 25
- 
+                                                July 29
  
  archive data (eventsAtDate & AtIndexPath)
  CSV emails of archive data
-                                                July 26
+                                                Aug 1
  
                                                                                                     //views
  calendarVC; populate with eventsAtDate
  morn/aft/eve/night VC
  list VC (today items)
  list VC (deadlineless items)
-                                                July 29
+                                                Aug 3
  
                                                                                                     //UI
  optimize navigation

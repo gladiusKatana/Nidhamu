@@ -1,16 +1,16 @@
-// TapCell          ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// Tap              ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension CollectionVC {
     
     override func collectionView(_ collectionView: UICollectionView,
-                                 didSelectItemAt indexPath: IndexPath) {
+                                 didSelectItemAt indexPath: IndexPath) {                            print("selected tt cell")
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
         let layout = downcastLayout!;       let row = indexPath.item;       let column = indexPath.section
-        
+//        print("\nselected date (unformatted gmt)  \(cell.cellDate)")
+//        print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
+
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
-            //print("\nselected date (unformatted gmt)  \(cell.cellDate)")
-            //print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
             selectedCellDate = cell.cellDate
             let dateString = formattedDateString(selectedCellDate, roundedDown: true, prefix: "New event on", suffix: "", short: false)
             

@@ -9,7 +9,7 @@ var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int()
 
 var (year, month, day, weekday, weekdayLong, hour, minute) = (Int(), String(), Int(), String(), String(), Int(), Int())
 
-//* Convention: reserving full-spelled date-component names for CURRENT date (Date(), ie RIGHT NOW, where NOW is correct to within a refresh period)
+//* Convention: reserving full-spelled date-component names for CURRENT date (Date(), ie RIGHT NOW; NOW is correct to within a 3s refresh period)
 
 //--------------------------------------------------------------------
 var eventsAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleEvent]>()
@@ -33,7 +33,8 @@ var selectedTimeBlockPath = defaultPathOffOfView;   var previousSelectedTimeBloc
 var nowRow = 0;                                     var nowColumn = 0
 var eventIndex = 0;                                 var eventsInBlockToBeProcessed = 0
 
-var reloadedFromHourTickingOver = false;            var textFieldDisplayed = false;             var savedTimeBlocksForProcessing = false
+var reloadedFromHourTickingOver = false;            var textFieldDisplayed = false
+var savedTimeBlocksForProcessing = false;           var classifierViewDisplayed = false
 
 var globalEventIdentifier = "(event)";              var defaultEmptyEventDescription = "❒"
 

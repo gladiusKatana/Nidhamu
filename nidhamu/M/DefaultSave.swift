@@ -34,7 +34,7 @@ func defaultSaveData(showDate: Bool) {
             eventDateArrays.append(eventDateComponents)
         }//else {print("\n!descriptions array at this time block contains only default (\(defaultEmptEventDescription)), and it's: \(vals[0].eventDescription)")}
     }
-    pryntSavedArrays()
+//    pryntSavedArrays()
     //lastLoginDateComponents = [year, month, day, weekday, hour, minute] // setting the /latest login date (for saving) as the date this minute
     let (yr, mnth, dy, wkdy, _, hr, mn) = displayDate(Date(), roundedDown: false)
     lastLoginDateComponents = [yr, mnth, dy, wkdy, hr, mn]

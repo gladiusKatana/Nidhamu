@@ -5,7 +5,7 @@ extension CollectionVC {
     
     func setupHourlyCells(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, looping: Bool, withColours: Bool) {
         
-        let hoursFromNow = TimeInterval(3600 * (row - 1 - nowRow)) //- layout.lockedHeaderRows + 1
+        let hoursFromNow = TimeInterval(3600 * (row - nowRow))
         let daysFromNow = TimeInterval(86400 * (column - nowColumn))
         var weekAheadInt = 0
         
@@ -20,8 +20,8 @@ extension CollectionVC {
         else {
             cell.cellDate = Date() + hoursFromNow + daysFromNow + potentialWeekAhead // dates not actually rounded: just displayed rounded sometimes
             processEventBasedOnDateRange(cell: cell, column: column, row: row, layout: layout)
+            //showDateInTitleLabels(date: cell.cellDate, cell: cell)
         }
-        //showDateInTitleLabels(cell: cell)
         
         if let earliestEventAddress = pathsToProcess.first {
             if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
@@ -34,7 +34,7 @@ extension CollectionVC {
     func setCellWeek(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, withColours: Bool) -> Int {
         var weekAhead = 0
         
-        if column < nowColumn || column == nowColumn && row - 1 < nowRow {
+        if column < nowColumn || column == nowColumn && row < nowRow {
             if withColours && row != 1 {
                 cell.backgroundColor = lastWeekColour; cell.cellColour = lastWeekColour
             }
@@ -49,10 +49,10 @@ extension CollectionVC {
         cell.titleLabel.text = "\(mo) \(dy)"
     }
     
-    //    func showNowCell(cell: CustomCell, column: Int, row: Int) {
-    //        if row == nowRow && column == nowColumn { print("now-cell is at [\(column), \(row)]")}
-    //        //presentPopupViewToMarkEvents(column: column, row: row) //! // testing popup window; not the typical condition under which it pops up
-    //    }
+    /*func showNowCell(cell: CustomCell, column: Int, row: Int) {
+        if row == nowRow && column == nowColumn { print("now-cell is at [\(column), \(row)]")}
+        //presentPopupViewToMarkEvents(column: column, row: row) //! // testing popup window; not the typical condition under which it pops up
+    }*/
 }
 
 

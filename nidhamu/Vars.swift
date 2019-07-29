@@ -20,6 +20,7 @@ var thereWillBeARowException = false
 
 var currentOrientation = "orientation (landscape or portrait) for prepare-layout logic"             //* will change this to an enum at some point
 var previousOrientation = "previous orientation (landscape or portrait) for prepare-layout logic"   //* " "
+var lastActiveOrientation = "orientation (landscape or portrait) before sending app to background"  //* " "
 var launchOrientation = "orientation at the moment of launch"                                       //* " "
 
 var loadSymbolLegend = "                                  💾 = view loaded";

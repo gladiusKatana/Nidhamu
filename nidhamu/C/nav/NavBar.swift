@@ -1,7 +1,7 @@
 // NavBar           ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-extension UICollectionViewController { //CollectionVC {//***
+extension CollectionVC { //UICollectionViewController { //***
     
     func setupNavBarButtons(_ withCustomColour: UIColor?, atIndex: Int?) {
         let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableImage")

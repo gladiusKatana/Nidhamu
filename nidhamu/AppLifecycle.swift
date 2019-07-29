@@ -3,41 +3,60 @@ import UIKit
 
 extension AppDelegate {
     
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        let str = "🔅became active"
-        if firstReenteredForeground {customApplicationStatusPrint(applicationState: str)}
-        else {print(str)}
+    func applicationDidBecomeActive(_ application: UIApplication) {         let s = "🔅became active"
+//        if firstReenteredForeground {
+//        customApplicationStatusPrint(applicationState: str)
+//        } else {
+            print(s)
+//        }
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             topVC.reloadCV()
         }
-        defaultLoadData(showDate: true)
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+//            if lastActiveOrientation == "landscape" {
+//                AppUtility.lockOrientation(.landscape)
+//            }
+//        }
+        
+        defaultLoadData(showDate: false)
     }
     
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        
+        print("🌔will enter foreground, orientation \(currentOrientation), was \(lastActiveOrientation)")
+
+        //if !firstReenteredForeground {print("entered foreground for the first time")}
+//        if  {
+        firstReenteredForeground = true // 1-way bool (stays true, since dismissing then reopening app causes visual glitch over remaining lifecycle)
+//        }
+        
+    }
+    
+    
     func applicationWillResignActive(_ application: UIApplication) {
-        customApplicationStatusPrint(applicationState: "⏸will resign active")
-        defaultSaveData(showDate: true)
+        
+        customApplicationStatusPrint(applicationState: "⏸will resign active") //, orientation was \(currentOrientation)
+        
+        defaultSaveData(showDate: false)
         
         savedTimeBlocksForProcessing = false
     }
     
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        customApplicationStatusPrint(applicationState: "🌘entered background")
-    }
     
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        print("🌔will enter foreground")
+    func applicationDidEnterBackground(_ application: UIApplication) {      customApplicationStatusPrint(applicationState: "🌘entered background")
         
-        //if !firstReenteredForeground {print("entered foreground for the first time")}
-        firstReenteredForeground = true // 1-way bool: never reset (calling above 2 methods causes layout exception over the whole life cycle)
+        lastActiveOrientation = currentOrientation
     }
     
-    func applicationWillTerminate(_ application: UIApplication) {
-        print("terminated")
+    
+    func applicationWillTerminate(_ application: UIApplication) {           print("terminated")
     }
     
-    func customApplicationStatusPrint(applicationState: String) {
-        print("\n\(applicationState)")
-    }
+    
+    func customApplicationStatusPrint(
+        applicationState: String) { print("\n\(applicationState)")}
 }
 

@@ -45,6 +45,7 @@ extension CollectionVC { //* will try to shorten this one, soon
     override func viewWillDisappear(_ animated: Bool) {         //print("...\(vcType) will disappear...")
         if vcType == .todoList {
             if textFieldDisplayed {
+                eventField.resignFirstResponder()
                 eventField.removeFromSuperview()                //; print("removed text field")
                 textFieldDisplayed = false
             }

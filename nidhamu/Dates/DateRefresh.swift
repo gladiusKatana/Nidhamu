@@ -3,32 +3,42 @@ import UIKit
 
 func processCurrentDate() {
     (year, month, day, weekday, weekdayLong, hour, minute) = displayDate(Date(), roundedDown: true)
-    //; print(formattedDateString(Date(), comment: "process dates @ ", short: false))
+//    ; print(formattedDateString(Date(), comment: "process dates @ ", short: false))
     
-    nowRow = Calendar.current.component(.hour, from: Date()) + 1
-    nowColumn = weekdaysAbbreviated.firstIndex(of: weekday)! + 1
+    nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows
+    nowColumn = weekdaysAbbreviated.firstIndex(of: weekday)! + timetableLayout.lockedHeaderSections;         //print("nowCell: \([nowColumn, nowRow])")
+    
+    if !reloadedFromHourTickingOver {
+        if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections {
+            
+            //print("new week")
+            
+            lastLoginDateComponents = [year, month, day, weekday, hour, minute]
+            lastLoggedInDate = dateFromComponents(lastLoginDateComponents)
+//            pryntLastLoginDate()
+//            pryntCurrentDate()
+        }
+//        else {print("new hour")}
+        reloadedFromHourTickingOver = true
+    }
 }
 
 extension CollectionVC {
     
-    func periodicDateRefresh(completion: () -> ()) {                                            //print("·")
-        if "\(Date())".contains(":00:") {                                                       //print("the hour ticked over")
-            if nowRow == timetableLayout.rows - 1 && nowColumn == timetableLayout.cols - 1 {    //print("the week just rolled over")
-                lastLoginDateComponents = [year, month, day, weekday, hour, minute]
-                lastLoggedInDate = dateFromComponents(lastLoginDateComponents)
-                pryntLastLoginDate()
-                pryntCurrentDate()
-            }
+    func periodicDateRefresh(completion: () -> ()) {                                                         //print("·", terminator: "")
+        
+        if "\(Date())".contains(":59:") {
+            reloadedFromHourTickingOver = false
+        }
+        
+        if "\(Date())".contains(":00:") {
             if !reloadedFromHourTickingOver {
                 DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
                     self?.reloadCV()
                 }
-                reloadedFromHourTickingOver = true
-            }
-            else {
-                reloadedFromHourTickingOver = false
             }
         }
+        
         completion()
     }
     
