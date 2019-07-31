@@ -7,7 +7,7 @@ import UIKit
     var orientationLock = UIInterfaceOrientationMask.landscape         // set orientations you want to be allowed in this property by default
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-
+        
         func application(_ application: UIApplication,
                          supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
             return self.orientationLock
@@ -29,7 +29,7 @@ import UIKit
         UINavigationBar.appearance().barTintColor = .white //bluishGrey
         UINavigationBar.appearance().shadowImage = UIImage()
         
-//        print(formattedDateString(Date(), roundedDown: false, prefix: "                      on", suffix: "", short: false))
+        //print(formattedDateString(Date(), roundedDown: false, prefix: "                      on", suffix: "", short: false))
         return true
     }
     

@@ -11,7 +11,7 @@ func defaultLoadData(showDate: Bool) {                                          
     } else {
         let (yr, mo, dy, wkd, _, hr, mn) = displayDate(Date(), roundedDown: true)
         lastLoginDateComponents = [yr, mo, dy, wkd, hr, mn]
-//        print("\nfirst login")
+        //print("\nfirst login")
     }
     eventPathArrays = defaults.array(forKey: "savedTimeBlockPaths") as? [[Int]] ?? []
     eventDescriptionArrays = defaults.array(forKey: "savedTodoListItems") as? [[String]] ?? []

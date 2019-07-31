@@ -34,9 +34,5 @@ class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
         collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: self.downcastLayout!.cellHeight! * hscale, left: 0, bottom: 0, right: 0)
         collectionView.reloadData()
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        collectionView?.isUserInteractionEnabled = true
-//    }
 }
 

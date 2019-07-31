@@ -50,8 +50,8 @@ extension CollectionVC {
             ///globalKeyWindow.addSubview(classifierVC.view)
             classifierViewDisplayed = true
             
-//            timetableVC.resignFirstResponder()
-//            classifierVC.becomeFirstResponder()
+            //timetableVC.resignFirstResponder()
+            //classifierVC.becomeFirstResponder()
             //timetableVC.canBecomeFirstResponder
             
             classifierVC.keepScrollIndicatorsVisible()

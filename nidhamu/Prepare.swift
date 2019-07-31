@@ -5,7 +5,7 @@ extension CustomFlowLayout {
     
     override func prepare() {
         
-//        AppUtility.lockOrientation(.landscapeRight)
+        //AppUtility.lockOrientation(.landscapeRight)
         
         calculateSizes()
         cellWidth = cellWd; cellHeight = cellHt
@@ -44,7 +44,7 @@ extension CustomFlowLayout {
         }
         else {                                                                                  //print("prepare()-popup")
             if classifierViewDisplayed {                                                        //print("prepare()-classifier")
-//                timetableVC.resignFirstResponder()
+                //timetableVC.resignFirstResponder()
                 classifierVC.becomeFirstResponder()
                 
                 let hscale = timetableVC.downcastLayout!.autoFitHScale!
@@ -54,11 +54,11 @@ extension CustomFlowLayout {
             }
         }
         
-//        if classifierViewDisplayed { //print("...(popup displayed)")
-//            //globalKeyWindow.addSubview(classifierVC.view)
-//            //classifierViewDisplayed = true
-//            classifierVC.becomeFirstResponder()
-//        }
+        //        if classifierViewDisplayed { //print("...(popup displayed)")
+        //            //globalKeyWindow.addSubview(classifierVC.view)
+        //            //classifierViewDisplayed = true
+        //            classifierVC.becomeFirstResponder()
+        //        }
     }
 }
 

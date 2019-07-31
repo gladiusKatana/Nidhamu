@@ -14,40 +14,31 @@
                   (eg no autorotating after transitioning from a differently-oriented other app)
  
  timetableVC deferral-date selection mode       after bug is fixed
- cascading deferrals                            soon after above
- mark item as recurring                         soon after above
+ cascading deferrals                            soon after above; easy
+ mark item as recurring                         soon after above; easy
  
                                                 Aug 1
  
- archive data (eventsAtDate & AtIndexPath)
- CSV emails of archive data
+ archive data (eventsAtIndexPath; eventsAtDate)
+ CSV email archived data
                                                 Aug 3
  
                                                                                                     //views
  calendarVC; populate with eventsAtDate
- morn/aft/eve/night VC
  list VC (today items)
  list VC (deadlineless items)
+ morn/aft/eve/nite VC
                                                 Aug 5
  
                                                                                                     //UI
- optimize navigation (being handled with the above bug)
- settings
+ optimize navigation (should be handled in fixing above bug⁌o⁍)
+ settingsmenu
+ darkMode
  buttons
  launchScreen
  icon
+ 
                                                 asap
- 
- 
-
- settings
- timetable VC, hourly blocks
- cascading deferrals
- darkMode
- 
- 
- 
- 
 
  
  

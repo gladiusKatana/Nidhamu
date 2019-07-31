@@ -41,5 +41,5 @@ var timetableVC = CollectionVC(.hours, loopWeeks: true, demarcateWeeksByColour: 
 var classifierVC = PopupMenuVC(collectionViewLayout: classifierLayout)
 var topVC = CollectionVC(.initial, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: timetableLayout)
 
-//* For todoListVC: may remove loopWeeks & demarcateWeeksByColour, via subclassing / making it an optional parameter
+//* For todoListVC: will probably remove loopWeeks & demarcateWeeksByColour, via subclassing / making them optional parameters
 

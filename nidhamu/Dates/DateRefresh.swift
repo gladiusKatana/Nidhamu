@@ -3,7 +3,7 @@ import UIKit
 
 func processCurrentDate() {
     (year, month, day, weekday, weekdayLong, hour, minute) = displayDate(Date(), roundedDown: true)
-//    ; print(formattedDateString(Date(), comment: "process dates @ ", short: false))
+    //print(formattedDateString(Date(), comment: "process dates @ ", short: false))
     
     nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows
     nowColumn = weekdaysAbbreviated.firstIndex(of: weekday)! + timetableLayout.lockedHeaderSections;         //print("nowCell: \([nowColumn, nowRow])")
@@ -15,10 +15,11 @@ func processCurrentDate() {
             
             lastLoginDateComponents = [year, month, day, weekday, hour, minute]
             lastLoggedInDate = dateFromComponents(lastLoginDateComponents)
-//            pryntLastLoginDate()
-//            pryntCurrentDate()
+            //pryntLastLoginDate()
+            //pryntCurrentDate()
         }
-//        else {print("new hour")}
+        //else {print("new hour")}
+        
         reloadedFromHourTickingOver = true
     }
 }
