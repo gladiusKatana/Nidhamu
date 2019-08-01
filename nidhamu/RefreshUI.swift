@@ -32,7 +32,7 @@ extension CollectionVC { //UICollectionViewController {
         {
             rePresentedVCFromButton = false
             
-            if vcType == .hours {print("\n---------------------presented then reloaded \(vc.vcType) cv ")}
+//            if vcType == .hours {print("\n---------------------presented then reloaded \(vc.vcType) cv ")}
             
             setupTitleAndPresentViewController(vc: vc) { () -> () in
                 previousOrientation = currentOrientation               //* check whether able to factor out
@@ -43,13 +43,13 @@ extension CollectionVC { //UICollectionViewController {
             reloadCV() //reloadWithDelay(after: 0.02)//?use time delay, as in above completion block? (*will test over time, with different devices)
         }
         
-        //DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-        if lastActiveOrientation == "landscape" {
-            if vcType == .hours {print("*")}  //should go straight to landscape
-            //AppUtility.lockOrientation(.landscape)
-        }
-        //}
-        
+        //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        //        if lastActiveOrientation == "landscape" {
+        //            if vcType == .hours {print("*")}  //should go straight to landscape
+        //            //AppUtility.lockOrientation(.landscape)
+        //        }
+        //        }
+    
         //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
         //            if classifierViewDisplayed {                                                        print("prepare()-classifier")
         //                timetableVC.resignFirstResponder()

@@ -3,9 +3,15 @@ import UIKit
 
 extension CustomFlowLayout {
     
-    override func prepare() {
+    override func prepare() {                                                                   //print(".", terminator: "")
         
-        //AppUtility.lockOrientation(.landscapeRight)
+        checkOrientation()
+        
+//        if lastActiveOrientation == "landscape" && autorotateFromBackgroundThenForeground {     //print("(prepare()) can go back to landscape")
+//            AppUtility.lockOrientation(.landscapeRight, andRotateTo: .landscapeRight)
+//            autorotateFromBackgroundThenForeground = true
+//        }
+//        }
         
         calculateSizes()
         cellWidth = cellWd; cellHeight = cellHt
@@ -21,8 +27,6 @@ extension CustomFlowLayout {
         yOffset = collectionView!.contentOffset.y + CGFloat(navBarHeight + statusBarHeight - statusBarDelta)  //print("yo: \(yOffSet)")
         xOffSet = collectionView!.contentOffset.x
         textFieldY = CGFloat(navBarHeight + statusBarHeight - statusBarDelta)                   //; print("textFieldY = \(textFieldY)")
-        
-        checkOrientation()
         
         if embeddedInNavController {
             
@@ -45,11 +49,17 @@ extension CustomFlowLayout {
         else {                                                                                  //print("prepare()-popup")
             if classifierViewDisplayed {                                                        //print("prepare()-classifier")
                 //timetableVC.resignFirstResponder()
-                classifierVC.becomeFirstResponder()
+                //classifierVC.becomeFirstResponder()
+                
+                classifierVC.view.removeFromSuperview()
                 
                 let hscale = timetableVC.downcastLayout!.autoFitHScale!
                 classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
                                                                                   left: 0, bottom: 0, right: 0)
+                
+                topVC.view.addSubview(classifierVC.view)
+                classifierViewDisplayed = true
+                
                 classifierVC.collectionView.reloadData()
             }
         }

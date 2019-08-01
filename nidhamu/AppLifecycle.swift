@@ -10,22 +10,21 @@ extension AppDelegate {
         print(s)
         //        }
         
+//        if currentOrientation == "landscape" {                  print("STILL in landscape")
+//            DispatchQueue.main.asyncAfter(deadline: .now()) {
+//                AppUtility.lockOrientation(.landscapeRight)
+//            }
+//        }
+
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             topVC.reloadCV()
         }
-        
-        /*DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            if lastActiveOrientation == "landscape" {
-                AppUtility.lockOrientation(.landscape)
-            }
-        }*/
         
         defaultLoadData(showDate: false)
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         print("🌔will enter foreground, orientation \(currentOrientation), was \(lastActiveOrientation)")
-        
         //if !firstReenteredForeground {print("entered foreground for the first time")}
         firstReenteredForeground = true // 1-way bool (stays true, since dismissing then reopening app causes visual glitch over remaining lifecycle)
     }
@@ -34,10 +33,25 @@ extension AppDelegate {
         customApplicationStatusPrint(applicationState: "⏸will resign active") //, orientation was \(currentOrientation)
         defaultSaveData(showDate: false)
         savedTimeBlocksForProcessing = false
+        
+//        checkOrientation()
+//        if currentOrientation != "landscape" {
+//            DispatchQueue.main.asyncAfter(deadline: .now()) {
+//                AppUtility.lockOrientation(.landscapeRight, andRotateTo: .landscapeRight)
+//                checkOrientation() //; if currentOrientation == "landscape" {print("ok we're in landscape")}
+//            }
+//        }
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {      customApplicationStatusPrint(applicationState: "🌘entered background")
         lastActiveOrientation = currentOrientation
+        
+//        if currentOrientation == "landscape" {
+//            DispatchQueue.main.asyncAfter(deadline: .now()) {
+//                AppUtility.lockOrientation(.landscapeRight)
+//                autorotateFromBackgroundThenForeground = false;     print("still in landscape; rot'd? \(autorotateFromBackgroundThenForeground)\n")
+//            }
+//        }
     }
     
     func applicationWillTerminate(_ application: UIApplication) {           print("terminated")

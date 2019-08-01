@@ -4,6 +4,8 @@ import UIKit
 extension CollectionVC { //* will try to shorten this one, soon
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         collectionView.backgroundColor = windowBackgroundColour // shown on top of UIWindow's background colour
         if vcType == .todoList {collectionView.backgroundColor = bluishGray}
         collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.reuseIdentifier)
@@ -20,6 +22,8 @@ extension CollectionVC { //* will try to shorten this one, soon
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         if vcType == .hours {
             setupViewTitle("Timetable", numLines: 1, alignment: .left)
         }
@@ -34,15 +38,34 @@ extension CollectionVC { //* will try to shorten this one, soon
             print("🏞\(vcType)\(str)")                          // picture-emoji means appeared
             consoleLegendAppeared = true
         } //cabove method called early (before actually appears) to print on first appearance + avoid an additional reset of rePresentedVCFromButton
+        
+        
+//        if vcType == .hours {
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            appDelegate.enableAllOrientation = false
+//            
+//            let value = UIInterfaceOrientation.portrait.rawValue
+//            UIDevice.current.setValue(value, forKey: "orientation")
+//        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {             //print("path to time block\(selectedTimeBlockPath)")
+        super.viewDidAppear(animated)
+        
         if vcType != .eventClassifier {setTopViewController()}
         setupNavBarButtons(grayTwo, atIndex: colourIndex)
         addPinchRecognizer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {         //print("...\(vcType) will disappear...")
+        super.viewWillDisappear(animated)
+    
+        
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.enableAllOrientation = true
+        
+        
         if vcType == .todoList {
             if textFieldDisplayed {
                 eventField.resignFirstResponder()

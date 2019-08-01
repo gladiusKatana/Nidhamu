@@ -39,6 +39,6 @@ func checkOrientation() {
     }
     else {print("\n\nUm, global key window frame height & width are equal...")}//shouldn't get called... unless Apple decides to make a square device
     
-    print("in \(currentOrientation) mode")
+//    print("check orientation: \(currentOrientation)")
 }
 
