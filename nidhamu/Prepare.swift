@@ -40,51 +40,6 @@ extension CustomFlowLayout {
                 topVC.rePresentTextField()                                                      //; print("re-presented text field from prepare()")
             }
         }
-        
-//        if previousOrientation != currentOrientation {
-////            if classifierViewDisplayed {
-//            
-////                DispatchQueue.main.asyncAfter(deadline: .now()) {
-//                
-//                    classifierVC.view.removeFromSuperview()
-//                    classifierViewDisplayed = false
-//                    print("-----------------removed popup from prepare  added?\(classifierViewDisplayed)")
-//                    
-//                    let hscale = timetableVC.downcastLayout!.autoFitHScale!
-//                    classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
-//                                                                                      left: 0, bottom: 0, right: 0)
-//                    topVC.view.addSubview(classifierVC.view)
-////                    classifierViewDisplayed = true
-//                    print("-----------------re-added popup from prepare  added?\(classifierViewDisplayed)")
-//                    
-////                }
-////            }
-//        }
-        
-        
-//        else {                                                                                   ///print("prepare()-popup")
-////            if previousOrientation != currentOrientation {
-//
-//                if classifierViewDisplayed {                                                     ///print("prepare()-classifier")
-////                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-        
-//                        //timetableVC.resignFirstResponder() //*
-//                        //classifierVC.becomeFirstResponder()//*
-//
-//                        classifierVC.view.removeFromSuperview()         ; print("-------------------------removed popup from prepare")
-//
-//                        let hscale = timetableVC.downcastLayout!.autoFitHScale!
-//                        classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
-//                                                                                          left: 0, bottom: 0, right: 0)
-//
-//                        topVC.view.addSubview(classifierVC.view)        ; print("-------------------------re-added popup from prepare")
-////                        timetableVC.popupReload()
-////                    }
-//                    classifierViewDisplayed = false
-//                }
-////            }
-//        }
-        
     }
 }
 

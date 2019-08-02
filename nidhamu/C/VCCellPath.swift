@@ -35,15 +35,6 @@ extension CollectionVC {
                     
                     processEventsSinceLastLogin(layout: customLayout)
                     savedTimeBlocksForProcessing = true
-                    
-//                    if classifierViewDisplayed {
-//                    print("classifier displayed")
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//                            classifierVC.collectionView.reloadData()
-//                        }
-//                    }
-//                    else {print("um, it ain't displayed")}
-                    
                 }
             }
         }
