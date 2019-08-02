@@ -34,7 +34,7 @@ extension CollectionVC {
     }
     
     func presentPopupViewToMarkEvents(column: Int, row: Int) {                                      //print("presenting popup")
-        if !classifierViewDisplayed {
+        if !classifierViewDisplayed {   classifierViewDisplayed = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {                     //* time delay of 0.3 works stably (thus far) on my iPhone 7
                 
                 let layout = self.downcastLayout!;      let widthMultiplier = CGFloat(2)
@@ -54,11 +54,15 @@ extension CollectionVC {
                 classifierVC.downcastLayout?.customFrame = frame
                 classifierVC.collectionView.frame = frame
                 
-//                self.view.addSubview(classifierVC.view)
-                globalKeyWindow.addSubview(classifierVC.view)
+                let hscale = timetableVC.downcastLayout!.autoFitHScale! //* make sure this is extensible (ie,  if column >= 6 )
+                classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
+                                                                                  left: 0, bottom: 0, right: 0)
+                
+                self.view.addSubview(classifierVC.view)
+//                globalKeyWindow.addSubview(classifierVC.view)
                 timetableVC.popupReload()
                 
-                classifierViewDisplayed = true                  ; print("----------------added popup") //; print("popup frame \(frame)")
+                                  ; print("----------------added popup") //; print("popup frame \(frame)")
                 
                 //timetableVC.resignFirstResponder()
                 //classifierVC.becomeFirstResponder()

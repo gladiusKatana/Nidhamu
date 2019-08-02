@@ -7,8 +7,8 @@ extension CustomFlowLayout {
         
         checkOrientation()/**/
         calculateSizes()
-        cellWidth = cellWd; cellHeight = cellHt
         
+        cellWidth = cellWd; cellHeight = cellHt
         widthPlusSpace = cellWidth! + hSpace
         heightPlusSpace = cellHeight! + vSpace
         
@@ -26,6 +26,9 @@ extension CustomFlowLayout {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                     topVC.re_Reload__PossiblyAfterRe_Presenting(vc: topVC)
                 }
+                
+                classifierVC.view.removeFromSuperview(); print("removed popup")
+                if classifierViewDisplayed {classifierViewDisplayed = false}
             }
             else {
                 if topVC.vcType == .hours {                                                     //print("prepare()") //, top vc \(top VC.vcType)...
@@ -64,8 +67,9 @@ extension CustomFlowLayout {
 //
 //                if classifierViewDisplayed {                                                     ///print("prepare()-classifier")
 ////                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-//                        //timetableVC.resignFirstResponder()
-//                        //classifierVC.becomeFirstResponder()
+        
+//                        //timetableVC.resignFirstResponder() //*
+//                        //classifierVC.becomeFirstResponder()//*
 //
 //                        classifierVC.view.removeFromSuperview()         ; print("-------------------------removed popup from prepare")
 //
