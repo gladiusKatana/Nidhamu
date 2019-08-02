@@ -35,7 +35,7 @@ extension CollectionVC {
     func prepareToProcessEventsSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
         if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {        //cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             if !savedTimeBlocksForProcessing {
-                if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}
+                if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)} //* see note below
                 if !pathsToProcess.contains([column, row]) {
                     pathsToProcess.append([column, row])
                 }
@@ -46,4 +46,4 @@ extension CollectionVC {
         }
     }
 }
-
+/*                                                                                                * does not catch test case of adding an event, advancing device date setting by 1 week, returning to app (now in event-marking mode), then 'changing your mind' and dismissing app to background again, only to reopen it and resume your event-tagging in a few moments. This causes the reload-CV method call upon resuming (even if the date hasn't changed) to sweep over all time blocks, in prepare ToProcessEventsSinceLastLogin(:) again adding to the events-to-process array    )*/

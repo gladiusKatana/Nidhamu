@@ -5,7 +5,7 @@ extension CollectionVC { //UICollectionViewController { //***
     
     func setupNavBarButtons(_ withCustomColour: UIColor?, atIndex: Int?) {
         let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableImage")
-        let reloadButton = setupButton(selector: #selector(reloadCV), title: "reloadButton")
+        let reloadButton = setupButton(selector: #selector(popupReload), title: "reloadButton")
         
         navigationItem.rightBarButtonItems = [timetableButton, reloadButton]
         

@@ -13,14 +13,14 @@ extension PopupMenuVC {
             
             let currentColumn = pathsToProcess.first![0]; let currentRow = pathsToProcess.first![1]         // ie, current item path being marked
             
-            if let eventsOfTimeBlockBeingMarked = eventsAtIndexPath[TimeBlock(values:(currentColumn, currentRow))] { // writing to the dictionary
+            if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(currentColumn, currentRow))] { // writing to the dictionary
                 
-                eventsOfTimeBlockBeingMarked[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
-                print("marked eventsOfTimeBlockBeingMarked[\(eventIndex)] as \(eventsOfTimeBlockBeingMarked[eventIndex].eventStatus)")
+                eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
+                print("marked eventsOfTimeBlockBeingMarked[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
                 
-                if eventsOfTimeBlockBeingMarked[eventIndex].eventStatus == .deferred {                      print("! you deferred it...")
-                    eventsOfTimeBlockBeingMarked[eventIndex].eventDate = eventsOfTimeBlockBeingMarked[eventIndex].eventDate + TimeInterval(86400 * 7)
+                if eventsOfBlockBeingTagged[eventIndex].eventStatus == .deferred {                      print("! you deferred it...")
                 }
+                eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
                 
             } else {print("no item")}
             
@@ -44,8 +44,9 @@ extension PopupMenuVC {
                 classifierVC.view.removeFromSuperview()
                 classifierViewDisplayed = false
                 
-                timetableVC.reloadCV()
+                //timetableVC.reloadCV()
                 timetableVC.processEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
+                timetableVC.reloadCV()
             }
             
         } else {print("selected header")}

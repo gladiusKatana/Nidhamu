@@ -4,9 +4,10 @@ import UIKit
 extension CollectionVC {
     
     override func collectionView(_ collectionView: UICollectionView,
-                                 didSelectItemAt indexPath: IndexPath) {                            print("selected tt cell")
+                                 didSelectItemAt indexPath: IndexPath) {                        //print("selected tt cell")
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
         let layout = downcastLayout!;       let row = indexPath.item;       let column = indexPath.section
+        
         //print("\nselected date (unformatted gmt)  \(cell.cellDate)")
         //print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
         
@@ -33,9 +34,8 @@ extension CollectionVC {
                     }
                 }
                 
-                selectedTimeBlockPath = [column, row]           //; print("selected time block path \(selectedTimeBlockPath)")
+                selectedTimeBlockPath = [column, row]                               //; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
-                
                 previousSelectedTimeBlockPath = [column, row]
                 
                 if eventsAtIndexPath[timeBlock] == nil {

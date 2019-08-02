@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func setCellContents (cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {         //cell. titleLabel.text = "\(column),\(row)"
+    func timeBlockDateSetup (cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {         //cell. titleLabel.text = "\(column),\(row)"
         
         switch vcType {
             

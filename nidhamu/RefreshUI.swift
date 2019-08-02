@@ -32,7 +32,7 @@ extension CollectionVC { //UICollectionViewController {
         {
             rePresentedVCFromButton = false
             
-//            if vcType == .hours {print("\n---------------------presented then reloaded \(vc.vcType) cv ")}
+            if vcType == .hours {print("\n---------------------presented then reloaded \(vc.vcType) cv ")}
             
             setupTitleAndPresentViewController(vc: vc) { () -> () in
                 previousOrientation = currentOrientation               //* check whether able to factor out
@@ -61,6 +61,10 @@ extension CollectionVC { //UICollectionViewController {
     //----------------------------------------------------------------- reloading
     @objc func reloadCV() {
         self.collectionView.reloadData()                                //; print("↺")
+    }
+    
+    @objc func popupReload() {
+        classifierVC.collectionView.reloadData()                        //; print("pr")
     }
     
     func reloadWithDelay(after timeDelay: Double) {

@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func setCellColours (cell: CustomCell, cellIsInHeader: Bool) {
+    func setDefaultColours (cell: CustomCell, cellIsInHeader: Bool) {
         
         if cellIsInHeader || self.vcType == .hours && cell.xyCoordinate[1] == 1 {
             cell.backgroundColor = headerColour;                //cell.layer.borderColor = UIColor.clear.cgColor

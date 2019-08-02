@@ -6,7 +6,7 @@ extension CollectionVC {
     func rePresentTextField() {
         if textFieldDisplayed {
             let customLayout = downcastLayout!
-            eventField.placeholder = "..."
+//            eventField.placeholder = "..."
             formatAndPresentTextField(layout: customLayout, dateString: eventField.placeholder!)
         }
     }
@@ -21,7 +21,7 @@ extension CollectionVC {
             eventField.delegate = self
             eventField.frame = CGRect(x: halfWidth, y: textFieldY, width: fieldWidth, height: fieldHeight)
             view.addSubview(eventField)
-            eventField.becomeFirstResponder(); print("set text field as first responder")
+            eventField.becomeFirstResponder()                           //; print("set text field as first responder")
         }
     }
     
