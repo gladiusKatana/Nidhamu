@@ -18,7 +18,7 @@ extension PopupMenuVC {
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
                 print("marked eventsOfTimeBlockBeingMarked[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
                 
-                if eventsOfBlockBeingTagged[eventIndex].eventStatus == .deferred {                      print("! you deferred it...")
+                if eventsOfBlockBeingTagged[eventIndex].eventStatus == .deferred {                          print("! you deferred it...")
                 }
                 eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
                 
@@ -45,7 +45,7 @@ extension PopupMenuVC {
                 classifierViewDisplayed = false
                 
                 //timetableVC.reloadCV()
-                timetableVC.processEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
+                timetableVC.processEventsSinceLastLogin(layout: timetableVC.downcastLayout!)        //; print("started processing from here")
                 timetableVC.reloadCV()
             }
             

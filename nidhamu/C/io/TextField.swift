@@ -6,7 +6,7 @@ extension CollectionVC {
     func rePresentTextField() {
         if textFieldDisplayed {
             let customLayout = downcastLayout!
-//            eventField.placeholder = "..."
+            eventField.placeholder = "..."
             formatAndPresentTextField(layout: customLayout, dateString: eventField.placeholder!)
         }
     }

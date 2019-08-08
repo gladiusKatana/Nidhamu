@@ -8,7 +8,7 @@ extension CollectionVC {
         if !pathsToProcess.isEmpty {
             let column = pathsToProcess.first![0]; let row = pathsToProcess.first![1]
             globalEventIdentifier = "\(eventArraysToProcess.first![eventIndex].eventDescription)"   //; print("event id: \(globalEventIdentifier)")
-
+            
             presentPopupViewToMarkEvents(column: column, row: row)
             
             if !savedTimeBlocksForProcessing {
@@ -16,20 +16,15 @@ extension CollectionVC {
                     self.downcastLayout?.autoFitHScale = CGFloat(layout.rows) / CGFloat(layout.rows + 4) //+ 0.01
                 }
             }
-        }
-        else {                                                                                      //print("paths to process empty")
+        } else {                                                                                      //print("paths to process empty")
             self.downcastLayout?.autoFitHScale = 1
-//            //DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {self.reloadCV()}
-            
             eventArraysToProcess.removeAll() //* see note at-bottom of DateRange.swift
             
             if vcType == .hours {
                 defaultSaveData(showDate: true)
                 defaultLoadData(showDate: false)
-                print("✔︎done processing events... \n...event arrays to process: \(eventArraysToProcess)... paths to process: \(pathsToProcess)")
+                //print("✔︎done processing events... \n...event arrays to process: \(eventArraysToProcess)... paths to process: \(pathsToProcess)")
             }
-            
-//            //DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {self.reloadCV()}
         }
     }
     
@@ -57,12 +52,14 @@ extension CollectionVC {
                 let hscale = timetableVC.downcastLayout!.autoFitHScale! //* make sure this is extensible (ie,  if column >= 6 )
                 classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
                                                                                   left: 0, bottom: 0, right: 0)
+                //self.view.addSubview(classifierVC.view)
+                //globalKeyWindow.addSubview(classifierVC.view)
+                let keyWindow = UIApplication.shared.keyWindow!
+                keyWindow.addSubview(classifierVC.view)             //; print("----------------added popup") //; print("popup frame \(frame)")
                 
-                self.view.addSubview(classifierVC.view)
-//                globalKeyWindow.addSubview(classifierVC.view)
-                timetableVC.popupReload()
+                classifierVC.collectionView.isUserInteractionEnabled = true
                 
-                                  ; print("----------------added popup") //; print("popup frame \(frame)")
+                classifierVC.collectionView.reloadData()
                 
                 //timetableVC.resignFirstResponder()
                 //classifierVC.becomeFirstResponder()

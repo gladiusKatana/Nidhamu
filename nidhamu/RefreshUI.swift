@@ -24,8 +24,8 @@ extension CollectionVC { //UICollectionViewController {
     }
     
     @objc func re_Reload__PossiblyAfterRe_Presenting(vc: CollectionVC) { // remove @objc?   // reload again (and /or potentially re-present)
-        //classifierVC.view.removeFromSuperview()                                           // for visual continuity
-        //classifierViewDisplayed = false
+        classifierVC.view.removeFromSuperview()                                           // for visual continuity
+        classifierViewDisplayed = false
         
         if previousOrientation == "landscape" && currentOrientation == "portrait"           // (needed when, e.g., toggling views while in landscape)
             || firstReenteredForeground
@@ -60,11 +60,17 @@ extension CollectionVC { //UICollectionViewController {
     
     //----------------------------------------------------------------- reloading
     @objc func reloadCV() {
-        self.collectionView.reloadData()                                //; print("↺")
+        self.collectionView.reloadData()                                ; print("↺")
     }
     
     @objc func popupReload() {
-        classifierVC.collectionView.reloadData()                        //; print("pr")
+        classifierVC.collectionView.reloadData()                        ; print("pr")
+    }
+    
+    @objc func popupReAdd() {                                           print("prA")
+//        classifierVC.view.removeFromSuperview()
+//        let keyWindow = UIApplication.shared.keyWindow!
+//        keyWindow.addSubview(classifierVC.view)
     }
     
     func reloadWithDelay(after timeDelay: Double) {

@@ -5,7 +5,7 @@ extension PopupMenuVC {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.popupReuseIdentifier, for: indexPath) as! CustomCell
         let customLayout = downcastLayout!
         let row = indexPath.item
         
@@ -14,9 +14,9 @@ extension PopupMenuVC {
             cell.titleLabel.text = "Mark '\(globalEventIdentifier)':"     //"✔︎ Mark Event:" // ← ⇦ ◄ ⬅️ still looking for a large enough ascii arrow
             cell.titleLabel.textColor = headerTextDefaultColour
         } else {
-            cell.backgroundColor = .lightGray
+            cell.backgroundColor = .clear//.lightGray
             cell.titleLabel.text = EventStatus.allCases[row - 1].caseName()
-            cell.titleLabel.textColor = headerColour
+            cell.titleLabel.textColor = .black//headerColour
         }
         //print(indexPath)
         return cell

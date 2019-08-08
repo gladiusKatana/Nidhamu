@@ -27,7 +27,7 @@ extension CustomFlowLayout {
                     topVC.re_Reload__PossiblyAfterRe_Presenting(vc: topVC)
                 }
                 
-                classifierVC.view.removeFromSuperview(); print("removed popup")
+                classifierVC.view.removeFromSuperview()                                         //; print("removed popup")
                 if classifierViewDisplayed {classifierViewDisplayed = false}
             }
             else {

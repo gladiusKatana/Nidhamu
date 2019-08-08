@@ -4,7 +4,7 @@ import UIKit
 extension CollectionVC {
     
     override func collectionView(_ collectionView: UICollectionView,
-                                 didSelectItemAt indexPath: IndexPath) {                        //print("selected tt cell")
+                                 didSelectItemAt indexPath: IndexPath) {                        print("selected tt cell")
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
         let layout = downcastLayout!;       let row = indexPath.item;       let column = indexPath.section
         

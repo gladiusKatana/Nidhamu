@@ -21,11 +21,10 @@ class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()                     //; collectionView.frame = downcastLayout!.customFrame
+        super.viewDidLoad()                               //; collectionView.frame = downcastLayout!.customFrame
         
-        collectionView.backgroundColor = .clear //.orange // * to experiment with later: why should i see any orange (if it's orange), upon rotation?
-        collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.reuseIdentifier)
-        collectionView?.isUserInteractionEnabled = true
+        collectionView.backgroundColor = .orange //.clear // * to experiment with later: why should i see any orange (if it's orange), upon rotation?
+        collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.popupReuseIdentifier)
         
         collectionView.bounces = false
         collectionView?.isScrollEnabled = true
@@ -36,7 +35,8 @@ class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewDidAppear(animated)                   //; collectionView.frame = downcastLayout!.customFrame!
+        collectionView?.isUserInteractionEnabled = true
 //        collectionView.reloadData()
     }
 }
