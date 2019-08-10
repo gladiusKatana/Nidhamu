@@ -1,6 +1,8 @@
 // RefreshUI        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
+//var popupWasAlreadyDisplayed = false
+
 extension CollectionVC { //UICollectionViewController {
     
     func setupTitleAndPresentViewController(vc: CollectionVC, completion: () -> ()) {   //print("\ndismissing/presenting") // vc: \(vc)
@@ -24,11 +26,12 @@ extension CollectionVC { //UICollectionViewController {
     }
     
     @objc func re_Reload__PossiblyAfterRe_Presenting(vc: CollectionVC) { // remove @objc?   // reload again (and /or potentially re-present)
-        classifierVC.view.removeFromSuperview()                                           // for visual continuity
-        classifierViewDisplayed = false
+//        classifierVC.view.removeFromSuperview()                                           // for visual continuity
+//        classifierViewDisplayed = false
         
         if previousOrientation == "landscape" && currentOrientation == "portrait"           // (needed when, e.g., toggling views while in landscape)
             || firstReenteredForeground
+//            || popupWasAlreadyDisplayed
         {
             rePresentedVCFromButton = false
             

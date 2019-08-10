@@ -4,7 +4,7 @@ import UIKit
 extension PopupMenuVC {
     
     override func collectionView(_ collectionView: UICollectionView,
-                                 didSelectItemAt indexPath: IndexPath) {                                    print("selected popup cell")
+                                 didSelectItemAt indexPath: IndexPath) {                                    //print("selected popup cell")
         
         let layout = downcastLayout!; let row = indexPath.item; let column = indexPath.section
         

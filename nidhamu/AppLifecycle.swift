@@ -6,8 +6,10 @@ extension AppDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {                                                 let s = "🔅became active"
         /*if firstReenteredForeground {
             customApplicationStatusPrint(applicationState: str)
-        } else {*/                                                              print(s)
+        } else {*/
+        print(s)
         //}
+        
         /*if currentOrientation == "landscape" { print("STILL in landscape")
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 AppUtility.lockOrientation(.landscapeRight)
@@ -22,6 +24,11 @@ extension AppDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {                                          print("🌔will enter foreground")
         firstReenteredForeground = true
         // 1-way bool (stays true, since dismissing then reopening app causes visual glitch over remaining lifecycle)
+        
+        checkOrientation()
+        if currentOrientation == "landscape" {
+            print("returned from landscape")
+        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) {        customApplicationStatusPrint(applicationState: "⏸will resign active")

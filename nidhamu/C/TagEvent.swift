@@ -16,7 +16,7 @@ extension CollectionVC {
                     self.downcastLayout?.autoFitHScale = CGFloat(layout.rows) / CGFloat(layout.rows + 4) //+ 0.01
                 }
             }
-        } else {                                                                                      //print("paths to process empty")
+        } else {                                                                                    //print("paths to process empty")
             self.downcastLayout?.autoFitHScale = 1
             eventArraysToProcess.removeAll() //* see note at-bottom of DateRange.swift
             
@@ -28,9 +28,16 @@ extension CollectionVC {
         }
     }
     
-    func presentPopupViewToMarkEvents(column: Int, row: Int) {                                      //print("presenting popup")
-        if !classifierViewDisplayed {   classifierViewDisplayed = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {                     //* time delay of 0.3 works stably (thus far) on my iPhone 7
+    func presentPopupViewToMarkEvents(column: Int, row: Int) {              //print("-----------------")//print("presenting popup")
+        if !classifierViewDisplayed {
+            
+//            classifierViewDisplayed = true
+        
+//            classifierVC.view.removeFromSuperview()
+        
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {         //* 0.3s time delay works(ed) stably (thus far) on my iPhone 7
+                
+                classifierVC.view.removeFromSuperview()
                 
                 let layout = self.downcastLayout!;      let widthMultiplier = CGFloat(2)
                 let cellWidth = layout.widthPlusSpace;  let cellHeight = layout.heightPlusSpace
@@ -55,7 +62,9 @@ extension CollectionVC {
                 //self.view.addSubview(classifierVC.view)
                 //globalKeyWindow.addSubview(classifierVC.view)
                 let keyWindow = UIApplication.shared.keyWindow!
-                keyWindow.addSubview(classifierVC.view)             //; print("----------------added popup") //; print("popup frame \(frame)")
+                keyWindow.addSubview(classifierVC.view)             ; print("----------------added popup") //; print("popup frame \(frame)")
+                
+                classifierViewDisplayed = true
                 
                 classifierVC.collectionView.isUserInteractionEnabled = true
                 
@@ -68,7 +77,15 @@ extension CollectionVC {
                 classifierVC.keepScrollIndicatorsVisible()
             }
         }
-        else {print("popup already displayed...")}
+//        else {                                                      print("popup already displayed...")
+//            classifierVC.view.removeFromSuperview()                 // for visual continuity
+//            classifierViewDisplayed = false
+//
+//            presentPopupViewToMarkEvents(column: column, row: row)
+//
+////            let keyWindow = UIApplication.shared.keyWindow!
+////            keyWindow.addSubview(classifierVC.view)                 ; print("----------------re-added popup")
+//        }
     }
 }
 

@@ -22,9 +22,8 @@ extension CustomFlowLayout {
             if let safeFrame = customFrame {
                 frame = safeFrame
             } else {
-                frame = nilCatcherFrame
-                print("\n\nit's the nil catcher frame, rows \(rows)")
-            }            //...default frame is overridden anyway (see above comment); hence its value being all 0's
+                frame = nilCatcherFrame                 // ;print("\n\nit's the nil catcher frame, rows \(rows)")
+            }                                           //* default frame is overridden anyway (see above comment); hence its value being all 0's
         }
         
         let autofitWidth = CGFloat(frame.width) / CGFloat(cols) - hSpace

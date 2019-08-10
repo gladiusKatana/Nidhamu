@@ -23,7 +23,7 @@ class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()                               //; collectionView.frame = downcastLayout!.customFrame
         
-        collectionView.backgroundColor = .orange //.clear // * to experiment with later: why should i see any orange (if it's orange), upon rotation?
+        collectionView.backgroundColor = .white //.clear // * to experiment with later: why should i see any orange (if it's orange), upon rotation?
         collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.popupReuseIdentifier)
         
         collectionView.bounces = false
