@@ -1,11 +1,11 @@
 // NavBar           ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-extension CollectionVC { //UICollectionViewController { //***
+extension CollectionVC {
     
     func setupNavBarButtons(_ withCustomColour: UIColor?, atIndex: Int?) {
         let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableImage")
-        let reloadButton = setupButton(selector: #selector(popupReAdd), title: "reloadButton") //popupReload
+        let reloadButton = setupButton(selector: #selector(reloadCV), title: "reloadButton")
         
         navigationItem.rightBarButtonItems = [timetableButton, reloadButton]
         

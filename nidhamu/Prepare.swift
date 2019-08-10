@@ -5,7 +5,7 @@ extension CustomFlowLayout {
     
     override func prepare() {                                                                   //print(".", terminator: "")
         
-        checkOrientation()/**/
+        checkOrientation()
         calculateSizes()
         
         cellWidth = cellWd; cellHeight = cellHt
@@ -42,11 +42,4 @@ extension CustomFlowLayout {
         }
     }
 }
-
-/*
- if lastActiveOrientation == "landscape" && autorotateFromBackgroundThenForeground {     //print("(prepare()) can go back to landscape")
- AppUtility.lockOrientation(.landscapeRight, andRotateTo: .landscapeRight)
- autorotateFromBackgroundThenForeground = true
- }
- */
 

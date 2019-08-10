@@ -18,7 +18,7 @@ extension PopupMenuVC {
             cell.titleLabel.text = EventStatus.allCases[row - 1].caseName()
             cell.titleLabel.textColor = .black//headerColour
         }
-        //print(indexPath)
+        
         return cell
     }
 }

@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func addPinchRecognizer() {
+    func setupPinching() {
         if vcType == .todoList {
             let dismissPinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
             self.view.addGestureRecognizer(dismissPinch)

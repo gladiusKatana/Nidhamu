@@ -21,7 +21,7 @@ class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()                               //; collectionView.frame = downcastLayout!.customFrame
+        super.viewDidLoad()                              //; collectionView.frame = downcastLayout!.customFrame
         
         collectionView.backgroundColor = .white //.clear // * to experiment with later: why should i see any orange (if it's orange), upon rotation?
         collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.popupReuseIdentifier)
@@ -31,13 +31,11 @@ class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
         
         let hscale = timetableVC.downcastLayout!.autoFitHScale!
         collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: self.downcastLayout!.cellHeight! * hscale, left: 0, bottom: 0, right: 0)
-//        collectionView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)                   //; collectionView.frame = downcastLayout!.customFrame!
+        super.viewDidAppear(animated)                    //; collectionView.frame = downcastLayout!.customFrame!
         collectionView?.isUserInteractionEnabled = true
-//        collectionView.reloadData()
     }
 }
 

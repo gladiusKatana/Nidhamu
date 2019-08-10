@@ -28,15 +28,10 @@ extension CollectionVC {
         }
     }
     
-    func presentPopupViewToMarkEvents(column: Int, row: Int) {              //print("-----------------")//print("presenting popup")
+    func presentPopupViewToMarkEvents(column: Int, row: Int) {                  //print("-----------------")//print("presenting popup")
         if !classifierViewDisplayed {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {             //* 0.3s time delay works(ed) stably (thus far) on my iPhone 7
             
-//            classifierViewDisplayed = true
-        
-//            classifierVC.view.removeFromSuperview()
-        
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {         //* 0.3s time delay works(ed) stably (thus far) on my iPhone 7
-                
                 classifierVC.view.removeFromSuperview()
                 
                 let layout = self.downcastLayout!;      let widthMultiplier = CGFloat(2)
@@ -59,33 +54,15 @@ extension CollectionVC {
                 let hscale = timetableVC.downcastLayout!.autoFitHScale! //* make sure this is extensible (ie,  if column >= 6 )
                 classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
                                                                                   left: 0, bottom: 0, right: 0)
-                //self.view.addSubview(classifierVC.view)
-                //globalKeyWindow.addSubview(classifierVC.view)
                 let keyWindow = UIApplication.shared.keyWindow!
-                keyWindow.addSubview(classifierVC.view)             ; print("----------------added popup") //; print("popup frame \(frame)")
+                keyWindow.addSubview(classifierVC.view)                     ; print("----------------added popup")
                 
                 classifierViewDisplayed = true
-                
                 classifierVC.collectionView.isUserInteractionEnabled = true
-                
                 classifierVC.collectionView.reloadData()
-                
-                //timetableVC.resignFirstResponder()
-                //classifierVC.becomeFirstResponder()
-                //timetableVC.canBecomeFirstResponder
-                
                 classifierVC.keepScrollIndicatorsVisible()
             }
         }
-//        else {                                                      print("popup already displayed...")
-//            classifierVC.view.removeFromSuperview()                 // for visual continuity
-//            classifierViewDisplayed = false
-//
-//            presentPopupViewToMarkEvents(column: column, row: row)
-//
-////            let keyWindow = UIApplication.shared.keyWindow!
-////            keyWindow.addSubview(classifierVC.view)                 ; print("----------------re-added popup")
-//        }
     }
 }
 

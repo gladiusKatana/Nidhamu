@@ -28,10 +28,9 @@ extension CollectionVC {
                     
                     if !savedTimeBlocksForProcessing {
                         eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
+                        
                         //print("\neventsInBlock first set to \(eventsInBlockToBeProcessed)")
-                    }
-                    
-                    ///print("block events remaining (initial): \(eventsInBlockToBeProcessed)\n"); print("paths to process: \(pathsToProcess)")
+                    }   //print("block events remaining (initial): \(eventsInBlockToBeProcessed)\n"); print("paths to process: \(pathsToProcess)")
                     
                     processEventsSinceLastLogin(layout: customLayout)
                     savedTimeBlocksForProcessing = true

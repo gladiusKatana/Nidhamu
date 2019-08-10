@@ -22,19 +22,23 @@ func defaultLoadData(showDate: Bool) {                                          
 
 func populateDictionaryFromDefaults() {
     var i = 0
+    
     for path in eventPathArrays {
+        
         let todoListItemDescriptions = eventDescriptionArrays[i] //!*
         var events = [SimpleEvent]()
         var j = 0
+        
         for description in todoListItemDescriptions {
             let todoListItemStatus = eventStatusArrays[i][j]
             let dateComponents = eventDateArrays[i][j]                                      //; print("event date components: \(dateComponents)")
-            let date = dateFromComponents(dateComponents)                             //; print("date: \(date)")
+            let date = dateFromComponents(dateComponents)                                   //; print("date: \(date)")
             let event = SimpleEvent(eventDescription: description, eventDate: date, eventStatus: EventStatus(rawValue: todoListItemStatus)!)
             //print("loaded event: '\(event.eventDescription)' [\(event.eventStatus)] with deadline:\(formattedDateString(date, roundedDown: true, prefix: "", suffix: "", short: false))")
             events.append(event)
             j += 1
         }
+        
         eventsAtIndexPath[TimeBlock(values: (path[0], path[1]))] = events
         i += 1
     }

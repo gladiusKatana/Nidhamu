@@ -16,10 +16,10 @@ extension PopupMenuVC {
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(currentColumn, currentRow))] { // writing to the dictionary
                 
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
-                print("marked eventsOfTimeBlockBeingMarked[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
                 
-                if eventsOfBlockBeingTagged[eventIndex].eventStatus == .deferred {                          print("! you deferred it...")
-                }
+                print("marked eventsOfTimeBlockBeingMarked[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
+                if eventsOfBlockBeingTagged[eventIndex].eventStatus == .deferred {print("! you deferred it...")}
+                
                 eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
                 
             } else {print("no item")}
@@ -43,9 +43,8 @@ extension PopupMenuVC {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {                                        //print("selected popup cell")
                 classifierVC.view.removeFromSuperview()
                 classifierViewDisplayed = false
-                
-                //timetableVC.reloadCV()
-                timetableVC.processEventsSinceLastLogin(layout: timetableVC.downcastLayout!)        //; print("started processing from here")
+
+                timetableVC.processEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
                 timetableVC.reloadCV()
             }
             

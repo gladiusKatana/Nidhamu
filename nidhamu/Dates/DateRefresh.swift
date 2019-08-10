@@ -6,19 +6,19 @@ func processCurrentDate() {
     //print(formattedDateString(Date(), comment: "process dates @ ", short: false))
     
     nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows
-    nowColumn = weekdaysAbbreviated.firstIndex(of: weekday)! + timetableLayout.lockedHeaderSections;         //print("nowCell: \([nowColumn, nowRow])")
+    nowColumn = weekdaysAbbreviated.firstIndex(of: weekday)! + timetableLayout.lockedHeaderSections;    //print("nowCell: \([nowColumn, nowRow])")
     
     if !reloadedFromHourTickingOver {
         if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections {
             
-            //print("new week")
+            print("new week")
             
             lastLoginDateComponents = [year, month, day, weekday, hour, minute]
             lastLoggedInDate = dateFromComponents(lastLoginDateComponents)
             //pryntLastLoginDate()
             //pryntCurrentDate()
         }
-        //else {print("new hour")}
+        else {print("new hour")}
         
         reloadedFromHourTickingOver = true
     }
@@ -26,7 +26,7 @@ func processCurrentDate() {
 
 extension CollectionVC {
     
-    func periodicDateRefresh(completion: () -> ()) {                                                         //print("·", terminator: "")
+    func periodicDateRefresh(completion: () -> ()) {                                                    //print("·", terminator: "")
         
         if "\(Date())".contains(":59:") {
             reloadedFromHourTickingOver = false

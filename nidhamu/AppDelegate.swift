@@ -4,59 +4,8 @@ import UIKit
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-//    var orientationLock = UIInterfaceOrientationMask.portrait         // set orientations you want to be allowed in this property by default
-//    //var enableAllOrientation = true
-//     var restrictRotation:UIInterfaceOrientationMask = .portrait
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
-        
-//        func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask
-//        {
-//            return .portrait //self.restrictRotation
-//        }
-        
-
-//        func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-//
-////            if (enableAllOrientation == true) {
-////                return UIInterfaceOrientationMask.allButUpsideDown
-////            }
-//
-//            return UIInterfaceOrientationMask.portrait
-//        }
-        
-        
-//        func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-//
-//            if let rootViewController = window?.rootViewController?.presentedViewController {
-//
-//                // Using class kind
-//
-////                 if rootViewController.isKind(of: YourViewControllerClass.self) {
-////                 return .allButUpsideDown
-////                 }
-//
-//                // Or Using a selector -> Put this in the ViewController you want to rotate: @objc func canRotate() -> Void {}
-//
-//                if (rootViewController.responds(to: Selector("canRotate"))) {
-//                    return .allButUpsideDown;
-//                }
-//            }
-//
-//            // Only allow portrait (standard behaviour)
-//            return .portrait;
-//        }
-        
-        
-//        func application(_ application: UIApplication,
-//                         supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-//            //return [.portrait, .landscape]
-//            //return .landscape
-//            //return .portrait
-//            return self.orientationLock
-//        }
-        
         
         var statusBar = UIView()
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -95,28 +44,4 @@ import UIKit
         return true
     }
 }
-
-
-
-
-
-//struct AppUtility {
-//    
-//    static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {                //print("---------------------locked")
-//        
-//        if let appDelgat = UIApplication.shared.delegate as? AppDelegate {
-//            appDelgat.orientationLock = orientation
-//        }
-//    }
-//    
-//    // OPTIONAL Added method to adjust lock and rotate to the desired orientation
-//    
-//    static func lockOrientation(_ orientation: UIInterfaceOrientationMask,
-//                                andRotateTo rotateOrientation:UIInterfaceOrientation) {     print("---------------------locked & rotated")
-//        
-//        self.lockOrientation(orientation)
-//        
-//        UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
-//    }
-//}
 
