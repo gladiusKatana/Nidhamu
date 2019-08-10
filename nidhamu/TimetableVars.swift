@@ -33,7 +33,7 @@ var selectedTimeBlockPath = defaultPathOffOfView;   var previousSelectedTimeBloc
 var nowRow = 0;                                     var nowColumn = 0
 var eventIndex = 0;                                 var eventsInBlockToBeProcessed = 0
 
-var reloadedFromHourTickingOver = false;            var textFieldDisplayed = false
+var reloadedFromHourTickingOver = true;             var textFieldDisplayed = false
 var savedTimeBlocksForProcessing = false;           var classifierViewDisplayed = false
 
 var globalEventIdentifier = "(event)";              var defaultEmptyEventDescription = "❒"

@@ -28,7 +28,7 @@ extension CollectionVC {
     
     func periodicDateRefresh(completion: () -> ()) {                                                    //print("·", terminator: "")
         
-        if "\(Date())".contains(":59:") {
+        if "\(Date())".contains(":59:5") {
             reloadedFromHourTickingOver = false
         }
         

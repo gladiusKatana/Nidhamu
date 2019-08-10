@@ -60,6 +60,7 @@
 		062516D822D6CF4200EBB4C8 /* VCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516AB22D6CF4200EBB4C8 /* VCType.swift */; };
 		062CDAA122E0033400848D78 /* Pinching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CDAA022E0033400848D78 /* Pinching.swift */; };
 		0631914422E2C5F5004DE476 /* DateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631914322E2C5F5004DE476 /* DateRange.swift */; };
+		0682A49122FE5F0A00CE8075 /* AddPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682A49022FE5F0A00CE8075 /* AddPopup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		062516AB22D6CF4200EBB4C8 /* VCType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCType.swift; sourceTree = "<group>"; };
 		062CDAA022E0033400848D78 /* Pinching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinching.swift; sourceTree = "<group>"; };
 		0631914322E2C5F5004DE476 /* DateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateRange.swift; path = ../C/DateRange.swift; sourceTree = "<group>"; };
+		0682A49022FE5F0A00CE8075 /* AddPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 				062516A622D6CF4200EBB4C8 /* CellContents.swift */,
 				0625169A22D6CF4200EBB4C8 /* CellUI.swift */,
 				0625169822D6CF4200EBB4C8 /* TagEvent.swift */,
+				0682A49022FE5F0A00CE8075 /* AddPopup.swift */,
 				0625169522D6CF4200EBB4C8 /* io */,
 				0625169C22D6CF4200EBB4C8 /* PCellPath.swift */,
 				0625169422D6CF4200EBB4C8 /* PopupVC.swift */,
@@ -480,6 +483,7 @@
 				062516C122D6CF4200EBB4C8 /* Prynts.swift in Sources */,
 				062516C422D6CF4200EBB4C8 /* PopupVC.swift in Sources */,
 				062516D522D6CF4200EBB4C8 /* TestSquare.swift in Sources */,
+				0682A49122FE5F0A00CE8075 /* AddPopup.swift in Sources */,
 				062516B922D6CF4200EBB4C8 /* Layout.swift in Sources */,
 				062516B622D6CF4200EBB4C8 /* Sizes.swift in Sources */,
 				062516D122D6CF4200EBB4C8 /* SetTopVC.swift in Sources */,
