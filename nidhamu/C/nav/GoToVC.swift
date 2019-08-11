@@ -8,7 +8,7 @@ extension CollectionVC {
         if topVC != vc || !rePresentedVCFromButton {
             
             if vc == todoListVC {                                                   //print("time block being tested: \(timeBlock)")
-                if let events = eventsAtIndexPath[timeBlock] {                  //eventsAt IndexPath[previous TimeBlock]
+                if let events = eventsAtIndexPath[timeBlock] {                      //eventsAt IndexPath[previous TimeBlock]
                     todoListVC.downcastLayout!.rows = events.count
                 }
             }

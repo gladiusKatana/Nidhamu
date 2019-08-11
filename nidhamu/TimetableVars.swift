@@ -1,7 +1,6 @@
 // TimetableVars    ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-
 var lastLoggedInDate = Date()
 var selectedCellDate = Date()
 

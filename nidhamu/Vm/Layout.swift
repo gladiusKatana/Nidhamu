@@ -37,10 +37,12 @@ class CustomFlowLayout : UICollectionViewFlowLayout {
         else if cellWidth != nil && cellHeight == nil   {cellDimensionsMode = .widthHardcoded}
             
         else    {cellDimensionsMode = .neitherHardcoded}//print(cellDimensionsMode.simpleDescription())//; print(squareCellMode.simpleDescription())
+        
         calculateSizes()
         self.cellWidth = cellWd;   self.cellHeight = cellHt
         //drawTestSquare()                              //print("status  \(statusBarHeight) / \(lastStatusBarHeight)  launch width  \(launchWidth)")
     }
+    
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {return true}
     override func invalidateLayout() {super.invalidateLayout()}

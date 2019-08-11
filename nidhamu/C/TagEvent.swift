@@ -18,7 +18,7 @@ extension CollectionVC {
             }
         } else {                                                                                    //print("paths to process empty")
             self.downcastLayout?.autoFitHScale = 1
-            eventArraysToProcess.removeAll() //* see note at-bottom of DateRange.swift
+            eventArraysToProcess.removeAll()        //* see note at-bottom of DateRange.swift
             
             if vcType == .hours {
                 defaultSaveData(showDate: true)

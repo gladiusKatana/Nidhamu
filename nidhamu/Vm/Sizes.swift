@@ -3,7 +3,7 @@ import UIKit
 
 extension CustomFlowLayout {
     
-    override var collectionViewContentSize: CGSize {                                                            //print("size = \(contentSize)")
+    override var collectionViewContentSize: CGSize {                                        //print("size = \(contentSize)")
         let w = CGFloat(cols) * widthPlusSpace
         let h = CGFloat(rows) * heightPlusSpace
         return CGSize(width: w, height: h)
@@ -18,7 +18,7 @@ extension CustomFlowLayout {
             let keyWindow = UIApplication.shared.keyWindow!
             frame = keyWindow.frame
         }
-        else {                                          //* In this app, presentPopupViewToMarkEvents() initializes the popup's frame anyway
+        else {                                          //* In this app, the popup's frame is initialized by presentPopupViewToMarkEvents() anyway
             if let safeFrame = customFrame {
                 frame = safeFrame
             } else {

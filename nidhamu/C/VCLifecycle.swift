@@ -1,7 +1,7 @@
 // VCLifecycle      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-extension CollectionVC { //* will try to shorten this one, soon
+extension CollectionVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,19 +16,17 @@ extension CollectionVC { //* will try to shorten this one, soon
             print("💾\(vcType)\(str)")                          // disk emoji means loaded
             setTopViewController()
         }
-        periodicDateRefresh(){kickoffTimer()}   // if you want to check the date then do the timer kickoff ('start on the 0th callback')
-        //kickoffTimer()                        // if you want to do the timer kickoff then check the date ('start on the 1st callback')
+        periodicDateRefresh(){kickoffTimer()}                   // checks the date then does the timer kickoff ('starts on the 0th callback')
+        //kickoffTimer()                                        // does the timer kickoff then checks the date ('starts on the 1st callback')
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if vcType == .hours {
             setupViewTitle("Timetable", numLines: 1, alignment: .left)
-        }
-        else {                                                  // if vcType is the other nav-controller-embedded one, ie todoList VC
+        } else {                                                  // if vcType is the other nav-controller-embedded one, ie todoList VC
             setupViewTitle(formattedDateString(selectedCellDate, roundedDown: true, prefix: "Tasks", suffix: "", short: true), numLines: 1, alignment: .left)
         }
-        
         if rePresentedVCFromButton { var str = ""
             rePresentedVCFromButton = false
             reloadCV()

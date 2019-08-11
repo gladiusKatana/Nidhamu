@@ -5,10 +5,12 @@ class CustomCell: UICollectionViewCell {
     
     static let reuseIdentifier = "CustomCell"
     static let popupReuseIdentifier = "CustomPopupCell"
-    
     lazy var titleLabel = UILabel()
-    var cellColour = UIColor.clear;     var cellDate = Date()
-    var xyCoordinate = [-2, -2];        var markedForItems = false
+    
+    var cellColour = UIColor.clear
+    var cellDate = Date()
+    var xyCoordinate = [-2, -2]
+    var markedForItems = false
     //var event = SimpleEvent() // may add this as a property of a cell; or may simply keep it in a detached data structure (dictionary) as it is now
     
     override init(frame: CGRect) {

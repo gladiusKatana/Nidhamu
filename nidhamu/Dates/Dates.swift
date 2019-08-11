@@ -20,7 +20,12 @@ func displayDate(_ inputDate: Date, roundedDown: Bool)
 
 func formattedDateString(_ date: Date, roundedDown: Bool, prefix: String, suffix: String, short: Bool) -> String {
     let (yr, mnthString, dayI, wkday, wkdayLong, hr, min) = displayDate(date, roundedDown: roundedDown)
-    let minTwoDigits = minuteStringShowingTwoDigits(min)
+    
+    //let minTwoDigits = minuteStringShowingTwoDigits(min)
+    
+    var minTwoDigits = "\(minute)"
+    if min < 10 {minTwoDigits = "0\(min)"}
+    
     var ampm = ""; if hr < 13 {ampm = "am"} else {ampm = "pm"}
     
     if short {
@@ -34,11 +39,5 @@ func formattedDateString(_ date: Date, roundedDown: Bool, prefix: String, suffix
             return "\(prefix) \(wkday). \(mnthString.prefix(3)) \(dayI) @ \(hr):\(minTwoDigits)\(suffix)"
         }
     }
-}
-
-func minuteStringShowingTwoDigits(_ minute: Int) -> String { //*defunctionify me
-    var minTwoDigits = "\(minute)"
-    if minute < 10 {minTwoDigits = "0\(minute)"}
-    return minTwoDigits
 }
 

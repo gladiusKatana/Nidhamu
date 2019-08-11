@@ -12,7 +12,7 @@ extension CollectionVC {
         else {
             cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
             cell.titleLabel.textColor = cellTextDefaultColour
-            //animateCellColourBack(cell:cell, originalColour: cell.cellColour)
+            //animateCellColourBack(cell:cell, originalColour: cell.cellColour) //*
         }
     }
     

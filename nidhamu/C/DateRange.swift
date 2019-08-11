@@ -13,7 +13,7 @@ extension CollectionVC {
             
             if oneWeekAgo >= lastLoggedInDate && oneWeekAgo <= Date() - TimeInterval(3600) { // stop 1 time block short of the now-cell
                 
-                cell.backgroundColor = niceOrangeLight                      //! shows up momentarily after launch on ipad mini 4, landscape
+                cell.backgroundColor = niceOrangeLight                                  //! shows momentarily after launch on ipad mini 4, landscape
                 cell.cellColour = niceOrangeLight
                 
                 if formattedDateString(lastLoggedInDate, roundedDown: true, prefix: "", suffix: "", short: true)
@@ -26,14 +26,16 @@ extension CollectionVC {
             
             if formattedDateString(Date(), roundedDown: true, prefix: "", suffix: "", short: true)
                 == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
-                cell.titleLabel.text = "now"                                                //; print("now-cell: [\(column), \(row)]")
+                cell.titleLabel.text = "now"                                            //; print("now-cell: [\(column), \(row)]")
                 cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
             }
         }
     }
     
     func prepareToProcessEventsSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
-        if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {        //cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
+        if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {
+            //cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
+            
             if !savedTimeBlocksForProcessing {
                 if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)} //* see note below
                 if !pathsToProcess.contains([column, row]) {

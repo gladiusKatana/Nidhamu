@@ -9,9 +9,8 @@ extension AppDelegate {
 //        } else {
         print(s)
 //        }
-
+        
         DispatchQueue.main.asyncAfter(deadline: .now()) {topVC.reloadCV()}
-       
         defaultLoadData(showDate: false)
     }
     
@@ -21,9 +20,7 @@ extension AppDelegate {
         // 1-way bool (stays true, since dismissing then reopening app causes visual glitch over remaining lifecycle)
         
         checkOrientation()
-        if currentOrientation == "landscape" {
-            print("returned from landscape")
-        }
+        if currentOrientation == "landscape" {print("returned from landscape")}
     }
     
     

@@ -1,11 +1,9 @@
 // Vars             ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-
 var globalKeyWindow = UIApplication.shared.keyWindow!
 
 var navController: UINavigationController? = UINavigationController()
-
 
 var xOffSet = CGFloat(0);               var yOffset = CGFloat(0);               var textFieldY = CGFloat(0)
 

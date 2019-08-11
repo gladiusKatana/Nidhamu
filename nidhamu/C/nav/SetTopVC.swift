@@ -5,7 +5,7 @@ extension CollectionVC {
     
     func setTopViewController() {
         
-        guard let viewControllers = self.navigationController?.viewControllers else { // despite the s, should only contain 1 view controller...
+        guard let viewControllers = self.navigationController?.viewControllers else { // despite the s, should only contain 1 view controller
             print("...could not bind view controller array")
             return
         }

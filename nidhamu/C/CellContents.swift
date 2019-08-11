@@ -16,7 +16,7 @@ extension CollectionVC {
                     cell.titleLabel.text = events[0].eventDescription
                 }
                 else {
-                    cell.titleLabel.text = "(\(events.count) items)"
+                    cell.titleLabel.text = "(\(events.count))"
                 }
             }
             
@@ -24,7 +24,7 @@ extension CollectionVC {
             
             cell.cellDate = selectedCellDate
             
-            guard let eventAtTimeBlock = eventsAtIndexPath[timeBlock] else {    //eventsAt IndexPath[previous TimeBlock]
+            guard let eventAtTimeBlock = eventsAtIndexPath[timeBlock] else {
                 cell.titleLabel.text = "(no items yet)"; return
             }
             

@@ -5,6 +5,7 @@ extension PopupMenuVC {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.popupReuseIdentifier, for: indexPath) as! CustomCell
         let customLayout = downcastLayout!
         let row = indexPath.item
