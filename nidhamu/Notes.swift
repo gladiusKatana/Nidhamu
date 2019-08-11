@@ -5,12 +5,15 @@
  
  (1st commit)                                                           July. 08 2019
  
- process time block rolled-over-to automatically                        Sat Aug 10
+ * extra week-date row (may or may not keep based on user feedback)
+ check & double check time block processing & saving logic
+                                                                        Sun Aug 11      *will be spending most of Mon. - Wed.,...
+                                                                                        ...volunteering at a conference (futurist19.com)
  
- mark item recurring
  timetableVC deferral-date selection mode
  cascading deferrals
-                                                                        Sun Aug 11
+ mark item recurring (currently recurring is default)
+                                                                        Thurs Aug 15
  
  
  archive data (eventsAtIndexPath; eventsAtDate)
@@ -25,11 +28,9 @@
                                                                         Sun Aug 18
  
  
- * extra week-date row
  * timetableVC keyboard adaptive
  * truncate long label with …
                                                                         soon
- 
  settingsmenu
  darkMode
  buttons
