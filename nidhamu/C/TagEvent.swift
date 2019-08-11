@@ -19,12 +19,6 @@ extension CollectionVC {
         } else {                                                                                    //print("paths to process empty")
             self.downcastLayout?.autoFitHScale = 1
             eventArraysToProcess.removeAll()        //* see note at-bottom of DateRange.swift
-            
-//            if vcType == .hours {
-//                defaultSaveData(showDate: true)
-//                defaultLoadData(showDate: false)
-                //print("✔︎done processing events... \n...event arrays to process: \(eventArraysToProcess)... paths to process: \(pathsToProcess)")
-//            }
         }
     }
 }
