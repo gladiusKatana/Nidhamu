@@ -35,8 +35,8 @@ extension CollectionVC {
             case .hours:                                                        //; print("text: \(text)")
                 reloadCV()
                 
-            case .todoList:                                     //print("selected time block: \([selectedPath[0], selectedPath[1]])")
-                gotoView(vc: todoListVC)                        // re-presents the view & reloads its data, to display updated todo list
+            case .todoList:                                                     //print("selected block: \([selectedPath[0], selectedPath[1]])")
+                gotoView(vc: todoListVC)                                        // re-presents view & reloads its data, to display updated todo list
                 
             default: print("unrecognized collection view type")}
         } else {
