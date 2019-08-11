@@ -28,15 +28,14 @@ extension CollectionVC {
         let textEntered = textField.text!
         
         if !(textEntered == "" || textEntered == " " || textEntered == "  ") {  // if user (for some reason) enters > 2 whitespaces, well, it's saved
+            addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
             
             switch vcType {
                 
             case .hours:                                                        //; print("text: \(text)")
-                addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
                 reloadCV()
                 
             case .todoList:                                     //print("selected time block: \([selectedPath[0], selectedPath[1]])")
-                addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
                 gotoView(vc: todoListVC)                        // re-presents the view & reloads its data, to display updated todo list
                 
             default: print("unrecognized collection view type")}
