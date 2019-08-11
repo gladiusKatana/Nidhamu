@@ -35,7 +35,7 @@ extension CollectionVC {
                 reloadCV()
                 
             case .todoList:                         //print("selected time block: \([previousSelectedPath[0], previousSelectedPath[1]])")
-                addToTimeBlocks(column: previousSelectedTimeBlockPath[0], row: previousSelectedTimeBlockPath[1], textEntered: textEntered)
+                addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
                 gotoView(vc: todoListVC)            // reloads/re-presents the view to display the updated list
                 
             default: print("unrecognized collection view type")}

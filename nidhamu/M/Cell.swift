@@ -11,7 +11,7 @@ class CustomCell: UICollectionViewCell {
     var cellDate = Date()
     var xyCoordinate = [-2, -2]
     var markedForItems = false
-    //var event = SimpleEvent() // may add this as a property of a cell; or may simply keep it in a detached data structure (dictionary) as it is now
+    //var event = SimpleEvent() // may add as a property of a cell; or may simply keep it in a detached data structure (dictionary) as it is now
     
     override init(frame: CGRect) {
         super.init(frame: frame)

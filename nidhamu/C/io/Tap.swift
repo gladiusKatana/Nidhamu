@@ -36,7 +36,6 @@ extension CollectionVC {
                 
                 selectedTimeBlockPath = [column, row]                               //; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
-                previousSelectedTimeBlockPath = [column, row]
                 
                 if eventsAtIndexPath[timeBlock] == nil {
                     formatAndPresentTextField(dateString: dateString)
