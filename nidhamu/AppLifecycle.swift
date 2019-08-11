@@ -11,7 +11,7 @@ extension AppDelegate {
 //        }
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {topVC.reloadCV()}
-        defaultLoadData(showDate: false)
+        defaultLoadData(showDate: true)
     }
     
     

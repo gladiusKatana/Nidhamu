@@ -4,15 +4,20 @@ import UIKit
 func defaultLoadData(showDate: Bool) {                                                      //print("(load using defaults)\n")
     
     let defaults = UserDefaults.standard
+    
     if let components = defaults.array(forKey: "savedLastLoginDate") {
         lastLoginDateComponents = components  
         lastLoggedInDate = dateFromComponents(lastLoginDateComponents)
-        if showDate {pryntLastLoginDate(); pryntCurrentDate()}
+        if showDate {
+            pryntLastLoginDate()
+            pryntCurrentDate()
+        }
     } else {
         let (yr, mo, dy, wkd, _, hr, mn) = displayDate(Date(), roundedDown: true)
         lastLoginDateComponents = [yr, mo, dy, wkd, hr, mn]
         //print("\nfirst login")
     }
+    
     eventPathArrays = defaults.array(forKey: "savedTimeBlockPaths") as? [[Int]] ?? []
     eventDescriptionArrays = defaults.array(forKey: "savedTodoListItems") as? [[String]] ?? []
     eventStatusArrays = defaults.array(forKey: "savedTodoListStatuses") as? [[Int]] ?? []
