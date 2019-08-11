@@ -38,12 +38,15 @@ func defaultSaveData(showDate: Bool) {
     }
     //pryntSavedArrays()
     //lastLoginDateComponents = [year, month, day, weekday, hour, minute] // setting the /latest login date (for saving) as the date this minute
+    
     let (yr, mnth, dy, wkdy, _, hr, mn) = displayDate(Date(), roundedDown: false)
     lastLoginDateComponents = [yr, mnth, dy, wkdy, hr, mn]
+    defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")
+    
     defaults.set(eventPathArrays, forKey: "savedTimeBlockPaths")
     defaults.set(eventDescriptionArrays, forKey: "savedTodoListItems")
     defaults.set(eventStatusArrays, forKey: "savedTodoListStatuses")
     defaults.set(eventDateArrays, forKey: "savedTodoListDates")
-    defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")
+    
 }
 

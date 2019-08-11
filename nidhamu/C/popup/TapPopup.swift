@@ -8,9 +8,7 @@ extension PopupMenuVC {
         
         let layout = downcastLayout!; let row = indexPath.item; let column = indexPath.section
         
-        if row >= layout.lockedHeaderRows
-            && column >= layout.lockedHeaderSections {
-            
+        if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             let currentColumn = pathsToProcess.first![0]; let currentRow = pathsToProcess.first![1]     // ie, current item path being marked
             
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(currentColumn, currentRow))] { // writing to the dictionary
@@ -45,6 +43,12 @@ extension PopupMenuVC {
                 
                 timetableVC.processEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
                 timetableVC.reloadCV()
+                
+                if  pathsToProcess.isEmpty {
+                    defaultSaveData(showDate: true)
+                    defaultLoadData(showDate: false)
+                    print("✔︎done processing events *to process: event arrays \(eventArraysToProcess); paths \(pathsToProcess)")
+                }
             }
             
         } else {print("selected header")}
