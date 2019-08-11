@@ -18,7 +18,6 @@ extension PopupMenuVC {
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
                 
                 //print("marked eventsOfTimeBlockBeingMarked[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
-                //if eventsOfBlockBeingTagged[eventIndex].eventStatus == .deferred {print("! you deferred it...")}
                 
                 eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
                 

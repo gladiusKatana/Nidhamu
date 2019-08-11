@@ -3,12 +3,14 @@ import UIKit
 
 extension AppDelegate {
     
-    func applicationDidBecomeActive(_ application: UIApplication) {                                                 let s = "🔅became active"
+    func applicationDidBecomeActive(_ application: UIApplication) {
+//        let s = "🔅became active"
 //        if firstReenteredForeground {
-//            customApplicationStatusPrint(applicationState: str)
+//            customApplicationStatusPrint(applicationState: s)
 //        } else {
-        print(s)
+//        print(s)
 //        }
+        print("🔅became active")
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {topVC.reloadCV()}
         defaultLoadData(showDate: true)

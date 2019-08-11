@@ -3,6 +3,7 @@ import UIKit
 
 func processCurrentDate() {
     (year, month, day, weekday, weekdayLong, hour, minute) = displayDate(Date(), roundedDown: true)
+    
     //print(formattedDateString(Date(), comment: "process dates @ ", short: false))
     
     nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows

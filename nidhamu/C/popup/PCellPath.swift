@@ -10,11 +10,12 @@ extension PopupMenuVC {
         let customLayout = downcastLayout!
         let row = indexPath.item
         
-        if row < customLayout.lockedHeaderRows { //|| column < customLayout.lockedHeaderSections { // popup menu design here has no need for > col.s
+        if row < customLayout.lockedHeaderRows { //|| column < customLayout.lockedHeaderSections { // our popup menu has no need for header columns
             cell.backgroundColor = headerColour
-            cell.titleLabel.text = "Mark '\(globalEventIdentifier)':"     //"✔︎ Mark Event:" // ← ⇦ ◄ ⬅️ still looking for a large enough ascii arrow
+            cell.titleLabel.text = "Mark '\(globalEventIdentifier)':"   //"✔︎ Mark Event:" //← ⇦ ◄ ⬅️ // didn't find a large enough ascii arrow
             cell.titleLabel.textColor = headerTextDefaultColour
-        } else {
+        }
+        else {
             cell.backgroundColor = .clear//.lightGray
             cell.titleLabel.text = EventStatus.allCases[row - 1].caseName()
             cell.titleLabel.textColor = .black//headerColour

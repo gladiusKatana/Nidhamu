@@ -12,12 +12,12 @@ class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRe
         eventField.font = UIFont.systemFont(ofSize: 15)
         eventField.borderStyle = UITextField.BorderStyle.roundedRect
         eventField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        ///eventField.clearsOnBeginEditing = true
         eventField.keyboardType = UIKeyboardType.default
         eventField.returnKeyType = UIReturnKeyType.done
         eventField.autocorrectionType = UITextAutocorrectionType.no
         eventField.clearButtonMode = UITextField.ViewMode.whileEditing
         eventField.isEnabled = true
+        ///eventField.clearsOnBeginEditing = true
         return eventField
     }()
     

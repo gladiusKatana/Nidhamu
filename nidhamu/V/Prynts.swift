@@ -4,7 +4,10 @@ import UIKit
 
 // Called when SAVING:
 
-func pryntSavedArrays() { let consoleAlignmentSpace = "                     "
+func pryntSavedArrays() {
+    
+    let consoleAlignmentSpace = "                     "
+    
     //print("\n\(consoleAlignmentSpace)\(eventPathArrays.count) time blocks: \n\(consoleAlignmentSpace)\(eventPathArrays)")
     print("\n\(consoleAlignmentSpace)\(eventDescriptionArrays.count) blocks' events: \n\(consoleAlignmentSpace)\(eventDescriptionArrays)")
     print("\n\(consoleAlignmentSpace)\(eventStatusArrays.count) blocks' event-status raw values: \n\(consoleAlignmentSpace)\(eventStatusArrays)")

@@ -11,10 +11,12 @@ func dateFromComponents(_ array: [Any]) -> Date {
     let minuteLoaded = array[5] as! Int                             //; print("minute loaded: \(minuteLoaded)")
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy/MM/dd HH:mm"
+    
     guard let date = formatter.date(from: "\(yearLoaded)/\(monthLoadedInt)/\(dayLoaded) \(hourLoaded):\(minuteLoaded)") else {
         print("could not create date with loaded input, returning current date instead")
         return Date()
     }
+    
     return date
 }
 
@@ -31,6 +33,7 @@ func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
         }
         formattedDatesArrays.append(timeBlockDateStrings)
     }
+    
     return formattedDatesArrays
 }
 

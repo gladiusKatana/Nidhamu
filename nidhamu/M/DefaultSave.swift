@@ -3,15 +3,17 @@ import UIKit
 
 func defaultSaveData(showDate: Bool) {                      
     
-    if showDate{print(formattedDateString(Date(), roundedDown: false, prefix: "✔︎saved to your device on", suffix: "", short: false))}
+    if showDate {print(formattedDateString(Date(), roundedDown: false, prefix: "✔︎saved to your device on", suffix: "", short: false))}
+    
     let defaults = UserDefaults.standard
+    
     eventPathArrays.removeAll(); eventDescriptionArrays.removeAll(); eventStatusArrays.removeAll(); eventDateArrays.removeAll()
     
     for key in eventsAtIndexPath.keys {
-        let (a, b) = key.values                                                                         //; print("key: [\(key)  values \((a, b))")
+        let (a, b) = key.values                                                                           //; print("key: [\(key)  values \((a, b))")
         guard let val = eventsAtIndexPath[key] else {print("could not create event at index path key"); return}
         guard let todo = val.last?.eventDescription else {print("no description at event value"); return}
-        if todo != defaultEmptyEventDescription {                                                       //; print(\((a, b)): \(todo))
+        if todo != defaultEmptyEventDescription {                                                         //; print(\((a, b)): \(todo))
             eventPathArrays.append([a, b])
         }
     }

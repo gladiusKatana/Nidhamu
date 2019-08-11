@@ -26,7 +26,7 @@ var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int(
 
 var timerForShowScrollIndicator: Timer?
 
-var defaultPathOffOfView = [-3, -3];
+var defaultPathOffOfView = [-3, -3]
 var selectedTimeBlockPath = defaultPathOffOfView
 
 var nowRow = 0;                                     var nowColumn = 0

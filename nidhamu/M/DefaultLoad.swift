@@ -12,17 +12,16 @@ func defaultLoadData(showDate: Bool) {                                          
             pryntLastLoginDate()
             pryntCurrentDate()
         }
-    } else {
+    } else {                                                                                //print("\nfirst login")
         let (yr, mo, dy, wkd, _, hr, mn) = displayDate(Date(), roundedDown: true)
         lastLoginDateComponents = [yr, mo, dy, wkd, hr, mn]
-        //print("\nfirst login")
     }
     
     eventPathArrays = defaults.array(forKey: "savedTimeBlockPaths") as? [[Int]] ?? []
     eventDescriptionArrays = defaults.array(forKey: "savedTodoListItems") as? [[String]] ?? []
     eventStatusArrays = defaults.array(forKey: "savedTodoListStatuses") as? [[Int]] ?? []
     eventDateArrays = defaults.array(forKey: "savedTodoListDates") as? [[[Any]]] ?? [[[]]]
-    populateDictionaryFromDefaults()    //; printSavedArrays()
+    populateDictionaryFromDefaults()                                                        //; printSavedArrays()
 }
 
 func populateDictionaryFromDefaults() {

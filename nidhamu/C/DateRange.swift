@@ -11,10 +11,10 @@ extension CollectionVC {
         else {
             let oneWeekAgo = cell.cellDate - TimeInterval(86400 * 7)
             
-            if oneWeekAgo >= lastLoggedInDate && oneWeekAgo <= Date() - TimeInterval(3600) { // stop 1 time block short of the now-cell
+            if oneWeekAgo >= lastLoggedInDate && oneWeekAgo <= Date() - TimeInterval(3600) {            // stops 1 time block short of the now-cell
                 
-                cell.backgroundColor = niceOrangeLight                                  //! shows momentarily after launch on ipad mini 4, landscape
-                cell.cellColour = niceOrangeLight
+                cell.backgroundColor = niceOrangeLight                                                  //* shows momentarily after launch...
+                cell.cellColour = niceOrangeLight                                                       //  ... on ipad mini 4, landscape
                 
                 if formattedDateString(lastLoggedInDate, roundedDown: true, prefix: "", suffix: "", short: true)
                     == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
@@ -26,7 +26,7 @@ extension CollectionVC {
             
             if formattedDateString(Date(), roundedDown: true, prefix: "", suffix: "", short: true)
                 == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
-                cell.titleLabel.text = "now"                                            //; print("now-cell: [\(column), \(row)]")
+                cell.titleLabel.text = "now"                                                            //; print("now-cell: [\(column), \(row)]")
                 cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
             }
         }
@@ -37,7 +37,7 @@ extension CollectionVC {
             //cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             
             if !savedTimeBlocksForProcessing {
-                if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)} //* see note below
+                if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}         //* see note below
                 if !pathsToProcess.contains([column, row]) {
                     pathsToProcess.append([column, row])
                 }
@@ -48,5 +48,5 @@ extension CollectionVC {
         }
     }
 }
-/*                                                                                                * does not catch test case of:
+/*                                                                                                      * does not catch test case of:
  adding an event, advancing device date setting by 1 week, returning to app (now in event-marking mode), then ...changing your mind... and dismissing app to background again, only to reopen it and resume your event-tagging in a few moments... this test case causes the reload-CV method call that occurs upon resuming the app (even if the date hasn't changed) to sweep over all time blocks, in prepareToProcessEventsSinceLastLogin(:)... which repopulates the events-to-process array unnecessarily.  Current solution should work fine though (see TagEvent.swift, processEventsSinceLastLogin(:) method, near bottom of method); will monitor this over next few tests.⚔️    )*/

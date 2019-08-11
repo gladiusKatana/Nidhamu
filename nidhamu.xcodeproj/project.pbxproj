@@ -213,9 +213,6 @@
 				0625167B22D6CF4100EBB4C8 /* M */,
 				0625168C22D6CF4200EBB4C8 /* V */,
 				0625168122D6CF4100EBB4C8 /* Vm */,
-				062516A922D6CF4200EBB4C8 /* Orientation.swift */,
-				0625168722D6CF4100EBB4C8 /* Prepare.swift */,
-				062516A422D6CF4200EBB4C8 /* RefreshUI.swift */,
 				0625169222D6CF4200EBB4C8 /* C */,
 				062516A722D6CF4200EBB4C8 /* Checks */,
 				0625168922D6CF4100EBB4C8 /* Base.lproj */,
@@ -261,6 +258,7 @@
 			children = (
 				0625168522D6CF4100EBB4C8 /* Layout.swift */,
 				0625168322D6CF4100EBB4C8 /* Attributes.swift */,
+				0625168722D6CF4100EBB4C8 /* Prepare.swift */,
 				0625168222D6CF4100EBB4C8 /* Sizes.swift */,
 				0625168622D6CF4100EBB4C8 /* CellSizing.swift */,
 				0625168422D6CF4100EBB4C8 /* ZIndex.swift */,
@@ -298,8 +296,7 @@
 				0625169822D6CF4200EBB4C8 /* TagEvent.swift */,
 				0682A49022FE5F0A00CE8075 /* AddPopup.swift */,
 				0625169522D6CF4200EBB4C8 /* io */,
-				0625169C22D6CF4200EBB4C8 /* PCellPath.swift */,
-				0625169422D6CF4200EBB4C8 /* PopupVC.swift */,
+				0673571B2300753900DC2CAC /* popup */,
 				0625169E22D6CF4200EBB4C8 /* nav */,
 			);
 			path = C;
@@ -308,7 +305,6 @@
 		0625169522D6CF4200EBB4C8 /* io */ = {
 			isa = PBXGroup;
 			children = (
-				0625169622D6CF4200EBB4C8 /* TapPopup.swift */,
 				0625169722D6CF4200EBB4C8 /* Tap.swift */,
 				062CDAA022E0033400848D78 /* Pinching.swift */,
 				0625169922D6CF4200EBB4C8 /* TextField.swift */,
@@ -320,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				062516A522D6CF4200EBB4C8 /* GoToVC.swift */,
+				062516A422D6CF4200EBB4C8 /* RefreshUI.swift */,
 				062516A322D6CF4200EBB4C8 /* SetTopVC.swift */,
 				062516A022D6CF4200EBB4C8 /* StatusBar.swift */,
 				062516A222D6CF4200EBB4C8 /* NavBar.swift */,
@@ -331,11 +328,22 @@
 		062516A722D6CF4200EBB4C8 /* Checks */ = {
 			isa = PBXGroup;
 			children = (
+				062516A922D6CF4200EBB4C8 /* Orientation.swift */,
 				062516AB22D6CF4200EBB4C8 /* VCType.swift */,
 				062516A822D6CF4200EBB4C8 /* TestSquare.swift */,
 				062516AA22D6CF4200EBB4C8 /* DeviceType.swift */,
 			);
 			path = Checks;
+			sourceTree = "<group>";
+		};
+		0673571B2300753900DC2CAC /* popup */ = {
+			isa = PBXGroup;
+			children = (
+				0625169622D6CF4200EBB4C8 /* TapPopup.swift */,
+				0625169C22D6CF4200EBB4C8 /* PCellPath.swift */,
+				0625169422D6CF4200EBB4C8 /* PopupVC.swift */,
+			);
+			path = popup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

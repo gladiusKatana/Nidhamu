@@ -21,7 +21,7 @@ extension CollectionVC {
                 
                 if !cell.markedForItems { cell.markedForItems = true
                     if selectedTimeBlockPath == defaultPathOffOfView {
-                        UIView.animate(withDuration: 1, delay: 0,                               //* will factor/put in Animations.swift
+                        UIView.animate(withDuration: 1, delay: 0,                               //* factor/put in Animations.swift
                             usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveEaseOut, animations: {
                                 cell.backgroundColor = eventAddingColour
                         }, completion: nil)

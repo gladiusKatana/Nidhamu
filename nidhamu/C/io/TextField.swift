@@ -26,6 +26,7 @@ extension CollectionVC {
         textField.resignFirstResponder(); textField.removeFromSuperview()
         textFieldDisplayed = false
         let textEntered = textField.text!
+        
         if !(textEntered == "" || textEntered == " " || textEntered == "  ") {  // if user (for some reason) enters > 2 whitespaces, well, it's saved
             
             switch vcType {
@@ -34,19 +35,19 @@ extension CollectionVC {
                 addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
                 reloadCV()
                 
-            case .todoList:                         //print("selected time block: \([previousSelectedPath[0], previousSelectedPath[1]])")
+            case .todoList:                                     //print("selected time block: \([selectedPath[0], selectedPath[1]])")
                 addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
-                gotoView(vc: todoListVC)            // reloads/re-presents the view to display the updated list
+                gotoView(vc: todoListVC)                        // re-presents the view & reloads its data, to display updated todo list
                 
             default: print("unrecognized collection view type")}
-        }
-        else { let cells = self.collectionView.visibleCells as! [CustomCell]
-            for cell in cells {
+        } else {
+            for cell in self.collectionView.visibleCells as! [CustomCell] {
                 if cell.xyCoordinate == selectedTimeBlockPath {
                     cell.markedForItems = false; cell.backgroundColor = .red
                 }
             }
         }
+        
         textField.text = ""
         if vcType == .hours {animateSelectedCellColourBack()}
         return true

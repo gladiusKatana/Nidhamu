@@ -23,7 +23,7 @@ extension CollectionVC {
         completion()
     }
     
-    @objc func re_Reload__PossiblyAfterRe_Presenting(vc: CollectionVC) {// remove @objc?    // reload again (and /or potentially re-present)
+    func re_Reload__PossiblyAfterRe_Presenting(vc: CollectionVC) {                          // reload again (and /or potentially re-present)
         if previousOrientation == "landscape" && currentOrientation == "portrait"           // (needed when, e.g., toggling views while in landscape)
             || firstReenteredForeground
         {
