@@ -5,14 +5,13 @@
  
  (1st commit)                                                           July. 08 2019
  
- * extra week-date row (may or may not keep based on user feedback)
+ extra week-date row (may or may not keep based on user feedback)
  check & double check time block processing & saving logic
-                                                                        Sun Aug 11      *will be spending most of Mon. - Wed.,...
+                                                                                        * will be spending most of Mon. - Wed.,...
                                                                                         ...volunteering at a conference (futurist19.com)
- 
  timetableVC deferral-date selection mode
  cascading deferrals
- mark item recurring (currently recurring is default)
+ mark item recurring (currently is default)
                                                                         Thurs Aug 15
  
  
