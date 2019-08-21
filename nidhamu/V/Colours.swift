@@ -41,7 +41,8 @@ var niceOrangeLight = UIColor.rgb(180, g: 70, b: 0, a: 0.5)         //(220, g: 7
 //var skyBackgroundImage = UIImage(named: "skyB")?.withRenderingMode(.alwaysOriginal) // sky background (blue with light clouds)
 //var skyBackgroundColour = UIColor(patternImage: skyBackgroundImage!) //looks pretty nice, may use later
 
-var randomColours = [UIColor.red.cgColor, UIColor.orange.cgColor, UIColor.yellow.cgColor, UIColor.green.cgColor, UIColor.blue.cgColor, UIColor.purple.cgColor, UIColor.white.cgColor] // used in TestSquare.swift
+var randomColours =     // used in TestSquare.swift
+    [UIColor.red.cgColor, UIColor.orange.cgColor, UIColor.yellow.cgColor, UIColor.green.cgColor, UIColor.blue.cgColor, UIColor.purple.cgColor, UIColor.white.cgColor]
 
 extension UIColor {
     static func rgb(_ r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) -> UIColor {

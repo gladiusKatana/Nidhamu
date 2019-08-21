@@ -35,8 +35,8 @@ let nilCatcherFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
 //* Initial value for testing
 //let popupFrame = CGRect(x: timetableLayout.cellWidth! * 2, y: 0, width: timetableLayout.cellWidth!, height: timetableLayout.cellHeight! * 5)
 
-var todoListVC = CollectionVC(.todoList, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: todoListLayout)
 var timetableVC = CollectionVC(.hours, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: 0, collectionViewLayout: timetableLayout)
+var todoListVC = CollectionVC(.todoList, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: todoListLayout)
 var classifierVC = PopupMenuVC(collectionViewLayout: classifierLayout)
 var topVC = CollectionVC(.initial, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: timetableLayout)
 

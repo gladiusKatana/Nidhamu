@@ -43,7 +43,7 @@ extension CollectionVC {
                 }
             }
             
-        default: print("[setCellContents(:)] unrecognized collection view type")}
+        default: print("[timeBlockDateSetup(:)] unrecognized collection view type")}
     }
 }
 
