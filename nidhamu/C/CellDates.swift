@@ -4,36 +4,39 @@ import UIKit
 extension CollectionVC {
     
     func setupHourlyCells(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, looping: Bool, withColours: Bool) {
-
-        cell.titleLabel.font = defaultTimetableCellFont
         
+        cell.cellDate = setDisplayCellDate(baseDate: Date(), cellOffset: layout.lockedHeaderRows - row, cell: cell,
+                                           column: column, row: row, layout: layout, looping: looping, withColours: withColours)
         if row == 1 {
-            let displayCellDate = setDisplayCellDate(baseDate: Date(), cellOffset: 2, cell: cell,
-                                                     column: column, row: row, layout: layout, looping: looping, withColours: withColours)
-            if column <= nowColumn {showDateInTitleLabels(date: displayCellDate, cell: cell);   cell.backgroundColor = lastWeekColour}
+            cell.cellDate = setDisplayCellDate(baseDate: Date(), cellOffset: 3, cell: cell,
+                                               column: column, row: row, layout: layout, looping: looping, withColours: withColours)
+            if column <= nowColumn {showDateInTitleLabels(date: cell.cellDate , cell: cell);   cell.backgroundColor = lastWeekColour}
         }
         else if row == 2 {
             if column >= nowColumn {                                                            cell.backgroundColor = cellDefaultColour
                 if column == nowColumn {
                     let lastWeekDate = Date() - TimeInterval(86400 * 7)
-                    let displayCellDate = setDisplayCellDate(baseDate: lastWeekDate, cellOffset: 2, cell: cell,
-                                                             column: column, row: row, layout: layout, looping: looping, withColours: withColours)
-                    showDateInTitleLabels(date: displayCellDate, cell: cell)
-                } else {
+                    cell.cellDate = setDisplayCellDate(baseDate: lastWeekDate, cellOffset: 2, cell: cell,
+                                                       column: column, row: row, layout: layout, looping: looping, withColours: withColours)
+                    showDateInTitleLabels(date: cell.cellDate, cell: cell)
+                }
+                else {
                     if column > nowColumn {
-                        let displayCellDate = setDisplayCellDate(baseDate: Date(), cellOffset: 2, cell: cell,
-                                                                 column: column, row: row, layout: layout, looping: looping, withColours: withColours)
-                        showDateInTitleLabels(date: displayCellDate, cell: cell)
+                        cell.cellDate = setDisplayCellDate(baseDate: Date(), cellOffset: 2, cell: cell,
+                                                           column: column, row: row, layout: layout, looping: looping, withColours: withColours)
+                        showDateInTitleLabels(date: cell.cellDate, cell: cell)
                     }
                 }
             }
         }
+        else if row == 3 {} // row 3 is covered by the general formula on line 8
+            
         else {
             cell.cellDate = setDisplayCellDate(baseDate: Date(), cellOffset: 0,
-                                                 cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
+                                               cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
             processEventBasedOnDateRange(cell: cell, column: column, row: row, layout: layout)
-//            showDateInTitleLabels(date: cell.cellDate, cell: cell)
         }
+//        showDateInTitleLabels(date: cell.cellDate, cell: cell)
         
         if let earliestEventAddress = pathsToProcess.first {
             if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
@@ -48,7 +51,7 @@ extension CollectionVC {
         
         if column < nowColumn || column == nowColumn && row < nowRow {
             if withColours
-                && ![1,2].contains(row) {
+                && !(1 ..< layout.lockedHeaderRows).contains(row) {
                 cell.backgroundColor = lastWeekColour; cell.cellColour = lastWeekColour
             }
             weekAhead = 1
@@ -57,9 +60,17 @@ extension CollectionVC {
     }
     
     func showDateInTitleLabels(date: Date, cell: CustomCell) {
-        let mo = monthsAbbreviated[Calendar.current.component(.month, from: date) - 1]
-        let dy = Calendar.current.component(.day, from: date)
-        cell.titleLabel.text = "\(mo) \(dy)"
+        
+//        if [2,3].contains(cell.xyCoordinate[1]) {
+//            let hr = Calendar.current.component(.hour, from: date)
+//            let mn = Calendar.current.component(.minute, from: date)
+//            cell.titleLabel.text = "\(hr):\(mn)"
+//        }
+//        else {
+            let mo = monthsAbbreviated[Calendar.current.component(.month, from: date) - 1]
+            let dy = Calendar.current.component(.day, from: date)
+            cell.titleLabel.text = "\(mo) \(dy)"
+//        }
     }
 }
 

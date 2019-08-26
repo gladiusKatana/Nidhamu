@@ -3,10 +3,11 @@ import UIKit
 
 extension CollectionVC {
     
-    func setDefaultColours (cell: CustomCell, cellIsInHeader: Bool) {
+    func setDefaultColours (cell: CustomCell, layout: CustomFlowLayout, cellIsInHeader: Bool) {
         
         if cellIsInHeader
-            || self.vcType == .hours && [1,2].contains(cell.xyCoordinate[1])
+            || self.vcType == .hours
+            && (1 ..< layout.lockedHeaderRows).contains(cell.xyCoordinate[1])
         {
             cell.backgroundColor = headerColour;                //cell.layer.borderColor = UIColor.clear.cgColor
             cell.titleLabel.font = defaultTimetableCellFont;    cell.titleLabel.textColor = headerTextDefaultColour

@@ -11,16 +11,16 @@ extension CollectionVC {
         let row = indexPath.item;   let column = indexPath.section;   cell.xyCoordinate = [column, row]
         
         if row < customLayout.lockedHeaderRows
-            && !([1,2].contains(row))                       // rows 1&2 are not normal headers here: they contains dates, thus are handled in else{}
+            && !((1 ..< customLayout.lockedHeaderRows).contains(row))                   // rows 1-3 contain dates, thus are handled in the else{}
             || column < customLayout.lockedHeaderSections {
             
-            setDefaultColours(cell: cell, cellIsInHeader: true)
+            setDefaultColours(cell: cell, layout: customLayout, cellIsInHeader: true)
             
             setTimeAndDayLabels(cell: cell, column: column, row: row, layout: customLayout)
             
         } else {
             
-            setDefaultColours(cell: cell, cellIsInHeader: false)
+            setDefaultColours(cell: cell, layout: customLayout, cellIsInHeader: false)
             
             timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
             
