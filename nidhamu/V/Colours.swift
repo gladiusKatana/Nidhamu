@@ -13,7 +13,7 @@ var cellTextDefaultColour = graySeven
 var headerTextDefaultColour = UIColor.black
 
 
-var icyBlue = UIColor.rgb(160, g: 190, b: 230, a: 1)                //(150, g: 180, b: 220, a: 1)
+var icyBlue = UIColor.rgb(180, g: 210, b: 240, a: 1)                //(150, g: 180, b: 220, a: 1)
 var darkerIce = UIColor.rgb(130, g: 160, b: 200, a: 1)              //(150, g: 180, b: 220, a: 0.7) //(120, g: 150, b: 180, a: 1)
 //var halfIcyBlue = UIColor.rgb(150, g: 180, b: 220, a: 0.25)
 //var eventTextBlue = UIColor.rgb(50, g: 50, b: 250, a: 1)

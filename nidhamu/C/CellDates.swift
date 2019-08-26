@@ -10,19 +10,22 @@ extension CollectionVC {
         if row == 1 {
             let displayCellDate = setDisplayCellDate(baseDate: Date(), cellOffset: 2, cell: cell,
                                                      column: column, row: row, layout: layout, looping: looping, withColours: withColours)
-            if column <= nowColumn {showDateInTitleLabels(date: displayCellDate, cell: cell)}
+            if column <= nowColumn {showDateInTitleLabels(date: displayCellDate, cell: cell);   cell.backgroundColor = lastWeekColour}
         }
         else if row == 2 {
-            if column == nowColumn {
-                let lastWeekDate = Date() - TimeInterval(86400 * 7)
-                let displayCellDate = setDisplayCellDate(baseDate: lastWeekDate, cellOffset: 2, cell: cell,
-                                                         column: column, row: row, layout: layout, looping: looping, withColours: withColours)
-                showDateInTitleLabels(date: displayCellDate, cell: cell)
-            }
-            if column > nowColumn {
-                let displayCellDate = setDisplayCellDate(baseDate: Date(), cellOffset: 2, cell: cell,
-                                                         column: column, row: row, layout: layout, looping: looping, withColours: withColours)
-                showDateInTitleLabels(date: displayCellDate, cell: cell)
+            if column >= nowColumn {                                                            cell.backgroundColor = cellDefaultColour
+                if column == nowColumn {
+                    let lastWeekDate = Date() - TimeInterval(86400 * 7)
+                    let displayCellDate = setDisplayCellDate(baseDate: lastWeekDate, cellOffset: 2, cell: cell,
+                                                             column: column, row: row, layout: layout, looping: looping, withColours: withColours)
+                    showDateInTitleLabels(date: displayCellDate, cell: cell)
+                } else {
+                    if column > nowColumn {
+                        let displayCellDate = setDisplayCellDate(baseDate: Date(), cellOffset: 2, cell: cell,
+                                                                 column: column, row: row, layout: layout, looping: looping, withColours: withColours)
+                        showDateInTitleLabels(date: displayCellDate, cell: cell)
+                    }
+                }
             }
         }
         else {

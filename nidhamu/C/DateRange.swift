@@ -13,8 +13,8 @@ extension CollectionVC {
             
             if oneWeekAgo >= lastLoggedInDate && oneWeekAgo <= Date() - TimeInterval(3600) {            // stops 1 time block short of the now-cell
                 
-                cell.backgroundColor = niceOrangeLight                                                  //* shows momentarily after launch...
-                cell.cellColour = niceOrangeLight                                                       //  ... on ipad mini 4, landscape
+//                cell.backgroundColor = niceOrangeLight                                                  //* shows momentarily after launch...
+//                cell.cellColour = niceOrangeLight                                                       //  ... on ipad mini 4, landscape
                 
                 if formattedDateString(lastLoggedInDate, roundedDown: true, prefix: "", suffix: "", short: true)
                     == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
