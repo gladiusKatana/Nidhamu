@@ -45,6 +45,21 @@ extension CollectionVC {
             }
         }
     }
+    
+    func setDisplayCellDate(baseDate: Date, cellOffset: Int,
+                            cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, looping: Bool, withColours: Bool) -> Date {
+        
+        let hoursFromNow = TimeInterval(3600 * (row - nowRow))
+        let daysFromNow = TimeInterval(86400 * (column - nowColumn))
+        var weekAheadInt = 0
+        
+        if looping {weekAheadInt = setCellWeek(cell: cell, column: column, row: row, layout: layout, withColours: withColours)}
+        let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
+        
+        let returnDate = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset)
+        
+        return returnDate
+    }
 }
 /*                                                                                                      * does not catch test case of:
  adding an event, advancing device date setting by 1 week, returning to app (now in event-marking mode), then ...changing your mind... and dismissing app to background again, only to reopen it and resume your event-tagging in a few moments... this test case causes the reload-CV method call that occurs upon resuming the app (even if the date hasn't changed) to sweep over all time blocks, in prepareToProcessEventsSinceLastLogin(:)... which repopulates the events-to-process array unnecessarily.  Current solution should work fine though (see processEventsSinceLastLogin(:) method.  Will monitor this over next few tests.⚔️    )*/

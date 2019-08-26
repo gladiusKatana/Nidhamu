@@ -10,7 +10,8 @@ extension CollectionVC {
         let customLayout = downcastLayout!
         let row = indexPath.item;   let column = indexPath.section;   cell.xyCoordinate = [column, row]
         
-        if row < customLayout.lockedHeaderRows && row != 1  // row 1 is not a normal header here: it contains dates, thus is handled in the else{}
+        if row < customLayout.lockedHeaderRows
+            && !([1,2].contains(row))                       // rows 1&2 are not normal headers here: they contains dates, thus are handled in else{}
             || column < customLayout.lockedHeaderSections {
             
             setDefaultColours(cell: cell, cellIsInHeader: true)

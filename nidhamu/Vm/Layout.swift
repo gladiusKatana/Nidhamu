@@ -11,7 +11,8 @@ class CustomFlowLayout : UICollectionViewFlowLayout {
     var squareCellMode : SquareCellMode;    var squareCells = false
     var embeddedInNavController = false;    var loadsHorizontally = false
     
-    init(embeddedInNavController: Bool, customFrame: CGRect?, rows: Int, cols: Int, lockedHeaderRows: Int, lockedHeaderSections: Int,
+    init(embeddedInNavController: Bool, customFrame: CGRect?, rows: Int, cols: Int,
+         lockedHeaderRows: Int, lockedHeaderSections: Int,
          cellWidth: CGFloat?, cellHeight: CGFloat?,
          autoFitWScale: CGFloat?, autoFitHScale: CGFloat?,
          hSpace: CGFloat, vSpace: CGFloat, loadsHorizontally: Bool, squareCellMode: SquareCellMode) {
