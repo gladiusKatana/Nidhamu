@@ -57,6 +57,7 @@
 		062516D622D6CF4200EBB4C8 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A922D6CF4200EBB4C8 /* Orientation.swift */; };
 		062516D722D6CF4200EBB4C8 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516AA22D6CF4200EBB4C8 /* DeviceType.swift */; };
 		062516D822D6CF4200EBB4C8 /* VCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516AB22D6CF4200EBB4C8 /* VCType.swift */; };
+		062BC1012314B43600AC852F /* SetCellDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062BC1002314B43600AC852F /* SetCellDate.swift */; };
 		062CDAA122E0033400848D78 /* Pinching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CDAA022E0033400848D78 /* Pinching.swift */; };
 		0631914422E2C5F5004DE476 /* DateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631914322E2C5F5004DE476 /* DateRange.swift */; };
 		0682A49122FE5F0A00CE8075 /* AddPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682A49022FE5F0A00CE8075 /* AddPopup.swift */; };
@@ -83,7 +84,7 @@
 /* Begin PBXFileReference section */
 		06164A2C22D6D19000DA608D /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		06164A2D22D6D19000DA608D /* DateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateData.swift; sourceTree = "<group>"; };
-		06164A2E22D6D19000DA608D /* CellDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellDates.swift; path = ../C/CellDates.swift; sourceTree = "<group>"; };
+		06164A2E22D6D19000DA608D /* CellDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDates.swift; sourceTree = "<group>"; };
 		06164A2F22D6D19000DA608D /* DateRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRefresh.swift; sourceTree = "<group>"; };
 		0625163222D6C71900EBB4C8 /* nidhamu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nidhamu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0625163D22D6C71900EBB4C8 /* nidhamu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nidhamu.xcdatamodel; sourceTree = "<group>"; };
@@ -137,8 +138,9 @@
 		062516A922D6CF4200EBB4C8 /* Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		062516AA22D6CF4200EBB4C8 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		062516AB22D6CF4200EBB4C8 /* VCType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCType.swift; sourceTree = "<group>"; };
+		062BC1002314B43600AC852F /* SetCellDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCellDate.swift; sourceTree = "<group>"; };
 		062CDAA022E0033400848D78 /* Pinching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinching.swift; sourceTree = "<group>"; };
-		0631914322E2C5F5004DE476 /* DateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateRange.swift; path = ../C/DateRange.swift; sourceTree = "<group>"; };
+		0631914322E2C5F5004DE476 /* DateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRange.swift; sourceTree = "<group>"; };
 		0682A49022FE5F0A00CE8075 /* AddPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopup.swift; sourceTree = "<group>"; };
 		06BFDA5C230E195F008D902C /* PCellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PCellPath.swift; path = nidhamu/C/PCellPath.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -174,8 +176,7 @@
 				06164A2C22D6D19000DA608D /* Dates.swift */,
 				06164A2D22D6D19000DA608D /* DateData.swift */,
 				06164A2F22D6D19000DA608D /* DateRefresh.swift */,
-				06164A2E22D6D19000DA608D /* CellDates.swift */,
-				0631914322E2C5F5004DE476 /* DateRange.swift */,
+				062BC1002314B43600AC852F /* SetCellDate.swift */,
 			);
 			path = Dates;
 			sourceTree = "<group>";
@@ -290,9 +291,11 @@
 			children = (
 				0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */,
 				0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */,
-				0625169A22D6CF4200EBB4C8 /* CellUI.swift */,
 				0625169B22D6CF4200EBB4C8 /* VCCellPath.swift */,
+				0625169A22D6CF4200EBB4C8 /* CellUI.swift */,
 				062516A622D6CF4200EBB4C8 /* CellContents.swift */,
+				06164A2E22D6D19000DA608D /* CellDates.swift */,
+				0631914322E2C5F5004DE476 /* DateRange.swift */,
 				0625169822D6CF4200EBB4C8 /* TagEvent.swift */,
 				0625169522D6CF4200EBB4C8 /* io */,
 				0673571B2300753900DC2CAC /* popup */,
@@ -517,6 +520,7 @@
 				062516BF22D6CF4200EBB4C8 /* ScrollBars.swift in Sources */,
 				062516B522D6CF4200EBB4C8 /* DefaultSave.swift in Sources */,
 				062CDAA122E0033400848D78 /* Pinching.swift in Sources */,
+				062BC1012314B43600AC852F /* SetCellDate.swift in Sources */,
 				062516C822D6CF4200EBB4C8 /* TextField.swift in Sources */,
 				062516B122D6CF4200EBB4C8 /* Cell.swift in Sources */,
 				06164A3122D6D19000DA608D /* DateData.swift in Sources */,

@@ -4,8 +4,6 @@
  todo___________________________________________________________________deadline
  
  (1st commit)                                                           July. 08 2019
- 
- extra week-date row (may or may not keep based on user feedback)
 
  timetableVC deferral-date selection mode
  cascading deferrals
