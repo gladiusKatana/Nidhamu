@@ -22,7 +22,7 @@ extension CustomFlowLayout {
             if let safeFrame = customFrame {
                 frame = safeFrame
             } else {
-                frame = nilCatcherFrame                  ;print("\n\nit's the nil catcher frame, rows \(rows)")
+                frame = nilCatcherFrame                 //;print("\n\nit's the nil catcher frame, rows \(rows)")
             }                                           //* default frame is overridden anyway (see above comment); hence its value being all 0's
         }
         

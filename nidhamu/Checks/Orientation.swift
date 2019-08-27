@@ -17,7 +17,7 @@ extension AppDelegate {
             lastStatusBarHeight = 0
         }
         else {
-            launchOrientation = " ?"
+            launchOrientation = " ?"                            ; print("launch orientation undefined")
             lastStatusBarHeight = 99
         }
         

@@ -27,13 +27,13 @@ extension CustomFlowLayout {
 
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     
-                    if eventArraysToProcess.count > 0 {
-                        savedTimeBlocksForProcessing = false
-                        eventArraysToProcess = []; pathsToProcess = []
-                    }
+//                    if eventArraysToProcess.count > 0 {
+//                        savedTimeBlocksForProcessing = false
+//                        eventArraysToProcess = []; pathsToProcess = []
+//                    }
                     
                     if classifierViewDisplayed {
-                        classifierVC.view.removeFromSuperview()                     //; print("----------------removed popup (re-reload)")
+                        classifierVC.view.removeFromSuperview()                     ; print("----------------removed popup (re-reload)")
                         classifierViewDisplayed = false
                     }
                     

@@ -3,19 +3,14 @@ import UIKit
 
 extension AppDelegate {
     
-    func applicationDidBecomeActive(_ application: UIApplication) {
-//        let s = "🔅became active"
-//        if firstReenteredForeground {
-//            customApplicationStatusPrint(applicationState: s)
-//        } else {
-//        print(s)
-//        }
+    func applicationDidBecomeActive(_ application: UIApplication) {                                             //print("🔅became active")/**/
+        checkOrientation()
+        //if currentOrientation == "landscape" {print("becameActive from landscape")}
         
-//        print("🔅became active")
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             checkOrientation()
             topVC.reloadCV()
+//            topVC.rePresentThenReload(vc: topVC)
         }
         defaultLoadData(showDate: true)
     }
@@ -51,4 +46,23 @@ extension AppDelegate {
     
     func customApplicationStatusPrint(applicationState: String) { print("\n\(applicationState)")}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*let s = "🔅became active"
+ if firstReenteredForeground {
+ customApplicationStatusPrint(applicationState: s)
+ } else {
+ print(s)
+ }*/
 

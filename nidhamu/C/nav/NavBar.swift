@@ -35,11 +35,24 @@ extension CollectionVC {
         return button
     }
     
+    @objc func reloadCVWrapperMethod() {
+        //reloadCV(); print("↺")
+        
+        if classifierViewDisplayed {
+            classifierVC.view.removeFromSuperview()                     ; print("----------------removed popup (reload button)")
+            classifierViewDisplayed = false
+        }
+        
+        if eventArraysToProcess.count > 0 {
+            savedTimeBlocksForProcessing = false
+            eventArraysToProcess = []; pathsToProcess = []
+        }
+        
+        topVC.rePresentThenReload(vc: topVC); print("p,↺")
+    }
+    
     @objc func buttonWrapperMethodforTimetableVC() {presentViaVCButton(vc: timetableVC)}
     @objc func buttonWrapperMethodforTodoListVC() {presentViaVCButton(vc: todoListVC)}
-    @objc func reloadCVWrapperMethod() {
-        reloadCV(); print("↺")
-    }
     
     func presentViaVCButton(vc: CollectionVC) {
         rePresentedVCFromButton = true
