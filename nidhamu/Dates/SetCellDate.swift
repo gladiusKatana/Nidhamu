@@ -12,9 +12,11 @@ extension CollectionVC {
         let daysFromNow = TimeInterval(86400 * (column - nowColumn))
         var weekAheadInt = 0
         
-        if looping {weekAheadInt = setCellWeek(cell: cell, column: column, row: row, layout: layout, withColours: withColours)}
-        let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
+        if looping {
+            weekAheadInt = setCellWeek(cell: cell, column: column, row: row, layout: layout, withColours: withColours)
+        }
         
+        let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
         let returnDate = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset)
         
         return returnDate
@@ -22,6 +24,7 @@ extension CollectionVC {
     
     
     func setCellWeek(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, withColours: Bool) -> Int {
+        
         var weekAhead = 0
         
         if column < nowColumn || column == nowColumn && row < nowRow {

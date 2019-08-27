@@ -9,7 +9,7 @@ extension CollectionVC {
             
         case .hours:
             
-            setupHourlyCells(cell: cell, column: column, row: row, layout: layout, looping: loopWeeks, withColours: demarcateWeeksByColour)
+            setHourlyCellDates(cell: cell, column: column, row: row, layout: layout, looping: loopWeeks, withColours: demarcateWeeksByColour)
             
             if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {
                 if events.count == 1 {

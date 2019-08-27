@@ -41,7 +41,7 @@ extension PopupMenuVC {
                 classifierVC.view.removeFromSuperview()
                 classifierViewDisplayed = false
                 
-                timetableVC.processEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
+                timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
                 timetableVC.reloadCV()
                 
                 if  pathsToProcess.isEmpty {

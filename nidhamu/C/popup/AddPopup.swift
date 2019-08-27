@@ -1,9 +1,9 @@
-// ShowPopup        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// AddPopup         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension CollectionVC {
     
-    func presentPopupViewToMarkEvents(column: Int, row: Int) {                   //print("-----------------")//print("presenting popup")
+    func presentPopupViewToTagEvents(column: Int, row: Int) {                   //print("-----------------")//print("presenting popup")
         
         if !classifierViewDisplayed {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {              //* 0.3s time delay works(ed) stably (thus far) on my iPhone 7

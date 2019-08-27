@@ -15,16 +15,15 @@ extension CollectionVC {
             || column < customLayout.lockedHeaderSections {
             
             setDefaultColours(cell: cell, layout: customLayout, cellIsInHeader: true)
-            
             setTimeAndDayLabels(cell: cell, column: column, row: row, layout: customLayout)
             
         } else {
             
             setDefaultColours(cell: cell, layout: customLayout, cellIsInHeader: false)
-            
             timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
             
             if row == customLayout.rows - 1 && column == customLayout.cols - 1 {        //; print("events to process: \(events ToProcess)")//*
+                
                 if eventArraysToProcess.count > 0 {                                     //* or, could have used pathsToProcess.count > 0
                     
                     if !savedTimeBlocksForProcessing {
@@ -33,11 +32,12 @@ extension CollectionVC {
                     
                     //print("events left (initial): \(eventsInBlockToBeProcessed)\n")   ; print("paths to process: \(pathsToProcess)")
                     
-                    processEventsSinceLastLogin(layout: customLayout)
+                    tagEventsSinceLastLogin(layout: customLayout)
                     savedTimeBlocksForProcessing = true
                 }
             }
         }
+        
         return cell
     }
 }

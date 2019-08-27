@@ -1,4 +1,4 @@
-// Pinching         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// Pinch            ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension CollectionVC {

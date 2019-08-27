@@ -10,11 +10,9 @@ extension CollectionVC {
         }
         else {
             let oneWeekAgo = cell.cellDate - TimeInterval(86400 * 7)
-            
             if oneWeekAgo >= lastLoggedInDate && oneWeekAgo <= Date() - TimeInterval(3600) {            // stops 1 time block short of the now-cell
                 
-//                cell.backgroundColor = niceOrangeLight                                                  //* shows momentarily after launch...
-//                cell.cellColour = niceOrangeLight                                                       //  ... on ipad mini 4, landscape
+//                cell.backgroundColor = niceOrangeLight; cell.cellColour = niceOrangeLight
                 
                 if formattedDateString(lastLoggedInDate, roundedDown: true, prefix: "", suffix: "", short: true)
                     == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
@@ -33,16 +31,17 @@ extension CollectionVC {
     }
     
     func prepareToProcessEventsSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
+        
         if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {
-            //cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
+        
+//            cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             
             if !savedTimeBlocksForProcessing {
                 if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}         //* see note below
                 if !pathsToProcess.contains([column, row]) {pathsToProcess.append([column, row])}
             }
-            if row > 21 {
-                thereWillBeARowException = true
-            }
+            
+            if row > 21 {thereWillBeARowException = true}
         }
     }
 }

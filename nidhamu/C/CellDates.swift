@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func setupHourlyCells(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, looping: Bool, withColours: Bool) {
+    func setHourlyCellDates(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, looping: Bool, withColours: Bool) {
         
         cell.cellDate = setCellDate(baseDate: Date(), cellOffset: layout.lockedHeaderRows - row, cell: cell,
                                     column: column, row: row, layout: layout, looping: looping, withColours: withColours)
@@ -28,8 +28,8 @@ extension CollectionVC {
                     }
                 }
             }
-        }
-        else if row == 3 {} // row 3 is covered by the general formula on line 8
+        } else if row == 3 {} // row 3 is covered by the general formula on line 8
+        
         else {
             cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 0,
                                         cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
