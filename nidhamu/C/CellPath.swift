@@ -33,7 +33,6 @@ extension CollectionVC {
                     //print("events left (initial): \(eventsInBlockToBeProcessed)\n")   ; print("paths to process: \(pathsToProcess)")
                     
                     tagEventsSinceLastLogin(layout: customLayout)
-                    
                 }
                 
                 savedTimeBlocksForProcessing = true

@@ -47,6 +47,7 @@ extension PopupMenuVC {
                 if  pathsToProcess.isEmpty {
                     defaultSaveData(showDate: true)
                     defaultLoadData(showDate: false)
+//                    timetableVC.animateCellColourBack(cell: cell, delay: 2, duration: 10)
                     print("✔︎done processing events  *to process: event arrays \(eventArraysToProcess); paths \(pathsToProcess)")
                 }
             }
