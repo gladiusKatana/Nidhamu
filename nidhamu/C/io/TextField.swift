@@ -32,7 +32,7 @@ extension CollectionVC {
             
             switch vcType {
                 
-            case .hours:                                                        //; print("text: \(text)")
+            case .hours:                                                        //print("text: \(textEntered)")
                 reloadCV()
                 
             case .todoList:                                                     //print("selected block: \([selectedPath[0], selectedPath[1]])")
@@ -42,7 +42,8 @@ extension CollectionVC {
         } else {
             for cell in self.collectionView.visibleCells as! [CustomCell] {
                 if cell.xyCoordinate == selectedTimeBlockPath {
-                    cell.markedForItems = false; cell.backgroundColor = .red
+                    cell.markedForItems = false
+                    cell.backgroundColor = .white
                 }
             }
         }
