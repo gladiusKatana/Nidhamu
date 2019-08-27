@@ -4,13 +4,14 @@ import UIKit
 extension CollectionVC {
     
     func setupNavBarButtons(_ withCustomColour: UIColor?, atIndex: Int?) {
+        
         let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableImage")
-        let todoListButton = setupButton(selector: #selector(buttonWrapperMethodforTodoListVC), title: "calendarImage")
+        //let todoListButton = setupButton(selector: #selector(buttonWrapperMethodforTodoListVC), title: "calendarImage")
         let reloadButton = setupButton(selector: #selector(reloadCV), title: "reloadButton")
         
-        navigationItem.rightBarButtonItems = [timetableButton, todoListButton, reloadButton]
+        navigationItem.rightBarButtonItems = [timetableButton, reloadButton]
         
-        var barButtonColours = [graySeven, graySeven]
+        var barButtonColours = [graySeven]
         
         for button in navigationItem.rightBarButtonItems! {
             if button == reloadButton {button.tintColor = .clear}
