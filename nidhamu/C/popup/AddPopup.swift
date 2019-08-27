@@ -6,11 +6,14 @@ extension CollectionVC {
     func presentPopupViewToTagEvents(column: Int, row: Int) {                   //print("-----------------")//print("presenting popup")
         
 //        DispatchQueue.main.asyncAfter(deadline: .now()) {
-//            classifierVC.view.removeFromSuperview()
+//            classifierVC.view.removeFromSuperview()                             ; print("----------------removed popup (auto)")
 //        }
         
         if !classifierViewDisplayed {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {  //0.5      //* 0.3s time delay works(ed) stably (thus far) on my iPhone 7
+            
+            classifierViewDisplayed = true
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {  //0.5      //* 0.3s time delay works(ed) stably (thus far) on my iPhone 7
             
                 classifierVC.view.removeFromSuperview()
                 
@@ -35,14 +38,16 @@ extension CollectionVC {
                 classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
                                                                                   left: 0, bottom: 0, right: 0)
 //                let keyWindow = UIApplication.shared.keyWindow!
-                globalKeyWindow.addSubview(classifierVC.view)                           //; print("----------------added popup")
+//                globalKeyWindow.addSubview(classifierVC.view)                     //; print("----------------added popup")
+                timetableVC.view.addSubview(classifierVC.view)                      //; print("----------------added popup")
                 
-                classifierViewDisplayed = true
+                //classifierViewDisplayed = true
+                
                 classifierVC.collectionView.isUserInteractionEnabled = true
                 classifierVC.collectionView.reloadData()
                 classifierVC.keepScrollIndicatorsVisible()
             }
-        }
+        } //else {print("menu already displayed")}
     }
 }
 

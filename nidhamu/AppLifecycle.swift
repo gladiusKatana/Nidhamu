@@ -10,14 +10,18 @@ extension AppDelegate {
 //        } else {
 //        print(s)
 //        }
-        print("🔅became active")
         
-        DispatchQueue.main.asyncAfter(deadline: .now()) {topVC.reloadCV()}
+//        print("🔅became active")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            checkOrientation()
+            topVC.reloadCV()
+        }
         defaultLoadData(showDate: true)
     }
     
     
-    func applicationWillEnterForeground(_ application: UIApplication) {                                             print("🌔will enter foreground")
+    func applicationWillEnterForeground(_ application: UIApplication) {                                         //print("🌔will enter foreground")
         firstReenteredForeground = true
         // 1-way bool (stays true, since dismissing then reopening app causes visual glitch over remaining lifecycle)
         
@@ -26,7 +30,7 @@ extension AppDelegate {
     }
     
     
-    func applicationWillResignActive(_ application: UIApplication) {        customApplicationStatusPrint(applicationState: "⏸will resign active")
+    func applicationWillResignActive(_ application: UIApplication) {        //customApplicationStatusPrint(applicationState: "⏸will resign active")
         if !classifierViewDisplayed {
             defaultSaveData(showDate: false)
         }
@@ -35,7 +39,7 @@ extension AppDelegate {
     }
     
     
-    func applicationDidEnterBackground(_ application: UIApplication) {      customApplicationStatusPrint(applicationState: "🌘entered background")
+    func applicationDidEnterBackground(_ application: UIApplication) {      //customApplicationStatusPrint(applicationState: "🌘entered background")
         lastActiveOrientation = currentOrientation
     }
     

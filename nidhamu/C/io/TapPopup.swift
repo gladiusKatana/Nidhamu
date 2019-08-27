@@ -37,18 +37,17 @@ extension PopupMenuVC {
             
             //print("block events remaining now: \(eventsInBlockToBeProcessed)\n"); print("now paths to process: \(pathsToProcess)")
             
-            classifierVC.view.removeFromSuperview()
+            classifierVC.view.removeFromSuperview()                                                       //; print("----------------removed popup")
             classifierViewDisplayed = false
             
 //            DispatchQueue.main.asyncAfter(deadline: .now()) {   //+ 0.05                                 //print("selected popup cell")
                 timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
-                timetableVC.reloadCV()
+            
                 
-                if pathsToProcess.isEmpty {
-                    defaultSaveData(showDate: true)
+                if pathsToProcess.isEmpty { timetableVC.reloadCV()
+                    defaultSaveData(showDate: false) //;print("✔︎tagged events *to process: events's \(eventArraysToProcess) paths \(pathsToProcess)")
                     defaultLoadData(showDate: false)
 //                    timetableVC.animateCellColourBack(cell: cell, delay: 2, duration: 10)
-                    print("✔︎done processing events  *to process: event arrays \(eventArraysToProcess); paths \(pathsToProcess)")
                 }
 //            }
             

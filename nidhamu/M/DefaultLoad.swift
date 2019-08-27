@@ -9,8 +9,8 @@ func defaultLoadData(showDate: Bool) {                                          
         lastLoginDateComponents = components  
         lastLoggedInDate = dateFromComponents(lastLoginDateComponents)
         if showDate {
-            pryntLastLoginDate()
-            pryntCurrentDate()
+//            pryntLastLoginDate()
+//            pryntCurrentDate()
         }
     } else {                                                                                //print("\nfirst login")
         let (yr, mo, dy, wkd, _, hr, mn) = displayDate(Date(), roundedDown: true)

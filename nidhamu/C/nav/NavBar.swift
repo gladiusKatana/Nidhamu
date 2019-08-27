@@ -7,7 +7,7 @@ extension CollectionVC {
         
         let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableImage")
         //let todoListButton = setupButton(selector: #selector(buttonWrapperMethodforTodoListVC), title: "calendarImage")
-        let reloadButton = setupButton(selector: #selector(reloadCV), title: "reloadButton")
+        let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
         
         navigationItem.rightBarButtonItems = [timetableButton, reloadButton]
         
@@ -37,6 +37,9 @@ extension CollectionVC {
     
     @objc func buttonWrapperMethodforTimetableVC() {presentViaVCButton(vc: timetableVC)}
     @objc func buttonWrapperMethodforTodoListVC() {presentViaVCButton(vc: todoListVC)}
+    @objc func reloadCVWrapperMethod() {
+        reloadCV(); print("↺")
+    }
     
     func presentViaVCButton(vc: CollectionVC) {
         rePresentedVCFromButton = true

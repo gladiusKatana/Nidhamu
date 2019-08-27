@@ -32,7 +32,12 @@ extension CustomFlowLayout {
                         eventArraysToProcess = []; pathsToProcess = []
                     }
                     
-                    topVC.re_Reload_PossiblyAfterRe_Presenting(vc: topVC)
+                    if classifierViewDisplayed {
+                        classifierVC.view.removeFromSuperview()                     //; print("----------------removed popup (re-reload)")
+                        classifierViewDisplayed = false
+                    }
+                    
+                    topVC.rePresentThenReload(vc: topVC)
                 }
                 
             }

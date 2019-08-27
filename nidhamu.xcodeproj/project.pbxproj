@@ -205,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				062BC1022315835E00AC852F /* Core */,
+				0625167322D6CF2A00EBB4C8 /* AppLifecycle.swift */,
 				06164A2B22D6D19000DA608D /* Dates */,
 				0625167B22D6CF4100EBB4C8 /* M */,
 				0625168C22D6CF4200EBB4C8 /* V */,
@@ -302,9 +303,10 @@
 		0625169522D6CF4200EBB4C8 /* io */ = {
 			isa = PBXGroup;
 			children = (
-				0625169722D6CF4200EBB4C8 /* Tap.swift */,
-				062CDAA022E0033400848D78 /* Pinch.swift */,
 				0625169922D6CF4200EBB4C8 /* TextField.swift */,
+				062CDAA022E0033400848D78 /* Pinch.swift */,
+				0625169722D6CF4200EBB4C8 /* Tap.swift */,
+				0625169622D6CF4200EBB4C8 /* TapPopup.swift */,
 			);
 			path = io;
 			sourceTree = "<group>";
@@ -341,7 +343,6 @@
 				0625167022D6CF2A00EBB4C8 /* VCs.swift */,
 				0625166F22D6CF2A00EBB4C8 /* TimetableVars.swift */,
 				0625167222D6CF2A00EBB4C8 /* AppDelegate.swift */,
-				0625167322D6CF2A00EBB4C8 /* AppLifecycle.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -349,7 +350,6 @@
 		0673571B2300753900DC2CAC /* popup */ = {
 			isa = PBXGroup;
 			children = (
-				0625169622D6CF4200EBB4C8 /* TapPopup.swift */,
 				0682A49022FE5F0A00CE8075 /* AddPopup.swift */,
 				06BFDA5C230E195F008D902C /* PCellPath.swift */,
 				0625169422D6CF4200EBB4C8 /* PopupVC.swift */,

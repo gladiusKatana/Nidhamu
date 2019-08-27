@@ -7,13 +7,12 @@ extension CollectionVC {
         if textFieldDisplayed {                                                 //eventField.placeholder = "..."
             if let placeholder = eventField.placeholder {                       //print("re-presented text field from prepare()")
                 formatAndPresentTextField(dateString: placeholder)
-            }
-            else {formatAndPresentTextField(dateString: "!")}
+            } ///else {formatAndPresentTextField(dateString: "!")}
         }
     }
     
     func formatAndPresentTextField(dateString: String) {
-        if !classifierViewDisplayed {
+//        if !classifierViewDisplayed {
             let fieldWidth = CGFloat(325)
             let fieldHeight = CGFloat(2 * timetableLayout.cellHeight!)
             let halfWidth = (timetableLayout.cellWidth! + globalKeyWindow.frame.width - fieldWidth) / 2
@@ -23,11 +22,11 @@ extension CollectionVC {
             eventField.frame = CGRect(x: halfWidth, y: textFieldY, width: fieldWidth, height: fieldHeight)
             view.addSubview(eventField)
             eventField.becomeFirstResponder()
-        }
+//        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {              //print("TF_return")
-        //textField.resignFirstResponder()
+        textField.resignFirstResponder()
         textField.removeFromSuperview()
         textFieldDisplayed = false
         let textEntered = textField.text!
