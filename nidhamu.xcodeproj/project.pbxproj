@@ -204,12 +204,7 @@
 		0625163422D6C71900EBB4C8 /* nidhamu */ = {
 			isa = PBXGroup;
 			children = (
-				0625167422D6CF2B00EBB4C8 /* Notes.swift */,
-				0625167122D6CF2A00EBB4C8 /* Vars.swift */,
-				0625167022D6CF2A00EBB4C8 /* VCs.swift */,
-				0625166F22D6CF2A00EBB4C8 /* TimetableVars.swift */,
-				0625167222D6CF2A00EBB4C8 /* AppDelegate.swift */,
-				0625167322D6CF2A00EBB4C8 /* AppLifecycle.swift */,
+				062BC1022315835E00AC852F /* Core */,
 				06164A2B22D6D19000DA608D /* Dates */,
 				0625167B22D6CF4100EBB4C8 /* M */,
 				0625168C22D6CF4200EBB4C8 /* V */,
@@ -336,6 +331,19 @@
 				062516AA22D6CF4200EBB4C8 /* DeviceType.swift */,
 			);
 			path = Checks;
+			sourceTree = "<group>";
+		};
+		062BC1022315835E00AC852F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0625167422D6CF2B00EBB4C8 /* Notes.swift */,
+				0625167122D6CF2A00EBB4C8 /* Vars.swift */,
+				0625167022D6CF2A00EBB4C8 /* VCs.swift */,
+				0625166F22D6CF2A00EBB4C8 /* TimetableVars.swift */,
+				0625167222D6CF2A00EBB4C8 /* AppDelegate.swift */,
+				0625167322D6CF2A00EBB4C8 /* AppLifecycle.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		0673571B2300753900DC2CAC /* popup */ = {

@@ -5,7 +5,7 @@ extension CollectionVC {
     
     func rePresentTextField() {
         if textFieldDisplayed {                                                 //eventField.placeholder = "..."
-            if let placeholder = eventField.placeholder {                       print("re-presented text field from prepare()")
+            if let placeholder = eventField.placeholder {                       //print("re-presented text field from prepare()")
                 formatAndPresentTextField(dateString: placeholder)
             }
             else {formatAndPresentTextField(dateString: "!")}
