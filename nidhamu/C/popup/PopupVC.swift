@@ -25,6 +25,7 @@ class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
         
         collectionView.backgroundColor = .white //.clear    // * experiment with:  why do i see this colour at all, upon rotation?
         collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.popupReuseIdentifier)
+        collectionView?.isUserInteractionEnabled = true
         
         collectionView.bounces = false
         collectionView?.isScrollEnabled = true
@@ -35,7 +36,6 @@ class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)                       //; collectionView.frame = downcastLayout!.customFrame!
-        collectionView?.isUserInteractionEnabled = true
     }
 }
 

@@ -22,14 +22,24 @@ extension CustomFlowLayout {
         textFieldY = CGFloat(navBarHeight + statusBarHeight - statusBarDelta)                   //; print("textFieldY = \(textFieldY)")
         
         if embeddedInNavController {
+            
             if previousOrientation != currentOrientation {
+
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    
+                    if eventArraysToProcess.count > 0 {
+                        savedTimeBlocksForProcessing = false
+                    }
+                    
                     topVC.re_Reload__PossiblyAfterRe_Presenting(vc: topVC)
                 }
                 
-                classifierVC.view.removeFromSuperview()                                         //; print("removed popup")
-                if classifierViewDisplayed {classifierViewDisplayed = false}
+                if classifierViewDisplayed {
+                    classifierVC.view.removeFromSuperview()
+                    classifierViewDisplayed = false
+                }
             }
+                
             else {
                 if topVC.vcType == .hours {                                                     //print("prepare()") //, top vc \(top VC.vcType)...
                     processCurrentDate()                                                        //; print("process date from prepare")
