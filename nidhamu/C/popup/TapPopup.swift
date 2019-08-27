@@ -47,7 +47,7 @@ extension PopupMenuVC {
                 if  pathsToProcess.isEmpty {
                     defaultSaveData(showDate: true)
                     defaultLoadData(showDate: false)
-                    print("✔︎done processing events *to process: event arrays \(eventArraysToProcess); paths \(pathsToProcess)")
+                    print("✔︎done processing events  *to process: event arrays \(eventArraysToProcess); paths \(pathsToProcess)")
                 }
             }
             

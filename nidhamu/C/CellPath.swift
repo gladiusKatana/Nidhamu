@@ -1,4 +1,4 @@
-// VCCellPath       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// CellPath         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension CollectionVC {
@@ -33,8 +33,10 @@ extension CollectionVC {
                     //print("events left (initial): \(eventsInBlockToBeProcessed)\n")   ; print("paths to process: \(pathsToProcess)")
                     
                     tagEventsSinceLastLogin(layout: customLayout)
-                    savedTimeBlocksForProcessing = true
+                    
                 }
+                
+                savedTimeBlocksForProcessing = true
             }
         }
         

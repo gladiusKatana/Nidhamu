@@ -25,7 +25,7 @@ extension CollectionVC {
     
     func animateCellColourBack(cell: CustomCell, delay: Double, duration: Double) {
         UIView.animate(withDuration: TimeInterval(duration), delay: TimeInterval(delay), usingSpringWithDamping: 1, initialSpringVelocity: 1,
-                       options: UIView.AnimationOptions.curveEaseOut, animations: {
+                       options: UIView.AnimationOptions.curveLinear, animations: {
                         cell.backgroundColor = cell.cellColour
         }, completion: nil)
     }
