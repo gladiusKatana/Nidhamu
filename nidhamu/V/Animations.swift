@@ -10,7 +10,7 @@ extension CollectionVC {
         for cell in cells {
             if cell.xyCoordinate == selectedTimeBlockPath {             //print("animate cell \(cell.xyCoordinate) colour back")
                 
-                animateCellColourBack(cell: cell, duration: 0.75)
+                animateCellColourBack(cell: cell, delay: 0, duration: 0.75)
                 
                 /*cell.titleLabel.textColor = .clear
                 UIView.transition(with: cell.titleLabel, duration: 1, options: UIView.AnimationOptions.transitionCrossDissolve,
@@ -23,8 +23,8 @@ extension CollectionVC {
         }
     }
     
-    func animateCellColourBack(cell: CustomCell, duration: Double) {
-        UIView.animate(withDuration: TimeInterval(duration), delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1,
+    func animateCellColourBack(cell: CustomCell, delay: Double, duration: Double) {
+        UIView.animate(withDuration: TimeInterval(duration), delay: TimeInterval(delay), usingSpringWithDamping: 1, initialSpringVelocity: 1,
                        options: UIView.AnimationOptions.curveEaseOut, animations: {
                         cell.backgroundColor = cell.cellColour
         }, completion: nil)

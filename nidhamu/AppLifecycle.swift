@@ -27,7 +27,10 @@ extension AppDelegate {
     
     
     func applicationWillResignActive(_ application: UIApplication) {        customApplicationStatusPrint(applicationState: "⏸will resign active")
-        if !classifierViewDisplayed {defaultSaveData(showDate: false)}
+        if !classifierViewDisplayed {
+            defaultSaveData(showDate: false)
+        }
+        
         savedTimeBlocksForProcessing = false
     }
     

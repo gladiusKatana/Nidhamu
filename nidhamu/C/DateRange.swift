@@ -12,13 +12,17 @@ extension CollectionVC {
             let oneWeekAgo = cell.cellDate - TimeInterval(86400 * 7)
             if oneWeekAgo >= lastLoggedInDate && oneWeekAgo <= Date() - TimeInterval(3600) {            // stops 1 time block short of the now-cell
                 
-//                cell.backgroundColor = niceOrangeLight; cell.cellColour = niceOrangeLight
+                if !savedTimeBlocksForProcessing {
+                    cell.backgroundColor = niceOrangeLight          //; cell.cellColour = niceOrangeLight
+                    animateCellColourBack(cell: cell, delay: 2, duration: 10)
+                }
                 
                 if formattedDateString(lastLoggedInDate, roundedDown: true, prefix: "", suffix: "", short: true)
                     == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
                     cell.titleLabel.text = "last login"
                     cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
                 }
+                
                 prepareToProcessEventsSinceLastLogin(cell: cell, column: column, row: row)
             }
             
