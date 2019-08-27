@@ -33,7 +33,7 @@ extension CollectionVC {
         else {
             cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 0,
                                         cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
-            processEventBasedOnDateRange(cell: cell, column: column, row: row, layout: layout)
+            processEventsBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)
         }
         
         //showDateInTitleLabels(date: cell.cellDate, cell: cell)

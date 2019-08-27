@@ -1,9 +1,9 @@
-// DateRange        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// LoginInterval    ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension CollectionVC {
     
-    func processEventBasedOnDateRange(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
+    func processEventsBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
         
         if [column, row] == selectedTimeBlockPath && eventsAtIndexPath[TimeBlock(values:(column, row))] == nil {
             if textFieldDisplayed {cell.backgroundColor = eventAddingColour}

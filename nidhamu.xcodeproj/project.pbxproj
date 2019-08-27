@@ -59,7 +59,7 @@
 		062516D822D6CF4200EBB4C8 /* VCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516AB22D6CF4200EBB4C8 /* VCType.swift */; };
 		062BC1012314B43600AC852F /* SetCellDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062BC1002314B43600AC852F /* SetCellDate.swift */; };
 		062CDAA122E0033400848D78 /* Pinch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CDAA022E0033400848D78 /* Pinch.swift */; };
-		0631914422E2C5F5004DE476 /* DateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631914322E2C5F5004DE476 /* DateRange.swift */; };
+		0631914422E2C5F5004DE476 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631914322E2C5F5004DE476 /* LoginInterval.swift */; };
 		0682A49122FE5F0A00CE8075 /* AddPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682A49022FE5F0A00CE8075 /* AddPopup.swift */; };
 		06BFDA5D230E195F008D902C /* PCellPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFDA5C230E195F008D902C /* PCellPath.swift */; };
 /* End PBXBuildFile section */
@@ -140,7 +140,7 @@
 		062516AB22D6CF4200EBB4C8 /* VCType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCType.swift; sourceTree = "<group>"; };
 		062BC1002314B43600AC852F /* SetCellDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCellDate.swift; sourceTree = "<group>"; };
 		062CDAA022E0033400848D78 /* Pinch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinch.swift; sourceTree = "<group>"; };
-		0631914322E2C5F5004DE476 /* DateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRange.swift; sourceTree = "<group>"; };
+		0631914322E2C5F5004DE476 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
 		0682A49022FE5F0A00CE8075 /* AddPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopup.swift; sourceTree = "<group>"; };
 		06BFDA5C230E195F008D902C /* PCellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PCellPath.swift; path = nidhamu/C/PCellPath.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -295,7 +295,7 @@
 				0625169A22D6CF4200EBB4C8 /* CellUI.swift */,
 				062516A622D6CF4200EBB4C8 /* CellContents.swift */,
 				06164A2E22D6D19000DA608D /* CellDates.swift */,
-				0631914322E2C5F5004DE476 /* DateRange.swift */,
+				0631914322E2C5F5004DE476 /* LoginInterval.swift */,
 				0625169822D6CF4200EBB4C8 /* TagEvents.swift */,
 				0625169522D6CF4200EBB4C8 /* io */,
 				0673571B2300753900DC2CAC /* popup */,
@@ -500,7 +500,7 @@
 				06164A3022D6D19000DA608D /* Dates.swift in Sources */,
 				062516D422D6CF4200EBB4C8 /* CellContents.swift in Sources */,
 				062516D022D6CF4200EBB4C8 /* NavBar.swift in Sources */,
-				0631914422E2C5F5004DE476 /* DateRange.swift in Sources */,
+				0631914422E2C5F5004DE476 /* LoginInterval.swift in Sources */,
 				062516CC22D6CF4200EBB4C8 /* CollectionVC.swift in Sources */,
 				062516D822D6CF4200EBB4C8 /* VCType.swift in Sources */,
 				062516B822D6CF4200EBB4C8 /* ZIndex.swift in Sources */,
