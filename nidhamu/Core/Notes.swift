@@ -4,6 +4,8 @@
  todo___________________________________________________________________deadline
  
  (1st commit)                                                           July. 08 2019
+ 
+ fix slight test-case bug: popup menu unusable when switching orientations, while flipping between app & Settings app (to change Date & Time)
 
  mark item recurring (make it not default)
  timetableVC deferral-date selection mode
