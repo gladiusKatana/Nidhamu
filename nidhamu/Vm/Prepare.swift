@@ -25,19 +25,16 @@ extension CustomFlowLayout {
             
             if previousOrientation != currentOrientation {
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
                     
                     if eventArraysToProcess.count > 0 {
                         savedTimeBlocksForProcessing = false
+                        eventArraysToProcess = []; pathsToProcess = []
                     }
                     
-                    topVC.re_Reload__PossiblyAfterRe_Presenting(vc: topVC)
+                    topVC.re_Reload_PossiblyAfterRe_Presenting(vc: topVC)
                 }
                 
-                if classifierViewDisplayed {
-                    classifierVC.view.removeFromSuperview()
-                    classifierViewDisplayed = false
-                }
             }
                 
             else {
@@ -47,7 +44,7 @@ extension CustomFlowLayout {
             }
             
             if topVC.vcType == .hours {
-                topVC.rePresentTextField()                                                      //; print("re-presented text field from prepare()")
+                topVC.rePresentTextField()
             }
         }
     }

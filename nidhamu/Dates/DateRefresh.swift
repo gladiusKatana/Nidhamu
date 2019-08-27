@@ -1,7 +1,7 @@
 // DateRefresh      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func processCurrentDate() {
+func processCurrentDate() {                                                                             print("processing current date")
     (year, month, day, weekday, weekdayLong, hour, minute) = displayDate(Date(), roundedDown: true)
     
     //print(formattedDateString(Date(), comment: "process dates @ ", short: false))

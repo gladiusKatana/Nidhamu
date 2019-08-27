@@ -5,12 +5,13 @@
  
  (1st commit)                                                           July. 08 2019
 
+ mark item recurring (make it not default)
  timetableVC deferral-date selection mode
  cascading deferrals
- mark item recurring (currently is default)
-                                                                        Thurs Aug 15
+                                                                        Thurs Aug 27
  
  
+ eventsAtDate
  archive data (eventsAtIndexPath; eventsAtDate)
  CSV email archived data
                                                                         Fri Aug 16
@@ -31,7 +32,5 @@
  buttons
  launchScreen
  icon
-                                                                        asap
- 
- */
+                                                                        asap*/
 

@@ -14,7 +14,7 @@ extension CollectionVC {
                 
                 if !savedTimeBlocksForProcessing {
                     cell.backgroundColor = niceOrangeLight          //; cell.cellColour = niceOrangeLight
-                    animateCellColourBack(cell: cell, delay: 2, duration: 10)
+                    //animateCellColourBack(cell: cell, delay: 3, duration: 10)
                 }
                 
                 if formattedDateString(lastLoggedInDate, roundedDown: true, prefix: "", suffix: "", short: true)
@@ -38,7 +38,7 @@ extension CollectionVC {
         
         if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {
         
-//            cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
+            //cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             
             if !savedTimeBlocksForProcessing {
                 if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}         //* see note below

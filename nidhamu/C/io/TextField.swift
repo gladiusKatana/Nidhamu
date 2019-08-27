@@ -5,7 +5,10 @@ extension CollectionVC {
     
     func rePresentTextField() {
         if textFieldDisplayed {                                                 //eventField.placeholder = "..."
-            formatAndPresentTextField(dateString: eventField.placeholder!)
+            if let placeholder = eventField.placeholder {                       print("re-presented text field from prepare()")
+                formatAndPresentTextField(dateString: placeholder)
+            }
+            else {formatAndPresentTextField(dateString: "!")}
         }
     }
     
@@ -18,12 +21,14 @@ extension CollectionVC {
             eventField.placeholder = dateString
             eventField.delegate = self
             eventField.frame = CGRect(x: halfWidth, y: textFieldY, width: fieldWidth, height: fieldHeight)
-            view.addSubview(eventField); eventField.becomeFirstResponder()
+            view.addSubview(eventField)
+            eventField.becomeFirstResponder()
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {              //print("TF_return")
-        textField.resignFirstResponder(); textField.removeFromSuperview()
+        //textField.resignFirstResponder()
+        textField.removeFromSuperview()
         textFieldDisplayed = false
         let textEntered = textField.text!
         

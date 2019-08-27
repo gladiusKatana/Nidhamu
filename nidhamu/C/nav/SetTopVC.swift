@@ -1,7 +1,7 @@
 // SetTopVC         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-extension CollectionVC { 
+extension UICollectionViewController { 
     
     func setTopViewController() {
         

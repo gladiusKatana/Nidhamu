@@ -44,7 +44,7 @@ class CustomCell: UICollectionViewCell {
         
         backgroundColor = .clear
         layer.borderColor = UIColor.clear.cgColor
-        markedForItems = false
+        self.markedForItems = false
     }
 }
 

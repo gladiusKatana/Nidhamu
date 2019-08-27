@@ -5,9 +5,13 @@ extension CollectionVC {
     
     func presentPopupViewToTagEvents(column: Int, row: Int) {                   //print("-----------------")//print("presenting popup")
         
+//        DispatchQueue.main.asyncAfter(deadline: .now()) {
+//            classifierVC.view.removeFromSuperview()
+//        }
+        
         if !classifierViewDisplayed {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {              //* 0.3s time delay works(ed) stably (thus far) on my iPhone 7
-                
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {  //0.5      //* 0.3s time delay works(ed) stably (thus far) on my iPhone 7
+            
                 classifierVC.view.removeFromSuperview()
                 
                 let layout = self.downcastLayout!;      let widthMultiplier = CGFloat(2)
@@ -30,8 +34,8 @@ extension CollectionVC {
                 let hscale = timetableVC.downcastLayout!.autoFitHScale!           //* make sure this is extensible (ie,  if column >= 6 )
                 classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
                                                                                   left: 0, bottom: 0, right: 0)
-                let keyWindow = UIApplication.shared.keyWindow!
-                keyWindow.addSubview(classifierVC.view)                           //; print("----------------added popup")
+//                let keyWindow = UIApplication.shared.keyWindow!
+                globalKeyWindow.addSubview(classifierVC.view)                           //; print("----------------added popup")
                 
                 classifierViewDisplayed = true
                 classifierVC.collectionView.isUserInteractionEnabled = true
