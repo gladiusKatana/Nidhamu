@@ -37,7 +37,7 @@ extension CollectionVC {
                                                                               left: 0, bottom: 0, right: 0)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             classifierVC.collectionView.isUserInteractionEnabled = true
             
             //timetableVC.view.addSubview(classifierVC.view)            ///; print("----------------added popup")
