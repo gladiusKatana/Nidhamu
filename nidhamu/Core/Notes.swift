@@ -5,34 +5,42 @@
  
  (1st commit)                                                           July. 08 2019
  
- fix slight test-case bug: popup menu unusable when switching orientations, while flipping between app & Settings app (to change Date & Time)
+ 
+ 
+ colour in header rows 1&2; remove 3rd one
+ conditional lockOrientation upon resign active
+ sort eventArraysToProcess & pathsToProcess by event date
 
  mark item recurring (make it not default)
  timetableVC deferral-date selection mode
  cascading deferrals
-                                                                        Thurs Aug 27
+                                                                        Fri Aug 30
+ 
  
  
  eventsAtDate
  archive data (eventsAtIndexPath; eventsAtDate)
  CSV email archived data
-                                                                        Fri Aug 16
+ Numbers template
+                                                                        Wed Sept 6
+ 
  
  
  calendarVC; populate with eventsAtDate
+ morn/aft/eve/nite VC
  list VC (today items)
  list VC (deadlineless items)
- morn/aft/eve/nite VC
-                                                                        Sun Aug 18
+                                                                        Wed Sept 13
  
  
- * timetableVC keyboard adaptive
- * truncate long label with …
-                                                                        soon
+ 
+ timetableVC keyboard adaptive
+ truncate long label with …
+ 
+ soon
  settingsmenu
  darkMode
  buttons
  launchScreen
  icon
                                                                         asap*/
-
