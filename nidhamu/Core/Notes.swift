@@ -6,7 +6,7 @@
  (1st commit)                                                           July. 08 2019
  
  
- 
+ fix header column titles
  colour in header rows 1&2; remove 3rd one
  conditional lockOrientation upon resign active
  sort eventArraysToProcess & pathsToProcess by event date
