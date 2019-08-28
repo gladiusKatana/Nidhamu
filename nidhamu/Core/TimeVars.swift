@@ -1,4 +1,4 @@
-// TimetableVars    ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// TimeVars         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 var lastLoggedInDate = Date()
@@ -34,6 +34,7 @@ var eventIndex = 0;                                 var eventsInBlockToBeProcess
 
 var reloadedFromHourTickingOver = true;             var textFieldDisplayed = false
 var savedTimeBlocksForProcessing = false;           var classifierViewDisplayed = false
+var rotatedFromResignActive = false
 
 var globalEventIdentifier = "(event)";              var defaultEmptyEventDescription = "❒"
 

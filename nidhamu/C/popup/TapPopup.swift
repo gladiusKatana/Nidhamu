@@ -9,16 +9,17 @@ extension PopupMenuVC {
         let layout = downcastLayout!; let row = indexPath.item; let column = indexPath.section
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
-            let currentColumn = pathsToProcess.first![0]; let currentRow = pathsToProcess.first![1]     // ie, current item path being marked
+            
+            guard let firstPathToProcess = pathsToProcess.first else {
+                print("no paths to process, even though popup menu was presented"); return
+            }
+            
+            let currentColumn = firstPathToProcess[0]; let currentRow = firstPathToProcess[1]     // ie, current item path being marked
             
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(currentColumn, currentRow))] { // writing to the dictionary
-                
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
-                
-                //print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
-                
+                //                print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
                 eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
-                
             } else {print("no item")}
             
             if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
@@ -39,19 +40,22 @@ extension PopupMenuVC {
             
             classifierVC.view.removeFromSuperview()                                                       //; print("----------------removed popup")
             classifierViewDisplayed = false
+            classifierVC.resignFirstResponder()
             
-//            DispatchQueue.main.asyncAfter(deadline: .now()) {   //+ 0.05                                 //print("selected popup cell")
-                timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
+            //DispatchQueue.main.asyncAfter(deadline: .now()) {   //+ 0.05                                 //print("selected popup cell")
+            timetableVC.reloadCV()
+            timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
             
+            if pathsToProcess.isEmpty {
+                defaultSaveData(showDate: false) //;print("✔︎tagged events *to process: events's \(eventArraysToProcess) paths \(pathsToProcess)")
+                defaultLoadData(showDate: false)
                 
-                if pathsToProcess.isEmpty { timetableVC.reloadCV()
-                    defaultSaveData(showDate: false) //;print("✔︎tagged events *to process: events's \(eventArraysToProcess) paths \(pathsToProcess)")
-                    defaultLoadData(showDate: false)
-//                    timetableVC.animateCellColourBack(cell: cell, delay: 2, duration: 10)
-                }
-//            }
-            
-        } else {print("selected header")}
+                //timetableVC.animateCellColourBack(cell: cell, delay: 2, duration: 10)
+                AppUtility.lockOrientation(.all) //; print("rotated back")
+            }
+            //}
+        }
+        else {print("selected header")}
     }
 }
 

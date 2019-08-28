@@ -14,7 +14,7 @@
 		0625163E22D6C71900EBB4C8 /* nidhamu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0625163C22D6C71900EBB4C8 /* nidhamu.xcdatamodeld */; };
 		0625164E22D6C71B00EBB4C8 /* nidhamuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625164D22D6C71B00EBB4C8 /* nidhamuTests.swift */; };
 		0625165922D6C71B00EBB4C8 /* nidhamuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625165822D6C71B00EBB4C8 /* nidhamuUITests.swift */; };
-		0625167522D6CF2B00EBB4C8 /* TimetableVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625166F22D6CF2A00EBB4C8 /* TimetableVars.swift */; };
+		0625167522D6CF2B00EBB4C8 /* TimeVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625166F22D6CF2A00EBB4C8 /* TimeVars.swift */; };
 		0625167622D6CF2B00EBB4C8 /* VCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625167022D6CF2A00EBB4C8 /* VCs.swift */; };
 		0625167722D6CF2B00EBB4C8 /* Vars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625167122D6CF2A00EBB4C8 /* Vars.swift */; };
 		0625167822D6CF2B00EBB4C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625167222D6CF2A00EBB4C8 /* AppDelegate.swift */; };
@@ -95,7 +95,7 @@
 		0625165422D6C71B00EBB4C8 /* nidhamuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nidhamuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0625165822D6C71B00EBB4C8 /* nidhamuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nidhamuUITests.swift; sourceTree = "<group>"; };
 		0625165A22D6C71B00EBB4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0625166F22D6CF2A00EBB4C8 /* TimetableVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimetableVars.swift; sourceTree = "<group>"; };
+		0625166F22D6CF2A00EBB4C8 /* TimeVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeVars.swift; sourceTree = "<group>"; };
 		0625167022D6CF2A00EBB4C8 /* VCs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCs.swift; sourceTree = "<group>"; };
 		0625167122D6CF2A00EBB4C8 /* Vars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vars.swift; sourceTree = "<group>"; };
 		0625167222D6CF2A00EBB4C8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -205,10 +205,11 @@
 			isa = PBXGroup;
 			children = (
 				062BC1022315835E00AC852F /* Core */,
-				0625167322D6CF2A00EBB4C8 /* AppLifecycle.swift */,
 				06164A2B22D6D19000DA608D /* Dates */,
 				0625167B22D6CF4100EBB4C8 /* M */,
 				0625168C22D6CF4200EBB4C8 /* V */,
+				0625167322D6CF2A00EBB4C8 /* AppLifecycle.swift */,
+				0625168722D6CF4100EBB4C8 /* Prepare.swift */,
 				0625168122D6CF4100EBB4C8 /* Vm */,
 				0625169222D6CF4200EBB4C8 /* C */,
 				062516A722D6CF4200EBB4C8 /* Checks */,
@@ -255,7 +256,6 @@
 			children = (
 				0625168522D6CF4100EBB4C8 /* Layout.swift */,
 				0625168322D6CF4100EBB4C8 /* Attributes.swift */,
-				0625168722D6CF4100EBB4C8 /* Prepare.swift */,
 				0625168222D6CF4100EBB4C8 /* Sizes.swift */,
 				0625168622D6CF4100EBB4C8 /* CellSizing.swift */,
 				0625168422D6CF4100EBB4C8 /* ZIndex.swift */,
@@ -306,7 +306,6 @@
 				0625169922D6CF4200EBB4C8 /* TextField.swift */,
 				062CDAA022E0033400848D78 /* Pinch.swift */,
 				0625169722D6CF4200EBB4C8 /* Tap.swift */,
-				0625169622D6CF4200EBB4C8 /* TapPopup.swift */,
 			);
 			path = io;
 			sourceTree = "<group>";
@@ -341,7 +340,7 @@
 				0625167422D6CF2B00EBB4C8 /* Notes.swift */,
 				0625167122D6CF2A00EBB4C8 /* Vars.swift */,
 				0625167022D6CF2A00EBB4C8 /* VCs.swift */,
-				0625166F22D6CF2A00EBB4C8 /* TimetableVars.swift */,
+				0625166F22D6CF2A00EBB4C8 /* TimeVars.swift */,
 				0625167222D6CF2A00EBB4C8 /* AppDelegate.swift */,
 			);
 			path = Core;
@@ -350,6 +349,7 @@
 		0673571B2300753900DC2CAC /* popup */ = {
 			isa = PBXGroup;
 			children = (
+				0625169622D6CF4200EBB4C8 /* TapPopup.swift */,
 				0682A49022FE5F0A00CE8075 /* AddPopup.swift */,
 				06BFDA5C230E195F008D902C /* PCellPath.swift */,
 				0625169422D6CF4200EBB4C8 /* PopupVC.swift */,
@@ -537,7 +537,7 @@
 				0625167922D6CF2B00EBB4C8 /* AppLifecycle.swift in Sources */,
 				062516CA22D6CF4200EBB4C8 /* CellPath.swift in Sources */,
 				062516D722D6CF4200EBB4C8 /* DeviceType.swift in Sources */,
-				0625167522D6CF2B00EBB4C8 /* TimetableVars.swift in Sources */,
+				0625167522D6CF2B00EBB4C8 /* TimeVars.swift in Sources */,
 				062516C022D6CF4200EBB4C8 /* Animations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

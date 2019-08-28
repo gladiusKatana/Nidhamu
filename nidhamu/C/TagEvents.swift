@@ -7,7 +7,7 @@ extension CollectionVC {
         
         if !pathsToProcess.isEmpty {
             
-            let column = pathsToProcess.first![0]; let row = pathsToProcess.first![1]
+            let column = pathsToProcess.first![0]; let row = pathsToProcess.first![1]           //; print("presenting popup at (\(column), \(row))")
             
             globalEventIdentifier = "\(eventArraysToProcess.first![eventIndex].eventDescription)"   //; print("event id: \(globalEventIdentifier)")
             
@@ -18,6 +18,13 @@ extension CollectionVC {
                     self.downcastLayout?.autoFitHScale = CGFloat(layout.rows) / CGFloat(layout.rows + 4) //+ 0.01
                 }
             }
+            
+//            if rotatedFromResignActive {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                    AppUtility.lockOrientation(.all, andRotateTo: .landscapeRight) ; print("rotated back; popup is present")
+//                }
+//                rotatedFromResignActive = false
+//            }
         }
         
         else {                                                                                      //print("\npaths to process empty\n")

@@ -5,14 +5,18 @@ extension AppDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {                                             //print("🔅became active")/**/
         checkOrientation()
-        //if currentOrientation == "landscape" {print("becameActive from landscape")}
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            checkOrientation()
-            topVC.reloadCV()
-//            topVC.rePresentThenReload(vc: topVC)
-        }
+//        if currentOrientation == "landscape" {                              //print("becameActive from landscape")
+//            AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+//            rotatedFromResignActive = true
+//        }
+
         defaultLoadData(showDate: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            //checkOrientation()
+            topVC.reloadCV()
+        }
     }
     
     
@@ -30,6 +34,14 @@ extension AppDelegate {
             defaultSaveData(showDate: false)
         }
         
+        // if eventsAtIndexPath not empty {
+        //if classifierViewDisplayed {                                      print("locking to portrait from resign-active")
+        if currentOrientation == "landscape" {                              //print("becameActive from landscape")
+            AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+            rotatedFromResignActive = true
+        }
+        //}
+        
         savedTimeBlocksForProcessing = false
     }
     
@@ -46,7 +58,6 @@ extension AppDelegate {
     
     func customApplicationStatusPrint(applicationState: String) { print("\n\(applicationState)")}
 }
-
 
 
 

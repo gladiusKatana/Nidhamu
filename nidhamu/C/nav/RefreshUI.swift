@@ -33,7 +33,7 @@ extension CollectionVC {
             
             setupTitleAndPresentViewController(vc: vc) { () -> () in
                 previousOrientation = currentOrientation                //* check whether able to factor out
-                reloadWithDelay(after: 0.05)                            //+ 0.1 //+ 0.2  //time delays previously tried, on an iPhone 7*
+                reloadWithDelay(after: 0.1)                            //+ 0.1 //+ 0.2  //time delays previously tried, on an iPhone 7*
                 //reloadCV()
             }
         

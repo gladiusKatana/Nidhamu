@@ -24,19 +24,19 @@ extension CustomFlowLayout {
         if embeddedInNavController {
             
             if previousOrientation != currentOrientation {
-
+                
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    
-//                    if eventArraysToProcess.count > 0 {
-//                        savedTimeBlocksForProcessing = false
-//                        eventArraysToProcess = []; pathsToProcess = []
+
+//                    if classifierViewDisplayed {
+//                        classifierVC.view.removeFromSuperview()                     ; print("----------------removed popup (prepare)")
+//                        classifierViewDisplayed = false
 //                    }
                     
-                    if classifierViewDisplayed {
-                        classifierVC.view.removeFromSuperview()                     ; print("----------------removed popup (re-reload)")
-                        classifierViewDisplayed = false
+                    if eventArraysToProcess.count > 0 {
+                        savedTimeBlocksForProcessing = false
+                        eventArraysToProcess = []; pathsToProcess = []
                     }
-                    
+
                     topVC.rePresentThenReload(vc: topVC)
                 }
                 
@@ -49,7 +49,7 @@ extension CustomFlowLayout {
             }
             
             if topVC.vcType == .hours {
-                topVC.rePresentTextField()
+                timetableVC.rePresentTextField()
             }
         }
     }

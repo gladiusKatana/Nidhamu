@@ -28,14 +28,29 @@ extension CollectionVC {
                     
                     if !savedTimeBlocksForProcessing {
                         eventsInBlockToBeProcessed = eventArraysToProcess.first!.count  //; print("\n*eventsInBlock \(eventsInBlockToBeProcessed)")
+                        savedTimeBlocksForProcessing = true
                     }
                     
                     //print("events left (initial): \(eventsInBlockToBeProcessed)\n")   ; print("paths to process: \(pathsToProcess)")
-                    
+
                     tagEventsSinceLastLogin(layout: customLayout)
                 }
+//                else {
+//                    if rotatedFromResignActive {
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                            AppUtility.lockOrientation(.all) ; print("rotated back; no events to tag")
+//                        }
+//                        rotatedFromResignActive = false
+//                    }
+//                }
                 
-                savedTimeBlocksForProcessing = true
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                    //self.tagEventsSinceLastLogin(layout: customLayout)
+////                    print("unlocking; current 'unofficial' orientation: \(currentOrientation)")
+//
+//                    AppUtility.lockOrientation(.all, andRotateTo: .landscapeRight) ; print("rotated back")
+//                }
+            
             }
         }
         
