@@ -211,8 +211,8 @@
 				0625167B22D6CF4100EBB4C8 /* M */,
 				0625168C22D6CF4200EBB4C8 /* V */,
 				0625168122D6CF4100EBB4C8 /* Vm */,
-				06F2A968231725090062FE02 /* C-core */,
 				0625169222D6CF4200EBB4C8 /* C-more */,
+				06F2A968231725090062FE02 /* C-core */,
 				062516A722D6CF4200EBB4C8 /* Checks */,
 				0625168922D6CF4100EBB4C8 /* Base.lproj */,
 				0625168822D6CF4100EBB4C8 /* Assets.xcassets */,
@@ -288,21 +288,20 @@
 		0625169222D6CF4200EBB4C8 /* C-more */ = {
 			isa = PBXGroup;
 			children = (
-				0625169522D6CF4200EBB4C8 /* io */,
+				0625169522D6CF4200EBB4C8 /* ui */,
 				0673571B2300753900DC2CAC /* popup */,
-				0625169E22D6CF4200EBB4C8 /* nav */,
 			);
 			path = "C-more";
 			sourceTree = "<group>";
 		};
-		0625169522D6CF4200EBB4C8 /* io */ = {
+		0625169522D6CF4200EBB4C8 /* ui */ = {
 			isa = PBXGroup;
 			children = (
 				0625169922D6CF4200EBB4C8 /* TextField.swift */,
 				062CDAA022E0033400848D78 /* Pinch.swift */,
 				0625169722D6CF4200EBB4C8 /* Tap.swift */,
 			);
-			path = io;
+			path = ui;
 			sourceTree = "<group>";
 		};
 		0625169E22D6CF4200EBB4C8 /* nav */ = {
@@ -364,6 +363,7 @@
 				06164A2E22D6D19000DA608D /* CellDates.swift */,
 				0631914322E2C5F5004DE476 /* LoginInterval.swift */,
 				0625169822D6CF4200EBB4C8 /* TagEvents.swift */,
+				0625169E22D6CF4200EBB4C8 /* nav */,
 			);
 			path = "C-core";
 			sourceTree = "<group>";
