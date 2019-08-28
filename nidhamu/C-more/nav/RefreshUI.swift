@@ -39,15 +39,16 @@ extension CollectionVC {
 //        if previousOrientation == "landscape" && currentOrientation == "portrait" // (needed when, e.g., toggling views while in landscape)
 //            || firstReenteredForeground
 //        {
-            rePresentedVCFromButton = false
         
-            //if vcType == .hours {print("\n---------------------presented then reloaded \(vc.vcType) cv ")}
-            
-            setupTitleAndPresentViewController(vc: vc) { () -> () in
-                previousOrientation = currentOrientation                //* check whether able to factor out
-                reloadWithDelay(after: 0.1)                            //+ 0.1 //+ 0.2  //time delays previously tried, on an iPhone 7*
-                //reloadCV()
-            }
+        rePresentedVCFromButton = false
+        
+        //if vcType == .hours {print("\n---------------------presented then reloaded \(vc.vcType) cv ")}
+        
+        setupTitleAndPresentViewController(vc: vc) { () -> () in
+            previousOrientation = currentOrientation                //* check whether able to factor out
+            reloadWithDelay(after: 0.1)                            //+ 0.1 //+ 0.2  //time delays previously tried, on an iPhone 7*
+            //reloadCV()
+        }
         
 //        } else {
 //            previousOrientation = currentOrientation

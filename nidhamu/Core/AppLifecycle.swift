@@ -5,7 +5,7 @@ extension AppDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {                                             //print("🔅became active")/**/
         checkOrientation()
-
+        
         defaultLoadData(showDate: true)
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {

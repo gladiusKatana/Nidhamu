@@ -30,7 +30,7 @@ extension CollectionVC {    // probably will refactor the logic below soon
                 }
             }
         } else if row == 3 {} // row 3 is covered by the general formula on line 8; this is just to exclude it from the else{}
-        
+            
         else {
             cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 0,
                                         cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
@@ -51,9 +51,10 @@ extension CollectionVC {    // probably will refactor the logic below soon
         let mo = monthsAbbreviated[Calendar.current.component(.month, from: date) - 1]
         let dy = Calendar.current.component(.day, from: date)
         cell.titleLabel.text = "\(mo) \(dy)"
-//        let hr = Calendar.current.component(.hour, from: date)
-//        let mn = Calendar.current.component(.minute, from: date)
-//        cell.titleLabel.text = "\(hr):\(mn)"
+        
+        /*let hr = Calendar.current.component(.hour, from: date)
+        let mn = Calendar.current.component(.minute, from: date)
+        cell.titleLabel.text = "\(hr):\(mn)"*/
     }
 }
 

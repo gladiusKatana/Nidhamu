@@ -42,7 +42,7 @@ extension CollectionVC {
         else if row == 0 && column > 0 {
             cell.titleLabel.text = weekdaysAbbreviated[column - 1]
         }
-        
+            
         else {} // empty on purpose; this is the only time this is done in this program, haha
     }
 }

@@ -19,7 +19,7 @@ extension CollectionVC {
                 }
             }
         }
-        
+            
         else {                                                                                      //print("\npaths to process empty\n")
             self.downcastLayout?.autoFitHScale = 1
             eventArraysToProcess.removeAll()        //* see note at-bottom of LoginInterval.swift
