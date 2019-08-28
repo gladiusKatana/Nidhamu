@@ -3,6 +3,18 @@ import UIKit
 
 extension CollectionVC {
     
+    
+    @objc func reloadCV() {
+        self.collectionView.reloadData()                                //; print("↺")
+    }
+    
+    func reloadWithDelay(after timeDelay: Double) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + timeDelay) {
+            self.reloadCV()
+        }
+    }
+    
+    
     func setupTitleAndPresentViewController(vc: CollectionVC, completion: () -> ()) {       //print("\ndismissing/presenting") // vc: \(vc)
         setupAndPresent(vc: vc)
         completion()
@@ -41,17 +53,6 @@ extension CollectionVC {
 //            previousOrientation = currentOrientation
 //            reloadCV() //reloadWithDelay(after: 0.02)//?use delay, as in above completion block? (*will test over time, with different devices)
 //        }
-    }
-    
-    //----------------------------------------------------------------- reloading
-    @objc func reloadCV() {
-        self.collectionView.reloadData()                                //; print("↺")
-    }
-    
-    func reloadWithDelay(after timeDelay: Double) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + timeDelay) {
-            self.reloadCV()
-        }
     }
 }
 

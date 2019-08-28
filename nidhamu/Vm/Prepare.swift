@@ -26,11 +26,6 @@ extension CustomFlowLayout {
             if previousOrientation != currentOrientation {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
-
-//                    if classifierViewDisplayed {
-//                        classifierVC.view.removeFromSuperview()                     ; print("----------------removed popup (prepare)")
-//                        classifierViewDisplayed = false
-//                    }
                     
                     if eventArraysToProcess.count > 0 {
                         savedTimeBlocksForProcessing = false

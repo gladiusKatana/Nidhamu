@@ -3,7 +3,7 @@ import UIKit
 
 extension CustomFlowLayout {
     
-    func determineZIndex(row: Int, section: Int, cellAttributes: UICollectionViewLayoutAttributes) {
+    func setZIndex(row: Int, section: Int, cellAttributes: UICollectionViewLayoutAttributes) {
         
         if row < lockedHeaderRows {
             cellAttributes.zIndex = 3

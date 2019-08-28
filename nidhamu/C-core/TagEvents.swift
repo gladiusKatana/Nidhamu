@@ -18,13 +18,6 @@ extension CollectionVC {
                     self.downcastLayout?.autoFitHScale = CGFloat(layout.rows) / CGFloat(layout.rows + 4) //+ 0.01
                 }
             }
-            
-//            if rotatedFromResignActive {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//                    AppUtility.lockOrientation(.all, andRotateTo: .landscapeRight) ; print("rotated back; popup is present")
-//                }
-//                rotatedFromResignActive = false
-//            }
         }
         
         else {                                                                                      //print("\npaths to process empty\n")

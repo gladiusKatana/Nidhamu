@@ -47,6 +47,5 @@ func defaultSaveData(showDate: Bool) {
     defaults.set(eventDescriptionArrays, forKey: "savedTodoListItems")
     defaults.set(eventStatusArrays, forKey: "savedTodoListStatuses")
     defaults.set(eventDateArrays, forKey: "savedTodoListDates")
-    
 }
 

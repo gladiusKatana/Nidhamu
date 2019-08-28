@@ -12,17 +12,15 @@ extension CollectionVC {
     }
     
     func formatAndPresentTextField(dateString: String) {
-//        if !classifierViewDisplayed {
-            let fieldWidth = CGFloat(325)
-            let fieldHeight = CGFloat(2 * timetableLayout.cellHeight!)
-            let halfWidth = (timetableLayout.cellWidth! + globalKeyWindow.frame.width - fieldWidth) / 2
-            
-            eventField.placeholder = dateString
-            eventField.delegate = self
-            eventField.frame = CGRect(x: halfWidth, y: textFieldY, width: fieldWidth, height: fieldHeight)
-            view.addSubview(eventField)
-            eventField.becomeFirstResponder()
-//        }
+        let fieldWidth = CGFloat(325)
+        let fieldHeight = CGFloat(2 * timetableLayout.cellHeight!)
+        let halfWidth = (timetableLayout.cellWidth! + globalKeyWindow.frame.width - fieldWidth) / 2
+        
+        eventField.placeholder = dateString
+        eventField.delegate = self
+        eventField.frame = CGRect(x: halfWidth, y: textFieldY, width: fieldWidth, height: fieldHeight)
+        view.addSubview(eventField)
+        eventField.becomeFirstResponder()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {              //print("TF_return")

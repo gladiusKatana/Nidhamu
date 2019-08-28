@@ -1,7 +1,7 @@
 // CellDates        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-extension CollectionVC {
+extension CollectionVC {    // probably will refactor the logic below soon
     
     func setHourlyCellDates(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, looping: Bool, withColours: Bool) {
         
@@ -12,6 +12,7 @@ extension CollectionVC {
                                         column: column, row: row, layout: layout, looping: looping, withColours: withColours)
             if column <= nowColumn {showDateInTitleLabels(date: cell.cellDate , cell: cell);   cell.backgroundColor = lastWeekColour}
         }
+            
         else if row == 2 {
             if column >= nowColumn {                                                            cell.backgroundColor = cellDefaultColour
                 if column == nowColumn {
@@ -28,7 +29,7 @@ extension CollectionVC {
                     }
                 }
             }
-        } else if row == 3 {} // row 3 is covered by the general formula on line 8
+        } else if row == 3 {} // row 3 is covered by the general formula on line 8; this is just to exclude it from the else{}
         
         else {
             cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 0,
@@ -55,10 +56,4 @@ extension CollectionVC {
 //        cell.titleLabel.text = "\(hr):\(mn)"
     }
 }
-
-
-/*func showNowCell(cell: CustomCell, column: Int, row: Int) {
- if row == nowRow && column == nowColumn { print("now-cell is at [\(column), \(row)]")}
- //presentPopupViewToMarkEvents(column: column, row: row) //! // testing popup window; not the typical condition under which it pops up
- }*/
 

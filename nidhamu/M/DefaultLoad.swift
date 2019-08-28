@@ -38,7 +38,9 @@ func populateDictionaryFromDefaults() {
             let dateComponents = eventDateArrays[i][j]                                      //; print("event date components: \(dateComponents)")
             let date = dateFromComponents(dateComponents)                                   //; print("date: \(date)")
             let event = SimpleEvent(eventDescription: description, eventDate: date, eventStatus: EventStatus(rawValue: todoListItemStatus)!)
+            
             //print("loaded event: '\(event.eventDescription)' [\(event.eventStatus)] with deadline:\(formattedDateString(date, roundedDown: true, prefix: "", suffix: "", short: false))")
+            
             events.append(event)
             j += 1
         }

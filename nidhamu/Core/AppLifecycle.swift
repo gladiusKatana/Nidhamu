@@ -5,16 +5,10 @@ extension AppDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {                                             //print("🔅became active")/**/
         checkOrientation()
-        
-//        if currentOrientation == "landscape" {                              //print("becameActive from landscape")
-//            AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
-//            rotatedFromResignActive = true
-//        }
 
         defaultLoadData(showDate: true)
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {
-            //checkOrientation()
             topVC.reloadCV()
         }
     }
@@ -50,11 +44,9 @@ extension AppDelegate {
         lastActiveOrientation = currentOrientation
     }
     
-    
     func applicationWillTerminate(_ application: UIApplication) {
         print("terminated")
     }
-    
     
     func customApplicationStatusPrint(applicationState: String) { print("\n\(applicationState)")}
 }

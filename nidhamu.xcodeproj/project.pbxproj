@@ -61,7 +61,7 @@
 		062CDAA122E0033400848D78 /* Pinch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CDAA022E0033400848D78 /* Pinch.swift */; };
 		0631914422E2C5F5004DE476 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631914322E2C5F5004DE476 /* LoginInterval.swift */; };
 		0682A49122FE5F0A00CE8075 /* AddPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682A49022FE5F0A00CE8075 /* AddPopup.swift */; };
-		06BFDA5D230E195F008D902C /* PCellPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFDA5C230E195F008D902C /* PCellPath.swift */; };
+		06AA5D19231727C500DC04FD /* PCellPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA5D18231727C500DC04FD /* PCellPath.swift */; };
 		06F2A96A231725980062FE02 /* RotateLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F2A969231725980062FE02 /* RotateLock.swift */; };
 /* End PBXBuildFile section */
 
@@ -143,7 +143,7 @@
 		062CDAA022E0033400848D78 /* Pinch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinch.swift; sourceTree = "<group>"; };
 		0631914322E2C5F5004DE476 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
 		0682A49022FE5F0A00CE8075 /* AddPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopup.swift; sourceTree = "<group>"; };
-		06BFDA5C230E195F008D902C /* PCellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PCellPath.swift; path = nidhamu/C/PCellPath.swift; sourceTree = SOURCE_ROOT; };
+		06AA5D18231727C500DC04FD /* PCellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCellPath.swift; sourceTree = "<group>"; };
 		06F2A969231725980062FE02 /* RotateLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateLock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -347,7 +347,7 @@
 			children = (
 				0625169622D6CF4200EBB4C8 /* TapPopup.swift */,
 				0682A49022FE5F0A00CE8075 /* AddPopup.swift */,
-				06BFDA5C230E195F008D902C /* PCellPath.swift */,
+				06AA5D18231727C500DC04FD /* PCellPath.swift */,
 				0625169422D6CF4200EBB4C8 /* PopupVC.swift */,
 			);
 			path = popup;
@@ -535,7 +535,6 @@
 				062516BA22D6CF4200EBB4C8 /* CellSizing.swift in Sources */,
 				062516D222D6CF4200EBB4C8 /* RefreshUI.swift in Sources */,
 				062516CD22D6CF4200EBB4C8 /* NavTitle.swift in Sources */,
-				06BFDA5D230E195F008D902C /* PCellPath.swift in Sources */,
 				062516C622D6CF4200EBB4C8 /* Tap.swift in Sources */,
 				062516BF22D6CF4200EBB4C8 /* ScrollBars.swift in Sources */,
 				062516B522D6CF4200EBB4C8 /* DefaultSave.swift in Sources */,
@@ -543,6 +542,7 @@
 				062BC1012314B43600AC852F /* SetCellDate.swift in Sources */,
 				062516C822D6CF4200EBB4C8 /* TextField.swift in Sources */,
 				062516B122D6CF4200EBB4C8 /* Cell.swift in Sources */,
+				06AA5D19231727C500DC04FD /* PCellPath.swift in Sources */,
 				06164A3122D6D19000DA608D /* DateData.swift in Sources */,
 				062516C722D6CF4200EBB4C8 /* TagEvents.swift in Sources */,
 				062516C522D6CF4200EBB4C8 /* TapPopup.swift in Sources */,
