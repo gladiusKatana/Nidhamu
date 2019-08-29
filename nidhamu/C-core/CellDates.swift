@@ -47,9 +47,10 @@ extension CollectionVC {    // probably will refactor the logic below soon
             if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
                 cell.layer.borderColor = UIColor.white.cgColor
                 cell.layer.borderWidth = 2
-            } else {cell.layer.borderColor = UIColor.clear.cgColor}
-        } else {cell.layer.borderColor = UIColor.clear.cgColor}
-        
+            }
+            else {cell.layer.borderColor = UIColor.clear.cgColor}
+        }
+        else {cell.layer.borderColor = UIColor.clear.cgColor}
     }
 }
 

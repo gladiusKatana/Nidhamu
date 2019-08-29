@@ -18,7 +18,6 @@ extension CollectionVC {
                 var ampm = ""
                 if row < headerRows + 12 {ampm = "am"}
                 else {ampm = "pm"}
-                
                 cell.titleLabel.text = "\(hoursOfTheDay[row - headerRows])\(ampm)"
             }
         }
@@ -29,8 +28,7 @@ extension CollectionVC {
                 if (1 ... headerRows - 1).contains(row) {
                     timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
                 }
-            }
-            else {
+            } else {
                 cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
                 timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
                 

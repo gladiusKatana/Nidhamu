@@ -12,8 +12,8 @@ extension CollectionVC {
             let oneWeekAgo = cell.cellDate - TimeInterval(86400 * 7)
             if oneWeekAgo >= lastLoggedInDate && oneWeekAgo <= Date() - TimeInterval(3600) {            // stops 1 time block short of the now-cell
                 
-                //if !savedTimeBlocksForProcessing {            // this conditional would only be needed if doing the animation below
-                cell.backgroundColor = niceOrangeLight          //; cell.cellColour = niceOrangeLight
+                //if !savedTimeBlocksForProcessing { // this conditional would only be needed if doing the animation below
+                cell.backgroundColor = niceOrangeLight  //; cell.cellColour = niceOrangeLight
                 //animateCellColourBack(cell: cell, delay: 3, duration: 10)
                 //}
                 
