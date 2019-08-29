@@ -37,5 +37,16 @@ extension CollectionVC {
         
         return weekAhead
     }
+    
+    
+    func showDateInTitleLabels(date: Date, cell: CustomCell) {
+        let mo = monthsAbbreviated[Calendar.current.component(.month, from: date) - 1]
+        let dy = Calendar.current.component(.day, from: date)
+        cell.titleLabel.text = "\(mo) \(dy)"
+        
+        /*let hr = Calendar.current.component(.hour, from: date)
+         let mn = Calendar.current.component(.minute, from: date)
+         cell.titleLabel.text = "\(hr):\(mn)"*/
+    }
 }
 

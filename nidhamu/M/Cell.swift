@@ -18,12 +18,15 @@ class CustomCell: UICollectionViewCell {
         
         super.init(frame: frame)
         
+        
         self.backgroundColor = cellDefaultColour
         
-        titleLabel.font = defaultTimetableCellFont
         titleLabel.textColor = cellTextDefaultColour
+        titleLabel.font = defaultTimetableCellFont
+        
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(titleLabel)
+        
         
         addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .centerX, relatedBy: .equal,
                                          toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
@@ -47,6 +50,7 @@ class CustomCell: UICollectionViewCell {
         self.markedForItems = false
     }
 }
+
 
 
 

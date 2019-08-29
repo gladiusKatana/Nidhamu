@@ -43,7 +43,6 @@
 		062516C622D6CF4200EBB4C8 /* Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169722D6CF4200EBB4C8 /* Tap.swift */; };
 		062516C722D6CF4200EBB4C8 /* TagEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169822D6CF4200EBB4C8 /* TagEvents.swift */; };
 		062516C822D6CF4200EBB4C8 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169922D6CF4200EBB4C8 /* TextField.swift */; };
-		062516C922D6CF4200EBB4C8 /* CellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169A22D6CF4200EBB4C8 /* CellUI.swift */; };
 		062516CA22D6CF4200EBB4C8 /* CellPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169B22D6CF4200EBB4C8 /* CellPath.swift */; };
 		062516CC22D6CF4200EBB4C8 /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */; };
 		062516CD22D6CF4200EBB4C8 /* NavTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169F22D6CF4200EBB4C8 /* NavTitle.swift */; };
@@ -125,7 +124,6 @@
 		0625169722D6CF4200EBB4C8 /* Tap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tap.swift; sourceTree = "<group>"; };
 		0625169822D6CF4200EBB4C8 /* TagEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagEvents.swift; sourceTree = "<group>"; };
 		0625169922D6CF4200EBB4C8 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		0625169A22D6CF4200EBB4C8 /* CellUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellUI.swift; sourceTree = "<group>"; };
 		0625169B22D6CF4200EBB4C8 /* CellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPath.swift; sourceTree = "<group>"; };
 		0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		0625169F22D6CF4200EBB4C8 /* NavTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavTitle.swift; sourceTree = "<group>"; };
@@ -290,6 +288,7 @@
 			children = (
 				0625169522D6CF4200EBB4C8 /* ui */,
 				0673571B2300753900DC2CAC /* popup */,
+				0625169E22D6CF4200EBB4C8 /* nav */,
 			);
 			path = "C-more";
 			sourceTree = "<group>";
@@ -358,12 +357,10 @@
 				0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */,
 				0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */,
 				0625169B22D6CF4200EBB4C8 /* CellPath.swift */,
-				0625169A22D6CF4200EBB4C8 /* CellUI.swift */,
 				062516A622D6CF4200EBB4C8 /* CellContents.swift */,
 				06164A2E22D6D19000DA608D /* CellDates.swift */,
 				0631914322E2C5F5004DE476 /* LoginInterval.swift */,
 				0625169822D6CF4200EBB4C8 /* TagEvents.swift */,
-				0625169E22D6CF4200EBB4C8 /* nav */,
 			);
 			path = "C-core";
 			sourceTree = "<group>";
@@ -530,7 +527,6 @@
 				062516B422D6CF4200EBB4C8 /* SimpleEvent.swift in Sources */,
 				0625163E22D6C71900EBB4C8 /* nidhamu.xcdatamodeld in Sources */,
 				06164A3322D6D19000DA608D /* DateRefresh.swift in Sources */,
-				062516C922D6CF4200EBB4C8 /* CellUI.swift in Sources */,
 				0625167822D6CF2B00EBB4C8 /* AppDelegate.swift in Sources */,
 				062516BA22D6CF4200EBB4C8 /* CellSizing.swift in Sources */,
 				062516D222D6CF4200EBB4C8 /* RefreshUI.swift in Sources */,
