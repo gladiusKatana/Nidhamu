@@ -37,7 +37,15 @@ extension CollectionVC {
     
     
     @objc func reloadCVWrapperMethod() {
-        reloadCV(); print("↺")
+        //reloadCV(); print("↺")
+        
+//        let hscale = timetableVC.downcastLayout!.autoFitHScale!
+        
+        //classifierVC.collectionView?.scrollToItem(at: IndexPath(row: 2, section: 0), at: .top, animated: false)
+        classifierVC.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
+        
+//        classifierVC.collectionView?.reloadData();
+        //print("↺")
     }
     
     @objc func buttonWrapperMethodforTimetableVC() {presentViaVCButton(vc: timetableVC)}

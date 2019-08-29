@@ -14,7 +14,8 @@ extension CollectionVC {
         
         AppUtility.lockOrientation(.portrait)
         
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            
             let layout = self.downcastLayout!;      let widthMultiplier = CGFloat(2)
             let cellWidth = layout.widthPlusSpace;  let cellHeight = layout.heightPlusSpace
             
@@ -24,6 +25,7 @@ extension CollectionVC {
             let cols = CGFloat(popupMenuLayout.cols)
             var x = cellWidth * CGFloat(column + 1)
             var y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)
+            
             
             if column >= 6 {x = cellWidth * CGFloat(column - 2)}
             if row > 21 {y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)}
@@ -35,16 +37,14 @@ extension CollectionVC {
             let hscale = timetableVC.downcastLayout!.autoFitHScale!     //* make sure this is extensible (ie,  if column >= 6 )
             classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
                                                                               left: 0, bottom: 0, right: 0)
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            classifierVC.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
             classifierVC.collectionView.isUserInteractionEnabled = true
             
-            //timetableVC.view.addSubview(classifierVC.view)            ///; print("----------------added popup")
-            globalKeyWindow.addSubview(classifierVC.view)               //; print("----------------added popup")
+            timetableVC.view.addSubview(classifierVC.view)                //; print("----------------added popup")
+            //globalKeyWindow.addSubview(classifierVC.view)               //; print("----------------added popup")
             
-            classifierVC.becomeFirstResponder()
             classifierViewDisplayed = true
+            classifierVC.becomeFirstResponder()
             
             classifierVC.collectionView.reloadData()
             classifierVC.keepScrollIndicatorsVisible()
