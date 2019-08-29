@@ -34,7 +34,7 @@ extension CollectionVC {
                 
                 if row == customLayout.rows - 1 && column == customLayout.cols - 1 {      //; print("events to process: \(events ToProcess)")//*
                     
-                    if eventArraysToProcess.count > 0 {                                   //* or, could have used pathsToProcess.count > 0
+                    if eventArraysToProcess.count > 0 { //* or, could have used paths ToProcess.count > 0
                         
                         if !savedTimeBlocksForProcessing {
                             eventsInBlockToBeProcessed = eventArraysToProcess.first!.count//; print("\n*eventsInBlock \(eventsInBlockToBeProcessed)")
@@ -42,6 +42,18 @@ extension CollectionVC {
                         }
                         
                         //print("events left (initial): \(eventsInBlockToBeProcessed)\n")   ; print("paths to process: \(pathsToProcess)")
+                        
+                        sortedPathsToProcess = pathsToProcess.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
+                        //print("sorted paths: \(sortedPathsToProcess)")
+                        
+                        pathsToProcess = sortedPathsToProcess
+                        
+                        let sortedEventArraysToProcess = eventArraysToProcess.sorted(by: {$0.last!.eventDate < $1.last!.eventDate})
+                        var sortedDescriptions = [String]()
+                        for eventsses in sortedEventArraysToProcess {sortedDescriptions.append(eventsses.last!.eventDescription)}
+                        //print("sorted arrays: \(sortedDescriptions)")
+                        
+                        eventArraysToProcess = sortedEventArraysToProcess
                         
                         tagEventsSinceLastLogin(layout: customLayout)
                     }

@@ -15,7 +15,8 @@ var eventsAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleEvent]>()
 
 var timeBlock = TimeBlock(values:(0, 0))
 
-var eventArraysToProcess = [[SimpleEvent]]();       var pathsToProcess = [[Int]]()
+var pathsToProcess = [[Int]]();         var eventArraysToProcess = [[SimpleEvent]]()
+var sortedPathsToProcess = [[Int]]()
 
 var eventStatusArrays = [[Int]]()   //* Populated with raw values of enum EventStatus
 var eventPathArrays = [[Int]]()

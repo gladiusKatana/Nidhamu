@@ -6,9 +6,8 @@
  (1st commit)                                                           July. 08 2019
  
  
- sort eventArraysToProcess & pathsToProcess by event date
-
- mark item recurring (make it not default)
+ mark item recurring (remove item by default)
+ 
  timetableVC deferral-date selection mode
  cascading deferrals
                                                                         Fri Aug 30
