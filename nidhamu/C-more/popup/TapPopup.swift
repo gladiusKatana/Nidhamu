@@ -10,15 +10,16 @@ extension PopupMenuVC {
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
-            guard let firstPathToProcess = pathsToProcess.first else { print("no paths to process, even though popup menu was presented"); return}
+            guard let firstPathToProcess = pathsToProcess.first else { print("no paths to process... even though popup menu was presented"); return}
             let currentColumn = firstPathToProcess[0]; let currentRow = firstPathToProcess[1]     // components of path of current item being marked
             
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(currentColumn, currentRow))] {    // writing to the dictionary
                 
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
+                eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
+                
                 //print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
                 
-                eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
             } else {print("no item")}
             
             if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
