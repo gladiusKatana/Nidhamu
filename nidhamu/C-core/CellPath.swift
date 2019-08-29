@@ -34,18 +34,23 @@ extension CollectionVC {
                 cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
                 timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
                 
-                if row == customLayout.rows - 1 && column == customLayout.cols - 1 {        //; print("events to process: \(events ToProcess)")//*
+                if row == customLayout.rows - 1 && column == customLayout.cols - 1 {      //; print("events to process: \(events ToProcess)")//*
                     
-                    if eventArraysToProcess.count > 0 {                                     //* or, could have used pathsToProcess.count > 0
+                    if eventArraysToProcess.count > 0 {                                   //* or, could have used pathsToProcess.count > 0
                         
                         if !savedTimeBlocksForProcessing {
-                            eventsInBlockToBeProcessed = eventArraysToProcess.first!.count  //; print("\n*eventsInBlock \(eventsInBlockToBeProcessed)")
+                            eventsInBlockToBeProcessed = eventArraysToProcess.first!.count//; print("\n*eventsInBlock \(eventsInBlockToBeProcessed)")
                             savedTimeBlocksForProcessing = true
                         }
                         
                         //print("events left (initial): \(eventsInBlockToBeProcessed)\n")   ; print("paths to process: \(pathsToProcess)")
-
+                        
                         tagEventsSinceLastLogin(layout: customLayout)
+                    }
+                    else {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            AppUtility.lockOrientation(.all)
+                        }
                     }
                 }
             }
