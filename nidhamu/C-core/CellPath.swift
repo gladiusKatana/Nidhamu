@@ -6,10 +6,27 @@ extension CollectionVC {
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
-        let customLayout = downcastLayout!;
-        let row = indexPath.item;                       let column = indexPath.section;                         cell.xyCoordinate = [column, row]
+        if indexPath.row == 3 {
+            collectionView.register(LeftAlignedCell.self, forCellWithReuseIdentifier: LeftAlignedCell.reuseIdentifier)
+            var cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: LeftAlignedCell.reuseIdentifier, for: indexPath) as! LeftAlignedCell
+            cell1 = doRestOfLeftCellProcessing(cell: cell1, indexPath: indexPath)
+            return cell1
+        }
+        else {
+            collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.reuseIdentifier)
+            var cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
+            cell2 = doRestOfCellProcessing(cell: cell2, indexPath: indexPath)
+            return cell2
+        }
+    }
+    
+    func doRestOfCellProcessing(cell: CustomCell, indexPath: IndexPath) -> CustomCell {
+        
+        let customLayout = downcastLayout!
+        let row = indexPath.item;                       let column = indexPath.section;
         let headerRows = customLayout.lockedHeaderRows; let headerSections = customLayout.lockedHeaderSections
+        
+        cell.xyCoordinate = [column, row]
         
         if column < headerSections {
             cell.backgroundColor = headerColour
@@ -65,7 +82,30 @@ extension CollectionVC {
                 }
             }
         }
+        
         return cell
     }
+    
+    func doRestOfLeftCellProcessing(cell: LeftAlignedCell, indexPath: IndexPath) -> LeftAlignedCell  {
+        
+        cell.backgroundColor = headerColour
+        cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)
+        cell.titleLabel.textColor = grayTwo
+        
+        cell.titleLabel.textAlignment = .left
+        cell.titleLabel.numberOfLines = 0
+        cell.titleLabel.lineBreakMode = .byCharWrapping
+        
+        let (yr, mnthString, dayI, wkday, _, hr, min) = displayDate(lastLoggedInDate, roundedDown: false)
+        let longWeekday = getFullWeekdayName(shortWeekday: wkday)
+        
+        if indexPath.section == 0 { // to do this in column 1, you need to rewrite the layout attributes (zIndex)
+            cell.titleLabel.text = " Last login \(longWeekday), \(mnthString) \(dayI), \(yr) @ \(hr):\(min)"
+        }
+        else {cell.titleLabel.text = ""}
+        
+        return cell
+    }
+    
 }
 

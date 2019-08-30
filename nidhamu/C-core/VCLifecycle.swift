@@ -6,7 +6,7 @@ extension CollectionVC {
     override func viewDidLoad() { super.viewDidLoad()
         collectionView.backgroundColor = windowBackgroundColour                 // shown on top of UIWindow's background colour
         if vcType == .todoList {collectionView.backgroundColor = bluishGray}
-        collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.reuseIdentifier)
+//        collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.reuseIdentifier)
         collectionView.bounces = false
         setupNotificationForStatusBarHeightChange()
         
@@ -27,7 +27,7 @@ extension CollectionVC {
         }
         if rePresentedVCFromButton { var str = ""
             rePresentedVCFromButton = false
-            reloadCV()
+            reloadCV() // *
             if !consoleLegendAppeared {str = appearSymbolLegend} else {str = ""}
             print("🏞\(vcType)\(str)")                                          // picture-emoji means appeared 🏞
             consoleLegendAppeared = true

@@ -18,6 +18,7 @@ func displayDate(_ inputDate: Date, roundedDown: Bool)
         //MAY CRASH IF YOUR DEVICE IS   NOT  ON 24HR TIME (or is? ...bug seems to be gone but will double check.)
 }
 
+
 func formattedDateString(_ date: Date, roundedDown: Bool, prefix: String, suffix: String, short: Bool) -> String {
     let (yr, mnthString, dayI, wkday, wkdayLong, hr, min) = displayDate(date, roundedDown: roundedDown)
     
@@ -36,6 +37,21 @@ func formattedDateString(_ date: Date, roundedDown: Bool, prefix: String, suffix
         else {
             return "\(prefix) \(wkday). \(mnthString.prefix(3)) \(dayI) @ \(hr):\(minTwoDigits)\(suffix)"
         }
+    }
+}
+
+
+func getFullWeekdayName(shortWeekday: String) -> String {
+    switch shortWeekday {
+    case "Mon": return "Monday"
+    case "Tue": return "Tuesday"
+    case "Wed": return "Wednesday"
+    case "Thu": return "Thursday"
+    case "Fri": return "Friday"
+    case "Sat": return "Saturday"
+    case "Sun": return "Sunday"
+    default:                        print("! returned short form rather than full weekday")
+    return shortWeekday
     }
 }
 
