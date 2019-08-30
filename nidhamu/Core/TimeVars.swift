@@ -22,6 +22,8 @@ var eventStatusArrays = [[Int]]()   //* Populated with raw values of enum EventS
 var eventPathArrays = [[Int]]()
 var eventDescriptionArrays = [[String]]()
 var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]] // or  [[[0, "", 0, "", 0, 0] as [Any]]]
+
+var eventRecurringSwitchView = PopupSwitchView()
 //--------------------------------------------------------------------
 
 
@@ -36,6 +38,7 @@ var eventIndex = 0;                                 var eventsInBlockToBeProcess
 var reloadedFromHourTickingOver = true;             var textFieldDisplayed = false
 var savedTimeBlocksForProcessing = false;           var classifierViewDisplayed = false
 var rotatedFromResignActive = false
+var eventWillBeRecurring = false
 
 var globalEventIdentifier = "(event)";              var defaultEmptyEventDescription = "❒"
 

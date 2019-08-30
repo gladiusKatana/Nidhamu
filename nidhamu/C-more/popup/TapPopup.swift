@@ -37,7 +37,8 @@ extension PopupMenuVC {
             
             //            print("block events remaining now: \(eventsInBlockToBeProcessed)\n"); print("now paths to process: \(pathsToProcess)")
             
-            classifierVC.view.removeFromSuperview() //; print("----------------removed popup")
+            eventRecurringSwitchView.removeFromSuperview()
+            classifierVC.view.removeFromSuperview()             //; print("----------------removed popup")
             classifierViewDisplayed = false
             classifierVC.resignFirstResponder()
             

@@ -60,6 +60,7 @@
 		062CDAA122E0033400848D78 /* Pinch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CDAA022E0033400848D78 /* Pinch.swift */; };
 		0631914422E2C5F5004DE476 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631914322E2C5F5004DE476 /* LoginInterval.swift */; };
 		0682A49122FE5F0A00CE8075 /* AddPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682A49022FE5F0A00CE8075 /* AddPopup.swift */; };
+		06A396572318B0F5008CFBD7 /* SwitchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A396562318B0F5008CFBD7 /* SwitchVC.swift */; };
 		06AA5D19231727C500DC04FD /* PCellPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA5D18231727C500DC04FD /* PCellPath.swift */; };
 		06F2A96A231725980062FE02 /* RotateLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F2A969231725980062FE02 /* RotateLock.swift */; };
 /* End PBXBuildFile section */
@@ -141,6 +142,7 @@
 		062CDAA022E0033400848D78 /* Pinch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinch.swift; sourceTree = "<group>"; };
 		0631914322E2C5F5004DE476 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
 		0682A49022FE5F0A00CE8075 /* AddPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopup.swift; sourceTree = "<group>"; };
+		06A396562318B0F5008CFBD7 /* SwitchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchVC.swift; sourceTree = "<group>"; };
 		06AA5D18231727C500DC04FD /* PCellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCellPath.swift; sourceTree = "<group>"; };
 		06F2A969231725980062FE02 /* RotateLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateLock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -347,6 +349,7 @@
 				0682A49022FE5F0A00CE8075 /* AddPopup.swift */,
 				06AA5D18231727C500DC04FD /* PCellPath.swift */,
 				0625169422D6CF4200EBB4C8 /* PopupVC.swift */,
+				06A396562318B0F5008CFBD7 /* SwitchVC.swift */,
 			);
 			path = popup;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				062516C522D6CF4200EBB4C8 /* TapPopup.swift in Sources */,
 				0625167922D6CF2B00EBB4C8 /* AppLifecycle.swift in Sources */,
 				062516CA22D6CF4200EBB4C8 /* CellPath.swift in Sources */,
+				06A396572318B0F5008CFBD7 /* SwitchVC.swift in Sources */,
 				062516D722D6CF4200EBB4C8 /* DeviceType.swift in Sources */,
 				0625167522D6CF2B00EBB4C8 /* TimeVars.swift in Sources */,
 				062516C022D6CF4200EBB4C8 /* Animations.swift in Sources */,

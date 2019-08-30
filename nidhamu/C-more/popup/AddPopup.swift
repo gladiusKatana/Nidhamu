@@ -5,13 +5,6 @@ extension CollectionVC {
     
     func presentPopupViewToTagEvents(column: Int, row: Int) {                   //print("-----------------")//print("presenting popup")
         
-//        DispatchQueue.main.asyncAfter(deadline: .now()) {
-//            classifierVC.view.removeFromSuperview()
-//            classifierViewDisplayed = false
-//        }
-        
-        //if !classifierViewDisplayed {
-        
         AppUtility.lockOrientation(.portrait)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -25,14 +18,14 @@ extension CollectionVC {
             let cols = CGFloat(popupMenuLayout.cols)
             var x = cellWidth * CGFloat(column + 1)
             var y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)
-            
+            let wid = cellWidth * cols * widthMultiplier
             
             if column >= 6 {x = cellWidth * CGFloat(column - 2)}
             if row > 21 {y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)}
             
-            let frame = CGRect(x: x, y: y, width: cellWidth * cols * widthMultiplier, height: cellHeight * 5)
-            classifierVC.downcastLayout?.customFrame = frame
-            classifierVC.collectionView.frame = frame
+            let popupCollectionViewFrame = CGRect(x: x, y: y, width: wid, height: cellHeight * 5)
+            classifierVC.downcastLayout?.customFrame = popupCollectionViewFrame
+            classifierVC.collectionView.frame = popupCollectionViewFrame
             
             let hscale = timetableVC.downcastLayout!.autoFitHScale!             //* make sure this is extensible (ie,  if column >= 6 )
             classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
@@ -40,17 +33,20 @@ extension CollectionVC {
             classifierVC.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
             classifierVC.collectionView.isUserInteractionEnabled = true
             
-            timetableVC.view.addSubview(classifierVC.view)                      //; print("----------------added popup")
-            //globalKeyWindow.addSubview(classifierVC.view)                     //; print("----------------added popup")
+            timetableVC.view.addSubview(classifierVC.view)  //; print("----------------added popup")  //globalKeyWindow.addSubview(classifierVC.view)
             
             classifierViewDisplayed = true
             classifierVC.becomeFirstResponder()
             
             classifierVC.collectionView.reloadData()
             classifierVC.keepScrollIndicatorsVisible()
+            
+            let switchViewHeight = eventRecurringSwitchView.popupSwitch.frame.height + cellHeight * 2
+            eventRecurringSwitchView = PopupSwitchView(frame:
+                CGRect(x: x, y: y + popupCollectionViewFrame.height,
+                       width: wid, height: switchViewHeight))                           ; eventRecurringSwitchView.backgroundColor = headerColour
+            
+            timetableVC.view.addSubview(eventRecurringSwitchView)
         }
-        
-        //} else {print("popup menu already displayed")}
     }
 }
-
