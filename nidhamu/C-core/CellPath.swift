@@ -97,10 +97,13 @@ extension CollectionVC {
         cell.titleLabel.lineBreakMode = .byCharWrapping
         
         let (yr, mnthString, dayI, wkday, _, hr, min) = displayDate(lastLoggedInDate, roundedDown: false)
+        
         let longWeekday = getFullWeekdayName(shortWeekday: wkday)
+        var minTwoDigits = "\(min)"
+        if min < 10 {minTwoDigits = "0\(min)"}
         
         if indexPath.section == 0 { // to do this in column 1, you need to rewrite the layout attributes (zIndex)
-            cell.titleLabel.text = " Last login \(longWeekday), \(mnthString) \(dayI), \(yr) @ \(hr):\(min)"
+            cell.titleLabel.text = " Last login \(longWeekday), \(mnthString) \(dayI), \(yr) @ \(hr):\(minTwoDigits)"
         }
         else {cell.titleLabel.text = ""}
         

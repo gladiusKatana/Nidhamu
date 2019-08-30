@@ -5,7 +5,7 @@
  
  (1st commit)                                                           July. 08 2019
  
- 
+ nil textField text bug
  mark item recurring (remove item by default)
  
  timetableVC deferral-date selection mode
