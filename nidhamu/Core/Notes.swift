@@ -5,7 +5,9 @@
  
  (1st commit)                                                           July. 08 2019
  
- nil textField text bug
+ fixedbug: nil textField text (was due to failed cell downcast (see recent Cell.swift changes)
+ fixbug: now-cell (current time block) not in date interval (see LoginInterval.swift) scanned for event-tagging, when app is open & hour rolls over
+ 
  mark item recurring (remove item by default)
  
  timetableVC deferral-date selection mode

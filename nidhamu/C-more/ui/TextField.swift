@@ -7,7 +7,7 @@ extension CollectionVC {
         if textFieldDisplayed {                                                 //eventField.placeholder = "..."
             if let placeholder = eventField.placeholder {                       //print("re-presented text field from prepare()")
                 formatAndPresentTextField(dateString: placeholder)
-            } ///else {formatAndPresentTextField(dateString: "!")}
+            } else {formatAndPresentTextField(dateString: "!")}
         }
     }
     
@@ -34,15 +34,14 @@ extension CollectionVC {
             
             switch vcType {
                 
-            case .hours:                                                        //print("text: \(textEntered)")
-                reloadCV()
+            case .hours:    reloadCV()
                 
-            case .todoList:                                                     //print("selected block: \([selectedPath[0], selectedPath[1]])")
-                gotoView(vc: todoListVC)                                        // re-presents view & reloads its data, to display updated todo list
+            case .todoList: gotoView(vc: todoListVC) // re-presents view & reloads its data, to display updated todo list
                 
             default: print("unrecognized collection view type")}
+            
         } else {
-            for cell in self.collectionView.visibleCells as! [CustomCell] {
+            for cell in self.collectionView.visibleCells as! [TemplateCell] {
                 if cell.xyCoordinate == selectedTimeBlockPath {
                     cell.markedForItems = false
                     cell.backgroundColor = .white

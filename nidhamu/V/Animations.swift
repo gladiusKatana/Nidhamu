@@ -5,7 +5,7 @@ extension CollectionVC {
     
     func animateSelectedCellColourBack() {                              //print("animating cell colour back")
         
-        guard let cells = self.collectionView.visibleCells as? [CustomCell] else {print("could not downcast visibleCells for animation"); return}
+        guard let cells = self.collectionView.visibleCells as? [TemplateCell] else {print("could not downcast visibleCells for animation"); return}
         
         for cell in cells {
             if cell.xyCoordinate == selectedTimeBlockPath {             //print("animate cell \(cell.xyCoordinate) colour back")
@@ -23,7 +23,7 @@ extension CollectionVC {
         }
     }
     
-    func animateCellColourBack(cell: CustomCell, delay: Double, duration: Double) {
+    func animateCellColourBack(cell: TemplateCell, delay: Double, duration: Double) {
         UIView.animate(withDuration: TimeInterval(duration), delay: TimeInterval(delay), usingSpringWithDamping: 1, initialSpringVelocity: 1,
                        options: UIView.AnimationOptions.curveLinear, animations: {
                         cell.backgroundColor = cell.cellColour
