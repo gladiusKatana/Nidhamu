@@ -27,7 +27,6 @@ extension CollectionVC {
         }
         if rePresentedVCFromButton { var str = ""
             rePresentedVCFromButton = false
-            reloadCV() // *
             if !consoleLegendAppeared {str = appearSymbolLegend} else {str = ""}
             print("🏞\(vcType)\(str)")                                          // picture-emoji means appeared 🏞
             consoleLegendAppeared = true
@@ -38,6 +37,7 @@ extension CollectionVC {
         if vcType != .eventClassifier {setTopViewController()}
         setupNavBarButtons(grayTwo, atIndex: colourIndex)
         setupPinching()
+        reloadCV()
     }
     
     override func viewWillDisappear(_ animated: Bool) { super.viewWillDisappear(animated)
