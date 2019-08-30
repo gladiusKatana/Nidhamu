@@ -6,7 +6,10 @@ extension PopupMenuVC {
     override func collectionView(_ collectionView: UICollectionView,
                                  didSelectItemAt indexPath: IndexPath) {
         
+        let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
         let layout = downcastLayout!; let row = indexPath.item; let column = indexPath.section
+        
+        cell.backgroundColor = eventAddingColour
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
@@ -33,15 +36,13 @@ extension PopupMenuVC {
                     eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
                 }
                 else {eventsInBlockToBeProcessed = 0}
+            }                                                   //print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                eventRecurringSwitchView.removeFromSuperview()      //print("now paths to process: \(pathsToProcess)")
+                classifierVC.view.removeFromSuperview()             //; print("----------------removed popup")
+                classifierViewDisplayed = false
+                classifierVC.resignFirstResponder()
             }
-            
-            //            print("block events remaining now: \(eventsInBlockToBeProcessed)\n"); print("now paths to process: \(pathsToProcess)")
-            
-            eventRecurringSwitchView.removeFromSuperview()
-            classifierVC.view.removeFromSuperview()             //; print("----------------removed popup")
-            classifierViewDisplayed = false
-            classifierVC.resignFirstResponder()
-            
             timetableVC.reloadCV()
             timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
             
@@ -51,8 +52,7 @@ extension PopupMenuVC {
                 //timetableVC.animateCellColourBack(cell: cell, delay: 2, duration: 10)
                 AppUtility.lockOrientation(.all)    //; print("rotated back")
             }
-        }
-        else {print("selected header")}
+        } else {print("selected header")}
     }
 }
 
