@@ -17,7 +17,6 @@ func dateFromComponents(_ array: [Any]) -> Date {
         print("could not create date with loaded input, returning current date instead")
         return Date()
     }
-    
     return date
 }
 
@@ -33,7 +32,6 @@ func truncateMinutesOfDate(_ inputDate: Date) -> Date {
         print("could not create truncated date with input, returning current date instead")
         return Date()
     }
-    
     return date
 }
 
@@ -51,6 +49,6 @@ func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
         }
         formattedDatesArrays.append(timeBlockDateStrings)
     }
-    
     return formattedDatesArrays
 }
+

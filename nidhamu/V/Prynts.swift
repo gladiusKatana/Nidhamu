@@ -35,3 +35,8 @@ func pryntCurrentDate() {
     //print("              (unformatted gmt)    \(Date())\n")
 }
 
+
+// (from AppLifecycle.swift:)
+/*let s = "🔅became active"
+ if firstReenteredForeground {customApplicationStatusPrint(s)}
+ else {print(s)}*/

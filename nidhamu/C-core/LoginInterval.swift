@@ -10,8 +10,7 @@ extension CollectionVC {
         }
         else {
             let oneWeekAgo = truncateMinutesOfDate(cell.cellDate - TimeInterval(86400 * 7))
-            if oneWeekAgo >= truncateMinutesOfDate(lastLoggedInDate) && oneWeekAgo < truncateMinutesOfDate(Date()) { //- TimeInterval(3600)
-            //if (lastLoggedInDate ... Date()).contains(oneWeekAgo) {
+            if oneWeekAgo >= truncateMinutesOfDate(lastLoggedInDate) && oneWeekAgo < truncateMinutesOfDate(Date()) {
                 
                 //if !savedTimeBlocksForProcessing { // this conditional would only be needed if doing the animation below
                 cell.backgroundColor = niceOrangeLight  //; cell.cellColour = niceOrangeLight
@@ -30,7 +29,7 @@ extension CollectionVC {
             if formattedDateString(Date(), roundedDown: true, prefix: "", suffix: "", short: true)
                 == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
                 cell.titleLabel.text = "now"                                                            //; print("now-cell: [\(column), \(row)]")
-                cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
+                //cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
             }
         }
     }

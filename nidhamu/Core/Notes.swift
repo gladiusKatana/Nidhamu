@@ -4,16 +4,14 @@
  todo___________________________________________________________________deadline
  
  (1st commit)                                                           July. 08 2019
- 
- fixedbug: nil textField text (was due to failed cell downcast (see recent Cell.swift changes)
- fixedbug: now-cell (current time block) not in date interval (see LoginInterval.swift) scanned for event-tagging, when app is open & hour rolls over
+
+ popup adjust to cell position
+ timetableVC keyboard adaptive
  
  mark item recurring (remove item by default)
- 
  timetableVC deferral-date selection mode
  cascading deferrals
                                                                         Fri Aug 30
- 
  
  
  eventsAtDate
@@ -23,7 +21,6 @@
                                                                         Wed Sept 6
  
  
- 
  calendarVC; populate with eventsAtDate
  morn/aft/eve/nite VC
  list VC (today items)
@@ -31,11 +28,7 @@
                                                                         Wed Sept 13
  
  
- 
- timetableVC keyboard adaptive
- truncate long label with …
- 
- soon
+ truncate long label with  …
  settingsmenu
  darkMode
  buttons

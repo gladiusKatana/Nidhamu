@@ -34,9 +34,7 @@ func formattedDateString(_ date: Date, roundedDown: Bool, prefix: String, suffix
         if mnthString == "January" || mnthString == "December" {
             return "\(prefix) \(wkday). \(mnthString.prefix(3)) \(dayI), \(yr) @ \(hr):\(minTwoDigits)\(suffix)"
         }
-        else {
-            return "\(prefix) \(wkday). \(mnthString.prefix(3)) \(dayI) @ \(hr):\(minTwoDigits)\(suffix)"
-        }
+        else {return "\(prefix) \(wkday). \(mnthString.prefix(3)) \(dayI) @ \(hr):\(minTwoDigits)\(suffix)"}
     }
 }
 

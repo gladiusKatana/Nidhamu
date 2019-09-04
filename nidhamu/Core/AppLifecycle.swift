@@ -6,11 +6,8 @@ extension AppDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {                         //print("🔅became active")/**/
         checkOrientation()
         
-        defaultLoadData(showDate: true)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            topVC.reloadCV()
-        }
+        defaultLoadData(showDate: false)
+        topVC.reloadCV()
     }
     
     
@@ -34,7 +31,7 @@ extension AppDelegate {
                 rotatedFromResignActive = true
             }
         } //else {print("no event items yet")}
-
+        
         savedTimeBlocksForProcessing = false
     }
     
@@ -43,25 +40,12 @@ extension AppDelegate {
         lastActiveOrientation = currentOrientation
     }
     
+    
     func applicationWillTerminate(_ application: UIApplication) {
         print("terminated")
     }
     
+    
     func customApplicationStatusPrint(_ applicationState: String) { print("\n\(applicationState)")}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*let s = "🔅became active"
- if firstReenteredForeground {customApplicationStatusPrint(s)}
- else {print(s)}*/
 
