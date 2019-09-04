@@ -8,8 +8,10 @@ extension CollectionVC {
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
         let layout = downcastLayout!;       let row = indexPath.item;       let column = indexPath.section
         
-//        print("\nselected date (unformatted gmt)  \(cell.cellDate)")
-//        print(formattedDateString(cell.cellDate, roundedDown: true, prefix: "                 (formatted)    ", suffix: "", short: false))
+        //        //print("\nselected date (unformatted gmt)  \(cell.cellDate)")
+        //        print(formattedDateString(cell.cellDate, roundedDown: false, prefix: "                 (formatted)    ", suffix: "", short: false))
+        //        let truncDate = truncateMinutesOfDate(cell.cellDate)
+        //        print(formattedDateString(truncDate, roundedDown: false, prefix: "                 (truncated)    ", suffix: "", short: false))
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             selectedCellDate = cell.cellDate

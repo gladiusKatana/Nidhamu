@@ -9,10 +9,11 @@ func defaultLoadData(showDate: Bool) {                                          
         lastLoginDateComponents = components  
         lastLoggedInDate = dateFromComponents(lastLoginDateComponents)
         if showDate {
-//            pryntLastLoginDate()
-//            pryntCurrentDate()
+            pryntLastLoginDate()
+            pryntCurrentDate()
         }
-    } else {                                                                                //print("\nfirst login")
+    }
+    else {                                                                                //print("\nfirst login")
         let (yr, mo, dy, wkd, _, hr, mn) = displayDate(Date(), roundedDown: true)
         lastLoginDateComponents = [yr, mo, dy, wkd, hr, mn]
     }
@@ -25,6 +26,7 @@ func defaultLoadData(showDate: Bool) {                                          
 }
 
 func populateDictionaryFromDefaults() {
+    
     var i = 0
     
     for path in eventPathArrays {

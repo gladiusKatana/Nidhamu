@@ -9,6 +9,7 @@ func dateFromComponents(_ array: [Any]) -> Date {
     //let weekdayLoaded = array[3] as! String                       //; print("weekday loaded: \(weekdayLoaded)")
     let hourLoaded = array[4] as! Int                               //; print("hour loaded: \(hourLoaded)")
     let minuteLoaded = array[5] as! Int                             //; print("minute loaded: \(minuteLoaded)")
+    
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy/MM/dd HH:mm"
     
@@ -19,6 +20,23 @@ func dateFromComponents(_ array: [Any]) -> Date {
     
     return date
 }
+
+
+func truncateMinutesOfDate(_ inputDate: Date) -> Date {
+    //let hr = Calendar.current.component(.hour, from: inputDate)
+    let mn = 0
+    let (yr, mnth, day, _, _, hr, _) = displayDate(inputDate, roundedDown: false)
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy/MM/dd HH:mm"
+    
+    guard let date = formatter.date(from: "\(yr)/\(mnth)/\(day) \(hr):\(mn)") else {
+        print("could not create truncated date with input, returning current date instead")
+        return Date()
+    }
+    
+    return date
+}
+
 
 func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
     var formattedDatesArrays = [[String]]()
@@ -36,4 +54,3 @@ func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
     
     return formattedDatesArrays
 }
-

@@ -31,13 +31,23 @@ extension CollectionVC {
         
         if "\(Date())".contains(":59:5") {
             reloadedFromHourTickingOver = false
+            defaultSaveData(showDate: true)
         }
         
         if "\(Date())".contains(":00:") {
             if !reloadedFromHourTickingOver {
-                DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
-                    self?.reloadCV()
+                
+//                defaultLoadData(showDate: true)
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+//                    self?.reloadCV()
+//                }
+                
+                defaultLoadData(showDate: true)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    topVC.reloadCV()
                 }
+                
             }
         }
         

@@ -9,8 +9,9 @@ extension CollectionVC {
             if textFieldDisplayed {cell.backgroundColor = eventAddingColour}
         }
         else {
-            let oneWeekAgo = cell.cellDate - TimeInterval(86400 * 7)
-            if oneWeekAgo >= lastLoggedInDate && oneWeekAgo <= Date() - TimeInterval(3600) {            // stops 1 time block short of the now-cell
+            let oneWeekAgo = truncateMinutesOfDate(cell.cellDate - TimeInterval(86400 * 7))
+            if oneWeekAgo >= truncateMinutesOfDate(lastLoggedInDate) && oneWeekAgo < truncateMinutesOfDate(Date()) { //- TimeInterval(3600)
+            //if (lastLoggedInDate ... Date()).contains(oneWeekAgo) {
                 
                 //if !savedTimeBlocksForProcessing { // this conditional would only be needed if doing the animation below
                 cell.backgroundColor = niceOrangeLight  //; cell.cellColour = niceOrangeLight
