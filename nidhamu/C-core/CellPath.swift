@@ -37,8 +37,7 @@ extension CollectionVC {
                 else {ampm = "pm"}
                 cell.titleLabel.text = "\(hoursOfTheDay[row - headerRows])\(ampm)"
             }
-        }
-        else {
+        } else {
             if row < headerRows {
                 cell.backgroundColor = headerColour
                 if row == 0  {cell.titleLabel.text = weekdaysAbbreviated[column - 1]}
@@ -51,38 +50,43 @@ extension CollectionVC {
                 
                 if row == customLayout.rows - 1 && column == customLayout.cols - 1 {      //; print("events to process: \(events ToProcess)")//*
                     
-                    if eventArraysToProcess.count > 0 { //* or, could have used paths ToProcess.count > 0
-                        
-                        if !savedTimeBlocksForProcessing {
-                            eventsInBlockToBeProcessed = eventArraysToProcess.first!.count//; print("\n*eventsInBlock \(eventsInBlockToBeProcessed)")
-                            savedTimeBlocksForProcessing = true
-                        }
-                        
-                        //print("events left (initial): \(eventsInBlockToBeProcessed)\n")   ; print("paths to process: \(pathsToProcess)")
-                        
-                        sortedPathsToProcess = pathsToProcess.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
-                        //print("sorted paths: \(sortedPathsToProcess)")
-                        
-                        pathsToProcess = sortedPathsToProcess
-                        
-                        let sortedEventArraysToProcess = eventArraysToProcess.sorted(by: {$0.last!.eventDate < $1.last!.eventDate})
-                        var sortedDescriptions = [String]()
-                        for eventsses in sortedEventArraysToProcess {sortedDescriptions.append(eventsses.last!.eventDescription)}
-                        //print("sorted arrays: \(sortedDescriptions)")
-                        
-                        eventArraysToProcess = sortedEventArraysToProcess
-                        
-                        tagEventsSinceLastLogin(layout: customLayout)
-                    }
-                    else {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            AppUtility.lockOrientation(.all)
+                    if vcType == .hours {
+                        if eventArraysToProcess.count > 0 { //* or, could have used paths ToProcess.count > 0
+                            
+                            if !savedTimeBlocksForProcessing {
+                                eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
+                                //; print("\n*eventsInBlock \(eventsInBlockToBeProcessed)")
+                                //print("events left (initial): \(eventsInBlockToBeProcessed)\n"); print("paths to process: \(pathsToProcess)")
+                                
+                                sortedPathsToProcess = pathsToProcess.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
+                                pathsToProcess = sortedPathsToProcess                             //; print("sorted paths: \(sortedPathsToProcess)")
+                                
+                                let sortedEventArraysToProcess = eventArraysToProcess.sorted(by: {$0.last!.eventDate < $1.last!.eventDate})
+                                var sortedDescriptions = [String]()                               //; print("sorted arrays: \(sortedDescriptions)")
+                                for eventsses in sortedEventArraysToProcess {sortedDescriptions.append(eventsses.last!.eventDescription)}
+                                eventArraysToProcess = sortedEventArraysToProcess
+                                
+                                self.tagEventsSinceLastLogin(layout: customLayout)
+                                
+                                //if !savedTimeBlocksForProcessing {
+                                if thereWillBeARowException {
+                                    self.downcastLayout?.autoFitHScale = CGFloat(customLayout.rows) / CGFloat(customLayout.rows + 9) /*+ 0.01*/
+                                    //reloadCV()
+                                    self.reloadWithDelay(after: 0)     //; print("reloaded for size adjustment")
+                                }
+                                //}
+                                
+                                savedTimeBlocksForProcessing = true
+                            }
+                        } else {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                AppUtility.lockOrientation(.all)
+                            }
                         }
                     }
                 }
             }
         }
-        
         return cell
     }
     

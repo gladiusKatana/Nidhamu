@@ -45,9 +45,10 @@ extension CollectionVC {
     
     func presentViaVCButton(vc: CollectionVC) {
         rePresentedVCFromButton = true
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.gotoView(vc: vc)
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now()) {
+//            self.
+        gotoView(vc: vc)
+//        }
     }
     
 }

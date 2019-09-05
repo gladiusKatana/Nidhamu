@@ -8,7 +8,7 @@ extension CollectionVC {
         self.collectionView.reloadData()                                //; print("↺")
     }
     
-    func reloadWithDelay(after timeDelay: Double) {
+    func reloadWithDelay(after timeDelay: Double) {                     //print("↺d")
         DispatchQueue.main.asyncAfter(deadline: .now() + timeDelay) {
             self.reloadCV()
         }

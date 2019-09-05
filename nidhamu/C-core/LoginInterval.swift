@@ -45,7 +45,7 @@ extension CollectionVC {
                 if !pathsToProcess.contains([column, row]) {pathsToProcess.append([column, row])}
             }
             
-            if row > 21 {thereWillBeARowException = true}
+            if row >= 19 {thereWillBeARowException = true}
         }
     }
 }

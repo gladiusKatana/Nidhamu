@@ -3,50 +3,66 @@ import UIKit
 
 extension CollectionVC {
     
-    func presentPopupViewToTagEvents(column: Int, row: Int) {                   //print("-----------------")//print("presenting popup")
+    func presentPopupViewToTagEvents(column: Int, row: Int) {                               //print("-----------------")//print("presenting popup")
         
         AppUtility.lockOrientation(.portrait)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            
-            let layout = self.downcastLayout!;      let widthMultiplier = CGFloat(2)
-            let cellWidth = layout.widthPlusSpace;  let cellHeight = layout.heightPlusSpace
-            
-            let popupMenuLayout = classifierVC.downcastLayout!
-            popupMenuLayout.cellWidth = cellWidth * widthMultiplier;  popupMenuLayout.cellHeight = cellHeight
-            
-            let cols = CGFloat(popupMenuLayout.cols)
-            var x = cellWidth * CGFloat(column + 1)
-            var y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)
-            let wid = cellWidth * cols * widthMultiplier
-            
-            if column >= 6 {x = cellWidth * CGFloat(column - 2)}
-            if row > 21 {y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)}
-            
-            let popupCollectionViewFrame = CGRect(x: x, y: y, width: wid, height: cellHeight * 5)
-            classifierVC.downcastLayout?.customFrame = popupCollectionViewFrame
-            classifierVC.collectionView.frame = popupCollectionViewFrame
-            
-            let hscale = timetableVC.downcastLayout!.autoFitHScale!             //* make sure this is extensible (ie,  if column >= 6 )
-            classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
-                                                                              left: 0, bottom: 0, right: 0)
-            classifierVC.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
-            classifierVC.collectionView.isUserInteractionEnabled = true
-            
-            timetableVC.view.addSubview(classifierVC.view)  //; print("----------------added popup")  //globalKeyWindow.addSubview(classifierVC.view)
-            
-            classifierViewDisplayed = true
-            classifierVC.becomeFirstResponder()
-            
-            classifierVC.collectionView.reloadData()
-            classifierVC.keepScrollIndicatorsVisible()
-            
-            let switchViewHeight = eventRecurringSwitchView.popupSwitch.frame.height + cellHeight * 2
-            eventRecurringSwitchView = PopupSwitchView(frame:
-                CGRect(x: x, y: y + popupCollectionViewFrame.height,
-                       width: wid, height: switchViewHeight))                           ; eventRecurringSwitchView.backgroundColor = headerColour
-            
-            timetableVC.view.addSubview(eventRecurringSwitchView)
+            if !classifierViewDisplayed {
+                
+                let layout = self.downcastLayout!;      let widthMultiplier = CGFloat(2)
+                let cellWidth = layout.widthPlusSpace;  let cellHeight = layout.heightPlusSpace
+                
+                let popupMenuLayout = classifierVC.downcastLayout!
+                popupMenuLayout.cellWidth = cellWidth * widthMultiplier;  popupMenuLayout.cellHeight = cellHeight
+                
+                let cols = CGFloat(popupMenuLayout.cols)
+                var x = cellWidth * CGFloat(column + 1)
+                var y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)
+                let wid = cellWidth * cols * widthMultiplier
+                
+                if column >= 6 {x = cellWidth * CGFloat(column - 2)}
+                if row > 21 {y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)}
+                
+                let popupCollectionViewFrame = CGRect(x: x, y: y, width: wid, height: cellHeight * 5)
+                classifierVC.downcastLayout?.customFrame = popupCollectionViewFrame
+                classifierVC.collectionView.frame = popupCollectionViewFrame
+                
+                let hscale = timetableVC.downcastLayout!.autoFitHScale!                     //* make sure this is extensible (ie,  if column >= 6 )
+                classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
+                                                                                  left: 0, bottom: 0, right: 0)
+                classifierVC.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
+                classifierVC.collectionView.isUserInteractionEnabled = true
+                
+                let switchViewHeight = cellHeight * 4 //eventRecurringSwitchView.popupSwitch.frame.height + cellHeight * 2
+                eventRecurringSwitchView = PopupSwitchView(frame:
+                    CGRect(x: x, y: y + popupCollectionViewFrame.height,
+                           width: wid, height: switchViewHeight))                           ; eventRecurringSwitchView.backgroundColor = headerColour
+                
+                timetableVC.view.addSubview(classifierVC.view)                              //; print("----------------adding popup")
+                timetableVC.view.addSubview(eventRecurringSwitchView)                       //; print("adding switch")
+                
+                classifierViewDisplayed = true
+                classifierVC.becomeFirstResponder()
+                
+                classifierVC.collectionView.reloadData()
+                classifierVC.keepScrollIndicatorsVisible()
+                
+                for cell in timetableVC.collectionView.visibleCells {
+                    guard let customCell = cell as? TemplateCell else {
+                        print("could not downcast to custom cell in cell reference")
+                        return
+                    }
+                    let column = customCell.xyCoordinate[0]; let row = customCell.xyCoordinate[1]
+                    if let earliestEventAddress = pathsToProcess.first {
+                        if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
+                            cell.layer.borderColor = UIColor.white.cgColor; cell.layer.borderWidth = 2      //; print("highlighted cell white")
+                        }
+                        else {cell.layer.borderColor = UIColor.clear.cgColor}
+                    }
+                    else {cell.layer.borderColor = UIColor.clear.cgColor}
+                }
+            }
         }
     }
 }

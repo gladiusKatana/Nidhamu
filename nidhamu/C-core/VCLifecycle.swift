@@ -34,10 +34,9 @@ extension CollectionVC {
     }
     
     override func viewDidAppear(_ animated: Bool) { super.viewDidAppear(animated)
-        if vcType != .eventClassifier {setTopViewController()}
+        if vcType != .eventClassifier {setTopViewController(); reloadCV()}
         setupNavBarButtons(grayTwo, atIndex: colourIndex)
         setupPinching()
-        reloadCV()
     }
     
     override func viewWillDisappear(_ animated: Bool) { super.viewWillDisappear(animated)
