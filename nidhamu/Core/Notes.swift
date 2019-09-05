@@ -1,37 +1,49 @@
 /* Notes            ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
  
  
- todo___________________________________________________________________deadline
+ todo______________________________________________deadline
  
- (1st commit)                                                           July. 08 2019
+ 
+ (1st commit)                                      July. 08 2019
 
- popup adjust to cell position
  timetableVC keyboard adaptive
  
  mark item recurring (remove item by default)
  timetableVC deferral-date selection mode
  cascading deferrals
-                                                                        Fri Aug 30
+ __________________________________________________Fri Sept 6
+ 
+ 
  
  
  eventsAtDate
  archive data (eventsAtIndexPath; eventsAtDate)
  CSV email archived data
  Numbers template
-                                                                        Wed Sept 6
+ __________________________________________________Fri Sept 13                        LAUNCH BETA
  
  
- calendarVC; populate with eventsAtDate
- morn/aft/eve/nite VC
+ 
+ 
  list VC (today items)
  list VC (deadlineless items)
-                                                                        Wed Sept 13
+ morn/aft/eve/nite VC
+ calendarVC; populate with eventsAtDate
+ __________________________________________________Wed Sept 18
  
  
+ 
+ 
+ login date interval outlined not coloured
  truncate long label with  …
+ __________________________________________________Fri Sept 20
+ 
+ 
+ 
+ 
  settingsmenu
  darkMode
  buttons
  launchScreen
  icon
-                                                                        asap*/
+ __________________________________________________asap*/

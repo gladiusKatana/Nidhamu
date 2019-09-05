@@ -28,7 +28,7 @@ extension CollectionVC {
             
             if formattedDateString(Date(), roundedDown: true, prefix: "", suffix: "", short: true)
                 == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
-                cell.titleLabel.text = "now"                                                            //; print("now-cell: [\(column), \(row)]")
+                cell.titleLabel.text = "now"    //; print("now-cell: [\(column), \(row)]")
                 //cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
             }
         }

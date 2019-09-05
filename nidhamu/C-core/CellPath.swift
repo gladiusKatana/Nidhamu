@@ -113,6 +113,5 @@ extension CollectionVC {
         
         return cell
     }
-    
 }
 
