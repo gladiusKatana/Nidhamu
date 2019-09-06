@@ -19,6 +19,11 @@ extension CollectionVC {
                 
             case .hours:
                 
+                if row >= 18 {
+                    downcastLayout?.autoFitHScale = CGFloat(18 - 5 / downcastLayout!.cellHeight!) / CGFloat(layout.rows) // 5 pixel gap
+                    reloadWithDelay(after: 0)
+                }
+                
                 if !cell.markedForItems {
                     cell.markedForItems = true
                     

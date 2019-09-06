@@ -34,21 +34,22 @@ extension CollectionVC {
             
             switch vcType {
                 
-            case .hours:    reloadCV()
+            case .hours:
+                downcastLayout?.autoFitHScale = 1; reloadCV()
                 
-            case .todoList: gotoView(vc: todoListVC) // re-presents view & reloads its data, to display updated todo list
+            case .todoList:
+                gotoView(vc: todoListVC)                                        // re-presents view & reloads its data, to display updated todo list
                 
             default: print("unrecognized collection view type")}
-            
         } else {
+            if vcType == .hours && downcastLayout?.autoFitHScale != 1 {downcastLayout?.autoFitHScale = 1; reloadCV()}
             for cell in self.collectionView.visibleCells as! [TemplateCell] {
                 if cell.xyCoordinate == selectedTimeBlockPath {
                     cell.markedForItems = false
-                    cell.backgroundColor = .white
+                    cell.backgroundColor = headerColour
                 }
             }
         }
-        
         textField.text = ""
         if vcType == .hours {animateSelectedCellColourBack()}
         return true

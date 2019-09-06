@@ -53,6 +53,8 @@ extension PopupMenuVC {
                     defaultLoadData(showDate: false)
                     //timetableVC.animateCellColourBack(cell: cell, delay: 2, duration: 10)
                     AppUtility.lockOrientation(.all) //; print("rotated back")
+                    
+                    thereWillBeARowException = false
                 }
             }
         } else {print("selected header")}
