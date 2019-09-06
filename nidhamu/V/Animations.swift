@@ -18,7 +18,7 @@ extension CollectionVC {
                                     cell.titleLabel.textColor = cellTextDefaultColour
                 }, completion: nil)*/
                 
-                selectedTimeBlockPath = defaultPathOutOfView
+//                selectedTimeBlockPath = defaultPathOutOfView
             }
         }
     }

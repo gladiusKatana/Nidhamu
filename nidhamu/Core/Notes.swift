@@ -6,7 +6,9 @@
  
  (1st commit)                                      July. 08 2019
 
- timetableVC keyboard adaptive
+ remove redundant "animating" on tap nonempty block
+ new autoFitHScale formula for event-tagging mode
+ timetableVC keyboard adaptive (landscape)
  
  mark item recurring (remove item by default)
  timetableVC deferral-date selection mode

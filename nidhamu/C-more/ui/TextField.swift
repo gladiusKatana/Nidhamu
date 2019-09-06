@@ -36,20 +36,28 @@ extension CollectionVC {
                     cell.backgroundColor = headerColour
                 }
             }
-        } else {
+            animateSelectedCellColourBack()
+        }
+        else {
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
             
             switch vcType {
-                
-            case .hours:        downcastLayout?.autoFitHScale = 1; reloadCV()
-                
+            //case .hours:        print("event entered (timetable): \(textEntered)")
             case .todoList:     gotoView(vc: todoListVC)                        // re-presents view & reloads its data, to display updated todo list
-                
-            default: print("unrecognized collection view type")}
+            default: break //print("unrecognized collection view type")
+            }
         }
         
         textField.text = ""
-        if vcType == .hours {animateSelectedCellColourBack()}
+        
+        if vcType == .hours {
+            selectedTimeBlockPath = defaultPathOutOfView
+            
+            DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
+                self?.downcastLayout?.autoFitHScale = 1
+                self?.reloadCV()
+            }
+        }
         return true
     }
 }
