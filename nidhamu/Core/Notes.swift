@@ -1,19 +1,19 @@
 /* Notes            ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
  
  
- todo______________________________________________deadline
+ todo_______________________________________________deadline
  
  
- (1st commit)                                      July. 08 2019
+ (1st commit)                                       July. 08 2019
 
  remove redundant "animating" on tap nonempty block
  new autoFitHScale formula for event-tagging mode
- timetableVC keyboard adaptive (landscape)
+ timetableVC keyboard adaptive (landscape)          Fri Sept 6
  
  mark item recurring (remove item by default)
  timetableVC deferral-date selection mode
  cascading deferrals
- __________________________________________________Fri Sept 6
+ ___________________________________________________Sun Sept 8
  
  
  
@@ -22,7 +22,7 @@
  archive data (eventsAtIndexPath; eventsAtDate)
  CSV email archived data
  Numbers template
- __________________________________________________Fri Sept 13                        LAUNCH BETA
+ ___________________________________________________Fri Sept 13                        LAUNCH BETA
  
  
  
@@ -31,14 +31,14 @@
  list VC (deadlineless items)
  morn/aft/eve/nite VC
  calendarVC; populate with eventsAtDate
- __________________________________________________Wed Sept 18
+ ___________________________________________________Wed Sept 18
  
  
  
  
  login date interval outlined not coloured
  truncate long label with  …
- __________________________________________________Fri Sept 20
+ ___________________________________________________Fri Sept 20
  
  
  
@@ -48,4 +48,4 @@
  buttons
  launchScreen
  icon
- __________________________________________________asap*/
+ ___________________________________________________asap*/
