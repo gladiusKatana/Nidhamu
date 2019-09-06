@@ -29,27 +29,25 @@ extension CollectionVC {
         textFieldDisplayed = false
         let textEntered = textField.text!
         
-        if !(textEntered == "" || textEntered == " " || textEntered == "  ") {  // if user (for some reason) enters > 2 whitespaces, well, it's saved
+        if textEntered == "" || textEntered == " " || textEntered == "  " {     // if user (for some reason) enters > 2 whitespaces, well, it's saved
+            if vcType == .hours && downcastLayout?.autoFitHScale != 1 {downcastLayout?.autoFitHScale = 1; reloadCV()}
+            for cell in self.collectionView.visibleCells as! [TemplateCell] {
+                if cell.xyCoordinate == selectedTimeBlockPath {
+                    cell.backgroundColor = headerColour
+                }
+            }
+        } else {
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
             
             switch vcType {
                 
-            case .hours:
-                downcastLayout?.autoFitHScale = 1; reloadCV()
+            case .hours:        downcastLayout?.autoFitHScale = 1; reloadCV()
                 
-            case .todoList:
-                gotoView(vc: todoListVC)                                        // re-presents view & reloads its data, to display updated todo list
+            case .todoList:     gotoView(vc: todoListVC)                        // re-presents view & reloads its data, to display updated todo list
                 
             default: print("unrecognized collection view type")}
-        } else {
-            if vcType == .hours && downcastLayout?.autoFitHScale != 1 {downcastLayout?.autoFitHScale = 1; reloadCV()}
-            for cell in self.collectionView.visibleCells as! [TemplateCell] {
-                if cell.xyCoordinate == selectedTimeBlockPath {
-                    cell.markedForItems = false
-                    cell.backgroundColor = headerColour
-                }
-            }
         }
+        
         textField.text = ""
         if vcType == .hours {animateSelectedCellColourBack()}
         return true

@@ -7,7 +7,6 @@ class TemplateCell: UICollectionViewCell {
     var cellColour = UIColor.clear
     var cellDate = Date()
     var xyCoordinate = [-2, -2]
-    var markedForItems = false
     //var event = SimpleEvent() // may add as a property of a cell; or may simply keep it in a detached data structure (dictionary) as it is now
     
     override init(frame: CGRect) {
@@ -28,7 +27,6 @@ class TemplateCell: UICollectionViewCell {
         
         backgroundColor = .clear
         layer.borderColor = UIColor.clear.cgColor
-        self.markedForItems = false
     }
 }
 
