@@ -11,7 +11,7 @@ extension CollectionVC {
         
         navigationItem.rightBarButtonItems = [timetableButton, reloadButton]
         
-        var barButtonColours = [graySeven]
+        let barButtonColours = [graySeven]
         
         for button in navigationItem.rightBarButtonItems! {
             if button == reloadButton {button.tintColor = .clear}

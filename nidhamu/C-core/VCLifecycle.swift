@@ -49,7 +49,7 @@ extension CollectionVC {
                 eventField.removeFromSuperview()                                //; print("removed text field")
                 textFieldDisplayed = false
             }
-            selectedTimeBlockPath = defaultPathOutOfView
+            previousSelectedTimeBlockPath = defaultPathOutOfView
         }
     }
 }

@@ -30,7 +30,7 @@ var eventRecurringSwitchView = PopupSwitchView()
 var timerForShowScrollIndicator: Timer?
 
 var defaultPathOutOfView = [-3, -3]
-var selectedTimeBlockPath = defaultPathOutOfView
+var selectedTimeBlockPath = defaultPathOutOfView;   var previousSelectedTimeBlockPath = defaultPathOutOfView
 
 var nowRow = 0;                                     var nowColumn = 0
 var eventIndex = 0;                                 var eventsInBlockToBeProcessed = 0

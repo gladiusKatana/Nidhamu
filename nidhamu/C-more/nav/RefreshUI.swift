@@ -10,8 +10,8 @@ extension CollectionVC {
     
     func reloadWithDelay(after timeDelay: Double) {                     //print("↺d")
         DispatchQueue.main.asyncAfter(deadline: .now() + timeDelay) {
-            //self.reloadCV()
-            self.collectionView.reloadData()
+            self.reloadCV()
+            //self.collectionView.reloadData()
         }
     }
     
@@ -43,7 +43,7 @@ extension CollectionVC {
         
         rePresentedVCFromButton = false
         
-        //if vcType == .hours {print("\n---------------------presented then reloaded \(vc.vcType) cv ")}
+        if vcType == .hours {print("\n---------------------presented then reloaded \(vc.vcType) cv ")}
         
         setupTitleAndPresentViewController(vc: vc) { () -> () in
             previousOrientation = currentOrientation                //* check whether able to factor out

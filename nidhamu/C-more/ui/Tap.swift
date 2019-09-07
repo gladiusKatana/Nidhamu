@@ -18,48 +18,50 @@ extension CollectionVC {
             switch vcType {
                 
             case .hours:
-                if selectedTimeBlockPath == defaultPathOutOfView {  print("animating")
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        UIView.animate(withDuration: 2, delay: 0,                               //! factor/put in Animations.swift
-                            usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveLinear, animations: {
-                                cell.backgroundColor = eventAddingColour
-                        }, completion: nil) /**/
-                    }
-                }
-                else {
-                    cell.backgroundColor = eventAddingColour
-                    reloadCV()
-                }
                 
-                populateOrOpenTimeBlock(column: column, row: row, dateString: dateString, layout: layout)
+                selectedTimeBlockPath = [column, row]       //; print("selected time block path \(selectedTimeBlockPath)")
+                timeBlock = TimeBlock(values:(column, row))
+                
+                if eventsAtIndexPath[timeBlock] == nil {
+                    if previousSelectedTimeBlockPath == defaultPathOutOfView {  print("animating")
+                        previousSelectedTimeBlockPath = selectedTimeBlockPath
+                        
+                        //DispatchQueue.main.asyncAfter(deadline: .now()) {
+                            UIView.animate(withDuration: 2, delay: 0,                               //! factor/put in Animations.swift
+                                usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveLinear, animations: {
+                                    cell.backgroundColor = eventAddingColour
+                            }, completion: nil) /**/
+                        //}
+                    }
+                    else {
+                        cell.backgroundColor = eventAddingColour
+                        reloadCV()
+                    }
+                    
+                    presentTextFieldAfterPossiblyResizing(column: column, row: row, dateString: dateString, layout: layout)
+                }
+                else {self.gotoView(vc: todoListVC)}
                 
             case .todoList:
                 formatAndPresentTextField(dateString: dateString)
                 textFieldDisplayed = true
                 
             default: print("unrecognized collection view type's cell selected")}
-            
         } else {print("selected header")}
     }
     
-    func populateOrOpenTimeBlock(column: Int, row: Int, dateString: String, layout: CustomFlowLayout) {
-        selectedTimeBlockPath = [column, row]       //; print("selected time block path \(selectedTimeBlockPath)")
-        timeBlock = TimeBlock(values:(column, row))
-        
-        if eventsAtIndexPath[timeBlock] == nil {
-            if row >= 18 {                               let gap = CGFloat(5) // extra gap for better aesthetics
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-                    self?.downcastLayout?.autoFitHScale = CGFloat(18 - gap / (self?.downcastLayout!.cellHeight!)!) / CGFloat(layout.rows)
-                    self?.reloadCV()
-                }
-                presentTextFieldWithBool(after: 1, dateString: dateString)
+    
+    func presentTextFieldAfterPossiblyResizing(column: Int, row: Int, dateString: String, layout: CustomFlowLayout) {
+        if row >= 18 {                               let gap = CGFloat(5) // extra gap for better aesthetics
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                self?.downcastLayout?.autoFitHScale = CGFloat(18 - gap / (self?.downcastLayout!.cellHeight!)!) / CGFloat(layout.rows)
+                self?.reloadCV()
             }
-            else {
-                presentTextFieldWithBool(after: 0, dateString: dateString)
-            }
+            presentTextFieldWithBool(after: 1, dateString: dateString)
         }
-        else {self.gotoView(vc: todoListVC)}
+        else {presentTextFieldWithBool(after: 0, dateString: dateString)}
     }
+    
     
     func presentTextFieldWithBool(after delay: Double, dateString: String) {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in

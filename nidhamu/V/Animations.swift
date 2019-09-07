@@ -17,8 +17,6 @@ extension CollectionVC {
                                   animations: {
                                     cell.titleLabel.textColor = cellTextDefaultColour
                 }, completion: nil)*/
-                
-//                selectedTimeBlockPath = defaultPathOutOfView
             }
         }
     }

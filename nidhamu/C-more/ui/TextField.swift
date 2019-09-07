@@ -37,13 +37,14 @@ extension CollectionVC {
                 }
             }
             animateSelectedCellColourBack()
+            previousSelectedTimeBlockPath = defaultPathOutOfView
         }
         else {
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
             
             switch vcType {
-            //case .hours:        print("event entered (timetable): \(textEntered)")
-            case .todoList:     gotoView(vc: todoListVC)                        // re-presents view & reloads its data, to display updated todo list
+            //case .hours:      print("event entered (timetable): \(textEntered)")
+            case .todoList:     gotoView(vc: todoListVC)                // re-presents view & reloads its data, to display updated todo list
             default: break //print("unrecognized collection view type")
             }
         }
@@ -51,8 +52,6 @@ extension CollectionVC {
         textField.text = ""
         
         if vcType == .hours {
-            selectedTimeBlockPath = defaultPathOutOfView
-            
             DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
                 self?.downcastLayout?.autoFitHScale = 1
                 self?.reloadCV()
