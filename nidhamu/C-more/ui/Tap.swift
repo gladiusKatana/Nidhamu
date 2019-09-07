@@ -52,14 +52,23 @@ extension CollectionVC {
     
     
     func presentTextFieldAfterPossiblyResizing(column: Int, row: Int, dateString: String, layout: CustomFlowLayout) {
-        if row >= 18 {                               let gap = CGFloat(5) // extra gap for better aesthetics
+        if row >= 18 {
+            let gap = CGFloat(5) / (self.downcastLayout!.cellHeight!)               // extra gap for better aesthetics
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-                self?.downcastLayout?.autoFitHScale = CGFloat(18 - gap / (self?.downcastLayout!.cellHeight!)!) / CGFloat(layout.rows)
+                
+//                self?.downcastLayout?.autoFitHScale =
+//                    CGFloat(layout.rows) / (CGFloat(layout.rows + 10))
+
+                self?.downcastLayout?.autoFitHScale =
+                    (CGFloat(layout.rows) - 10 - gap) / CGFloat(layout.rows)        // popup window is 10 cells tall
+
                 self?.reloadCV()
             }
             presentTextFieldWithBool(after: 1, dateString: dateString)
         }
-        else {presentTextFieldWithBool(after: 0, dateString: dateString)}
+        else {
+            presentTextFieldWithBool(after: 0, dateString: dateString)
+        }
     }
     
     

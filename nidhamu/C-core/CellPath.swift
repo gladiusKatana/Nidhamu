@@ -59,10 +59,10 @@ extension CollectionVC {
                                 //print("events left (initial): \(eventsInBlockToBeProcessed)\n"); print("paths to process: \(pathsToProcess)")
                                 
                                 sortedPathsToProcess = pathsToProcess.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
-                                pathsToProcess = sortedPathsToProcess                             //; print("sorted paths: \(sortedPathsToProcess)")
+                                pathsToProcess = sortedPathsToProcess                       //; print("sorted paths: \(sortedPathsToProcess)")
                                 
                                 let sortedEventArraysToProcess = eventArraysToProcess.sorted(by: {$0.last!.eventDate < $1.last!.eventDate})
-                                var sortedDescriptions = [String]()                               //; print("sorted arrays: \(sortedDescriptions)")
+                                var sortedDescriptions = [String]()                         //; print("sorted arrays: \(sortedDescriptions)")
                                 for eventsses in sortedEventArraysToProcess {sortedDescriptions.append(eventsses.last!.eventDescription)}
                                 eventArraysToProcess = sortedEventArraysToProcess
                                 
@@ -70,9 +70,10 @@ extension CollectionVC {
                                 
                                 //if !savedTimeBlocksForProcessing {
                                 if thereWillBeARowException {
-                                    self.downcastLayout?.autoFitHScale = CGFloat(customLayout.rows) / CGFloat(customLayout.rows + 9) /*+ 0.01*/
-                                    //reloadCV()
-                                    self.reloadWithDelay(after: 0)     //; print("reloaded for size adjustment")
+                                    let gap = CGFloat(5) / (self.downcastLayout!.cellHeight!) // extra gap for better aesthetics
+                                    downcastLayout?.autoFitHScale =
+                                        CGFloat(customLayout.rows) / (CGFloat(customLayout.rows + 8) + gap) // popup window is 8 cells tall
+                                    self.reloadWithDelay(after: 0)                          //; print("reloaded for size adjustment")
                                 }
                                 //}
                                 
