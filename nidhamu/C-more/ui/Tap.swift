@@ -23,7 +23,7 @@ extension CollectionVC {
                 timeBlock = TimeBlock(values:(column, row))
                 
                 if eventsAtIndexPath[timeBlock] == nil {
-                    if previousSelectedTimeBlockPath == defaultPathOutOfView {  print("animating")
+                    if previousSelectedTimeBlockPath == defaultPathOutOfView {
                         previousSelectedTimeBlockPath = selectedTimeBlockPath
                         
                         //DispatchQueue.main.asyncAfter(deadline: .now()) {

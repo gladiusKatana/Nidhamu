@@ -6,9 +6,10 @@
  
  (1st commit)                                       July. 08 2019
 
- remove redundant "animating" on tap nonempty block
  new autoFitHScale formula for event-tagging mode
- timetableVC keyboard adaptive (landscape)          Fri Sept 6
+ text field appear just above keyboard
+ timetableVC keyboard adaptive (landscape)
+                                                    Fri Sept 6
  
  mark item recurring (remove item by default)
  timetableVC deferral-date selection mode

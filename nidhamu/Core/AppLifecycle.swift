@@ -3,7 +3,7 @@ import UIKit
 
 extension AppDelegate {
     
-    func applicationDidBecomeActive(_ application: UIApplication) {                         //print("🔅became active")/**/
+    func applicationDidBecomeActive(_ application: UIApplication) {                     //print("🔅became active")/**/
         checkOrientation()
         
         defaultLoadData(showDate: false)
@@ -11,7 +11,7 @@ extension AppDelegate {
     }
     
     
-    func applicationWillEnterForeground(_ application: UIApplication) {                     //print("🌔will enter foreground")
+    func applicationWillEnterForeground(_ application: UIApplication) {                 //print("🌔will enter foreground")
         firstReenteredForeground = true
         // 1-way bool (stays true, since dismissing then reopening app causes visual glitch over remaining lifecycle)
         
@@ -20,14 +20,14 @@ extension AppDelegate {
     }
     
     
-    func applicationWillResignActive(_ application: UIApplication) {                        //customApplicationStatusPrint("⏸will resign active")
+    func applicationWillResignActive(_ application: UIApplication) {                    //customApplicationStatusPrint("⏸will resign active")
         if !classifierViewDisplayed {
             defaultSaveData(showDate: false)
         }
         
         if eventsAtIndexPath.values.count > 0 {  // autorotate for smoother event-tagging IF user dismisses the app, then resumes it hours/days later
-            if currentOrientation == "landscape" {                                          //print("becameActive from landscape")
-                AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)               //print("locking/rotating to portrait from resignActive")
+            if currentOrientation == "landscape" {                                      //print("becameActive from landscape")
+                AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)           //print("locking/rotating to portrait from resignActive")
                 rotatedFromResignActive = true
             }
         } //else {print("no event items yet")}
@@ -36,7 +36,7 @@ extension AppDelegate {
     }
     
     
-    func applicationDidEnterBackground(_ application: UIApplication) {                      //customApplicationStatusPrint("🌘entered background")
+    func applicationDidEnterBackground(_ application: UIApplication) {                  //customApplicationStatusPrint("🌘entered background")
         lastActiveOrientation = currentOrientation
     }
     
