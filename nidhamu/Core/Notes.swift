@@ -6,7 +6,6 @@
  
  (1st commit)                                       July. 08 2019
 
- new autoFitHScale formula for event-tagging mode
  text field appear just above keyboard
  timetableVC keyboard adaptive (landscape)
                                                     Fri Sept 6

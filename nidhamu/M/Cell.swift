@@ -25,7 +25,7 @@ class TemplateCell: UICollectionViewCell {
         titleLabel.text = "" // use if title label text is ever set to a non-blank string
         titleLabel.font = defaultTimetableCellFont
         
-        backgroundColor = .clear
+//        backgroundColor = .clear
         layer.borderColor = UIColor.clear.cgColor
     }
 }
