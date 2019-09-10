@@ -10,6 +10,8 @@ var xOffSet = CGFloat(0);               var yOffset = CGFloat(0);               
 var statusBarHeight = 0.0;              var lastStatusBarHeight = 0.0
 var navBarHeight = 0.0;                 var launchWidth = 0.0
 
+var keyboardHeight = CGFloat(0) //KeyboardService.keyboardHeight()
+var keyboardCellHeightMultiple = 0
 
 var rePresentedVCFromButton = true;     var firstReenteredForeground = false
 var consoleLegendAppeared = false;      var justPinched = false

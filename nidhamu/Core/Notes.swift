@@ -6,8 +6,8 @@
  
  (1st commit)                                       July. 08 2019
 
- text field appear just above keyboard
  timetableVC keyboard adaptive (landscape)
+ text field appear just above keyboard
                                                     Fri Sept 6
  
  mark item recurring (remove item by default)

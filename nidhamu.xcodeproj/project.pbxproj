@@ -321,8 +321,8 @@
 		062516A722D6CF4200EBB4C8 /* Checks */ = {
 			isa = PBXGroup;
 			children = (
-				062516A822D6CF4200EBB4C8 /* TestSquare.swift */,
 				062516A922D6CF4200EBB4C8 /* Orientation.swift */,
+				062516A822D6CF4200EBB4C8 /* TestSquare.swift */,
 				062516AB22D6CF4200EBB4C8 /* VCType.swift */,
 				062516AA22D6CF4200EBB4C8 /* DeviceType.swift */,
 			);

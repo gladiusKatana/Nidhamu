@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func rePresentTextField() {
+    func rePresentTextField() {     //print("re-presenting text field")
         if textFieldDisplayed {                                                 //eventField.placeholder = "..."
             if let placeholder = eventField.placeholder {                       //print("re-presented text field from prepare()")
                 formatAndPresentTextField(dateString: placeholder)
@@ -12,6 +12,8 @@ extension CollectionVC {
     }
     
     func formatAndPresentTextField(dateString: String) {
+//        eventField.removeFromSuperview(); textField Displayed = false
+        
         let fieldWidth = CGFloat(325)
         let fieldHeight = CGFloat(2 * timetableLayout.cellHeight!)
         let halfWidth = (timetableLayout.cellWidth! + globalKeyWindow.frame.width - fieldWidth) / 2

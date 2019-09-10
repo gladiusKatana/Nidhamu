@@ -35,10 +35,13 @@ var selectedTimeBlockPath = defaultPathOutOfView;   var previousSelectedTimeBloc
 var nowRow = 0;                                     var nowColumn = 0
 var eventIndex = 0;                                 var eventsInBlockToBeProcessed = 0
 
-var reloadedFromHourTickingOver = true;             var textFieldDisplayed = false
+var reloadedFromHourTickingOver = true;             var rotatedFromResignActive = false
+var textFieldDisplayed = false;                     var textFieldFirstDisplayed = false
 var savedTimeBlocksForProcessing = false;           var classifierViewDisplayed = false
-var rotatedFromResignActive = false
+
 var eventWillBeRecurring = false
+
+var selectedTimeBlockDateDescription = "(selected date)"
 
 var globalEventIdentifier = "(event)";              var defaultEmptyEventDescription = "❒"
 
