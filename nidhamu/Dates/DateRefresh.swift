@@ -42,7 +42,6 @@ extension CollectionVC {
                 
             }
         }
-        
         completion()
     }
     

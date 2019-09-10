@@ -1,8 +1,6 @@
 // Orientation      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-var keyboardAdjustRatio = 0.0
-
 extension AppDelegate {
     
     func getOrientationAtLaunch() {
@@ -13,14 +11,10 @@ extension AppDelegate {
         if launchHeight > launchWidth {
             launchOrientation = "portrait"
             lastStatusBarHeight = 20
-            
-            keyboardAdjustRatio = launchWidth / launchHeight
         }
         else if launchHeight < launchWidth {
             launchOrientation = "landscape"
             lastStatusBarHeight = 0
-            
-            keyboardAdjustRatio = launchHeight / launchWidth
         }
         else {
             launchOrientation = " ?"                            ; print("launch orientation undefined")

@@ -12,8 +12,6 @@ extension CollectionVC {
     }
     
     func formatAndPresentTextField(dateString: String) {
-//        eventField.removeFromSuperview(); textField Displayed = false
-        
         let fieldWidth = CGFloat(325)
         let fieldHeight = CGFloat(2 * timetableLayout.cellHeight!)
         let halfWidth = (timetableLayout.cellWidth! + globalKeyWindow.frame.width - fieldWidth) / 2

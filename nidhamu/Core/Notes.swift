@@ -6,7 +6,6 @@
  
  (1st commit)                                       July. 08 2019
 
- timetableVC keyboard adaptive (landscape)
  text field appear just above keyboard
                                                     Fri Sept 6
  

@@ -56,11 +56,7 @@ extension CollectionVC {
     func presentTextFieldAndOrResizeTimetable(column: Int, row: Int, dateString: String, fromAutorotate: Bool, layout: CustomFlowLayout) {
         if row >= 18 {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) { //[weak self] in
-                
                 self.presentTextFieldWithBool(after: 0, dateString: dateString)
-                
-//                let keyboardHeight = KeyboardService.keyboardHeight()
-
             }
         }
         else {
@@ -70,16 +66,15 @@ extension CollectionVC {
     
     
     func presentTextFieldWithBool(after delay: Double, dateString: String) {
-//        if !textFieldDisplayed {
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
-                self?.formatAndPresentTextField(dateString: dateString)
-            }
-//        } //else {print("text field already displayed")}
+        //if !textFieldDisplayed {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
+            self?.formatAndPresentTextField(dateString: dateString)
+        }
+        //} //else {print("text field already displayed")}
     }
 }
 
 /*}, completion: { (finished:Bool) in
  self?.populateOrOpenTimeBlock(column: column, row: row, dateString: dateString, layout: layout)
  })*/
-
 

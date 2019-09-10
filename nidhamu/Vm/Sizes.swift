@@ -17,12 +17,12 @@ extension CustomFlowLayout {
         if embeddedInNavController {
             frame = globalKeyWindow.frame
         }
-        else {                                      //* In this app, the popup's frame is initialized by presentPopupViewToMarkEvents() anyway
+        else {                                  //* In this app, the popup's frame is initialized by presentPopupViewToMarkEvents() anyway
             if let safeFrame = customFrame {
                 frame = safeFrame
             } else {
-                frame = nilCatcherFrame             //;print("\n\nit's the nil catcher frame, rows \(rows)")
-            }                                       //* default frame is overridden anyway (see above comment); hence its initialization with all 0's
+                frame = nilCatcherFrame         //;print("\n\nit's the nil catcher frame, rows \(rows)")
+            }                                   //* default frame is overridden anyway (see above comment); hence its initialization with all 0's
         }
         
         let autofitWidth = CGFloat(frame.width) / CGFloat(cols) - hSpace
