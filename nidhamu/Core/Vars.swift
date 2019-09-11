@@ -14,7 +14,7 @@ var navBarHeight = 0.0;                 var launchWidth = 0.0
 var reloadsWhileResized = 0
 var keyboardCellHeightMultiple = 0
 
-var firstReloadForKeyboard = false;     var reloadForKeyboardRotation = false
+var firstReloadForKeyboard = false
 var rePresentedVCFromButton = true;     var firstReenteredForeground = false
 var consoleLegendAppeared = false;      var justPinched = false
 var thereWillBeARowException = false

@@ -37,8 +37,7 @@ extension CollectionVC {
     
     
     @objc func reloadCVWrapperMethod() {
-//        self.downcastLayout!.autoFitHScale = 1
-        reloadCV(); print("↺")
+        reloadCV()                      ///; print("*")
     }
     
     @objc func buttonWrapperMethodforTimetableVC() {presentViaVCButton(vc: timetableVC)}
@@ -46,10 +45,7 @@ extension CollectionVC {
     
     func presentViaVCButton(vc: CollectionVC) {
         rePresentedVCFromButton = true
-//        DispatchQueue.main.asyncAfter(deadline: .now()) {
-//            self.
         gotoView(vc: vc)
-//        }
     }
 }
 

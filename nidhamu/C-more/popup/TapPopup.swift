@@ -37,23 +37,21 @@ extension PopupMenuVC {
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                classifierVC.view.removeFromSuperview()         //; print("                removing popup")
-                eventRecurringSwitchView.removeFromSuperview()  //; print("removing switch")
+                classifierVC.view.removeFromSuperview()                 //; print("                removing popup")
+                eventRecurringSwitchView.removeFromSuperview()          //; print("removing switch")
                 
-                classifierViewDisplayed = false                 //print("now paths to process: \(pathsToProcess)")
+                classifierViewDisplayed = false                         //print("now paths to process: \(pathsToProcess)")
                 classifierVC.resignFirstResponder()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    timetableVC.reloadCV()                          //; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
+                    timetableVC.reloadCV()                              //; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
                     timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
                 }
                 
-                if pathsToProcess.isEmpty {          // when done tagging events since the last login
+                if pathsToProcess.isEmpty {                     // when done tagging events since the last login
                     defaultSaveData(showDate: false) //;print("✔︎tagged events *to process: events's \(eventArraysToProcess) paths \(pathsToProcess)")
                     defaultLoadData(showDate: false)
-                    //timetableVC.animateCellColourBack(cell: cell, delay: 2, duration: 10)
-                    AppUtility.lockOrientation(.all) //; print("rotated back")
-                    
+                    AppUtility.lockOrientation(.all)            //; print("rotated back")
                     thereWillBeARowException = false
                 }
             }

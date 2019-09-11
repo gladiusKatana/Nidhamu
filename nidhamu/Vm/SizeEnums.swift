@@ -1,4 +1,4 @@
-// CellSizing       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// SizeEnums        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension CustomFlowLayout {

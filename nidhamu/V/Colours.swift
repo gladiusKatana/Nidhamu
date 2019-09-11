@@ -1,11 +1,19 @@
 // Colours          ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
+extension UIColor {
+    static func rgb(_ r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) -> UIColor {
+        return UIColor(red: r/255, green: g/255, blue: b/255, alpha: a)
+    }
+}
+
+var randomColours =     // used in TestSquare.swift
+    [UIColor.red.cgColor, UIColor.orange.cgColor, UIColor.yellow.cgColor, UIColor.green.cgColor, UIColor.blue.cgColor, UIColor.purple.cgColor, UIColor.white.cgColor]
+
 var windowBackgroundColour = icyBlue
 
 //let num = CGFloat(42)
 var headerColour = iosSettingsGray //UIColor.rgb(num, g: num, b: num, a: 1)
-
 
 var cellDefaultColour = icyBlue
 var cellTextDefaultColour = graySeven;                              var headerTextDefaultColour = UIColor.black
@@ -37,17 +45,10 @@ var platinum = UIColor.rgb(214, g: 214, b: 214, a: 1)
 var platinumLite = UIColor.rgb(214, g: 214, b: 255, a: 0.25)
 //var frostedGlass = UIColor.rgb(230, g: 230, b: 230, a: 0.7)       //(255, g: 255, b: 255, a: 0.4)
 //var clearGlass = UIColor.rgb(255, g: 255, b: 255, a: 0.05)
-
-
 //var skyBackgroundImage = UIImage(named: "skyB")?.withRenderingMode(.alwaysOriginal) // sky background (blue with light clouds)
 //var skyBackgroundColour = UIColor(patternImage: skyBackgroundImage!) //looks pretty nice, may use later
 
-var randomColours =     // used in TestSquare.swift
-    [UIColor.red.cgColor, UIColor.orange.cgColor, UIColor.yellow.cgColor, UIColor.green.cgColor, UIColor.blue.cgColor, UIColor.purple.cgColor, UIColor.white.cgColor]
 
-extension UIColor {
-    static func rgb(_ r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) -> UIColor {
-        return UIColor(red: r/255, green: g/255, blue: b/255, alpha: a)
-    }
-}
+
+
 

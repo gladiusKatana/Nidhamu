@@ -15,7 +15,6 @@ extension CollectionVC {
         }
     }
     
-    
     func setupTitleAndPresentViewController(vc: CollectionVC, completion: () -> ()) {       //print("\ndismissing/presenting") // vc: \(vc)
         setupAndPresent(vc: vc)
         completion()
@@ -40,24 +39,14 @@ extension CollectionVC {
 //        if previousOrientation == "landscape" && currentOrientation == "portrait" // (needed when, e.g., toggling views while in landscape)
 //            || firstReenteredForeground
 //        {
-        
         rePresentedVCFromButton = false
         
         //if vcType == .hours {print("\n---------------------presented then reloaded \(vc.vcType) cv ")}
         
         setupTitleAndPresentViewController(vc: vc) { () -> () in
-//            previousOrientation = currentOrientation                //* check whether able to factor out
             reloadWithDelay(after: 0.5)                            //+ 0.1 //+ 0.2  //time delays previously tried, on an iPhone 7*
             //reloadCV()
-            
-//            if textFieldDisplayed {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//                    topVC.downcastLayout!.autoFitHScale = 1
-//                    topVC.reloadCV()
-//                }
-//            }
         }
-        
 //        } else {
 //            previousOrientation = currentOrientation
 //            reloadCV() //reloadWithDelay(after: 0.02)//?use delay, as in above completion block? (*will test over time, with different devices)
