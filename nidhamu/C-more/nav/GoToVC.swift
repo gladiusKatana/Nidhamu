@@ -3,9 +3,10 @@ import UIKit
 
 extension CollectionVC {
     
+    
     func gotoView(vc: CollectionVC) {                                               //print("\nshowing vc \(vc)")
         
-        if topVC != vc || !rePresentedVCFromButton {
+        if topVC != vc || !rePresentedVCManually {
             
             if vc == todoListVC {                                                   //print("time block being tested: \(timeBlock)")
                 if let events = eventsAtIndexPath[timeBlock] {                      //eventsAt IndexPath[imeBlock]
@@ -17,7 +18,25 @@ extension CollectionVC {
                 reloadWithDelay(after: 0.02)
             }
             
-        } else {print("you're already looking at the \(vc.vcType)-view   nav'd by button?\(rePresentedVCFromButton)")}
+        } else {print("you're already looking at the \(vc.vcType)-view   nav'd by button?\(rePresentedVCManually)")}
     }
+    
+    
+    func setupTitleAndPresentViewController(vc: CollectionVC, completion: () -> ()) {       //print("\ndismissing/presenting") // vc: \(vc)
+        setupAndPresent(vc: vc)
+        completion()
+    }
+    
+    
+    func setupAndPresent(vc: UICollectionViewController) {
+        setupViewTitle("", numLines: 1, alignment: .left)                                   //* header title is changed promptly from "" anyway
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.dismissNavController {
+                let newVC = UINavigationController(rootViewController: vc)
+                navController?.present(newVC, animated: false, completion: nil)
+            }
+        }
+    }
+    
 }
 

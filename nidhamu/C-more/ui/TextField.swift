@@ -23,7 +23,7 @@ extension CollectionVC {
         eventField.becomeFirstResponder()
     }
     
-    func presentTextFieldWithBool(after delay: Double, dateString: String) {
+    func presentTextField(after delay: Double, dateString: String) {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
             self?.formatAndPresentTextField(dateString: dateString)
         }

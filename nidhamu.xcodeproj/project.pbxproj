@@ -311,6 +311,7 @@
 				0625169922D6CF4200EBB4C8 /* TextField.swift */,
 				0687565D232992FA0052818A /* TFReturn.swift */,
 				062516A022D6CF4200EBB4C8 /* UINotify.swift */,
+				062516A422D6CF4200EBB4C8 /* RefreshUI.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -319,7 +320,6 @@
 			isa = PBXGroup;
 			children = (
 				062516A522D6CF4200EBB4C8 /* GoToVC.swift */,
-				062516A422D6CF4200EBB4C8 /* RefreshUI.swift */,
 				062516A322D6CF4200EBB4C8 /* SetTopVC.swift */,
 				062516A222D6CF4200EBB4C8 /* NavBar.swift */,
 				0625169F22D6CF4200EBB4C8 /* NavTitle.swift */,

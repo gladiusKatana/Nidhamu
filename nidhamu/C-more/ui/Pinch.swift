@@ -16,7 +16,6 @@ extension CollectionVC {
     @objc func handlePinch() {
         if !justPinched { justPinched = true
             gotoView(vc: timetableVC)
-            //timetableVC.reloadCV()
         }
     }
 }

@@ -41,10 +41,10 @@ extension CollectionVC {
     }
     
     @objc func buttonWrapperMethodforTimetableVC() {presentViaVCButton(vc: timetableVC)}
-    @objc func buttonWrapperMethodforTodoListVC() {presentViaVCButton(vc: todoListVC)}
+    //@objc func buttonWrapperMethodforTodoListVC() {presentViaVCButton(vc: todoListVC)}
     
     func presentViaVCButton(vc: CollectionVC) {
-        rePresentedVCFromButton = true
+        rePresentedVCManually = true
         gotoView(vc: vc)
     }
 }

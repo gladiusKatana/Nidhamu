@@ -35,17 +35,16 @@ import UIKit
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let backgroundVC = UIViewController()
+//        let backgroundVC = UIViewController()
+//        backgroundVC.view.frame = globalKeyWindow.frame
+//        backgroundVC.view.backgroundColor = windowBackgroundColour // must match window's background colour, for when rotating landscape->portrait
         
-        backgroundVC.view.frame = globalKeyWindow.frame
-        backgroundVC.view.backgroundColor = windowBackgroundColour  // must match window's background colour, for when rotating landscape->portrait
-        
-        navController = UINavigationController(rootViewController: backgroundVC)    // temporary, unseen initial root view controller
+        navController = UINavigationController(rootViewController: timetableVC)    // temporary, unseen initial root view controller
         window?.rootViewController = navController                  //; print("VCs*: \(String(describing: nav Controller?.viewControllers))")
         
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            timetableVC.setupAndPresent(vc: timetableVC)            // just need a uiviewcontroller (any of them) to call this method
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now()) {
+//            timetableVC.setupAndPresent(vc: timetableVC)            // just need a uiviewcontroller (any of them) to call this method
+//        }
         return true
     }
 }

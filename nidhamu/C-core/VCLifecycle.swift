@@ -10,10 +10,12 @@ extension CollectionVC {
         collectionView.bounces = false
         statusBarHeightChangeNotificationSetup()
         
-        if vcType != .initial { var str = ""
-            if !consoleLegendAppeared {str = loadSymbolLegend} else {str = ""}  ; print("💾\(vcType)\(str)")// disk emoji means loaded 💾
+//        if topVC.vcType != .initial { // try uncommenting this & look at the console
             setTopViewController()
-        }
+            var str = ""
+            if !consoleLegendAppeared {str = loadSymbolLegend} else {str = ""}  ; print("💾\(topVC.vcType)\(str)")// disk emoji means loaded 💾
+//        }
+        
         periodicDateRefresh(){kickoffTimer()}                   // checks the date then does the timer kickoff ('starts on the 0th callback')
         //kickoffTimer()                                        // does the timer kickoff then checks the date ('starts on the 1st callback')
         keyboardNotificationSetup()
@@ -21,7 +23,11 @@ extension CollectionVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if vcType != .eventClassifier {setTopViewController(); reloadCV()}
+        
+        if vcType != .eventClassifier {
+            setTopViewController()
+            reloadCV()
+        }
         setupNavBarButtons(grayTwo, atIndex: colourIndex)
         setupPinching()
         
@@ -30,12 +36,12 @@ extension CollectionVC {
         } else {                                                            // if vcType is the other nav-controller-embedded one, ie todoList VC
             setupViewTitle(formattedDateString(selectedCellDate, roundedDown: true, prefix: "Tasks", suffix: "", short: true), numLines: 1, alignment: .left)
         }
-        //if rePresentedVCFromButton {
-        var str = ""
-        rePresentedVCFromButton = false
-        if !consoleLegendAppeared {str = appearSymbolLegend} else {str = ""}
-        consoleLegendAppeared = true                                            ; print("🏞\(vcType)\(str)") // picture-emoji means appeared 🏞
-        //}
+        
+        if rePresentedVCManually {
+            var str = ""
+            if !consoleLegendAppeared {str = appearSymbolLegend} else {str = ""}
+            consoleLegendAppeared = true                                    ; print("🏞\(topVC.vcType)\(str)") // picture-emoji means appeared 🏞
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

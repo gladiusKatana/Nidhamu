@@ -15,7 +15,7 @@ var reloadsWhileResized = 0
 var keyboardCellHeightMultiple = 0
 
 var firstReloadForKeyboard = false
-var rePresentedVCFromButton = true;     var firstReenteredForeground = false
+var rePresentedVCManually = true;       var firstReenteredForeground = false
 var consoleLegendAppeared = false;      var justPinched = false
 var thereWillBeARowException = false
 
