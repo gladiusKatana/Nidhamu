@@ -47,17 +47,8 @@ extension CollectionVC {
                 
             case .todoList:
                 formatAndPresentTextField(dateString: selectedTimeBlockDateDescription)
-                
             default: print("unrecognized collection view type's cell selected")}
-            
         } else {print("selected header")}
-    }
-    
-    
-    func presentTextFieldWithBool(after delay: Double, dateString: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
-            self?.formatAndPresentTextField(dateString: dateString)
-        }
     }
 }
 

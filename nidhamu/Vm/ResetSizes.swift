@@ -14,6 +14,7 @@ extension CustomFlowLayout {
     
     func resizeAndReloadForKeyboard() {                                                     //print("r")
         if timetableVC.downcastLayout!.autoFitHScale == 1 {
+//            if 
             if topVC.vcType == .hours {
                 DispatchQueue.main.asyncAfter(deadline: .now()) {  //+ 0.5// [weak self] in
                     keyboardCellHeightMultiple = Int(keyboardHeight / timetableVC.downcastLayout!.cellHt)
@@ -42,3 +43,4 @@ extension CustomFlowLayout {
     }
     
 }
+
