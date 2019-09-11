@@ -28,7 +28,7 @@ extension CollectionVC {
             keyboardHeight = keyboardRectangle.height
             
             textFieldDisplayed = true //; print("⌨️")
-            reloadCV() //; print("r")
+            reloadCV(); firstReloadForKeyboard = true
         }
     }
     
@@ -43,13 +43,13 @@ extension CollectionVC {
         } else {                                                            // if vcType is the other nav-controller-embedded one, ie todoList VC
             setupViewTitle(formattedDateString(selectedCellDate, roundedDown: true, prefix: "Tasks", suffix: "", short: true), numLines: 1, alignment: .left)
         }
-//        if rePresentedVCFromButton {
-            var str = ""
-            rePresentedVCFromButton = false
-            if !consoleLegendAppeared {str = appearSymbolLegend} else {str = ""}
-            print("🏞 \(vcType)\(str)")                                    // picture-emoji means appeared 🏞
-            consoleLegendAppeared = true
-//        } //*above method called early (before actually appears) to print on first appearance + avoid additional reset of rePresentedVCFromButton
+////        if rePresentedVCFromButton {
+//            var str = ""
+//            rePresentedVCFromButton = false
+//            if !consoleLegendAppeared {str = appearSymbolLegend} else {str = ""}
+//            print("🏞\(vcType)\(str)")                                    // picture-emoji means appeared 🏞
+//            consoleLegendAppeared = true
+////        } //*above method called early (before actually appears) to print on first appearance + avoid additional reset of rePresentedVCFromButton
     }
     
     override func viewWillDisappear(_ animated: Bool) {
