@@ -32,7 +32,7 @@ extension CollectionVC {
                 var ampm = ""
                 if row < headerRows + 12 {ampm = "am"}
                 else {ampm = "pm"}
-                cell.titleLabel.text = "\(hoursOfTheDay[row - headerRows])\(ampm)"
+                cell.titleLabel.text = "\(amPmHours[row - headerRows])\(ampm)"
             }
         } else {
             if row < headerRows {

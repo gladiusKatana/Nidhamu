@@ -37,8 +37,12 @@ let nilCatcherFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
 
 var timetableVC = CollectionVC(.hours, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: 0, collectionViewLayout: timetableLayout)
 var todoListVC = CollectionVC(.todoList, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: todoListLayout)
+
 var classifierVC = PopupMenuVC(collectionViewLayout: classifierLayout)
+var eventRecurringSwitchView = PopupSwitchView()
+
 var topVC = CollectionVC(.initial, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: timetableLayout)
 
 //* For todoListVC: will probably remove loopWeeks & demarcateWeeksByColour, via subclassing / making them optional parameters
+
 

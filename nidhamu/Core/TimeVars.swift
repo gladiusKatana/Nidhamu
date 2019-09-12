@@ -15,17 +15,15 @@ var eventsAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleEvent]>()
 
 var timeBlock = TimeBlock(values:(0, 0))
 
-var pathsToProcess = [[Int]]();         var eventArraysToProcess = [[SimpleEvent]]()
+var pathsToProcess = [[Int]]();             var eventArraysToProcess = [[SimpleEvent]]()
 var sortedPathsToProcess = [[Int]]()
 
-var eventStatusArrays = [[Int]]()   //* Populated with raw values of enum EventStatus
-var eventPathArrays = [[Int]]()         ; var sortedEventPathArrays = [[Int]]()
-var eventDescriptionArrays = [[String]]()
-var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]] // or  [[[0, "", 0, "", 0, 0] as [Any]]]
+var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]]   // or  [[[0, "", 0, "", 0, 0] as [Any]]]
 
-var eventRecurringSwitchView = PopupSwitchView()
+var eventStatusArrays = [[Int]]();          /* Populated with raw values of enum EventStatus*/  ///var sortedFormattedDatesArrays = [Any]()
+var eventPathArrays = [[Int]]();                                                                var sortedEventPathArrays = [[Int]]()
+var eventDescriptionArrays = [[String]]();                                                      ///var sortedEventDescriptionArrays = [Any]()
 //--------------------------------------------------------------------
-
 
 var timerForShowScrollIndicator: Timer?
 
@@ -52,6 +50,6 @@ var weekdaysAbbreviated = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 var wkdysDefaultOrder = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 var fullWeekdaysDefaultOrder = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-var hoursOfTheDay = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
-//var militaryDayHours = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
+var amPmHours = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+//var militaryHours = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
 

@@ -1,6 +1,8 @@
 // DefaultSave      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
+var sortingTransform = [Int]()
+
 func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
     
     if showDate {print(formattedDateString(Date(), roundedDown: false, prefix: "✔︎saved to your device on", suffix: "", short: false))}
@@ -18,10 +20,11 @@ func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
         }
     }
     
+    ///print("\nevent path arrays:\n\(eventPathArrays)")
     sortedEventPathArrays = eventPathArrays.sorted(by: {topVC.lastEventFromPath($0).eventDate < topVC.lastEventFromPath($1).eventDate})
-//    print("\nevent path arrays:\n\(eventPathArrays)")
-    print("sorted event path arrays:\n\(sortedEventPathArrays)")
-//    eventPathArrays = sortedEventPathArrays
+    ///print("sorted event path arrays:\n\(sortedEventPathArrays)")
+    
+    sortingTransform = findSortingTransform(eventPathArrays, output: sortedEventPathArrays)         ; print("T:\(sortingTransform)\n")
     
     for vals in eventsAtIndexPath.values {
         if vals.count > 1 || vals.count == 1 && vals[0].eventDescription != defaultEmptyEventDescription {
@@ -41,7 +44,12 @@ func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
             eventDateArrays.append(eventDateComponents)
         }//else {print("\n!descriptions array at this time block contains only default (\(defaultEmptEventDescription)), and it's: \(vals[0].eventDescription)")}
     }
-    if pryntEvents {pryntSavedArrays()}
+    /*see code & comment at-bottom*/
+    
+    if pryntEvents {
+//        pryntSavedArrays()
+        pryntSortedSavedArrays()
+    }
     
     //lastLoginDateComponents = [year, month, day, weekday, hour, minute] // setting the /latest login date (for saving) as the date this minute
     let (yr, mnth, dy, wkdy, _, hr, mn) = displayDate(Date(), roundedDown: false)
@@ -49,8 +57,47 @@ func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
     defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")
     
     defaults.set(eventPathArrays, forKey: "savedTimeBlockPaths")
-    defaults.set(eventDescriptionArrays, forKey: "savedTodoListItems")
-    defaults.set(eventStatusArrays, forKey: "savedTodoListStatuses")
-    defaults.set(eventDateArrays, forKey: "savedTodoListDates")
+    defaults.set(eventDescriptionArrays, forKey: "savedTodoListItems") // rename to "savedEventDescriptions"
+    defaults.set(eventStatusArrays, forKey: "savedTodoListStatuses")   // rename to "savedEventStatuses"
+    defaults.set(eventDateArrays, forKey: "savedTodoListDates")        // rename to "savedEventDates"
 }
 
+
+func findSortingTransform(_ input: [[Int]], output: [[Int]]) -> [Int] { // only called on index-path array here (which is date-sorted*)...
+                                                                        // ... so duplication of  element  in for loop is not an issue
+    var transform = [Int]()
+
+    for element in input {
+        transform.append(output.firstIndex(of: element)!)
+    }
+    
+    return transform
+}
+
+
+func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
+    
+    var output = [Any]()
+    for _ in input {output.append(0)}
+        
+    var i = 0
+    
+    for element in input {
+        
+        ///let i = output.firstIndex(of: element)!                                                      ///No!  does not handle duplication. Need to do the old-school way, below. (Also see comment...
+
+        output[transform[i]] = element                      //print("inserting \(element) at \(transform[i])")
+        
+        if i < transform.count - 1 {i += 1}                 /// ...above-- "(which is date sorted)":  ie, all  event-property arrays (the NSUserDefaults data structure) are date-sorted
+    }
+    
+    return output // return the input, mutated (sorted); would make this a mutating func, but it's global
+}
+
+
+/// not working upon loading (for now), most likely since populateDictionaryFromDefaults() not rewritten to take the sorting into account
+
+/*let formattedDatesArrays = formatDatesFromComponentsArray(eventDateArrays)
+eventPathArrays = sortedEventPathArrays
+sortedFormattedDatesArrays = applySortingTransform(formattedDatesArrays, transform: sortingTransform)
+sortedEventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: sortingTransform)*/
