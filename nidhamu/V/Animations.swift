@@ -13,10 +13,10 @@ extension CollectionVC {
                 animateCellColourBack(cell: cell, delay: 0, duration: 0.75)
                 
                 /*cell.titleLabel.textColor = .clear
-                UIView.transition(with: cell.titleLabel, duration: 1, options: UIView.AnimationOptions.transitionCrossDissolve,
-                                  animations: {
-                                    cell.titleLabel.textColor = cellTextDefaultColour
-                }, completion: nil)*/
+                 UIView.transition(with: cell.titleLabel, duration: 1, options: UIView.AnimationOptions.transitionCrossDissolve,
+                 animations: {
+                 cell.titleLabel.textColor = cellTextDefaultColour
+                 }, completion: nil)*/
             }
         }
     }

@@ -16,33 +16,34 @@ extension CollectionVC {
             
             switch vcType {
             case .hours:
-
+                
                 selectedTimeBlockPath = [column, row]       //; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
                 
                 if eventsAtIndexPath[timeBlock] == nil {
-//                    if previousSelectedTimeBlockPath == defaultPathOutOfView {
-//                        previousSelectedTimeBlockPath = selectedTimeBlockPath
-//
-//                        DispatchQueue.main.asyncAfter(deadline: .now()) {
-//                            UIView.animate(withDuration: 1, delay: 0,                               //! factor/put in Animations.swift
-//                                usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveLinear, animations: {
-//                                    cell.backgroundColor = eventAddingColour
-//                            }, completion: nil)
-//                        }
-//                    }
-//                    else { print("opening todo list")
-                        cell.backgroundColor = eventAddingColour
-                        reloadCV()
-//                    }
+                    /*if previousSelectedTimeBlockPath == defaultPathOutOfView {
+                     previousSelectedTimeBlockPath = selectedTimeBlockPath
+                     
+                     DispatchQueue.main.asyncAfter(deadline: .now()) {
+                     UIView.animate(withDuration: 1, delay: 0,                               //! factor/put in Animations.swift
+                     usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveLinear, animations: {
+                     cell.backgroundColor = eventAddingColour
+                     }, completion: nil)
+                     }
+                     }
+                     else {*/
+                    
+                    cell.backgroundColor = eventAddingColour
+                    reloadCV() //}
+                    
                     presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)
-//                    if row >= 18 {
-//                        if !textFieldDisplayed {presentTextField(after: 1, dateString: selectedTimeBlockDateDescription)}
-//                        else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}
-//                    } else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}
+                    
+                    /*if row >= 18 {
+                     if !textFieldDisplayed {presentTextField(after: 1, dateString: selectedTimeBlockDateDescription)}
+                     else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}
+                     } else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}*/
                     
                 } else { rePresentedVCManually = true
-                    //DispatchQueue.main.asyncAfter(deadline: .now()) {self.gotoView(vc: todoListVC)}
                     gotoView(vc: todoListVC)
                 }
             case .todoList:

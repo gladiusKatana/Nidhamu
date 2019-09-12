@@ -5,6 +5,7 @@ import UIKit
 extension CollectionVC {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {              //print("TF_return")
+        
         textField.resignFirstResponder()
         textField.removeFromSuperview()
         textFieldDisplayed = false
@@ -38,6 +39,7 @@ extension CollectionVC {
                 self?.reloadCV()
             }
         }
+        
         return true
     }
 }

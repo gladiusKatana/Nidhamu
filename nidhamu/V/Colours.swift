@@ -48,7 +48,3 @@ var platinumLite = UIColor.rgb(214, g: 214, b: 255, a: 0.25)
 //var skyBackgroundImage = UIImage(named: "skyB")?.withRenderingMode(.alwaysOriginal) // sky background (blue with light clouds)
 //var skyBackgroundColour = UIColor(patternImage: skyBackgroundImage!) //looks pretty nice, may use later
 
-
-
-
-

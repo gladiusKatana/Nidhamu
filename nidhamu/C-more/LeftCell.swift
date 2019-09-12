@@ -26,6 +26,6 @@ extension CollectionVC {
         
         return cell
     }
-
+    
 }
 
