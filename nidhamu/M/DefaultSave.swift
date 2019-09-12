@@ -1,7 +1,7 @@
 // DefaultSave      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func defaultSaveData(showDate: Bool) {                      
+func defaultSaveData(showDate: Bool, printEvents: Bool) {
     
     if showDate {print(formattedDateString(Date(), roundedDown: false, prefix: "✔︎saved to your device on", suffix: "", short: false))}
     
@@ -10,10 +10,10 @@ func defaultSaveData(showDate: Bool) {
     eventPathArrays.removeAll(); eventDescriptionArrays.removeAll(); eventStatusArrays.removeAll(); eventDateArrays.removeAll()
     
     for key in eventsAtIndexPath.keys {
-        let (a, b) = key.values                                                                           //; print("key: [\(key)  values \((a, b))")
+        let (a, b) = key.values                                                                     //; print("key: [\(key)  values \((a, b))")
         guard let val = eventsAtIndexPath[key] else {print("could not create event at index path key"); return}
         guard let todo = val.last?.eventDescription else {print("no description at event value"); return}
-        if todo != defaultEmptyEventDescription {                                                         //; print(\((a, b)): \(todo))
+        if todo != defaultEmptyEventDescription {                                                   //; print(\((a, b)): \(todo))
             eventPathArrays.append([a, b])
         }
     }
@@ -36,9 +36,9 @@ func defaultSaveData(showDate: Bool) {
             eventDateArrays.append(eventDateComponents)
         }//else {print("\n!descriptions array at this time block contains only default (\(defaultEmptEventDescription)), and it's: \(vals[0].eventDescription)")}
     }
-    //pryntSavedArrays()
-    //lastLoginDateComponents = [year, month, day, weekday, hour, minute] // setting the /latest login date (for saving) as the date this minute
+    if printEvents {pryntSavedArrays()}
     
+    //lastLoginDateComponents = [year, month, day, weekday, hour, minute] // setting the /latest login date (for saving) as the date this minute
     let (yr, mnth, dy, wkdy, _, hr, mn) = displayDate(Date(), roundedDown: false)
     lastLoginDateComponents = [yr, mnth, dy, wkdy, hr, mn]
     defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")

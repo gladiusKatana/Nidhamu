@@ -5,7 +5,6 @@ extension CollectionVC {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if indexPath.row == 3 {
             collectionView.register(LeftAlignedCell.self, forCellWithReuseIdentifier: LeftAlignedCell.reuseIdentifier)
             var cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: LeftAlignedCell.reuseIdentifier, for: indexPath) as! LeftAlignedCell
@@ -21,11 +20,9 @@ extension CollectionVC {
     }
     
     func doRestOfCellProcessing(cell: CustomCell, indexPath: IndexPath) -> CustomCell {
-        
         let customLayout = downcastLayout!
         let row = indexPath.item;                       let column = indexPath.section;
         let headerRows = customLayout.lockedHeaderRows; let headerSections = customLayout.lockedHeaderSections
-        
         cell.xyCoordinate = [column, row]
         
         if column < headerSections {
@@ -48,70 +45,9 @@ extension CollectionVC {
                 cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
                 timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
                 
-                if row == customLayout.rows - 1 && column == customLayout.cols - 1 {      //; print("events to process: \(events ToProcess)")//*
-                    
-                    if vcType == .hours {
-                        if eventArraysToProcess.count > 0 { //* or, could have used paths ToProcess.count > 0
-                            
-                            if !savedTimeBlocksForProcessing {
-                                eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
-                                //; print("\n*eventsInBlock \(eventsInBlockToBeProcessed)")
-                                //print("events left (initial): \(eventsInBlockToBeProcessed)\n"); print("paths to process: \(pathsToProcess)")
-                                
-                                sortedPathsToProcess = pathsToProcess.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
-                                pathsToProcess = sortedPathsToProcess                       //; print("sorted paths: \(sortedPathsToProcess)")
-                                
-                                let sortedEventArraysToProcess = eventArraysToProcess.sorted(by: {$0.last!.eventDate < $1.last!.eventDate})
-                                var sortedDescriptions = [String]()                         //; print("sorted arrays: \(sortedDescriptions)")
-                                for eventsses in sortedEventArraysToProcess {sortedDescriptions.append(eventsses.last!.eventDescription)}
-                                eventArraysToProcess = sortedEventArraysToProcess
-                                
-                                self.tagEventsSinceLastLogin(layout: customLayout)
-                                
-                                //if !savedTimeBlocksForProcessing {
-                                if thereWillBeARowException {
-                                    let gap = CGFloat(5) / (self.downcastLayout!.cellHeight!) // extra gap for better aesthetics
-                                    downcastLayout?.autoFitHScale =
-                                        CGFloat(customLayout.rows) / (CGFloat(customLayout.rows + 8) + gap) // popup window is 8 cells tall
-                                    self.reloadWithDelay(after: 0)                          //; print("reloaded for size adjustment")
-                                }
-                                //}
-                                
-                                savedTimeBlocksForProcessing = true
-                            }
-                        } else {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                AppUtility.lockOrientation(.all)
-                            }
-                        }
-                    }
-                }
+                if row == customLayout.rows - 1 && column == customLayout.cols - 1 {processTimeBlocksSinceLastLogin(layout: customLayout)}
             }
         }
-        return cell
-    }
-    
-    func doRestOfLeftCellProcessing(cell: LeftAlignedCell, indexPath: IndexPath) -> LeftAlignedCell  {
-        
-        cell.backgroundColor = headerColour
-        cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)
-        cell.titleLabel.textColor = grayTwo
-        
-        cell.titleLabel.textAlignment = .left
-        cell.titleLabel.numberOfLines = 0
-        cell.titleLabel.lineBreakMode = .byCharWrapping
-        
-        let (yr, mnthString, dayI, wkday, _, hr, min) = displayDate(lastLoggedInDate, roundedDown: false)
-        
-        let longWeekday = getFullWeekdayName(shortWeekday: wkday)
-        var minTwoDigits = "\(min)"
-        if min < 10 {minTwoDigits = "0\(min)"}
-        
-        if indexPath.section == 0 { // to do this in column 1, you need to rewrite the layout attributes (zIndex)
-            cell.titleLabel.text = " Last login \(longWeekday), \(mnthString) \(dayI), \(yr) @ \(hr):\(minTwoDigits)"
-        }
-        else {cell.titleLabel.text = ""}
-        
         return cell
     }
 }

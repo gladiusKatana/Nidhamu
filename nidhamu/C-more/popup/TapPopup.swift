@@ -12,7 +12,7 @@ extension PopupMenuVC {
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
             guard let firstPathToProcess = pathsToProcess.first else { print("no paths to process... even though popup menu was presented"); return}
-            let currentColumn = firstPathToProcess[0]; let currentRow = firstPathToProcess[1]     // components of path of current item being marked
+            let currentColumn = firstPathToProcess[0]; let currentRow = firstPathToProcess[1] // components of path of current item being marked
             
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(currentColumn, currentRow))] {    // writing to the dictionary
                 
@@ -48,10 +48,10 @@ extension PopupMenuVC {
                     timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
                 }
                 
-                if pathsToProcess.isEmpty {                     // when done tagging events since the last login
-                    defaultSaveData(showDate: false) //;print("✔︎tagged events *to process: events's \(eventArraysToProcess) paths \(pathsToProcess)")
+                if pathsToProcess.isEmpty {                             // when done tagging events since the last login
+                    defaultSaveData(showDate: false, printEvents: true)
                     defaultLoadData(showDate: false)
-                    AppUtility.lockOrientation(.all)            //; print("rotated back")
+                    AppUtility.lockOrientation(.all)                    //; print("rotated back")
                     thereWillBeARowException = false
                 }
             }

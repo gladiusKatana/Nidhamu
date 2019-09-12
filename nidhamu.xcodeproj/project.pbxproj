@@ -65,6 +65,8 @@
 		0687565E232992FA0052818A /* TFReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0687565D232992FA0052818A /* TFReturn.swift */; };
 		06A396572318B0F5008CFBD7 /* SwitchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A396562318B0F5008CFBD7 /* SwitchVC.swift */; };
 		06AA5D19231727C500DC04FD /* PCellPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA5D18231727C500DC04FD /* PCellPath.swift */; };
+		06B872072329CA0700512B21 /* PrepBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B872062329CA0700512B21 /* PrepBlocks.swift */; };
+		06B8720A2329CAB400512B21 /* LeftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B872092329CAB400512B21 /* LeftCell.swift */; };
 		06F2A96A231725980062FE02 /* RotateLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F2A969231725980062FE02 /* RotateLock.swift */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +152,8 @@
 		0687565D232992FA0052818A /* TFReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFReturn.swift; sourceTree = "<group>"; };
 		06A396562318B0F5008CFBD7 /* SwitchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchVC.swift; sourceTree = "<group>"; };
 		06AA5D18231727C500DC04FD /* PCellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCellPath.swift; sourceTree = "<group>"; };
+		06B872062329CA0700512B21 /* PrepBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepBlocks.swift; sourceTree = "<group>"; };
+		06B872092329CAB400512B21 /* LeftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftCell.swift; sourceTree = "<group>"; };
 		06F2A969231725980062FE02 /* RotateLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateLock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -299,6 +303,7 @@
 				0625169522D6CF4200EBB4C8 /* ui */,
 				0673571B2300753900DC2CAC /* popup */,
 				0625169E22D6CF4200EBB4C8 /* nav */,
+				06B872092329CAB400512B21 /* LeftCell.swift */,
 			);
 			path = "C-more";
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 				06164A2E22D6D19000DA608D /* CellDates.swift */,
 				0631914322E2C5F5004DE476 /* LoginInterval.swift */,
 				0625169822D6CF4200EBB4C8 /* TagEvents.swift */,
+				06B872062329CA0700512B21 /* PrepBlocks.swift */,
 			);
 			path = "C-core";
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 				062516D322D6CF4200EBB4C8 /* GoToVC.swift in Sources */,
 				06164A3222D6D19000DA608D /* CellDates.swift in Sources */,
 				062516C122D6CF4200EBB4C8 /* Prynts.swift in Sources */,
+				06B872072329CA0700512B21 /* PrepBlocks.swift in Sources */,
 				062516C422D6CF4200EBB4C8 /* PopupVC.swift in Sources */,
 				062516D522D6CF4200EBB4C8 /* TestSquare.swift in Sources */,
 				0682A49122FE5F0A00CE8075 /* AddPopup.swift in Sources */,
@@ -562,6 +569,7 @@
 				062516D722D6CF4200EBB4C8 /* DeviceType.swift in Sources */,
 				0625167522D6CF2B00EBB4C8 /* TimeVars.swift in Sources */,
 				0674CD2F23298928009231F1 /* TemplateCell.swift in Sources */,
+				06B8720A2329CAB400512B21 /* LeftCell.swift in Sources */,
 				062516C022D6CF4200EBB4C8 /* Animations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
