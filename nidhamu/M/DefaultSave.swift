@@ -18,9 +18,9 @@ func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
         }
     }
     
-//    sortedEventPathArrays = eventPathArrays.sorted(by: {topVC.lastEventFromPath($0).eventDate < topVC.lastEventFromPath($1).eventDate})
+    sortedEventPathArrays = eventPathArrays.sorted(by: {topVC.lastEventFromPath($0).eventDate < topVC.lastEventFromPath($1).eventDate})
 //    print("\nevent path arrays:\n\(eventPathArrays)")
-//    print("sorted event path arrays:\n\(sortedEventPathArrays)")
+    print("sorted event path arrays:\n\(sortedEventPathArrays)")
 //    eventPathArrays = sortedEventPathArrays
     
     for vals in eventsAtIndexPath.values {
