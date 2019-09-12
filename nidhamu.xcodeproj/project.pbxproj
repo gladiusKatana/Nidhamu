@@ -303,7 +303,6 @@
 				0625169522D6CF4200EBB4C8 /* ui */,
 				0673571B2300753900DC2CAC /* popup */,
 				0625169E22D6CF4200EBB4C8 /* nav */,
-				06B872092329CAB400512B21 /* LeftCell.swift */,
 			);
 			path = "C-more";
 			sourceTree = "<group>";
@@ -373,12 +372,13 @@
 			children = (
 				0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */,
 				0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */,
+				06B872092329CAB400512B21 /* LeftCell.swift */,
 				0625169B22D6CF4200EBB4C8 /* CellPath.swift */,
 				062516A622D6CF4200EBB4C8 /* CellContents.swift */,
 				06164A2E22D6D19000DA608D /* CellDates.swift */,
 				0631914322E2C5F5004DE476 /* LoginInterval.swift */,
-				0625169822D6CF4200EBB4C8 /* TagEvents.swift */,
 				06B872062329CA0700512B21 /* PrepBlocks.swift */,
+				0625169822D6CF4200EBB4C8 /* TagEvents.swift */,
 			);
 			path = "C-core";
 			sourceTree = "<group>";

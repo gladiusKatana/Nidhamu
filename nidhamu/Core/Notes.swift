@@ -6,9 +6,12 @@
  
  (1st commit)                                       July. 08 2019
 
+ sort & tabulate weekly event data for printing
  mark item recurring (remove item by default)
+ 
  timetableVC deferral-date selection mode
  cascading deferrals
+ 
  text field appear just above keyboard
  ___________________________________________________Thu Sept 12
  

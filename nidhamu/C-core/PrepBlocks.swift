@@ -9,6 +9,7 @@ extension CollectionVC {
                 
                 if !savedTimeBlocksForProcessing {
                     eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
+                    
                     //; print("\n*eventsInBlock \(eventsInBlockToBeProcessed)")
                     //print("events left (initial): \(eventsInBlockToBeProcessed)\n"); print("paths to process: \(pathsToProcess)")
                     
