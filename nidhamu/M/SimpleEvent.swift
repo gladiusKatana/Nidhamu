@@ -4,7 +4,8 @@ import UIKit
 class SimpleEvent: NSObject {
     var eventDescription = ""               // description of an event coming up (or todo-list item) on this day
     var eventDate = Date()                  // date the event/action occurs or must be done by
-    var eventStatus = EventStatus.upcoming  ///var recurring = false //* will add soon
+    var eventStatus = EventStatus.upcoming
+    var recurring = false //* will use soon
     
     init(eventDescription: String, eventDate: Date, eventStatus: EventStatus) {
         self.eventDescription = eventDescription
