@@ -49,7 +49,7 @@ extension PopupMenuVC {
                 }
                 
                 if pathsToProcess.isEmpty {                             // when done tagging events since the last login
-                    defaultSaveData(showDate: false, printEvents: true)
+                    defaultSaveData(showDate: false, pryntEvents: true)
                     defaultLoadData(showDate: false)
                     AppUtility.lockOrientation(.all)                    //; print("rotated back")
                     thereWillBeARowException = false

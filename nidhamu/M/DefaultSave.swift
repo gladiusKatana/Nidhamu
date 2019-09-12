@@ -1,7 +1,7 @@
 // DefaultSave      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func defaultSaveData(showDate: Bool, printEvents: Bool) {
+func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
     
     if showDate {print(formattedDateString(Date(), roundedDown: false, prefix: "✔︎saved to your device on", suffix: "", short: false))}
     
@@ -17,6 +17,11 @@ func defaultSaveData(showDate: Bool, printEvents: Bool) {
             eventPathArrays.append([a, b])
         }
     }
+    
+//    sortedEventPathArrays = eventPathArrays.sorted(by: {topVC.lastEventFromPath($0).eventDate < topVC.lastEventFromPath($1).eventDate})
+//    print("\nevent path arrays:\n\(eventPathArrays)")
+//    print("sorted event path arrays:\n\(sortedEventPathArrays)")
+//    eventPathArrays = sortedEventPathArrays
     
     for vals in eventsAtIndexPath.values {
         if vals.count > 1 || vals.count == 1 && vals[0].eventDescription != defaultEmptyEventDescription {
@@ -36,7 +41,7 @@ func defaultSaveData(showDate: Bool, printEvents: Bool) {
             eventDateArrays.append(eventDateComponents)
         }//else {print("\n!descriptions array at this time block contains only default (\(defaultEmptEventDescription)), and it's: \(vals[0].eventDescription)")}
     }
-    if printEvents {pryntSavedArrays()}
+    if pryntEvents {pryntSavedArrays()}
     
     //lastLoginDateComponents = [year, month, day, weekday, hour, minute] // setting the /latest login date (for saving) as the date this minute
     let (yr, mnth, dy, wkdy, _, hr, mn) = displayDate(Date(), roundedDown: false)

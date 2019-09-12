@@ -19,7 +19,7 @@ var pathsToProcess = [[Int]]();         var eventArraysToProcess = [[SimpleEvent
 var sortedPathsToProcess = [[Int]]()
 
 var eventStatusArrays = [[Int]]()   //* Populated with raw values of enum EventStatus
-var eventPathArrays = [[Int]]()
+var eventPathArrays = [[Int]]()         ; var sortedEventPathArrays = [[Int]]()
 var eventDescriptionArrays = [[String]]()
 var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]] // or  [[[0, "", 0, "", 0, 0] as [Any]]]
 
