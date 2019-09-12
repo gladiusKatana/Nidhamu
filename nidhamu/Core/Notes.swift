@@ -6,13 +6,11 @@
  
  (1st commit)                                       July. 08 2019
 
- text field appear just above keyboard
-                                                    Fri Sept 6
- 
  mark item recurring (remove item by default)
  timetableVC deferral-date selection mode
  cascading deferrals
- ___________________________________________________Sun Sept 8
+ text field appear just above keyboard
+ ___________________________________________________Thu Sept 12
  
  
  
