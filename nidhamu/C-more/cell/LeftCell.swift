@@ -29,7 +29,7 @@ extension CollectionVC {
         
         cell.backgroundColor = headerColour
         cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)
-        cell.titleLabel.textColor = grayTwo
+        cell.titleLabel.textColor = grayFive
         
         cell.titleLabel.textAlignment = .left
         cell.titleLabel.numberOfLines = 0
@@ -42,7 +42,7 @@ extension CollectionVC {
         if min < 10 {minTwoDigits = "0\(min)"}
         
         if indexPath.section == 0 { // to do this in column 1, you need to rewrite the layout attributes (zIndex)
-            cell.titleLabel.text = " Last login \(longWeekday), \(mnthString) \(dayI), \(yr) @ \(hr):\(minTwoDigits)"
+            cell.titleLabel.text = " Last Login \(longWeekday), \(mnthString) \(dayI), \(yr) @ \(hr):\(minTwoDigits)"
         }
         else {cell.titleLabel.text = ""}
         

@@ -36,7 +36,7 @@ var lightNavy = UIColor.rgb(0, g: 56, b: 116, a: 0.75)
 
 
 var bluishGray = UIColor.white //UIColor.rgb(60, g: 80, b: 120, a: 1)
-var grayTwo = UIColor.rgb(0, g: 0, b: 0, a: 0.2)
+var grayTwo = UIColor.rgb(0, g: 0, b: 0, a: 0.2);                   var grayFive = UIColor.rgb(0, g: 0, b: 0, a: 0.5)
 var graySeven = UIColor.rgb(0, g: 0, b: 0, a: 0.7)
 var iosSettingsGray = UIColor.rgb(240, g: 240, b: 247, a: 1)
 
