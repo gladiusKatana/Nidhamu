@@ -45,7 +45,7 @@ func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
     eventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: sortingTransform) as! [[String]]
     eventStatusArrays = applySortingTransform(eventStatusArrays, transform: sortingTransform) as! [[Int]]
     
-    if pryntEvents {pryntSortedSavedArrays()}
+    if pryntEvents {printEventsTabularized()} //{pryntSortedSavedArrays()}
     setForKeys(defaults)
 }
 

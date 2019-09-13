@@ -6,14 +6,14 @@
  
  (1st commit)                                       July. 08 2019
 
- sort & tabulate weekly event data for printing
- mark item recurring (remove item by default)
+ bug: todo list does not animate when returning (related to rePresentedVCManually)
+ bug: last login cell showing on todo list vc   (comes from switching on vcType)
  
+ mark item recurring (remove item by default)
  timetableVC deferral-date selection mode
  cascading deferrals
- 
  text field appear just above keyboard
- ___________________________________________________Thu Sept 12
+ ___________________________________________________Fri Sept 13
  
  
  
@@ -22,7 +22,7 @@
  archive data (eventsAtIndexPath; eventsAtDate)
  CSV email archived data
  Numbers template
- ___________________________________________________Fri Sept 13                        LAUNCH BETA
+ ___________________________________________________Sun Sept 15                        LAUNCH BETA
  
  
  

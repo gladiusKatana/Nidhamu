@@ -25,8 +25,8 @@ var previousOrientation = "previous orientation (landscape or portrait) for prep
 var lastActiveOrientation = "orientation (landscape or portrait) before sending app to background"  //* " "
 var launchOrientation = "orientation at the moment of launch"                                       //* " "
 
-var loadSymbolLegend = "                                  💾 = view loaded"
-var appearSymbolLegend = "                                  🏞 = view appeared"  //console legend
+var loadSymbolLegend = "                                    💾 = view loaded"
+var appearSymbolLegend = "                                    🏞 = view appeared"  //console legend
 
 var modelName = "device you're running on"
 

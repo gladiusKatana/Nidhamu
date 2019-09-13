@@ -23,7 +23,9 @@ class SimpleEvent: NSObject {
 }
 
 enum EventStatus: Int, CaseIterable {
+    
     case occurred = 0; case done, delegated, deferred, obviated, upcoming
+    
     func simpleDescription() -> String {
         switch self {
         case .occurred:     return "event occurred"
