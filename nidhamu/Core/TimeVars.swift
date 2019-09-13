@@ -17,14 +17,14 @@ var timeBlock = TimeBlock(values:(0, 0))
 
 var eventArraysToProcess = [[SimpleEvent]]()
 
-var pathsToProcess = [[Int]]();                                                                 var sortedPathsToProcess = [[Int]]()
+var pathsToProcess = [[Int]]();                                                                 //var sortedPathsToProcess = [[Int]]()
 
-var eventPaths = [[Int]]();                                                                     var sortedEventPaths = [[Int]]()
+var timeBlockPaths = [[Int]]();                                                                  var sortedTimeBlockPaths = [[Int]]()
 
-var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]];  var sortedEventDateArrays = [Any]()
+var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]];  //var sortedEventDateArrays = [Any]()
 
-var eventDescriptionArrays = [[String]]();                                                      var sortedEventDescriptionArrays = [Any]()
-var eventStatusArrays = [[Int]](); /* Populated with raw values of enum EventStatus*/           var sortedEventStatusArrays = [Any]()
+var eventDescriptionArrays = [[String]]();                                                      //var sortedEventDescriptionArrays = [Any]()
+var eventStatusArrays = [[Int]](); /* Populated with raw values of enum EventStatus*/           //var sortedEventStatusArrays = [Any]()
 //--------------------------------------------------------------------
 
 var timerForShowScrollIndicator: Timer?

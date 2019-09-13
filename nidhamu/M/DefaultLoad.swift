@@ -13,32 +13,33 @@ func defaultLoadData(showDate: Bool) {                                          
             pryntCurrentDate()
         }
     }
-    else {                                                                                //print("\nfirst login")
+    else {                                                                                  //print("\nfirst login")
         let (yr, mo, dy, wkd, _, hr, mn) = displayDate(Date(), roundedDown: true)
         lastLoginDateComponents = [yr, mo, dy, wkd, hr, mn]
     }
     
-    eventPaths = defaults.array(forKey: "savedTimeBlockPaths") as? [[Int]] ?? []
-    eventDescriptionArrays = defaults.array(forKey: "savedTodoListItems") as? [[String]] ?? []
-    eventStatusArrays = defaults.array(forKey: "savedTodoListStatuses") as? [[Int]] ?? []
-    eventDateArrays = defaults.array(forKey: "savedTodoListDates") as? [[[Any]]] ?? [[[]]]
-    populateDictionaryFromDefaults()                                                        ; print("loaded event paths: \(eventPaths)")
+    timeBlockPaths = defaults.array(forKey: "savedTimeBlockPaths") as? [[Int]] ?? []
+    eventDescriptionArrays = defaults.array(forKey: "savedEventDescriptionArrays") as? [[String]] ?? []
+    eventDateArrays = defaults.array(forKey: "savedEventDateArrays") as? [[[Any]]] ?? [[[]]]
+    eventStatusArrays = defaults.array(forKey: "savedEventStatusArrays") as? [[Int]] ?? []
+    
+    populateDictionaryFromDefaults()                                                        //; print("loaded event paths: \(timeBlockPaths)")
 }
 
 func populateDictionaryFromDefaults() {
     var i = 0
     
-    for path in eventPaths {                                                           //print("path: \(path)")
+    for path in timeBlockPaths {                                                            //print("path: \(path)")
         
-        let todoListItemDescriptions = eventDescriptionArrays[i] //!*
+        let eventDescriptions = eventDescriptionArrays[i] //!*
         var events = [SimpleEvent]()
         var j = 0
         
-        for description in todoListItemDescriptions {
-            let todoListItemStatus = eventStatusArrays[i][j]
+        for description in eventDescriptions {
+            let eventStatus = eventStatusArrays[i][j]
             let dateComponents = eventDateArrays[i][j]                                      //; print("event date components: \(dateComponents)")
             let date = dateFromComponents(dateComponents)                                   //; print("date: \(date)")
-            let event = SimpleEvent(eventDescription: description, eventDate: date, eventStatus: EventStatus(rawValue: todoListItemStatus)!)
+            let event = SimpleEvent(eventDescription: description, eventDate: date, eventStatus: EventStatus(rawValue: eventStatus)!)
             
             //print("loaded: '\(event.eventDescription)' [\(event.eventStatus)] with deadline:\(formattedDateString(date, roundedDown: true, prefix: "", suffix: "", short: false))")
             events.append(event)

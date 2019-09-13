@@ -7,21 +7,19 @@ func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
     
     let defaults = UserDefaults.standard
     
-    eventPaths.removeAll(); eventDescriptionArrays.removeAll(); eventStatusArrays.removeAll(); eventDateArrays.removeAll()
+    timeBlockPaths.removeAll(); eventDescriptionArrays.removeAll(); eventStatusArrays.removeAll(); eventDateArrays.removeAll()
     
     for key in eventsAtIndexPath.keys {
         let (a, b) = key.values                                                                     //; print("key: [\(key)  values \((a, b))")
         guard let val = eventsAtIndexPath[key] else {print("could not create event at index path key"); return}
         guard let todo = val.last?.eventDescription else {print("no description at event value"); return}
         if todo != defaultEmptyEventDescription {                                                   //; print(\((a, b)): \(todo))
-            eventPaths.append([a, b])
+            timeBlockPaths.append([a, b])
         }
     }
     
-    ///print("\nevent path arrays:\n\(eventPaths)")
-    sortedEventPaths = eventPaths.sorted(by: {topVC.lastEventFromPath($0).eventDate < topVC.lastEventFromPath($1).eventDate})
-    ///print("sorted event path arrays:\n\(sortedEventPaths)")
-    sortingTransform = findSortingTransform(eventPaths, output: sortedEventPaths)                   //; print("T:\(sortingTransform)\n")
+    sortedTimeBlockPaths = timeBlockPaths.sorted(by: {topVC.lastEventFromPath($0).eventDate < topVC.lastEventFromPath($1).eventDate})
+    sortingTransform = findSortingTransform(timeBlockPaths, output: sortedTimeBlockPaths)           //; print("T:\(sortingTransform)\n")
     
     for vals in eventsAtIndexPath.values {
         if vals.count > 1 || vals.count == 1 && vals[0].eventDescription != defaultEmptyEventDescription {
@@ -42,26 +40,25 @@ func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
         }//else {print("\n!descriptions array at this time block contains only default (\(defaultEmptEventDescription)), and it's: \(vals[0].eventDescription)")}
     }
     
-    sortedEventDateArrays = applySortingTransform(eventDateArrays, transform: sortingTransform)
-    sortedEventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: sortingTransform)
-    sortedEventStatusArrays = applySortingTransform(eventStatusArrays, transform: sortingTransform)
-    
-    eventPaths = sortedEventPaths
-    eventDateArrays = sortedEventDateArrays as! [[[Any]]]
-    eventDescriptionArrays = sortedEventDescriptionArrays as! [[String]]
-    eventStatusArrays = sortedEventStatusArrays as! [[Int]]
+    timeBlockPaths = sortedTimeBlockPaths
+    eventDateArrays = applySortingTransform(eventDateArrays, transform: sortingTransform) as! [[[Any]]]
+    eventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: sortingTransform) as! [[String]]
+    eventStatusArrays = applySortingTransform(eventStatusArrays, transform: sortingTransform) as! [[Int]]
     
     if pryntEvents {pryntSortedSavedArrays()}
-    
+    setForKeys(defaults)
+}
+
+func setForKeys(_ defaults: UserDefaults) {
     //lastLoginDateComponents = [year, month, day, weekday, hour, minute] // setting the /latest login date (for saving) as the date this minute
     let (yr, mnth, dy, wkdy, _, hr, mn) = displayDate(Date(), roundedDown: false)
     lastLoginDateComponents = [yr, mnth, dy, wkdy, hr, mn]
     defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")
     
-    defaults.set(eventPaths, forKey: "savedTimeBlockPaths")
-    defaults.set(eventDateArrays, forKey: "savedTodoListDates")        // rename to "savedEventDates"
-    defaults.set(eventDescriptionArrays, forKey: "savedTodoListItems") // rename to "savedEventDescriptions"
-    defaults.set(eventStatusArrays, forKey: "savedTodoListStatuses")   // rename to "savedEventStatuses"
+    defaults.set(timeBlockPaths, forKey: "savedTimeBlockPaths")
+    defaults.set(eventDescriptionArrays, forKey: "savedEventDescriptionArrays")
+    defaults.set(eventDateArrays, forKey: "savedEventDateArrays")
+    defaults.set(eventStatusArrays, forKey: "savedEventStatusArrays")
 }
 
 
