@@ -20,9 +20,9 @@ var sortedPathsToProcess = [[Int]]()
 
 var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]]   // or  [[[0, "", 0, "", 0, 0] as [Any]]]
 
-var eventStatusArrays = [[Int]]();          /* Populated with raw values of enum EventStatus*/  ///var sortedFormattedDatesArrays = [Any]()
+var eventStatusArrays = [[Int]]();          /* Populated with raw values of enum EventStatus*/  var sortedFormattedDatesArrays = [Any]()
 var eventPathArrays = [[Int]]();                                                                var sortedEventPathArrays = [[Int]]()
-var eventDescriptionArrays = [[String]]();                                                      ///var sortedEventDescriptionArrays = [Any]()
+var eventDescriptionArrays = [[String]]();                                                      var sortedEventDescriptionArrays = [Any]()
 //--------------------------------------------------------------------
 
 var timerForShowScrollIndicator: Timer?

@@ -20,9 +20,9 @@ func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
         }
     }
     
-    ///print("\nevent path arrays:\n\(eventPathArrays)")
+    print("\nevent path arrays:\n\(eventPathArrays)")
     sortedEventPathArrays = eventPathArrays.sorted(by: {topVC.lastEventFromPath($0).eventDate < topVC.lastEventFromPath($1).eventDate})
-    ///print("sorted event path arrays:\n\(sortedEventPathArrays)")
+    print("sorted event path arrays:\n\(sortedEventPathArrays)")
     
     sortingTransform = findSortingTransform(eventPathArrays, output: sortedEventPathArrays)         ; print("T:\(sortingTransform)\n")
     
@@ -44,7 +44,11 @@ func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
             eventDateArrays.append(eventDateComponents)
         }//else {print("\n!descriptions array at this time block contains only default (\(defaultEmptEventDescription)), and it's: \(vals[0].eventDescription)")}
     }
-    /*see code & comment at-bottom*/
+    
+    let formattedDatesArrays = formatDatesFromComponentsArray(eventDateArrays)
+    eventPathArrays = sortedEventPathArrays
+    sortedFormattedDatesArrays = applySortingTransform(formattedDatesArrays, transform: sortingTransform)
+    sortedEventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: sortingTransform)
     
     if pryntEvents {
 //        pryntSavedArrays()
@@ -95,9 +99,5 @@ func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
 }
 
 
-/// not working upon loading (for now), most likely since populateDictionaryFromDefaults() not rewritten to take the sorting into account
 
-/*let formattedDatesArrays = formatDatesFromComponentsArray(eventDateArrays)
-eventPathArrays = sortedEventPathArrays
-sortedFormattedDatesArrays = applySortingTransform(formattedDatesArrays, transform: sortingTransform)
-sortedEventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: sortingTransform)*/
+

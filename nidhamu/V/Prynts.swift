@@ -1,8 +1,7 @@
 // Prynts           ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-/// Called when LOADING & REFRESHING DATE:
-
+///                                 Called when LOADING & REFRESHING DATE:
 func pryntLastLoginDate() {// spelling 'prynt' with a y so this function's existence does not cause override of autocomplete for print statements
     print(formattedDateString(lastLoggedInDate, roundedDown: false, prefix: "last login              ", suffix: "", short: false))
     //print("              (unformatted gmt)    \(lastLoggedInDate)\n")
@@ -13,16 +12,12 @@ func pryntCurrentDate() {
     //print("              (unformatted gmt)    \(Date())\n")
 }
 
-/// Called when SAVING:
-
+///                                 Called when SAVING:
 func pryntSavedArrays() {
-    
     let consoleAlignmentSpace = "                     "
     
     print("\n\(consoleAlignmentSpace)\(eventDescriptionArrays.count) blocks' events: \n\(consoleAlignmentSpace)\(eventDescriptionArrays)")
-    
     print("\n\(consoleAlignmentSpace)\(eventPathArrays.count) blocks' paths: \n\(consoleAlignmentSpace)\(eventPathArrays)")
-    
     print("\n\(consoleAlignmentSpace)\(eventStatusArrays.count) blocks' event-status raw values: \n\(consoleAlignmentSpace)\(eventStatusArrays)")
     
     let dateColonOrNot = (eventDateArrays.isEmpty) ? "." : ":"
@@ -42,13 +37,13 @@ func pryntSortedSavedArrays() {
     let colonOrPeriod = (eventDateArrays.isEmpty) ? "." : ":" // or could use any of the other event-property arrays, they're all the same size
 
     let formattedDatesArrays = formatDatesFromComponentsArray(eventDateArrays)
-    let sortedFormattedDatesArrays = applySortingTransform(formattedDatesArrays, transform: sortingTransform)
+//    let sortedFormattedDatesArrays = applySortingTransform(formattedDatesArrays, transform: sortingTransform)
     let sortedFormattedDatesNewlined = sortedFormattedDatesArrays.map {"\($0)"}.joined(separator: "\n\(spaces)")
-    let sortedEventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: sortingTransform)
+//    let sortedEventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: sortingTransform)
     
     print("\n\(spaces)\(sortedEventDescriptionArrays.count) blocks' events\(colonOrPeriod)\n\(spaces)\(sortedEventDescriptionArrays)")
     print("\n\(spaces)\(sortedEventPathArrays.count) blocks' paths\(colonOrPeriod)\n\(spaces)\(sortedEventPathArrays)") ///eventPathArrays
-    print("\n\(spaces)\(sortedFormattedDatesNewlined.count) blocks' event dates\(colonOrPeriod)\n\(spaces)\(sortedFormattedDatesNewlined)")
+    print("\n\(spaces)\(sortedFormattedDatesArrays.count) blocks' event dates\(colonOrPeriod)\n\(spaces)\(sortedFormattedDatesNewlined)")
 }
 
 
