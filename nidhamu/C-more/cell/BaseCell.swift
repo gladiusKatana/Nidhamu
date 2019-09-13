@@ -1,6 +1,6 @@
 // BaseCell         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
-
 import UIKit
+
 class BaseCell: UICollectionViewCell {
     
     lazy var titleLabel = UILabel()
