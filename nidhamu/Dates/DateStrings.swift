@@ -49,7 +49,7 @@ func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
         for eventDateComponents in timeBlock {
             let date = dateFromComponents(eventDateComponents)
             let dateString = formattedDateString(date, roundedDown: true,
-                                                 prefix: "", suffix: " ", short: false)//2nd space to match default left one
+                                                 prefix: "", suffix: " ", short: false) // 2nd space to match default left one
             timeBlockDateStrings.append(dateString)
         }
         formattedDatesArrays.append(timeBlockDateStrings)

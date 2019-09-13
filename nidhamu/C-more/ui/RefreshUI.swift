@@ -5,11 +5,11 @@ extension CollectionVC {
     
     
     @objc func reloadCV() {
-        self.collectionView.reloadData()                                //; print("↺")
+        self.collectionView.reloadData()                                    //; print("↺")
     }
     
     
-    func reloadWithDelay(after timeDelay: Double) {                     //print("↺d")
+    func reloadWithDelay(after timeDelay: Double) {                         //print("↺d")
         DispatchQueue.main.asyncAfter(deadline: .now() + timeDelay) {
             self.reloadCV()
             //self.collectionView.reloadData()
@@ -23,7 +23,7 @@ extension CollectionVC {
     }
     
     
-    func rePresentThenReload(vc: CollectionVC) {                          // reload again (and /or potentially re-present)
+    func rePresentThenReload(vc: CollectionVC) {                            // reload again (and /or potentially re-present)
         
         /*if previousOrientation == "landscape" && currentOrientation == "portrait" // (needed when, e.g., toggling views while in landscape)
          || firstReenteredForeground
@@ -33,7 +33,7 @@ extension CollectionVC {
         
         setupTitleAndPresentViewController(vc: vc) { () -> () in
             
-            //reloadWithDelay(after: 0.5)                            //+ 0.1 //+ 0.2  //time delays previously tried, on an iPhone 7*
+            //reloadWithDelay(after: 0.5)                                   //+ 0.1 //+ 0.2  //time delays previously tried, on an iPhone 7*
             //reloadCV()
             
             rePresentedVCManually = false

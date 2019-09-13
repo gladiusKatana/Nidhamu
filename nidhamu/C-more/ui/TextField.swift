@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func rePresentTextField() {     //print("re-presenting text field")
+    func rePresentTextField() {                                                 //print("re-presenting text field")
         if textFieldDisplayed {                                                 //eventField.placeholder = "..."
             if let placeholder = eventField.placeholder {                       //print("re-presented text field from prepare()")
                 formatAndPresentTextField(dateString: placeholder)

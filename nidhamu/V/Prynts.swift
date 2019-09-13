@@ -23,7 +23,7 @@ func printEventsTabularized() { // optimized for console printing on an iPad Min
     let gap = "      ", midGap = "         ", twoGaps = "\(gap)\(gap)", threeGaps = "\(gap)\(gap)\(gap)"
     
     print("\npath\(midGap)description\(twoGaps)due date\(threeGaps)status\n")
-
+    
     for _ in timeBlockPaths {
         let status = EventStatus(rawValue: eventStatusArrays[i].first!)!.caseName()
         print("\(timeBlockPaths[i])\(gap)\(eventDescriptionArrays[i])\(gap)\(formattedDatesArrays[i])\(gap)\(status)")

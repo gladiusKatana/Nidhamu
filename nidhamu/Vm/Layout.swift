@@ -38,11 +38,11 @@ class CustomFlowLayout : UICollectionViewFlowLayout {
             
         else if cellWidth != nil && cellHeight == nil   {cellDimensionsMode = .widthHardcoded}
             
-        else    {cellDimensionsMode = .neitherHardcoded}//print(cellDimensionsMode.simpleDescription())//; print(squareCellMode.simpleDescription())
+        else    {cellDimensionsMode = .neitherHardcoded}                                        //print(cellDimensionsMode.simpleDescription())
         
         calculateSizes()
         self.cellWidth = cellWd;   self.cellHeight = cellHt
-        //drawTestSquare()                              //print("status  \(statusBarHeight) / \(lastStatusBarHeight)  launch width  \(launchWidth)")
+        //drawTestSquare()
     }
     
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}

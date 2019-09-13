@@ -1,13 +1,13 @@
 // DateRefresh      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func processCurrentDate() {                                                                             //print("processing current date")
+func processCurrentDate() {                                                                          //print("processing current date")
     (year, month, day, weekday, weekdayLong, hour, minute) = displayDate(Date(), roundedDown: true)
     
     //print(formattedDateString(Date(), comment: "process dates @ ", short: false))
     
     nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows
-    nowColumn = weekdaysAbbreviated.firstIndex(of: weekday)! + timetableLayout.lockedHeaderSections;    //print("nowCell: \([nowColumn, nowRow])")
+    nowColumn = weekdaysAbbreviated.firstIndex(of: weekday)! + timetableLayout.lockedHeaderSections; //print("nowCell: \([nowColumn, nowRow])")
     
     if !reloadedFromHourTickingOver {
         if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections {
@@ -27,7 +27,7 @@ func processCurrentDate() {                                                     
 
 extension CollectionVC {
     
-    func periodicDateRefresh(completion: () -> ()) {                                                    //print("·", terminator: "")
+    func periodicDateRefresh(completion: () -> ()) {                                                 //print("·", terminator: "")
         
         if "\(Date())".contains(":59:5") {
             reloadedFromHourTickingOver = false

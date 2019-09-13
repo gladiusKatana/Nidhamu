@@ -25,9 +25,8 @@ class PopupSwitchView: UIView {
         return label
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addSubview(popupSwitch); addSubview(popupLabel)
+    override init(frame: CGRect) {  super.init(frame: frame)
+        addSubview(popupSwitch);    addSubview(popupLabel)
         
         let quarterHeight = self.frame.height / 4
         //addConstraintsWithFormat("V:|-[v0]-[v1]-|", views: clientSelectionLockLabel, lockClientSwitch)
@@ -37,7 +36,6 @@ class PopupSwitchView: UIView {
         
         addConstraint(NSLayoutConstraint(item: popupLabel, attribute: .centerY, relatedBy: .equal,
                                          toItem: self, attribute: .centerY, multiplier: 1, constant: -quarterHeight))
-        
         
         addConstraint(NSLayoutConstraint(item: popupSwitch, attribute: .centerX, relatedBy: .equal,
                                          toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
