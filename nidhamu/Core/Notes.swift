@@ -6,7 +6,6 @@
  
  (1st commit)                                       July. 08 2019
 
- bug: last login cell showing on todo list vc   (comes from switching on vcType)
  bug: todo list does not refresh when returning (related to rePresentedVCManually)
  
  mark item recurring (remove item by default)
