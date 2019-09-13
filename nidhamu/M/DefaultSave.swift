@@ -3,7 +3,7 @@ import UIKit
 
 func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
     
-    if showDate {print(formattedDateString(Date(), roundedDown: false, prefix: "✔︎saved to your device on", suffix: "", short: false))}
+    if showDate {print(formattedDateString(Date(), roundedDown: false, prefix: "✔︎saved to your device on", suffix: "", dateFormat: .fullDayWithYear))}
     
     let defaults = UserDefaults.standard
     
@@ -31,8 +31,8 @@ func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
             for event in vals {
                 eventDescriptions.append(event.eventDescription)
                 eventStatuses.append(event.eventStatus.rawValue)
-                let (yr, mnth, dy, wkdy, _, hr, mn) = displayDate(event.eventDate, roundedDown: true)
-                eventDateComponents.append([yr, mnth, dy, wkdy, hr, mn])
+                let (year, month, _ , day, weekday, _, hour, minute) = displayDate(event.eventDate, roundedDown: true)
+                eventDateComponents.append([year, month, day, weekday, hour, minute])
             }
             eventDescriptionArrays.append(eventDescriptions)
             eventStatusArrays.append(eventStatuses)
@@ -50,9 +50,8 @@ func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
 }
 
 func setForKeys(_ defaults: UserDefaults) {
-    //lastLoginDateComponents = [year, month, day, weekday, hour, minute] // setting the /latest login date (for saving) as the date this minute
-    let (yr, mnth, dy, wkdy, _, hr, mn) = displayDate(Date(), roundedDown: false)
-    lastLoginDateComponents = [yr, mnth, dy, wkdy, hr, mn]
+    let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: false)
+    lastLoginDateComponents = [year, month, day, weekday, hour, minute]
     defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")
     
     defaults.set(timeBlockPaths, forKey: "savedTimeBlockPaths")

@@ -34,7 +34,7 @@ extension CollectionVC {
         if vcType == .hours {
             setupViewTitle("Timetable", numLines: 1, alignment: .left)
         } else {                                                        // if vcType is the other nav-controller-embedded one, ie todoList VC
-            setupViewTitle(formattedDateString(selectedCellDate, roundedDown: true, prefix: "Tasks", suffix: "", short: true), numLines: 1, alignment: .left)
+            setupViewTitle(formattedDateString(selectedCellDate, roundedDown: true, prefix: "Tasks", suffix: "", dateFormat: .hourlyTimeBlock), numLines: 1, alignment: .left)
         }
         //        if rePresentedVCManually {
         //            var str = ""

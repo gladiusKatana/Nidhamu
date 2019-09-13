@@ -6,14 +6,18 @@
  
  (1st commit)                                       July. 08 2019
 
+ add to time-block even if nonempty (ie text field is already presented)
+ text field appear just above keyboard
  bug: todo list does not refresh when returning (related to rePresentedVCManually)
+ 
+ snappier vc toggling
+ refactor cell sizing?
+ eliminate rePresentAndReload?
  
  mark item recurring (remove item by default)
  timetableVC deferral-date selection mode
- cascading deferrals
- text field appear just above keyboard
+ *cascading deferrals
  ___________________________________________________Fri Sept 13
- 
  
  
  
@@ -25,7 +29,6 @@
  
  
  
- 
  list VC (today items)
  list VC (deadlineless items)
  morn/aft/eve/nite VC
@@ -34,11 +37,9 @@
  
  
  
- 
  login date interval outlined not coloured
  truncate long label with  …
  ___________________________________________________Fri Sept 20
- 
  
  
  

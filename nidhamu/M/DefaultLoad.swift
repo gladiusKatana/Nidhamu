@@ -14,8 +14,8 @@ func defaultLoadData(showDate: Bool) {                                          
         }
     }
     else {                                                                                  //print("\nfirst login")
-        let (yr, mo, dy, wkd, _, hr, mn) = displayDate(Date(), roundedDown: true)
-        lastLoginDateComponents = [yr, mo, dy, wkd, hr, mn]
+        let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: true)
+        lastLoginDateComponents = [year, month, day, weekday, hour, minute]
     }
     
     timeBlockPaths = defaults.array(forKey: "savedTimeBlockPaths") as? [[Int]] ?? []

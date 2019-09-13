@@ -5,12 +5,13 @@ import UIKit
 ///Called when LOADING & REFRESHING DATE:
 
 func pryntLastLoginDate() {// spelling 'prynt' with a y so this function's existence does not cause override of autocomplete for print statements
-    print(formattedDateString(lastLoggedInDate, roundedDown: false, prefix: "last login              ", suffix: "", short: false))
+    print(formattedDateString(lastLoggedInDate, roundedDown: false, prefix: "last login              ", suffix: "", dateFormat: .fullDayWithYear))
     //print("              (unformatted gmt)    \(lastLoggedInDate)\n")
 }
 
 func pryntCurrentDate() {
-    print(formattedDateString(Date(), roundedDown: false, prefix: "date right now          ", suffix: "", short: false)); print("")
+    print(formattedDateString(Date(), roundedDown: false, prefix: "date right now          ", suffix: "", dateFormat: .fullDayWithYear))
+    print("")
     //print("              (unformatted gmt)    \(Date())\n")
 }
 

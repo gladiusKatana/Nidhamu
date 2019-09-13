@@ -9,16 +9,16 @@ extension CollectionVC {
             if textFieldDisplayed {cell.backgroundColor = eventAddingColour}
         }
         else {
-            let oneWeekAgo = truncateMinutesOfDate(cell.cellDate - TimeInterval(86400 * 7))
-            if oneWeekAgo >= truncateMinutesOfDate(lastLoggedInDate) && oneWeekAgo < truncateMinutesOfDate(Date()) {
+            let oneWeekAgo = truncateMinutesOfDate(cell.cellDate - TimeInterval(86400 * 7)) // since cells' cell-dates are based off of Date()...
+            if oneWeekAgo >= truncateMinutesOfDate(lastLoggedInDate) && oneWeekAgo < truncateMinutesOfDate(Date()) { //     ...ie, not rounded
                 
                 //if !savedTimeBlocksForProcessing { // this conditional would only be needed if doing the animation below
                 cell.backgroundColor = niceOrangeLight  //; cell.cellColour = niceOrangeLight
                 //animateCellColourBack(cell: cell, delay: 3, duration: 10)
                 //}
                 
-                if formattedDateString(lastLoggedInDate, roundedDown: true, prefix: "", suffix: "", short: true)
-                    == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
+                if formattedDateString(lastLoggedInDate, roundedDown: true, prefix: "", suffix: "", dateFormat: .hourlyTimeBlock)
+                    == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", dateFormat: .hourlyTimeBlock) {
                     cell.titleLabel.text = "last login"
                     cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
                 }
@@ -26,8 +26,8 @@ extension CollectionVC {
                 prepareToProcessEventsSinceLastLogin(cell: cell, column: column, row: row)
             }
             
-            if formattedDateString(Date(), roundedDown: true, prefix: "", suffix: "", short: true)
-                == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", short: true) {
+            if formattedDateString(Date(), roundedDown: true, prefix: "", suffix: "", dateFormat: .hourlyTimeBlock)
+                == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", dateFormat: .hourlyTimeBlock) {
                 cell.titleLabel.text = "now"    //; print("now-cell: [\(column), \(row)]")
                 //cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
             }

@@ -1,13 +1,13 @@
 // DateRefresh      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func processCurrentDate() {                                                                          //print("processing current date")
-    (year, month, day, weekday, weekdayLong, hour, minute) = displayDate(Date(), roundedDown: true)
+func processCurrentDate() {                                                                         //print("processing current date")
+    let (year, month, _ , day, weekday, wkdy, hour, minute) = displayDate(Date(), roundedDown: true)
     
     //print(formattedDateString(Date(), comment: "process dates @ ", short: false))
     
     nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows
-    nowColumn = weekdaysAbbreviated.firstIndex(of: weekday)! + timetableLayout.lockedHeaderSections; //print("nowCell: \([nowColumn, nowRow])")
+    nowColumn = headerWeekdayTitles.firstIndex(of: wkdy)! + timetableLayout.lockedHeaderSections    //; print("nowCell \([nowColumn, nowRow])")
     
     if !reloadedFromHourTickingOver {
         if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections {
@@ -20,7 +20,6 @@ func processCurrentDate() {                                                     
             //pryntCurrentDate()
         }
         else {print("new hour")}
-        
         reloadedFromHourTickingOver = true
     }
 }

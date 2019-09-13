@@ -38,7 +38,7 @@ extension CollectionVC {
     func showDateInTitleLabels(date: Date, cell: CustomCell) {
         let mo = monthsAbbreviated[Calendar.current.component(.month, from: date) - 1]
         let dy = Calendar.current.component(.day, from: date)
-        cell.titleLabel.text = "\(mo) \(dy)"
+        cell.titleLabel.text = "\(mo) \(dy)" // will add this to formattedDateString(:), if it gets used anywhere else as well
         
         /*let hr = Calendar.current.component(.hour, from: date)
          let mn = Calendar.current.component(.minute, from: date)

@@ -33,7 +33,7 @@ extension CollectionVC {
         else {
             if row < headerRows {
                 cell.backgroundColor = headerColour
-                if row == 0  {cell.titleLabel.text = weekdaysAbbreviated[column - 1]}
+                if row == 0  {cell.titleLabel.text = headerWeekdayTitles[column - 1]}
                 if (1 ... headerRows - 1).contains(row) {
                     timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
                 }

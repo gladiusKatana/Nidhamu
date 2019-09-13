@@ -1,7 +1,6 @@
 // Dates            ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-
 func dateFromComponents(_ array: [Any]) -> Date {
     
     let yearLoaded = array[0] as! Int                               //; print("year loaded: \(yearLoaded)")     // will probably replace with...
@@ -26,13 +25,13 @@ func dateFromComponents(_ array: [Any]) -> Date {
 
 func truncateMinutesOfDate(_ inputDate: Date) -> Date {
     
-    //let hr = Calendar.current.component(.hour, from: inputDate)
     let mn = 0
-    let (yr, mnth, day, _, _, hr, _) = displayDate(inputDate, roundedDown: false)
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy/MM/dd HH:mm"
     
-    guard let date = formatter.date(from: "\(yr)/\(mnth)/\(day) \(hr):\(mn)") else {
+    let (year, month, _ , day, _, _, hour, _) = displayDate(inputDate, roundedDown: false)
+    
+    let formatter = DateFormatter();    formatter.dateFormat = "yyyy/MM/dd HH:mm"
+    
+    guard let date = formatter.date(from: "\(year)/\(month)/\(day) \(hour):\(mn)") else {
         print("could not create truncated date with input, returning current date instead")
         return Date()
     }

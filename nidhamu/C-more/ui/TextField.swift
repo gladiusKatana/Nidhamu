@@ -3,13 +3,13 @@ import UIKit
 
 extension CollectionVC {
     
-    func rePresentTextField() {                                                 //print("re-presenting text field")
-        if textFieldDisplayed {                                                 //eventField.placeholder = "..."
-            if let placeholder = eventField.placeholder {                       //print("re-presented text field from prepare()")
-                formatAndPresentTextField(dateString: placeholder)
-            } else {formatAndPresentTextField(dateString: "!")}
+    
+    func presentTextField(after delay: Double, dateString: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
+            self?.formatAndPresentTextField(dateString: dateString)
         }
     }
+    
     
     func formatAndPresentTextField(dateString: String) {
         let fieldWidth = CGFloat(325)
@@ -23,10 +23,14 @@ extension CollectionVC {
         eventField.becomeFirstResponder()
     }
     
-    func presentTextField(after delay: Double, dateString: String) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
-            self?.formatAndPresentTextField(dateString: dateString)
+    
+    func rePresentTextField() {                                                 //print("re-presenting text field")
+        if textFieldDisplayed {                                                 //eventField.placeholder = "..."
+            if let placeholder = eventField.placeholder {                       //print("re-presented text field from prepare()")
+                formatAndPresentTextField(dateString: placeholder)
+            } else {formatAndPresentTextField(dateString: "!")}
         }
     }
+    
 }
 
