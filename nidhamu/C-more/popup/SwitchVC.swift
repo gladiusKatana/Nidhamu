@@ -27,10 +27,8 @@ class PopupSwitchView: UIView {
     
     override init(frame: CGRect) {  super.init(frame: frame)
         addSubview(popupSwitch);    addSubview(popupLabel)
-        
         let quarterHeight = self.frame.height / 4
-        //addConstraintsWithFormat("V:|-[v0]-[v1]-|", views: clientSelectionLockLabel, lockClientSwitch)
-        
+        /**/
         addConstraint(NSLayoutConstraint(item: popupSwitch, attribute: .centerY, relatedBy: .equal,
                                          toItem: self, attribute: .centerY, multiplier: 1, constant: quarterHeight / 2))
         
@@ -47,15 +45,14 @@ class PopupSwitchView: UIView {
     }
     
     @objc func switchFlipped(mySwitch: UISwitch, switchBool: Bool) {
-        if mySwitch.isOn {eventWillBeRecurring = true}
-        else {eventWillBeRecurring = false}
+        if mySwitch.isOn {eventWillBeRecurring = true} else {eventWillBeRecurring = false}
     }
     
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
 }
 
 
-//extension UIView {
+//extension UIView {        /*addConstraintsWithFormat("V:|-[v0]-[v1]-|", views: clientSelectionLockLabel, lockClientSwitch)*/  //<-application
 //    func addConstraintsWithFormat(_ format: String, views: UIView...) {
 //        var viewsDictionary = [String: UIView]()
 //

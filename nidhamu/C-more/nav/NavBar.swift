@@ -36,8 +36,8 @@ extension CollectionVC {
     }
     
     
-    @objc func reloadCVWrapperMethod() {
-        reloadCV()                      ///; print("*")
+    @objc func reloadCVWrapperMethod() { ///; print("*")
+        reloadCV()
     }
     
     @objc func buttonWrapperMethodforTimetableVC() {presentViaVCButton(vc: timetableVC)}

@@ -1,24 +1,24 @@
 // CellDates        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-extension CollectionVC {    // probably will refactor the logic below soon
+extension CollectionVC { // probably will refactor the logic below soon
     
     func setHourlyCellDates(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, looping: Bool, withColours: Bool) {
         
         cell.cellDate = setCellDate(baseDate: Date(), cellOffset: layout.lockedHeaderRows - row, cell: cell,
                                     column: column, row: row, layout: layout, looping: looping, withColours: withColours)
         if row == 1 {
+            
             cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 3, cell: cell,
                                         column: column, row: row, layout: layout, looping: looping, withColours: withColours)
             if column <= nowColumn {
                 cell.backgroundColor = lastWeekColour
-                if nowRow == 4 {// ie, if current time is in the 12am time-block, there are no next-week cells above the now-cell on this day-column
+                if nowRow == 4 { // if current time is in the 12am time-block, there are no next-week cells above the now-cell on this day-column
                     if column == nowColumn{cell.backgroundColor = cellDefaultColour}
                     else {showDateInTitleLabels(date: cell.cellDate , cell: cell)}
                 }
                 else {showDateInTitleLabels(date: cell.cellDate , cell: cell)}
             }
-                
             else {cell.backgroundColor = cellDefaultColour}
         }
             
@@ -32,8 +32,7 @@ extension CollectionVC {    // probably will refactor the logic below soon
                     cell.cellDate = setCellDate(baseDate: lastWeekDate, cellOffset: 2, cell: cell,
                                                 column: column, row: row, layout: layout, looping: looping, withColours: withColours)
                     showDateInTitleLabels(date: cell.cellDate, cell: cell)
-                }
-                else {
+                } else {
                     if column > nowColumn {
                         cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 2, cell: cell,
                                                     column: column, row: row, layout: layout, looping: looping, withColours: withColours)

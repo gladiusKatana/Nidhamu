@@ -18,7 +18,6 @@ func displayDate(_ inputDate: Date, roundedDown: Bool)
         //MAY CRASH IF YOUR DEVICE IS   NOT  ON 24HR TIME (or is? ...bug seems to be gone but will double check.)
 }
 
-
 func formattedDateString(_ date: Date, roundedDown: Bool, prefix: String, suffix: String, short: Bool) -> String {
     
     let (yr, mnthString, dayI, wkday, wkdayLong, hr, min) = displayDate(date, roundedDown: roundedDown)
@@ -40,7 +39,6 @@ func formattedDateString(_ date: Date, roundedDown: Bool, prefix: String, suffix
 }
 
 func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
-    
     var formattedDatesArrays = [[String]]()
     
     for timeBlock in cells {
@@ -57,9 +55,7 @@ func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
     return formattedDatesArrays
 }
 
-
 func getFullWeekdayName(shortWeekday: String) -> String {
-    
     switch shortWeekday {
     case "Mon": return "Monday"
     case "Tue": return "Tuesday"

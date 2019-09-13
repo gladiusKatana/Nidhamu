@@ -1,4 +1,4 @@
-// CellContents     ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// CellSetup        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension CollectionVC {

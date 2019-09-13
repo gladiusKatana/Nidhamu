@@ -39,7 +39,6 @@ extension PopupMenuVC {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                 classifierVC.view.removeFromSuperview()                 //; print("                removing popup")
                 eventRecurringSwitchView.removeFromSuperview()          //; print("removing switch")
-                
                 classifierViewDisplayed = false                         //print("now paths to process: \(pathsToProcess)")
                 classifierVC.resignFirstResponder()
                 
@@ -48,12 +47,7 @@ extension PopupMenuVC {
                     timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
                 }
                 
-                if pathsToProcess.isEmpty {                             // when done tagging events since the last login
-                    defaultSaveData(showDate: false, pryntEvents: true)
-                    defaultLoadData(showDate: false)
-                    AppUtility.lockOrientation(.all)                    //; print("rotated back")
-                    thereWillBeARowException = false
-                }
+                if pathsToProcess.isEmpty {self.exitEventTaggingMode()}
             }
         } else {print("selected header")}
     }

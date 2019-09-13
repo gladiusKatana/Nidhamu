@@ -35,5 +35,12 @@ class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
         let hscale = timetableVC.downcastLayout!.autoFitHScale!
         collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: self.downcastLayout!.cellHeight! * hscale, left: 0, bottom: 0, right: 0)
     }
+    
+    func exitEventTaggingMode() {
+        defaultSaveData(showDate: false, pryntEvents: true)
+        defaultLoadData(showDate: false)
+        AppUtility.lockOrientation(.all)                    //; print("rotated back")
+        thereWillBeARowException = false
+    }
 }
 
