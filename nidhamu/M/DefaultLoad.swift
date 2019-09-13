@@ -18,20 +18,17 @@ func defaultLoadData(showDate: Bool) {                                          
         lastLoginDateComponents = [yr, mo, dy, wkd, hr, mn]
     }
     
-    eventPathArrays = defaults.array(forKey: "savedTimeBlockPaths") as? [[Int]] ?? []
+    eventPaths = defaults.array(forKey: "savedTimeBlockPaths") as? [[Int]] ?? []
     eventDescriptionArrays = defaults.array(forKey: "savedTodoListItems") as? [[String]] ?? []
     eventStatusArrays = defaults.array(forKey: "savedTodoListStatuses") as? [[Int]] ?? []
     eventDateArrays = defaults.array(forKey: "savedTodoListDates") as? [[[Any]]] ?? [[[]]]
-    populateDictionaryFromDefaults()                                                        //; printSavedArrays()
-    
-    print("event paths: \(eventPathArrays)")
+    populateDictionaryFromDefaults()                                                        ; print("loaded event paths: \(eventPaths)")
 }
 
 func populateDictionaryFromDefaults() {
-    
     var i = 0
     
-    for path in eventPathArrays {                                                           //print("path: \(path)")
+    for path in eventPaths {                                                           //print("path: \(path)")
         
         let todoListItemDescriptions = eventDescriptionArrays[i] //!*
         var events = [SimpleEvent]()
@@ -44,7 +41,6 @@ func populateDictionaryFromDefaults() {
             let event = SimpleEvent(eventDescription: description, eventDate: date, eventStatus: EventStatus(rawValue: todoListItemStatus)!)
             
             //print("loaded: '\(event.eventDescription)' [\(event.eventStatus)] with deadline:\(formattedDateString(date, roundedDown: true, prefix: "", suffix: "", short: false))")
-            
             events.append(event)
             j += 1
         }

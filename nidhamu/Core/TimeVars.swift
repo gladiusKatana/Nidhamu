@@ -11,18 +11,20 @@ var (year, month, day, weekday, weekdayLong, hour, minute) = (Int(), String(), I
 //* Convention: reserving full-spelled date-component names for CURRENT date (Date(), ie RIGHT NOW; NOW is correct to within a 3s refresh period)
 
 //--------------------------------------------------------------------
-var eventsAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleEvent]>()
+var eventsAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleEvent]>();                         var sortingTransform = [Int]()
 
 var timeBlock = TimeBlock(values:(0, 0))
 
-var pathsToProcess = [[Int]]();             var eventArraysToProcess = [[SimpleEvent]]()
-var sortedPathsToProcess = [[Int]]()
+var eventArraysToProcess = [[SimpleEvent]]()
 
-var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]]   // or  [[[0, "", 0, "", 0, 0] as [Any]]]
+var pathsToProcess = [[Int]]();                                                                 var sortedPathsToProcess = [[Int]]()
 
-var eventStatusArrays = [[Int]]();          /* Populated with raw values of enum EventStatus*/  var sortedFormattedDatesArrays = [Any]()
-var eventPathArrays = [[Int]]();                                                                var sortedEventPathArrays = [[Int]]()
+var eventPaths = [[Int]]();                                                                     var sortedEventPaths = [[Int]]()
+
+var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]];  var sortedEventDateArrays = [Any]()
+
 var eventDescriptionArrays = [[String]]();                                                      var sortedEventDescriptionArrays = [Any]()
+var eventStatusArrays = [[Int]](); /* Populated with raw values of enum EventStatus*/           var sortedEventStatusArrays = [Any]()
 //--------------------------------------------------------------------
 
 var timerForShowScrollIndicator: Timer?

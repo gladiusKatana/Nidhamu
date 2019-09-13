@@ -1,30 +1,27 @@
 // DefaultSave      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-var sortingTransform = [Int]()
-
 func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
     
     if showDate {print(formattedDateString(Date(), roundedDown: false, prefix: "✔︎saved to your device on", suffix: "", short: false))}
     
     let defaults = UserDefaults.standard
     
-    eventPathArrays.removeAll(); eventDescriptionArrays.removeAll(); eventStatusArrays.removeAll(); eventDateArrays.removeAll()
+    eventPaths.removeAll(); eventDescriptionArrays.removeAll(); eventStatusArrays.removeAll(); eventDateArrays.removeAll()
     
     for key in eventsAtIndexPath.keys {
         let (a, b) = key.values                                                                     //; print("key: [\(key)  values \((a, b))")
         guard let val = eventsAtIndexPath[key] else {print("could not create event at index path key"); return}
         guard let todo = val.last?.eventDescription else {print("no description at event value"); return}
         if todo != defaultEmptyEventDescription {                                                   //; print(\((a, b)): \(todo))
-            eventPathArrays.append([a, b])
+            eventPaths.append([a, b])
         }
     }
     
-    print("\nevent path arrays:\n\(eventPathArrays)")
-    sortedEventPathArrays = eventPathArrays.sorted(by: {topVC.lastEventFromPath($0).eventDate < topVC.lastEventFromPath($1).eventDate})
-    print("sorted event path arrays:\n\(sortedEventPathArrays)")
-    
-    sortingTransform = findSortingTransform(eventPathArrays, output: sortedEventPathArrays)         ; print("T:\(sortingTransform)\n")
+    ///print("\nevent path arrays:\n\(eventPaths)")
+    sortedEventPaths = eventPaths.sorted(by: {topVC.lastEventFromPath($0).eventDate < topVC.lastEventFromPath($1).eventDate})
+    ///print("sorted event path arrays:\n\(sortedEventPaths)")
+    sortingTransform = findSortingTransform(eventPaths, output: sortedEventPaths)                   //; print("T:\(sortingTransform)\n")
     
     for vals in eventsAtIndexPath.values {
         if vals.count > 1 || vals.count == 1 && vals[0].eventDescription != defaultEmptyEventDescription {
@@ -45,25 +42,26 @@ func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
         }//else {print("\n!descriptions array at this time block contains only default (\(defaultEmptEventDescription)), and it's: \(vals[0].eventDescription)")}
     }
     
-    let formattedDatesArrays = formatDatesFromComponentsArray(eventDateArrays)
-    eventPathArrays = sortedEventPathArrays
-    sortedFormattedDatesArrays = applySortingTransform(formattedDatesArrays, transform: sortingTransform)
+    sortedEventDateArrays = applySortingTransform(eventDateArrays, transform: sortingTransform)
     sortedEventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: sortingTransform)
+    sortedEventStatusArrays = applySortingTransform(eventStatusArrays, transform: sortingTransform)
     
-    if pryntEvents {
-//        pryntSavedArrays()
-        pryntSortedSavedArrays()
-    }
+    eventPaths = sortedEventPaths
+    eventDateArrays = sortedEventDateArrays as! [[[Any]]]
+    eventDescriptionArrays = sortedEventDescriptionArrays as! [[String]]
+    eventStatusArrays = sortedEventStatusArrays as! [[Int]]
+    
+    if pryntEvents {pryntSortedSavedArrays()}
     
     //lastLoginDateComponents = [year, month, day, weekday, hour, minute] // setting the /latest login date (for saving) as the date this minute
     let (yr, mnth, dy, wkdy, _, hr, mn) = displayDate(Date(), roundedDown: false)
     lastLoginDateComponents = [yr, mnth, dy, wkdy, hr, mn]
     defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")
     
-    defaults.set(eventPathArrays, forKey: "savedTimeBlockPaths")
+    defaults.set(eventPaths, forKey: "savedTimeBlockPaths")
+    defaults.set(eventDateArrays, forKey: "savedTodoListDates")        // rename to "savedEventDates"
     defaults.set(eventDescriptionArrays, forKey: "savedTodoListItems") // rename to "savedEventDescriptions"
     defaults.set(eventStatusArrays, forKey: "savedTodoListStatuses")   // rename to "savedEventStatuses"
-    defaults.set(eventDateArrays, forKey: "savedTodoListDates")        // rename to "savedEventDates"
 }
 
 
@@ -97,7 +95,4 @@ func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
     
     return output // return the input, mutated (sorted); would make this a mutating func, but it's global
 }
-
-
-
 
