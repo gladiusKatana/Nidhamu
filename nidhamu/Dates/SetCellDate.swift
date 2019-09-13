@@ -4,7 +4,6 @@ import UIKit
 
 extension CollectionVC {
     
-    
     func setCellDate(baseDate: Date, cellOffset: Int,
                      cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, looping: Bool, withColours: Bool) -> Date {
         
@@ -22,7 +21,6 @@ extension CollectionVC {
         return returnDate
     }
     
-    
     func setCellWeek(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, withColours: Bool) -> Int {
         
         var weekAhead = 0
@@ -37,7 +35,6 @@ extension CollectionVC {
         
         return weekAhead
     }
-    
     
     func showDateInTitleLabels(date: Date, cell: CustomCell) {
         let mo = monthsAbbreviated[Calendar.current.component(.month, from: date) - 1]

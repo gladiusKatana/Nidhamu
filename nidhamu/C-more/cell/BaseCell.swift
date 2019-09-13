@@ -1,7 +1,7 @@
-// TemplateCell     ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// BaseCell         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 
 import UIKit
-class TemplateCell: UICollectionViewCell {
+class BaseCell: UICollectionViewCell {
     
     lazy var titleLabel = UILabel()
     var cellColour = UIColor.clear
@@ -29,3 +29,4 @@ class TemplateCell: UICollectionViewCell {
         layer.borderColor = UIColor.clear.cgColor
     }
 }
+

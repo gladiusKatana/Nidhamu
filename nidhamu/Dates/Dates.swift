@@ -1,55 +1,42 @@
 // Dates            ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func displayDate(_ inputDate: Date, roundedDown: Bool)
-    -> (year: Int, monthStr: String, day: Int, weekday: String, weekdayLong: String, hour: Int, minute: Int) {
-        
-        let yr = Calendar.current.component(.year, from: inputDate)
-        let mnth = months[Calendar.current.component(.month, from: inputDate) - 1]
-        let dy = Calendar.current.component(.day, from: inputDate)
-        let wkdyLong = fullWeekdaysDefaultOrder[Calendar.current.component(.weekday, from: inputDate) - 1]
-        let wkdy = wkdysDefaultOrder[Calendar.current.component(.weekday, from: inputDate) - 1]
-        let hr = Calendar.current.component(.hour, from: inputDate)
-        var mn : Int
-        if roundedDown {mn = 0}
-        else {mn = Calendar.current.component(.minute, from: inputDate)}   //; let secInt = Calendar.current.component(.second, from: inputDate)
-        
-        return (yr, mnth, dy, wkdy, wkdyLong, hr, mn)
-        //MAY CRASH IF YOUR DEVICE IS   NOT  ON 24HR TIME (or is? ...bug seems to be gone but will double check.)
+
+func dateFromComponents(_ array: [Any]) -> Date {
+    
+    let yearLoaded = array[0] as! Int                               //; print("year loaded: \(yearLoaded)")     // will probably replace with...
+    let monthLoaded = array[1] as! String                           //; print("month loaded: \(monthLoaded)")   //... conditional downcasts,...
+    let monthLoadedInt = months.firstIndex(of: monthLoaded)! + 1    //; print("int: \(monthLoadedInt)")         //...rather than forced ones,...
+    let dayLoaded = array[2] as! Int                                //; print("day loaded: \(dayLoaded)")       //...for all bindings here
+    //let weekdayLoaded = array[3] as! String                       //; print("weekday loaded: \(weekdayLoaded)")
+    let hourLoaded = array[4] as! Int                               //; print("hour loaded: \(hourLoaded)")
+    let minuteLoaded = array[5] as! Int                             //; print("minute loaded: \(minuteLoaded)")
+    
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy/MM/dd HH:mm"
+    
+    guard let date = formatter.date(from: "\(yearLoaded)/\(monthLoadedInt)/\(dayLoaded) \(hourLoaded):\(minuteLoaded)") else {
+        print("could not create date with loaded input, returning current date instead")
+        return Date()
+    }
+    
+    return date
 }
 
 
-func formattedDateString(_ date: Date, roundedDown: Bool, prefix: String, suffix: String, short: Bool) -> String {
-    let (yr, mnthString, dayI, wkday, wkdayLong, hr, min) = displayDate(date, roundedDown: roundedDown)
+func truncateMinutesOfDate(_ inputDate: Date) -> Date {
     
-    var minTwoDigits = "\(min)"
-    if min < 10 {minTwoDigits = "0\(min)"}
+    //let hr = Calendar.current.component(.hour, from: inputDate)
+    let mn = 0
+    let (yr, mnth, day, _, _, hr, _) = displayDate(inputDate, roundedDown: false)
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy/MM/dd HH:mm"
     
-    var ampm = ""; if hr < 13 {ampm = "am"} else {ampm = "pm"}
+    guard let date = formatter.date(from: "\(yr)/\(mnth)/\(day) \(hr):\(mn)") else {
+        print("could not create truncated date with input, returning current date instead")
+        return Date()
+    }
     
-    if short {
-        return "\(prefix) \(wkdayLong) \((hr < 13) ? hr : hr - 12)\(ampm)" //"\(prefix) \(wkday) \(hr):\(minTwoDigits)"
-    }
-    else {
-        if mnthString == "January" || mnthString == "December" {
-            return "\(prefix) \(wkday). \(mnthString.prefix(3)) \(dayI), \(yr) @ \(hr):\(minTwoDigits)\(suffix)"
-        }
-        else {return "\(prefix) \(wkday). \(mnthString.prefix(3)) \(dayI) @ \(hr):\(minTwoDigits)\(suffix)"}
-    }
-}
-
-
-func getFullWeekdayName(shortWeekday: String) -> String {
-    switch shortWeekday {
-    case "Mon": return "Monday"
-    case "Tue": return "Tuesday"
-    case "Wed": return "Wednesday"
-    case "Thu": return "Thursday"
-    case "Fri": return "Friday"
-    case "Sat": return "Saturday"
-    case "Sun": return "Sunday"
-    default:                        print("! returned short form rather than full weekday")
-    return shortWeekday
-    }
+    return date
 }
 

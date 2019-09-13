@@ -2,7 +2,7 @@
 import UIKit
 
 
-class CustomCell: TemplateCell {
+class CustomCell: BaseCell {
     
     static let reuseIdentifier = "CustomCell"
     static let popupReuseIdentifier = "CustomPopupCell"
@@ -23,7 +23,7 @@ class CustomCell: TemplateCell {
 }
 
 
-class LeftAlignedCell: TemplateCell {
+class LeftAlignedCell: BaseCell {
     
     static let reuseIdentifier = "CustomLeftAlignedCell"
     

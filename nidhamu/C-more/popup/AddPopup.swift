@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func presentPopupViewToTagEvents(column: Int, row: Int) {                               //print("-----------------")//print("presenting popup")
+    func presentPopupViewToTagEvents(column: Int, row: Int) {                       //print("-----------------")//print("presenting popup")
         
         AppUtility.lockOrientation(.portrait)
         
@@ -28,7 +28,7 @@ extension CollectionVC {
                 classifierVC.downcastLayout?.customFrame = popupCollectionViewFrame
                 classifierVC.collectionView.frame = popupCollectionViewFrame
                 
-                let hscale = timetableVC.downcastLayout!.autoFitHScale!                     //* make sure this is extensible (ie,  if column >= 6 )
+                let hscale = timetableVC.downcastLayout!.autoFitHScale!             //* make sure this is extensible (ie,  if column >= 6 )
                 classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
                                                                                   left: 0, bottom: 0, right: 0)
                 classifierVC.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
@@ -37,10 +37,10 @@ extension CollectionVC {
                 let switchViewHeight = cellHeight * 4 //eventRecurringSwitchView.popupSwitch.frame.height + cellHeight * 2
                 eventRecurringSwitchView = PopupSwitchView(frame:
                     CGRect(x: x, y: y + popupCollectionViewFrame.height,
-                           width: wid, height: switchViewHeight))                           ; eventRecurringSwitchView.backgroundColor = headerColour
+                           width: wid, height: switchViewHeight))                   ; eventRecurringSwitchView.backgroundColor = headerColour
                 
-                timetableVC.view.addSubview(classifierVC.view)                              //; print("----------------adding popup")
-                timetableVC.view.addSubview(eventRecurringSwitchView)                       //; print("adding switch")
+                timetableVC.view.addSubview(classifierVC.view)                      //; print("----------------adding popup")
+                timetableVC.view.addSubview(eventRecurringSwitchView)               //; print("adding switch")
                 
                 classifierViewDisplayed = true
                 classifierVC.becomeFirstResponder()
@@ -49,7 +49,7 @@ extension CollectionVC {
                 classifierVC.keepScrollIndicatorsVisible()
                 
                 for cell in timetableVC.collectionView.visibleCells {
-                    guard let customCell = cell as? TemplateCell else {
+                    guard let customCell = cell as? BaseCell else {
                         print("could not downcast to custom cell in cell reference")
                         return
                     }

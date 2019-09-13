@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06164A3022D6D19000DA608D /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164A2C22D6D19000DA608D /* Dates.swift */; };
-		06164A3122D6D19000DA608D /* DateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164A2D22D6D19000DA608D /* DateData.swift */; };
+		06076F07232B3F6300189BB3 /* Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06076F06232B3F6300189BB3 /* Sorting.swift */; };
+		06164A3022D6D19000DA608D /* DateStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164A2C22D6D19000DA608D /* DateStrings.swift */; };
+		06164A3122D6D19000DA608D /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164A2D22D6D19000DA608D /* Dates.swift */; };
 		06164A3222D6D19000DA608D /* CellDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164A2E22D6D19000DA608D /* CellDates.swift */; };
 		06164A3322D6D19000DA608D /* DateRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06164A2F22D6D19000DA608D /* DateRefresh.swift */; };
 		0625163E22D6C71900EBB4C8 /* nidhamu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0625163C22D6C71900EBB4C8 /* nidhamu.xcdatamodeld */; };
@@ -59,7 +60,7 @@
 		062BC1012314B43600AC852F /* SetCellDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062BC1002314B43600AC852F /* SetCellDate.swift */; };
 		062CDAA122E0033400848D78 /* Pinch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CDAA022E0033400848D78 /* Pinch.swift */; };
 		0631914422E2C5F5004DE476 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631914322E2C5F5004DE476 /* LoginInterval.swift */; };
-		0674CD2F23298928009231F1 /* TemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674CD2E23298928009231F1 /* TemplateCell.swift */; };
+		0674CD2F23298928009231F1 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674CD2E23298928009231F1 /* BaseCell.swift */; };
 		0674CD3123298C52009231F1 /* ResetSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674CD3023298C52009231F1 /* ResetSizes.swift */; };
 		0682A49122FE5F0A00CE8075 /* AddPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682A49022FE5F0A00CE8075 /* AddPopup.swift */; };
 		0687565E232992FA0052818A /* TFReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0687565D232992FA0052818A /* TFReturn.swift */; };
@@ -88,8 +89,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06164A2C22D6D19000DA608D /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
-		06164A2D22D6D19000DA608D /* DateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateData.swift; sourceTree = "<group>"; };
+		06076F06232B3F6300189BB3 /* Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorting.swift; sourceTree = "<group>"; };
+		06164A2C22D6D19000DA608D /* DateStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateStrings.swift; sourceTree = "<group>"; };
+		06164A2D22D6D19000DA608D /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		06164A2E22D6D19000DA608D /* CellDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDates.swift; sourceTree = "<group>"; };
 		06164A2F22D6D19000DA608D /* DateRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRefresh.swift; sourceTree = "<group>"; };
 		0625163222D6C71900EBB4C8 /* nidhamu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nidhamu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,7 +148,7 @@
 		062BC1002314B43600AC852F /* SetCellDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCellDate.swift; sourceTree = "<group>"; };
 		062CDAA022E0033400848D78 /* Pinch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinch.swift; sourceTree = "<group>"; };
 		0631914322E2C5F5004DE476 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
-		0674CD2E23298928009231F1 /* TemplateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCell.swift; sourceTree = "<group>"; };
+		0674CD2E23298928009231F1 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		0674CD3023298C52009231F1 /* ResetSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetSizes.swift; sourceTree = "<group>"; };
 		0682A49022FE5F0A00CE8075 /* AddPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopup.swift; sourceTree = "<group>"; };
 		0687565D232992FA0052818A /* TFReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFReturn.swift; sourceTree = "<group>"; };
@@ -182,11 +184,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06076F08232B435900189BB3 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				0625167C22D6CF4100EBB4C8 /* Cell.swift */,
+				06B872092329CAB400512B21 /* LeftCell.swift */,
+				0674CD2E23298928009231F1 /* BaseCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		06164A2B22D6D19000DA608D /* Dates */ = {
 			isa = PBXGroup;
 			children = (
-				06164A2C22D6D19000DA608D /* Dates.swift */,
-				06164A2D22D6D19000DA608D /* DateData.swift */,
+				06164A2D22D6D19000DA608D /* Dates.swift */,
+				06164A2C22D6D19000DA608D /* DateStrings.swift */,
 				06164A2F22D6D19000DA608D /* DateRefresh.swift */,
 				062BC1002314B43600AC852F /* SetCellDate.swift */,
 			);
@@ -255,10 +267,9 @@
 			children = (
 				0625168022D6CF4100EBB4C8 /* DefaultSave.swift */,
 				0625167D22D6CF4100EBB4C8 /* DefaultLoad.swift */,
+				06076F06232B3F6300189BB3 /* Sorting.swift */,
 				0625167E22D6CF4100EBB4C8 /* TimeBlock.swift */,
 				0625167F22D6CF4100EBB4C8 /* SimpleEvent.swift */,
-				0674CD2E23298928009231F1 /* TemplateCell.swift */,
-				0625167C22D6CF4100EBB4C8 /* Cell.swift */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 		0625169222D6CF4200EBB4C8 /* C-more */ = {
 			isa = PBXGroup;
 			children = (
+				06076F08232B435900189BB3 /* cell */,
 				0625169522D6CF4200EBB4C8 /* ui */,
 				0673571B2300753900DC2CAC /* popup */,
 				0625169E22D6CF4200EBB4C8 /* nav */,
@@ -372,7 +384,6 @@
 			children = (
 				0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */,
 				0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */,
-				06B872092329CAB400512B21 /* LeftCell.swift */,
 				0625169B22D6CF4200EBB4C8 /* CellPath.swift */,
 				062516A622D6CF4200EBB4C8 /* CellContents.swift */,
 				06164A2E22D6D19000DA608D /* CellDates.swift */,
@@ -522,6 +533,7 @@
 				062516BE22D6CF4200EBB4C8 /* Colours.swift in Sources */,
 				0625167A22D6CF2B00EBB4C8 /* Notes.swift in Sources */,
 				0625167722D6CF2B00EBB4C8 /* Vars.swift in Sources */,
+				06076F07232B3F6300189BB3 /* Sorting.swift in Sources */,
 				062516D322D6CF4200EBB4C8 /* GoToVC.swift in Sources */,
 				06164A3222D6D19000DA608D /* CellDates.swift in Sources */,
 				062516C122D6CF4200EBB4C8 /* Prynts.swift in Sources */,
@@ -533,7 +545,7 @@
 				06F2A96A231725980062FE02 /* RotateLock.swift in Sources */,
 				062516B622D6CF4200EBB4C8 /* Sizes.swift in Sources */,
 				062516D122D6CF4200EBB4C8 /* SetTopVC.swift in Sources */,
-				06164A3022D6D19000DA608D /* Dates.swift in Sources */,
+				06164A3022D6D19000DA608D /* DateStrings.swift in Sources */,
 				062516D422D6CF4200EBB4C8 /* CellContents.swift in Sources */,
 				062516D022D6CF4200EBB4C8 /* NavBar.swift in Sources */,
 				0631914422E2C5F5004DE476 /* LoginInterval.swift in Sources */,
@@ -560,7 +572,7 @@
 				062516C822D6CF4200EBB4C8 /* TextField.swift in Sources */,
 				062516B122D6CF4200EBB4C8 /* Cell.swift in Sources */,
 				06AA5D19231727C500DC04FD /* PCellPath.swift in Sources */,
-				06164A3122D6D19000DA608D /* DateData.swift in Sources */,
+				06164A3122D6D19000DA608D /* Dates.swift in Sources */,
 				062516C722D6CF4200EBB4C8 /* TagEvents.swift in Sources */,
 				062516C522D6CF4200EBB4C8 /* TapPopup.swift in Sources */,
 				0625167922D6CF2B00EBB4C8 /* AppLifecycle.swift in Sources */,
@@ -568,7 +580,7 @@
 				06A396572318B0F5008CFBD7 /* SwitchVC.swift in Sources */,
 				062516D722D6CF4200EBB4C8 /* DeviceType.swift in Sources */,
 				0625167522D6CF2B00EBB4C8 /* TimeVars.swift in Sources */,
-				0674CD2F23298928009231F1 /* TemplateCell.swift in Sources */,
+				0674CD2F23298928009231F1 /* BaseCell.swift in Sources */,
 				06B8720A2329CAB400512B21 /* LeftCell.swift in Sources */,
 				062516C022D6CF4200EBB4C8 /* Animations.swift in Sources */,
 			);
