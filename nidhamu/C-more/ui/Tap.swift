@@ -20,7 +20,7 @@ extension CollectionVC {
                 selectedTimeBlockPath = [column, row]       //; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
                 
-                if eventsAtIndexPath[timeBlock] == nil {
+                if eventsAtIndexPath[timeBlock] == nil || textFieldDisplayed {
                     /*if previousSelectedTimeBlockPath == defaultPathOutOfView {
                      previousSelectedTimeBlockPath = selectedTimeBlockPath
                      DispatchQueue.main.asyncAfter(deadline: .now()) {

@@ -12,7 +12,11 @@ extension CollectionVC {
         let textEntered = textField.text!
         
         if textEntered == "" || textEntered == " " || textEntered == "  " { // if user (for some reason) enters > 2 whitespaces, well, it's saved
-            if vcType == .hours && downcastLayout?.autoFitHScale != 1 {downcastLayout?.autoFitHScale = 1; reloadCV()}
+            
+            if vcType == .hours && downcastLayout?.autoFitHScale != 1 {
+                downcastLayout?.autoFitHScale = 1
+                reloadCV()
+            }
             
             for cell in self.collectionView.visibleCells as! [BaseCell] {
                 if cell.xyCoordinate == selectedTimeBlockPath {

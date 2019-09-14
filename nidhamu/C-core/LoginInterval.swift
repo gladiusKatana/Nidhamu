@@ -5,7 +5,7 @@ extension CollectionVC {
     
     func processEventsBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
         
-        if [column, row] == selectedTimeBlockPath && eventsAtIndexPath[TimeBlock(values:(column, row))] == nil {
+        if [column, row] == selectedTimeBlockPath /*&& eventsAtIndexPath[TimeBlock(values:(column, row))] == nil*/ {
             if textFieldDisplayed {cell.backgroundColor = eventAddingColour}
         }
         else {
