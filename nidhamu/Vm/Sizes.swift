@@ -9,7 +9,9 @@ extension CustomFlowLayout {
         return CGSize(width: w, height: h)
     }
     
-    func calculateSizes() {                                                                 //print("resizing cells")
+    func calculateSizes() -> (CGFloat, CGFloat) {                                           //print("resizing cells")
+        var cellWd = CGFloat(0); var cellHt = CGFloat(0)
+        
         statusBarHeight = Double(UIApplication.shared.statusBarFrame.size.height)           //; print("status bar: \(statusBarHeight)")
         navBarHeight = Double((navController?.navigationBar.frame.height)!)                 //; print("nav bar: \(navBarHeight)")
         
@@ -37,7 +39,14 @@ extension CustomFlowLayout {
             
         }
         
-        resetDimensionIfSquareCellsEnabled()
+        //resetDimensionIfSquareCellsEnabled()
+        
+//        cellWidth = cellWd; cellHeight = cellHt
+        
+//        widthPlusSpace = cellWd + hSpace
+//        heightPlusSpace = cellWd + vSpace
+        
+        return (cellWd, cellHt)
     }
 }
 

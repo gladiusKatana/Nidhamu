@@ -20,8 +20,8 @@ extension CustomFlowLayout {
     func resetDimensionIfSquareCellsEnabled() {
         
         switch squareCellMode {
-        case .autoSquareWidthFromHeight: cellWd = cellHt
-        case .autoSquareHeightFromWidth: cellHt = cellWd
+        case .autoSquareWidthFromHeight: cellWidth = cellHeight//cellWd = cellHt
+        case .autoSquareHeightFromWidth: cellHeight = cellWidth//cellHt = cellWd
         case .noAutoSquare: break
         }
     }

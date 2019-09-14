@@ -4,9 +4,12 @@ import UIKit
 extension CustomFlowLayout {
     
     func calculateAndResetSizes() {
-        calculateSizes()
+//        calculateSizes()
+//        cellWidth = cellWd; cellHeight = cellHt
         
-        cellWidth = cellWd; cellHeight = cellHt
+        (cellWidth, cellHeight) = calculateSizes()
+        
+        resetDimensionIfSquareCellsEnabled()
         widthPlusSpace = cellWidth! + hSpace
         heightPlusSpace = cellHeight! + vSpace
     }
@@ -17,12 +20,12 @@ extension CustomFlowLayout {
             ///if selectedTimeBlockPath[1] >= 18 {                                                 // keeping this commented out (for now), for logic & ui consistency
             if topVC.vcType == .hours {
                 DispatchQueue.main.asyncAfter(deadline: .now()) {  //+ 0.5// [weak self] in
-                    keyboardCellHeightMultiple = Int(keyboardHeight / timetableVC.downcastLayout!.cellHt)
+                    keyboardCellHeightMultiple = Int(keyboardHeight / timetableVC.downcastLayout!.cellHeight!)
                     
                     //print("\nkeyboard height: \(keyboardHeight) (\(keyboardCellHeightMultiple) cells tall)")
                     
                     let rows = self.rows
-                    let gap = CGFloat(5) / (self.cellHt)        /// extra gap for better aesthetics
+                    let gap = CGFloat(5) / (self.cellHeight!)        /// extra gap for better aesthetics
                     
                     self.autoFitHScale =
                         (CGFloat(rows - keyboardCellHeightMultiple) - gap) / CGFloat(rows)      //print("scale: \(self.autoFitHScale!)")

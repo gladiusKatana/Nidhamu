@@ -6,12 +6,11 @@
  
  (1st commit)                                       July. 08 2019
 
- text field appear just above keyboard
  bug: todo list does not refresh when returning (related to rePresentedVCManually)
- 
  snappier vc toggling
- refactor cell sizing?
  eliminate rePresentAndReload?
+ 
+ text field appear just above keyboard
  
  mark item recurring (remove item by default)
  timetableVC deferral-date selection mode
@@ -36,7 +35,8 @@
  
  
  
- login date interval outlined not coloured
+ direct resizing when rotate with keyboard presented
+ login date interval outlined rather than coloured
  truncate long label with  …
  ___________________________________________________Fri Sept 20
  
