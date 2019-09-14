@@ -29,7 +29,7 @@ extension CollectionVC {
     
     
     func setupAndPresent(vc: UICollectionViewController) {
-        setupViewTitle("", numLines: 1, alignment: .left)                                   //* header title is changed promptly from "" anyway
+        ///setupViewTitle("", numLines: 1, alignment: .left)  // header title is changed promptly from "" anyway
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             self.dismissNavController {
                 let newVC = UINavigationController(rootViewController: vc)

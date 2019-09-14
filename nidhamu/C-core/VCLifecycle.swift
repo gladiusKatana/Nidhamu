@@ -21,6 +21,16 @@ extension CollectionVC {
         keyboardNotificationSetup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if vcType == .hours {
+            setupViewTitle("Timetable", numLines: 1, alignment: .left)
+        } else {                                                        // if vcType is the other nav-controller-embedded one, ie todoList VC
+            setupViewTitle(formattedDateString(selectedCellDate, roundedDown: true, prefix: "Tasks", suffix: "", dateFormat: .hourlyTimeBlock), numLines: 1, alignment: .left)
+        }
+        setupNavBarButtons(grayTwo, atIndex: colourIndex)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -28,14 +38,9 @@ extension CollectionVC {
             setTopViewController()
             reloadCV()
         }
-        setupNavBarButtons(grayTwo, atIndex: colourIndex)
+        
         setupPinching()
         
-        if vcType == .hours {
-            setupViewTitle("Timetable", numLines: 1, alignment: .left)
-        } else {                                                        // if vcType is the other nav-controller-embedded one, ie todoList VC
-            setupViewTitle(formattedDateString(selectedCellDate, roundedDown: true, prefix: "Tasks", suffix: "", dateFormat: .hourlyTimeBlock), numLines: 1, alignment: .left)
-        }
         //        if rePresentedVCManually {
         //            var str = ""
         //            if !consoleLegendAppeared {str = appearSymbolLegend} else {str = ""}

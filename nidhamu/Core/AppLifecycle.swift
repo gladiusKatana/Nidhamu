@@ -6,7 +6,7 @@ extension AppDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {                     //print("🔅became active")/**/
         checkOrientation()
         
-        defaultLoadData(showDate: true)
+        defaultLoadData(showDate: false)
         topVC.reloadCV()
     }
     

@@ -6,7 +6,6 @@
  
  (1st commit)                                       July. 08 2019
 
- add to time-block even if nonempty (ie text field is already presented)
  text field appear just above keyboard
  bug: todo list does not refresh when returning (related to rePresentedVCManually)
  
