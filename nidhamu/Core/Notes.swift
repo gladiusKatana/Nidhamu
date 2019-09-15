@@ -6,13 +6,13 @@
  (1st commit)                                       July. 08 2019
 
  bug: todo list does not refresh when returning (related to rePresentedVCManually)
- snappier vc toggling
- eliminate rePresentAndReload?
- 
- multi-event blocks print with \ns                                                      UI
+ *eliminate rePresentAndReload?
+ *navigation overhaul
+                                                   
+ direct resizing when rotate with keyboard presented                                    UI
  text field appear above keyboard
- direct resizing when rotate with keyboard presented
  
+ multi-event blocks print with \ns
  mark item recurring (remove item by default)                                           data
  timetableVC deferral-date selection mode
 

@@ -3,7 +3,7 @@ import UIKit
 
 extension CustomFlowLayout {
     
-    override func prepare() {                                                               //print(".", terminator: "")
+    override func prepare() {                                                               print(".", terminator: "")
         
         checkOrientation()
         
@@ -40,7 +40,7 @@ extension CustomFlowLayout {
                     self.calculateAndResetSizes()
                 }                                                                           //else {print("text field not displayed")}
                 
-                topVC.rePresentThenReload(vc: topVC)
+//                topVC.rePresentThenReload(vc: topVC)  // not needed (anymore) for cell auto-fitting, but makes for visually smoother rotations
                 previousOrientation = currentOrientation ///if !textFieldDisplayed {}
             }
         }
