@@ -40,11 +40,9 @@ extension AppDelegate {
         lastActiveOrientation = currentOrientation
     }
     
-    
     func applicationWillTerminate(_ application: UIApplication) {
         print("terminated")
     }
-    
     
     func customApplicationStatusPrint(_ applicationState: String) { print("\n\(applicationState)")}
 }

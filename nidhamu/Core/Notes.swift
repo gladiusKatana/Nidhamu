@@ -1,8 +1,7 @@
 /* Notes            ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
  
  
- todo_______________________________________________deadline
- 
+ todo_______________________________________________deadline__________________________(typeEtc)
  
  (1st commit)                                       July. 08 2019
 
@@ -10,24 +9,27 @@
  snappier vc toggling
  eliminate rePresentAndReload?
  
- text field appear just above keyboard
+ multi-event blocks print with \ns                                                      UI
+ text field appear above keyboard
+ direct resizing when rotate with keyboard presented
  
- mark item recurring (remove item by default)
+ mark item recurring (remove item by default)                                           data
  timetableVC deferral-date selection mode
- *cascading deferrals
- ___________________________________________________Fri Sept 13
+
+ ___________________________________________________Sun Sept 15
  
- 
+
  
  eventsAtDate
  archive data (eventsAtIndexPath; eventsAtDate)
  CSV email archived data
  Numbers template
- ___________________________________________________Sun Sept 15                        LAUNCH BETA
+ cascading deferrals
+ ___________________________________________________Mon Sept 16         LAUNCH BETA
  
  
  
- list VC (today items)
+ list VC (today items)                                                                  UX
  list VC (deadlineless items)
  morn/aft/eve/nite VC
  calendarVC; populate with eventsAtDate
@@ -35,13 +37,8 @@
  
  
  
- direct resizing when rotate with keyboard presented
- login date interval outlined rather than coloured
+ login date interval outlined, not coloured                                             UI
  truncate long label with  …
- ___________________________________________________Fri Sept 20
- 
- 
- 
  settingsmenu
  darkMode
  buttons

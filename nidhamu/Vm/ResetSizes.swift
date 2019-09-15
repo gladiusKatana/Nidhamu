@@ -4,8 +4,6 @@ import UIKit
 extension CustomFlowLayout {
     
     func calculateAndResetSizes() {
-//        calculateSizes()
-//        cellWidth = cellWd; cellHeight = cellHt
         
         (cellWidth, cellHeight) = calculateSizes()
         

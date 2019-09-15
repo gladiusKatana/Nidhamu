@@ -8,7 +8,6 @@ extension CollectionVC { // probably will refactor the logic below soon
         cell.cellDate = setCellDate(baseDate: Date(), cellOffset: layout.lockedHeaderRows - row, cell: cell,
                                     column: column, row: row, layout: layout, looping: looping, withColours: withColours)
         if row == 1 {
-            
             cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 3, cell: cell,
                                         column: column, row: row, layout: layout, looping: looping, withColours: withColours)
             if column <= nowColumn {
@@ -23,7 +22,6 @@ extension CollectionVC { // probably will refactor the logic below soon
         }
             
         else if row == 2 {
-            
             if column < nowColumn {cell.backgroundColor = lastWeekColour}
                 
             else {                 cell.backgroundColor = cellDefaultColour

@@ -6,9 +6,6 @@ var selectedCellDate = Date()
 
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 
-//var (year, month, day, weekday, wkdy, hour, minute) = (Int(), String(), Int(), String(), String(), Int(), Int())
-////* Convention: reserving full-spelled date-component names for CURRENT date (Date(), ie RIGHT NOW; NOW is correct to within a 3s refresh period)
-
 //--------------------------------------------------------------------
 var eventsAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleEvent]>();                         var sortingTransform = [Int]()
 

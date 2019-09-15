@@ -38,7 +38,6 @@ extension CollectionVC {
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     topVC.reloadCV()
                 }
-                
             }
         }
         completion()

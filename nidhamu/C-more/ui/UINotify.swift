@@ -19,7 +19,6 @@ extension CollectionVC {
     }
     
     
-    
     func keyboardNotificationSetup() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(showKBoard), name: UIResponder.keyboardWillShowNotification, object: nil

@@ -4,7 +4,6 @@ import UIKit
 class CustomFlowLayout : UICollectionViewFlowLayout {
     
     var cellWidth: CGFloat?;                var cellHeight: CGFloat?;           var autoFitWScale: CGFloat?;        var autoFitHScale: CGFloat?
-//    var cellWd = CGFloat(0);                var cellHt = CGFloat(0);
     var hSpace = CGFloat(0);            var vSpace = CGFloat(0)
     var widthPlusSpace = CGFloat(0);        var heightPlusSpace = CGFloat(0);   var xDefault = CGFloat(0);          var yDefault = CGFloat(0)
     var cols = 0;                           var rows = 0;                       var lockedHeaderRows = 0;           var lockedHeaderSections = 0
@@ -42,9 +41,6 @@ class CustomFlowLayout : UICollectionViewFlowLayout {
         else    {cellDimensionsMode = .neitherHardcoded}                                        //print(cellDimensionsMode.simpleDescription())
         
         calculateAndResetSizes()
-//        calculateSizes()
-//        self.cellWidth = cellWd;   self.cellHeight = cellHt
-//        resetDimensionIfSquareCellsEnabled()
         //drawTestSquare()
     }
     

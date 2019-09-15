@@ -39,13 +39,6 @@ extension CustomFlowLayout {
             
         }
         
-        //resetDimensionIfSquareCellsEnabled()
-        
-//        cellWidth = cellWd; cellHeight = cellHt
-        
-//        widthPlusSpace = cellWd + hSpace
-//        heightPlusSpace = cellWd + vSpace
-        
         return (cellWd, cellHt)
     }
 }

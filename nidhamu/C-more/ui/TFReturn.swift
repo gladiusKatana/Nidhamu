@@ -45,7 +45,6 @@ extension CollectionVC {
                 self?.reloadCV()
             }
         }
-        
         return true
     }
 }

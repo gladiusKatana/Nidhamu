@@ -24,12 +24,17 @@ class LeftAlignedCell: BaseCell {
 
 extension CollectionVC {
     
+    func registerAndReturnLeftCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> LeftAlignedCell {
+        collectionView.register(LeftAlignedCell.self, forCellWithReuseIdentifier: LeftAlignedCell.reuseIdentifier)
+        var leftCell = collectionView.dequeueReusableCell(withReuseIdentifier: LeftAlignedCell.reuseIdentifier, for: indexPath) as! LeftAlignedCell
+        leftCell = doRestOfLeftCellProcessing(cell: leftCell, indexPath: indexPath)
+        return leftCell
+    }
+    
     func doRestOfLeftCellProcessing(cell: LeftAlignedCell, indexPath: IndexPath) -> LeftAlignedCell  {
-        
         cell.backgroundColor = headerColour
         cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)
         cell.titleLabel.textColor = grayFive
-        
         cell.titleLabel.textAlignment = .left
         cell.titleLabel.numberOfLines = 0
         cell.titleLabel.lineBreakMode = .byCharWrapping
@@ -37,9 +42,7 @@ extension CollectionVC {
         if indexPath.section == 0 { // to do this in column 1, you need to rewrite the layout attributes (zIndex)
             cell.titleLabel.text = formattedDateString(lastLoggedInDate, roundedDown: false, prefix: "Last Login", suffix: "", dateFormat: .fullDayWithYear)
         }
-            
         else {cell.titleLabel.text = ""}
-        
         return cell
     }
 }

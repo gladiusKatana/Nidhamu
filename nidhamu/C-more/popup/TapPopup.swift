@@ -11,7 +11,7 @@ extension PopupMenuVC {
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
-            guard let firstPathToProcess = pathsToProcess.first else { print("no paths to process... even though popup menu was presented"); return}
+            guard let firstPathToProcess = pathsToProcess.first else { print("no paths to process... even though popup was presented"); return}
             let currentColumn = firstPathToProcess[0]; let currentRow = firstPathToProcess[1] // components of path of current item being marked
             
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(currentColumn, currentRow))] {    // writing to the dictionary
