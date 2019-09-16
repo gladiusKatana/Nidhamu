@@ -28,14 +28,14 @@ extension CustomFlowLayout {
         }
         
         let autofitWidth = CGFloat(frame.width) / CGFloat(cols) - hSpace
-        let autoFitHeight = CGFloat(Double(frame.height) - navBarHeight - statusBarHeight) / CGFloat(rows) - vSpace
+        let autoFitHeight = CGFloat(Double(frame.height - keyboardHeight) - navBarHeight - statusBarHeight) / CGFloat(rows) - vSpace
         
         switch cellDimensionsMode {
             
-        case .widthAndHeightHardcoded:  cellWd = cellWidth!;    cellHt = cellHeight!
-        case .widthHardcoded:           cellWd = cellWidth!;    cellHt = autoFitHeight * autoFitHScale!
-        case .heightHardcoded:          cellWd = autofitWidth * autoFitWScale!;     cellHt = cellHeight!
-        case .neitherHardcoded:         cellWd = autofitWidth * autoFitWScale!;     cellHt = autoFitHeight * autoFitHScale!
+        case .widthAndHeightHardcoded:  cellWd = cellWidth!;    cellHt = cellHeight! //* keyboardScalor
+        case .widthHardcoded:           cellWd = cellWidth!;    cellHt = autoFitHeight * autoFitHScale! //* keyboardScalor
+        case .heightHardcoded:          cellWd = autofitWidth * autoFitWScale!;     cellHt = cellHeight! //* keyboardScalor
+        case .neitherHardcoded:         cellWd = autofitWidth * autoFitWScale!;     cellHt = autoFitHeight * autoFitHScale! //* keyboardScalor
             
         }
         

@@ -37,6 +37,7 @@ extension CollectionVC {
         if vcType != .eventClassifier {
             setTopViewController()
             reloadCV()
+            ///reloadWithDelay(after: 0.2)
         }
         
         setupPinching()
@@ -50,6 +51,7 @@ extension CollectionVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         if vcType == .todoList {
             if textFieldDisplayed {
                 eventField.resignFirstResponder()

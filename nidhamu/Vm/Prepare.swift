@@ -3,20 +3,12 @@ import UIKit
 
 extension CustomFlowLayout {
     
-    override func prepare() {                                                               print(".", terminator: "")
+    override func prepare() {                                                               //print(".", terminator: "")
         
         checkOrientation()
-        
-        if previousOrientation == currentOrientation {
-            if textFieldDisplayed {
-                if firstReloadForKeyboard {
-                    resizeAndReloadForKeyboard()
-                    firstReloadForKeyboard = false
-                }
-            }
-        }
-        
+
         calculateAndResetSizes()
+        //keyboardScalor = 1
         
         var statusBarDelta = 0.0
         if UIApplication.shared.statusBarFrame.size.height > 20 {
@@ -28,25 +20,24 @@ extension CustomFlowLayout {
         textFieldY = CGFloat(navBarHeight + statusBarHeight - statusBarDelta)               //; print("textFieldY = \(textFieldY)")
         
         if previousOrientation != currentOrientation {
+            keyboardHeight = 0
             
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 if eventArraysToProcess.count > 0 {
                     savedTimeBlocksForProcessing = false
                     eventArraysToProcess = []; pathsToProcess = []
-                }
-                
-                if textFieldDisplayed {
-                    self.resizeAndReloadForKeyboard()
-                    self.calculateAndResetSizes()
                 }                                                                           //else {print("text field not displayed")}
                 
-//                topVC.rePresentThenReload(vc: topVC)  // not needed (anymore) for cell auto-fitting, but makes for visually smoother rotations
+                topVC.rePresentThenReload(vc: topVC)
                 previousOrientation = currentOrientation ///if !textFieldDisplayed {}
             }
         }
-        else {if topVC.vcType == .hours {processCurrentDate()}}
+        else {
+            if topVC.vcType == .hours {processCurrentDate()}
+        }
         
-        if topVC.vcType == .hours {timetableVC.rePresentTextField()}
+        if topVC.vcType == .hours {topVC.rePresentTextField()}
+
     }
 }
 

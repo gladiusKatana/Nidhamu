@@ -41,7 +41,9 @@ extension CollectionVC {
         
         if vcType == .hours {
             DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
-                self?.downcastLayout?.autoFitHScale = 1
+                ///self?.downcastLayout?.autoFitHScale = 1
+                //keyboardScalor = 1
+                keyboardHeight = 0
                 self?.reloadCV()
             }
         }

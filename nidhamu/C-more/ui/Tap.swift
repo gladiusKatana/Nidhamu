@@ -33,8 +33,7 @@ extension CollectionVC {
                      else {*/
                     
                     cell.backgroundColor = eventAddingColour
-                    reloadCV() //}
-                    
+                    reloadCV()
                     presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)
                     
                     /*if row >= 18 {
