@@ -23,7 +23,7 @@ func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
     
     for element in input {
         
-        ///let i = output.firstIndex(of: element)!                                                      ///No!  does not handle duplication. Need to do the old-school way, via index integer i. (Also see comment above...
+        ///let i = output.firstIndex(of: element)!                                                      ///Does not handle duplication. Need to do the old-school way, via index integer i. (Also see comment above...
         
         output[transform[i]] = element                      //print("inserting \(element) at \(transform[i])")
         

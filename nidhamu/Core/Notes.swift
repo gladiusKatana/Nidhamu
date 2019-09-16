@@ -6,17 +6,13 @@
  (1st commit)                                       July. 08 2019
 
  bug: todo list does not refresh when returning (related to rePresentedVCManually)
- *eliminate rePresentAndReload?
- *navigation overhaul
-                                                   
- direct resizing when rotate with keyboard presented                                    UI
  text field appear above keyboard
  
- multi-event blocks print with \ns
- mark item recurring (remove item by default)                                           data
+ multi-event blocks print with \ns                                                      data
+ mark item recurring (remove item by default)
  timetableVC deferral-date selection mode
 
- ___________________________________________________Sun Sept 15
+ ___________________________________________________Mon Sept 16
  
 
  
@@ -25,7 +21,7 @@
  CSV email archived data
  Numbers template
  cascading deferrals
- ___________________________________________________Mon Sept 16         LAUNCH BETA
+ ___________________________________________________Wed Sept 18         LAUNCH BETA
  
  
  
@@ -33,15 +29,17 @@
  list VC (deadlineless items)
  morn/aft/eve/nite VC
  calendarVC; populate with eventsAtDate
- ___________________________________________________Wed Sept 18
+ ___________________________________________________Fri Sept 20
  
  
  
  login date interval outlined, not coloured                                             UI
  truncate long label with  …
- settingsmenu
+ *direct resizing: rotate with keyboard
+ settings
  darkMode
  buttons
  launchScreen
  icon
  ___________________________________________________asap*/
+

@@ -62,7 +62,6 @@
 		062CDAA122E0033400848D78 /* Pinch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CDAA022E0033400848D78 /* Pinch.swift */; };
 		0631914422E2C5F5004DE476 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631914322E2C5F5004DE476 /* LoginInterval.swift */; };
 		0674CD2F23298928009231F1 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674CD2E23298928009231F1 /* BaseCell.swift */; };
-		0674CD3123298C52009231F1 /* ResetSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674CD3023298C52009231F1 /* ResetSizes.swift */; };
 		0682A49122FE5F0A00CE8075 /* AddPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682A49022FE5F0A00CE8075 /* AddPopup.swift */; };
 		0687565E232992FA0052818A /* TFReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0687565D232992FA0052818A /* TFReturn.swift */; };
 		06A396572318B0F5008CFBD7 /* SwitchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A396562318B0F5008CFBD7 /* SwitchVC.swift */; };
@@ -151,7 +150,6 @@
 		062CDAA022E0033400848D78 /* Pinch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinch.swift; sourceTree = "<group>"; };
 		0631914322E2C5F5004DE476 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
 		0674CD2E23298928009231F1 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
-		0674CD3023298C52009231F1 /* ResetSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetSizes.swift; sourceTree = "<group>"; };
 		0682A49022FE5F0A00CE8075 /* AddPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopup.swift; sourceTree = "<group>"; };
 		0687565D232992FA0052818A /* TFReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFReturn.swift; sourceTree = "<group>"; };
 		06A396562318B0F5008CFBD7 /* SwitchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchVC.swift; sourceTree = "<group>"; };
@@ -284,7 +282,6 @@
 				0625168522D6CF4100EBB4C8 /* Layout.swift */,
 				0625168322D6CF4100EBB4C8 /* Attributes.swift */,
 				0625168722D6CF4100EBB4C8 /* Prepare.swift */,
-				0674CD3023298C52009231F1 /* ResetSizes.swift */,
 				0625168222D6CF4100EBB4C8 /* Sizes.swift */,
 				0625168622D6CF4100EBB4C8 /* SizeEnums.swift */,
 				0625168422D6CF4100EBB4C8 /* ZIndex.swift */,
@@ -557,7 +554,6 @@
 				062516D822D6CF4200EBB4C8 /* VCType.swift in Sources */,
 				062516B822D6CF4200EBB4C8 /* ZIndex.swift in Sources */,
 				062516CE22D6CF4200EBB4C8 /* UINotify.swift in Sources */,
-				0674CD3123298C52009231F1 /* ResetSizes.swift in Sources */,
 				062516B722D6CF4200EBB4C8 /* Attributes.swift in Sources */,
 				062516C322D6CF4200EBB4C8 /* VCLifecycle.swift in Sources */,
 				062516B422D6CF4200EBB4C8 /* SimpleEvent.swift in Sources */,

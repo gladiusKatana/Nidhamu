@@ -40,5 +40,13 @@ extension CustomFlowLayout {
         if topVC.vcType == .hours {topVC.rePresentTextField()}
 
     }
+    
+        func calculateAndResetSizes() {
+            (cellWidth, cellHeight) = calculateSizes()
+            
+            resetDimensionIfSquareCellsEnabled()
+            widthPlusSpace = cellWidth! + hSpace
+            heightPlusSpace = cellHeight! + vSpace
+        }
 }
 
