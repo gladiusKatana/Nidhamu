@@ -13,7 +13,7 @@ var randomColours =     // used in TestSquare.swift
 var windowBackgroundColour = icyBlue
 
 //let num = CGFloat(42)
-var headerColour = iosSettingsGray //UIColor.rgb(num, g: num, b: num, a: 1)
+var headerColour = UIColor.white //iosSettingsGray //UIColor.rgb(num, g: num, b: num, a: 1)
 
 var cellDefaultColour = icyBlue
 var cellTextDefaultColour = graySeven;                              var headerTextDefaultColour = UIColor.black

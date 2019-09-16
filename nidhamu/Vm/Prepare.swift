@@ -3,7 +3,7 @@ import UIKit
 
 extension CustomFlowLayout {
     
-    override func prepare() {                                                               //print(".", terminator: "")
+    override func prepare() {                                                               print(".", terminator: "")
         
         checkOrientation()
 
@@ -20,9 +20,10 @@ extension CustomFlowLayout {
         textFieldY = CGFloat(navBarHeight + statusBarHeight - statusBarDelta)               //; print("textFieldY = \(textFieldY)")
         
         if previousOrientation != currentOrientation {
-            keyboardHeight = 0
+            //keyboardHeight = 0
             
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
+//            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                
                 if eventArraysToProcess.count > 0 {
                     savedTimeBlocksForProcessing = false
                     eventArraysToProcess = []; pathsToProcess = []
@@ -30,7 +31,7 @@ extension CustomFlowLayout {
                 
                 topVC.rePresentThenReload(vc: topVC)
                 previousOrientation = currentOrientation ///if !textFieldDisplayed {}
-            }
+//            }
         }
         else {
             if topVC.vcType == .hours {processCurrentDate()}
