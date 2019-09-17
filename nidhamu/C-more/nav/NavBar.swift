@@ -14,7 +14,7 @@ extension CollectionVC {
         let barButtonColours = [graySeven, graySeven]   // buttons are dark by default, then greyed-out when their corresponding vc is presented
         
         for button in navigationItem.rightBarButtonItems! {
-            if button == reloadButton /*|| button == todoListButton*/ {
+            if button == reloadButton || button == todoListButton {
                 button.tintColor = .clear
             }
             else {
@@ -38,13 +38,12 @@ extension CollectionVC {
         return button
     }
     
-    @objc func reloadCVWrapperMethod() {
-        //print("*")
+    @objc func reloadCVWrapperMethod() { //print("*")
         reloadCV()
     }
     
     @objc func buttonWrapperMethodforTimetableVC() {presentViaVCButton(vc: timetableVC)}
-    @objc func buttonWrapperMethodforTodoListVC() {presentViaVCButton(vc: todoListVC)}
+    @objc func buttonWrapperMethodforTodoListVC() {}//presentViaVCButton(vc: todoListVC)
     
     func presentViaVCButton(vc: CollectionVC) {
         rePresentedVCManually = true

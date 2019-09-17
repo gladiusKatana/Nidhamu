@@ -6,10 +6,8 @@
  (1st commit)                                       July. 08 2019
  
  
- bug: OS interruption of event-tagging mode
  
  multi-event blocks print with \ns                                                      data
- print cleanup
  mark item recurring (remove item by default)
  timetableVC deferral-date selection mode
  
