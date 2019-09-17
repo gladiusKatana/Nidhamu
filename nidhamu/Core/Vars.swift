@@ -7,20 +7,19 @@ var navController: UINavigationController? = UINavigationController()
 
 var dismissPinch = UIPinchGestureRecognizer()
 
+var timerForShowScrollIndicator: Timer?
+
 var xOffSet = CGFloat(0);               var yOffset = CGFloat(0)
-var keyboardHeight = CGFloat(0)
-var textFieldY = CGFloat(0)
+var keyboardHeight = CGFloat(0);        var textFieldY = CGFloat(0)
 
 var statusBarHeight = 0.0;              var lastStatusBarHeight = 0.0
 var navBarHeight = 0.0;                 var launchWidth = 0.0
 
 var reloadsWhileResized = 0
-//var keyboardCellHeightMultiple = 0
 
-var firstReloadForKeyboard = false
-var rePresentedVCManually = true;       var firstReenteredForeground = false
-var consoleLegendAppeared = false;      var justPinched = false
-var thereWillBeARowException = false
+var firstReenteredForeground = false;   var firstReloadForKeyboard = false
+var justPinched = false;                var rePresentedVCManually = true
+var consoleLegendAppeared = false;      var thereWillBeARowException = false
 
 
 var currentOrientation = "orientation (landscape or portrait) for prepare-layout logic"             //* will change this to an enum at some point

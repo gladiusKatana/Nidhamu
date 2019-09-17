@@ -25,6 +25,10 @@ extension CollectionVC {
             
             checkDateStringMatchAndPrintLabel("last login", date: lastLoginDate, cell: cell)
             checkDateStringMatchAndPrintLabel("now", date: Date(), cell: cell)
+            
+            if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
+                cell.layer.borderColor = UIColor.white.cgColor; cell.layer.borderWidth = 2      //; print("highlighted cell white")
+            } else {cell.layer.borderColor = UIColor.clear.cgColor}
         }
     }
     
@@ -38,8 +42,7 @@ extension CollectionVC {
     }
     
     func prepareToProcessEventsSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
-        if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {
-            //cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
+        if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] { ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             
             if !savedTimeBlocksForProcessing {
                 if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}
@@ -50,5 +53,4 @@ extension CollectionVC {
         }
     }
 }
-
 

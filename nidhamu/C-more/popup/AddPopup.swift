@@ -47,20 +47,7 @@ extension CollectionVC {
                 classifierVC.collectionView.reloadData()
                 classifierVC.keepScrollIndicatorsVisible()
                 
-                for cell in timetableVC.collectionView.visibleCells {
-                    guard let customCell = cell as? BaseCell else {
-                        print("could not downcast to custom cell in cell reference")
-                        return
-                    }
-                    let column = customCell.xyCoordinate[0]; let row = customCell.xyCoordinate[1]
-                    if let earliestEventAddress = pathsToProcess.first {
-                        if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
-                            cell.layer.borderColor = UIColor.white.cgColor; cell.layer.borderWidth = 2      //; print("highlighted cell white")
-                        }
-                        else {cell.layer.borderColor = UIColor.clear.cgColor}
-                    }
-                    else {cell.layer.borderColor = UIColor.clear.cgColor}
-                }
+                self.addBorderAroundTimeBlockCurrentlyBeingMarked()
             }
         }
     }

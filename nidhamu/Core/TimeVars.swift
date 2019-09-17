@@ -1,9 +1,7 @@
 // TimeVars         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-var lastLoginDate = Date()
-var selectedCellDate = Date()
-
+var lastLoginDate = Date();                         var selectedCellDate = Date()
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 
 //--------------------------------------------------------------------
@@ -21,12 +19,11 @@ var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int(
 
 var eventDescriptionArrays = [[String]]();                                                      //var sortedEventDescriptionArrays = [Any]()
 var eventStatusArrays = [[Int]](); /* Populated with raw values of enum EventStatus*/           //var sortedEventStatusArrays = [Any]()
-//--------------------------------------------------------------------
-
-var timerForShowScrollIndicator: Timer?
 
 var defaultPathOutOfView = [-1, -1]
 var selectedTimeBlockPath = defaultPathOutOfView;   var previousTimeBlockPathSelected = defaultPathOutOfView
+var earliestEventAddress = defaultPathOutOfView
+//--------------------------------------------------------------------
 
 var nowRow = 0;                                     var nowColumn = 0
 var eventIndex = 0;                                 var eventsInBlockToBeProcessed = 0

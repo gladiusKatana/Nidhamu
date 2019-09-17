@@ -35,20 +35,20 @@ extension PopupMenuVC {
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-
-                classifierVC.view.removeFromSuperview()                 //; print("                removing popup")
+                
                 eventRecurringSwitchView.removeFromSuperview()          //; print("removing switch")
+                classifierVC.view.removeFromSuperview()                 //; print("                removing popup")
                 classifierVC.resignFirstResponder()
                 
                 classifierViewDisplayed = false                         //print("now paths to process: \(pathsToProcess)")
                 defaultSaveData(saveDate: false, showDate: false, pryntEvents: true)
                 
+                earliestEventAddress = defaultPathOutOfView
                 timetableVC.reloadCV()                              //; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
                 timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
                 
                 if pathsToProcess.isEmpty {self.exitEventTaggingMode()}
             }
-            
         } else {print("selected header")}
     }
 }
