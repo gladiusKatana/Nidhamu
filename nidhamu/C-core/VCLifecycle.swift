@@ -4,8 +4,10 @@ import UIKit
 extension CollectionVC {
     
     override func viewDidLoad() {                           super.viewDidLoad()
-        collectionView.backgroundColor = windowBackgroundColour // shown on top of UIWindow's background colour
+        if vcType == .todoList {collectionView.backgroundColor = bluishGray}
+        else {collectionView.backgroundColor = windowBackgroundColour}
         collectionView.bounces = false
+        
         setTopViewController()
         var str = ""
         if !consoleLegendAppeared {str = loadSymbolLegend}  else {str = ""}  ; print("💾\(topVC.vcType)\(str)")// disk emoji means loaded 💾

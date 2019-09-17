@@ -38,5 +38,10 @@ extension CollectionVC {
         }
     }
     
+    func dismissNavController(completion: @escaping () -> ()) {
+        navController?.dismiss(animated: false, completion: nil)
+        completion()
+    }
+    
 }
 

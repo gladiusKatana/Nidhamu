@@ -17,7 +17,6 @@ extension CustomFlowLayout {
                 eventArraysToProcess = []; pathsToProcess = []
             }
             
-            ///topVC.rePresentThenReload(vc: topVC)
             topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in
                 rePresentedVCManually = false
             }
