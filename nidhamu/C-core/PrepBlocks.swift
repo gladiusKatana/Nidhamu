@@ -24,19 +24,17 @@ extension CollectionVC {
                     
                     tagEventsSinceLastLogin(layout: layout)
                     
-                    ///if !savedTimeBlocksForProcessing {
                     if thereWillBeARowException {
                         let gap = CGFloat(5) / (self.downcastLayout!.cellHeight!)           // extra gap for better aesthetics
                         downcastLayout?.autoFitHScale =
                             CGFloat(layout.rows) / (CGFloat(layout.rows + 8) + gap)         // popup window is 8 cells tall
                         self.reloadWithDelay(after: 0)                                      //; print("reloaded for size adjustment")
                     }
-                    ///}
                     
                     savedTimeBlocksForProcessing = true
                 }
             }
-            
+                
             else {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     AppUtility.lockOrientation(.all)

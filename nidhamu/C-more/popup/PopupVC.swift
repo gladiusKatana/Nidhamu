@@ -41,6 +41,7 @@ class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
         defaultLoadData(showDate: false)
         AppUtility.lockOrientation(.all)                    //; print("rotated back")
         thereWillBeARowException = false
+        savedTimeBlocksForProcessing = false
     }
 }
 

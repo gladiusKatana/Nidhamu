@@ -11,7 +11,7 @@ extension CollectionVC {
             let oneWeekAgo = truncateMinutesOfDate(cell.cellDate - TimeInterval(86400 * 7)) // since cell-dates are based off of Date()...
             if oneWeekAgo >= truncateMinutesOfDate(lastLoginDate) && oneWeekAgo < truncateMinutesOfDate(Date()) { //     ...ie, not rounded
                 
-                //if !savedTimeBlocksForProcessing { // this conditional would only be needed if doing the animation below
+                //if !saved TimeBlocksForProcessing { // this conditional would only be needed if doing the animation below
                 //if column < nowColumn || (column == nowColumn && row < nowRow) {cell.backgroundColor = .green; cell.cellColour = .green}
                 //else { // the  if  on the line above is purely for testing purposes
                 cell.backgroundColor = niceOrangeLight; cell.cellColour = niceOrangeLight
@@ -43,7 +43,7 @@ extension CollectionVC {
             
             if !savedTimeBlocksForProcessing {
                 if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}         //* see note below
-                if !pathsToProcess.contains([column, row]) {pathsToProcess.append([column, row])}
+                if !pathsToProcess.contains([column, row]) {pathsToProcess.append([column, row]); print("---adding to paths-to-process---")}
             }
             
             if row >= 19 {thereWillBeARowException = true}

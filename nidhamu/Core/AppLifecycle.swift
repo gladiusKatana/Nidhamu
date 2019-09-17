@@ -6,7 +6,7 @@ extension AppDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {                     //print("🔅became active")/**/
         checkOrientation()
         
-        defaultLoadData(showDate: false)
+        defaultLoadData(showDate: true)
         topVC.reloadCV()
     }
     
@@ -25,14 +25,14 @@ extension AppDelegate {
             defaultSaveData(showDate: false, pryntEvents: false)
         }
         
-        if eventsAtIndexPath.values.count > 0 {  // autorotate for smoother event-tagging IF user dismisses the app, then resumes it hours/days later
+        if eventsAtIndexPath.values.count > 0 {  // autorotate for smoother event-tagging IF user dismisses app, then resumes it hours/days later
             if currentOrientation == "landscape" {                                      //print("becameActive from landscape")
                 AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)           //print("locking/rotating to portrait from resignActive")
                 rotatedFromResignActive = true
             }
         } //else {print("no event items yet")}
         
-        savedTimeBlocksForProcessing = false
+//        saved TimeBlocksForProcessing = false
     }
     
     
