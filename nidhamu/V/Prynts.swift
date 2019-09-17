@@ -5,7 +5,7 @@ import UIKit
 ///Called when LOADING & REFRESHING DATE:
 
 func pryntLastLoginDate() {// spelling 'prynt' with a y so this function's existence does not cause override of autocomplete for print statements
-    print(formattedDateString(lastLoggedInDate, roundedDown: false, prefix: "last login              ", suffix: "", dateFormat: .fullDayWithYear))
+    print(formattedDateString(lastLoginDate, roundedDown: false, prefix: "last login              ", suffix: "", dateFormat: .fullDayWithYear))
     //print("              (unformatted gmt)    \(lastLoggedInDate)\n")
 }
 

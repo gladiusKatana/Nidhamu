@@ -15,7 +15,7 @@ func processCurrentDate() {                                                     
             print("new week")
             
             lastLoginDateComponents = [year, month, day, weekday, hour, minute]
-            lastLoggedInDate = dateFromComponents(lastLoginDateComponents)
+            lastLoginDate = dateFromComponents(lastLoginDateComponents)
             //pryntLastLoginDate()
             //pryntCurrentDate()
         }

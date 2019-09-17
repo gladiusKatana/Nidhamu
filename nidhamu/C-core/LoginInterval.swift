@@ -10,15 +10,16 @@ extension CollectionVC {
         }
         else {
             let oneWeekAgo = truncateMinutesOfDate(cell.cellDate - TimeInterval(86400 * 7)) // since cells' cell-dates are based off of Date()...
-            if oneWeekAgo >= truncateMinutesOfDate(lastLoggedInDate) && oneWeekAgo < truncateMinutesOfDate(Date()) { //     ...ie, not rounded
+            if oneWeekAgo >= truncateMinutesOfDate(lastLoginDate) && oneWeekAgo < truncateMinutesOfDate(Date()) { //     ...ie, not rounded
                 
                 //if !savedTimeBlocksForProcessing { // this conditional would only be needed if doing the animation below
                 cell.backgroundColor = niceOrangeLight  //; cell.cellColour = niceOrangeLight
                 //animateCellColourBack(cell: cell, delay: 3, duration: 10)
                 //}
-                
-                if formattedDateString(lastLoggedInDate, roundedDown: true, prefix: "", suffix: "", dateFormat: .hourlyTimeBlock)
-                    == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", dateFormat: .hourlyTimeBlock) {
+                    
+                if Calendar.current.component(.hour, from: lastLoginDate) == Calendar.current.component(.hour, from: cell.cellDate)
+                    && Calendar.current.component(.weekday, from: lastLoginDate) == Calendar.current.component(.weekday, from: cell.cellDate) {
+                    
                     cell.titleLabel.text = "last login"
                     cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
                 }
@@ -27,7 +28,7 @@ extension CollectionVC {
             }
             
             if Calendar.current.component(.hour, from: Date()) == Calendar.current.component(.hour, from: cell.cellDate)
-            && Calendar.current.component(.weekday, from: Date()) == Calendar.current.component(.weekday, from: cell.cellDate) {
+                && Calendar.current.component(.weekday, from: Date()) == Calendar.current.component(.weekday, from: cell.cellDate) {
                 cell.titleLabel.text = "now"    //; print("now-cell: [\(column), \(row)]")
                 //cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
             }

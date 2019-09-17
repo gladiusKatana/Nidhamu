@@ -7,7 +7,7 @@ func defaultLoadData(showDate: Bool) {                                          
     
     if let components = defaults.array(forKey: "savedLastLoginDate") {
         lastLoginDateComponents = components  
-        lastLoggedInDate = dateFromComponents(lastLoginDateComponents)
+        lastLoginDate = dateFromComponents(lastLoginDateComponents)
         if showDate {
             pryntLastLoginDate()
             pryntCurrentDate()

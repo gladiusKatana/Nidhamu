@@ -1,7 +1,7 @@
 // TimeVars         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-var lastLoggedInDate = Date()
+var lastLoginDate = Date()
 var selectedCellDate = Date()
 
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
