@@ -37,16 +37,16 @@ extension CollectionVC {
         if vcType != .eventClassifier {
             setTopViewController()
             reloadCV()
-            ///reloadWithDelay(after: 0.2)
+            //reloadWithDelay(after: 0.02)//0.02?
         }
         
         setupPinching()
         
-        //        if rePresentedVCManually {
-        //            var str = ""
-        //            if !consoleLegendAppeared {str = appearSymbolLegend} else {str = ""}
-        //            consoleLegendAppeared = true                      ; print("🏞\(topVC.vcType)\(str)") // picture-emoji means appeared 🏞
-        //        }
+        /*if rePresentedVCManually {
+            var str = ""
+            if !consoleLegendAppeared {str = appearSymbolLegend} else {str = ""}
+            consoleLegendAppeared = true                      ; print("🏞\(topVC.vcType)\(str)") // picture-emoji means appeared 🏞
+        }*/
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -29,19 +29,7 @@ extension CollectionVC {
         
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             keyboardHeight = keyboardFrame.cgRectValue.height
-//            let rows = timetableVC.downcastLayout!.rows
-//            let keyboardCellHeightMultiple = Int(keyboardFrame.cgRectValue.height / timetableVC.downcastLayout!.cellHeight!)
-//            //print("\nkeyboard height: \(keyboardHeight) (\(keyboardCellHeightMultiple) cells tall)")
-//            
-//            let gap = CGFloat(5) / (timetableVC.downcastLayout!.cellHeight!)        /// extra gap for better aesthetics
-//            
-//            keyboardScalor =
-//                (CGFloat(rows - keyboardCellHeightMultiple) - gap) / CGFloat(rows) //print("scale: \(keyboardScalor)")
-//            
             textFieldDisplayed = true
-//            downcastLayout!.calculateAndResetSizes()
-//            reloadCV(); firstReloadForKeyboard = true
-            
             timetableVC.reloadWithDelay(after: 0)
         }
     }

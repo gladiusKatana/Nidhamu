@@ -19,13 +19,13 @@ class BaseCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
     
-    override func prepareForReuse() {
+    override func prepareForReuse() {   //if xyCoordinate == [0,0] {print("CR")}
         super.prepareForReuse()
-        
+
         titleLabel.text = "" // use if title label text is ever set to a non-blank string
         titleLabel.font = defaultTimetableCellFont
         
-        //backgroundColor = .clear
+        backgroundColor = .clear; cellColour = .clear
         layer.borderColor = UIColor.clear.cgColor
     }
 }

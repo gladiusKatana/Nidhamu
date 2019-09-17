@@ -23,7 +23,7 @@ extension CollectionVC {
     }
     
     
-    func rePresentThenReload(vc: CollectionVC) {                            // reload again (and /or potentially re-present)
+    func rePresentThenReload(vc: CollectionVC) {                            // re-present the collection view then reload its data
         
         /*if previousOrientation == "landscape" && currentOrientation == "portrait" // (needed when, e.g., toggling views while in landscape)
          || firstReenteredForeground
@@ -32,10 +32,6 @@ extension CollectionVC {
         //if vcType == .hours {print("\n---------------------presented then reloaded \(vc.vcType) cv ")}
         
         setupTitleAndPresentViewController(vc: vc) { () -> () in
-            
-            //reloadWithDelay(after: 0.5)                                   //+ 0.1 //+ 0.2  //time delays previously tried, on an iPhone 7*
-            //reloadCV()
-            
             rePresentedVCManually = false
         }
         

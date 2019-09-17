@@ -23,6 +23,7 @@ extension CollectionVC {
                 if let index = navigationItem.rightBarButtonItems?.firstIndex(of: button) {
                     button.tintColor = barButtonColours[index]
                 }
+                else {print("error with button index")}
             }
         }
         
@@ -40,7 +41,7 @@ extension CollectionVC {
     }
     
     @objc func reloadCVWrapperMethod() {
-        print("*")
+        //print("*")
         reloadCV()
     }
     

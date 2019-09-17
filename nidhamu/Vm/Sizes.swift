@@ -27,6 +27,8 @@ extension CustomFlowLayout {
             }                                   //* default frame is overridden anyway (see above comment); hence its initialization with all 0's
         }
         
+        if topVC.vcType != .hours {keyboardHeight = 0}
+        
         let gap = CGFloat(5)                    /// extra gap for better aesthetics
         let autofitWidth = CGFloat(frame.width) / CGFloat(cols) - hSpace
         let autoFitHeight = CGFloat(Double(frame.height - keyboardHeight - gap) - navBarHeight - statusBarHeight) / CGFloat(rows) - vSpace
