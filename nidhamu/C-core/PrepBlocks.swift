@@ -12,8 +12,9 @@ extension CollectionVC {
                 if !savedTimeBlocksForProcessing {
                     eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
                     
-                    //; print("\n*eventsInBlock \(eventsInBlockToBeProcessed)")
-                    //print("events left (initial): \(eventsInBlockToBeProcessed)\n");      print("paths to process: \(pathsToProcess)")
+//                    ; print("\n*eventsInBlock \(eventsInBlockToBeProcessed)")
+//                    print("events left (initial): \(eventsInBlockToBeProcessed)\n")
+//                    print("paths to process: \(pathsToProcess)")
                     
                     pathsToProcess = pathsToProcess.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
                     

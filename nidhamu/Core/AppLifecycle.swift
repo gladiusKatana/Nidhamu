@@ -6,7 +6,7 @@ extension AppDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {                     //print("🔅became active")/**/
         checkOrientation()
         
-        defaultLoadData(showDate: true)
+        defaultLoadData(showDate: false)
         topVC.reloadCV()
     }
     
@@ -22,7 +22,7 @@ extension AppDelegate {
     
     func applicationWillResignActive(_ application: UIApplication) {                    //customApplicationStatusPrint("⏸will resign active")
         if !classifierViewDisplayed {
-            defaultSaveData(showDate: false, pryntEvents: false)
+            defaultSaveData(saveDate: true, showDate: false, pryntEvents: false)
         }
         
         if eventsAtIndexPath.values.count > 0 {  // autorotate for smoother event-tagging IF user dismisses app, then resumes it hours/days later

@@ -37,7 +37,7 @@ class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
     }
     
     func exitEventTaggingMode() {
-        defaultSaveData(showDate: false, pryntEvents: true)
+        defaultSaveData(saveDate: true, showDate: false, pryntEvents: false)
         defaultLoadData(showDate: false)
         AppUtility.lockOrientation(.all)                    //; print("rotated back")
         thereWillBeARowException = false

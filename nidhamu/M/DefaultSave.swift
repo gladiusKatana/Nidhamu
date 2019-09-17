@@ -1,7 +1,7 @@
 // DefaultSave      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
+func defaultSaveData(saveDate: Bool, showDate: Bool, pryntEvents: Bool) {
     
     if showDate {print(formattedDateString(Date(), roundedDown: false, prefix: "✔︎saved to your device on", suffix: "", dateFormat: .fullDayWithYear))}
     else {print("✔︎saved")}
@@ -47,14 +47,17 @@ func defaultSaveData(showDate: Bool, pryntEvents: Bool) {
     eventStatusArrays = applySortingTransform(eventStatusArrays, transform: sortingTransform) as! [[Int]]
     
     if pryntEvents {printEventsTabularized()} //{pryntSortedSavedArrays()}
-    setForKeys(defaults)
+    setForKeys(defaults, saveDate: saveDate)
 }
 
-func setForKeys(_ defaults: UserDefaults) {
-    let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: false)
-    lastLoginDateComponents = [year, month, day, weekday, hour, minute]
-    defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")
+func setForKeys(_ defaults: UserDefaults, saveDate: Bool) {
     
+    if saveDate {
+        let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: false)
+        lastLoginDateComponents = [year, month, day, weekday, hour, minute]
+        defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")
+    }
+        
     defaults.set(timeBlockPaths, forKey: "savedTimeBlockPaths")
     defaults.set(eventDescriptionArrays, forKey: "savedEventDescriptionArrays")
     defaults.set(eventDateArrays, forKey: "savedEventDateArrays")

@@ -43,7 +43,7 @@ extension CollectionVC {
             
             if !savedTimeBlocksForProcessing {
                 if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}         //* see note below
-                if !pathsToProcess.contains([column, row]) {pathsToProcess.append([column, row]); print("---adding to paths-to-process---")}
+                if !pathsToProcess.contains([column, row]) {pathsToProcess.append([column, row])}
             }
             
             if row >= 19 {thereWillBeARowException = true}
