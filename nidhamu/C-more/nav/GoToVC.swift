@@ -4,12 +4,12 @@ import UIKit
 extension CollectionVC {
     
     
-    func gotoView(vc: CollectionVC) {                                               //print("\nshowing vc \(vc)")
+    func gotoView(vc: CollectionVC) {                                                       //print("\nshowing vc \(vc)")
         
-        if topVC != vc || !rePresentedVCManually {
+        if topVC != vc || rePresentedVCManually {
             
-            if vc == todoListVC {                                                   //print("time block being tested: \(timeBlock)")
-                if let events = eventsAtIndexPath[timeBlock] {                      //eventsAt IndexPath[imeBlock]
+            if vc == todoListVC {                                                           //print("time block being tested: \(timeBlock)")
+                if let events = eventsAtIndexPath[timeBlock] {                              //eventsAt IndexPath[imeBlock]
                     todoListVC.downcastLayout!.rows = events.count
                 }
             }

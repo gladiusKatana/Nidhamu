@@ -5,13 +5,12 @@
  
  (1st commit)                                       July. 08 2019
 
- bug: todo list does not refresh when returning (related to rePresentedVCManually)
- text field appear above keyboard
  
+
+ text field appear above keyboard
  multi-event blocks print with \ns                                                      data
  mark item recurring (remove item by default)
  timetableVC deferral-date selection mode
-
  ___________________________________________________Mon Sept 16
  
 
@@ -21,7 +20,7 @@
  CSV email archived data
  Numbers template
  cascading deferrals
- ___________________________________________________Wed Sept 18         LAUNCH BETA
+ ___________________________________________________Wed Sept 18                         LAUNCH BETA
  
  
  

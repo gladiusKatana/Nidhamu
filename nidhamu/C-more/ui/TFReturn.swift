@@ -30,10 +30,9 @@ extension CollectionVC {
         else {
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
             
-            switch vcType {
-            //case .hours:      print("event entered (timetable): \(textEntered)")
-            case .todoList:     gotoView(vc: todoListVC)                // re-presents view & reloads its data, to display updated todo list
-            default: break //print("unrecognized collection view type")
+            if vcType == .todoList {
+                rePresentedVCManually = true
+                gotoView(vc: todoListVC)                // re-presents view & reloads its data, to display updated todo list
             }
         }
         

@@ -3,7 +3,7 @@ import UIKit
 
 extension CustomFlowLayout {
     
-    override func prepare() {                                                               print(".", terminator: "")
+    override func prepare() {                                                               //print(".", terminator: "")
         
         checkOrientation()
         
