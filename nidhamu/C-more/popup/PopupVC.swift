@@ -23,7 +23,7 @@ class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()                                 //; collectionView.frame = downcastLayout!.customFrame
         
-        collectionView.backgroundColor = .white //.clear    // * experiment with:  why do i see this colour at all, upon rotation?
+        collectionView.backgroundColor = iosSettingsGray    // * experiment with:  why do i see this colour at all, upon rotation?
         collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.popupReuseIdentifier)
         collectionView?.isUserInteractionEnabled = true
         collectionView?.isScrollEnabled = true

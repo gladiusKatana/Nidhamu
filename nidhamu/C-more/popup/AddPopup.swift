@@ -22,7 +22,7 @@ extension CollectionVC {
                 let wid = cellWidth * cols * widthMultiplier
                 
                 if column >= 6 {x = cellWidth * CGFloat(column - 2)}
-                if row > 21 {y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)}
+                if row > 22 {y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)}
                 
                 let popupCollectionViewFrame = CGRect(x: x, y: y, width: wid, height: cellHeight * 5)
                 classifierVC.downcastLayout?.customFrame = popupCollectionViewFrame
@@ -38,7 +38,6 @@ extension CollectionVC {
                 eventRecurringSwitchView = PopupSwitchView(frame:
                     CGRect(x: x, y: y + popupCollectionViewFrame.height,
                            width: wid, height: switchViewHeight))                   ; eventRecurringSwitchView.backgroundColor = headerColour
-                
                 timetableVC.view.addSubview(classifierVC.view)                      //; print("----------------adding popup")
                 timetableVC.view.addSubview(eventRecurringSwitchView)               //; print("adding switch")
                 

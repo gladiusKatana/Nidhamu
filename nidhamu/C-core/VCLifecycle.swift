@@ -4,7 +4,7 @@ import UIKit
 extension CollectionVC {
     
     override func viewDidLoad() {                           super.viewDidLoad()
-        if vcType == .todoList {collectionView.backgroundColor = bluishGray}
+        if vcType == .todoList {collectionView.backgroundColor = .white}
         else {collectionView.backgroundColor = windowBackgroundColour}
         collectionView.bounces = false
         

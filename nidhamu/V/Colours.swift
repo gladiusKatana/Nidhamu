@@ -13,10 +13,10 @@ var randomColours =     // used in TestSquare.swift
 var windowBackgroundColour = icyBlue
 
 //let num = CGFloat(42)
-var headerColour = UIColor.white //iosSettingsGray //UIColor.rgb(num, g: num, b: num, a: 1)
+var headerColour = UIColor.white
 
 var cellDefaultColour = icyBlue
-var cellTextDefaultColour = UIColor.black;                              var headerTextDefaultColour = UIColor.black
+var cellTextDefaultColour = UIColor.black;                          var headerTextDefaultColour = UIColor.black
 
 var lastWeekColour = darkerIce
 var eventAddingColour = lightNavy
@@ -35,8 +35,8 @@ var navyBlue = UIColor.rgb(0, g: 50, b: 96, a: 1)
 var lightNavy = UIColor.rgb(0, g: 56, b: 116, a: 0.75)
 
 
-var bluishGray = UIColor.white //UIColor.rgb(60, g: 80, b: 120, a: 1)
-var grayTwo = UIColor.rgb(0, g: 0, b: 0, a: 0.2);                   var grayFive = UIColor.rgb(0, g: 0, b: 0, a: 0.3)
+//var bluishGray = UIColor.rgb(60, g: 80, b: 120, a: 1)
+var grayTwo = UIColor.rgb(0, g: 0, b: 0, a: 0.2);                   var grayThree = UIColor.rgb(0, g: 0, b: 0, a: 0.3)
 var graySeven = UIColor.rgb(0, g: 0, b: 0, a: 0.7)
 var iosSettingsGray = UIColor.rgb(240, g: 240, b: 247, a: 1)
 

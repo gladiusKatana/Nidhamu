@@ -18,9 +18,9 @@ extension PopupMenuVC {
             cell.titleLabel.textColor = headerTextDefaultColour
         }
         else {
-            cell.backgroundColor = .clear//.lightGray
+            cell.backgroundColor = platinum
             cell.titleLabel.text = EventStatus.allCases[row - 1].caseName()
-            cell.titleLabel.textColor = .black//headerColour
+            cell.titleLabel.textColor = .black
         }
         
         return cell

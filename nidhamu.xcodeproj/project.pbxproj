@@ -371,11 +371,11 @@
 		0673571B2300753900DC2CAC /* popup */ = {
 			isa = PBXGroup;
 			children = (
+				06A396562318B0F5008CFBD7 /* SwitchVC.swift */,
 				0625169622D6CF4200EBB4C8 /* TapPopup.swift */,
 				0682A49022FE5F0A00CE8075 /* AddPopup.swift */,
 				06AA5D18231727C500DC04FD /* PCellPath.swift */,
 				0625169422D6CF4200EBB4C8 /* PopupVC.swift */,
-				06A396562318B0F5008CFBD7 /* SwitchVC.swift */,
 			);
 			path = popup;
 			sourceTree = "<group>";

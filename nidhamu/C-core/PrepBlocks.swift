@@ -22,7 +22,7 @@ extension CollectionVC {
                     //; print("sorted paths: \(pathsToProcess)")
                     //for events in eventArraysToProcess {print("sorted arrays: \(sortedDescriptions)")}
                     
-                    self.tagEventsSinceLastLogin(layout: layout)
+                    tagEventsSinceLastLogin(layout: layout)
                     
                     ///if !savedTimeBlocksForProcessing {
                     if thereWillBeARowException {

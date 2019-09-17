@@ -4,10 +4,10 @@ import UIKit
 class PopupSwitchView: UIView {
     
     var popupSwitch: UISwitch = {
-        let popupSwitch = UISwitch()
-        popupSwitch.tintColor = grayTwo
-        popupSwitch.onTintColor = .lightGray
-        popupSwitch.thumbTintColor = .white
+        let popupSwitch = UISwitch();       var switchColour = platinum
+        popupSwitch.tintColor = switchColour
+        popupSwitch.thumbTintColor = switchColour
+        popupSwitch.onTintColor = iosSettingsGray
         popupSwitch.addTarget(self, action: #selector(switchFlipped), for: .valueChanged)
         popupSwitch.translatesAutoresizingMaskIntoConstraints = false
         return popupSwitch
