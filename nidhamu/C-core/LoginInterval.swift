@@ -26,8 +26,8 @@ extension CollectionVC {
                 prepareToProcessEventsSinceLastLogin(cell: cell, column: column, row: row)
             }
             
-            if formattedDateString(Date(), roundedDown: true, prefix: "", suffix: "", dateFormat: .hourlyTimeBlock)
-                == formattedDateString(cell.cellDate, roundedDown: true, prefix: "", suffix: "", dateFormat: .hourlyTimeBlock) {
+            if Calendar.current.component(.hour, from: Date()) == Calendar.current.component(.hour, from: cell.cellDate)
+            && Calendar.current.component(.weekday, from: Date()) == Calendar.current.component(.weekday, from: cell.cellDate) {
                 cell.titleLabel.text = "now"    //; print("now-cell: [\(column), \(row)]")
                 //cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
             }

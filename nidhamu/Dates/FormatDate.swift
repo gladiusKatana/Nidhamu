@@ -8,7 +8,9 @@ func formattedDateString(_ date: Date, roundedDown: Bool, prefix: String, suffix
     
     var minTwoDigits = "\(minute)";             if minute < 10 {minTwoDigits = "0\(minute)"}
     var ampm = "";                              if hour < 13 {ampm = "am"} else {ampm = "pm"} // since hr is by default 24hr
-    let hr = (hour < 13) ? hour : hour - 12     // * make it say 12:XXAM rather than O:XX
+    
+    var hr = (hour < 13) ? hour : hour - 12
+    if hr == 0 {hr = 12} // remember, this is just to make a string representing the date, not the date itself
     
     switch dateFormat {
     case .fullDay:             return "\(prefix) \(wkdy). \(month) \(day), \(hr):\(minTwoDigits)\(ampm)\(suffix)"
