@@ -16,29 +16,27 @@ extension CollectionVC {
                 cell.backgroundColor = niceOrangeLight  //; cell.cellColour = niceOrangeLight
                 //animateCellColourBack(cell: cell, delay: 3, duration: 10)
                 //}
-                    
-                if Calendar.current.component(.hour, from: lastLoginDate) == Calendar.current.component(.hour, from: cell.cellDate)
-                    && Calendar.current.component(.weekday, from: lastLoginDate) == Calendar.current.component(.weekday, from: cell.cellDate) {
-                    
-                    cell.titleLabel.text = "last login"
-                    cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
-                }
                 
+                checkDateStringMatchAndPrintLabel("last login", date: lastLoginDate, cell: cell)
                 prepareToProcessEventsSinceLastLogin(cell: cell, column: column, row: row)
             }
             
-            if Calendar.current.component(.hour, from: Date()) == Calendar.current.component(.hour, from: cell.cellDate)
-                && Calendar.current.component(.weekday, from: Date()) == Calendar.current.component(.weekday, from: cell.cellDate) {
-                cell.titleLabel.text = "now"    //; print("now-cell: [\(column), \(row)]")
-                //cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
-            }
+            checkDateStringMatchAndPrintLabel("now", date: Date(), cell: cell)
+        }
+    }
+    
+    func checkDateStringMatchAndPrintLabel(_ label: String, date: Date, cell: CustomCell) {
+        if Calendar.current.component(.hour, from: cell.cellDate) == Calendar.current.component(.hour, from: date)
+            && Calendar.current.component(.weekday, from: cell.cellDate) == Calendar.current.component(.weekday, from: date) {
+            cell.titleLabel.text = label
+            cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
         }
     }
     
     func prepareToProcessEventsSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
         
         if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {
-            
+
             //cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             
             if !savedTimeBlocksForProcessing {
