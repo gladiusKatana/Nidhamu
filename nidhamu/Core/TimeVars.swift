@@ -25,8 +25,8 @@ var eventStatusArrays = [[Int]](); /* Populated with raw values of enum EventSta
 
 var timerForShowScrollIndicator: Timer?
 
-var defaultPathOutOfView = [-3, -3]
-var selectedTimeBlockPath = defaultPathOutOfView;   var previousSelectedTimeBlockPath = defaultPathOutOfView
+var defaultPathOutOfView = [-1, -1]
+var selectedTimeBlockPath = defaultPathOutOfView;   var previousTimeBlockPathSelected = defaultPathOutOfView
 
 var nowRow = 0;                                     var nowColumn = 0
 var eventIndex = 0;                                 var eventsInBlockToBeProcessed = 0

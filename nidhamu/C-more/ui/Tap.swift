@@ -21,8 +21,8 @@ extension CollectionVC {
                 timeBlock = TimeBlock(values:(column, row))
                 
                 if eventsAtIndexPath[timeBlock] == nil || textFieldDisplayed {
-                    /*if previousSelectedTimeBlockPath == defaultPathOutOfView {
-                     previousSelectedTimeBlockPath = selectedTimeBlockPath
+                    /*if previousTimeBlockPathSelected == defaultPathOutOfView {
+                     previousTimeBlockPathSelected = selectedTimeBlockPath
                      DispatchQueue.main.asyncAfter(deadline: .now()) {
                      UIView.animate(withDuration: 1, delay: 0,                                      //! factor/put in Animations.swift
                      usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveLinear, animations: {

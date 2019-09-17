@@ -48,6 +48,7 @@ extension CollectionVC {
             processEventsBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)
         }
 //        showTimeInTitleLabels(date: cell.cellDate, cell: cell)
+//        showDateInTitleLabels(date: cell.cellDate, cell: cell)
     }
 }
 

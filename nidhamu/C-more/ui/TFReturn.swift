@@ -25,15 +25,17 @@ extension CollectionVC {
             }
             
             animateSelectedCellColourBack()
-            previousSelectedTimeBlockPath = defaultPathOutOfView
+            previousTimeBlockPathSelected = defaultPathOutOfView
         }
         else {
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
             
             if vcType == .todoList {
                 rePresentedVCManually = true
-                gotoView(vc: todoListVC)                // re-presents view & reloads its data, to display updated todo list
+                gotoView(vc: todoListVC)                                    // re-presents view & reloads its data, to display updated todo list
             }
+            
+            selectedTimeBlockPath = defaultPathOutOfView
         }
         
         textField.text = ""

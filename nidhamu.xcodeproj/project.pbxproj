@@ -203,6 +203,7 @@
 				06150A37232C2BBE004611AD /* FormatDate.swift */,
 				06164A2E22D6D19000DA608D /* CellDates.swift */,
 				062BC1002314B43600AC852F /* SetCellDate.swift */,
+				0631914322E2C5F5004DE476 /* LoginInterval.swift */,
 			);
 			path = Dates;
 			sourceTree = "<group>";
@@ -387,7 +388,6 @@
 				0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */,
 				0625169B22D6CF4200EBB4C8 /* CellPath.swift */,
 				062516A622D6CF4200EBB4C8 /* CellSetup.swift */,
-				0631914322E2C5F5004DE476 /* LoginInterval.swift */,
 				06B872062329CA0700512B21 /* PrepBlocks.swift */,
 				0625169822D6CF4200EBB4C8 /* TagEvents.swift */,
 			);

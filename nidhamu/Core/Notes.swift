@@ -6,11 +6,12 @@
  (1st commit)                                       July. 08 2019
 
  
- 
- text field appear above keyboard
+                                                                 
  multi-event blocks print with \ns                                                      data
  mark item recurring (remove item by default)
  timetableVC deferral-date selection mode
+ 
+ text field appear above keyboard                                                       ui
  ___________________________________________________Mon Sept 16
  
  
