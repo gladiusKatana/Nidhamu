@@ -3,55 +3,43 @@ import UIKit
 
 extension CollectionVC {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        collectionView.backgroundColor = windowBackgroundColour                 // shown on top of UIWindow's background colour
-        if vcType == .todoList {collectionView.backgroundColor = bluishGray}
+    override func viewDidLoad() {                           super.viewDidLoad()
+        collectionView.backgroundColor = windowBackgroundColour // shown on top of UIWindow's background colour
         collectionView.bounces = false
-        statusBarHeightChangeNotificationSetup()
-        
-        //if topVC.vcType != .initial { // try uncommenting this & look at the console
         setTopViewController()
         var str = ""
-        if !consoleLegendAppeared {str = loadSymbolLegend} else {str = ""}  ; print("💾\(topVC.vcType)\(str)")// disk emoji means loaded 💾
-        //}
+        if !consoleLegendAppeared {str = loadSymbolLegend}  else {str = ""}  ; print("💾\(topVC.vcType)\(str)")// disk emoji means loaded 💾
         
-        periodicDateRefresh(){kickoffTimer()}                   // checks the date then does the timer kickoff ('starts on the 0th callback')
-        //kickoffTimer()                                        // does the timer kickoff then checks the date ('starts on the 1st callback')
+        statusBarHeightChangeNotificationSetup()
         keyboardNotificationSetup()
+        periodicDateRefresh(){kickoffTimer()}               // checks the date then does the timer kickoff ('starts on the 0th callback')
+        //kickoffTimer()                                    // does the timer kickoff then checks the date ('starts on the 1st callback')
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if vcType == .hours {
-            setupViewTitle("Timetable", numLines: 1, alignment: .left)
-        } else {                                                        // if vcType is the other nav-controller-embedded one, ie todoList VC
+    override func viewWillAppear(_ animated: Bool) {        super.viewWillAppear(animated)
+        if vcType == .hours {setupViewTitle("Timetable", numLines: 1, alignment: .left)}
+        else { // if vcType is the other nav-controller-embedded one, ie todoList VC
             setupViewTitle(formattedDateString(selectedCellDate, roundedDown: true, prefix: "Tasks", suffix: "", dateFormat: .hourlyTimeBlock), numLines: 1, alignment: .left)
         }
         setupNavBarButtons(grayTwo, atIndex: colourIndex)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    override func viewDidAppear(_ animated: Bool) {         super.viewDidAppear(animated)
         if vcType != .eventClassifier {
             setTopViewController()
             reloadCV()
-            //reloadWithDelay(after: 0.02)//0.02?
         }
         
-        setupPinching()
+        if vcType == .todoList {setupPinchToExit()}
         
-        /*if rePresentedVCManually {
+        if rePresentedVCManually {
             var str = ""
             if !consoleLegendAppeared {str = appearSymbolLegend} else {str = ""}
-            consoleLegendAppeared = true                      ; print("🏞\(topVC.vcType)\(str)") // picture-emoji means appeared 🏞
-        }*/
+            consoleLegendAppeared = true                    ; print("🏞\(topVC.vcType)\(str)") // picture-emoji means appeared 🏞
+        }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
+    override func viewWillDisappear(_ animated: Bool) {     super.viewWillDisappear(animated)
         if vcType == .todoList {
             if textFieldDisplayed {
                 eventField.resignFirstResponder()

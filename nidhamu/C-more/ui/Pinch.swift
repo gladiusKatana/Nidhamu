@@ -3,13 +3,12 @@ import UIKit
 
 extension CollectionVC {
     
-    func setupPinching() {
-        if vcType == .todoList {
-            let dismissPinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
-            self.view.addGestureRecognizer(dismissPinch)
-        }
+    
+    func setupPinchToExit() {
         
-        if vcType == .hours {justPinched = false}
+            dismissPinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
+            self.view.addGestureRecognizer(dismissPinch)
+            justPinched = false
     }
     
     
@@ -18,5 +17,6 @@ extension CollectionVC {
             gotoView(vc: timetableVC)
         }
     }
+    
 }
 

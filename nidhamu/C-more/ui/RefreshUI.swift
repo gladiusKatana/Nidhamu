@@ -23,23 +23,23 @@ extension CollectionVC {
     }
     
     
-    func rePresentThenReload(vc: CollectionVC) {                            // re-present the collection view then reload its data
-        
-        /*if previousOrientation == "landscape" && currentOrientation == "portrait" // (needed when, e.g., toggling views while in landscape)
-         || firstReenteredForeground
-         {*/
-        
-        //if vcType == .hours {print("\n---------------------presented then reloaded \(vc.vcType) cv ")}
-        
-        setupTitleAndPresentViewController(vc: vc) { () -> () in
-            rePresentedVCManually = false
-        }
-        
-        /*} else {
-         previousOrientation = currentOrientation
-         reloadCV() //reloadWithDelay(after: 0.02)//?use delay, as in above completion block? (*will test over time, with different devices)
-         }*/
-        
-    }
+//    func rePresentThenReload(vc: CollectionVC) {                            // re-present the collection view then reload its data
+//        
+//        /*if previousOrientation == "landscape" && currentOrientation == "portrait" // (needed when, e.g., toggling views while in landscape)
+//         || firstReenteredForeground
+//         {*/
+//        
+//        //if vcType == .hours {print("\n---------------------presented then reloaded \(vc.vcType) cv ")}
+//        
+//        setupTitleAndPresentViewController(vc: vc) { () -> () in
+//            rePresentedVCManually = false
+//        }
+//        
+//        /*} else {
+//         previousOrientation = currentOrientation
+//         reloadCV() //reloadWithDelay(after: 0.02)//?use delay, as in above completion block? (*will test over time, with different devices)
+//         }*/
+//        
+//    }
 }
 

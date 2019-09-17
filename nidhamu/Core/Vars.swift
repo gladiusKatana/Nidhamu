@@ -5,6 +5,8 @@ var globalKeyWindow = UIApplication.shared.keyWindow!
 
 var navController: UINavigationController? = UINavigationController()
 
+var dismissPinch = UIPinchGestureRecognizer()
+
 var xOffSet = CGFloat(0);               var yOffset = CGFloat(0)
 var keyboardHeight = CGFloat(0)
 var textFieldY = CGFloat(0)

@@ -7,6 +7,7 @@
 
  
 
+ 
  text field appear above keyboard
  multi-event blocks print with \ns                                                      data
  mark item recurring (remove item by default)
@@ -14,6 +15,7 @@
  ___________________________________________________Mon Sept 16
  
 
+ 
  
  eventsAtDate
  archive data (eventsAtIndexPath; eventsAtDate)
@@ -24,11 +26,13 @@
  
  
  
+ 
  list VC (today items)                                                                  UX
  list VC (deadlineless items)
  morn/aft/eve/nite VC
  calendarVC; populate with eventsAtDate
  ___________________________________________________Fri Sept 20
+ 
  
  
  

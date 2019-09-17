@@ -17,7 +17,11 @@ extension CustomFlowLayout {
                 eventArraysToProcess = []; pathsToProcess = []
             }
             
-            topVC.rePresentThenReload(vc: topVC)
+            ///topVC.rePresentThenReload(vc: topVC)
+            topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in
+                rePresentedVCManually = false
+            }
+            
         }
         else {
             if topVC.vcType == .hours {processCurrentDate()}
