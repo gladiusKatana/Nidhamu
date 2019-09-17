@@ -6,7 +6,6 @@
  (1st commit)                                       July. 08 2019
 
  
-
  
  text field appear above keyboard
  multi-event blocks print with \ns                                                      data
@@ -14,7 +13,6 @@
  timetableVC deferral-date selection mode
  ___________________________________________________Mon Sept 16
  
-
  
  
  eventsAtDate
@@ -26,13 +24,11 @@
  
  
  
- 
  list VC (today items)                                                                  UX
  list VC (deadlineless items)
  morn/aft/eve/nite VC
  calendarVC; populate with eventsAtDate
  ___________________________________________________Fri Sept 20
- 
  
  
  
