@@ -3,6 +3,7 @@ import UIKit
 
 struct AppUtility {
     
+    
     static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             appDelegate.orientationLock = orientation
@@ -11,6 +12,7 @@ struct AppUtility {
             print("[AppUtility] error casting app delegate instance")
         }
     }
+    
     
     static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) {
         self.lockOrientation(orientation)

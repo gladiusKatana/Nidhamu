@@ -13,7 +13,7 @@ extension CollectionVC {
     
     func formatAndPresentTextField(dateString: String) {
         let fieldWidth = CGFloat(325)
-//        let fieldHeight = CGFloat(2 * timetableLayout.cellHeight!)
+        ///let fieldHeight = CGFloat(2 * timetableLayout.cellHeight!)
         let halfWidth = (timetableLayout.cellWidth! + globalKeyWindow.frame.width - fieldWidth) / 2
         
         eventField.placeholder = dateString
@@ -26,7 +26,7 @@ extension CollectionVC {
     
     func rePresentTextField() {                                                 //print("t")
         if textFieldDisplayed {                                                 //eventField.placeholder = "..."
-//            eventField.removeFromSuperview()
+            ///eventField.removeFromSuperview()
             if let placeholder = eventField.placeholder {                       //print("re-presented text field from prepare()")
                 formatAndPresentTextField(dateString: placeholder)
             }

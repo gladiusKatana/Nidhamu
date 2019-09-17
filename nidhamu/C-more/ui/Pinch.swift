@@ -6,16 +6,19 @@ extension CollectionVC {
     
     func setupPinchToExit() {
         
-            dismissPinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
-            self.view.addGestureRecognizer(dismissPinch)
-            justPinched = false
+        dismissPinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
+        self.view.addGestureRecognizer(dismissPinch)
+        justPinched = false
+        
     }
     
     
     @objc func handlePinch() {
+        
         if !justPinched { justPinched = true
             gotoView(vc: timetableVC)
         }
+        
     }
     
 }

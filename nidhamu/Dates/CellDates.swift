@@ -47,8 +47,8 @@ extension CollectionVC {
                                         cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
             processEventsBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)
         }
-//        showTimeInTitleLabels(date: cell.cellDate, cell: cell)
-//        showDateInTitleLabels(date: cell.cellDate, cell: cell)
+        //showTimeInTitleLabels(date: cell.cellDate, cell: cell)
+        //showDateInTitleLabels(date: cell.cellDate, cell: cell)
     }
 }
 

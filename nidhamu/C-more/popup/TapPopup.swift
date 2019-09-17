@@ -18,9 +18,7 @@ extension PopupMenuVC {
                 
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
                 eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
-                
-                //print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
-                
+                ///print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
             } else {print("no item")}
             
             if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
@@ -37,7 +35,7 @@ extension PopupMenuVC {
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                
+
                 classifierVC.view.removeFromSuperview()                 //; print("                removing popup")
                 eventRecurringSwitchView.removeFromSuperview()          //; print("removing switch")
                 classifierVC.resignFirstResponder()
@@ -45,13 +43,12 @@ extension PopupMenuVC {
                 classifierViewDisplayed = false                         //print("now paths to process: \(pathsToProcess)")
                 defaultSaveData(saveDate: false, showDate: false, pryntEvents: true)
                 
-//                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    timetableVC.reloadCV()                              //; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
-                    timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
-//                }
+                timetableVC.reloadCV()                              //; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
+                timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
                 
                 if pathsToProcess.isEmpty {self.exitEventTaggingMode()}
             }
+            
         } else {print("selected header")}
     }
 }

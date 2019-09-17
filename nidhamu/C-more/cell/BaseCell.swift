@@ -21,7 +21,7 @@ class BaseCell: UICollectionViewCell {
     
     override func prepareForReuse() {   //if xyCoordinate == [0,0] {print("CR")}
         super.prepareForReuse()
-
+        
         titleLabel.text = "" // use if title label text is ever set to a non-blank string
         titleLabel.font = defaultTimetableCellFont
         

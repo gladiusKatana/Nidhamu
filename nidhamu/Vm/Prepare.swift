@@ -11,11 +11,6 @@ extension CustomFlowLayout {
         if previousOrientation != currentOrientation {
             previousOrientation = currentOrientation
             
-//            if eventArraysToProcess.count > 0 {
-//                saved TimeBlocksForProcessing = false
-//                eventArraysToProcess = []; pathsToProcess = []
-//            }
-            
             topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in
                 rePresentedVCManually = false
             }

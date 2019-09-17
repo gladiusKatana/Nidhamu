@@ -15,6 +15,6 @@ extension CollectionVC {
             //self.collectionView.reloadData()
         }
     }
-
+    
 }
 

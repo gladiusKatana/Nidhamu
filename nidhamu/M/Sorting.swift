@@ -33,3 +33,15 @@ func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
     return output // return the input, mutated (sorted); would make this a mutating func, but it's global
 }
 
+func lastEventFromPath(_ path: [Int]) -> SimpleEvent {
+    
+    let err = "no item @ path [sort attempt]"
+    var lastEvent = SimpleEvent(eventDescription: err, eventDate: Date(), eventStatus: .done) // arbitrary parameters to satisfy initializer
+    
+    if let eventsToProcess = eventsAtIndexPath[TimeBlock(values:(path[0], path[1]))] {
+        lastEvent = eventsToProcess.last!
+    }
+    else {print(err)}
+    
+    return lastEvent
+}

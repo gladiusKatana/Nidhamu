@@ -31,8 +31,6 @@ extension AppDelegate {
                 rotatedFromResignActive = true
             }
         } //else {print("no event items yet")}
-        
-//        saved TimeBlocksForProcessing = false
     }
     
     

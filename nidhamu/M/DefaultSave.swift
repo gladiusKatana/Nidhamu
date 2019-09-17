@@ -19,7 +19,7 @@ func defaultSaveData(saveDate: Bool, showDate: Bool, pryntEvents: Bool) {
         }
     }
     
-    sortedTimeBlockPaths = timeBlockPaths.sorted(by: {topVC.lastEventFromPath($0).eventDate < topVC.lastEventFromPath($1).eventDate})
+    sortedTimeBlockPaths = timeBlockPaths.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
     sortingTransform = findSortingTransform(timeBlockPaths, output: sortedTimeBlockPaths)           //; print("T:\(sortingTransform)\n")
     
     for vals in eventsAtIndexPath.values {
@@ -57,7 +57,7 @@ func setForKeys(_ defaults: UserDefaults, saveDate: Bool) {
         lastLoginDateComponents = [year, month, day, weekday, hour, minute]
         defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")
     }
-        
+    
     defaults.set(timeBlockPaths, forKey: "savedTimeBlockPaths")
     defaults.set(eventDescriptionArrays, forKey: "savedEventDescriptionArrays")
     defaults.set(eventDateArrays, forKey: "savedEventDateArrays")

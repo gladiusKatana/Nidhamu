@@ -24,7 +24,7 @@ extension CollectionVC {
                 }
             }
             
-            animateSelectedCellColourBack()
+            ///animateSelectedCellColourBack()
             previousTimeBlockPathSelected = defaultPathOutOfView
         }
         else {

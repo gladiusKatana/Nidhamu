@@ -14,9 +14,7 @@ extension CollectionVC {
         let barButtonColours = [graySeven, graySeven]   // buttons are dark by default, then greyed-out when their corresponding vc is presented
         
         for button in navigationItem.rightBarButtonItems! {
-            if button == reloadButton
-//                || button == todoListButton
-            {
+            if button == reloadButton /*|| button == todoListButton*/ {
                 button.tintColor = .clear
             }
             else {

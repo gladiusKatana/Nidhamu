@@ -21,11 +21,10 @@ func printEventsTabularized() { // optimized for console printing on an iPad Min
     var i = 0
     let formattedDatesArrays = formatDatesFromComponentsArray(eventDateArrays)
     let gap = "    "
-    let midGap = "         "
-    let bigGap = "\(gap)\(gap) "
-//    let threeGaps = "\(gap)\(gap)\(gap)"
+    ///let midGap = "         "
+    ///let bigGap = "\(gap)\(gap) "
     
-    print("\npath\(gap)description\(midGap)due date\(bigGap)status")
+    ///print("\npath\(gap)description\(midGap)due date\(bigGap)status")
     
     for _ in timeBlockPaths {
         let status = EventStatus(rawValue: eventStatusArrays[i].first!)!.caseName()
@@ -33,7 +32,7 @@ func printEventsTabularized() { // optimized for console printing on an iPad Min
         i += 1
     }
     
-//    print("\n")
+    //print("\n")
 }
 //             * only works for single-event time blocks; need to implement multiple-line printing for items (that is, (array)[i]'s in loop, ie SimpleEvent properties) whose sizes are > 1
 

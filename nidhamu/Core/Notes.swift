@@ -4,7 +4,7 @@
  todo_______________________________________________deadline__________________________(typeEtc)
  
  (1st commit)                                       July. 08 2019
-
+ 
  
  bug: OS interruption of event-tagging mode
  

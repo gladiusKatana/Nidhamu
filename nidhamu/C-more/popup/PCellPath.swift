@@ -12,7 +12,7 @@ extension PopupMenuVC {
         
         if row < customLayout.lockedHeaderRows
             //|| column < customLayout.lockedHeaderSections {           // our popup menu has no need for header columns
-            {
+        {
             cell.backgroundColor = headerColour
             cell.titleLabel.text = "Mark '\(globalEventIdentifier)':"   //"✔︎ Mark Event:" //← ⇦ ◄ ⬅️ // didn't find a large enough ascii arrow
             cell.titleLabel.textColor = headerTextDefaultColour
