@@ -6,8 +6,7 @@
  (1st commit)                                       July. 08 2019
  
  
- truncate long timeblock label with  …                                                  ui
- text field appear above keyboard
+ text field appear above keyboard                                                       ui
  
  mark item recurring (remove by default)                                                data
  timetableVC deferral-date selection mode
@@ -31,7 +30,7 @@
  
  
  
- block changing date via Settings app                                                   *
+ prevent user changing nowDate via Settings app                                                   *
  cascading deferrals                                                                    *
  darkMode                                                                               design
  buttons

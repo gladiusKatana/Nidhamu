@@ -13,11 +13,15 @@ extension CollectionVC {
             
             if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {
                 if events.count == 1 {
-                    cell.titleLabel.text = events[0].eventDescription
+                    let eventName = events[0].eventDescription
+                    cell.titleLabel.text = eventName
+                    
+                    let  truncTrailSize = truncationTrail.stringSize(font: cell.titleLabel.font)
+                    let limit = layout.cellWidth! - truncTrailSize.width
+                    
+                    cell.titleLabel.text = truncateString(eventName, sizeLimit: limit, font: cell.titleLabel.font)
                 }
-                else {
-                    cell.titleLabel.text = "(\(events.count))"
-                }
+                else {cell.titleLabel.text = "(\(events.count))"}
             }
             
         case .todoList:
@@ -42,4 +46,5 @@ extension CollectionVC {
         default: print("[timeBlockDateSetup(:)] unrecognized collection view type")}
     }
 }
+
 

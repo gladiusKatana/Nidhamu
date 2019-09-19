@@ -7,7 +7,7 @@ extension CustomFlowLayout {
         let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: true)
         //print(formattedDateString(Date(), comment: "process dates @ ", short: false))
         
-        nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows
+        nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows//for 'nowDate': tabular representation of now
         nowColumn = headerWeekdayTitles.firstIndex(of: String(weekday.prefix(3)))! + timetableLayout.lockedHeaderSections
         //; print("nowCell \([nowColumn, nowRow])")
         
