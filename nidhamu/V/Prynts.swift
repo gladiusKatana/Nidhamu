@@ -14,9 +14,9 @@ func printEventsTabularized() { // optimized for console printing on an iPad Min
         for event in events {
             let pathString = "\(path[0]),\(path[1])";  let maxPathString = " 24,7 "
             let excess = String(repeating: " ", count: maxPathString.count - "\(pathString)".count)
-            let spaces = String(repeating: " ", count: maxPathString.count)
+            let spaces = String(repeating: " ", count: maxPathString.count - 2)
             
-            let title = "\(event.eventDescription)"
+            let title = event.eventDescription
             let titleCount = "\(title)".count
             var bound = 27
             var count = (titleCount < bound) ? bound - titleCount : 0//titleCount - bound
@@ -29,17 +29,16 @@ func printEventsTabularized() { // optimized for console printing on an iPad Min
             count = (dateStringCount < bound) ? bound - dateStringCount : 0//dateStringCount - bound
             let dateExcess = String(repeating: " ", count: count)
             
-            let eventPropertiesString = "\(dateString)\(dateExcess)\(event.eventStatus)"
-            let restOfString = "\(gap)\(excess)\(title)\(titleExcess)\(eventPropertiesString)"
+            let restOfString = "\(gap)\(excess)\(title)\(titleExcess)\(dateString)\(dateExcess)\(event.eventStatus)"
             
             if j == 0  { print("\(pathString)\(restOfString)")}
             else {       print("\(spaces)\(restOfString)")}
             
+//            if j == events.count - 1 {print("")}
             j += 1
         }
         i += 1
-        if i == timeBlockPaths.count - 1 {print("")}
-    }; print("\n")
+    }//; print("\n")
 }
 
 ///Called when LOADING & REFRESHING DATE:

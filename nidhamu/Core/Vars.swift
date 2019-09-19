@@ -19,7 +19,7 @@ var reloadsWhileResized = 0
 
 var firstReenteredForeground = false;   var firstReloadForKeyboard = false
 var justPinched = false;                var rePresentedVCManually = true
-var consoleLegendAppeared = false;      var thereWillBeARowException = false
+var showConsoleLegend = false;      var thereWillBeARowException = false
 
 
 var currentOrientation = "orientation (landscape or portrait) for prepare-layout logic"             //* will change this to an enum at some point

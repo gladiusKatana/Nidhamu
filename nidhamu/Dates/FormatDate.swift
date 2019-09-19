@@ -13,16 +13,17 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     
     var yearString = ""
     if showYear && (month == "January" || month == "December") {yearString = "\(year), "}// also add || (Date() > last-login-date by > ~30 days)}
+    let prefix = (prefix == "") ? " " : "\(prefix) "
     
     switch dateFormat {
     
-    case .fullDay:                  return "\(prefix) \(weekday), \(month) \(day), \(yearString)\(hr):\(minTwoDigits)\(ampm)\(suffix)"
+    case .fullDay:                  return "\(prefix)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits)\(ampm)\(suffix)"
     
-    case .fullDayShortForm:         return "\(prefix) \(wkdy). \(mnth). \(day), \(yearString)\(hr)\(ampm)\(suffix)"
+    case .fullDayShortForm:         return "\(prefix)\(wkdy). \(mnth). \(day), \(yearString)\(hr)\(ampm)\(suffix)"
         
-    case .fullDayShortFormNoDots:   return "\(prefix) \(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString)\(hr)\(ampm)\(suffix)"
+    case .fullDayShortFormNoDots:   return "\(prefix)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString)\(hr)\(ampm)\(suffix)"
         
-    default: return "...\(prefix) \(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
+    default: return "\(prefix)\(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
     }
 }
 

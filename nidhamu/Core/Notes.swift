@@ -7,15 +7,11 @@
  
  
  
- multi-event blocks print with \ns                                                      data
  mark item recurring (remove item by default)
  timetableVC deferral-date selection mode
  
  text field appear above keyboard                                                       ui
- ___________________________________________________Tues Sept 17
- 
- 
- 
+
  eventsAtDate
  archive data (eventsAtIndexPath; eventsAtDate)
  CSV email archived data
@@ -25,11 +21,13 @@
  
  
  
+ 
  list VC (today items)                                                                  UX
  list VC (deadlineless items)
  morn/aft/eve/nite VC
  calendarVC; populate with eventsAtDate
  ___________________________________________________Fri Sept 20
+ 
  
  
  
@@ -42,4 +40,3 @@
  launchScreen
  icon
  ___________________________________________________asap*/
-
