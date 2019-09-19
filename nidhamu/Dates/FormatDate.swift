@@ -1,8 +1,7 @@
 // FormatDate       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-
-func formattedDateString(_ date: Date, roundedDown: Bool, prefix: String, suffix: String, dateFormat: CustomDateFormat) -> String {
+func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix: String, suffix: String, dateFormat: CustomDateFormat) -> String {
     
     let (year, month, mnth, day, weekday, wkdy, hour, minute) = displayDate(date, roundedDown: roundedDown)
     
@@ -12,28 +11,26 @@ func formattedDateString(_ date: Date, roundedDown: Bool, prefix: String, suffix
     var hr = (hour < 13) ? hour : hour - 12
     if hr == 0 {hr = 12} // remember, this is just to make a string representing the date, not the date itself
     
+    var yearString = ""
+    if showYear && (month == "January" || month == "December") {yearString = "\(year), "}// also add || (Date() > last-login-date by > ~30 days)}
+    
     switch dateFormat {
-    case .fullDay:             return "\(prefix) \(wkdy). \(month) \(day), \(hr):\(minTwoDigits)\(ampm)\(suffix)"
-    case .fullDayAbbreviated:  return "\(prefix) \(wkdy). \(mnth). \(day), \(hr)\(ampm)\(suffix)"  // mnth or month.prefix(3)
+    
+    case .fullDay:                  return "\(prefix) \(weekday), \(month) \(day), \(yearString)\(hr):\(minTwoDigits)\(ampm)\(suffix)"
+    
+    case .fullDayShortForm:         return "\(prefix) \(wkdy). \(mnth). \(day), \(yearString)\(hr)\(ampm)\(suffix)"
         
-    case .fullDayWithYear:
-        if month == "January" || month == "December" { // also may want to add || (Date() > last-login-date by > ~30 days)
-            return "\(prefix) \(weekday) \(month) \(day), \(year), \(hr):\(minTwoDigits)\(ampm)\(suffix)"
-        }
-        else {return "\(prefix) \(weekday) \(month) \(day), \(hr):\(minTwoDigits)\(ampm)\(suffix)"}
+    case .fullDayShortFormNoDots:   return "\(prefix) \(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString)\(hr)\(ampm)\(suffix)"
         
-    default: return "\(prefix) \(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
+    default: return "...\(prefix) \(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
     }
 }
 
-
 enum CustomDateFormat: Int {
-    case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayAbbreviated, fullDayWithYear
+    case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayShortForm, fullDayShortFormNoDots
 }
 
-
 func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
-    
     var formattedDatesArrays = [[String]]()
     
     for timeBlock in cells {
@@ -41,8 +38,8 @@ func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
         
         for eventDateComponents in timeBlock {
             let date = dateFromComponents(eventDateComponents)
-            let dateString = formattedDateString(date, roundedDown: true,
-                                                 prefix: "", suffix: " ", dateFormat: .fullDayAbbreviated) // 2nd space to match default left one
+            let dateString = formattedDateString(date, roundedDown: true, showYear: false,
+                                                 prefix: "", suffix: " ", dateFormat: .fullDayShortForm) // 2nd space to match default left one
             timeBlockDateStrings.append(dateString)
         }
         formattedDatesArrays.append(timeBlockDateStrings)

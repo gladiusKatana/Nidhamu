@@ -1,41 +1,59 @@
 // Prynts           ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
+///Called when SAVING:
+
+func printEventsTabularized() { // optimized for console printing on an iPad Mini 4, landscape orientation (using Duet app & metal iPad stand)
+    print(""); let gap = " "; var i = 0
+    
+    for path in timeBlockPaths {
+        
+        guard let events = eventsAtIndexPath[TimeBlock(values:(path[0], path[1]))] else {print("no events"); return}
+        var j = 0
+        
+        for event in events {
+            let pathString = "\(path[0]),\(path[1])";  let maxPathString = " 24,7 "
+            let excess = String(repeating: " ", count: maxPathString.count - "\(pathString)".count)
+            let spaces = String(repeating: " ", count: maxPathString.count)
+            
+            let title = "\(event.eventDescription)"
+            let titleCount = "\(title)".count
+            var bound = 27
+            var count = (titleCount < bound) ? bound - titleCount : 0//titleCount - bound
+            let titleExcess = String(repeating: " ", count: count)
+            
+            let dateString = formattedDateString(event.eventDate, roundedDown: false,
+                                                 showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortFormNoDots)
+            let dateStringCount = dateString.count
+            bound = 24
+            count = (dateStringCount < bound) ? bound - dateStringCount : 0//dateStringCount - bound
+            let dateExcess = String(repeating: " ", count: count)
+            
+            let eventPropertiesString = "\(dateString)\(dateExcess)\(event.eventStatus)"
+            let restOfString = "\(gap)\(excess)\(title)\(titleExcess)\(eventPropertiesString)"
+            
+            if j == 0  { print("\(pathString)\(restOfString)")}
+            else {       print("\(spaces)\(restOfString)")}
+            
+            j += 1
+        }
+        i += 1
+        if i == timeBlockPaths.count - 1 {print("")}
+    }; print("\n")
+}
 
 ///Called when LOADING & REFRESHING DATE:
 
 func pryntLastLoginDate() {// spelling 'prynt' with a y so this function's existence does not cause override of autocomplete for print statements
-    print(formattedDateString(lastLoginDate, roundedDown: false, prefix: "last login              ", suffix: "", dateFormat: .fullDayWithYear))
+    print(formattedDateString(lastLoginDate, roundedDown: false, showYear: true, prefix: "last login              ", suffix: "", dateFormat: .fullDay))
     //print("              (unformatted gmt)    \(lastLoggedInDate)\n")
 }
 
 func pryntCurrentDate() {
-    print(formattedDateString(Date(), roundedDown: false, prefix: "date right now          ", suffix: "", dateFormat: .fullDayWithYear))
+    print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "date right now          ", suffix: "", dateFormat: .fullDay))
     print("")
     //print("              (unformatted gmt)    \(Date())\n")
 }
-
-///Called when SAVING:
-
-func printEventsTabularized() { // optimized for console printing on an iPad Mini 4, landscape orientation (using the Duet app)
-    var i = 0
-    let formattedDatesArrays = formatDatesFromComponentsArray(eventDateArrays)
-    let gap = "    "
-    ///let midGap = "         "
-    ///let bigGap = "\(gap)\(gap) "
-    
-    ///print("\npath\(gap)description\(midGap)due date\(bigGap)status")
-    
-    for _ in timeBlockPaths {
-        let status = EventStatus(rawValue: eventStatusArrays[i].first!)!.caseName()
-        print("\(timeBlockPaths[i])\(gap)\(eventDescriptionArrays[i])\(gap)\(formattedDatesArrays[i])\(gap)\(status)")
-        i += 1
-    }
-    
-    //print("\n")
-}
-//             * only works for single-event time blocks; need to implement multiple-line printing for items (that is, (array)[i]'s in loop, ie SimpleEvent properties) whose sizes are > 1
-
 
 //func pryntSortedSavedArrays() {
 //    let spaces = "                     "
@@ -48,7 +66,6 @@ func printEventsTabularized() { // optimized for console printing on an iPad Min
 //    print("\n\(spaces)\(eventStatusArrays.count) blocks' statuses\(colonOrPeriod)\n\(spaces)\(eventStatusArrays)")
 //    print("\n\(spaces)\(formattedDatesArrays.count) blocks' event dates\(colonOrPeriod)\n\(spaces)\(newlinedFormattedDates)")
 //}
-
 
 ///(from AppLifecycle:)
 /*let s = "🔅became active"

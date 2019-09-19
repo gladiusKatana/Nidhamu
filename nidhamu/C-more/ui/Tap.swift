@@ -12,8 +12,8 @@ extension CollectionVC {
             ///print("\nselected date (unformatted gmt)  \(cell.cellDate)")     ///print(formattedDateString(cell.cellDate, roundedDown: false, prefix: "                 (formatted)    ", suffix: "", short: false))
             
             selectedCellDate = cell.cellDate
-            let selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true,
-                                                                       prefix: "New event on", suffix: "", dateFormat: .fullDayAbbreviated)
+            let selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false,
+                                                                       prefix: "New event on", suffix: "", dateFormat: .fullDayShortForm)
             switch vcType {
             case .hours:
                 

@@ -22,7 +22,7 @@ extension AppDelegate {
     
     func applicationWillResignActive(_ application: UIApplication) {                    //customApplicationStatusPrint("⏸will resign active")
         if !classifierViewDisplayed {
-            defaultSaveData(saveDate: true, showDate: false, pryntEvents: false)
+            defaultSaveData(saveDate: true, showDate: true, pryntEvents: true)
         }
         
         if eventsAtIndexPath.values.count > 0 {  // autorotate for smoother event-tagging IF user dismisses app, then resumes it hours/days later

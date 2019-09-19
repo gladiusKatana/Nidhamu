@@ -3,7 +3,7 @@ import UIKit
 
 func defaultSaveData(saveDate: Bool, showDate: Bool, pryntEvents: Bool) {
     
-    if showDate {print(formattedDateString(Date(), roundedDown: false, prefix: "✔︎saved to your device on", suffix: "", dateFormat: .fullDayWithYear))}
+    if showDate {print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "✔︎saved to your device on", suffix: "", dateFormat: .fullDay))}
     else {print("✔︎saved")}
     
     let defaults = UserDefaults.standard
