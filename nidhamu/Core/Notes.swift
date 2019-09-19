@@ -31,6 +31,7 @@
  
  
  
+ block changing date via Settings app                                                   *
  cascading deferrals                                                                    *
  darkMode                                                                               design
  buttons
