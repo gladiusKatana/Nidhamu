@@ -28,20 +28,13 @@ extension CollectionVC {
                 cell.titleLabel.text = "(no items yet)"; return
             }
             
+            cell.titleLabel.textColor = .black
+            
             if column == 0 {
                 cell.titleLabel.text = eventAtTimeBlock[row].eventDescription
-                cell.titleLabel.textColor = .black
             }
-            else {
-                cell.titleLabel.textColor = grayTwo
-                if column == 1 {
-                    cell.titleLabel.text = formattedDateString(eventAtTimeBlock[row].eventDate,
-                                                               roundedDown: true, showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
-                }
-                else {
-                    cell.titleLabel.text = "\(eventAtTimeBlock[row].eventStatus)"
-                }
-            }
+                
+            else {cell.titleLabel.text = "\(eventAtTimeBlock[row].eventStatus)"}
             
         default: print("[timeBlockDateSetup(:)] unrecognized collection view type")}
     }
