@@ -16,9 +16,9 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     let prefix = (prefix == "") ? " " : "\(prefix) "
     
     switch dateFormat {
-    
+        
     case .fullDay:                  return "\(prefix)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits)\(ampm)\(suffix)"
-    
+        
     case .fullDayShortForm:         return "\(prefix)\(wkdy). \(mnth). \(day), \(yearString)\(hr)\(ampm)\(suffix)"
         
     case .fullDayShortFormNoDots:   return "\(prefix)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString)\(hr)\(ampm)\(suffix)"

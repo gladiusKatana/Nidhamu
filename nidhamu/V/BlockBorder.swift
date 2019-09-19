@@ -24,6 +24,6 @@ extension CollectionVC {
             } else {cell.layer.borderColor = UIColor.clear.cgColor}
         }
     }
-
+    
 }
 

@@ -4,7 +4,7 @@ import UIKit
 func defaultSaveData(saveDate: Bool, showDate: Bool, pryntEvents: Bool) {
     
     if showDate {print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "✔︎saved", suffix: "", dateFormat: .fullDay))}
-    else {print("✔︎saved")}
+    else {print("\n✔︎saved")}
     
     let defaults = UserDefaults.standard
     

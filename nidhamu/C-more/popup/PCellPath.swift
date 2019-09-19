@@ -15,7 +15,7 @@ extension PopupMenuVC {
         {
             cell.backgroundColor = headerColour
             cell.titleLabel.text = "Mark '\(globalEventIdentifier)':"   //"✔︎ Mark Event:" //← ⇦ ◄ ⬅️ // didn't find a large enough ascii arrow
-//            cell.titleLabel.textColor = headerTextDefaultColour
+            //cell.titleLabel.textColor = headerTextDefaultColour
         }
         else {
             cell.backgroundColor = platinum

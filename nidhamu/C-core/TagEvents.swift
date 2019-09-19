@@ -19,6 +19,6 @@ extension CollectionVC {
             ///eventArraysToProcess.removeAll()
         }
     }
-
+    
 }
 

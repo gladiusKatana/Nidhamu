@@ -36,13 +36,13 @@ var todoListVC = CollectionVC(.todoList, loopWeeks: false, demarcateWeeksByColou
 var classifierLayout = //---------
     CustomFlowLayout(
         embeddedInNavController: false,
-                     customFrame: nil,
-                     rows: 7, cols: 1, lockedHeaderRows: 1, lockedHeaderSections: 0,
-                     cellWidth: 80, cellHeight: 20,
-                     autoFitWScale: nil, autoFitHScale: nil,
-                     hSpace: cellGap, vSpace: cellGap,
-                     loadsHorizontally: false,
-                     squareCellMode: .noAutoSquare)
+        customFrame: nil,
+        rows: 7, cols: 1, lockedHeaderRows: 1, lockedHeaderSections: 0,
+        cellWidth: 80, cellHeight: 20,
+        autoFitWScale: nil, autoFitHScale: nil,
+        hSpace: cellGap, vSpace: cellGap,
+        loadsHorizontally: false,
+        squareCellMode: .noAutoSquare)
 
 var classifierVC = PopupMenuVC(collectionViewLayout: classifierLayout);     var eventRecurringSwitchView = PopupSwitchView()
 

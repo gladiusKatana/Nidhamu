@@ -51,17 +51,3 @@ class PopupSwitchView: UIView {
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
 }
 
-
-//extension UIView {        /*addConstraintsWithFormat("V:|-[v0]-[v1]-|", views: clientSelectionLockLabel, lockClientSwitch)*/  //<-application
-//    func addConstraintsWithFormat(_ format: String, views: UIView...) {
-//        var viewsDictionary = [String: UIView]()
-//
-//        for (index, view) in views.enumerated() {
-//            let key = "v\(index)"
-//            view.translatesAutoresizingMaskIntoConstraints = false
-//            viewsDictionary[key] = view
-//        }
-//        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
-//    }
-//}
-

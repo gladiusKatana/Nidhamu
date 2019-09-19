@@ -45,3 +45,4 @@ func lastEventFromPath(_ path: [Int]) -> SimpleEvent {
     
     return lastEvent
 }
+
