@@ -25,13 +25,16 @@ extension CollectionVC {
             cell.cellDate = selectedCellDate
             
             guard let eventAtTimeBlock = eventsAtIndexPath[timeBlock] else {
-                cell.titleLabel.text = "(no items yet)"; return
+                cell.titleLabel.text = "(no items yet)"; return // not really needed since todo list vc is only go-to-able via a time block
             }
+            
+            let status = eventAtTimeBlock[row].eventStatus
             
             cell.titleLabel.textColor = .black
             
             if column == 0 {
                 cell.titleLabel.text = eventAtTimeBlock[row].eventDescription
+                if status == .occurred || status == .upcoming {cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)}
             }
                 
             else {cell.titleLabel.text = "\(eventAtTimeBlock[row].eventStatus)"}

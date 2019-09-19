@@ -6,7 +6,6 @@
  (1st commit)                                       July. 08 2019
  
  
- darken todo list text
  truncate long timeblock label with  …                                                  ui
  text field appear above keyboard
  
