@@ -2,12 +2,13 @@
 import UIKit
 
 func processCurrentDate() {                                                                         //print("processing current date")
-    let (year, month, _ , day, weekday, wkdy, hour, minute) = displayDate(Date(), roundedDown: true)
+    let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: true)
     
     //print(formattedDateString(Date(), comment: "process dates @ ", short: false))
     
     nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows
-    nowColumn = headerWeekdayTitles.firstIndex(of: wkdy)! + timetableLayout.lockedHeaderSections    //; print("nowCell \([nowColumn, nowRow])")
+    nowColumn = headerWeekdayTitles.firstIndex(of: String(weekday.prefix(3)))! + timetableLayout.lockedHeaderSections
+    //; print("nowCell \([nowColumn, nowRow])")
     
     if !reloadedFromHourTickingOver {
         if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections {
