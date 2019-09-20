@@ -14,7 +14,7 @@
  archive data (eventsAtIndexPath; eventsAtDate)
  archive CSV email
  Numbers template
- ___________________________________________________Thu Sept 19 beta                    ambitious
+ ___________________________________________________Fri Sept 20 beta                    ambitious
  
  
  
@@ -25,7 +25,7 @@
  list VC (deadlineless items)
  morn/aft/eve/nite VC
  settings menu
- ___________________________________________________Fri Sept 20 appstore
+ ___________________________________________________Sat Sept 21 appstore
  
  
  

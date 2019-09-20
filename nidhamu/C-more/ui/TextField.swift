@@ -12,13 +12,10 @@ extension CollectionVC {
     
     
     func formatAndPresentTextField(dateString: String) {
-        let fieldWidth = CGFloat(325)
-        let fieldHeight = CGFloat(3 * timetableLayout.cellHeight!)
-        let halfWidth = (timetableLayout.cellWidth! + globalKeyWindow.frame.width - fieldWidth) / 2
-        
+        ///textFieldHeight = CGFloat(3 * timetableLayout.cellHeight!); textFieldWidth = // already calculated in calculateAndResetSizes()
         eventField.placeholder = dateString
         eventField.delegate = self
-        eventField.frame = CGRect(x: halfWidth, y: textFieldY, width: fieldWidth, height: fieldHeight) //fieldHeight
+        eventField.frame = CGRect(x: downcastLayout!.cellWidth!, y: textFieldY, width: textFieldWidth, height: textFieldHeight) //fieldHeight
         view.addSubview(eventField)
         eventField.becomeFirstResponder()
     }

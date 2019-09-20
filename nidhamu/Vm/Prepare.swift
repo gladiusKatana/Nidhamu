@@ -32,6 +32,8 @@ extension CustomFlowLayout {
     func calculateAndResetSizes() {
         (cellWidth, cellHeight) = calculateSizes()
         resetDimensionIfSquareCellsEnabled()
+        
+        textFieldHeight = 3 * timetableLayout.cellHeight!;  textFieldWidth = 6 * timetableLayout.cellWidth!
         widthPlusSpace = cellWidth! + hSpace
         heightPlusSpace = cellHeight! + vSpace
         
@@ -49,7 +51,11 @@ extension CustomFlowLayout {
     
     func compensateForNavigationAndStatusBars(forCollectionVC collectVC: UICollectionViewController, withDelta delta: Double) {
         yOffset = collectVC.collectionView!.contentOffset.y + CGFloat(navBarHeight + statusBarHeight - delta)  //print("yo: \(yOffSet)")
-        textFieldY = CGFloat(navBarHeight + statusBarHeight - delta)               //; print("textFieldY = \(textFieldY)")
+        
+        //textFieldY = CGFloat(navBarHeight + statusBarHeight - delta) // at-top of screen
+        textFieldY = globalKeyWindow.frame.height - keyboardHeight - textFieldHeight // shows just above keyboard
+        //; print("textFieldY = \(textFieldY)")
+        
         xOffSet = collectVC.collectionView!.contentOffset.x
     }
 }
