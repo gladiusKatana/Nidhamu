@@ -29,7 +29,7 @@ extension CustomFlowLayout {
         
         if topVC.vcType != .hours {keyboardHeight = 0}
         
-        let gap = CGFloat(3) /// extra gap for better aesthetics
+        let gap = CGFloat(6) /// extra gap for better aesthetics
         let autofitWidth = CGFloat(frame.width) / CGFloat(cols) - hSpace
         let barsHeight = navBarHeight + statusBarHeight
         let autoFitHeight = CGFloat(Double(frame.height - keyboardHeight /*- textFieldHeight*/ - gap) - barsHeight) / CGFloat(rows) - vSpace

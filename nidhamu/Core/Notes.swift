@@ -10,8 +10,7 @@
  
  
  
- text field appear above keyboard                                                                       ui
- first rotate no reposition text field
+ first rotate no reposition text field                                                                  ui
  mark item recurring (remove by default)                                                                data
  timetableVC deferral-date selection mode
  eventsAtDate

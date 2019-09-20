@@ -12,7 +12,7 @@ extension CollectionVC {
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
             ///print("\nselected date (unformatted gmt)  \(cell.cellDate)")     ///print(formattedDateString(cell.cellDate, roundedDown: false, prefix: "                 (formatted)    ", suffix: "", short: false))
             selectedCellDate = cell.cellDate                                                                                        //➕
-            let selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: "  + Add Event", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
+            let selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: " Add Event", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
             switch vcType {
             case .hours:
                 
