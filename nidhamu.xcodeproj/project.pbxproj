@@ -320,9 +320,9 @@
 		0625169222D6CF4200EBB4C8 /* C-more */ = {
 			isa = PBXGroup;
 			children = (
-				06076F08232B435900189BB3 /* cell */,
-				0625169522D6CF4200EBB4C8 /* ui */,
 				0673571B2300753900DC2CAC /* popup */,
+				0625169522D6CF4200EBB4C8 /* ui */,
+				06076F08232B435900189BB3 /* cell */,
 				0625169E22D6CF4200EBB4C8 /* nav */,
 			);
 			path = "C-more";
@@ -331,11 +331,11 @@
 		0625169522D6CF4200EBB4C8 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				062516A022D6CF4200EBB4C8 /* UINotify.swift */,
 				0625169722D6CF4200EBB4C8 /* Tap.swift */,
 				062CDAA022E0033400848D78 /* Pinch.swift */,
 				0625169922D6CF4200EBB4C8 /* TextField.swift */,
 				0687565D232992FA0052818A /* TFReturn.swift */,
-				062516A022D6CF4200EBB4C8 /* UINotify.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";

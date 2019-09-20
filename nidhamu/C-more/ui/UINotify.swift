@@ -10,8 +10,8 @@ extension CollectionVC {
         
         if phones.contains(modelName) {
             let center = UNUserNotificationCenter.current()
-            center.removeAllDeliveredNotifications()        // to remove all delivered notifications
-            center.removeAllPendingNotificationRequests()   // to remove all pending notifications which are not delivered yet but scheduled.
+            center.removeAllDeliveredNotifications()          // to remove all delivered notifications
+            center.removeAllPendingNotificationRequests()     // to remove all pending notifications which are not delivered yet but scheduled.
             
             NotificationCenter.default.addObserver(self, selector: #selector(reloadCV),
                                                    name: UIApplication.willChangeStatusBarFrameNotification, object: nil)
@@ -25,20 +25,20 @@ extension CollectionVC {
     }
     
     
-    @objc func showKBoard(_ notification: Notification) {   //print("⌨️")
+    @objc func showKBoard(_ notification: Notification) {     //print("⌨️")
         
         checkOrientation()
         
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             
-            keyboardHeight = keyboardFrame.cgRectValue.height
+            keyboardHeight = keyboardFrame.cgRectValue.height + textFieldHeight
             
             if currentOrientation == "portrait" {
-                portraitKeyboardHeight = keyboardFrame.cgRectValue.height
-                if !firstPortraitKeyboardPresented{firstPortraitKeyboardPresented = true}
+                portraitKeyboardHeight = keyboardFrame.cgRectValue.height + textFieldHeight
+                if !firstPortraitKeyboardPresented {firstPortraitKeyboardPresented = true}
             }
             if currentOrientation == "landscape" {
-                landscapeKeyboardHeight = keyboardFrame.cgRectValue.height
+                landscapeKeyboardHeight = keyboardFrame.cgRectValue.height + textFieldHeight
                 if !firstLandscapeKeyboardPresented {firstLandscapeKeyboardPresented = true}
             }
             

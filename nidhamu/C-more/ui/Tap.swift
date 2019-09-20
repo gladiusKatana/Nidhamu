@@ -5,19 +5,18 @@ extension CollectionVC {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  didSelectItemAt indexPath: IndexPath) {                            //print("tapped tt cell")
-        let layout = downcastLayout!;                                   let row = indexPath.item;   let column = indexPath.section
+        
+        let layout = downcastLayout!;  let row = indexPath.item;  let column = indexPath.section
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
             ///print("\nselected date (unformatted gmt)  \(cell.cellDate)")     ///print(formattedDateString(cell.cellDate, roundedDown: false, prefix: "                 (formatted)    ", suffix: "", short: false))
-            
-            selectedCellDate = cell.cellDate
-            let selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false,
-                                                                       prefix: "New event on", suffix: "", dateFormat: .fullDayShortForm)
+            selectedCellDate = cell.cellDate                                                                                        //➕
+            let selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: "  + Add Event", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
             switch vcType {
             case .hours:
                 
-                selectedTimeBlockPath = [column, row]       //; print("selected time block path \(selectedTimeBlockPath)")
+                selectedTimeBlockPath = [column, row]                           //; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
                 
                 if eventsAtIndexPath[timeBlock] == nil || textFieldDisplayed {
@@ -29,8 +28,7 @@ extension CollectionVC {
                      cell.backgroundColor = eventAddingColour
                      }, completion: nil)
                      }
-                     }
-                     else {*/
+                     } else {*/ //not sure if will keep this animation: looks nice, but slows the user down, which might outweight the aesthetics
                     
                     cell.backgroundColor = eventAddingColour
                     reloadCV()
@@ -47,7 +45,7 @@ extension CollectionVC {
             case .todoList:
                 formatAndPresentTextField(dateString: selectedTimeBlockDateDescription)
             default: print("unrecognized collection view type's cell selected")}
-        } ///else {print("selected header")}
+        }                                                                                           //else {print("selected header")}
     }
 }
 
