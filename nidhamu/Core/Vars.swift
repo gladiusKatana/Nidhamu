@@ -9,18 +9,20 @@ var dismissPinch = UIPinchGestureRecognizer()
 
 var timerForShowScrollIndicator: Timer?
 
-var xOffSet = CGFloat(0);               var yOffset = CGFloat(0)
-var keyboardHeight = CGFloat(0);        var textFieldY = CGFloat(0)
+var textFieldY = CGFloat(0);                    var xOffSet = CGFloat(0);
+var portraitKeyboardHeight = CGFloat(0);        var landscapeKeyboardHeight = CGFloat(0);       var yOffset = CGFloat(0)
+var keyboardHeight = CGFloat(0)
 
-var statusBarHeight = 0.0;              var lastStatusBarHeight = 0.0
-var navBarHeight = 0.0;                 var launchWidth = 0.0
+
+var statusBarHeight = 0.0;                      var lastStatusBarHeight = 0.0
+var navBarHeight = 0.0;                         var launchWidth = 0.0
 
 var reloadsWhileResized = 0
 
-var firstReenteredForeground = false;   var firstReloadForKeyboard = false
-var justPinched = false;                var rePresentedVCManually = true
-var showConsoleLegend = false;      var thereWillBeARowException = false
-
+var firstReenteredForeground = false;           var firstReloadForKeyboard = false
+var justPinched = false;                        var rePresentedVCManually = true
+var showConsoleLegend = false;                  var thereWillBeARowException = false
+var firstPortraitKeyboardPresented = false;   var firstLandscapeKeyboardPresented = false
 
 var currentOrientation = "orientation (landscape or portrait) for prepare-layout logic"             //* will change this to an enum at some point
 var previousOrientation = "previous orientation (landscape or portrait) for prepare-layout logic"   //* " "

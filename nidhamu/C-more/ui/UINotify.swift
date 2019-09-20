@@ -27,8 +27,21 @@ extension CollectionVC {
     
     @objc func showKBoard(_ notification: Notification) {   //print("⌨️")
         
+        checkOrientation()
+        
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            
             keyboardHeight = keyboardFrame.cgRectValue.height
+            
+            if currentOrientation == "portrait" {
+                portraitKeyboardHeight = keyboardFrame.cgRectValue.height
+                if !firstPortraitKeyboardPresented{firstPortraitKeyboardPresented = true}
+            }
+            if currentOrientation == "landscape" {
+                landscapeKeyboardHeight = keyboardFrame.cgRectValue.height
+                if !firstLandscapeKeyboardPresented {firstLandscapeKeyboardPresented = true}
+            }
+            
             textFieldDisplayed = true
             timetableVC.reloadWithDelay(after: 0)
         }

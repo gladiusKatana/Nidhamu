@@ -3,11 +3,10 @@
  
  todo_______________________________________________deadline__________________________(typeEtc)
  
- (1st commit)                                       July. 08 2019
+ 1st commit                                         July. 08 2019
  
  
  text field appear above keyboard                                                       ui
- 
  mark item recurring (remove by default)                                                data
  timetableVC deferral-date selection mode
 
@@ -15,31 +14,28 @@
  archive data (eventsAtIndexPath; eventsAtDate)
  archive CSV email
  Numbers template
- ___________________________________________________Thu Sept 19         beta                            (ambitious)
+ ___________________________________________________Thu Sept 19 beta                    ambitious
+ 
  
  
  
  login date interval outlined, not coloured                                             ui
- 
  eventsAtDate show on calendarVC                                                        data
  list VC (today items)
  list VC (deadlineless items)
  morn/aft/eve/nite VC
  settings menu
- ___________________________________________________Fri Sept 20         appstore
+ ___________________________________________________Fri Sept 20 appstore
  
  
  
- prevent user changing nowDate via Settings app                                                   *
+ 
+ prevent user changing nowDate via Settings app                                         *
  cascading deferrals                                                                    *
  darkMode                                                                               design
  buttons
  icon
  launchScreen
-
- direct resizing: rotate with keyboard                                                  ui
- ___________________________________________________asap updates: appstore
-
-
+ ___________________________________________________asap updates
 
  * denotes features that may not necessarily be a good idea to implement. eg should users be able to defer *all* their remaining tasks at once?*/

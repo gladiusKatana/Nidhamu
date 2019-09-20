@@ -7,23 +7,28 @@ extension CustomFlowLayout {
         
         checkOrientation()
         calculateAndResetSizes()
+        if topVC.vcType == .hours {topVC.rePresentTextField()}
         
-        if previousOrientation != currentOrientation {
+        if previousOrientation != currentOrientation {                                      //print("prepare(rotated to \(currentOrientation)):")
+            
+            if firstPortraitKeyboardPresented && currentOrientation == "portrait" {
+                keyboardHeight = portraitKeyboardHeight
+            }
+            if firstLandscapeKeyboardPresented && currentOrientation == "landscape" {
+                keyboardHeight = landscapeKeyboardHeight
+            }
+            
             previousOrientation = currentOrientation
             
             topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in
                 rePresentedVCManually = false
             }
         }
-        else {
-            if topVC.vcType == .hours {processCurrentDate()}
-        }
-        if topVC.vcType == .hours {topVC.rePresentTextField()}
+        else {if topVC.vcType == .hours {processCurrentDate()}}
     }
     
     func calculateAndResetSizes() {
         (cellWidth, cellHeight) = calculateSizes()
-        
         resetDimensionIfSquareCellsEnabled()
         widthPlusSpace = cellWidth! + hSpace
         heightPlusSpace = cellHeight! + vSpace
