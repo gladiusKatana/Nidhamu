@@ -29,17 +29,15 @@ extension CustomFlowLayout {
         
         if topVC.vcType != .hours {keyboardHeight = 0}
         
-        let gap = CGFloat(5)                    /// extra gap for better aesthetics
+        let gap = CGFloat(3)                    /// extra gap for better aesthetics
         let autofitWidth = CGFloat(frame.width) / CGFloat(cols) - hSpace
         let autoFitHeight = CGFloat(Double(frame.height - keyboardHeight - gap) - navBarHeight - statusBarHeight) / CGFloat(rows) - vSpace
         
         switch cellDimensionsMode {
-            
         case .widthAndHeightHardcoded:  cellWd = cellWidth!;    cellHt = cellHeight! //* keyboardScalor
         case .widthHardcoded:           cellWd = cellWidth!;    cellHt = autoFitHeight * autoFitHScale! //* keyboardScalor
         case .heightHardcoded:          cellWd = autofitWidth * autoFitWScale!;     cellHt = cellHeight! //* keyboardScalor
         case .neitherHardcoded:         cellWd = autofitWidth * autoFitWScale!;     cellHt = autoFitHeight * autoFitHScale! //* keyboardScalor
-            
         }
         
         return (cellWd, cellHt)

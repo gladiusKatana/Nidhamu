@@ -7,15 +7,17 @@ extension CustomFlowLayout {
         
         checkOrientation()
         calculateAndResetSizes()
-        if topVC.vcType == .hours {topVC.rePresentTextField()}
+        if textFieldDisplayed && topVC.vcType == .hours {topVC.rePresentTextField()}
         
         if previousOrientation != currentOrientation {                                      //print("prepare(rotated to \(currentOrientation)):")
             
-            if firstPortraitKeyboardPresented && currentOrientation == "portrait" {
-                keyboardHeight = portraitKeyboardHeight
-            }
-            if firstLandscapeKeyboardPresented && currentOrientation == "landscape" {
-                keyboardHeight = landscapeKeyboardHeight
+            if textFieldDisplayed {
+                if firstPortraitKeyboardPresented && currentOrientation == "portrait" {
+                    keyboardHeight = portraitKeyboardHeight                                 // will probably cache these...
+                }                                                                           //...device-and-orientation-specific heights...
+                if firstLandscapeKeyboardPresented && currentOrientation == "landscape" {   //...inside UserDefaults, saving them for next launch
+                    keyboardHeight = landscapeKeyboardHeight
+                }
             }
             
             previousOrientation = currentOrientation

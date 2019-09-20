@@ -24,14 +24,13 @@ extension CollectionVC {
     }
     
     
-    func rePresentTextField() {                                                 //print("t")
-        if textFieldDisplayed {                                                 //eventField.placeholder = "..."
-            ///eventField.removeFromSuperview()
-            if let placeholder = eventField.placeholder {                       //print("re-presented text field from prepare()")
-                formatAndPresentTextField(dateString: placeholder)
-            }
-            else {formatAndPresentTextField(dateString: "!")}
+    func rePresentTextField() {                                             //print("t")
+        ///eventField.placeholder = "..." ; eventField.removeFromSuperview()
+        
+        if let placeholder = eventField.placeholder {                       //print("re-presented text field from prepare()")
+            formatAndPresentTextField(dateString: placeholder)
         }
+        else {formatAndPresentTextField(dateString: "!")}
     }
     
 }

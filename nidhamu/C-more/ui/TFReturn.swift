@@ -42,7 +42,7 @@ extension CollectionVC {
         
         if vcType == .hours {
             DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
-                keyboardHeight = 0; print("changed keyboard height")
+                keyboardHeight = 0                                          //; print("changed keyboard height")
                 self?.reloadCV()
             }
         }
