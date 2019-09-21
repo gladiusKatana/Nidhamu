@@ -12,15 +12,16 @@
  
  first rotate no reposition text field                                                                  ui
  mark item recurring (remove by default)                                                                data
+ 
  timetableVC deferral-date selection mode
  eventsAtDate
  archive data (eventsAtIndexPath; eventsAtDate)
  archive CSV email
  Numbers template
-                                                                Fri Sept 20 BETA (ambitious)
+                                                                Sat Sept 21 BETA (ambitious)
  
  
- login date interval outlined (or animated), not perma-coloured                                         ui
+ login date interval outlined / animated, not perma-coloured                                            ui
  implement  loopWeeks = false  behaviour                                                                data
  eventsAtDate on calendarVC
  mornAftEveNiteVC                                                                                       vcs
@@ -40,23 +41,6 @@
 
  
  * denotes features that may not necessarily be a good idea to implement. eg should users be able to defer *all* their remaining tasks at once?*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

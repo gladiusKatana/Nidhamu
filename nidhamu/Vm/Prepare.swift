@@ -10,6 +10,8 @@ extension CustomFlowLayout {
         
         if previousOrientation != currentOrientation {                                      //print("prepare(rotated to \(currentOrientation)):")
             
+            UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
+            
             if textFieldDisplayed {
                 if firstPortraitKeyboardPresented && currentOrientation == "portrait" {
                     keyboardHeight = portraitKeyboardHeight                                 // will probably cache these...

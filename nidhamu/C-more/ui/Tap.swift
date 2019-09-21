@@ -12,7 +12,8 @@ extension CollectionVC {
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
             ///print("\nselected date (unformatted gmt)  \(cell.cellDate)")     ///print(formattedDateString(cell.cellDate, roundedDown: false, prefix: "                 (formatted)    ", suffix: "", short: false))
             selectedCellDate = cell.cellDate                                                                                        //➕
-            let selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: " Add Event", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
+            let selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: " Add an Event", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
+            
             switch vcType {
             case .hours:
                 
@@ -30,14 +31,13 @@ extension CollectionVC {
                      }
                      } else {*/ //not sure if will keep this animation: looks nice, but slows the user down, which might outweight the aesthetics
                     
+                    ///setNavBarTitle(customString: " Add an Event (Tap Done to quit)")
+                    UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
                     cell.backgroundColor = eventAddingColour
                     reloadCV()
                     presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)
                     
-                    /*if row >= 18 {
-                     if !textFieldDisplayed {presentTextField(after: 1, dateString: selectedTimeBlockDateDescription)}
-                     else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}
-                     } else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}*/
+                    /**/
                     
                 } else { rePresentedVCManually = true
                     gotoView(vc: todoListVC)
@@ -49,3 +49,7 @@ extension CollectionVC {
     }
 }
 
+/*if row >= 18 {
+if !textFieldDisplayed {presentTextField(after: 1, dateString: selectedTimeBlockDateDescription)}
+else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}
+} else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}*/

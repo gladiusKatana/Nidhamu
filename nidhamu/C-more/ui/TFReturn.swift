@@ -42,8 +42,8 @@ extension CollectionVC {
         
         if vcType == .hours {
             DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
+                UIApplication.shared.keyWindow!.backgroundColor = windowBackgroundColour
                 keyboardHeight = 0
-//                textFieldHeight = 0
                 self?.reloadCV()
             }
         }

@@ -5,7 +5,7 @@ extension CollectionVC {
     
     override func viewDidLoad() {                                   super.viewDidLoad()
         if vcType == .todoList {collectionView.backgroundColor = .white}
-        else {collectionView.backgroundColor = windowBackgroundColour}
+        else {collectionView.backgroundColor = .clear}
         collectionView.bounces = false
         
         setTopViewController()
@@ -18,10 +18,7 @@ extension CollectionVC {
     }
     
     override func viewWillAppear(_ animated: Bool) {                super.viewWillAppear(animated)
-        if vcType == .hours {setupViewTitle("Timetable", numLines: 1, alignment: .left)}
-        else { // if vcType is the other nav-controller-embedded one, ie todoList VC
-            setupViewTitle(formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: "Tasks", suffix: "", dateFormat: .hourlyTimeBlock), numLines: 1, alignment: .left)
-        }
+        setNavBarTitle(customString: nil)
         setupNavBarButtons(grayTwo, atIndex: colourIndex)
     }
     

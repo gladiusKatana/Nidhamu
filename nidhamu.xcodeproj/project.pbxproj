@@ -331,11 +331,11 @@
 		0625169522D6CF4200EBB4C8 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				062516A022D6CF4200EBB4C8 /* UINotify.swift */,
 				0625169722D6CF4200EBB4C8 /* Tap.swift */,
 				062CDAA022E0033400848D78 /* Pinch.swift */,
 				0625169922D6CF4200EBB4C8 /* TextField.swift */,
 				0687565D232992FA0052818A /* TFReturn.swift */,
+				062516A022D6CF4200EBB4C8 /* UINotify.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -386,11 +386,11 @@
 		0673571B2300753900DC2CAC /* popup */ = {
 			isa = PBXGroup;
 			children = (
+				0625169422D6CF4200EBB4C8 /* PopupVC.swift */,
+				06AA5D18231727C500DC04FD /* PCellPath.swift */,
+				0682A49022FE5F0A00CE8075 /* AddPopup.swift */,
 				06A396562318B0F5008CFBD7 /* SwitchVC.swift */,
 				0625169622D6CF4200EBB4C8 /* TapPopup.swift */,
-				0682A49022FE5F0A00CE8075 /* AddPopup.swift */,
-				06AA5D18231727C500DC04FD /* PCellPath.swift */,
-				0625169422D6CF4200EBB4C8 /* PopupVC.swift */,
 			);
 			path = popup;
 			sourceTree = "<group>";
