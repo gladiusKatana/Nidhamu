@@ -13,7 +13,7 @@ var timerForShowScrollIndicator: Timer?
 
 var textFieldY = CGFloat(0)
 var textFieldHeight = CGFloat(30)   // reset this to a size calculated from its text height, plus a bit (with an initial value of 0)
-var textFieldWidth =  globalKeyWindow.frame.width / 2 
+var textFieldWidth = CGFloat(0)
 var portraitTextFieldHeight = CGFloat(0);       var landscapeTextFieldHeight = CGFloat(0)
 
 var keyboardHeight = CGFloat(0); 

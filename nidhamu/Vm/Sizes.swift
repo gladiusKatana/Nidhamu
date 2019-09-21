@@ -19,7 +19,7 @@ extension CustomFlowLayout {
         if embeddedInNavController {
             frame = globalKeyWindow.frame
         }
-        else {                                  //* In this app, the popup's frame is initialized by presentPopupViewToMarkEvents() anyway
+        else {
             if let safeFrame = customFrame {
                 frame = safeFrame
             } else {

@@ -50,6 +50,6 @@ extension CollectionVC {
 }
 
 /*if row >= 18 {
-if !textFieldDisplayed {presentTextField(after: 1, dateString: selectedTimeBlockDateDescription)}
-else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}
-} else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}*/
+ if !textFieldDisplayed {presentTextField(after: 1, dateString: selectedTimeBlockDateDescription)}
+ else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}
+ } else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}*/
