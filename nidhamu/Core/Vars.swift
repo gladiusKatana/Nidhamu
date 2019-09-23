@@ -27,8 +27,8 @@ var navBarHeight = 0.0;                         var launchWidth = 0.0
 
 
 var firstReenteredForeground = false;           ///var firstReloadForKeyboard = false
-var justPinched = false;                        var rePresentedVCManually = true
-var showConsoleLegend = false;                  var thereWillBeARowException = false
+var justPinched = false
+var showConsoleLegend = true;                  var thereWillBeARowException = false
 var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false
 
 
@@ -40,8 +40,8 @@ var previousOrientation = "previous orientation (landscape or portrait) for prep
 var lastActiveOrientation = "orientation (landscape or portrait) before sending app to background"  //* " "
 var launchOrientation = "orientation at the moment of launch"                                       //* " "
 
-var loadSymbolLegend = "                                    💾 = view loaded"
-var appearSymbolLegend = "                                    🏞 = view appeared"  //console legend
+var loadSymbolLegend = "                                        💾 = view loaded"
+var appearSymbolLegend = "                                        🏞 = view appeared"  //console legend
 
 var truncationTrail = "..."
 

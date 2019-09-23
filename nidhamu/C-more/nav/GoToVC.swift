@@ -6,20 +6,14 @@ extension CollectionVC {
     
     func gotoView(vc: CollectionVC) {                                                       //print("\nshowing vc \(vc)")
         
-        if topVC != vc || rePresentedVCManually {
-            
-            if vc == todoListVC {                                                           //print("time block being tested: \(timeBlock)")
-                if let events = eventsAtIndexPath[timeBlock] {                              //eventsAt IndexPath[imeBlock]
-                    todoListVC.downcastLayout!.rows = events.count
-                }
-            }
+        if topVC != vc {
             
             setupTitleAndPresentViewController(vc: vc) { () -> () in
                 reloadWithDelay(after: 0.02)
                 //reload CV()
             }
             
-        } else {print("you're already looking at the \(vc.vcType)-view   nav'd by button?\(rePresentedVCManually)")}
+        } //else {print("you're already looking at the \(vc.vcType)-view")}
     }
     
     

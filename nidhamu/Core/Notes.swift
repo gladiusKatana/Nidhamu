@@ -27,7 +27,7 @@
  button                                                                             ("")
  icon
  launch screen
- check over comments
+ triple check applogic, improve comments
  run on my devices which are same as Beta Users'                Tues Sept 24                                         BETA! (ambitious)
               
  

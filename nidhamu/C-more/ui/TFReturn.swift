@@ -30,7 +30,11 @@ extension CollectionVC {
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
             
             if vcType == .todoList {
-                rePresentedVCManually = true
+                
+                if let events = eventsAtIndexPath[timeBlock] {                              //eventsAt IndexPath[imeBlock]
+                    todoListVC.downcastLayout!.rows = events.count
+                }
+                
                 gotoView(vc: todoListVC) /// re-presents view & reloads its data, to display updated todo list
             }
         }

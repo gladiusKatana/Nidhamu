@@ -23,8 +23,7 @@ extension CustomFlowLayout {
             previousOrientation = currentOrientation
             
             topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in
-                rePresentedVCManually = false
-                //topVC.reloadCV()
+                ///topVC.reloadCV() // already done in viewDidAppear()
             }
             
         } else {if topVC.vcType == .hours {processCurrentDate()}}

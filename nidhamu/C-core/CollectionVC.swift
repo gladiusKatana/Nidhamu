@@ -3,8 +3,9 @@ import UIKit
 
 class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
-    var vcType = CollectionViewType.days;       var downcastLayout: CustomFlowLayout?
-    var colourIndex: Int?;                      var loopWeeks = false; var demarcateWeeksByColour = false
+    var vcType = CollectionViewType.days;               var downcastLayout: CustomFlowLayout?
+    var colourIndex: Int?;                              var loopWeeks = false; var demarcateWeeksByColour = false
+    var showLoadAndAppearIndicationInConsole = false
     
     lazy var eventField: UITextField = {
         let eventField =  UITextField(frame: CGRect(x: 0, y: 0, width: 0, height: 0))

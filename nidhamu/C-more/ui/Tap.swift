@@ -32,7 +32,7 @@ extension CollectionVC {
                     ///see (2) re. animation-logic, below
                     
                 } else {
-                    rePresentedVCManually = true
+//                    rePresentedVCManually = true
                     gotoView(vc: todoListVC)
                 }
                 
