@@ -13,7 +13,7 @@ extension CollectionVC {
             ///print("\nselected date (unformatted gmt)  \(cell.cellDate)")     ///print(formattedDateString(cell.cellDate, roundedDown: false, prefix: "                 (formatted)    ", suffix: "", short: false))
             
             selectedCellDate = cell.cellDate                                                                                        //➕
-            let selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: " Add an Event", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
+            selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: " Add an Event", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
             
             switch vcType {
             case .hours:
@@ -27,25 +27,19 @@ extension CollectionVC {
                     
                     cell.backgroundColor = eventAddingColour
                     
-                    UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
-                    presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)
-                    reloadCV()
+                    prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
                     
                     ///see (2) re. animation-logic, below
                     
-                } else { rePresentedVCManually = true
+                } else {
+                    rePresentedVCManually = true
                     gotoView(vc: todoListVC)
                 }
-           
-            case .todoList:
                 
-                UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
-                presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)
-                reloadCV()
-                
+            case .todoList:     prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
             default: print("unrecognized collection view type's cell selected")}
             
-            reloadCV()
+            //reload CV()
             
         }///else {print("selected navbar-embeddd vc's header")}
     }

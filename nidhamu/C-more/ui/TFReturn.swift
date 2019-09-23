@@ -26,7 +26,7 @@ extension CollectionVC {
             previousTimeBlockPathSelected = defaultPathOutOfView
         }
         else {
-
+            
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
             
             if vcType == .todoList {

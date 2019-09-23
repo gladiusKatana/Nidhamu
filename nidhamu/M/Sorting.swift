@@ -25,7 +25,7 @@ func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
         
         ///let i = output.firstIndex(of: element)!   ///Remember, using this method would not handle duplication. Need to use the old-school way, via index integer. (Also see comment above...
         
-        output[transform[i]] = element                      //print("inserting \(element) at \(transform[i])")
+        output[transform[i]] = element                                  //print("inserting \(element) at \(transform[i])")
         
         if i < transform.count - 1 {i += 1}
     }

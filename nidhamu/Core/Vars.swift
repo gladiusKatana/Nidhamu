@@ -14,7 +14,7 @@ var timerForShowScrollIndicator: Timer?
 var textFieldY = CGFloat(0)
 var textFieldHeight = CGFloat(30)   // reset this to a size calculated from its text height, plus a bit (with an initial value of 0)
 var textFieldWidth = CGFloat(0)
-var portraitTextFieldHeight = CGFloat(0);       var landscapeTextFieldHeight = CGFloat(0)
+///var portraitTextFieldHeight = CGFloat(0);       var landscapeTextFieldHeight = CGFloat(0)
 
 var keyboardHeight = CGFloat(0); 
 var portraitKeyboardHeight = CGFloat(0);        var landscapeKeyboardHeight = CGFloat(0)
@@ -26,7 +26,7 @@ var navBarHeight = 0.0;                         var launchWidth = 0.0
 
 
 
-var firstReenteredForeground = false;           var firstReloadForKeyboard = false
+var firstReenteredForeground = false;           ///var firstReloadForKeyboard = false
 var justPinched = false;                        var rePresentedVCManually = true
 var showConsoleLegend = false;                  var thereWillBeARowException = false
 var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false

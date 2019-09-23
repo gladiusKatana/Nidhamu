@@ -3,18 +3,14 @@ import UIKit
 
 extension CollectionVC {
     
+    func prepareAndPresentTextField(dateString: String) {
+        UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
+        presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)
+        reloadCV()
+    }
     
     func presentTextField(after delay: Double, dateString: String) { /// commented stuff in this method double-commented on purpose; see next few commits
-
-//        //UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
-        
-//        //DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
-//            //self?.formatAndPresentTextField(dateString: dateString)
-//        //}
-        
         formatAndPresentTextField(dateString: dateString)
-        
-//        //reloadCV()
     }
     
     

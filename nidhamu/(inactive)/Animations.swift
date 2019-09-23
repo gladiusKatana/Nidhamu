@@ -1,7 +1,7 @@
 // Animations       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
-import UIKit
+//import UIKit
 
-extension CollectionVC {
+//extension CollectionVC {
     
     // commented out only for now; will be implemented again soon
     
@@ -29,5 +29,5 @@ extension CollectionVC {
     //                        cell.backgroundColor = cell.cellColour
     //        }, completion: nil)
     //    }
-}
+//}
 
