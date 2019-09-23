@@ -30,7 +30,7 @@ var todoListLayout = //---------
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
-var todoListVC = CollectionVC(.todoList, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: 1, collectionViewLayout: todoListLayout)
+var todoListVC = CollectionVC(.todoList, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: todoListLayout)
 
 
 var classifierLayout = //---------
