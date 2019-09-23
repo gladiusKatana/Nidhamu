@@ -18,7 +18,7 @@ extension CollectionVC {
                 earliestEventAddress = pathsToProcess.first!
                 
                 if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
-                    cell.layer.borderColor = UIColor.white.cgColor; cell.layer.borderWidth = 2      //; print("highlighted cell white")
+                    cell.layer.borderColor = UIColor.white.cgColor                              //; print("highlighted cell white")
                 } else {cell.layer.borderColor = UIColor.clear.cgColor}
                 
             } else {cell.layer.borderColor = UIColor.clear.cgColor}

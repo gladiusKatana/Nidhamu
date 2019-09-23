@@ -23,20 +23,21 @@ extension CollectionVC {
                 prepareToProcessEventsSinceLastLogin(cell: cell, column: column, row: row)
             }
             
-            checkDateStringMatchAndPrintLabel("last login", date: lastLoginDate, cell: cell)
+            checkDateStringMatchAndPrintLabel("last login", date: lastLoginDate, cell: cell, withBorder: false)
             
             if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
-                cell.layer.borderColor = UIColor.white.cgColor; cell.layer.borderWidth = 2      //; print("highlighted cell white")
+                cell.layer.borderColor = UIColor.white.cgColor                                              //; print("highlighted cell white")
             } else {cell.layer.borderColor = UIColor.clear.cgColor}
         }
     }
     
-    func checkDateStringMatchAndPrintLabel(_ label: String, date: Date, cell: CustomCell) {
+    func checkDateStringMatchAndPrintLabel(_ label: String, date: Date, cell: CustomCell, withBorder: Bool) {
         let truncatedDate = truncateMinutesOfDate(date)
         if Calendar.current.component(.hour, from: cell.cellDate) == Calendar.current.component(.hour, from: truncatedDate)
             && Calendar.current.component(.weekday, from: cell.cellDate) == Calendar.current.component(.weekday, from: truncatedDate) {
             cell.titleLabel.text = label
             cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
+            if withBorder{cell.layer.borderColor = UIColor.black.cgColor}
         }
     }
     

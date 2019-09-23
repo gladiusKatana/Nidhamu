@@ -22,6 +22,8 @@ class BaseCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        layer.borderWidth = 2
+        
         titleLabel.text = "" /// use if title label text is ever set to a non-blank string
         titleLabel.font = defaultTimetableCellFont
         
