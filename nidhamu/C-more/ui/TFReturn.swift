@@ -47,6 +47,8 @@ extension CollectionVC {
     func exitEventAddingMode() {
         eventField.removeFromSuperview()
         
+        selectedTimeBlockPath = defaultPathOutOfView
+        
         DispatchQueue.main.asyncAfter(deadline: .now()) {   //[weak self] in
             UIApplication.shared.keyWindow!.backgroundColor = windowBackgroundColour
             keyboardHeight = 0

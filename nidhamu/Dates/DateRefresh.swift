@@ -5,7 +5,7 @@ func processCurrentDate() {
     
     let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: true)
     nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows     /// for 'nowDate', a tabular representation of current date
-    nowColumn = fullWeekdaysDefaultOrder.firstIndex(of: weekday)! + timetableLayout.lockedHeaderSections
+    nowColumn = fullWeekdaysDisplayedOrder.firstIndex(of: weekday)! + timetableLayout.lockedHeaderSections
     ///print(formattedDateString(Date(), comment: "process dates @ ", short: false))    //; print("nowCell \([nowColumn, nowRow])")
     
     if !reloadedFromHourTickingOver {

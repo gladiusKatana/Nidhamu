@@ -19,7 +19,7 @@ var windowBackgroundColour = icyBlue                                        ///t
 
 var cellDefaultColour = icyBlue;                                            var cellTextDefaultColour = UIColor.black;
 var lastWeekColour = darkerIce;                                             var headerTextDefaultColour = UIColor.black
-var headerColour = UIColor.white;                                           var eventAddingColour = headerColour
+var headerColour = UIColor.white;                                           var eventAddingColour = lightNavy
 
 var orangeForBlocksSinceLastLogin = UIColor.rgb(180, g: 70, b: 0, a: 0.5)   ///(220, g: 70, b: 20, a: 0.5)
 ///var niceOrangeDark = UIColor.rgb(228, g: 100, b: 44, a: 0.75)                                                                 ///; var jadeGreen = UIColor.rgb(22, g: 134, b: 79, a: 1);

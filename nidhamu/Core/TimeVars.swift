@@ -43,7 +43,9 @@ var monthsAbbreviated = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug"
 
 var headerWeekdayTitles = ["Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"] //["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 var customWkdysDefaultOrder = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]
+
 var fullWeekdaysDefaultOrder = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+var fullWeekdaysDisplayedOrder = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 ///var wkdysDefaultOrder = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 var amPmHours = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
