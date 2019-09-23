@@ -3,13 +3,16 @@ import UIKit
 
 extension CustomFlowLayout {
     
+    
     override var collectionViewContentSize: CGSize {                                        //print("size = \(contentSize)")
         let w = CGFloat(cols) * widthPlusSpace
         let h = CGFloat(rows) * heightPlusSpace
         return CGSize(width: w, height: h)
     }
     
+    
     func calculateSizes() -> (CGFloat, CGFloat) {                                           //print("resizing cells")
+        
         var cellWd = CGFloat(0); var cellHt = CGFloat(0)
         
         statusBarHeight = Double(UIApplication.shared.statusBarFrame.size.height)           //; print("status bar: \(statusBarHeight)")
@@ -26,8 +29,6 @@ extension CustomFlowLayout {
                 frame = nilCatcherFrame         //;print("\n\nit's the nil catcher frame, rows \(rows)")
             }                                   //* default frame is overridden anyway (see above comment); hence its initialization with all 0's
         }
-        
-        if topVC.vcType != .hours {keyboardHeight = 0}
         
         let gap = CGFloat(6) /// extra gap for better aesthetics
         let autofitWidth = CGFloat(frame.width) / CGFloat(cols) - hSpace

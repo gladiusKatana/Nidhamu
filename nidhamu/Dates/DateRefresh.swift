@@ -3,13 +3,12 @@ import UIKit
 
 extension CustomFlowLayout {
     
-    func processCurrentDate() { // only called by prepare()
-        let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: true)
-        //print(formattedDateString(Date(), comment: "process dates @ ", short: false))
+    func processCurrentDate() { /// in an extension of the custom layout class because it's only called by prepare()
         
-        nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows//for 'nowDate': tabular representation of now
+        let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: true)
+        nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows     /// for 'nowDate', a tabular representation of current date
         nowColumn = headerWeekdayTitles.firstIndex(of: String(weekday.prefix(3)))! + timetableLayout.lockedHeaderSections
-        //; print("nowCell \([nowColumn, nowRow])")
+        ///print(formattedDateString(Date(), comment: "process dates @ ", short: false))    //; print("nowCell \([nowColumn, nowRow])")
         
         if !reloadedFromHourTickingOver {
             if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections {
@@ -18,7 +17,8 @@ extension CustomFlowLayout {
                 
                 lastLoginDateComponents = [year, month, day, weekday, hour, minute]
                 lastLoginDate = dateFromComponents(lastLoginDateComponents)
-                //pryntLastLoginDate()
+                
+                //pryntLastLoginDate()                                  // ! maybe not just print, but save/load with prints////////////////
                 //pryntCurrentDate()
             }
             else {print("new hour")}
@@ -31,15 +31,13 @@ extension CollectionVC {
     
     func periodicDateRefresh(completion: () -> ()) {                                                 //print("·", terminator: "")
         
-        if "\(Date())".contains(":59:5") {
-            reloadedFromHourTickingOver = false
-        }
+        if "\(Date())".contains(":59:5") {reloadedFromHourTickingOver = false}
         
         if "\(Date())".contains(":00:") {
             if !reloadedFromHourTickingOver {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    topVC.reloadCV()
+                    topVC.reloadCV()                                    // ! maybe save/load with prints////////////////////////////////////
                 }
             }
         }

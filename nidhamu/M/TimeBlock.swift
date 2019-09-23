@@ -27,7 +27,7 @@ extension CollectionVC {
                 eventsAtIndexPath[timeBlockToAdd] = [simpleEvent]
             }
             else {
-                eventsAtIndexPath[timeBlockToAdd]!.append(simpleEvent)
+                eventsAtIndexPath[timeBlockToAdd]!.append(simpleEvent) //!  can probably clean this up. Why not just append either way?
             }
         }
             

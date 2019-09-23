@@ -11,6 +11,7 @@ extension CollectionVC {
             
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
             ///print("\nselected date (unformatted gmt)  \(cell.cellDate)")     ///print(formattedDateString(cell.cellDate, roundedDown: false, prefix: "                 (formatted)    ", suffix: "", short: false))
+            
             selectedCellDate = cell.cellDate                                                                                        //➕
             let selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: " Add an Event", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
             
@@ -21,33 +22,50 @@ extension CollectionVC {
                 timeBlock = TimeBlock(values:(column, row))
                 
                 if eventsAtIndexPath[timeBlock] == nil || textFieldDisplayed {
-                    /*if previousTimeBlockPathSelected == defaultPathOutOfView {
-                     previousTimeBlockPathSelected = selectedTimeBlockPath
-                     DispatchQueue.main.asyncAfter(deadline: .now()) {
-                     UIView.animate(withDuration: 1, delay: 0,                                      //! factor/put in Animations.swift
-                     usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveLinear, animations: {
-                     cell.backgroundColor = eventAddingColour
-                     }, completion: nil)
-                     }
-                     } else {*/ //not sure if will keep this animation: looks nice, but slows the user down, which might outweight the aesthetics
                     
-                    ///setNavBarTitle(customString: " Add an Event (Tap Done to quit)")
-                    UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
+                    ///see (1) re. animations, below
+                    
                     cell.backgroundColor = eventAddingColour
-                    reloadCV()
-                    presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)
                     
-                    /**/
+                    UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
+                    presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)
+                    reloadCV()
+                    
+                    ///see (2) re. animation-logic, below
                     
                 } else { rePresentedVCManually = true
                     gotoView(vc: todoListVC)
                 }
+           
             case .todoList:
-                formatAndPresentTextField(dateString: selectedTimeBlockDateDescription)
+                
+                UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
+                presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)
+                reloadCV()
+                
             default: print("unrecognized collection view type's cell selected")}
-        }                                                                                           //else {print("selected header")}
+            
+            reloadCV()
+            
+        }///else {print("selected navbar-embeddd vc's header")}
     }
 }
+
+//(1)
+
+/*if previousTimeBlockPathSelected == defaultPathOutOfView {
+ previousTimeBlockPathSelected = selectedTimeBlockPath
+ DispatchQueue.main.asyncAfter(deadline: .now()) {
+ UIView.animate(withDuration: 1, delay: 0,                                      //! factor/put in Animations.swift
+ usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveLinear, animations: {
+ cell.backgroundColor = eventAddingColour
+ }, completion: nil)
+ }
+ } else {*/ //not sure if will keep this animation: looks nice, but slows the user down, which might outweight the aesthetics
+///setNavBarTitle(customString: " Add an Event (Tap Done to quit)") // also not sure if will keep this. Gives the user too much extra stuff to look at, probably
+
+
+//(2)
 
 /*if row >= 18 {
  if !textFieldDisplayed {presentTextField(after: 1, dateString: selectedTimeBlockDateDescription)}

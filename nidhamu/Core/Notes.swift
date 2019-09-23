@@ -1,55 +1,67 @@
-/* Notes            ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+/* Notes            ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️ // File aesthetically optimized for a 13" Macbook Pro
  
  
  
- task____________________________________________________________deadline_______________________________type
- 
- 
+ TASK____________________________________________________________DEADLINE___________(optional "FUN / DIFFICULTY level)*_____________TYPE**
+
  
  1st commit                                                     July 8 2019
  
  
- 
- first rotate no reposition text field                                                                  ui
- mark item recurring (remove by default)                                                                data
- 
- timetableVC deferral-date selection mode
+ Multithreading factoring: can remove any reloadData()s / DispatchQueue calls?      (fun; first-up next session)                    REFACTORING
+ refactor addToTimeBlocks()?                                                        (fun; first-up next session)
+ save/load upon hour rollover ?                                                     (fun; second-up)                                DATA
+ shrink font when keyboard presented in landscape                                   (easy; deferred)                                UI
+ obviate repositioning when text field presented (even on first rotation)           (easy; deferred)
+
+ mark item recurring (remove by default)                                            (FUN : reward for crushing above 2 tasks)       DATA
+ timetableVC deferral-date selection mode                                           (""same as above for DATA tasks below)
  eventsAtDate
  archive data (eventsAtIndexPath; eventsAtDate)
- archive CSV email
- Numbers template
- *check over comments
-                                                                Sat Sept 21 BETA (ambitious)
  
+ implement archive CSV emails as User setting                                       (FUN; easy)                                     UX
+ create Numbers template; populate the above on it (automatically?)                 (FUN; easy except perhaps some of the automation)
+ create Excel template; populate the above on it (automatically?)                   (""same as above)
  
- login date interval outlined / animated, not perma-coloured                                            ui
- implement  loopWeeks = false  behaviour                                                                data
- eventsAtDate on calendarVC
- mornAftEveNiteVC                                                                                       vcs
- listVC (today items)
- listVC (deadlineless items)
- settings menu
-                                                                Mon Sept 23 APP STORE
- 
- 
- dark mode                                                                                              design
- buttons
+ settings menu(fun; easy)                                                           (fun; easy)                                     DESIGN/UX
+ button                                                                             ("")
  icon
  launch screen
- prevent user changing nowDate via Settings app                                                         *
- cascading deferrals                                                                                    *
-                                                                asap updates
-
+ check over comments
+ run on my devices which are same as Beta Users'                Tues Sept 24                                         BETA! (ambitious)
+              
  
- * denotes features that may not necessarily be a good idea to implement. eg should users be able to defer *all* their remaining tasks at once?*/
+ 
+ 
+ login date interval outlined / animated, not perma-coloured                                                                        UI
+ implement loopWeeks = false behaviour as User setting                                                                              DATA
+ eventsAtDate on calendarVC
+ 
+ mornAftEveNiteVC                                                                                                                   VCs
+ listVC (today items)
+ listVC (deadlineless items)
+                                                                Thurs Sept 26                                       APPSTORE!
+ 
+ 
+ 
+ dark mode                                                                                                          DESIGN (ie w/ user feedback)
+ prevent User changing nowDate via Settings app                                                                     ***
+ cascading deferrals                                                                                                ***
+                                                                later as updates
+                                                                                                                    */
+                                                                                                                    //see notes (*) - (***) below
+ 
+/// *
+/// Programming is always fun, but "fun" really means "really fun" and "FUN" means "REALLY fun"
+        
 
+/// **
+/// my   "DATA"  &  "UI"   labels are often loose proxies for...
+/// the       M       &   V     of MVC.   (Why use this new naming?  Mostly since, in this file Notes.swift, I want a categorization class for the project itself, and the code itself, not just the app)
+ 
 
-
-
-
-
-
-
+/// ***
+///  denotes features that may not necessarily be a good idea to implement (eg, should users be *able* to defer *all* their remaining tasks at once?)  Interesting types of questions.
 
 
 

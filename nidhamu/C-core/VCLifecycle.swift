@@ -4,8 +4,7 @@ import UIKit
 extension CollectionVC {
     
     override func viewDidLoad() {                                   super.viewDidLoad()
-        if vcType == .todoList {collectionView.backgroundColor = .white}
-        else {collectionView.backgroundColor = .clear}
+        collectionView.backgroundColor = .clear
         collectionView.bounces = false
         
         setTopViewController()
@@ -36,10 +35,9 @@ extension CollectionVC {
     }
     
     override func viewWillDisappear(_ animated: Bool) {             super.viewWillDisappear(animated)
-        if vcType == .todoList {
+        if vcType == .todoList {        ///since it's not (currently) possible, anyway, to navigate away from the timetable vc when in event-adding mode (ie when text field is displayed)
             if textFieldDisplayed {
-                eventField.resignFirstResponder()
-                eventField.removeFromSuperview()                    //; print("removed text field")
+                exitEventAddingMode()
                 textFieldDisplayed = false
             }
             previousTimeBlockPathSelected = defaultPathOutOfView

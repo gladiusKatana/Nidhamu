@@ -5,8 +5,7 @@ extension CollectionVC {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {          //print("TF_return")
         
-        textField.resignFirstResponder()
-        textField.removeFromSuperview()
+        textField.removeFromSuperview(); textField.resignFirstResponder()
         textFieldDisplayed = false
         
         let textEntered = textField.text!
@@ -23,31 +22,32 @@ extension CollectionVC {
                     cell.backgroundColor = headerColour
                 }
             }
-            
             ///animateSelectedCellColourBack()
             previousTimeBlockPathSelected = defaultPathOutOfView
         }
         else {
+
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
             
             if vcType == .todoList {
                 rePresentedVCManually = true
-                gotoView(vc: todoListVC)                                    // re-presents view & reloads its data, to display updated todo list
+                gotoView(vc: todoListVC) /// re-presents view & reloads its data, to display updated todo list
             }
-            
-            selectedTimeBlockPath = defaultPathOutOfView
         }
         
         textField.text = ""
-        
-        if vcType == .hours {
-            DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
-                UIApplication.shared.keyWindow!.backgroundColor = windowBackgroundColour
-                keyboardHeight = 0
-                self?.reloadCV()
-            }
-        }
+        exitEventAddingMode()
         return true
+    }
+    
+    func exitEventAddingMode() {
+        eventField.removeFromSuperview()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()) {   //[weak self] in
+            UIApplication.shared.keyWindow!.backgroundColor = windowBackgroundColour
+            keyboardHeight = 0
+            self.reloadCV()
+        }
     }
 }
 

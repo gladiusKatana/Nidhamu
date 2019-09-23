@@ -16,6 +16,7 @@ extension CollectionVC {
             
             setupTitleAndPresentViewController(vc: vc) { () -> () in
                 reloadWithDelay(after: 0.02)
+//                reloadCV()
             }
             
         } else {print("you're already looking at the \(vc.vcType)-view   nav'd by button?\(rePresentedVCManually)")}

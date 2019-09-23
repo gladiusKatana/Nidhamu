@@ -10,11 +10,10 @@ extension CollectionVC {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             if !classifierViewDisplayed {
                 
-                let layout = self.downcastLayout!;      let widthMultiplier = CGFloat(2)
-                let cellWidth = layout.widthPlusSpace;  let cellHeight = layout.heightPlusSpace
-                
+                let layout = self.downcastLayout!;                          let widthMultiplier = CGFloat(2)
+                let cellWidth = layout.widthPlusSpace;                      let cellHeight = layout.heightPlusSpace
                 let popupMenuLayout = classifierVC.downcastLayout!
-                popupMenuLayout.cellWidth = cellWidth * widthMultiplier;  popupMenuLayout.cellHeight = cellHeight
+                popupMenuLayout.cellWidth = cellWidth * widthMultiplier;    popupMenuLayout.cellHeight = cellHeight
                 
                 let cols = CGFloat(popupMenuLayout.cols)
                 var x = cellWidth * CGFloat(column + 1)
@@ -38,15 +37,15 @@ extension CollectionVC {
                 eventRecurringSwitchView = PopupSwitchView(frame:
                     CGRect(x: x, y: y + popupCollectionViewFrame.height,
                            width: wid, height: switchViewHeight))                   ; eventRecurringSwitchView.backgroundColor = headerColour
+                
                 timetableVC.view.addSubview(classifierVC.view)                      //; print("----------------adding popup")
                 timetableVC.view.addSubview(eventRecurringSwitchView)               //; print("adding switch")
                 
-                classifierViewDisplayed = true
                 classifierVC.becomeFirstResponder()
-                
+                classifierViewDisplayed = true
                 classifierVC.collectionView.reloadData()
-                classifierVC.keepScrollIndicatorsVisible()
                 
+                classifierVC.keepScrollIndicatorsVisible()
                 self.addBorderAroundTimeBlockCurrentlyBeingMarked()
             }
         }

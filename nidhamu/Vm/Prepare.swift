@@ -9,7 +9,7 @@ extension CustomFlowLayout {
         calculateAndResetSizes()
         
         if previousOrientation != currentOrientation {                                      //print("prepare(rotated to \(currentOrientation)):")
-            
+
             if textFieldDisplayed {
                 UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
                 if firstPortraitKeyboardPresented && currentOrientation == "portrait" {
@@ -24,18 +24,22 @@ extension CustomFlowLayout {
             
             topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in
                 rePresentedVCManually = false
+                //topVC.reloadCV()
             }
             
         } else {if topVC.vcType == .hours {processCurrentDate()}}
         
-        if textFieldDisplayed && topVC.vcType == .hours {topVC.rePresentTextField()}
+        if textFieldDisplayed {
+            topVC.rePresentTextField()
+            if topVC.vcType == .todoList {
+                DispatchQueue.main.asyncAfter(deadline: .now()) {topVC.reloadCV()}
+            }
+        }
     }
     
     func calculateAndResetSizes() {
-        (cellWidth, cellHeight) = calculateSizes()
-        resetDimensionIfSquareCellsEnabled()
-        widthPlusSpace = cellWidth! + hSpace
-        heightPlusSpace = cellHeight! + vSpace
+        (cellWidth, cellHeight) = calculateSizes(); resetDimensionIfSquareCellsEnabled()
+        widthPlusSpace = cellWidth! + hSpace;       heightPlusSpace = cellHeight! + vSpace
         
         if !embeddedInNavController {compensateForNavigationAndStatusBars(forCollectionVC: classifierVC, withDelta: 0)}
         else {

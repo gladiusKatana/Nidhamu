@@ -6,20 +6,21 @@ extension PopupMenuVC {
     override func collectionView(_ collectionView: UICollectionView,
                                  didSelectItemAt indexPath: IndexPath) {
         
-        let cell = collectionView.cellForItem(at: indexPath) as! CustomCell                     ; cell.backgroundColor = eventAddingColour
+        let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
         let layout = downcastLayout!; let row = indexPath.item; let column = indexPath.section
+        cell.backgroundColor = eventAddingColour
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
             guard let firstPathToProcess = pathsToProcess.first else { print("no paths to process... even though popup was presented"); return}
-            let currentColumn = firstPathToProcess[0]; let currentRow = firstPathToProcess[1] // components of path of current item being marked
+            let col = firstPathToProcess[0]; let row = firstPathToProcess[1]                    /// components of path of current item being marked
             
-            if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(currentColumn, currentRow))] {    // writing to the dictionary
-                
+            if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(col, row))] { /// writing to the dictionary
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
                 eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
                 ///print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
-            } else {print("no item")}
+            }
+            ///                                                                             ///else {print("no item")} //this method  only called when event-objects exist
             
             if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
             if eventsInBlockToBeProcessed > 0 {eventsInBlockToBeProcessed -= 1}
@@ -35,21 +36,17 @@ extension PopupMenuVC {
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                
-                eventRecurringSwitchView.removeFromSuperview()          //; print("removing switch")
-                classifierVC.view.removeFromSuperview()                 //; print("                removing popup")
-                classifierVC.resignFirstResponder()
-                
-                classifierViewDisplayed = false                         //print("now paths to process: \(pathsToProcess)")
+                eventRecurringSwitchView.removeFromSuperview()                              ///; print("removing switch")
+                classifierVC.view.removeFromSuperview(); classifierVC.resignFirstResponder()
+                classifierViewDisplayed = false                                             ///print("now paths to process: \(pathsToProcess)")
                 defaultSaveData(saveDate: false, showDate: false, pryntEvents: true)
                 
                 earliestEventAddress = defaultPathOutOfView
-                timetableVC.reloadCV()                              //; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
+                timetableVC.reloadCV()                          ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
                 timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
-                
                 if pathsToProcess.isEmpty {self.exitEventTaggingMode()}
             }
-        } else {print("selected header")}
+        } else {print("selected popup menu header")}
     }
 }
 

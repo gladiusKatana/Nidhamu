@@ -25,7 +25,7 @@ var todoListLayout = //---------
         customFrame: globalKeyWindow.frame,
         rows: 1, cols: 2, lockedHeaderRows: 0, lockedHeaderSections: 0,
         cellWidth: nil, cellHeight: nil,
-        autoFitWScale: 1, autoFitHScale: 0.667,
+        autoFitWScale: 1, autoFitHScale: 1,
         hSpace: cellGap, vSpace: cellGap,
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
