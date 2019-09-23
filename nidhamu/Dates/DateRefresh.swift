@@ -1,29 +1,26 @@
 // DateRefresh      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-extension CustomFlowLayout {
+func processCurrentDate() {
     
-    func processCurrentDate() { /// in an extension of the custom layout class because it's only called by prepare()
-        
-        let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: true)
-        nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows     /// for 'nowDate', a tabular representation of current date
-        nowColumn = headerWeekdayTitles.firstIndex(of: String(weekday.prefix(3)))! + timetableLayout.lockedHeaderSections
-        ///print(formattedDateString(Date(), comment: "process dates @ ", short: false))    //; print("nowCell \([nowColumn, nowRow])")
-        
-        if !reloadedFromHourTickingOver {
-            if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections {
-                
-                print("new week")
-                
-                lastLoginDateComponents = [year, month, day, weekday, hour, minute]
-                lastLoginDate = dateFromComponents(lastLoginDateComponents)
-                
-                //pryntLastLoginDate()                                  // ! maybe not just print, but save/load with prints////////////////
-                //pryntCurrentDate()
-            }
-            else {print("new hour")}
-            reloadedFromHourTickingOver = true
+    let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: true)
+    nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows     /// for 'nowDate', a tabular representation of current date
+    nowColumn = headerWeekdayTitles.firstIndex(of: String(weekday.prefix(3)))! + timetableLayout.lockedHeaderSections
+    ///print(formattedDateString(Date(), comment: "process dates @ ", short: false))    //; print("nowCell \([nowColumn, nowRow])")
+    
+    if !reloadedFromHourTickingOver {
+        if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections {
+            
+            print("new week")
+            
+            lastLoginDateComponents = [year, month, day, weekday, hour, minute]
+            lastLoginDate = dateFromComponents(lastLoginDateComponents)
+            
+            //pryntLastLoginDate()                                  // ! maybe not just print, but save/load with prints////////////////
+            //pryntCurrentDate()
         }
+        else {print("new hour")}
+        reloadedFromHourTickingOver = true
     }
 }
 

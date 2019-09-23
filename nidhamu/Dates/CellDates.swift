@@ -47,6 +47,8 @@ extension CollectionVC {
                                         cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
             processEventsBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)
         }
+        
+        checkDateStringMatchAndPrintLabel("now", date: Date(), cell: cell) // identifies the now-cell
         //showTimeInTitleLabels(date: cell.cellDate, cell: cell)
         //showDateInTitleLabels(date: cell.cellDate, cell: cell)
     }

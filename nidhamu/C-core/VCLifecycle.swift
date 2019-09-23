@@ -12,6 +12,7 @@ extension CollectionVC {
         
         statusBarHeightChangeNotificationSetup()
         keyboardNotificationSetup()
+        processCurrentDate()
         periodicDateRefresh(){kickoffTimer()}                       // checks the date then does the timer kickoff ('starts on the 0th callback')
         //kickoffTimer()                                            // does the timer kickoff then checks the date ('starts on the 1st callback')
     }

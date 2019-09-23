@@ -4,7 +4,7 @@ import UIKit
 extension CollectionVC {
     
     func processEventsBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
-        
+
         if [column, row] == selectedTimeBlockPath /*&& eventsAtIndexPath[TimeBlock(values:(column, row))] == nil*/ {
             if textFieldDisplayed {cell.backgroundColor = eventAddingColour}
         } else {
@@ -19,12 +19,11 @@ extension CollectionVC {
                 //animateCellColourBack(cell: cell, delay: 3, duration: 10)
                 //}
                 
-                showDateInTitleLabels(date: oneWeekAgo, cell: cell)
+                ///showDateInTitleLabels(date: oneWeekAgo, cell: cell)   // useful for testing
                 prepareToProcessEventsSinceLastLogin(cell: cell, column: column, row: row)
             }
             
             checkDateStringMatchAndPrintLabel("last login", date: lastLoginDate, cell: cell)
-            checkDateStringMatchAndPrintLabel("now", date: Date(), cell: cell)
             
             if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
                 cell.layer.borderColor = UIColor.white.cgColor; cell.layer.borderWidth = 2      //; print("highlighted cell white")
