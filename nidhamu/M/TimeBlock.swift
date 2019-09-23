@@ -1,6 +1,7 @@
 // TimeBlock        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
+
 struct TimeBlock<T: Hashable, U: Hashable>: Hashable {
     let values : (T, U)
     func hash(into hasher: inout Hasher) {
@@ -29,9 +30,12 @@ extension CollectionVC {
             else {
                 eventsAtIndexPath[timeBlockToAdd]!.append(simpleEvent) //!  can probably clean this up. Why not just append either way?
             }
+            
+            
         }
             
         else {eventsAtIndexPath[timeBlockToAdd] = [simpleEvent]}
+
     }
 }
 

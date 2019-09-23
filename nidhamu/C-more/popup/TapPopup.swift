@@ -13,13 +13,17 @@ extension PopupMenuVC {
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
             guard let firstPathToProcess = pathsToProcess.first else { print("no paths to process... even though popup was presented"); return}
-            let col = firstPathToProcess[0]; let row = firstPathToProcess[1]                    /// components of path of current item being marked
             
-            if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(col, row))] { /// writing to the dictionary
+            let col = firstPathToProcess[0];  let rw = firstPathToProcess[1]                    /// components of path of current item being marked
+            
+//            print("tapped popup row \(col),\(rowTapped)")
+            
+            if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(col, rw))] { /// writing to the dictionary
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
                 eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
-                ///print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
+                print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
             }
+            else {print("couldn't write to it")}
             ///                                                                             ///else {print("no item")} //this method  only called when event-objects exist
             
             if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
@@ -42,7 +46,7 @@ extension PopupMenuVC {
                 defaultSaveData(saveDate: false, showDate: false, pryntEvents: true)
                 
                 earliestEventAddress = defaultPathOutOfView
-                timetableVC.reloadCV()                          ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
+                timetableVC.reloadCV()                                                      ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
                 timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
                 if pathsToProcess.isEmpty {self.exitEventTaggingMode()}
             }
