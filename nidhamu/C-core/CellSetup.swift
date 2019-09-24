@@ -16,8 +16,11 @@ extension CollectionVC {
                     let eventName = events[0].eventDescription
                     cell.titleLabel.text = eventName
                     
-                    let  truncTrailSize = truncationTrail.stringSize(font: cell.titleLabel.font)
-                    let limit = layout.cellWidth! - truncTrailSize.width
+                    let truncTrailSize = truncationTrail.stringSize(font: cell.titleLabel.font).width
+                    let limit = layout.cellWidth! - truncTrailSize //+ averageLetterWidth * 1.3
+                    
+                    ///print("limit: \(limit)")
+                    ///print("dots: \(truncTrailSize)  avgLetter:\(averageLetterWidth)")
                     
                     cell.titleLabel.text = truncateString(eventName, sizeLimit: limit, font: cell.titleLabel.font)
                 }

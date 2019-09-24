@@ -41,7 +41,13 @@ extension CollectionVC {
                 cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
                 timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
                 
-                if row == customLayout.rows - 1 && column == customLayout.cols - 1 {processTimeBlocksSinceLastLogin(layout: customLayout)}
+//                if row == 5 && column == 1 {
+//                    if vcType == .hours {findAverageLetterWidthWithCellLabelFont(cell: cell)} /// done here so it's only called once, but can access a cell
+//                }
+                
+                if row == customLayout.rows - 1 && column == customLayout.cols - 1 {          /// so it's called on the final cell dequeued
+                    processTimeBlocksSinceLastLogin(layout: customLayout)
+                }
             }
         }
         return cell

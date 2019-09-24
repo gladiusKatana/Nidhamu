@@ -28,7 +28,7 @@ var navBarHeight = 0.0;                         var launchWidth = 0.0
 
 var firstReenteredForeground = false;           ///var firstReloadForKeyboard = false
 var justPinched = false
-var showConsoleLegend = true;                  var thereWillBeARowException = false
+var showConsoleLegend = true;                   var thereWillBeARowException = false
 var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false
 
 
@@ -43,7 +43,7 @@ var launchOrientation = "orientation at the moment of launch"                   
 var loadSymbolLegend = "                                        💾 = view loaded"
 var appearSymbolLegend = "                                        🏞 = view appeared"  //console legend
 
-var truncationTrail = "..."
+var truncationTrail = "…";                      //var averageLetterWidth = CGFloat(0)
 
 var modelName = "device you're running on"
 var phones = ["iPhone4", "iPhone 4s", "iPhone 5", "iPhone 5c", "iPhone 5s", "iPhone 6", "iPhone 6 Plus", "iPhone 6s", "iPhone 6s Plus", "iPhone 7", "iPhone 7 Plus", "iPhone SE", "iPhone 8", "iPhone 8 Plus", "iPhone X", "iPhone XS", "iPhone XS Max", "iPhone XR"]

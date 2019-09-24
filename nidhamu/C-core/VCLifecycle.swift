@@ -25,7 +25,7 @@ extension CollectionVC {
     override func viewDidAppear(_ animated: Bool) {                 super.viewDidAppear(animated)
         if vcType != .eventClassifier {
             setTopViewController()
-            reloadCV()
+//            reloadCV()
         }
         
         if vcType == .todoList {setupPinchToExit()}
@@ -35,6 +35,7 @@ extension CollectionVC {
             showLoadAndAppearIndicationInConsole = true
             if showConsoleLegend {showConsoleLegend = false}        // legend only needs to be shown once
         }
+        else {reloadCV()}
     }
     
     override func viewWillDisappear(_ animated: Bool) {             super.viewWillDisappear(animated)
