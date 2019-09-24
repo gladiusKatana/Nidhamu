@@ -22,13 +22,13 @@ class BaseCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        backgroundColor = .clear; cellColour = .clear
+        
         layer.borderWidth = 2
+        layer.borderColor = UIColor.clear.cgColor
         
         titleLabel.text = "" /// use if title label text is ever set to a non-blank string
         titleLabel.font = defaultTimetableCellFont
-        
-        backgroundColor = .clear; cellColour = .clear
-        layer.borderColor = UIColor.clear.cgColor
     }
 }
 

@@ -14,35 +14,29 @@ extension PopupMenuVC {
             
             guard let firstPathToProcess = pathsToProcess.first else { print("no paths to process... even though popup was presented"); return}
             
-            let col = firstPathToProcess[0];  let rw = firstPathToProcess[1]                    /// components of path of current item being marked
-            
-//            print("tapped popup row \(col),\(rowTapped)")
+            let col = firstPathToProcess[0];  let rw = firstPathToProcess[1]                /// components of path of current item being marked
             
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(col, rw))] { /// writing to the dictionary
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
                 eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
-                print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
+                ///print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
             }
-            else {print("couldn't write to it")}
-            ///                                                                             ///else {print("no item")} //this method  only called when event-objects exist
             
             if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
             if eventsInBlockToBeProcessed > 0 {eventsInBlockToBeProcessed -= 1}
             
             if eventsInBlockToBeProcessed == 0 {
                 pathsToProcess.removeFirst(); eventArraysToProcess.removeFirst()
-                
                 eventIndex = 0
                 if !eventArraysToProcess.isEmpty {
                     eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
-                }
-                else {eventsInBlockToBeProcessed = 0}
+                } else {eventsInBlockToBeProcessed = 0}
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                eventRecurringSwitchView.removeFromSuperview()                              ///; print("removing switch")
+                eventRecurringSwitchView.removeFromSuperview()                                  ///; print("removing switch")
                 classifierVC.view.removeFromSuperview(); classifierVC.resignFirstResponder()
-                classifierViewDisplayed = false                                             ///print("now paths to process: \(pathsToProcess)")
+                classifierViewDisplayed = false                                                 ///print("now paths to process: \(pathsToProcess)")
                 defaultSaveData(saveDate: false, showDate: false, pryntEvents: true)
                 
                 earliestEventAddress = defaultPathOutOfView
@@ -50,6 +44,7 @@ extension PopupMenuVC {
                 timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
                 if pathsToProcess.isEmpty {self.exitEventTaggingMode()}
             }
+            
         } else {print("selected popup menu header")}
     }
 }
