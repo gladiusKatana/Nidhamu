@@ -24,7 +24,7 @@ class BaseCell: UICollectionViewCell {
         
         backgroundColor = .clear; cellColour = .clear
         
-        layer.borderWidth = 2
+        layer.borderWidth = 1
         layer.borderColor = UIColor.clear.cgColor
         
         titleLabel.text = "" /// use if title label text is ever set to a non-blank string

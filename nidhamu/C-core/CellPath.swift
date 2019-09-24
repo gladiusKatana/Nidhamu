@@ -20,6 +20,9 @@ extension CollectionVC {
         
         cell.xyCoordinate = [column, row]
         
+        if vcType == .hours {if currentOrientation == "landscape" {cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)}}
+        //else {}// not needed because font is reset to default in each cell's prepareForReuse()
+        
         if column < headerSections {
             cell.backgroundColor = headerColour
             

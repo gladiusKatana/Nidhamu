@@ -11,8 +11,7 @@
  Multithreading factoring: can remove any reloadData()s / DispatchQueue calls?      (fun; first-up next session)                    REFACTORING
  refactor addToTimeBlocks()?                                                        (fun; first-up next session)
  save/load upon hour rollover ?                                                     (fun; second-up)                                DATA
- shrink font when keyboard presented in landscape                                   (easy; deferred)                                UI
- obviate repositioning when text field presented (even on first rotation)           (easy; deferred)
+ obviate repositioning when text field presented (even on first rotation)           (easy; deferred)                                UI
 
  mark item recurring (remove by default)                                            (FUN : reward for crushing above 2 tasks)       DATA
  timetableVC deferral-date selection mode                                           (""same as above for DATA tasks below)
