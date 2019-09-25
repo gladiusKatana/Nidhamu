@@ -4,31 +4,28 @@ import UIKit
 extension CollectionVC {
     
     func processEventsBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
-
-        if [column, row] == selectedTimeBlockPath /*&& eventsAtIndexPath[TimeBlock(values:(column, row))] == nil*/ {
-            if textFieldDisplayed {cell.backgroundColor = eventAddingColour}
-        } else {
-            let oneWeekAgo = truncateMinutesOfDate(cell.cellDate - TimeInterval(86400 * 7)) // since cell-dates are based off of Date()...
-            if oneWeekAgo >= truncateMinutesOfDate(lastLoginDate) && oneWeekAgo < truncateMinutesOfDate(Date()) { //     ...ie, not rounded
-                
-                //if !saved TimeBlocksForProcessing { // this conditional would only be needed if doing the animation below
-                //if column < nowColumn || (column == nowColumn && row < nowRow) {cell.backgroundColor = .green; cell.cellColour = .green}
-                //else { // the  if  on the line above is purely for testing purposes
-                cell.backgroundColor = orangeForBlocksSinceLastLogin; cell.cellColour = orangeForBlocksSinceLastLogin
-                //}
-                //animateCellColourBack(cell: cell, delay: 3, duration: 10)
-                //}
-                
-                ///showDateInTitleLabels(date: oneWeekAgo, cell: cell)   // useful for testing
-                prepareToProcessEventsSinceLastLogin(cell: cell, column: column, row: row)
-            }
+        
+        let oneWeekAgo = truncateMinutesOfDate(cell.cellDate - TimeInterval(86400 * 7)) // since cell-dates are based off of Date()...
+        if oneWeekAgo >= truncateMinutesOfDate(lastLoginDate) && oneWeekAgo < truncateMinutesOfDate(Date()) { //     ...ie, not rounded
             
-            checkDateStringMatchAndPrintLabel("last login", date: lastLoginDate, cell: cell, withBorder: false)
+            //if !saved TimeBlocksForProcessing { // this conditional would only be needed if doing the animation below
+            //if column < nowColumn || (column == nowColumn && row < nowRow) {cell.backgroundColor = .green; cell.cellColour = .green}
+            //else { // the  if  on the line above is purely for testing purposes
+            cell.backgroundColor = orangeForBlocksSinceLastLogin; cell.cellColour = orangeForBlocksSinceLastLogin
+            //}
+            //animateCellColourBack(cell: cell, delay: 3, duration: 10)
+            //}
             
-            if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
-                cell.layer.borderColor = UIColor.white.cgColor                                              //; print("highlighted cell white")
-            }
+            ///showDateInTitleLabels(date: oneWeekAgo, cell: cell)   // useful for testing
+            prepareToProcessEventsSinceLastLogin(cell: cell, column: column, row: row)
         }
+        
+        checkDateStringMatchAndPrintLabel("last login", date: lastLoginDate, cell: cell, withBorder: false)
+        
+        if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
+            cell.layer.borderColor = UIColor.white.cgColor                                              //; print("highlighted cell white")
+        }
+        
     }
     
     func checkDateStringMatchAndPrintLabel(_ label: String, date: Date, cell: CustomCell, withBorder: Bool) {

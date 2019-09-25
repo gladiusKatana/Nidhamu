@@ -25,7 +25,6 @@ extension CollectionVC {
     override func viewDidAppear(_ animated: Bool) {                 super.viewDidAppear(animated)
         if vcType != .eventClassifier {
             setTopViewController()
-//            reloadCV()
         }
         
         if vcType == .todoList {setupPinchToExit()}

@@ -32,7 +32,7 @@ extension CollectionVC {
             cell.cellDate = selectedCellDate
             
             guard let eventAtTimeBlock = eventsAtIndexPath[timeBlock] else {
-                cell.titleLabel.text = "(no items yet)"; return // not really needed since todo list vc is only go-to-able via a time block
+                cell.titleLabel.text = "(no items yet)"; return // will not be executed since todo list vc is only go-to-able via a time block
             }
             
             let status = eventAtTimeBlock[row].eventStatus

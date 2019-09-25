@@ -11,7 +11,8 @@
  Multithreading factoring: can remove any reloadData()s / DispatchQueue calls?      (fun; first-up next session)                    REFACTORING
  refactor addToTimeBlocks()?                                                        (fun; first-up next session)
  save/load upon hour rollover ?                                                     (fun; second-up)                                DATA
- obviate repositioning when text field presented (even on first rotation)           (easy; deferred)                                UI
+ put back animations when tapping to add events                                     (easy; deferred)                                UI
+ obviate repositioning when text field presented (even on first rotation)           (easy; deferred)
 
  mark item recurring (remove by default)                                            (FUN : reward for crushing above 2 tasks)       DATA
  timetableVC deferral-date selection mode                                           (""same as above for DATA tasks below)
@@ -27,7 +28,7 @@
  icon
  launch screen
  triple check applogic, improve comments
- run on my devices which are same as Beta Users'                Tues Sept 24                                         BETA! (ambitious)
+ run on my devices which are same as Beta Users'                Wed Sept 25                                         BETA! (ambitious)
               
  
  

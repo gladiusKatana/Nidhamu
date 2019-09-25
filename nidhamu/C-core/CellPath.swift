@@ -8,8 +8,7 @@ extension CollectionVC {
         if vcType == .hours {
             if indexPath.row == 0 {return registerAndReturnLeftCell(collectionView, at: indexPath)}
             else {return registerAndReturnCell(collectionView, at: indexPath)}
-        }
-        else {return registerAndReturnCell(collectionView, at: indexPath)}
+        } else {return registerAndReturnCell(collectionView, at: indexPath)}
     }
     
     func doRestOfCellProcessing(cell: CustomCell, indexPath: IndexPath) -> CustomCell {
@@ -43,10 +42,7 @@ extension CollectionVC {
             } else {
                 cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
                 timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
-                
-//                if row == 5 && column == 1 {
-//                    if vcType == .hours {findAverageLetterWidthWithCellLabelFont(cell: cell)} /// done here so it's only called once, but can access a cell
-//                }
+                /**/
                 
                 if row == customLayout.rows - 1 && column == customLayout.cols - 1 {          /// so it's called on the final cell dequeued
                     processTimeBlocksSinceLastLogin(layout: customLayout)
@@ -57,3 +53,7 @@ extension CollectionVC {
     }
 }
 
+///For cell title label text truncation
+/*if row == 5 && column == 1 {
+ if vcType == .hours {findAverageLetterWidthWithCellLabelFont(cell: cell)} /// done here so it's only called once, but can access a cell
+ }*/

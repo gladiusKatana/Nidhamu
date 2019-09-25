@@ -9,11 +9,10 @@ extension CollectionVC {
         if topVC != vc {
             
             setupTitleAndPresentViewController(vc: vc) { () -> () in
-                reloadWithDelay(after: 0.02)
-                //reload CV()
+                ///reloadWithDelay(after: 0.02)
             }
             
-        } //else {print("you're already looking at the \(vc.vcType)-view")}
+        } else {print("you're already looking at the \(vc.vcType)-view")}
     }
     
     

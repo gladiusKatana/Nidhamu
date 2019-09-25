@@ -7,6 +7,7 @@ extension CollectionVC {
                                  didSelectItemAt indexPath: IndexPath) {                            //print("tapped tt cell")
         
         let layout = downcastLayout!;  let row = indexPath.item;  let column = indexPath.section
+        
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
@@ -32,14 +33,15 @@ extension CollectionVC {
                     ///see (2) re. animation-logic, below
                     
                 } else {
-//                    rePresentedVCManually = true
+                    if let events = eventsAtIndexPath[timeBlock] {
+                        todoListVC.downcastLayout!.rows = events.count
+                    }
                     gotoView(vc: todoListVC)
                 }
                 
             case .todoList:     prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
+                
             default: print("unrecognized collection view type's cell selected")}
-            
-            //reload CV()
             
         }///else {print("selected navbar-embeddd vc's header")}
     }
@@ -49,7 +51,7 @@ extension CollectionVC {
 
 /*if previousTimeBlockPathSelected == defaultPathOutOfView {
  previousTimeBlockPathSelected = selectedTimeBlockPath
- DispatchQueue.main.asyncAfter(deadline: .now()) {
+ D ispatchQueue.main.asyncAfter(deadline: .now()) {
  UIView.animate(withDuration: 1, delay: 0,                                      //! factor/put in Animations.swift
  usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveLinear, animations: {
  cell.backgroundColor = eventAddingColour

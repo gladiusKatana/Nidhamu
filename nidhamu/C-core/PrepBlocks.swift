@@ -26,6 +26,7 @@ extension CollectionVC {
                         let gap = CGFloat(5) / (self.downcastLayout!.cellHeight!)           // extra gap for better aesthetics
                         downcastLayout?.autoFitHScale =
                             CGFloat(layout.rows) / (CGFloat(layout.rows + 8) + gap)         // popup window is 8 cells tall
+                        
                         self.reloadWithDelay(after: 0)                                      //; print("reloaded for size adjustment")
                     }
                     

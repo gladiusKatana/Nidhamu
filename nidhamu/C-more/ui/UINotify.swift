@@ -43,7 +43,7 @@ extension CollectionVC {
             }
             
             textFieldDisplayed = true
-            timetableVC.reloadWithDelay(after: 0)
+            timetableVC.reloadCV()
         }
     }
 }

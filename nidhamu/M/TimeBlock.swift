@@ -24,6 +24,7 @@ extension CollectionVC {
         let simpleEvent = SimpleEvent(eventDescription: textEntered, eventDate: selectedCellDate, eventStatus: .upcoming)
         
         if eventsAtIndexPath[timeBlockToAdd] != nil {
+            
             if eventsAtIndexPath[timeBlockToAdd]?.last!.eventDescription == defaultEmptyEventDescription {
                 eventsAtIndexPath[timeBlockToAdd] = [simpleEvent]
             }
@@ -31,11 +32,10 @@ extension CollectionVC {
                 eventsAtIndexPath[timeBlockToAdd]!.append(simpleEvent) //!  can probably clean this up. Why not just append either way?
             }
             
-            
         }
             
         else {eventsAtIndexPath[timeBlockToAdd] = [simpleEvent]}
-
+        
     }
 }
 

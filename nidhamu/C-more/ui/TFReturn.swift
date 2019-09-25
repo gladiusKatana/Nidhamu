@@ -1,41 +1,38 @@
 // TFReturn         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-extension CollectionVC {
+extension CollectionVC {    /// ** commented code here is
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {          //print("TF_return")
         
         textField.removeFromSuperview(); textField.resignFirstResponder()
         textFieldDisplayed = false
-        
         let textEntered = textField.text!
         
         if textEntered == "" || textEntered == " " || textEntered == "  " { // if user (for some reason) enters > 2 whitespaces, well, it's saved
-            
-            if vcType == .hours && downcastLayout?.autoFitHScale != 1 {
-                downcastLayout?.autoFitHScale = 1
-                reloadCV()
-            }
-            
-            for cell in self.collectionView.visibleCells as! [BaseCell] {
-                if cell.xyCoordinate == selectedTimeBlockPath {
-                    cell.backgroundColor = headerColour
-                }
-            }
-            ///animateSelectedCellColourBack()
-            previousTimeBlockPathSelected = defaultPathOutOfView
-        }
-        else {
-            
+            /*for cell in self.collectionView.visibleCells as! [BaseCell] {
+             if cell.xyCoordinate == selectedTimeBlockPath {
+             cell.backgroundColor = headerColour
+             }
+             }///animateSelectedCellColourBack()
+             selectedTimeBlockPath = defaultPathOutOfView
+             previousTimeBlockPathSelected = defaultPathOutOfView*/
+        } else {
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
+            
+            if vcType == .hours {
+                selectedTimeBlockPath = defaultPathOutOfView
+                previousTimeBlockPathSelected = defaultPathOutOfView
+            }
             
             if vcType == .todoList {
                 
-                if let events = eventsAtIndexPath[timeBlock] {                              //eventsAt IndexPath[imeBlock]
+                if let events = eventsAtIndexPath[timeBlock] {  /// if time-block is not empty
                     todoListVC.downcastLayout!.rows = events.count
+                    setupTitleAndPresentViewController(vc: todoListVC) { () -> () in
+                        reloadCV()  /// re-presents view & reloads its data, to display updated todo list
+                    }
                 }
-                
-                gotoView(vc: todoListVC) /// re-presents view & reloads its data, to display updated todo list
             }
         }
         
@@ -46,8 +43,6 @@ extension CollectionVC {
     
     func exitEventAddingMode() {
         eventField.removeFromSuperview()
-        
-        selectedTimeBlockPath = defaultPathOutOfView
         
         DispatchQueue.main.asyncAfter(deadline: .now()) {   //[weak self] in
             UIApplication.shared.keyWindow!.backgroundColor = windowBackgroundColour

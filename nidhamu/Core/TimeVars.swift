@@ -22,7 +22,7 @@ var eventDescriptionArrays = [[String]]()                                       
 var eventStatusArrays = [[Int]]() /* Populated with raw values of enum EventStatus*/            //var sortedEventStatusArrays = [Any]()
 
 var defaultPathOutOfView = [-1, -1];                var earliestEventAddress = defaultPathOutOfView
-var selectedTimeBlockPath = defaultPathOutOfView;   var previousTimeBlockPathSelected = defaultPathOutOfView
+var selectedTimeBlockPath = defaultPathOutOfView;   var previousTimeBlockPathSelected = defaultPathOutOfView /// for animations: see Tap.swift
 //--------------------------------------------------------------------
 
 var nowRow = 0;                                     var nowColumn = 0
