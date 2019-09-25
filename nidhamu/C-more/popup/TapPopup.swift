@@ -37,7 +37,7 @@ extension PopupMenuVC {
                 eventRecurringSwitchView.removeFromSuperview()                                  ///; print("removing switch")
                 classifierVC.view.removeFromSuperview(); classifierVC.resignFirstResponder()
                 classifierViewDisplayed = false                                                 ///print("now paths to process: \(pathsToProcess)")
-                defaultSaveData(saveDate: false, showDate: false, pryntEvents: true)
+                defaultSaveData(saveDate: false, showDate: false, pryntEvents: false)
                 
                 earliestEventAddress = defaultPathOutOfView
                 timetableVC.reloadCV()                                                      ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
