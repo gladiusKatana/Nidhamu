@@ -27,10 +27,7 @@ extension CollectionVC {
                         downcastLayout?.autoFitHScale =
                             CGFloat(layout.rows) / (CGFloat(layout.rows + 8) + gap)         // popup window is 8 cells tall
                         
-                        ///self.reloadWithDelay(after: 0) //; print("reloaded for size adjustment")
-                        DispatchQueue.main.asyncAfter(deadline: .now()) {
-                            self.reloadCV()
-                        }
+                        self.reloadWithDelay(after: 0) //; print("reloaded for size adjustment")
                     }
                     
                     savedTimeBlocksForProcessing = true

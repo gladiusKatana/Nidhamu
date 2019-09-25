@@ -23,12 +23,10 @@ extension CollectionVC {
     
     
     func setupAndPresent(vc: UICollectionViewController) {
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            self.dismissNavController {
-                let newVC = UINavigationController(rootViewController: vc)
-                navController?.present(newVC, animated: false, completion: nil)
-                self.setTopViewController()// try commenting this, you should see: vc of type 'initial' was root vc when this method was called
-            }
+        dismissNavController {
+            let newVC = UINavigationController(rootViewController: vc)
+            navController?.present(newVC, animated: false, completion: nil)
+            self.setTopViewController()// try commenting this, you should see: vc of type 'initial' was root vc when this method was called
         }
     }
     

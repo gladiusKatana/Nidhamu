@@ -23,16 +23,13 @@ extension CustomFlowLayout {
             previousOrientation = currentOrientation
             
             topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in
-                ///topVC.reloadCV() // already done in viewDidAppear()
+                ///(empty; may remove the completion handler from this method)
             }
-            
         } else {if topVC.vcType == .hours {processCurrentDate()}}
         
         if textFieldDisplayed {
             topVC.rePresentTextField()
-            if topVC.vcType == .todoList {
-                DispatchQueue.main.asyncAfter(deadline: .now()) {topVC.reloadCV()}
-            }
+            if topVC.vcType == .todoList {topVC.reloadWithDelay(after: 0)}
         }
     }
     

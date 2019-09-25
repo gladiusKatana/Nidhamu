@@ -7,9 +7,7 @@
  
  1st commit                                                     July 8 2019
  
- 
- Multithreading factoring: can remove any reloadData()s / DispatchQueue calls?      (fun; first-up next session)                    REFACTORING
- refactor addToTimeBlocks()?                                                        (fun; first-up next session)
+ refactor addToTimeBlocks()?                                                        (fun; first-up next session)                    REFACTORING
  save/load upon hour rollover ?                                                     (fun; second-up)                                DATA
  put back animations when tapping to add events                                     (easy; deferred)                                UI
  obviate repositioning when text field presented (even on first rotation)           (easy; deferred)

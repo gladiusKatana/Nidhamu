@@ -1,7 +1,7 @@
 // TFReturn         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-extension CollectionVC {    /// ** commented code here is
+extension CollectionVC {    /// ** commented code here is for animations
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {          //print("TF_return")
         
@@ -29,8 +29,8 @@ extension CollectionVC {    /// ** commented code here is
                 
                 if let events = eventsAtIndexPath[timeBlock] {  /// if time-block is not empty
                     todoListVC.downcastLayout!.rows = events.count
-                    setupTitleAndPresentViewController(vc: todoListVC) { () -> () in
-                        reloadCV()  /// re-presents view & reloads its data, to display updated todo list
+                    setupTitleAndPresentViewController(vc: todoListVC) { () -> () in    /// re-presents view & reloads its data, to display updated todo list
+                        ///(empty; may remove the completion handler from this method)
                     }
                 }
             }
@@ -44,11 +44,9 @@ extension CollectionVC {    /// ** commented code here is
     func exitEventAddingMode() {
         eventField.removeFromSuperview()
         
-        DispatchQueue.main.asyncAfter(deadline: .now()) {   //[weak self] in
-            UIApplication.shared.keyWindow!.backgroundColor = windowBackgroundColour
-            keyboardHeight = 0
-            self.reloadCV()
-        }
+        UIApplication.shared.keyWindow!.backgroundColor = windowBackgroundColour
+        keyboardHeight = 0
+        reloadCV()
     }
 }
 
