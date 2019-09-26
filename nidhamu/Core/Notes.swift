@@ -26,7 +26,7 @@
  icon
  launch screen
  triple check applogic, improve comments
- run on my devices which are same as Beta Users'                Wed Sept 25                                         BETA! (ambitious)
+ run on my devices which are same as Beta Users'                Fri Sept 27                                         BETA! (ambitious)
               
  
  
@@ -38,7 +38,7 @@
  mornAftEveNiteVC                                                                                                                   VCs
  listVC (today items)
  listVC (deadlineless items)
-                                                                Thurs Sept 26                                       APPSTORE!
+                                                                Mon Sept 30                                       APPSTORE!
  
  
  
