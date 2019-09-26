@@ -15,11 +15,11 @@ var textFieldY = CGFloat(0)
 var textFieldHeight = CGFloat(30)  /// will rewrite this at some point, to be reset to a size calculated from its text height, plus a bit (with an initial value of 0). See stringSize(:), in Strings.swift
 var textFieldWidth = CGFloat(0)
 
-var keyboardHeight = CGFloat(0) /// will rewrite this line and the two below it, and an enum containing manually-determined values for each device; this will be done by running the app...
-//var portraitKeyboardHeight = CGFloat(246)         /// ...on each simulator, with old versions of resetKeyboardHeight() and showKBoard(:)
-//var landscapeKeyboardHeight = CGFloat(192)
-var portraitKeyboardHeight = CGFloat(0)
-var landscapeKeyboardHeight = CGFloat(0)
+var keyboardHeight = CGFloat(0) /// will rewrite the two lines below this one, and write an enum containing manually-determined* values for each device; this will be done by running the app...
+var portraitKeyboardHeight = CGFloat(246) /// ...on each simulator, with old versions of resetKeyboardHeight() & showKBoard(:); so, will be initializing these 2 values to 0, as below
+var landscapeKeyboardHeight = CGFloat(192)/// * why manually determined?  Because these values (keyboard heights for different iOS devices) do not seem to be recorded anywhere online
+//var portraitKeyboardHeight = CGFloat(0)
+//var landscapeKeyboardHeight = CGFloat(0)
 
 var xOffSet = CGFloat(0);                       var yOffset = CGFloat(0)
 
@@ -28,7 +28,7 @@ var navBarHeight = 0.0;                         var launchWidth = 0.0
 
 
 
-var firstReenteredForeground = false;           ///var firstReloadForKeyboard = false
+var firstReenteredForeground = false;           var keyboardFirstPresented = false
 var justPinched = false
 var showConsoleLegend = true;                   var thereWillBeARowException = false
 var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false

@@ -6,11 +6,8 @@
 
  1st commit                                                     July 8 2019
  
- 
- obviate repositioning when text field presented (even on first rotation)           (easy; deferred)
- 
- save/load upon hour rollover ?                                                     (fun; second-up)                                DATA
- mark item recurring (remove by default)                                            (FUN : reward for crushing above 2 tasks)
+ save/load upon hour rollover ?                                                     (fun; first-up next session)                    DATA
+ mark item recurring (remove by default)                                            (FUN... and a bit overdue)
  timetableVC deferral-date selection mode                                           (""same as above for DATA tasks below)
  eventsAtDate
  archive data (eventsAtIndexPath; eventsAtDate)

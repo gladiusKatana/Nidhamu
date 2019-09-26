@@ -46,7 +46,6 @@ extension CollectionVC {
     @objc func buttonWrapperMethodforTodoListVC() {}//presentViaVCButton(vc: todoListVC)
     
     func presentViaVCButton(vc: CollectionVC) {
-//        rePresentedVCManually = true
         gotoView(vc: vc)
     }
 }

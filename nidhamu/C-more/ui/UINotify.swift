@@ -2,8 +2,6 @@
 import UIKit
 import NotificationCenter
 
-var keyboardFirstPresented = false
-
 extension CollectionVC {
     
     func statusBarHeightChangeNotificationSetup() {
@@ -24,34 +22,31 @@ extension CollectionVC {
         )
     }
     
-    
-//    @objc func showKBoard(_ notification: Notification) { //print("⌨️")
-//        if !keyboardFirstPresented {keyboardFirstPresented = true}
-//        textFieldDisplayed = true
-//        timetableVC.reloadCV()
-//    }
-    
-    @objc func showKBoard(_ notification: Notification) {                                   //print("⌨️")
-        
-        checkOrientation()
-        
-        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            
-            keyboardHeight = keyboardFrame.cgRectValue.height + textFieldHeight             //; print("⌨️height: \(keyboardHeight)")
-            
-            if currentOrientation == "portrait" {
-                portraitKeyboardHeight = keyboardHeight
-                if !firstPortraitKeyboardPresented {firstPortraitKeyboardPresented = true}
-            }
-            
-            if currentOrientation == "landscape" {
-                landscapeKeyboardHeight = keyboardHeight
-                if !firstLandscapeKeyboardPresented {firstLandscapeKeyboardPresented = true}
-            }
-        }
-        
+    @objc func showKBoard(_ notification: Notification) { //print("⌨️")
         textFieldDisplayed = true
-        timetableVC.reloadCV()
     }
+    
+    //    @objc func showKBoard(_ notification: Notification) {                                   //print("⌨️")
+    //        checkOrientation()
+    //
+    //        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+    //
+    //            keyboardHeight = keyboardFrame.cgRectValue.height + textFieldHeight             //; print("⌨️height: \(keyboardHeight)")
+    //
+    //            if currentOrientation == "portrait" {
+    //                portraitKeyboardHeight = keyboardHeight
+    //                if !firstPortraitKeyboardPresented {firstPortraitKeyboardPresented = true}
+    //            }
+    //
+    //            if currentOrientation == "landscape" {
+    //                landscapeKeyboardHeight = keyboardHeight
+    //                if !firstLandscapeKeyboardPresented {firstLandscapeKeyboardPresented = true}
+    //            }
+    //        }
+    //
+    //        textFieldDisplayed = true
+    //        timetableVC.reloadCV()
+    //    }
+    
 }
 

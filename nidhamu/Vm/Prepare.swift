@@ -6,13 +6,13 @@ extension CustomFlowLayout {
     override func prepare() {                                                               //print(".", terminator: "")
         
         checkOrientation()
+        resetKeyboardHeight()
         calculateAndResetSizes()
         
         if previousOrientation != currentOrientation {                                      //print("prepare(rotated to \(currentOrientation)):")
             
             if textFieldDisplayed {
                 UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
-                resetKeyboardHeight()
             }
             
             previousOrientation = currentOrientation
