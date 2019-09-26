@@ -1,9 +1,19 @@
 // Animations       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
-//import UIKit
+import UIKit
 
-//extension CollectionVC {
+extension CollectionVC {
     
-    // commented out only for now; will be implemented again soon
+    func animateTimeBlockTappedToAddEvent(cell: CustomCell) {
+        
+        UIView.animate(
+            withDuration: 1, delay: 0,
+            usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveLinear, animations: {
+                cell.backgroundColor = eventAddingColour
+        }, completion: nil /*{(finished:Bool) in self.prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)}*/
+        )
+    }
+    
+    // commented out only for now; may be implemented again soon
     
     //    func animateSelectedCellColourBack() {                              //print("animating cell colour back")
     //
@@ -22,12 +32,14 @@
     //            }
     //        }
     //    }
-    //
+
+    
     //    func animateCellColourBack(cell: BaseCell, delay: Double, duration: Double) {
     //        UIView.animate(withDuration: TimeInterval(duration), delay: TimeInterval(delay), usingSpringWithDamping: 1, initialSpringVelocity: 1,
     //                       options: UIView.AnimationOptions.curveLinear, animations: {
     //                        cell.backgroundColor = cell.cellColour
     //        }, completion: nil)
     //    }
-//}
+    
+}
 

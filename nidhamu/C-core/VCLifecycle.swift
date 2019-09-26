@@ -43,7 +43,6 @@ extension CollectionVC {
                 exitEventAddingMode()
                 textFieldDisplayed = false
             }
-            previousTimeBlockPathSelected = defaultPathOutOfView
         }
     }
 }

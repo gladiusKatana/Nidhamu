@@ -243,7 +243,6 @@
 				06F2A968231725090062FE02 /* C-core */,
 				0625169222D6CF4200EBB4C8 /* C-more */,
 				062516A722D6CF4200EBB4C8 /* Checks */,
-				06482793233444000035774F /* (inactive) */,
 				0625168922D6CF4100EBB4C8 /* Base.lproj */,
 				0625168822D6CF4100EBB4C8 /* Assets.xcassets */,
 				0625164422D6C71A00EBB4C8 /* Info.plist */,
@@ -311,6 +310,7 @@
 				06482791233414FC0035774F /* Strings.swift */,
 				0625168D22D6CF4200EBB4C8 /* Colours.swift */,
 				0625168E22D6CF4200EBB4C8 /* ScrollBars.swift */,
+				0625168F22D6CF4200EBB4C8 /* Animations.swift */,
 				06F2A969231725980062FE02 /* RotateLock.swift */,
 				064A44B42331982D00AD82E4 /* BlockBorder.swift */,
 			);
@@ -373,14 +373,6 @@
 				0625167322D6CF2A00EBB4C8 /* AppLifecycle.swift */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		06482793233444000035774F /* (inactive) */ = {
-			isa = PBXGroup;
-			children = (
-				0625168F22D6CF4200EBB4C8 /* Animations.swift */,
-			);
-			path = "(inactive)";
 			sourceTree = "<group>";
 		};
 		0673571B2300753900DC2CAC /* popup */ = {

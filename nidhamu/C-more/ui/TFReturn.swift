@@ -10,13 +10,15 @@ extension CollectionVC {    /// ** commented code here is for animations
         let textEntered = textField.text!
         
         if textEntered == "" || textEntered == " " || textEntered == "  " { // if user (for some reason) enters > 2 whitespaces, well, it's saved
+            
             /*for cell in self.collectionView.visibleCells as! [BaseCell] {
              if cell.xyCoordinate == selectedTimeBlockPath {
              cell.backgroundColor = headerColour
              }
              }///animateSelectedCellColourBack()
-             selectedTimeBlockPath = defaultPathOutOfView
-             previousTimeBlockPathSelected = defaultPathOutOfView*/
+             selectedTimeBlockPath = defaultPathOutOfView*/
+            
+             previousTimeBlockPathSelected = defaultPathOutOfView
         } else {
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
             
@@ -26,7 +28,6 @@ extension CollectionVC {    /// ** commented code here is for animations
             }
             
             if vcType == .todoList {
-                
                 if let events = eventsAtIndexPath[timeBlock] {  /// if time-block is not empty
                     todoListVC.downcastLayout!.rows = events.count
                     setupTitleAndPresentViewController(vc: todoListVC) { () -> () in    /// re-presents view & reloads its data, to display updated todo list
@@ -43,7 +44,6 @@ extension CollectionVC {    /// ** commented code here is for animations
     
     func exitEventAddingMode() {
         eventField.removeFromSuperview()
-        
         UIApplication.shared.keyWindow!.backgroundColor = windowBackgroundColour
         keyboardHeight = 0
         reloadCV()

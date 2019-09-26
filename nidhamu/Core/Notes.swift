@@ -7,8 +7,6 @@
  
  1st commit                                                     July 8 2019
  
- refactor addToTimeBlocks(:)?                                                        (fun; first-up next session)                    REFACTORING
- put back animations when tapping to add events                                     (easy; deferred)                                UI
  obviate repositioning when text field presented (even on first rotation)           (easy; deferred)
  
  save/load upon hour rollover ?                                                     (fun; second-up)                                DATA
