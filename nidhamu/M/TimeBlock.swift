@@ -25,13 +25,7 @@ extension CollectionVC {
         
         if eventsAtIndexPath[timeBlockToAdd] != nil {
             
-//            if eventsAtIndexPath[timeBlockToAdd]?.last!.eventDescription == defaultEmptyEventDescription {
-//                eventsAtIndexPath[timeBlockToAdd] = [simpleEvent]
-//            }
-//            else {
-                eventsAtIndexPath[timeBlockToAdd]!.append(simpleEvent) //!  can probably clean this up. Why not just append either way?
-//            }
-            
+            eventsAtIndexPath[timeBlockToAdd]!.append(simpleEvent) //!  can probably clean this up. Why not just append either way?
         }
             
         else {eventsAtIndexPath[timeBlockToAdd] = [simpleEvent]}

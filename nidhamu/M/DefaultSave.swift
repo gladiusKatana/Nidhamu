@@ -3,9 +3,7 @@ import UIKit
 
 func defaultSaveData(saveDate: Bool, showDate: Bool, pryntEvents: Bool) {
     
-    if showDate { ///  print("\n✔︎saved")
-        //print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "✔︎saved", suffix: "", dateFormat: .fullDay))
-    }
+    if showDate {print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "✔︎saved", suffix: "", dateFormat: .fullDay))}
     
     let defaults = UserDefaults.standard
     
@@ -13,21 +11,14 @@ func defaultSaveData(saveDate: Bool, showDate: Bool, pryntEvents: Bool) {
     
     for key in eventsAtIndexPath.keys {
         let (a, b) = key.values                                                                     //; print("key: [\(key)  values \((a, b))")
-        
-//        guard let val = eventsAtIndexPath[key] else {print("could not create event at index path key"); return}
-        
-//        guard let todo = val.last?.eventDescription else {print("no description at event value"); return}
-        
-//        if todo != defaultEmptyEventDescription {                                                   //; print(\((a, b)): \(todo))
-            timeBlockPaths.append([a, b])
-//        }
+        timeBlockPaths.append([a, b])
     }
     
     sortedTimeBlockPaths = timeBlockPaths.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
     sortingTransform = findSortingTransform(timeBlockPaths, output: sortedTimeBlockPaths)           //; print("T:\(sortingTransform)\n")
     
     for vals in eventsAtIndexPath.values {
-        if vals.count > 1 || vals.count == 1 /*&& vals[0].eventDescription != defaultEmptyEventDescription*/ {
+        if vals.count > 1 || vals.count == 1 {
             var eventDescriptions = [String]()
             var eventStatuses = [Int]()
             var eventDateComponents = [[Int(), String(), Int(), String(), Int(), Int()]] as [[Any]]
@@ -42,7 +33,7 @@ func defaultSaveData(saveDate: Bool, showDate: Bool, pryntEvents: Bool) {
             eventDescriptionArrays.append(eventDescriptions)
             eventStatusArrays.append(eventStatuses)
             eventDateArrays.append(eventDateComponents)
-        }//else {print("\n!descriptions array at this time block contains only default (\(defaultEmptEventDescription)), and it's: \(vals[0].eventDescription)")}
+        }///else {print("\n!descriptions array at this time block contains only default (\(defaultEmptEventDescription)), and it's: \(vals[0].eventDescription)")}
     }
     
     timeBlockPaths = sortedTimeBlockPaths
@@ -55,13 +46,11 @@ func defaultSaveData(saveDate: Bool, showDate: Bool, pryntEvents: Bool) {
 }
 
 func setForKeys(_ defaults: UserDefaults, saveDate: Bool) {
-    
     if saveDate {
         let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: false)
         lastLoginDateComponents = [year, month, day, weekday, hour, minute]
         defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")
     }
-    
     defaults.set(timeBlockPaths, forKey: "savedTimeBlockPaths")
     defaults.set(eventDescriptionArrays, forKey: "savedEventDescriptionArrays")
     defaults.set(eventDateArrays, forKey: "savedEventDateArrays")
