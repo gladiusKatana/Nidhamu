@@ -12,12 +12,7 @@ extension CustomFlowLayout {
             
             if textFieldDisplayed {
                 UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
-                if firstPortraitKeyboardPresented && currentOrientation == "portrait" {
-                    keyboardHeight = portraitKeyboardHeight                                 // will probably cache these...
-                }                                                                           //...device-and-orientation-specific heights...
-                if firstLandscapeKeyboardPresented && currentOrientation == "landscape" {   //...inside UserDefaults, saving them for next launch
-                    keyboardHeight = landscapeKeyboardHeight
-                }
+                resetKeyboardHeight()
             }
             
             previousOrientation = currentOrientation
@@ -25,6 +20,7 @@ extension CustomFlowLayout {
             topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in
                 ///(empty; may remove the completion handler from this method)
             }
+            
         } else {if topVC.vcType == .hours {processCurrentDate()}}
         
         if textFieldDisplayed {

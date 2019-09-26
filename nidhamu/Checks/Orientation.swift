@@ -29,7 +29,9 @@ extension AppDelegate {
 
 func checkOrientation() {
     
-    let currentHeight = Double(globalKeyWindow.frame.height);   let currentWidth = Double(globalKeyWindow.frame.width)
+    let keyWindow = UIApplication.shared.keyWindow!
+    
+    let currentHeight = Double(keyWindow.frame.height);   let currentWidth = Double(keyWindow.frame.width)
     
     if currentHeight > currentWidth {
         currentOrientation = "portrait"

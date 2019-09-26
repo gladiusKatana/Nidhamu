@@ -20,7 +20,7 @@ extension CustomFlowLayout {
         
         var frame: CGRect
         if embeddedInNavController {
-            frame = globalKeyWindow.frame
+            frame = UIApplication.shared.keyWindow!.frame
         }
         else {
             if let safeFrame = customFrame {

@@ -22,7 +22,7 @@ var timetableVC = CollectionVC(.hours, loopWeeks: true, demarcateWeeksByColour: 
 var todoListLayout = //---------
     CustomFlowLayout(
         embeddedInNavController: true,
-        customFrame: globalKeyWindow.frame,
+        customFrame: UIApplication.shared.keyWindow!.frame,
         rows: 1, cols: 2, lockedHeaderRows: 0, lockedHeaderSections: 0,
         cellWidth: nil, cellHeight: nil,
         autoFitWScale: 1, autoFitHScale: 1,

@@ -4,8 +4,8 @@
  
  TASK____________________________________________________________DEADLINE___________(optional "FUN / DIFFICULTY level)*_____________TYPE**
 
- 
  1st commit                                                     July 8 2019
+ 
  
  obviate repositioning when text field presented (even on first rotation)           (easy; deferred)
  
@@ -36,7 +36,7 @@
  mornAftEveNiteVC                                                                                                                   VCs
  listVC (today items)
  listVC (deadlineless items)
-                                                                Mon Sept 30                                       APPSTORE!
+                                                                Mon Sept 30                                         APPSTORE!
  
  
  

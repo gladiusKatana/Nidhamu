@@ -2,9 +2,9 @@
 import UIKit
 import NotificationCenter
 
+var keyboardFirstPresented = false
 
 extension CollectionVC {
-    
     
     func statusBarHeightChangeNotificationSetup() {
         
@@ -25,26 +25,33 @@ extension CollectionVC {
     }
     
     
-    @objc func showKBoard(_ notification: Notification) {     //print("⌨️")
+//    @objc func showKBoard(_ notification: Notification) { //print("⌨️")
+//        if !keyboardFirstPresented {keyboardFirstPresented = true}
+//        textFieldDisplayed = true
+//        timetableVC.reloadCV()
+//    }
+    
+    @objc func showKBoard(_ notification: Notification) {                                   //print("⌨️")
         
         checkOrientation()
         
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             
-            keyboardHeight = keyboardFrame.cgRectValue.height + textFieldHeight
+            keyboardHeight = keyboardFrame.cgRectValue.height + textFieldHeight             //; print("⌨️height: \(keyboardHeight)")
             
             if currentOrientation == "portrait" {
-                portraitKeyboardHeight = keyboardFrame.cgRectValue.height + textFieldHeight
+                portraitKeyboardHeight = keyboardHeight
                 if !firstPortraitKeyboardPresented {firstPortraitKeyboardPresented = true}
             }
+            
             if currentOrientation == "landscape" {
-                landscapeKeyboardHeight = keyboardFrame.cgRectValue.height + textFieldHeight
+                landscapeKeyboardHeight = keyboardHeight
                 if !firstLandscapeKeyboardPresented {firstLandscapeKeyboardPresented = true}
             }
-            
-            textFieldDisplayed = true
-            timetableVC.reloadCV()
         }
+        
+        textFieldDisplayed = true
+        timetableVC.reloadCV()
     }
 }
 

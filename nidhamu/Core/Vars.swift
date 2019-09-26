@@ -12,12 +12,14 @@ var timerForShowScrollIndicator: Timer?
 
 
 var textFieldY = CGFloat(0)
-var textFieldHeight = CGFloat(30)   // reset this to a size calculated from its text height, plus a bit (with an initial value of 0)
+var textFieldHeight = CGFloat(30)  /// will rewrite this at some point, to be reset to a size calculated from its text height, plus a bit (with an initial value of 0). See stringSize(:), in Strings.swift
 var textFieldWidth = CGFloat(0)
-///var portraitTextFieldHeight = CGFloat(0);       var landscapeTextFieldHeight = CGFloat(0)
 
-var keyboardHeight = CGFloat(0); 
-var portraitKeyboardHeight = CGFloat(0);        var landscapeKeyboardHeight = CGFloat(0)
+var keyboardHeight = CGFloat(0) /// will rewrite this line and the two below it, and an enum containing manually-determined values for each device; this will be done by running the app...
+//var portraitKeyboardHeight = CGFloat(246)         /// ...on each simulator, with old versions of resetKeyboardHeight() and showKBoard(:)
+//var landscapeKeyboardHeight = CGFloat(192)
+var portraitKeyboardHeight = CGFloat(0)
+var landscapeKeyboardHeight = CGFloat(0)
 
 var xOffSet = CGFloat(0);                       var yOffset = CGFloat(0)
 
@@ -42,8 +44,7 @@ var launchOrientation = "orientation at the moment of launch"                   
 
 var loadSymbolLegend = "                                        💾 = view loaded"
 var appearSymbolLegend = "                                        🏞 = view appeared"  //console legend
-
-var truncationTrail = "…";                      //var averageLetterWidth = CGFloat(0)
+var truncationTrail = "…";                      ///var averageLetterWidth = CGFloat(0)
 
 var modelName = "device you're running on"
 var phones = ["iPhone4", "iPhone 4s", "iPhone 5", "iPhone 5c", "iPhone 5s", "iPhone 6", "iPhone 6 Plus", "iPhone 6s", "iPhone 6s Plus", "iPhone 7", "iPhone 7 Plus", "iPhone SE", "iPhone 8", "iPhone 8 Plus", "iPhone X", "iPhone XS", "iPhone XS Max", "iPhone XR"]
