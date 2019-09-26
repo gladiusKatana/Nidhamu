@@ -14,7 +14,7 @@ extension PopupMenuVC {
             
             guard let firstPathToProcess = pathsToProcess.first else { print("no paths to process... even though popup was presented"); return}
             
-            let col = firstPathToProcess[0];  let rw = firstPathToProcess[1]                /// components of path of current item being marked
+            let col = firstPathToProcess[0];  let rw = firstPathToProcess[1]            /// components of path of current item being marked
             
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(col, rw))] { /// writing to the dictionary
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
@@ -40,11 +40,11 @@ extension PopupMenuVC {
                 defaultSaveData(saveDate: false, showDate: false, pryntEvents: false)
                 
                 earliestEventAddress = defaultPathOutOfView
-                timetableVC.reloadCV()                                                      ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
+                timetableVC.reloadCV()                                                  ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
                 timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
+                
                 if pathsToProcess.isEmpty {self.exitEventTaggingMode()}
             }
-            
         } else {print("selected popup menu header")}
     }
 }

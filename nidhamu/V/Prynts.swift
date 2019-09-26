@@ -18,7 +18,7 @@ func printEventsTabularized() { // optimized for console printing on an iPad Min
             
             let title = event.eventDescription
             let titleCount = "\(title)".count
-            let bound = 20
+            let bound = 24
             var count = (titleCount < bound) ? bound - titleCount : 0//titleCount - bound
             let titleExcess = String(repeating: " ", count: count)
             

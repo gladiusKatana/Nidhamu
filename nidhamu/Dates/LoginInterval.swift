@@ -5,7 +5,8 @@ extension CollectionVC {
     
     func processEventsBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
         
-        let oneWeekAgo = truncateMinutesOfDate(cell.cellDate - TimeInterval(86400 * 7)) // since cell-dates are based off of Date()...
+        let oneWeekAgo = truncateMinutesOfDate(cell.cellDate - TimeInterval(86400 * 7))
+        
         if oneWeekAgo >= truncateMinutesOfDate(lastLoginDate) && oneWeekAgo < truncateMinutesOfDate(Date()) { //     ...ie, not rounded
             
             //if !saved TimeBlocksForProcessing { // this conditional would only be needed if doing the animation below
@@ -40,12 +41,13 @@ extension CollectionVC {
     
     func prepareToProcessEventsSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
         if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] { ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
-            
             if !savedTimeBlocksForProcessing {
                 if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}
+                ///else {print("event array-of-arrays already contains events: \(events)")}
+                
                 if !pathsToProcess.contains([column, row]) {pathsToProcess.append([column, row])}
+                ///else {print("path array-of-arrays already contains path: \([column, row])")}
             }
-            
             if row >= 19 {thereWillBeARowException = true}
         }
     }

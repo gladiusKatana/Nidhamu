@@ -33,6 +33,8 @@ extension CollectionVC {
         if "\(Date())".contains(":00:") {
             if !reloadedFromHourTickingOver {
                 
+                savedTimeBlocksForProcessing = false
+                
                 DispatchQueue.main.asyncAfter(deadline: .now()) { /// must be on main queue: periodic callback inside the completion handler, is called on a background thread
                     topVC.reloadCV()                                    // ! maybe save/load with prints////////////////////////////////////
                 }

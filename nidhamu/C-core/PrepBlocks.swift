@@ -20,6 +20,8 @@ extension CollectionVC {
                     
                     eventArraysToProcess = eventArraysToProcess.sorted(by: {$0.last!.eventDate < $1.last!.eventDate})
                     
+                    savedTimeBlocksForProcessing = true
+                    
                     tagEventsSinceLastLogin(layout: layout)
                     
                     if thereWillBeARowException {
@@ -29,8 +31,6 @@ extension CollectionVC {
                         
                         self.reloadWithDelay(after: 0) //; print("reloaded for size adjustment")
                     }
-                    
-                    savedTimeBlocksForProcessing = true
                 }
             }
                 
