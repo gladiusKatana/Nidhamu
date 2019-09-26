@@ -13,18 +13,21 @@ func defaultSaveData(saveDate: Bool, showDate: Bool, pryntEvents: Bool) {
     
     for key in eventsAtIndexPath.keys {
         let (a, b) = key.values                                                                     //; print("key: [\(key)  values \((a, b))")
-        guard let val = eventsAtIndexPath[key] else {print("could not create event at index path key"); return}
-        guard let todo = val.last?.eventDescription else {print("no description at event value"); return}
-        if todo != defaultEmptyEventDescription {                                                   //; print(\((a, b)): \(todo))
+        
+//        guard let val = eventsAtIndexPath[key] else {print("could not create event at index path key"); return}
+        
+//        guard let todo = val.last?.eventDescription else {print("no description at event value"); return}
+        
+//        if todo != defaultEmptyEventDescription {                                                   //; print(\((a, b)): \(todo))
             timeBlockPaths.append([a, b])
-        }
+//        }
     }
     
     sortedTimeBlockPaths = timeBlockPaths.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
     sortingTransform = findSortingTransform(timeBlockPaths, output: sortedTimeBlockPaths)           //; print("T:\(sortingTransform)\n")
     
     for vals in eventsAtIndexPath.values {
-        if vals.count > 1 || vals.count == 1 && vals[0].eventDescription != defaultEmptyEventDescription {
+        if vals.count > 1 || vals.count == 1 /*&& vals[0].eventDescription != defaultEmptyEventDescription*/ {
             var eventDescriptions = [String]()
             var eventStatuses = [Int]()
             var eventDateComponents = [[Int(), String(), Int(), String(), Int(), Int()]] as [[Any]]

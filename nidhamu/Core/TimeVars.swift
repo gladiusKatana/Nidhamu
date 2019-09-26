@@ -36,7 +36,7 @@ var eventWillBeRecurring = false
 
 var selectedTimeBlockDateDescription = "(selected date)"
 
-var globalEventIdentifier = "(event)";              var defaultEmptyEventDescription = "❒"
+var globalEventIdentifier = "(event)";              //var defaultEmptyEventDescription = "❒"
 
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 var monthsAbbreviated = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]

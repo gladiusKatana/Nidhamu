@@ -7,12 +7,12 @@
  
  1st commit                                                     July 8 2019
  
- refactor addToTimeBlocks()?                                                        (fun; first-up next session)                    REFACTORING
- save/load upon hour rollover ?                                                     (fun; second-up)                                DATA
+ refactor addToTimeBlocks(:)?                                                        (fun; first-up next session)                    REFACTORING
  put back animations when tapping to add events                                     (easy; deferred)                                UI
  obviate repositioning when text field presented (even on first rotation)           (easy; deferred)
-
- mark item recurring (remove by default)                                            (FUN : reward for crushing above 2 tasks)       DATA
+ 
+ save/load upon hour rollover ?                                                     (fun; second-up)                                DATA
+ mark item recurring (remove by default)                                            (FUN : reward for crushing above 2 tasks)
  timetableVC deferral-date selection mode                                           (""same as above for DATA tasks below)
  eventsAtDate
  archive data (eventsAtIndexPath; eventsAtDate)
@@ -21,7 +21,7 @@
  create Numbers template; populate the above on it (automatically?)                 (FUN; easy except perhaps some of the automation)
  create Excel template; populate the above on it (automatically?)                   (""same as above)
  
- settings menu(fun; easy)                                                           (fun; easy)                                     DESIGN/UX
+ settings menu                                                                      (fun; easy)                                     DESIGN/UX
  button                                                                             ("")
  icon
  launch screen
