@@ -37,14 +37,14 @@ extension CollectionVC {
                 }
             }
         }
-            
         else if row == 4 {} /// row 3 is covered by the general formula on line 8; this is just to exclude it from the else{}
-        else { cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 0,
+        else {
+            cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 0,
                                            cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
             processEventsBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)
         }
         if row >= layout.lockedHeaderRows {
-            checkDateStringMatchAndPrintLabel("now", date: Date(), cell: cell, withBorder: true) // identifies the now-cell
+            showKeyTimeBlockDates(cell: cell)
         }
         //showTimeInTitleLabels(date: cell.cellDate, cell: cell)    //showDateInTitleLabels(date: cell.cellDate, cell: cell)
         if [column, row] == selectedTimeBlockPath {

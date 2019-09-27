@@ -62,6 +62,7 @@
 		062CDAA122E0033400848D78 /* Pinch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CDAA022E0033400848D78 /* Pinch.swift */; };
 		0630650F233D59D700C4BB95 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0630650E233D59D700C4BB95 /* Keyboard.swift */; };
 		06306511233DA35F00C4BB95 /* PLifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06306510233DA35F00C4BB95 /* PLifeCycle.swift */; };
+		06306513233E7D5E00C4BB95 /* ShowDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06306512233E7D5E00C4BB95 /* ShowDates.swift */; };
 		0631914422E2C5F5004DE476 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631914322E2C5F5004DE476 /* LoginInterval.swift */; };
 		06482792233414FC0035774F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06482791233414FC0035774F /* Strings.swift */; };
 		064A44B52331982D00AD82E4 /* BlockBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064A44B42331982D00AD82E4 /* BlockBorder.swift */; };
@@ -154,6 +155,7 @@
 		062CDAA022E0033400848D78 /* Pinch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinch.swift; sourceTree = "<group>"; };
 		0630650E233D59D700C4BB95 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		06306510233DA35F00C4BB95 /* PLifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLifeCycle.swift; sourceTree = "<group>"; };
+		06306512233E7D5E00C4BB95 /* ShowDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDates.swift; sourceTree = "<group>"; };
 		0631914322E2C5F5004DE476 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
 		06482791233414FC0035774F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		064A44B42331982D00AD82E4 /* BlockBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockBorder.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 				0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */,
 				0625169B22D6CF4200EBB4C8 /* CellPath.swift */,
 				062516A622D6CF4200EBB4C8 /* CellSetup.swift */,
+				06306512233E7D5E00C4BB95 /* ShowDates.swift */,
 				06B872062329CA0700512B21 /* PrepBlocks.swift */,
 				0625169822D6CF4200EBB4C8 /* TagEvents.swift */,
 			);
@@ -550,6 +553,7 @@
 				064A44B52331982D00AD82E4 /* BlockBorder.swift in Sources */,
 				06164A3222D6D19000DA608D /* CellDates.swift in Sources */,
 				062516C122D6CF4200EBB4C8 /* Prynts.swift in Sources */,
+				06306513233E7D5E00C4BB95 /* ShowDates.swift in Sources */,
 				06B872072329CA0700512B21 /* PrepBlocks.swift in Sources */,
 				062516C422D6CF4200EBB4C8 /* PopupVC.swift in Sources */,
 				062516D522D6CF4200EBB4C8 /* TestSquare.swift in Sources */,

@@ -34,7 +34,7 @@ extension CollectionVC {
             showLoadAndAppearIndicationInConsole = true
             if showConsoleLegend {showConsoleLegend = false}        // legend only needs to be shown once
         }
-        else {reloadCV()}
+        reloadCV()
     }
     
     override func viewWillDisappear(_ animated: Bool) {             super.viewWillDisappear(animated)

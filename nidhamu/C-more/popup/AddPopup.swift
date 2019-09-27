@@ -7,7 +7,7 @@ extension CollectionVC {
         
         AppUtility.lockOrientation(.portrait)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             if !classifierViewDisplayed {
                 
                 let layout = self.downcastLayout!;                          let widthMultiplier = CGFloat(2)

@@ -29,6 +29,7 @@ import UIKit
         UINavigationBar.appearance().shadowImage = UIImage()
         
         //print(formattedDateString(Date(), roundedDown: false, prefix: "                      on", suffix: "", short: false))
+        
         return true
     }
     

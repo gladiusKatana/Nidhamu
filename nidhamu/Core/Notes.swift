@@ -1,67 +1,69 @@
-/* Notes            ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️ // File aesthetically optimized for a 13" Macbook Pro
- 
+/* Notes            ･   nidhamu   ･     created by Garth Snyder                         ⚔️file aesthetically optimized for a 13" Macbook Pro
   
- TASK____________________________________________________________DEADLINE___________(optional "FUN / DIFFICULTY level)*_____________TYPE**
-
- 1st commit                                                     July 8 2019
+ task                                                               deadline            type *              fun/difficulty/comments ✫ (optional)
  
- save/load upon hour rollover ? no. no real point. "last login" means last time you opened the app, not were last actively using it
  
- mark item recurring (remove by default)                                            (FUN... and a bit overdue)                      DATA
- timetableVC deferral-date selection mode                                           (""same as above for DATA tasks below)
+ cell look w/ reappearing popup                                                         UI                  fairly fun
+ even smaller text when landscape+keyboard
+ text enums for different devices
+ label time on selected TimeBlockPath
+ 
+ lock keyboard (for multiple event adding)
+ login date interval outlined/animated, not perma-coloured
+                                                                    asap (listed 1st as a daily 'warmup')
+ 
+ 
+ mark item recurring (remove by default)                                                DATA                FUN, a bit overdue
+ timetableVC deferral-date selection mode                                                                   "  " for all DATA tasks below
  eventsAtDate
  archive data (eventsAtIndexPath; eventsAtDate)
  
- implement archive CSV emails as User setting                                       (FUN; easy)                                     UX
- create Numbers template; populate the above on it (automatically?)                 (FUN; easy except perhaps some of the automation)
- create Excel template; populate the above on it (automatically?)                   (""same as above)
  
- settings menu                                                                      (fun; easy)                                     DESIGN/UX
- button                                                                             ("")
- icon
+ settings menu                                                                          UX                  fun, easy
+ archive CSV emails as setting                                                                              FUN, easy
+ Excel template; populate the above on it (automatically?)                                                  "" except automation parts?
+ Numbers template; populate the above on it (automatically?)                                                ""
+
+ 
+ buttons                                                                                DESIGN              fun; easy
+ icon                                                                                                       ""
  launch screen
  triple check applogic, improve comments
- run on my devices which are same as Beta Users'                Fri Sept 27                                         BETA! (ambitious)
+ run on my devices that are same as Beta Users'
+                                                                    Sun Sept 29         BETA! (ambitious)
               
  
- 
- 
- login date interval outlined / animated, not perma-coloured                                                                        UI
- implement loopWeeks = false behaviour as User setting                                                                              DATA
+ loopWeeks = false behaviour as setting                                                 DATA
  eventsAtDate on calendarVC
- 
- mornAftEveNiteVC                                                                                                                   VCs
+ mornAftEveNiteVC                                                                       VCs
  listVC (today items)
  listVC (deadlineless items)
-                                                                Mon Sept 30                                         APPSTORE!
+                                                                    Mon Sept 30         APPSTORE!
  
  
  
- dark mode                                                                                                          DESIGN (ie w/ user feedback)
- prevent User changing nowDate via Settings app                                                                     ***
- cascading deferrals                                                                                                ***
-                                                                later as updates
-                                                                                                                    */
-                                                                                                                    //see notes (*) - (***) below
-
-
-
-
+ dark mode (may be obviated/handled by iOS 13)                                          DESIGN
+ prevent User changing nowDate via Settings app                                         ✧
+ cascading deferrals                                                                    ✧
+                                                                    later updates
+                                                                
+                                                                    see notes below
+ 
+ 1st commit                                                         july 8 '19
 
 
  
-/// *
-/// Programming is always fun, but "fun" really means "really fun" and "FUN" means "REALLY fun"
-        
-
-/// **
-/// my   "DATA"  &  "UI"   labels are often loose proxies for...
-/// the       M       &   V     of MVC.   (Why use this new naming?  Mostly since, in this file Notes.swift, I want a categorization class for the project itself, and the code itself, not just the app)
  
-
-/// ***
-///  denotes features that may not necessarily be a good idea to implement (eg, should users be *able* to defer *all* their remaining tasks at once?)  Interesting types of questions.
-
-
-
-
+                                                                    Notes
+ 
+ 
+ * my DATA & UI labels are often loose proxies for the M & V of MVC, respectively. (Why this naming?  Mostly since, in Notes.swift, I want a categorization class for the project itself, and the code itself, not just the app)
+ 
+ 
+ ✫ programming is always fun, but 'fun' means 'really fun' and 'FUN' means 'REALLY fun'
+ 
+ 
+ ✧ denotes features that may not necessarily be a good idea to implement (eg, should Users be able to defer *all* their remaining tasks at once?)  Interesting questions.
+ 
+ 
+ ✎ this is 100% Open Source Software. Always looking for Contributors.*/

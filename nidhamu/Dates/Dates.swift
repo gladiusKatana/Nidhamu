@@ -23,7 +23,7 @@ func dateFromComponents(_ array: [Any]) -> Date {
 }
 
 
-func truncateMinutesOfDate(_ inputDate: Date) -> Date {
+func truncateMinutesOf(_ inputDate: Date) -> Date {
     
     let mn = 0
     

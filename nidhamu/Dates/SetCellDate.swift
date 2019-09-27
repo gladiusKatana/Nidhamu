@@ -3,6 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
+    
     func setCellDate(baseDate: Date, cellOffset: Int,
                      cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, looping: Bool, withColours: Bool) -> Date {
         
@@ -20,6 +21,7 @@ extension CollectionVC {
         return returnDate
     }
     
+    
     func setCellWeek(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, withColours: Bool) -> Int {
         
         var weekAhead = 0
@@ -35,16 +37,5 @@ extension CollectionVC {
         return weekAhead
     }
     
-    func showTimeInTitleLabels(date: Date, cell: CustomCell) {    // not used-- at the moment. for testing
-        let hr = Calendar.current.component(.hour, from: date)
-        let mn = Calendar.current.component(.minute, from: date)
-        cell.titleLabel.text = "\(hr):\(mn)"
-    }
-    
-    func showDateInTitleLabels(date: Date, cell: CustomCell) {      // for testing
-        let mo = monthsAbbreviated[Calendar.current.component(.month, from: date) - 1]
-        let dy = Calendar.current.component(.day, from: date)
-        cell.titleLabel.text = "\(mo) \(dy)" // will add this to formattedDateString(:), if it gets used anywhere else as well
-    }
 }
 
