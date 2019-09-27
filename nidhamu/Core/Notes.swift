@@ -3,13 +3,12 @@
  task                                                               deadline            type *              fun/difficulty/comments ✫ (optional)
  
  
- cell look w/ reappearing popup                                                         UI                  fairly fun
  even smaller text when landscape+keyboard
- text enums for different devices
  label time on selected TimeBlockPath
- 
+ text enums for different devices
+                                                                                                            
  lock keyboard (for multiple event adding)
- login date interval outlined/animated, not perma-coloured
+ login date interval outlined/animated, not perma-coloured                                                  UI                  fairly fun
                                                                     asap (listed 1st as a daily 'warmup')
  
  

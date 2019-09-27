@@ -34,6 +34,7 @@ extension CollectionVC {
     func doRestOfLeftCellProcessing(cell: LeftAlignedCell, indexPath: IndexPath) -> LeftAlignedCell  {
         cell.backgroundColor = headerColour
         cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
+        if currentOrientation == "landscape" {cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(7), weight: .ultraLight)}
         cell.titleLabel.textColor = grayThree
         cell.titleLabel.textAlignment = .left
         cell.titleLabel.numberOfLines = 0

@@ -12,15 +12,18 @@ extension CollectionVC {
     }
     
     func doRestOfCellProcessing(cell: CustomCell, indexPath: IndexPath) -> CustomCell {
-        
         let customLayout = downcastLayout!
         let row = indexPath.item;                       let column = indexPath.section;
         let headerRows = customLayout.lockedHeaderRows; let headerSections = customLayout.lockedHeaderSections
         
         cell.xyCoordinate = [column, row]
         
-        if vcType == .hours {if currentOrientation == "landscape" {cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)}}
-        //else {}// not needed because font is reset to default in each cell's prepareForReuse()
+        if vcType == .hours {
+            if currentOrientation == "landscape" { var size = 0
+                if textFieldDisplayed{size = 7} else {size = 8}
+                cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(size), weight: .ultraLight)
+            }
+        }
         
         if column < headerSections {
             cell.backgroundColor = headerColour
