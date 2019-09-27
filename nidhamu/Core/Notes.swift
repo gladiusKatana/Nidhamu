@@ -1,13 +1,13 @@
 /* Notes            ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️ // File aesthetically optimized for a 13" Macbook Pro
  
- 
- 
+  
  TASK____________________________________________________________DEADLINE___________(optional "FUN / DIFFICULTY level)*_____________TYPE**
 
  1st commit                                                     July 8 2019
  
- save/load upon hour rollover ?                                                     (fun; first-up next session)                    DATA
- mark item recurring (remove by default)                                            (FUN... and a bit overdue)
+ save/load upon hour rollover ? no. no real point. "last login" means last time you opened the app, not were last actively using it
+ 
+ mark item recurring (remove by default)                                            (FUN... and a bit overdue)                      DATA
  timetableVC deferral-date selection mode                                           (""same as above for DATA tasks below)
  eventsAtDate
  archive data (eventsAtIndexPath; eventsAtDate)
@@ -43,6 +43,12 @@
                                                                 later as updates
                                                                                                                     */
                                                                                                                     //see notes (*) - (***) below
+
+
+
+
+
+
  
 /// *
 /// Programming is always fun, but "fun" really means "really fun" and "FUN" means "REALLY fun"

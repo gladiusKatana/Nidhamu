@@ -26,17 +26,19 @@ extension CollectionVC {
         if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
             cell.layer.borderColor = UIColor.white.cgColor                                              //; print("highlighted cell white")
         }
+//        else {cell.layer.borderColor = UIColor.clear.cgColor}
         
     }
     
-    func checkDateStringMatchAndPrintLabel(_ label: String, date: Date, cell: CustomCell, withBorder: Bool) {
+    func checkDateStringMatchAndPrintLabel(_ label: String?, date: Date, cell: CustomCell, withBorder: Bool) {
         let truncatedDate = truncateMinutesOfDate(date)
         if Calendar.current.component(.hour, from: cell.cellDate) == Calendar.current.component(.hour, from: truncatedDate)
             && Calendar.current.component(.weekday, from: cell.cellDate) == Calendar.current.component(.weekday, from: truncatedDate) {
-            cell.titleLabel.text = label
+            if label != nil {cell.titleLabel.text = label}
             cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
             if withBorder{cell.layer.borderColor = UIColor.black.cgColor}
         }
+//        else {if withBorder{cell.layer.borderColor = UIColor.clear.cgColor}}
     }
     
     func prepareToProcessEventsSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
@@ -48,7 +50,7 @@ extension CollectionVC {
                 if !pathsToProcess.contains([column, row]) {pathsToProcess.append([column, row])}
                 ///else {print("path array-of-arrays already contains path: \([column, row])")}
             }
-            if row >= 19 {thereWillBeARowException = true}
+            if row >= 21 {thereWillBeARowException = true}
         }
     }
 }

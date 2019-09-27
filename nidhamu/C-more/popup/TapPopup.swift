@@ -33,10 +33,9 @@ extension PopupMenuVC {
                 } else {eventsInBlockToBeProcessed = 0}
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                eventRecurringSwitchView.removeFromSuperview()                                  ///; print("removing switch")
-                classifierVC.view.removeFromSuperview(); classifierVC.resignFirstResponder()
-                classifierViewDisplayed = false                                                 ///print("now paths to process: \(pathsToProcess)")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {///print("now paths to process: \(pathsToProcess)")
+                
+                self.removePopupMenuAndSwitch()
                 defaultSaveData(saveDate: false, showDate: false, pryntEvents: false)
                 
                 earliestEventAddress = defaultPathOutOfView
@@ -45,6 +44,7 @@ extension PopupMenuVC {
                 
                 if pathsToProcess.isEmpty {self.exitEventTaggingMode()}
             }
+            
         } else {print("selected popup menu header")}
     }
 }
