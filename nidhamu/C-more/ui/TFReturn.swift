@@ -18,8 +18,10 @@ extension CollectionVC {    /// ** commented code here is for animations
              }///animateSelectedCellColourBack()
              selectedTimeBlockPath = defaultPathOutOfView*/
             
-             previousTimeBlockPathSelected = defaultPathOutOfView
+            previousTimeBlockPathSelected = defaultPathOutOfView
+            
         } else {
+            
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
             
             if vcType == .hours {

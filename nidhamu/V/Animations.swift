@@ -32,7 +32,7 @@ extension CollectionVC {
     //            }
     //        }
     //    }
-
+    
     
     //    func animateCellColourBack(cell: BaseCell, delay: Double, duration: Double) {
     //        UIView.animate(withDuration: TimeInterval(duration), delay: TimeInterval(delay), usingSpringWithDamping: 1, initialSpringVelocity: 1,

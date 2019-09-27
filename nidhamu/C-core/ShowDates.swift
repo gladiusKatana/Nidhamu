@@ -37,11 +37,9 @@ extension CollectionVC {
                 cell.layer.borderColor = UIColor.clear.cgColor
             }
         }
-        /**/
     }
     
     func pryntConditionalKeyDateID(_ id: String, cell: CustomCell, row: Int, column: Int) {
-//        if !pathsToProcess.contains([column, row]) {
         if eventsAtIndexPath[TimeBlock(values:(column, row))] == nil {
             cell.titleLabel.text = id
         }
@@ -59,21 +57,4 @@ extension CollectionVC {
         cell.titleLabel.text = "\(hr):\(mn)"
     }
 }
-
-/*
- 
- ///func showKeyTimeBlockDates(_ label: String?, date: Date, cell: CustomCell, withBorder: Bool) {
- 
- //        if Calendar.current.component(.hour, from: cell.cellDate) == Calendar.current.component(.hour, from: truncatedNowDate)
- //            && Calendar.current.component(.weekday, from: cell.cellDate) == Calendar.current.component(.weekday, from: truncatedDate)
- //        {
- //            if label != nil {cell.titleLabel.text = label}
- //            cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
- //            if withBorder{cell.layer.borderColor = UIColor.black.cgColor}
- //        }
- //        else {
- //            if withBorder{cell.layer.borderColor = UIColor.clear.cgColor}
- //            cell.titleLabel.font = defaultTimetableCellFont
- //        }
- */
 

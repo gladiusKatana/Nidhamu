@@ -23,7 +23,6 @@ extension CollectionVC {
             
             prepareToProcessEventsSinceLastLogin(cell: cell, column: column, row: row)
             
-//            showKeyTimeBlockDates(cell: cell)
         }
         
     }
