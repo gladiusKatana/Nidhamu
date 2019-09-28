@@ -3,10 +3,8 @@ import UIKit
 
 func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, pryntEvents: Bool) {
     
-    if showDate {print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "✔︎saved", suffix: "", dateFormat: .fullDay))}
-    
+    if showDate {print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "✔︎saved", suffix: "", dateFormat: .fullDayWithSeconds))}
     let defaults = UserDefaults.standard
-    
     timeBlockPaths.removeAll(); eventDescriptionArrays.removeAll(); eventStatusArrays.removeAll(); eventDateArrays.removeAll()
     
     for key in eventsAtIndexPath.keys {
@@ -40,7 +38,6 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
     eventDateArrays = applySortingTransform(eventDateArrays, transform: sortingTransform) as! [[[Any]]]
     eventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: sortingTransform) as! [[String]]
     eventStatusArrays = applySortingTransform(eventStatusArrays, transform: sortingTransform) as! [[Int]]
-    
     if pryntEvents {printEventsTabularized()}
     setForKeys(defaults, saveDate: saveDate, resetLastLogin: resetLastLogin)
 }

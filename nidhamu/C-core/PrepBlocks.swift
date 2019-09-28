@@ -8,6 +8,7 @@ extension CollectionVC {
         if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] { ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             
             if !savedTimeBlocksForProcessing {
+                
                 if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}
                 ///else {print("event array-of-arrays already contains events: \(events)")}
                 
@@ -26,7 +27,6 @@ extension CollectionVC {
                     eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
                     
                     ///print("\n*eventsInBlock \(eventsInBlockToBeProcessed)")
-                    ///print("events left (initial): \(eventsInBlockToBeProcessed)\n")
                     ///print("paths to process: \(pathsToProcess)")
                     
                     pathsToProcess = pathsToProcess.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})

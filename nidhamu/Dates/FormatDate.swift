@@ -3,7 +3,7 @@ import UIKit
 
 func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix: String, suffix: String, dateFormat: CustomDateFormat) -> String {
     
-    let (year, month, mnth, day, weekday, wkdy, hour, minute, _) = displayDate(date, roundedDown: roundedDown)
+    let (year, month, mnth, day, weekday, wkdy, hour, minute, second) = displayDate(date, roundedDown: roundedDown)
     
     var minTwoDigits = "\(minute)";             if minute < 10 {minTwoDigits = "0\(minute)"}
     var ampm = "";                              if hour < 13 {ampm = "am"} else {ampm = "pm"} // since hr is by default 24hr
@@ -18,9 +18,8 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     switch dateFormat {
         
     case .fullDay:                  return "\(prefix)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits)\(ampm)\(suffix)"
-        
+    case .fullDayWithSeconds:       return "\(prefix)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits):\(second)\(ampm)\(suffix)"
     case .fullDayShortForm:         return "\(prefix)\(wkdy). \(mnth). \(day), \(yearString)\(hr)\(ampm)\(suffix)"
-        
     case .fullDayShortFormNoDots:   return "\(prefix)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString)\(hr)\(ampm)\(suffix)"
         
     default: return "\(prefix)\(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
@@ -28,7 +27,7 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
 }
 
 enum CustomDateFormat: Int {
-    case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayShortForm, fullDayShortFormNoDots
+    case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayWithSeconds, fullDayShortForm, fullDayShortFormNoDots
 }
 
 func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
