@@ -5,7 +5,6 @@ extension PopupMenuVC {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  didSelectItemAt indexPath: IndexPath) {
-        
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
         let layout = downcastLayout!; let row = indexPath.item; let column = indexPath.section
         cell.backgroundColor = eventAddingColour
@@ -17,8 +16,13 @@ extension PopupMenuVC {
             let col = firstPathToProcess[0];  let rw = firstPathToProcess[1]            /// components of path of current item being marked
             
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(col, rw))] { /// writing to the dictionary
-                eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
                 eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
+                eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
+                
+                if !([EventStatus.deferred, EventStatus.upcoming].contains(eventsOfBlockBeingTagged[eventIndex].eventStatus))  {
+                    eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(col, rw)))!)
+                }
+                
                 ///print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
             }
             
@@ -34,7 +38,6 @@ extension PopupMenuVC {
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {///print("now paths to process: \(pathsToProcess)")
-                
                 self.removePopupMenuAndSwitch()
                 defaultSaveData(saveDate: false, showDate: false, pryntEvents: false)
                 
@@ -44,7 +47,6 @@ extension PopupMenuVC {
                 
                 if pathsToProcess.isEmpty {self.exitEventTaggingMode()}
             }
-            
         } else {print("selected popup menu header")}
     }
 }

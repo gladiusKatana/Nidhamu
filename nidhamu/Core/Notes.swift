@@ -3,16 +3,14 @@
  task                                                               deadline            type *              fun/difficulty/comments ✫ (optional)
  
  
- even smaller text when landscape+keyboard
  label time on selected TimeBlockPath
  text enums for different devices
-                                                                                                            
  lock keyboard (for multiple event adding)
- login date interval outlined/animated, not perma-coloured                                                  UI                  fairly fun
-                                                                    asap (listed 1st as a daily 'warmup')
+ login date interval outlined/animated, not perma-coloured                              UI                  fairly fun
+                                                                    asap warmup                             1 task per day eg 'to start the day'
  
  
- mark item recurring (remove by default)                                                DATA                FUN, a bit overdue
+ mark item recurring (remove by default)                                                Data                FUN, a bit overdue
  timetableVC deferral-date selection mode                                                                   "  " for all DATA tasks below
  eventsAtDate
  archive data (eventsAtIndexPath; eventsAtDate)
@@ -24,20 +22,20 @@
  Numbers template; populate the above on it (automatically?)                                                ""
 
  
- buttons                                                                                DESIGN              fun; easy
+ buttons                                                                                Design              fun; easy
  icon                                                                                                       ""
  launch screen
  triple check applogic, improve comments
  run on my devices that are same as Beta Users'
-                                                                    Sun Sept 29         BETA! (ambitious)
+                                                                    Sun Sept 29________BETA! (ambitious)
               
  
- loopWeeks = false behaviour as setting                                                 DATA
+ loopWeeks = false behaviour as setting                                                 Data
  eventsAtDate on calendarVC
  mornAftEveNiteVC                                                                       VCs
  listVC (today items)
  listVC (deadlineless items)
-                                                                    Mon Sept 30         APPSTORE!
+                                                                    Mon Sept 30________APPSTORE
  
  
  

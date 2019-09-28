@@ -27,7 +27,7 @@ extension CollectionVC {
                     
                     ///print("\n*eventsInBlock \(eventsInBlockToBeProcessed)")
                     ///print("events left (initial): \(eventsInBlockToBeProcessed)\n")
-                    print("paths to process: \(pathsToProcess)")
+                    ///print("paths to process: \(pathsToProcess)")
                     
                     pathsToProcess = pathsToProcess.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
                     eventArraysToProcess = eventArraysToProcess.sorted(by: {$0.last!.eventDate < $1.last!.eventDate})
@@ -38,16 +38,14 @@ extension CollectionVC {
                         downcastLayout?.autoFitHScale =
                             CGFloat(layout.rows) / (CGFloat(layout.rows + 8) + gap)         // popup window is 8 cells tall
                         
-                        reloadWithDelay(after: 0) //; print("reloaded for size adjustment")
+                        reloadWithDelay(after: 0)                                           //; print("reloaded for size adjustment")
                         ///classifierVC.removePopupMenuAndSwitch()
                     }
                     
                     tagEventsSinceLastLogin(layout: layout)
                 }
             } else {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    AppUtility.lockOrientation(.all)
-                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {AppUtility.lockOrientation(.all)}
             }
         }
     }
