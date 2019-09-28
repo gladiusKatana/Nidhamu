@@ -39,7 +39,11 @@ extension CollectionVC {
                             CGFloat(layout.rows) / (CGFloat(layout.rows + 8) + gap)         // popup window is 8 cells tall
                         
                         reloadWithDelay(after: 0)                                           //; print("reloaded for size adjustment")
-                        ///classifierVC.removePopupMenuAndSwitch()
+                        let count = pathsToProcess.count
+                        if count >= 2 && pathsToProcess[count - 2][1] < 21 { /// if 2nd-last index path to process requires resizing (since cells can be swept over...
+                            classifierVC.removePopupMenuAndSwitch() /// ...repeatedly, within 1 session (eg user could leave timetable open for multiple hours, it just auto-updates)
+                        }
+                        thereWillBeARowException = false
                     }
                     
                     tagEventsSinceLastLogin(layout: layout)
