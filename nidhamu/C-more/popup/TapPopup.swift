@@ -16,13 +16,19 @@ extension PopupMenuVC {
             let col = firstPathToProcess[0];  let rw = firstPathToProcess[1]            /// components of path of current item being marked
             
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(col, rw))] { /// writing to the dictionary
+                
                 eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
-                eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
                 
-                if !([EventStatus.deferred, EventStatus.upcoming].contains(eventsOfBlockBeingTagged[eventIndex].eventStatus))  {
-                    eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(col, rw)))!)
+                if selectedEventWillRecur {
+                    /// will need to save the actual tagging selection of *this week's* event status, into the archive dictionary eventsAtDate (which has not been implemented yet), before *next week's* copy of the same event is tagged as .upcoming
+                    eventsOfBlockBeingTagged[eventIndex].eventStatus = .upcoming
                 }
-                
+                else {
+                    eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
+                    if !([EventStatus.deferred, EventStatus.upcoming].contains(eventsOfBlockBeingTagged[eventIndex].eventStatus)) {
+                        eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(col, rw)))!)
+                    }
+                }
                 ///print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
             }
             
@@ -40,11 +46,11 @@ extension PopupMenuVC {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {///print("now paths to process: \(pathsToProcess)")
                 self.removePopupMenuAndSwitch()
                 defaultSaveData(saveDate: false, showDate: false, pryntEvents: false)
-                
                 earliestEventAddress = defaultPathOutOfView
+                selectedEventWillRecur = false
+                
                 timetableVC.reloadCV()                                                  ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
                 timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
-                
                 if pathsToProcess.isEmpty {self.exitEventTaggingMode()}
             }
         } else {print("selected popup menu header")}

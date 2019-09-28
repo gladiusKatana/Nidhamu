@@ -32,7 +32,7 @@ var reloadedFromHourTickingOver = true;             var rotatedFromResignActive 
 var textFieldDisplayed = false;                     ///var textFieldFirstDisplayed = false
 var savedTimeBlocksForProcessing = false;           var classifierViewDisplayed = false
 
-var eventWillBeRecurring = false
+var selectedEventWillRecur = false
 var globalEventIdentifier = "(event)";              var selectedTimeBlockDateDescription = "(selected date)"
 
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]

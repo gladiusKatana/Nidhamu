@@ -41,11 +41,11 @@ class PopupSwitchView: UIView {
         addConstraint(NSLayoutConstraint(item: popupLabel, attribute: .centerX, relatedBy: .equal,
                                          toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
         
-        popupSwitch.isOn = eventWillBeRecurring
+        popupSwitch.isOn = selectedEventWillRecur
     }
     
     @objc func switchFlipped(mySwitch: UISwitch, switchBool: Bool) {
-        if mySwitch.isOn {eventWillBeRecurring = true} else {eventWillBeRecurring = false}
+        if mySwitch.isOn {selectedEventWillRecur = true} else {selectedEventWillRecur = false}
     }
     
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
