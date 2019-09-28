@@ -1,19 +1,19 @@
 /* Notes            ･   nidhamu   ･     created by Garth Snyder                         ⚔️file aesthetically optimized for a 13" Macbook Pro
-  
+ 
  task                                                               deadline            type *              fun/difficulty/comments ✫ (optional)
  
  
  label time on selected TimeBlockPath
- text enums for different devices
  lock keyboard (for multiple event adding)
+ font enums for different devices
  login date interval outlined/animated, not perma-coloured                              UI                  fairly fun
                                                                     asap warmup                             1 task per day eg 'to start the day'
  
  
- mark item recurring (remove by default)                                                Data                FUN, a bit overdue
- timetableVC deferral-date selection mode                                                                   "  " for all DATA tasks below
- eventsAtDate
- archive data (eventsAtIndexPath; eventsAtDate)
+ eventsAtDate                                                                           Data                FUN, a bit overdue
+ archive data vc (eventsAtDate)                                                                             "  " for all DATA tasks below
+ timetableVC deferral-date selection mode
+ 
  
  
  settings menu                                                                          UX                  fun, easy
@@ -27,7 +27,7 @@
  launch screen
  triple check applogic, improve comments
  run on my devices that are same as Beta Users'
-                                                                    Sun Sept 29________BETA! (ambitious)
+                                                                    Sun Sept 29         BETA! (ambitious)
               
  
  loopWeeks = false behaviour as setting                                                 Data
@@ -35,7 +35,7 @@
  mornAftEveNiteVC                                                                       VCs
  listVC (today items)
  listVC (deadlineless items)
-                                                                    Mon Sept 30________APPSTORE
+                                                                    Mon Sept 30         APPSTORE
  
  
  
