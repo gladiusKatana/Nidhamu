@@ -5,28 +5,10 @@ var lastLoginDate = Date()
 var selectedCellDate = Date()
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 
-//--------------------------------------------------------------------
-var eventsAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleEvent]>();                         var sortingTransform = [Int]()
-
-var timeBlock = TimeBlock(values:(0, 0))
-
-var eventArraysToProcess = [[SimpleEvent]]()
-
-var pathsToProcess = [[Int]]()                                                                  ///; var sortedPathsToProcess = [[Int]]()
-
-var timeBlockPaths = [[Int]]();                                                                  var sortedTimeBlockPaths = [[Int]]()
-
-var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]]   ///; var sortedEventDateArrays = [Any]()
-
-var eventDescriptionArrays = [[String]]()                                                       ///; var sortedEventDescriptionArrays = [Any]()
-var eventStatusArrays = [[Int]]() /* Populated with raw values of enum EventStatus*/            //var sortedEventStatusArrays = [Any]()
-
-var defaultPathOutOfView = [-1, -1];                var earliestEventAddress = defaultPathOutOfView
-var selectedTimeBlockPath = defaultPathOutOfView;   var previousTimeBlockPathSelected = defaultPathOutOfView /// for animations: see Tap.swift
-//--------------------------------------------------------------------
-
 var nowRow = 0;                                     var nowColumn = 0
 var eventIndex = 0;                                 var eventsInBlockToBeProcessed = 0
+
+
 
 var reloadedFromHourTickingOver = true;             var rotatedFromResignActive = false
 var textFieldDisplayed = false;                     ///var textFieldFirstDisplayed = false
@@ -34,6 +16,8 @@ var savedTimeBlocksForProcessing = false;           var classifierViewDisplayed 
 
 var selectedEventWillRecur = false
 var globalEventIdentifier = "(event)";              var selectedTimeBlockDateDescription = "(selected date)"
+
+
 
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 var monthsAbbreviated = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]

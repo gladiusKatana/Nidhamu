@@ -34,6 +34,7 @@ extension CollectionVC {
             showLoadAndAppearIndicationInConsole = true
             if showConsoleLegend {showConsoleLegend = false}        // legend only needs to be shown once
         }
+        
         reloadCV()
     }
     

@@ -4,20 +4,21 @@ import UIKit
 func processCurrentDate() {
     
     let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: true)
-    nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows     /// for 'nowDate', a tabular representation of current date
+    
+    nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows                 /// for 'nowCell': tabular position of current date
     nowColumn = fullWeekdaysDisplayedOrder.firstIndex(of: weekday)! + timetableLayout.lockedHeaderSections
+    
     ///print(formattedDateString(Date(), comment: "process dates @ ", short: false))    //; print("nowCell \([nowColumn, nowRow])")
     
     if !reloadedFromHourTickingOver {
-        if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections {
+        if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections {    /// if the now-cell is at Monday, 12am
             
             print("new week")
             
             lastLoginDateComponents = [year, month, day, weekday, hour, minute]
             lastLoginDate = dateFromComponents(lastLoginDateComponents)
             
-            //pryntLastLoginDate()                                  // ! maybe not just print, but save/load with prints////////////////
-            //pryntCurrentDate()
+            //pryntLastLoginDate(); pryntCurrentDate()
         }
         else {print("new hour")}
         reloadedFromHourTickingOver = true
@@ -36,7 +37,7 @@ extension CollectionVC {
                 savedTimeBlocksForProcessing = false
                 
                 DispatchQueue.main.asyncAfter(deadline: .now()) { /// must be on main queue: periodic callback inside the completion handler, is called on a background thread
-                    topVC.reloadCV()                                    // ! maybe save/load with prints////////////////////////////////////
+                    topVC.reloadCV()
                 }
             }
         }

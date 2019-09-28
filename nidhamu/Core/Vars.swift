@@ -28,7 +28,7 @@ var navBarHeight = 0.0;                         var launchWidth = 0.0
 
 
 
-var firstReenteredForeground = false;           var keyboardFirstPresented = false
+var firstBecameActive = false;                  var keyboardFirstPresented = false
 var justPinched = false
 var showConsoleLegend = true;                   var thereWillBeARowException = false
 var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false

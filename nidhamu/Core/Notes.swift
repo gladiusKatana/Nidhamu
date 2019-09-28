@@ -1,4 +1,4 @@
-/* Notes            ･   nidhamu   ･     created by Garth Snyder                         ⚔️file aesthetically optimized for a 13" Macbook Pro
+/* Notes            ･   nidhamu   ･     created by Garth Snyder                         ⚔️ all text aesthetically optimized for 13" screen
  
  task                                                               deadline            type *              fun/difficulty/comments ✫ (optional)
  
@@ -10,10 +10,10 @@
                                                                     asap warmup                             1 task per day eg 'to start the day'
  
  
+ 
  eventsAtDate                                                                           Data                FUN, a bit overdue
  archive data vc (eventsAtDate)                                                                             "  " for all DATA tasks below
  timetableVC deferral-date selection mode
- 
  
  
  settings menu                                                                          UX                  fun, easy
@@ -30,6 +30,7 @@
                                                                     Sun Sept 29         BETA! (ambitious)
               
  
+ 
  loopWeeks = false behaviour as setting                                                 Data
  eventsAtDate on calendarVC
  mornAftEveNiteVC                                                                       VCs
@@ -43,13 +44,12 @@
  prevent User changing nowDate via Settings app                                         ✧
  cascading deferrals                                                                    ✧
                                                                     later updates
-                                                                
-                                                                    see notes below
+ 
+ 
  
  1st commit                                                         july 8 '19
 
 
- 
  
                                                                     Notes
  
@@ -63,4 +63,4 @@
  ✧ denotes features that may not necessarily be a good idea to implement (eg, should Users be able to defer *all* their remaining tasks at once?)  Interesting questions.
  
  
- ✎ this is 100% Open Source Software. Always looking for Contributors.*/
+ ✎ this is Open Source software. Always looking for contributors.*/

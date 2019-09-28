@@ -28,11 +28,27 @@ extension PopupMenuVC {
     
     
     func exitEventTaggingMode() {
-        defaultSaveData(saveDate: true, showDate: false, pryntEvents: true)
-        defaultLoadData(showDate: false)
+//        defaultSaveData(saveDate: true, showDate: false, pryntEvents: true)
+//        defaultLoadData(showDate: false)
         AppUtility.lockOrientation(.all)                    //; print("rotated back")
         thereWillBeARowException = false
     }
     
+    
+    func dismissPopupMenuAndSave() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {///print("now paths to process: \(pathsToProcess)")
+            self.removePopupMenuAndSwitch()
+            earliestEventAddress = defaultPathOutOfView
+            selectedEventWillRecur = false
+            
+            timetableVC.reloadCV()                                                  ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
+            timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
+            
+            if pathsToProcess.isEmpty {
+                defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntEvents: true)
+                self.exitEventTaggingMode()
+            } else {defaultSaveData(saveDate: true, resetLastLogin: false, showDate: true, pryntEvents: false)}
+        }
+    }
 }
 

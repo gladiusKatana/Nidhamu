@@ -1,7 +1,7 @@
 // DefaultSave      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func defaultSaveData(saveDate: Bool, showDate: Bool, pryntEvents: Bool) {
+func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, pryntEvents: Bool) {
     
     if showDate {print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "✔︎saved", suffix: "", dateFormat: .fullDay))}
     
@@ -41,14 +41,15 @@ func defaultSaveData(saveDate: Bool, showDate: Bool, pryntEvents: Bool) {
     eventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: sortingTransform) as! [[String]]
     eventStatusArrays = applySortingTransform(eventStatusArrays, transform: sortingTransform) as! [[Int]]
     
-    if pryntEvents {printEventsTabularized()} //{pryntSortedSavedArrays()}
-    setForKeys(defaults, saveDate: saveDate)
+    if pryntEvents {printEventsTabularized()}
+    setForKeys(defaults, saveDate: saveDate, resetLastLogin: resetLastLogin)
 }
 
-func setForKeys(_ defaults: UserDefaults, saveDate: Bool) {
+func setForKeys(_ defaults: UserDefaults, saveDate: Bool, resetLastLogin: Bool) {
     if saveDate {
         let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: false)
         lastLoginDateComponents = [year, month, day, weekday, hour, minute]
+        if resetLastLogin {lastLoginDate = dateFromComponents(lastLoginDateComponents)}
         defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")
     }
     defaults.set(timeBlockPaths, forKey: "savedTimeBlockPaths")

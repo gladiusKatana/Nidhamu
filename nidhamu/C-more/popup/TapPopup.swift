@@ -5,6 +5,7 @@ extension PopupMenuVC {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  didSelectItemAt indexPath: IndexPath) {
+        
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
         let layout = downcastLayout!; let row = indexPath.item; let column = indexPath.section
         cell.backgroundColor = eventAddingColour
@@ -28,8 +29,7 @@ extension PopupMenuVC {
                     if !([EventStatus.deferred, EventStatus.upcoming].contains(eventsOfBlockBeingTagged[eventIndex].eventStatus)) {
                         eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(col, rw)))!)
                     }
-                }
-                ///print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
+                } ///; print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
             }
             
             if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
@@ -43,16 +43,8 @@ extension PopupMenuVC {
                 } else {eventsInBlockToBeProcessed = 0}
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {///print("now paths to process: \(pathsToProcess)")
-                self.removePopupMenuAndSwitch()
-                defaultSaveData(saveDate: false, showDate: false, pryntEvents: false)
-                earliestEventAddress = defaultPathOutOfView
-                selectedEventWillRecur = false
-                
-                timetableVC.reloadCV()                                                  ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
-                timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
-                if pathsToProcess.isEmpty {self.exitEventTaggingMode()}
-            }
+            dismissPopupMenuAndSave()
+            
         } else {print("selected popup menu header")}
     }
 }

@@ -1,7 +1,7 @@
 // Dates            ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func dateFromComponents(_ array: [Any]) -> Date {
+func dateFromComponents(_ array: [Any]) -> Date { /// Note, weekday is not needed to create a Date; it's 'along for the ride' , somewhat, and used for prints, eg in pryntLastLoginDate()
     
     let yearLoaded = array[0] as! Int                               //; print("year loaded: \(yearLoaded)")     // will probably replace with...
     let monthLoaded = array[1] as! String                           //; print("month loaded: \(monthLoaded)")   //... conditional downcasts,...

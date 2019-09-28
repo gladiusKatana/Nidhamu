@@ -41,7 +41,8 @@ func populateDictionaryFromDefaults() {
             let date = dateFromComponents(dateComponents)                                   //; print("date: \(date)")
             let event = SimpleEvent(eventDescription: description, eventDate: date, eventStatus: EventStatus(rawValue: eventStatus)!)
             
-            //print("loaded: '\(event.eventDescription)' [\(event.eventStatus)] with deadline:\(formattedDateString(date, roundedDown: true, prefix: "", suffix: "", short: false))")
+            ///print("loaded: '\(event.eventDescription)' [\(event.eventStatus)] with deadline:\(formattedDateString(date, roundedDown: true, prefix: "", suffix: "", short: false))")
+            
             events.append(event)
             j += 1
         }
