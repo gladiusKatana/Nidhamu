@@ -27,7 +27,7 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
             for event in vals {
                 eventDescriptions.append(event.eventDescription)
                 eventStatuses.append(event.eventStatus.rawValue)
-                let (year, month, _ , day, weekday, _, hour, minute) = displayDate(event.eventDate, roundedDown: true)
+                let (year, month, _ , day, weekday, _, hour, minute, _) = displayDate(event.eventDate, roundedDown: true)
                 eventDateComponents.append([year, month, day, weekday, hour, minute])
             }
             eventDescriptionArrays.append(eventDescriptions)
@@ -47,7 +47,7 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
 
 func setForKeys(_ defaults: UserDefaults, saveDate: Bool, resetLastLogin: Bool) {
     if saveDate {
-        let (year, month, _ , day, weekday, _, hour, minute) = displayDate(Date(), roundedDown: false)
+        let (year, month, _ , day, weekday, _, hour, minute, _) = displayDate(Date(), roundedDown: false)
         lastLoginDateComponents = [year, month, day, weekday, hour, minute]
         if resetLastLogin {lastLoginDate = dateFromComponents(lastLoginDateComponents)}
         defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")

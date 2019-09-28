@@ -3,7 +3,7 @@ import UIKit
 
 func displayDate(_ inputDate: Date, roundedDown: Bool)
     
-    -> (Int, String, String, Int, String, String, Int, Int) {
+    -> (Int, String, String, Int, String, String, Int, Int, Int) {
         
         let year = Calendar.current.component(.year, from: inputDate)
         
@@ -24,8 +24,8 @@ func displayDate(_ inputDate: Date, roundedDown: Bool)
             minute = Calendar.current.component(.minute, from: inputDate)
         }
         
-        //let second = Calendar.current.component(.second, from: inputDate)
+        let second = Calendar.current.component(.second, from: inputDate)
         
-        return (year, month, mnth, day, weekday, wkdy, hour, minute)      /// MAY CRASH IF DEVICE  NOT  ON 24HR TIME (seems bug is gone; will double check)
+        return (year, month, mnth, day, weekday, wkdy, hour, minute, second)      /// MAY CRASH IF DEVICE  NOT  ON 24HR TIME (seems bug is gone; will double check)
 }
 
