@@ -5,8 +5,8 @@ extension AppDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         
-        if firstBecameActive {print("🔅became active")} /// first time this method is called, causes this print to visually interrupt (be in the middle of) the didLoad and...
-        else {firstBecameActive = true} ///...didAppear symbols (and the legend explaining them)... which looks ugly.  (And, it's obvious anyway, the first time, that the app became active.)
+//        if firstBecameActive {print("🔅became active")} /// first time this method is called, causes this print to visually interrupt (be in the middle of) the didLoad and...
+//        else {firstBecameActive = true} ///...didAppear symbols (and the legend explaining them)... which looks ugly.  (And, it's obvious anyway, the first time, that the app became active.)
         
         checkOrientation()
         defaultLoadData(showDate: false)
@@ -14,15 +14,15 @@ extension AppDelegate {
     }
     
     
-    func applicationWillEnterForeground(_ application: UIApplication) {                 print("🌔will enter foreground")
+    func applicationWillEnterForeground(_ application: UIApplication) {                 //print("🌔will enter foreground")
         checkOrientation()
         if currentOrientation == "landscape" {print("returned from landscape")}
     }
     
     
-    func applicationWillResignActive(_ application: UIApplication) {                    customApplicationStatusPrint("⏸will resign active")
+    func applicationWillResignActive(_ application: UIApplication) {                    //customApplicationStatusPrint("⏸will resign active")
         if !classifierViewDisplayed {
-            defaultSaveData(saveDate: true, resetLastLogin: false, showDate: true, pryntEvents: true)
+            defaultSaveData(saveDate: true, resetLastLogin: false, showDate: false, pryntEvents: true)
         }
         
         savedTimeBlocksForProcessing = false
@@ -36,7 +36,7 @@ extension AppDelegate {
     }
     
     
-    func applicationDidEnterBackground(_ application: UIApplication) {                  print("🌘entered background")
+    func applicationDidEnterBackground(_ application: UIApplication) {                  //print("🌘entered background")
         lastActiveOrientation = currentOrientation                                      ///customApplicationStatusPrint("🌘entered background")
     }
     

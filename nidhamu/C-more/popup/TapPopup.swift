@@ -24,9 +24,16 @@ extension PopupMenuVC {
                     || selectedEventWillRecur
                 {
                     eventsOfBlockBeingTagged[eventIndex].eventStatus = .upcoming
-                    eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
+                    eventsOfBlockBeingTagged[eventIndex].eventDate += TimeInterval(86400 * 7)
                 }
                 else {
+                    let (year, monthInt, _, _ , day, _, _, hour, _, _) = getChosenDateComponents(eventsOfBlockBeingTagged[eventIndex].eventDate, roundedDown: false)
+                    
+                    let archiveBlockToAdd = ArchiveBlock(values: (year, monthInt, day, hour))
+                    eventsAtDate[archiveBlockToAdd] = eventsOfBlockBeingTagged
+                    
+                    print("archive count: \(eventsAtDate.values.count)")
+                    
                     eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(col, rw)))!)
                 }
             }
@@ -43,8 +50,13 @@ extension PopupMenuVC {
             }
             
             dismissPopupMenuAndSave()
-            
         } else {print("selected popup menu header")}
     }
 }
 
+//func addToArchive(_ event: SimpleEvent, year: Int, monthInt: Int, day: Int, hour: Int) {
+//
+//    let archiveBlockToAdd = ArchiveBlock(values: (year, monthInt, day, hour))
+//
+//    eventsAtDate[archiveBlockToAdd] = [event]
+//}
