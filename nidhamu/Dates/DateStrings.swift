@@ -3,12 +3,14 @@ import UIKit
 
 func getChosenDateComponents(_ inputDate: Date, roundedDown: Bool)
     
-    -> (Int, String, String, Int, String, String, Int, Int, Int) {
+    -> (Int, Int, String, String, Int, String, String, Int, Int, Int) {
         
         let year = Calendar.current.component(.year, from: inputDate)
         
-        let month = months[Calendar.current.component(.month, from: inputDate) - 1]
-        let mnth = monthsAbbreviated[Calendar.current.component(.month, from: inputDate) - 1]
+        let monthInt = Calendar.current.component(.month, from: inputDate)
+        
+        let month = months[monthInt - 1]
+        let mnth = monthsAbbreviated[monthInt - 1]
         
         let day = Calendar.current.component(.day, from: inputDate)
         
@@ -26,6 +28,6 @@ func getChosenDateComponents(_ inputDate: Date, roundedDown: Bool)
         
         let second = Calendar.current.component(.second, from: inputDate)
         
-        return (year, month, mnth, day, weekday, wkdy, hour, minute, second)    /// MAY CRASH IF DEVICE  NOT  ON 24HR TIME (seems bug is gone; will double check)
+        return (year, monthInt, month, mnth, day, weekday, wkdy, hour, minute, second)    /// MAY CRASH IF DEVICE  NOT  ON 24HR TIME (seems bug is gone; will double check)
 }
 

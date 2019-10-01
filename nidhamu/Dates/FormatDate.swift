@@ -4,7 +4,7 @@ import UIKit
 func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix: String, suffix: String, dateFormat: CustomDateFormat)
     -> String {
         
-        let (year, month, mnth, day, weekday, wkdy, hour, minute, second) = getChosenDateComponents(date, roundedDown: roundedDown)
+        let (year, _, month, mnth, day, weekday, wkdy, hour, minute, second) = getChosenDateComponents(date, roundedDown: roundedDown)
         
         var minTwoDigits = "\(minute)";             if minute < 10 {minTwoDigits = "0\(minute)"}
         var ampm = "";                              if hour < 13 {ampm = "am"} else {ampm = "pm"} // since hr is by default 24hr

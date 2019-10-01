@@ -14,7 +14,7 @@ func defaultLoadData(showDate: Bool) {                                          
         }
     }
     else {                                                                                  //print("\nfirst login")
-        let (year, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(Date(), roundedDown: true)
+        let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(Date(), roundedDown: true)
         lastLoginDateComponents = [year, month, day, weekday, hour, minute]
     }
     
