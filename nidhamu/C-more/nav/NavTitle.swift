@@ -13,6 +13,9 @@ extension CollectionVC {
             if vcType == .hours {
                 title = "Timetable"
             }
+            else if vcType == .archive {
+                title = "Archive"
+            }
             else { /// if vcType is the other navigation-controller-embedded collection view controller used in this application, ie todoList VC.   Note, will add more soon (see Notes.swift)
                 title = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: "Tasks", suffix: "", dateFormat: .hourlyTimeBlock)
             }

@@ -33,7 +33,7 @@ var lightNavy = UIColor.rgb(0, g: 56, b: 116, a: 0.75)
 ///var bluishGray = UIColor.rgb(60, g: 80, b: 120, a: 1);                                                                               ///; var darkNavy = UIColor.rgb(0, g: 36, b: 82, a: 1)
 
 
-var grayBarelyThere = UIColor.rgb(0, g: 0, b: 0, a: 0.05)
+var grayBarelyThere = UIColor.rgb(0, g: 0, b: 0, a: 0.03)
 var grayTwo = UIColor.rgb(0, g: 0, b: 0, a: 0.2);                           var grayThree = UIColor.rgb(0, g: 0, b: 0, a: 0.3)
 var graySeven = UIColor.rgb(0, g: 0, b: 0, a: 0.7)
 var platinum = UIColor.rgb(214, g: 214, b: 214, a: 1)

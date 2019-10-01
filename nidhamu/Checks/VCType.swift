@@ -3,7 +3,7 @@ import UIKit
 
 enum CollectionViewType: Int {
     case initial = 0
-    case hours, todoList, days, months, years, eventClassifier
+    case hours, todoList, archive, days, months, years, eventClassifier
     
     func simpleDescription() -> String {
         
@@ -16,7 +16,10 @@ enum CollectionViewType: Int {
             return "shows the hours of this week"
             
         case .todoList:
-            return "shows the todo list items of this hour"
+            return "shows the events (todo list items) of this hour"
+            
+        case .archive:
+            return "shows all events previously tagged on the timetable (organized by date)"
             
         case .days:
             return "shows the days of this month"

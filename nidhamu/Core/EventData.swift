@@ -20,7 +20,7 @@ var timeBlockPaths = [[Int]]();                                                 
 var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]]   ///; var sortedEventDateArrays = [Any]()
 
 var eventDescriptionArrays = [[String]]()                                                       ///; var sortedEventDescriptionArrays = [Any]()
-var eventStatusArrays = [[Int]]() /* Populated with raw values of enum EventStatus*/            //var sortedEventStatusArrays = [Any]()
+var eventStatusArrays = [[Int]]() /* Populated with raw values of enum EventStatus*/            ///var sortedEventStatusArrays = [Any]()
 
 
 

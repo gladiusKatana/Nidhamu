@@ -4,7 +4,7 @@ import UIKit
 func printEventsTabularized() { // optimized for console printing on an iPad Mini 4, landscape orientation (using Duet app & metal iPad stand)
     
     let gap = " "; var i = 0
-    if timeBlockPaths.isEmpty {print("[no events]")}
+    ///if timeBlockPaths.isEmpty {print("[no events]")}
     
     for path in timeBlockPaths {
         

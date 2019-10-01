@@ -7,11 +7,12 @@ extension CollectionVC {
         
         let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableImage")
         let todoListButton = setupButton(selector: #selector(buttonWrapperMethodforTodoListVC), title: "calendarImage")
+        let archiveButton = setupButton(selector: #selector(buttonWrapperMethodforArchiveVC), title: "calendarImage")
         let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
         
-        navigationItem.rightBarButtonItems = [timetableButton, todoListButton, reloadButton]
+        navigationItem.rightBarButtonItems = [timetableButton, archiveButton, todoListButton, reloadButton]
         
-        let barButtonColours = [graySeven, graySeven]   // buttons are dark by default, then greyed-out when their corresponding vc is presented
+        let barButtonColours = [graySeven, graySeven, graySeven]   /// buttons are dark by default, then greyed-out when their corresponding vc is presented
         
         for button in navigationItem.rightBarButtonItems! {
             if button == todoListButton {button.tintColor = .clear}
@@ -41,11 +42,8 @@ extension CollectionVC {
         reloadCV()
     }
     
-    @objc func buttonWrapperMethodforTimetableVC() {presentViaVCButton(vc: timetableVC)}
-    @objc func buttonWrapperMethodforTodoListVC() {}//presentViaVCButton(vc: todoListVC)
-    
-    func presentViaVCButton(vc: CollectionVC) {
-        gotoView(vc: vc)
-    }
+    @objc func buttonWrapperMethodforTimetableVC() {gotoView(vc: timetableVC)}
+    @objc func buttonWrapperMethodforArchiveVC() {gotoView(vc: archiveVC)}
+    @objc func buttonWrapperMethodforTodoListVC() {}//gotoView(vc: todoListVC)
 }
 

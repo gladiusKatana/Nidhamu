@@ -27,7 +27,7 @@ extension CollectionVC {
             setTopViewController()
         }
         
-        if vcType == .todoList {setupPinchToExit()}
+        if [.todoList, .archive].contains(vcType) {setupPinchToExit()}
         
         if !showLoadAndAppearIndicationInConsole { // if the below print hasn't been done already for this vc
             let str = (showConsoleLegend) ? appearSymbolLegend : ""; print("🏞\(topVC.vcType)\(str)") // picture-emoji means appeared 🏞

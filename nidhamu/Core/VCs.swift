@@ -33,6 +33,20 @@ var todoListLayout = //---------
 var todoListVC = CollectionVC(.todoList, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: todoListLayout)
 
 
+var archiveLayout = //---------
+CustomFlowLayout(
+    embeddedInNavController: true,
+    customFrame: UIApplication.shared.keyWindow!.frame,
+    rows: 1, cols: 3, lockedHeaderRows: 0, lockedHeaderSections: 0,
+    cellWidth: nil, cellHeight: 20,
+    autoFitWScale: 1, autoFitHScale: 1,
+    hSpace: cellGap, vSpace: cellGap,
+    loadsHorizontally: false,
+    squareCellMode: .noAutoSquare)
+
+var archiveVC = CollectionVC(.archive, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: 1, collectionViewLayout: archiveLayout)
+
+
 var classifierLayout = //---------
     CustomFlowLayout(
         embeddedInNavController: false,
