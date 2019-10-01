@@ -20,8 +20,9 @@ extension PopupMenuVC {
                 
                 eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
                 
+                /// will save tagged events that are not upcoming or deferred into the archive dictionary eventsAtDate
+                
                 if selectedEventWillRecur {
-                    /// will need to save the actual tagging selection of *this week's* event status, into the archive dictionary eventsAtDate (which has not been implemented yet), before *next week's* copy of the same event is tagged as .upcoming
                     eventsOfBlockBeingTagged[eventIndex].eventStatus = .upcoming
                 }
                 else {

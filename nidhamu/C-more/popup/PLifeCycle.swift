@@ -39,7 +39,6 @@ extension PopupMenuVC {
             if pathsToProcess.isEmpty {
                 defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntEvents: true)
                 AppUtility.lockOrientation(.all)                                        ///; print("rotated back")
-//                thereWillBeARowException = false
             }
             else {defaultSaveData(saveDate: true, resetLastLogin: false, showDate: true, pryntEvents: false)}
         }
