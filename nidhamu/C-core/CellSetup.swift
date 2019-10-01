@@ -44,8 +44,11 @@ extension CollectionVC {
                 if status == .occurred || status == .upcoming {cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)}
             }
                 
+            else if column == 1 {
+                cell.titleLabel.text = formattedDateString(eventAtTimeBlock[row].eventDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
+            }
+                
             else {cell.titleLabel.text = "\(eventAtTimeBlock[row].eventStatus)"}
-            
         default: print("[timeBlockDateSetup(:)] unrecognized collection view type")}
     }
 }

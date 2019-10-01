@@ -16,11 +16,11 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
     sortingTransform = findSortingTransform(timeBlockPaths, output: sortedTimeBlockPaths)           //; print("T:\(sortingTransform)\n")
     
     for vals in eventsAtIndexPath.values {
-        if vals.count > 1 || vals.count == 1 {
+        if vals.count >= 1 {
             var eventDescriptions = [String]()
             var eventStatuses = [Int]()
             var eventDateComponents = [[Int(), String(), Int(), String(), Int(), Int()]] as [[Any]]
-            eventDateComponents.removeAll()   // *
+            eventDateComponents.removeAll() /// do not remove, even though it looks like the above array-of-arrays is initialized empty on each iteration of the loop, it's not
             
             for event in vals {
                 eventDescriptions.append(event.eventDescription)

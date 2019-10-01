@@ -36,7 +36,9 @@ func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
 func lastEventFromPath(_ path: [Int]) -> SimpleEvent {
     
     let err = "no item @ path [sort attempt]"
-    var lastEvent = SimpleEvent(eventDescription: err, eventDate: Date(), eventStatus: .done) // arbitrary parameters to satisfy initializer
+    
+    /// arbitrary parameters to satisfy initializer:
+    var lastEvent = SimpleEvent(eventDescription: err, eventDate: Date(), eventStatus: .done) /// initial values are arbitrary because lastEvent is reset soon anyway
     
     if let eventsToProcess = eventsAtIndexPath[TimeBlock(values:(path[0], path[1]))] {
         lastEvent = eventsToProcess.last!
