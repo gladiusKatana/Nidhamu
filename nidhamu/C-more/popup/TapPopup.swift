@@ -18,10 +18,6 @@ extension PopupMenuVC {
             
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(col, rw))] {  /// writing to the dictionary
                 
-//                eventsOfBlockBeingTagged[eventIndex].eventDate = eventsOfBlockBeingTagged[eventIndex].eventDate + TimeInterval(86400 * 7)
-                
-                /// will save tagged events that are not upcoming or deferred into the archive dictionary eventsAtDate
-                
                 let selectedStatus = EventStatus(rawValue: row - 1)
                 
                 if [EventStatus.deferred, EventStatus.upcoming].contains(selectedStatus)
@@ -33,17 +29,6 @@ extension PopupMenuVC {
                 else {
                     eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(col, rw)))!)
                 }
-                
-//                if selectedEventWillRecur {
-//                    eventsOfBlockBeingTagged[eventIndex].eventStatus = .upcoming
-//                }
-//                else {
-//                    eventsOfBlockBeingTagged[eventIndex].eventStatus = EventStatus(rawValue: row - 1)!
-//                    if !([EventStatus.deferred, EventStatus.upcoming].contains(eventsOfBlockBeingTagged[eventIndex].eventStatus)) {
-//                        eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(col, rw)))!)
-//                    }
-//                } ///; print("marked eventsOfTimeBlockBeingTagged[\(eventIndex)] as \(eventsOfBlockBeingTagged[eventIndex].eventStatus)")
-                
             }
             
             if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
