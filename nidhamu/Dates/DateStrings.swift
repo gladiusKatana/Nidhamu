@@ -1,7 +1,7 @@
 // DateStrings      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func displayDate(_ inputDate: Date, roundedDown: Bool)
+func getChosenDateComponents(_ inputDate: Date, roundedDown: Bool)
     
     -> (Int, String, String, Int, String, String, Int, Int, Int) {
         

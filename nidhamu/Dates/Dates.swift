@@ -27,7 +27,7 @@ func truncateMinutesOf(_ inputDate: Date) -> Date {
     
     let mn = 0
     
-    let (year, month, _ , day, _, _, hour, _, _) = displayDate(inputDate, roundedDown: false)
+    let (year, month, _ , day, _, _, hour, _, _) = getChosenDateComponents(inputDate, roundedDown: false)
     
     let formatter = DateFormatter();    formatter.dateFormat = "yyyy/MM/dd HH:mm"
     

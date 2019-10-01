@@ -4,7 +4,7 @@ import UIKit
 
 var eventsAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleEvent]>();                         var sortingTransform = [Int]()
 
-var eventsAtDate = Dictionary<ArchiveDate<Int,Int,Int,Int>,[SimpleEvent]>()
+var eventsAtDate = Dictionary<ArchiveBlock<Int,Int,Int,Int>,[SimpleEvent]>()
 
 
 var timeBlock = TimeBlock(values:(0, 0))

@@ -3,7 +3,7 @@ import UIKit
 
 func processCurrentDate() {
     
-    let (year, month, _ , day, weekday, _, hour, minute, _) = displayDate(Date(), roundedDown: true)
+    let (year, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(Date(), roundedDown: true)
     
     nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows                 /// for 'nowCell': tabular position of current date
     nowColumn = fullWeekdaysDisplayedOrder.firstIndex(of: weekday)! + timetableLayout.lockedHeaderSections

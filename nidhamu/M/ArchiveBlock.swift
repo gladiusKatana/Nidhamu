@@ -2,7 +2,7 @@
 import UIKit
 
 
-struct ArchiveDate<T: Hashable, U: Hashable, V: Hashable, W: Hashable>: Hashable {
+struct ArchiveBlock<T: Hashable, U: Hashable, V: Hashable, W: Hashable>: Hashable {
 
     let values : (T, U, V, W)
     func hash(into hasher: inout Hasher) {
@@ -11,8 +11,8 @@ struct ArchiveDate<T: Hashable, U: Hashable, V: Hashable, W: Hashable>: Hashable
     }
 }
 
-func ==<T:Hashable,U:Hashable,V:Hashable,W:Hashable>(lhs: ArchiveDate<T,U,V,W>,
-                                                     rhs: ArchiveDate<T,U,V,W>) -> Bool {   /// comparison function for conforming to Equatable protocol
+func ==<T:Hashable,U:Hashable,V:Hashable,W:Hashable>(lhs: ArchiveBlock<T,U,V,W>,
+                                                     rhs: ArchiveBlock<T,U,V,W>) -> Bool {   /// comparison function for conforming to Equatable protocol
     return lhs.values == rhs.values
 }
 
