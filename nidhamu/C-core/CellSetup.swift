@@ -23,7 +23,14 @@ extension CollectionVC {
                     
                     cell.titleLabel.text = truncateString(eventName, sizeLimit: limit, font: cell.titleLabel.font)
                 }
-                else {cell.titleLabel.text = "(\(events.count))"}
+                else {
+                    if eventsInBlockToBeProcessed == 0 {
+                        cell.titleLabel.text = "(\(events.count))"
+                    }
+                    else {
+                        cell.titleLabel.text = ""
+                    }
+                }
             }
             
         case .todoList:
@@ -53,9 +60,9 @@ extension CollectionVC {
             
             cell.titleLabel.textColor = .darkGray
             
-            var eventDescriptionArrays = [[String]]()                                                       ///; var sortedEventDescriptionArrays = [Any]()
-            var eventStatusArrays = [[Int]]() /* Populated with raw values of enum EventStatus*/            ///var sortedEventStatusArrays = [Any]()
-            var eventDateArrays = [[Date]]()
+            var eventDescriptionArrays = [[String]]();                                              var allEventDescriptions = [String]()
+            var eventStatusArrays = [[Int]](); /* Populated with raw values of enum EventStatus*/   var allEventStatuses = [Int]()
+            var eventDateArrays = [[Date]]();                                                       var allEventDates = [Date]()
             
             eventDescriptionArrays.removeAll(); eventStatusArrays.removeAll(); eventDateArrays.removeAll()  ///; datesFromKeys.removeAll()
             
@@ -73,7 +80,7 @@ extension CollectionVC {
                     eventDescriptionArrays.append(eventDescriptions)
                     eventStatusArrays.append(eventStatuses)
                     eventDateArrays.append(eventDates)
-                }///else {print("\n!descriptions array at this time block contains only default (\(defaultEmptEventDescription)), and it's: \(vals[0].eventDescription)")}
+                }
             }
             
             let sortedEventDateArrays = eventDateArrays.sorted(by: {$0.last! < $1.last!})  /// all the dates will be the same for each event in each time block
@@ -82,17 +89,34 @@ extension CollectionVC {
             let sortedEventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: dateSortingTransform) as! [[String]]
             let sortedEventStatusArrays = applySortingTransform(eventStatusArrays, transform: dateSortingTransform) as! [[Int]]
             
+            for items in sortedEventDateArrays {
+                for item in items {
+                    allEventDates.append(item)
+                }
+            }
+            
+            for items in sortedEventDescriptionArrays {
+                for item in items {
+                    allEventDescriptions.append(item)
+                }
+            }
+            
+            for items in sortedEventStatusArrays {
+                for item in items {
+                    allEventStatuses.append(item)
+                }
+            }
             
             if column == 0 {
-                cell.titleLabel.text = formattedDateString(sortedEventDateArrays[row].last!, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
+                cell.titleLabel.text = formattedDateString(allEventDates[row], roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
             }
                 
             else if column == 1 {
-                cell.titleLabel.text = "\(sortedEventDescriptionArrays[row].last!)"
+                cell.titleLabel.text = "\(allEventDescriptions[row])"
             }
                 
             else {
-                let index = sortedEventStatusArrays[row].last!
+                let index = allEventStatuses[row]
                 cell.titleLabel.text = EventStatus(rawValue: index)?.caseName()
             }
             

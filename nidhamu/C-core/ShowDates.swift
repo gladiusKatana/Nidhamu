@@ -9,13 +9,15 @@ extension CollectionVC {
         
         if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
             cell.layer.borderColor = UIColor.white.cgColor                                              //; print("highlighted cell white")
+            if let events = eventsAtIndexPath[TimeBlock(values:(column, row))], events.count > 1 {
+                cell.titleLabel.text = "(\(events.count - eventsInBlockToBeProcessed + 1)/\(events.count))"
+            }
         }
         else {
-            
             let cellWeekday = Calendar.current.component(.weekday, from: cell.cellDate)
             let cellHour = Calendar.current.component(.hour, from: cell.cellDate)
             
-            let thisWeek = Calendar.current.component(.weekday, from: Date())                /// don't need to truncate here, I think
+            let thisWeek = Calendar.current.component(.weekday, from: Date())
             let thisHour = Calendar.current.component(.hour, from: Date())
             
             let lastLoginWeek = Calendar.current.component(.weekday, from: lastLoginDate)
