@@ -28,16 +28,6 @@ func defaultLoadData(showDate: Bool) {                                          
     archiveEventDateComponentArrays = defaults.array(forKey: "savedArchiveEventDateComponentArrays") as? [[Int]] ?? []
     
     populateDictionaryFromDefaults()                                                        //; print("loaded event paths: \(timeBlockPaths)")
-    
-//    if !archiveEventDescriptions.isEmpty {
-//        for i in 1 ... archiveEventDescriptions.count {
-//            print("archived description: \(archiveEventDescriptions[i - 1])")
-//            
-//            archiveEvents.append(SimpleEvent(eventDescription: archiveEventDescriptions[i - 1],
-//                                             eventDate: dateFromInts(archiveEventDateComponentArrays[i - 1]),
-//                                             eventStatus: EventStatus(rawValue: archiveEventStatuses[i - 1])!))
-//        }
-//    }
 }
 
 func populateDictionaryFromDefaults() {

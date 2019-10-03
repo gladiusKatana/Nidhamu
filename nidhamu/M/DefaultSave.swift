@@ -34,16 +34,6 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
         }///else {print("\n!descriptions array at this time block contains only default (\(defaultEmptEventDescription)), and it's: \(vals[0].eventDescription)")}
     }
     
-//    for archive in archiveEvents { /// yes I know this loop is wordy. May rename all UserDefaults-saved arrays
-//        if !archiveEventDescriptions.contains(archive.eventDescription) {
-//            archiveEventDescriptions.append(archive.eventDescription)
-//        }
-//        if !archiveEventStatuses.contains(archive.eventStatus.rawValue) {archiveEventStatuses.append(archive.eventStatus.rawValue)}
-//        if !archiveEventDateComponentArrays.contains(getEventDateComponents(archive)) {
-//            archiveEventDateComponentArrays.append(getEventDateComponents(archive))
-//        }
-//    }
-    
     print("archive events: \(archiveEventDescriptions)")
     
     timeBlockPaths = sortedTimeBlockPaths

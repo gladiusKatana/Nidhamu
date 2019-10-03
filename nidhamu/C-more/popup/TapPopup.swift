@@ -24,34 +24,16 @@ extension PopupMenuVC {
                     || selectedEventWillRecur {
                     eventsOfBlockBeingTagged[eventIndex].eventDate += TimeInterval(86400 * 7)   /// shouldn't be needed... just by reappearing, this should be its date
                 }
-                //                else {
-                //                    let (year, monthInt, _, _ , day, _, _, hour, _, _) = getChosenDateComponents(eventsOfBlockBeingTagged[eventIndex].eventDate, roundedDown: false)
-                
-                //                    let archiveBlockToAdd = ArchiveBlock(values: (year, monthInt, day, hour))
-                
-                //                    if eventsAtDate[archiveBlockToAdd] != nil {
-                //                        eventsAtDate[archiveBlockToAdd]!.append(eventsOfBlockBeingTagged[eventIndex])
-                //                    } else {
-                //                        eventsAtDate[archiveBlockToAdd] = [eventsOfBlockBeingTagged[eventIndex]]
-                //                    }
-                
+
                 if !archiveEvents.contains(eventBeingTagged) {
                     archiveEvents.append(eventBeingTagged)
+                    
                     archiveEventDescriptions.append(eventBeingTagged.eventDescription)
                     archiveEventStatuses.append(eventBeingTagged.eventStatus.rawValue)
                     archiveEventDateComponentArrays.append(getEventDateComponents(eventBeingTagged))
                     
                     archiveEvents.removeAll()
                 }
-                
-                
-                //                    var archivedEvents = 0
-                //                    for event in eventsAtDate.values {
-                //                        archivedEvents += event.count
-                //                    }
-                
-                
-                //                }
                 
                 if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
                 if eventsInBlockToBeProcessed > 0 {eventsInBlockToBeProcessed -= 1}
@@ -60,8 +42,6 @@ extension PopupMenuVC {
                     pathsToProcess.removeFirst(); eventArraysToProcess.removeFirst()
                     eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(clm, rw)))!)
                     eventIndex = 0
-                    
-//                    archiveEvents.append(eventsOfBlockBeingTagged[eventIndex])
                     
                     if !eventArraysToProcess.isEmpty {
                         eventsInBlockToBeProcessed = eventArraysToProcess.first!.count

@@ -2,7 +2,6 @@
 import UIKit
 
 func dateFromComponents(_ dateComponents: [Any]) -> Date { /// Note, weekday is not needed to create a Date; it's 'along for the ride' , somewhat, and used for prints, eg in pryntLastLoginDate()
-    
     let yearLoaded = dateComponents[0] as! Int                              ///; print("year loaded: \(yearLoaded)")                                    // will probably replace with...
     let monthLoaded = dateComponents[1] as! String                          ///; print("month loaded: \(monthLoaded)")                              //... conditional downcasts,...
     let monthLoadedInt = months.firstIndex(of: monthLoaded)! + 1            ///; print("int: \(monthLoadedInt)")                                            //...rather than forced ones
@@ -24,7 +23,6 @@ func dateFromComponents(_ dateComponents: [Any]) -> Date { /// Note, weekday is 
 
 
 func dateFromInts(_ dateComponents: [Int]) -> Date { /// Note, weekday is not needed to create a Date; it's 'along for the ride' , somewhat, and used for prints, eg in pryntLastLoginDate()
-
     let yearLoaded = dateComponents[0] //as! Int                                ///; print("year loaded: \(yearLoaded)")
     let monthLoaded = dateComponents[1] //as! Int                               ///; print("month loaded: \(monthLoaded)")
     let dayLoaded = dateComponents[2] //as! Int                                 ///; print("day loaded: \(dayLoaded)")
@@ -57,19 +55,4 @@ func truncateMinutesOf(_ inputDate: Date) -> Date {
     
     return date
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
