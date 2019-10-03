@@ -28,7 +28,8 @@ func defaultLoadData(showDate: Bool) {                                          
     archiveEventDateComponentArrays = defaults.array(forKey: "savedArchiveEventDateComponentArrays") as? [[Int]] ?? []
     
     populateDictionaryFromDefaults()                                                        //; print("loaded event paths: \(timeBlockPaths)")
-    populateEventDatesAndStatusesFromDefaults()
+    if !firstTimeLoaded {populateEventDatesAndStatusesFromDefaults()}
+    firstTimeLoaded = true
 }
 
 func populateDictionaryFromDefaults() {

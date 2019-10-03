@@ -16,6 +16,7 @@ var savedTimeBlocksForProcessing = false;           var classifierViewDisplayed 
 
 var selectedEventWillRecur = false
 var globalEventIdentifier = "(event)";              var selectedTimeBlockDateDescription = "(selected date)"
+var firstTimeLoaded = false /// one-way bool: only flipped to  true  once in app lifecycle
 
 
 
