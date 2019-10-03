@@ -17,46 +17,61 @@ extension PopupMenuVC {
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(clm, rw))] {  /// writing to the dictionary
                 
                 let selectedStatus = EventStatus(rawValue: row - 1)
+                let eventBeingTagged = eventsOfBlockBeingTagged[eventIndex]
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = selectedStatus!
                 
                 if [EventStatus.deferred, EventStatus.upcoming].contains(selectedStatus)
                     || selectedEventWillRecur {
-                    eventsOfBlockBeingTagged[eventIndex].eventDate += TimeInterval(86400 * 7)
+                    eventsOfBlockBeingTagged[eventIndex].eventDate += TimeInterval(86400 * 7)   /// shouldn't be needed... just by reappearing, this should be its date
                 }
-                else {
-                    let (year, monthInt, _, _ , day, _, _, hour, _, _) = getChosenDateComponents(eventsOfBlockBeingTagged[eventIndex].eventDate, roundedDown: false)
-                    let archiveBlockToAdd = ArchiveBlock(values: (year, monthInt, day, hour))
+                //                else {
+                //                    let (year, monthInt, _, _ , day, _, _, hour, _, _) = getChosenDateComponents(eventsOfBlockBeingTagged[eventIndex].eventDate, roundedDown: false)
+                
+                //                    let archiveBlockToAdd = ArchiveBlock(values: (year, monthInt, day, hour))
+                
+                //                    if eventsAtDate[archiveBlockToAdd] != nil {
+                //                        eventsAtDate[archiveBlockToAdd]!.append(eventsOfBlockBeingTagged[eventIndex])
+                //                    } else {
+                //                        eventsAtDate[archiveBlockToAdd] = [eventsOfBlockBeingTagged[eventIndex]]
+                //                    }
+                
+                if !archiveEvents.contains(eventBeingTagged) {
+                    archiveEvents.append(eventBeingTagged)
+                    archiveEventDescriptions.append(eventBeingTagged.eventDescription)
+                    archiveEventStatuses.append(eventBeingTagged.eventStatus.rawValue)
+                    archiveEventDateComponentArrays.append(getEventDateComponents(eventBeingTagged))
                     
-                    if eventsAtDate[archiveBlockToAdd] != nil {
-                        eventsAtDate[archiveBlockToAdd]!.append(eventsOfBlockBeingTagged[eventIndex])
-                    } else {
-                        eventsAtDate[archiveBlockToAdd] = [eventsOfBlockBeingTagged[eventIndex]]
-                    }
-                    
-                    var archivedEvents = 0
-                    for event in eventsAtDate.values {
-                        archivedEvents += event.count
-                    }
-                    
-                    archiveVC.downcastLayout!.rows = archivedEvents
+                    archiveEvents.removeAll()
                 }
+                
+                
+                //                    var archivedEvents = 0
+                //                    for event in eventsAtDate.values {
+                //                        archivedEvents += event.count
+                //                    }
+                
+                
+                //                }
+                
+                if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
+                if eventsInBlockToBeProcessed > 0 {eventsInBlockToBeProcessed -= 1}
+                
+                if eventsInBlockToBeProcessed == 0 {
+                    pathsToProcess.removeFirst(); eventArraysToProcess.removeFirst()
+                    eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(clm, rw)))!)
+                    eventIndex = 0
+                    
+//                    archiveEvents.append(eventsOfBlockBeingTagged[eventIndex])
+                    
+                    if !eventArraysToProcess.isEmpty {
+                        eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
+                    }
+                    else {eventsInBlockToBeProcessed = 0}
+                }
+                
+                dismissPopupMenuAndSave()
             }
             
-            if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
-            if eventsInBlockToBeProcessed > 0 {eventsInBlockToBeProcessed -= 1}
-            
-            if eventsInBlockToBeProcessed == 0 {
-                pathsToProcess.removeFirst(); eventArraysToProcess.removeFirst()
-                
-                eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(clm, rw)))!)
-                
-                eventIndex = 0
-                if !eventArraysToProcess.isEmpty {
-                    eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
-                } else {eventsInBlockToBeProcessed = 0}
-            }
-            
-            dismissPopupMenuAndSave()
         } else {print("selected popup menu header")}
     }
 }

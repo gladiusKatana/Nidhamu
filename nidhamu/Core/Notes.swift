@@ -11,15 +11,14 @@
  
  
  
- eventsAtDate                                                                           Data                FUN, a bit overdue
- archive data vc (eventsAtDate)                                                                             "  " for all DATA tasks below
- timetableVC deferral-date selection mode
- 
- 
- settings menu                                                                          UX                  fun, easy
- archive CSV emails as setting                                                                              FUN, easy
- Excel template; populate the above on it (automatically?)                                                  "" except automation parts?
+ saving archived events
+ archive CSV emails as setting
+ Excel template; populate the above on it (automatically?)                                                  easy except automation parts?
  Numbers template; populate the above on it (automatically?)                                                ""
+ timetable deferral-date selection mode                                                 Data
+ settings menu                                                                          UX
+                                                                    Thurs Oct 3
+
 
  
  buttons                                                                                Design              fun; easy
@@ -27,7 +26,7 @@
  launch screen
  triple check applogic, improve comments
  run on my devices that are same as Beta Users'
-                                                                    Sun Sept 29         BETA! (ambitious)
+                                                                    Fri Oct 4 BETA! (ambitious)
               
  
  
@@ -36,18 +35,18 @@
  mornAftEveNiteVC                                                                       VCs
  listVC (today items)
  listVC (deadlineless items)
-                                                                    Mon Sept 30         APPSTORE
+                                                                    Mon Oct 7 APPSTORE
  
  
  
- dark mode (may be obviated/handled by iOS 13)                                          DESIGN
+ dark mode (may be obviated/handled by iOS 13)                                          Design
  prevent User changing nowDate via Settings app                                         ✧
  cascading deferrals                                                                    ✧
                                                                     later updates
  
  
  
- 1st commit                                                         july 8 '19
+ 1st commit                                                         July 8 '19
 
 
  

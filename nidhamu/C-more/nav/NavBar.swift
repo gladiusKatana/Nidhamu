@@ -43,7 +43,11 @@ extension CollectionVC {
     }
     
     @objc func buttonWrapperMethodforTimetableVC() {gotoView(vc: timetableVC)}
-    @objc func buttonWrapperMethodforArchiveVC() {gotoView(vc: archiveVC)}
     @objc func buttonWrapperMethodforTodoListVC() {}//gotoView(vc: todoListVC)
+    
+    @objc func buttonWrapperMethodforArchiveVC() {
+        archiveVC.downcastLayout!.rows = archiveEventDescriptions.count
+        gotoView(vc: archiveVC)
+    }
 }
 

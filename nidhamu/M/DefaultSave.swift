@@ -20,7 +20,7 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
             var eventDescriptions = [String]()
             var eventStatuses = [Int]()
             var eventDateComponents = [[Int(), String(), Int(), String(), Int(), Int()]] as [[Any]]
-            eventDateComponents.removeAll() /// do not remove, even though it looks like the above array-of-arrays is initialized empty on each iteration of the loop, it's not
+            eventDateComponents.removeAll() /// keep this line, even though it looks like the above array-of-arrays is initialized empty on each iteration of the loop, it's not
             
             for event in vals {
                 eventDescriptions.append(event.eventDescription)
@@ -34,10 +34,22 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
         }///else {print("\n!descriptions array at this time block contains only default (\(defaultEmptEventDescription)), and it's: \(vals[0].eventDescription)")}
     }
     
+//    for archive in archiveEvents { /// yes I know this loop is wordy. May rename all UserDefaults-saved arrays
+//        if !archiveEventDescriptions.contains(archive.eventDescription) {
+//            archiveEventDescriptions.append(archive.eventDescription)
+//        }
+//        if !archiveEventStatuses.contains(archive.eventStatus.rawValue) {archiveEventStatuses.append(archive.eventStatus.rawValue)}
+//        if !archiveEventDateComponentArrays.contains(getEventDateComponents(archive)) {
+//            archiveEventDateComponentArrays.append(getEventDateComponents(archive))
+//        }
+//    }
+    
+    print("archive events: \(archiveEventDescriptions)")
+    
     timeBlockPaths = sortedTimeBlockPaths
-    eventDateArrays = applySortingTransform(eventDateArrays, transform: sortingTransform) as! [[[Any]]]
     eventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: sortingTransform) as! [[String]]
     eventStatusArrays = applySortingTransform(eventStatusArrays, transform: sortingTransform) as! [[Int]]
+    eventDateArrays = applySortingTransform(eventDateArrays, transform: sortingTransform) as! [[[Any]]]
     if pryntEvents {printEventsTabularized()}
     setForKeys(defaults, saveDate: saveDate, resetLastLogin: resetLastLogin)
 }
@@ -53,5 +65,15 @@ func setForKeys(_ defaults: UserDefaults, saveDate: Bool, resetLastLogin: Bool) 
     defaults.set(eventDescriptionArrays, forKey: "savedEventDescriptionArrays")
     defaults.set(eventDateArrays, forKey: "savedEventDateArrays")
     defaults.set(eventStatusArrays, forKey: "savedEventStatusArrays")
+    
+    defaults.set(archiveEventDescriptions, forKey: "savedArchiveEventDescriptions")
+    defaults.set(archiveEventStatuses, forKey: "savedArchiveEventStatuses")
+    defaults.set(archiveEventDateComponentArrays, forKey: "savedArchiveEventDateComponentArrays")
+}
+
+func getEventDateComponents(_ event: SimpleEvent) -> [Int] {
+    let (year, monthInt, _, _ , day, _, _, hour, _, _) = getChosenDateComponents(event.eventDate, roundedDown: false)
+    
+    return [year, monthInt, day, hour]
 }
 
