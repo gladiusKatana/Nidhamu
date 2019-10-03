@@ -21,13 +21,14 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     case .fullDayWithSeconds:       return "\(prefix)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits):\(second)\(ampm)\(suffix)"
     case .fullDayShortForm:         return "\(prefix)\(wkdy). \(mnth). \(day), \(yearString)\(hr)\(ampm)\(suffix)"
     case .fullDayShortFormNoDots:   return "\(prefix)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString)\(hr)\(ampm)\(suffix)"
+    case .archiveFormat:            return "\(prefix)\(weekday) \(month) \(day) \(year) @ \(hr)\(ampm)\(suffix)"
         
     default: return "\(prefix)\(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
     }
 }
 
 enum CustomDateFormat: Int {
-    case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayWithSeconds, fullDayShortForm, fullDayShortFormNoDots
+    case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayWithSeconds, fullDayShortForm, fullDayShortFormNoDots, archiveFormat
 }
 
 func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {

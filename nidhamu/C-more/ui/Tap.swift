@@ -44,8 +44,48 @@ extension CollectionVC {
                 }
                 
             case .todoList:     prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
+            case .archive:      sendArchiveAsCsv()
             default: print("unrecognized collection view type's cell selected")}
         }///else {print("selected navbar-embeddd vc's header")}
+    }
+    
+    func sendArchiveAsCsv() {
+        
+        let fileName = "Tagged past events.csv"
+        guard let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName) else {
+            print("failed to create url")
+            return
+        }
+        var csvText = ""
+        
+        csvText.append("Description, Status, Date\n")
+        
+        var i = 0
+        for _ in archiveEventDescriptions {
+            csvText.append("\(archiveEventDescriptions[i]),\(archiveEventStatusStrings[i]),\(archiveEventDateStrings[i])\n")
+            i += 1
+        }
+
+        do {
+            try csvText.write(to: path, atomically: true, encoding: String.Encoding.utf8)
+        } catch {
+            print("Failed to create csv file")
+            print("\(error)")
+        }
+        
+        let vc = UIActivityViewController(activityItems: [path], applicationActivities: [])
+        present(vc, animated: true, completion: nil)
+        
+        vc.excludedActivityTypes = [
+            //UIActivity.ActivityType.assignToContact,// is this applicable here anyway?
+            //UIActivity.ActivityType.saveToCameraRoll,
+            UIActivity.ActivityType.postToFlickr,
+            UIActivity.ActivityType.postToVimeo,
+            UIActivity.ActivityType.postToTencentWeibo,
+            UIActivity.ActivityType.postToTwitter,
+            UIActivity.ActivityType.postToFacebook,
+            //UIActivity.ActivityType.openInIBooks
+        ]
     }
 }
 

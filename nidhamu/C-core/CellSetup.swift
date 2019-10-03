@@ -64,8 +64,8 @@ extension CollectionVC {
             else if column == 1 {cell.titleLabel.text = "\(archiveEventDescriptions[row])"}
                 
             else {
-                let rawVal = archiveEventStatuses[row]
-                cell.titleLabel.text = EventStatus(rawValue: rawVal)!.caseName()
+//                let rawVal = archiveEventStatuses[row]
+                cell.titleLabel.text = archiveEventStatusStrings[row]//EventStatus(rawValue: rawVal)!.caseName()
             }
             
         default: print("[timeBlockDateSetup(:)] unrecognized collection view type")}

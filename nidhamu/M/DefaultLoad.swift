@@ -28,6 +28,7 @@ func defaultLoadData(showDate: Bool) {                                          
     archiveEventDateComponentArrays = defaults.array(forKey: "savedArchiveEventDateComponentArrays") as? [[Int]] ?? []
     
     populateDictionaryFromDefaults()                                                        //; print("loaded event paths: \(timeBlockPaths)")
+    populateEventDatesAndStatusesFromDefaults()
 }
 
 func populateDictionaryFromDefaults() {
@@ -52,6 +53,15 @@ func populateDictionaryFromDefaults() {
         }
         
         eventsAtIndexPath[TimeBlock(values: (path[0], path[1]))] = events
+        i += 1
+    }
+}
+
+func populateEventDatesAndStatusesFromDefaults() {
+    var i = 0
+    for _ in archiveEventStatuses {
+        archiveEventDateStrings.append(formattedDateString(dateFromInts(archiveEventDateComponentArrays[i]), roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
+        archiveEventStatusStrings.append(EventStatus(rawValue: archiveEventStatuses[i])!.caseName())
         i += 1
     }
 }

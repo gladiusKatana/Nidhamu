@@ -32,6 +32,9 @@ extension PopupMenuVC {
                     archiveEventStatuses.append(eventBeingTagged.eventStatus.rawValue)
                     archiveEventDateComponentArrays.append(getEventDateComponents(eventBeingTagged))
                     
+                    archiveEventDateStrings.append(formattedDateString(eventBeingTagged.eventDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
+                    archiveEventStatusStrings.append(eventBeingTagged.eventStatus.caseName())
+                    
                     archiveEvents.removeAll()
                 }
                 

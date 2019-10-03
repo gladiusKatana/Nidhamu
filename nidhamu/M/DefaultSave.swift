@@ -34,8 +34,6 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
         }///else {print("\n!descriptions array at this time block contains only default (\(defaultEmptEventDescription)), and it's: \(vals[0].eventDescription)")}
     }
     
-    print("archive events: \(archiveEventDescriptions)")
-    
     timeBlockPaths = sortedTimeBlockPaths
     eventDescriptionArrays = applySortingTransform(eventDescriptionArrays, transform: sortingTransform) as! [[String]]
     eventStatusArrays = applySortingTransform(eventStatusArrays, transform: sortingTransform) as! [[Int]]

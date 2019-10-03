@@ -28,13 +28,13 @@ var eventStatusArrays = [[Int]]() /* Populated with raw values of enum EventStat
 
 
 /// Saving archived time blocks' components via separate UserDefaults arrays
-var archiveEventDescriptionArrays = [[String]]();                                               var allArchiveEventDescriptions = [String]()
-var archiveEventStatusArrays = [[Int]](); /* Populated with raw values of enum EventStatus*/    var allArchiveEventStatuses = [Int]()
-var archiveEventDateArrays = [[Date]]();                                                        var allArchiveEventDates = [Date]()
-var sortedArchiveEventDateArrays = [[Date]]()
-
-
 var archiveEvents = [SimpleEvent]()
 var archiveEventDescriptions = [String]()
-var archiveEventStatuses = [Int]()
-var archiveEventDateComponentArrays = [[Int]]()
+var archiveEventStatuses = [Int]();                 var archiveEventStatusStrings = [String]()
+var archiveEventDateComponentArrays = [[Int]]();    var archiveEventDateStrings = [String]()
+
+//var archiveEventDescriptionArrays = [[String]]();                                               var allArchiveEventDescriptions = [String]()
+//var archiveEventStatusArrays = [[Int]](); /* Populated with raw values of enum EventStatus*/    var allArchiveEventStatuses = [Int]()
+//var archiveEventDateArrays = [[Date]]();                                                        var allArchiveEventDates = [Date]()
+//var sortedArchiveEventDateArrays = [[Date]]()
+

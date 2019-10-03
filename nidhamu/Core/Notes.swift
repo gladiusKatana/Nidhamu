@@ -10,15 +10,13 @@
                                                                     asap warmup                             1 task per day eg 'to start the day'
  
  
- 
+ settings menu                                                                          UX
  archive CSV emails as setting
  Excel template; populate the above on it (automatically?)                                                  easy except automation parts?
  Numbers template; populate the above on it (automatically?)                                                ""
  timetable deferral-date selection mode                                                 Data
- settings menu                                                                          UX
+
                                                                     Thurs Oct 3
-
-
  
  buttons                                                                                Design              fun; easy
  icon                                                                                                       ""
@@ -28,14 +26,12 @@
                                                                     Fri Oct 4 BETA! (ambitious)
               
  
- 
  loopWeeks = false behaviour as setting                                                 Data
  eventsAtDate on calendarVC
  mornAftEveNiteVC                                                                       VCs
  listVC (today items)
  listVC (deadlineless items)
                                                                     Mon Oct 7 APPSTORE
- 
  
  
  dark mode (may be obviated/handled by iOS 13)                                          Design
@@ -48,6 +44,10 @@
  1st commit                                                         July 8 '19
 
 
+ 
+ 
+ 
+ 
  
                                                                     Notes
  
