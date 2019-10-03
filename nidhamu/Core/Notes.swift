@@ -11,7 +11,6 @@
  
  
  
- saving archived events
  archive CSV emails as setting
  Excel template; populate the above on it (automatically?)                                                  easy except automation parts?
  Numbers template; populate the above on it (automatically?)                                                ""
