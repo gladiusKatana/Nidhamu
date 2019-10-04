@@ -51,12 +51,16 @@ extension CollectionVC {
     
     func sendArchiveAsCsv() {
         
-        let fileName = "Tagged past events.csv"
+        let dateString = formattedDateString(lastLoginDate, roundedDown: false, showYear: true,
+                                             prefix: "", suffix: "", dateFormat: .archiveCSVTitle)
+        
+        let fileName = "Tagged events (\(dateString)).csv" ///don't insert a space after "as of" : formattedDateString(:) already builds one in
         guard let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName) else {
             print("failed to create url")
             return
         }
         var csvText = ""
+        
         
         csvText.append("Description, Status, Date\n")
         
@@ -65,7 +69,7 @@ extension CollectionVC {
             csvText.append("\(archiveEventDescriptions[i]),\(archiveEventStatusStrings[i]),\(archiveEventDateStrings[i])\n")
             i += 1
         }
-
+        
         do {
             try csvText.write(to: path, atomically: true, encoding: String.Encoding.utf8)
         } catch {

@@ -1,7 +1,7 @@
 // FormatDate       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix: String, suffix: String, dateFormat: CustomDateFormat) -> String {
+func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix: String?, suffix: String, dateFormat: CustomDateFormat) -> String {
     
     let (year, _, month, mnth, day, weekday, wkdy, hour, minute, second) = getChosenDateComponents(date, roundedDown: roundedDown)
     
@@ -13,7 +13,7 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     
     var yearString = ""
     if showYear && (month == "January" || month == "December") {yearString = "\(year), "}// also add || (Date() > last-login-date by > ~30 days)}
-    let prefix = (prefix == "") ? " " : "\(prefix) "
+    let prefix = (prefix == "") ? " " : "\(prefix ?? "") "
     
     switch dateFormat {
         
@@ -22,13 +22,14 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     case .fullDayShortForm:         return "\(prefix)\(wkdy). \(mnth). \(day), \(yearString)\(hr)\(ampm)\(suffix)"
     case .fullDayShortFormNoDots:   return "\(prefix)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString)\(hr)\(ampm)\(suffix)"
     case .archiveFormat:            return "\(prefix)\(weekday) \(month) \(day) \(year) @ \(hr)\(ampm)\(suffix)"
+    case .archiveCSVTitle:          return "\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(year), \(hr).\(minTwoDigits)\(ampm)"
         
     default: return "\(prefix)\(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
     }
 }
 
 enum CustomDateFormat: Int {
-    case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayWithSeconds, fullDayShortForm, fullDayShortFormNoDots, archiveFormat
+    case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayWithSeconds, fullDayShortForm, fullDayShortFormNoDots, archiveFormat, archiveCSVTitle
 }
 
 func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {

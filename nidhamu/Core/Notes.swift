@@ -11,7 +11,7 @@
  
  
  settings menu                                                                          UX
- archive CSV emails as setting
+ archive CSV emails frequency (setting)
  Excel template; populate the above on it (automatically?)                                                  easy except automation parts?
  Numbers template; populate the above on it (automatically?)                                                ""
  timetable deferral-date selection mode                                                 Data

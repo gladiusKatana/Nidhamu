@@ -21,7 +21,10 @@ extension PopupMenuVC {
                 let eventBeingTagged = eventsOfBlockBeingTagged[eventIndex]
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = selectedStatus!
                 
-                if [EventStatus.deferred, EventStatus.upcoming].contains(selectedStatus) {eventWillShowUpNextWeek = true}
+                if [EventStatus.deferred, EventStatus.upcoming].contains(selectedStatus) {
+                    eventWillShowUpNextWeek = true
+                    //eventsOfBlockBeingTagged[eventIndex].eventDate += TimeInterval(86400 * 7)
+                }
                 
                 if !eventWillShowUpNextWeek {
                     
