@@ -66,12 +66,13 @@
 		0631914422E2C5F5004DE476 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631914322E2C5F5004DE476 /* LoginInterval.swift */; };
 		06399205233F93C9008907FE /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06399204233F93C9008907FE /* EventData.swift */; };
 		06473CA82346DF00009397AE /* SendMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06473CA72346DF00009397AE /* SendMsg.swift */; };
-		06473CAC2346E03D009397AE /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06473CAB2346E03D009397AE /* Email.swift */; };
+		06473CAC2346E03D009397AE /* EmailCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06473CAB2346E03D009397AE /* EmailCSV.swift */; };
 		06482792233414FC0035774F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06482791233414FC0035774F /* Strings.swift */; };
 		064A44B52331982D00AD82E4 /* BlockBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064A44B42331982D00AD82E4 /* BlockBorder.swift */; };
 		0674CD2F23298928009231F1 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674CD2E23298928009231F1 /* BaseCell.swift */; };
 		0682A49122FE5F0A00CE8075 /* AddPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682A49022FE5F0A00CE8075 /* AddPopup.swift */; };
 		0687565E232992FA0052818A /* TFReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0687565D232992FA0052818A /* TFReturn.swift */; };
+		0688C39023481D92007DC878 /* EmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0688C38F23481D92007DC878 /* EmailVC.swift */; };
 		06A396572318B0F5008CFBD7 /* SwitchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A396562318B0F5008CFBD7 /* SwitchVC.swift */; };
 		06AA5D19231727C500DC04FD /* PCellPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AA5D18231727C500DC04FD /* PCellPath.swift */; };
 		06B872072329CA0700512B21 /* PrepBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B872062329CA0700512B21 /* PrepBlocks.swift */; };
@@ -162,12 +163,13 @@
 		0631914322E2C5F5004DE476 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
 		06399204233F93C9008907FE /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		06473CA72346DF00009397AE /* SendMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMsg.swift; sourceTree = "<group>"; };
-		06473CAB2346E03D009397AE /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
+		06473CAB2346E03D009397AE /* EmailCSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCSV.swift; sourceTree = "<group>"; };
 		06482791233414FC0035774F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		064A44B42331982D00AD82E4 /* BlockBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockBorder.swift; sourceTree = "<group>"; };
 		0674CD2E23298928009231F1 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		0682A49022FE5F0A00CE8075 /* AddPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPopup.swift; sourceTree = "<group>"; };
 		0687565D232992FA0052818A /* TFReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFReturn.swift; sourceTree = "<group>"; };
+		0688C38F23481D92007DC878 /* EmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVC.swift; sourceTree = "<group>"; };
 		06A396562318B0F5008CFBD7 /* SwitchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchVC.swift; sourceTree = "<group>"; };
 		06AA5D18231727C500DC04FD /* PCellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCellPath.swift; sourceTree = "<group>"; };
 		06B872062329CA0700512B21 /* PrepBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepBlocks.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				06F2A968231725090062FE02 /* C-core */,
 				0625169222D6CF4200EBB4C8 /* C-more */,
 				062516A722D6CF4200EBB4C8 /* Checks */,
+				0688C38E23481D45007DC878 /* Inactive */,
 				0625168922D6CF4100EBB4C8 /* Base.lproj */,
 				0625168822D6CF4100EBB4C8 /* Assets.xcassets */,
 				0625164422D6C71A00EBB4C8 /* Info.plist */,
@@ -349,8 +352,8 @@
 				0687565D232992FA0052818A /* TFReturn.swift */,
 				0630650E233D59D700C4BB95 /* Keyboard.swift */,
 				062516A022D6CF4200EBB4C8 /* UINotify.swift */,
-				06473CA72346DF00009397AE /* SendMsg.swift */,
-				06473CAB2346E03D009397AE /* Email.swift */,
+				06473CAB2346E03D009397AE /* EmailCSV.swift */,
+				0688C38F23481D92007DC878 /* EmailVC.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -402,6 +405,14 @@
 				0625169622D6CF4200EBB4C8 /* TapPopup.swift */,
 			);
 			path = popup;
+			sourceTree = "<group>";
+		};
+		0688C38E23481D45007DC878 /* Inactive */ = {
+			isa = PBXGroup;
+			children = (
+				06473CA72346DF00009397AE /* SendMsg.swift */,
+			);
+			path = Inactive;
 			sourceTree = "<group>";
 		};
 		06F2A968231725090062FE02 /* C-core */ = {
@@ -591,7 +602,8 @@
 				06399205233F93C9008907FE /* EventData.swift in Sources */,
 				0687565E232992FA0052818A /* TFReturn.swift in Sources */,
 				062516BA22D6CF4200EBB4C8 /* SizeEnums.swift in Sources */,
-				06473CAC2346E03D009397AE /* Email.swift in Sources */,
+				06473CAC2346E03D009397AE /* EmailCSV.swift in Sources */,
+				0688C39023481D92007DC878 /* EmailVC.swift in Sources */,
 				062516D222D6CF4200EBB4C8 /* Reload.swift in Sources */,
 				062516CD22D6CF4200EBB4C8 /* NavTitle.swift in Sources */,
 				062516C622D6CF4200EBB4C8 /* Tap.swift in Sources */,
