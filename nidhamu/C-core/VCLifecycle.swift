@@ -5,6 +5,7 @@ extension CollectionVC {
     
     override func viewDidLoad() {                                   super.viewDidLoad()
         collectionView.backgroundColor = .clear
+        if vcType == .archive {collectionView.backgroundColor = .white}
         collectionView.bounces = false
         
         setTopViewController()

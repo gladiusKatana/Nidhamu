@@ -16,7 +16,7 @@ extension CollectionVC {
     }
     
     
-    func setupTitleAndPresentViewController(vc: CollectionVC, completion: () -> ()) {       //print("\ndismissing/presenting") // vc: \(vc)
+    func setupTitleAndPresentViewController(vc: CollectionVC, completion: () -> ()) {       //print("\ndismissing/presenting vc: \(vc)")
         setupAndPresent(vc: vc)
         completion()
     }

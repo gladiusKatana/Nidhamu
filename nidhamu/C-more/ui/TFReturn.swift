@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {    /// ** commented code here is for animations
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {          //print("TF_return")
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {          print("TF_return")
         
         textField.removeFromSuperview(); textField.resignFirstResponder()
         textFieldDisplayed = false

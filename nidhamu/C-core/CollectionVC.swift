@@ -1,7 +1,8 @@
 // CollectionVC     ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
+import MessageUI
 
-class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
+class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRecognizerDelegate/*, MFMailComposeViewControllerDelegate*/ {
     
     var vcType = CollectionViewType.days;               var downcastLayout: CustomFlowLayout?
     var colourIndex: Int?;                              var loopWeeks = false; var demarcateWeeksByColour = false

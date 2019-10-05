@@ -65,6 +65,8 @@
 		06306513233E7D5E00C4BB95 /* ShowDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06306512233E7D5E00C4BB95 /* ShowDates.swift */; };
 		0631914422E2C5F5004DE476 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631914322E2C5F5004DE476 /* LoginInterval.swift */; };
 		06399205233F93C9008907FE /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06399204233F93C9008907FE /* EventData.swift */; };
+		06473CA82346DF00009397AE /* SendMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06473CA72346DF00009397AE /* SendMsg.swift */; };
+		06473CAC2346E03D009397AE /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06473CAB2346E03D009397AE /* Email.swift */; };
 		06482792233414FC0035774F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06482791233414FC0035774F /* Strings.swift */; };
 		064A44B52331982D00AD82E4 /* BlockBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064A44B42331982D00AD82E4 /* BlockBorder.swift */; };
 		0674CD2F23298928009231F1 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674CD2E23298928009231F1 /* BaseCell.swift */; };
@@ -159,6 +161,8 @@
 		06306512233E7D5E00C4BB95 /* ShowDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDates.swift; sourceTree = "<group>"; };
 		0631914322E2C5F5004DE476 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
 		06399204233F93C9008907FE /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		06473CA72346DF00009397AE /* SendMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMsg.swift; sourceTree = "<group>"; };
+		06473CAB2346E03D009397AE /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		06482791233414FC0035774F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		064A44B42331982D00AD82E4 /* BlockBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockBorder.swift; sourceTree = "<group>"; };
 		0674CD2E23298928009231F1 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
@@ -345,6 +349,8 @@
 				0687565D232992FA0052818A /* TFReturn.swift */,
 				0630650E233D59D700C4BB95 /* Keyboard.swift */,
 				062516A022D6CF4200EBB4C8 /* UINotify.swift */,
+				06473CA72346DF00009397AE /* SendMsg.swift */,
+				06473CAB2346E03D009397AE /* Email.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -575,6 +581,7 @@
 				062516D822D6CF4200EBB4C8 /* VCType.swift in Sources */,
 				062516B822D6CF4200EBB4C8 /* ZIndex.swift in Sources */,
 				062516CE22D6CF4200EBB4C8 /* UINotify.swift in Sources */,
+				06473CA82346DF00009397AE /* SendMsg.swift in Sources */,
 				062516B722D6CF4200EBB4C8 /* Attributes.swift in Sources */,
 				062516C322D6CF4200EBB4C8 /* VCLifecycle.swift in Sources */,
 				062516B422D6CF4200EBB4C8 /* SimpleEvent.swift in Sources */,
@@ -584,6 +591,7 @@
 				06399205233F93C9008907FE /* EventData.swift in Sources */,
 				0687565E232992FA0052818A /* TFReturn.swift in Sources */,
 				062516BA22D6CF4200EBB4C8 /* SizeEnums.swift in Sources */,
+				06473CAC2346E03D009397AE /* Email.swift in Sources */,
 				062516D222D6CF4200EBB4C8 /* Reload.swift in Sources */,
 				062516CD22D6CF4200EBB4C8 /* NavTitle.swift in Sources */,
 				062516C622D6CF4200EBB4C8 /* Tap.swift in Sources */,

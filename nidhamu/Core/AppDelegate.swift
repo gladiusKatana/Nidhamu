@@ -36,7 +36,7 @@ import UIKit
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let backgroundVC = UIViewController()
+        backgroundVC = UIViewController()
         backgroundVC.view.frame = globalKeyWindow.frame
         backgroundVC.view.backgroundColor = windowBackgroundColour  // must match window's background colour, for rotating landscape->portrait
         

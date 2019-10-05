@@ -46,6 +46,7 @@ extension CollectionVC {
     @objc func buttonWrapperMethodforTodoListVC() {}//gotoView(vc: todoListVC)
     
     @objc func buttonWrapperMethodforArchiveVC() {
+        backgroundVC.view.backgroundColor = .white
         archiveVC.downcastLayout!.rows = archiveEventDescriptions.count
         gotoView(vc: archiveVC)
     }

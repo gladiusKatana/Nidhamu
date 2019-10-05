@@ -9,7 +9,7 @@ var dismissPinch = UIPinchGestureRecognizer()
 
 var timerForShowScrollIndicator: Timer?
 
-
+var emailComposer = EmailComposer()
 
 var textFieldY = CGFloat(0)
 var textFieldHeight = CGFloat(30)  /// will rewrite this at some point, to be reset to a size calculated from its text height, plus a bit (with an initial value of 0). See stringSize(:), in Strings.swift
@@ -45,6 +45,7 @@ var launchOrientation = "orientation at the moment of launch"                   
 var loadSymbolLegend = "                                        💾 = view loaded"
 var appearSymbolLegend = "                                        🏞 = view appeared"  //console legend
 var truncationTrail = "…";                      ///var averageLetterWidth = CGFloat(0)
+var dateString = "global csv date string";      var fileName = "global csv file name"
 
 var modelName = "device you're running on"
 var phones = ["iPhone4", "iPhone 4s", "iPhone 5", "iPhone 5c", "iPhone 5s", "iPhone 6", "iPhone 6 Plus", "iPhone 6s", "iPhone 6s Plus", "iPhone 7", "iPhone 7 Plus", "iPhone SE", "iPhone 8", "iPhone 8 Plus", "iPhone X", "iPhone XS", "iPhone XS Max", "iPhone XR"]

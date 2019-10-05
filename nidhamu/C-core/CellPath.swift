@@ -52,6 +52,9 @@ extension CollectionVC {
                 }
             }
         }
+        
+        if vcType == .archive {cell.backgroundColor = .white}
+        
         return cell
     }
 }
