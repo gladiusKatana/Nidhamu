@@ -14,7 +14,7 @@ var randomColours =     // used in TestSquare.swift
 
 var iosSettingsGray = UIColor.rgb(240, g: 240, b: 247, a: 1)
 var iosKeyboardDefaultColourApprox = UIColor.rgb(206, g: 213, b: 219, a: 1) ///b: 218 // (207, g: 212, b: 225, a: 1)
-var windowBackgroundColour = icyBlue                                        ///timetableVC.eventField.keyboardAppearance    //UIColor.darkGray//icyBlue
+var defaultWindowBackgroundColour = icyBlue                                 ///timetableVC.eventField.keyboardAppearance    //UIColor.darkGray//icyBlue
 
 
 var cellDefaultColour = icyBlue;                                            var cellTextDefaultColour = UIColor.black;

@@ -4,15 +4,14 @@ import UIKit
 extension CollectionVC {
     
     override func viewDidLoad() {                                   super.viewDidLoad()
-        collectionView.backgroundColor = .clear
-        if vcType == .archive {collectionView.backgroundColor = .white}
+        collectionView.backgroundColor = backgroundColour
         collectionView.bounces = false
         
         setTopViewController()
         let str = (showConsoleLegend) ? loadSymbolLegend : ""       ; print("💾\(topVC.vcType)\(str)")// disk emoji means loaded 💾
-        
         statusBarHeightChangeNotificationSetup()
         keyboardNotificationSetup()
+        
         processCurrentDate()
         periodicDateRefresh(){kickoffTimer()}                       // checks the date then does the timer kickoff ('starts on the 0th callback')
         //kickoffTimer()                                            // does the timer kickoff then checks the date ('starts on the 1st callback')

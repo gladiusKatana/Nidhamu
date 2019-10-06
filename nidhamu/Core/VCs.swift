@@ -2,7 +2,7 @@
 import UIKit
 
 var cellGap = CGFloat(0) // if nonzero, do not make this smaller than: 0.5 (iphone7), or lines drawn inconsistently
-var topVC = CollectionVC(.initial, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: timetableLayout)
+var topVC = CollectionVC(.initial, backgroundColour: UIColor.clear, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: timetableLayout)
 
 var backgroundVC = UIViewController()
 
@@ -17,7 +17,7 @@ var timetableLayout = //---------
         loadsHorizontally: false,                       //❗️if loadsHorizontally is true, 'rows' look like columns
         squareCellMode: .noAutoSquare)
 
-var timetableVC = CollectionVC(.hours, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: 0, collectionViewLayout: timetableLayout)
+var timetableVC = CollectionVC(.hours, backgroundColour: defaultWindowBackgroundColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: 0, collectionViewLayout: timetableLayout)
 
 
 var todoListLayout = //---------
@@ -31,21 +31,21 @@ var todoListLayout = //---------
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
-var todoListVC = CollectionVC(.todoList, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: todoListLayout)
+var todoListVC = CollectionVC(.todoList, backgroundColour: defaultWindowBackgroundColour, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: todoListLayout)
 
 
 var archiveLayout = //---------
-CustomFlowLayout(
-    embeddedInNavController: true,
-    customFrame: UIApplication.shared.keyWindow!.frame,
-    rows: 1, cols: 3, lockedHeaderRows: 0, lockedHeaderSections: 0,
-    cellWidth: nil, cellHeight: 20,
-    autoFitWScale: 1, autoFitHScale: 1,
-    hSpace: cellGap, vSpace: cellGap,
-    loadsHorizontally: false,
-    squareCellMode: .noAutoSquare)
+    CustomFlowLayout(
+        embeddedInNavController: true,
+        customFrame: UIApplication.shared.keyWindow!.frame,
+        rows: 1, cols: 3, lockedHeaderRows: 0, lockedHeaderSections: 0,
+        cellWidth: nil, cellHeight: 20,
+        autoFitWScale: 1, autoFitHScale: 1,
+        hSpace: cellGap, vSpace: cellGap,
+        loadsHorizontally: false,
+        squareCellMode: .noAutoSquare)
 
-var archiveVC = CollectionVC(.archive, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: 1, collectionViewLayout: archiveLayout)
+var archiveVC = CollectionVC(.archive, backgroundColour: UIColor.white, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: 1, collectionViewLayout: archiveLayout)
 
 
 var classifierLayout = //---------

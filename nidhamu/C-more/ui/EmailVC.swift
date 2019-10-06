@@ -36,12 +36,12 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         } catch let error {
             print("We have encountered error \(error.localizedDescription)")
         }
-
+        
         return emailComposeVC
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController,
-                               didFinishWith result: MFMailComposeResult, error: Error?) {      print("\nEMAIL dismissed📪\n")
+                               didFinishWith result: MFMailComposeResult, error: Error?) {      //print("\nEMAIL dismissed📪\n")
         
         backgroundVC.view.removeFromSuperview()
         emailComposer.emailComposeVC.view.removeFromSuperview()

@@ -4,7 +4,7 @@ import MessageUI
 
 extension CollectionVC {
     
-    func presentEmail() { print("\n📪EMAIL\n")
+    func presentEmail() { //print("\n📪EMAIL\n")
         
         if emailComposer.canSendEmail() {
             emailComposer.emailComposeVC = emailComposer.configureEmailComposeVC()
@@ -29,15 +29,12 @@ extension CollectionVC {
         
         dateString = formattedDateString(Date(), roundedDown: false, showYear: true,
                                          prefix: "", suffix: "", dateFormat: .archiveCSVTitle)
-        
         fileName = "Tagged events (\(dateString)).csv" ///don't insert a space after "as of" : formattedDateString(:) already builds one in
         
         var returnPath = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("☹️")
-        
         if let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName) {
             
             var csvText = ""
-            
             csvText.append("Description; Status; Date\n")
             
             var i = 0

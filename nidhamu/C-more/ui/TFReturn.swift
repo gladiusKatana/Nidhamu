@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {    /// ** commented code here is for animations
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {          print("TF_return")
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {          //print("text field returned")
         
         textField.removeFromSuperview(); textField.resignFirstResponder()
         textFieldDisplayed = false
@@ -46,9 +46,10 @@ extension CollectionVC {    /// ** commented code here is for animations
     
     func exitEventAddingMode() {
         eventField.removeFromSuperview()
-        UIApplication.shared.keyWindow!.backgroundColor = windowBackgroundColour
+        eventField.resignFirstResponder()
+        UIApplication.shared.keyWindow!.backgroundColor = defaultWindowBackgroundColour
         keyboardHeight = 0
-        reloadCV()
+        self.reloadCV()
     }
 }
 

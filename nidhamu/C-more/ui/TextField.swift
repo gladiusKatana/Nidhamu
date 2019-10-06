@@ -5,6 +5,7 @@ extension CollectionVC {
     
     func prepareAndPresentTextField(dateString: String) {
         UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
+        collectionView.backgroundColor = .clear
         presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)
         reloadCV()
     }
@@ -14,15 +15,17 @@ extension CollectionVC {
     }
     
     
-    func rePresentTextField() {                                                             //print("t")
+    func rePresentTextField() {                                                 //print("re-presenting textfield")
         ///eventField.placeholder = "..."
-        ///eventField.removeFromSuperview()     /// investigate... eg why not needed?
+        eventField.removeFromSuperview()     /// is it actually needed? ...investigate
         
-        if let placeholder = eventField.placeholder {                                       //print("re-presented text field from prepare()")
-            formatAndPresentTextField(dateString: placeholder)
-        }
-        else {
-            formatAndPresentTextField(dateString: "!")
+        if vcType != .archive {
+            if let placeholder = eventField.placeholder {                       //print("re-presented text field from prepare()")
+                formatAndPresentTextField(dateString: placeholder)
+            }
+            else {
+                formatAndPresentTextField(dateString: "!")
+            }
         }
     }
     

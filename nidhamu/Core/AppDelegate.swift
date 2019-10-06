@@ -14,7 +14,7 @@ import UIKit
         
         var statusBar = UIView()
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = windowBackgroundColour
+        window?.backgroundColor = defaultWindowBackgroundColour
         window?.makeKeyAndVisible()
         
         modelName = UIDevice.modelName
@@ -38,12 +38,12 @@ import UIKit
         
         backgroundVC = UIViewController()
         backgroundVC.view.frame = globalKeyWindow.frame
-        backgroundVC.view.backgroundColor = windowBackgroundColour  // must match window's background colour, for rotating landscape->portrait
+        backgroundVC.view.backgroundColor = defaultWindowBackgroundColour       /// must match window's background colour, for rotating landscape->portrait
         
-        navController = UINavigationController(rootViewController: backgroundVC)    // temporary, unseen initial root view controller
+        navController = UINavigationController(rootViewController: backgroundVC)        /// temporary, unseen initial root view controller
         window?.rootViewController = navController                  //; print("VCs*: \(String(describing: nav Controller?.viewControllers))")
         
-        timetableVC.setupAndPresent(vc: timetableVC)            // just need a uiviewcontroller (any of them) to call this method
+        timetableVC.setupAndPresent(vc: timetableVC)        /// just need a uiviewcontroller (any of them) to call this method
         return true
     }
 }

@@ -39,14 +39,14 @@ extension CollectionVC {
     }
     
     @objc func reloadCVWrapperMethod() { //print("*")
-        reloadCV()
+        //reloadCV()
+        exitEventAddingMode()
     }
     
     @objc func buttonWrapperMethodforTimetableVC() {gotoView(vc: timetableVC)}
     @objc func buttonWrapperMethodforTodoListVC() {}//gotoView(vc: todoListVC)
     
     @objc func buttonWrapperMethodforArchiveVC() {
-        backgroundVC.view.backgroundColor = .white
         archiveVC.downcastLayout!.rows = archiveEventDescriptions.count
         gotoView(vc: archiveVC)
     }

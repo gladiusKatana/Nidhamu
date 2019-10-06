@@ -6,7 +6,7 @@ class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRe
     
     var vcType = CollectionViewType.days;               var downcastLayout: CustomFlowLayout?
     var colourIndex: Int?;                              var loopWeeks = false; var demarcateWeeksByColour = false
-    var showLoadAndAppearIndicationInConsole = false
+    var showLoadAndAppearIndicationInConsole = false;   var backgroundColour = UIColor.clear
     
     lazy var eventField: UITextField = {
         let eventField =  UITextField(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -22,10 +22,11 @@ class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRe
         return eventField
     }()
     
-    init(_ vcType: CollectionViewType, loopWeeks: Bool, demarcateWeeksByColour: Bool,
+    init(_ vcType: CollectionViewType, backgroundColour: UIColor, loopWeeks: Bool, demarcateWeeksByColour: Bool,
          colourIndex: Int?, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(collectionViewLayout: layout)
         self.vcType = vcType
+        self.backgroundColour = backgroundColour
         self.loopWeeks = loopWeeks
         self.demarcateWeeksByColour = demarcateWeeksByColour
         self.colourIndex = colourIndex
