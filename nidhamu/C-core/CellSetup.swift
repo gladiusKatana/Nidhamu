@@ -55,7 +55,7 @@ extension CollectionVC {
             
         case .archive:
             
-            cell.titleLabel.textColor = .darkGray
+            cell.titleLabel.textColor = .darkGray;  cell.titleLabel.font = UIFont.systemFont(ofSize: 10, weight: .ultraLight)
             
             if column == 0 {
                 cell.titleLabel.text = formattedDateString(dateFromInts(archiveEventDateComponentArrays[row]), roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
@@ -63,9 +63,14 @@ extension CollectionVC {
                 
             else if column == 1 {cell.titleLabel.text = "\(archiveEventDescriptions[row])"}
                 
-            else {
-//                let rawVal = archiveEventStatuses[row]
+            else if column == 2 {
+                //let rawVal = archiveEventStatuses[row]
                 cell.titleLabel.text = archiveEventStatusStrings[row]//EventStatus(rawValue: rawVal)!.caseName()
+            }
+                
+            else {
+                cell.titleLabel.text = "\(dateFromInts(archiveEventDateComponentArrays[row]))"
+                cell.titleLabel.font = UIFont.systemFont(ofSize: 6, weight: .ultraLight)
             }
             
         default: print("[timeBlockDateSetup(:)] unrecognized collection view type")}

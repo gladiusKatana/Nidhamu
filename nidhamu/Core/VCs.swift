@@ -38,7 +38,7 @@ var archiveLayout = //---------
     CustomFlowLayout(
         embeddedInNavController: true,
         customFrame: UIApplication.shared.keyWindow!.frame,
-        rows: 1, cols: 3, lockedHeaderRows: 0, lockedHeaderSections: 0,
+        rows: 1, cols: 4, lockedHeaderRows: 0, lockedHeaderSections: 0,
         cellWidth: nil, cellHeight: 20,
         autoFitWScale: 1, autoFitHScale: 1,
         hSpace: cellGap, vSpace: cellGap,

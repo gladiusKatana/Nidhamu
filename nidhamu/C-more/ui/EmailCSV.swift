@@ -35,11 +35,12 @@ extension CollectionVC {
         if let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName) {
             
             var csvText = ""
-            csvText.append("Description; Status; Date\n")
+            csvText.append("Description; Status; Date; Timestamp\n")
             
             var i = 0
-            for _ in archiveEventDescriptions {
-                csvText.append("\(archiveEventDescriptions[i]);\(archiveEventStatusStrings[i]);\(archiveEventDateStrings[i])\n")
+            for _ in archiveEventDescriptions { /// Comma Separated Values is a misnomer, when exporting to Numbers : must separate columns by semicolon
+                let timestamp = dateFromInts(archiveEventDateComponentArrays[i]).timeIntervalSince1970
+                csvText.append("\(archiveEventDescriptions[i]);\(archiveEventStatusStrings[i]);\(archiveEventDateStrings[i]);\(timestamp)\n")
                 i += 1
             }
             

@@ -10,10 +10,14 @@
                                                                     asap warmup                             1 task per day eg 'to start the day'
  
  
- settings menu                                                                          UX
- archive CSV emails frequency (setting)
  Excel template; populate the above on it (automatically?)                                                  easy except automation parts?
  Numbers template; populate the above on it (automatically?)                                                ""
+ archive frequency reminders
+ auto emailing?                                                                         Data
+ settings menu                                                                          UX
+ 
+ 
+ 
  timetable deferral-date selection mode                                                 Data
 
                                                                     Thurs Oct 3

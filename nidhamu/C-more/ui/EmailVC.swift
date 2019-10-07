@@ -21,11 +21,11 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         
         let path = archiveVC.createArchiveUrl()
         
-        let messageText = "\(archiveEventDescriptions.count) new Tagged Events\nFrom\(archiveEventDateStrings.first!)\nTo\(archiveEventDateStrings.last!)"
+        let messageText = "\(archiveEventDescriptions.count) new Events\nFrom\(archiveEventDateStrings.first!)\nTo\(archiveEventDateStrings.last!)"
         
         emailComposeVC.setMessageBody(messageText, isHTML: false)                               /// <p> is for isHTML: true
         
-        emailComposeVC.setSubject("Export to Excel")
+        emailComposeVC.setSubject("[Nidhamu] Export to Excel") /// No use in using multiple spaces between words here, Gmail prohibits > 1 consecutive spaces
         
         do {
             let attachmentData = try Data(contentsOf: path)
