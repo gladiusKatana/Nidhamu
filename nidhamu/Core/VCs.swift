@@ -52,7 +52,7 @@ var classifierLayout = //---------
     CustomFlowLayout(
         embeddedInNavController: false,
         customFrame: nil,
-        rows: 7, cols: 1, lockedHeaderRows: 1, lockedHeaderSections: 0,
+        rows: 5, cols: 1, lockedHeaderRows: 1, lockedHeaderSections: 0,
         cellWidth: 80, cellHeight: 20,
         autoFitWScale: nil, autoFitHScale: nil,
         hSpace: cellGap, vSpace: cellGap,

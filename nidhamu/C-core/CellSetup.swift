@@ -44,7 +44,7 @@ extension CollectionVC {
             
             if column == 0 {
                 cell.titleLabel.text = eventAtTimeBlock[row].eventDescription
-                if status == .occurred || status == .upcoming {cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)}
+                if status == .upcoming {cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)}
             }
                 
             else if column == 1 {

@@ -24,27 +24,25 @@ class SimpleEvent: NSObject {
 
 enum EventStatus: Int, CaseIterable {
     
-    case occurred = 0; case done, delegated, deferred, obviated, upcoming
+    case upcoming = 0; case done, delegated, deferred, deleted
     
     func simpleDescription() -> String {
         switch self {
-        case .occurred:     return "event occurred"
+        case .upcoming:     return "event is upcoming"
         case .done:         return "task was done. Nice!"
         case .delegated:    return "task was delegated to someone else"
         case .deferred:     return "task was deferred; it will show in the time-block chosen during deferral"   // ***
-        case .obviated:     return "task was obviated; no need to do it anymore"
-        case .upcoming:     return "event is upcoming"
+        case .deleted:     return "task was deleted; no need to do it anymore"
         }
     }
     
     func caseName() -> String {
         switch self {
-        case .occurred:     return "Occurred"
+        case .upcoming:     return "Upcoming"
         case .done:         return "Done"
         case .delegated:    return "Delegated"
         case .deferred:     return "Deferred"
-        case .obviated:     return "Obviated"
-        case .upcoming:     return "Upcoming"
+        case .deleted:     return "Deleted"
         }
     }
 }

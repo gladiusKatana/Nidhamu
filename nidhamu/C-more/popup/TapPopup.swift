@@ -17,7 +17,7 @@ extension PopupMenuVC {
             
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(clm, rw))] {  /// writing to the dictionary
                 
-                let selectedStatus = EventStatus(rawValue: row - 1)
+                let selectedStatus = EventStatus(rawValue: row)
                 let eventBeingTagged = eventsOfBlockBeingTagged[eventIndex]
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = selectedStatus!
                 

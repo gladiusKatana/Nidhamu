@@ -10,24 +10,21 @@
                                                                     asap warmup                             1 task per day eg 'to start the day'
  
  
- Excel template; populate the above on it (automatically?)                                                  easy except automation parts?
- Numbers template; populate the above on it (automatically?)                                                ""
+ Numbers template
+ Excel template
  archive frequency reminders
- auto emailing?                                                                         Data
+ auto emailing?
+ timetable deferral-date selection mode                                                 Data
  settings menu                                                                          UX
  
  
- 
- timetable deferral-date selection mode                                                 Data
-
-                                                                    Thurs Oct 3
  
  buttons                                                                                Design              fun; easy
  icon                                                                                                       ""
  launch screen
  triple check applogic, improve comments
  run on my devices that are same as Beta Users'
-                                                                    Fri Oct 4 BETA! (ambitious)
+                                                                    Thurs Oct 10 BETA
               
  
  loopWeeks = false behaviour as setting                                                 Data
@@ -35,7 +32,7 @@
  mornAftEveNiteVC                                                                       VCs
  listVC (today items)
  listVC (deadlineless items)
-                                                                    Mon Oct 7 APPSTORE
+                                                                    Oct ~15 APPSTORE
  
  
  dark mode (may be obviated/handled by iOS 13)                                          Design
@@ -65,4 +62,4 @@
  ✧ denotes features that may not necessarily be a good idea to implement (eg, should Users be able to defer *all* their remaining tasks at once?)  Interesting questions.
  
  
- ✎ this is Open Source software. Always looking for contributors.*/
+ ✎ this is Open Source software. Always looking for contributors. https://github.com/gladiusKatana/Nidhamu */

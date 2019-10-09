@@ -19,7 +19,7 @@ extension PopupMenuVC {
         }
         else {
             cell.backgroundColor = platinum
-            cell.titleLabel.text = EventStatus.allCases[row - 1].caseName()
+            cell.titleLabel.text = EventStatus.allCases[row].caseName()
             cell.titleLabel.textColor = .black
         }
         
