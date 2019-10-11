@@ -53,10 +53,9 @@ extension CollectionVC {
         cell.titleLabel.text = "\(mo) \(dy)" // will add this to formattedDateString(:), if it gets used anywhere else as well
     }
     
-    func showTimeInTitleLabels(date: Date, cell: CustomCell) {    // not used-- at the moment. for testing
-        let hr = Calendar.current.component(.hour, from: date)
-        let mn = Calendar.current.component(.minute, from: date)
-        cell.titleLabel.text = "\(hr):\(mn)"
+    func showTimeInTitleLabels(cell: CustomCell) {    // not used-- at the moment. for testing
+        cell.titleLabel.text = formattedDateString(cell.cellDate, roundedDown: true, showYear: false, prefix: "", suffix: "", dateFormat: .timeOnly)
+        cell.titleLabel.textColor = .white
     }
 }
 

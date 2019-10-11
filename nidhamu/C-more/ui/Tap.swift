@@ -28,6 +28,8 @@ extension CollectionVC {
                         
                         ///setNavBarTitle(customString: " Add an Event (Tap Done to quit)")                                                           // may not use.  Gives User too much extra stuff to look at?
                         animateTimeBlockTappedToAddEvent(cell: cell)                                /// may not use. Looks nice; slows User down a little bit?
+
+                        showTimeInTitleLabels(cell: cell)
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                             self.prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)

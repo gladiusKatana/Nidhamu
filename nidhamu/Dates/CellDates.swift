@@ -48,7 +48,10 @@ extension CollectionVC {
         ///showTimeInTitleLabels(date: cell.cellDate, cell: cell)    //showDateInTitleLabels(date: cell.cellDate, cell: cell)
         
         if [column, row] == selectedTimeBlockPath {
-            if textFieldDisplayed {cell.backgroundColor = eventAddingColour}
+            if textFieldDisplayed {
+                cell.backgroundColor = eventAddingColour
+                showTimeInTitleLabels(cell: cell)
+            }
         }
     }
 }
