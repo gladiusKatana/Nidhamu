@@ -16,7 +16,7 @@ extension CollectionVC {
                 UIApplication.shared.keyWindow!.addSubview(emailComposer.emailComposeVC.view)
             }
         }
-        else {                                                                     //print("\nemail did not work yet\n")
+        else {
             let alert = UIAlertController(title: "Cannot Send Email", message: "Your device is not able to send email.\nNOTE: If you have not installed the default Mail application for iOS, try simply installing Mail from the App Store, then closing and re-opening this app.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
                 NSLog("The \"OK\" alert occured.")

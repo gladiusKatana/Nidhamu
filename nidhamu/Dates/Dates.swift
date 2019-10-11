@@ -27,15 +27,15 @@ func dateFromInts(_ dateComponents: [Int]) -> Date { /// Note, weekday is not ne
     let monthLoaded = dateComponents[1] //as! Int                               ///; print("month loaded: \(monthLoaded)")
     let dayLoaded = dateComponents[2] //as! Int                                 ///; print("day loaded: \(dayLoaded)")
     let hourLoaded = dateComponents[3] //as! Int                                ///; print("hour loaded: \(hourLoaded)")
-
+    
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy/MM/dd HH"
-
+    
     guard let date = formatter.date(from: "\(yearLoaded)/\(monthLoaded)/\(dayLoaded) \(hourLoaded)") else {
         print("could not create date with loaded input, returning current date instead")
         return Date()
     }
-
+    
     return date
 }
 
