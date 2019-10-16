@@ -34,7 +34,7 @@ extension PopupMenuVC {
             selectedEventWillRecur = false
             
             timetableVC.reloadCV()                                                      ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
-            timetableVC.tagEventsSinceLastLogin(layout: timetableVC.downcastLayout!)
+            timetableVC.tagEventsSinceLastLogin()
             
             if pathsToProcess.isEmpty {
                 defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntEvents: true)

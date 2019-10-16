@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func tagEventsSinceLastLogin(layout: CustomFlowLayout) {                            ///print("tagging blocks (saved timeblocks? \(savedTimeBlocksForProcessing)")
+    func tagEventsSinceLastLogin() {                            ///print("tagging blocks (saved timeblocks? \(savedTimeBlocksForProcessing)")
         
         if !pathsToProcess.isEmpty { // already (sort of) checked for this, in the caller (but used  event ArraysToProcess)
             

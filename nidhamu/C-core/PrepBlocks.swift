@@ -46,7 +46,7 @@ extension CollectionVC {
                         thereWillBeARowException = false
                     }
                     
-                    tagEventsSinceLastLogin(layout: layout)
+                    tagEventsSinceLastLogin()
                 }
             } else {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {AppUtility.lockOrientation(.all)}
