@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func setupNavBarButtons(_ withCustomColour: UIColor?, atIndex: Int?) {
+    func setupNavBarButtons(_ withCustomColour: UIColor?, atIndex: Int?) {  //print("setting up nav bar buttons")
         
         let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableImage")
         let todoListButton = setupButton(selector: #selector(buttonWrapperMethodforTodoListVC), title: "calendarImage")
@@ -39,8 +39,7 @@ extension CollectionVC {
     }
     
     @objc func reloadCVWrapperMethod() { //print("*")
-        //reloadCV()
-        exitEventAddingMode()
+        reloadCV() //exitEventAddingMode()
     }
     
     @objc func buttonWrapperMethodforTimetableVC() {gotoView(vc: timetableVC)}

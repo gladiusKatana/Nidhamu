@@ -1,7 +1,10 @@
 // Vars             ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-var globalKeyWindow = UIApplication.shared.keyWindow!
+//var globalKeyWindow = UIApplication.shared.keyWindow!
+var globalWindow = UIWindow(frame: UIScreen.main.bounds)
+
+//var sceneDelegate = SceneDelegate() // Not (currently) supporting multiple windows on iPad, or multiple-scene-view in modal vc presentations
 
 var navController: UINavigationController? = UINavigationController()
 

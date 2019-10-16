@@ -3,7 +3,6 @@
  task                                                               deadline            type *              fun/difficulty/comments ✫ (optional)
  
  
- label time on selected TimeBlockPath
  lock keyboard (for multiple event adding)
  font enums for different devices
  login date interval outlined/animated, not perma-coloured                              UI                  fairly fun
@@ -24,7 +23,7 @@
  launch screen
  triple check applogic, improve comments
  run on my devices that are same as Beta Users'
-                                                                    Thurs Oct 10 BETA
+                                                                    Sat Oct 12 BETA, downloaded by 1 or 2 beta users
               
  
  loopWeeks = false behaviour as setting                                                 Data
@@ -59,7 +58,7 @@
  ✫ programming is always fun, but 'fun' means 'really fun' and 'FUN' means 'REALLY fun'
  
  
- ✧ denotes features that may not necessarily be a good idea to implement (eg, should Users be able to defer *all* their remaining tasks at once?)  Interesting questions.
+ ✧ denotes features that may not necessarily be a good idea to implement (eg, should Users be able to defer *all* their remaining tasks at once?)
  
  
  ✎ this is Open Source software. Always looking for contributors. https://github.com/gladiusKatana/Nidhamu */

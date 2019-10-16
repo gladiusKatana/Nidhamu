@@ -65,6 +65,7 @@
 		06306513233E7D5E00C4BB95 /* ShowDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06306512233E7D5E00C4BB95 /* ShowDates.swift */; };
 		0631914422E2C5F5004DE476 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631914322E2C5F5004DE476 /* LoginInterval.swift */; };
 		06399205233F93C9008907FE /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06399204233F93C9008907FE /* EventData.swift */; };
+		063E3C502357A6E10044727C /* UIMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063E3C4F2357A6E10044727C /* UIMode.swift */; };
 		06473CA82346DF00009397AE /* SendMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06473CA72346DF00009397AE /* SendMsg.swift */; };
 		06473CAC2346E03D009397AE /* EmailCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06473CAB2346E03D009397AE /* EmailCSV.swift */; };
 		06482792233414FC0035774F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06482791233414FC0035774F /* Strings.swift */; };
@@ -162,6 +163,7 @@
 		06306512233E7D5E00C4BB95 /* ShowDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDates.swift; sourceTree = "<group>"; };
 		0631914322E2C5F5004DE476 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
 		06399204233F93C9008907FE /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		063E3C4F2357A6E10044727C /* UIMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMode.swift; sourceTree = "<group>"; };
 		06473CA72346DF00009397AE /* SendMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMsg.swift; sourceTree = "<group>"; };
 		06473CAB2346E03D009397AE /* EmailCSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCSV.swift; sourceTree = "<group>"; };
 		06482791233414FC0035774F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				062516A022D6CF4200EBB4C8 /* UINotify.swift */,
 				06473CAB2346E03D009397AE /* EmailCSV.swift */,
 				0688C38F23481D92007DC878 /* EmailVC.swift */,
+				063E3C4F2357A6E10044727C /* UIMode.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 			files = (
 				062516B322D6CF4200EBB4C8 /* TimeBlock.swift in Sources */,
 				062516BB22D6CF4200EBB4C8 /* Prepare.swift in Sources */,
+				063E3C502357A6E10044727C /* UIMode.swift in Sources */,
 				062516D622D6CF4200EBB4C8 /* Orientation.swift in Sources */,
 				0625167622D6CF2B00EBB4C8 /* VCs.swift in Sources */,
 				062516B222D6CF4200EBB4C8 /* DefaultLoad.swift in Sources */,
@@ -797,6 +801,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KX84NTAHJ6;
 				INFOPLIST_FILE = nidhamu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -817,6 +822,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KX84NTAHJ6;
 				INFOPLIST_FILE = nidhamu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

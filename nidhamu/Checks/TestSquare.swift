@@ -7,7 +7,7 @@ func drawTestSquare() { //For testing purposes only: to verify calculation/recal
     
     let randNum = randomNumber(inRange: 1...7) - 1
     testRectanglelayer.fillColor = randomColours[randNum]
-    UIApplication.shared.keyWindow!.layer.addSublayer(testRectanglelayer)
+    globalWindow.layer.addSublayer(testRectanglelayer)
     //print("drawing rect clr[\(randNum)] @ (\(statusBarHeight + navBarHeight)\n")
 }
 

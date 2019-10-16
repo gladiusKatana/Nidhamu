@@ -3,6 +3,25 @@ import UIKit
 
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    var statusBarUIView: UIView? {
+        if #available(iOS 13.0, *) {
+            let tag = 38482458385
+            if let statusBar = globalWindow.viewWithTag(tag) {
+                return statusBar
+            } else {
+                ///let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)   // deprecated
+                let statusBarView = UIView(frame: (globalWindow.windowScene?.statusBarManager!.statusBarFrame)!)
+                statusBarView.tag = tag
+                globalWindow.addSubview(statusBarView)
+                return statusBarView
+            }
+        } else if responds(to: Selector(("statusBar"))) {
+            return value(forKey: "statusBar") as? UIView
+        } else {
+            return nil
+        }
+    }
+    
     var window: UIWindow?
     lazy var orientationLock = UIInterfaceOrientationMask.all     // set orientations you want allowed by default
     
@@ -12,38 +31,44 @@ import UIKit
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        var statusBar = UIView()
+        modelName = UIDevice.modelName
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = defaultWindowBackgroundColour
         window?.makeKeyAndVisible()
+        globalWindow = window!
         
-        modelName = UIDevice.modelName
+        backgroundVC = UIViewController()
+        backgroundVC.view.backgroundColor = .clear   /// must match window's background colour, for rotating landscape->portrait
+        backgroundVC.view.frame = globalWindow.frame
+        
         getOrientationAtLaunch()                                    ; print("launching on \(modelName) in \(launchOrientation) orientation")
         
-        statusBar = UIApplication.shared.value(forKey: "statusBar") as! UIView
-        if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
-            statusBar.backgroundColor = .clear
+        //        var statusBar = UIView()
+        //        statusBar = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        //        if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
+        //            statusBar.backgroundColor = .clear
+        //        }
+        
+        if statusBarUIView!.responds(to:#selector(setter: UIView.backgroundColor)) {
+            statusBarUIView!.backgroundColor = .clear
         }
         
-        UINavigationBar.appearance().barTintColor = .white //bluishGrey
+        UINavigationBar.appearance().barTintColor = .white
         UINavigationBar.appearance().shadowImage = UIImage()
         
         //print(formattedDateString(Date(), roundedDown: false, prefix: "                      on", suffix: "", short: false))
-        
         return true
     }
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        backgroundVC = UIViewController()
-        backgroundVC.view.frame = globalKeyWindow.frame
-        backgroundVC.view.backgroundColor = defaultWindowBackgroundColour       /// must match window's background colour, for rotating landscape->portrait
-        
         navController = UINavigationController(rootViewController: backgroundVC)        /// temporary, unseen initial root view controller
         window?.rootViewController = navController                  //; print("VCs*: \(String(describing: nav Controller?.viewControllers))")
         
         timetableVC.setupAndPresent(vc: timetableVC)        /// just need a uiviewcontroller (any of them) to call this method
+        
         return true
     }
 }

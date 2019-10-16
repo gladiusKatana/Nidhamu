@@ -26,9 +26,10 @@ extension CollectionVC {
     }
     
     
-    func setupAndPresent(vc: UICollectionViewController) {
+    func setupAndPresent(vc: UICollectionViewController) {                                  //print("setup and present")
         dismissNavController {
             let newVC = UINavigationController(rootViewController: vc)
+            newVC.modalPresentationStyle = .fullScreen
             navController?.present(newVC, animated: false, completion: nil)
             self.setTopViewController()// try commenting this, you should see: vc of type 'initial' was root vc when this method was called
         }

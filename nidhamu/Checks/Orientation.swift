@@ -5,8 +5,8 @@ extension AppDelegate {
     
     func getOrientationAtLaunch() {
         
-        let launchHeight = Double(globalKeyWindow.frame.height)
-        launchWidth = Double(globalKeyWindow.frame.width)
+        let launchHeight = Double(globalWindow.frame.height)
+        launchWidth = Double(globalWindow.frame.width)
         
         if launchHeight > launchWidth {
             launchOrientation = "portrait"
@@ -23,15 +23,17 @@ extension AppDelegate {
         
         currentOrientation = launchOrientation
         previousOrientation = launchOrientation
+        
+        launchOrientation = "portrait"
+        currentOrientation = launchOrientation
+        previousOrientation = launchOrientation
     }
 }
 
 
 func checkOrientation() {
     
-    let keyWindow = UIApplication.shared.keyWindow!
-    
-    let currentHeight = Double(keyWindow.frame.height);   let currentWidth = Double(keyWindow.frame.width)
+    let currentHeight = Double(globalWindow.frame.height);   let currentWidth = Double(globalWindow.frame.width)
     
     if currentHeight > currentWidth {
         currentOrientation = "portrait"

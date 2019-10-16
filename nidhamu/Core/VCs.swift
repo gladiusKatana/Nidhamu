@@ -23,7 +23,7 @@ var timetableVC = CollectionVC(.hours, backgroundColour: defaultWindowBackground
 var todoListLayout = //---------
     CustomFlowLayout(
         embeddedInNavController: true,
-        customFrame: UIApplication.shared.keyWindow!.frame,
+        customFrame: globalWindow.frame,
         rows: 1, cols: 3, lockedHeaderRows: 0, lockedHeaderSections: 0,
         cellWidth: nil, cellHeight: nil,
         autoFitWScale: 1, autoFitHScale: 1,
@@ -37,7 +37,7 @@ var todoListVC = CollectionVC(.todoList, backgroundColour: defaultWindowBackgrou
 var archiveLayout = //---------
     CustomFlowLayout(
         embeddedInNavController: true,
-        customFrame: UIApplication.shared.keyWindow!.frame,
+        customFrame: globalWindow.frame,
         rows: 1, cols: 4, lockedHeaderRows: 0, lockedHeaderSections: 0,
         cellWidth: nil, cellHeight: 20,
         autoFitWScale: 1, autoFitHScale: 1,
@@ -61,7 +61,7 @@ var classifierLayout = //---------
 
 var classifierVC = PopupMenuVC(collectionViewLayout: classifierLayout);     var eventRecurringSwitchView = PopupSwitchView()
 
-let nilCatcherFrame = CGRect(x: 0, y: 0, width: 0, height: 0)               //* Initial value for testing
+let zeroFrame = CGRect(x: 0, y: 0, width: 0, height: 0)               //* Initial value for testing
 
 //let popupFrame = CGRect(x: timetableLayout.cellWidth! * 2, y: 0, width: timetableLayout.cellWidth!, height: timetableLayout.cellHeight! * 5)
 

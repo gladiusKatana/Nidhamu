@@ -12,7 +12,7 @@ extension CustomFlowLayout {
         if previousOrientation != currentOrientation {                                      //print("prepare(rotated to \(currentOrientation)):")
             
             if textFieldDisplayed {
-                UIApplication.shared.keyWindow!.backgroundColor = iosKeyboardDefaultColourApprox
+                globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
             }
             
             previousOrientation = currentOrientation
@@ -36,16 +36,23 @@ extension CustomFlowLayout {
         if !embeddedInNavController {compensateForNavigationAndStatusBars(forCollectionVC: classifierVC, withDelta: 0)}
         else {
             var statusBarDelta = 0.0
-            if UIApplication.shared.statusBarFrame.size.height > 20 {
-                statusBarDelta = Double(UIApplication.shared.statusBarFrame.size.height - 20)
+            
+            /*if UIApplication.shared.statusBarFrame.size.height > 20 {
+             statusBarDelta = Double(UIApplication.shared.statusBarFrame.size.height - 20)
+             }*/
+            
+            let statusBarTestHeight = (globalWindow.windowScene?.statusBarManager!.statusBarFrame)!.height
+            if statusBarTestHeight > 20 {
+                statusBarDelta = Double(statusBarTestHeight - 20)
             }
+            
             compensateForNavigationAndStatusBars(forCollectionVC: topVC, withDelta: statusBarDelta)
         }
     }
     
     func compensateForNavigationAndStatusBars(forCollectionVC collectVC: UICollectionViewController, withDelta delta: Double) {
         yOffset = collectVC.collectionView!.contentOffset.y + CGFloat(navBarHeight + statusBarHeight - delta)  //print("yo: \(yOffSet)")
-        textFieldY = UIApplication.shared.keyWindow!.frame.height - keyboardHeight //- textFieldHeight // shows just above keyboard
+        textFieldY = globalWindow.frame.height - keyboardHeight //- textFieldHeight // shows just above keyboard
         xOffSet = collectVC.collectionView!.contentOffset.x
     }
 }

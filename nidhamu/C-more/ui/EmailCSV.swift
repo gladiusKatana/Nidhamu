@@ -10,10 +10,10 @@ extension CollectionVC {
             emailComposer.emailComposeVC = emailComposer.configureEmailComposeVC()
             
             backgroundVC.view.backgroundColor = .white
-            UIApplication.shared.keyWindow!.addSubview(backgroundVC.view)
+            globalWindow.addSubview(backgroundVC.view)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
-                UIApplication.shared.keyWindow!.addSubview(emailComposer.emailComposeVC.view)
+                globalWindow.addSubview(emailComposer.emailComposeVC.view)
             }
         }
         else {

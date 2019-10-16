@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func setNavBarTitle(customString: String?) {
+    func setNavBarTitle(customString: String?) {    //print("setting nav bar title")
         var title : String?
         
         if customString != nil {

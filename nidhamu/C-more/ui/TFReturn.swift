@@ -21,7 +21,6 @@ extension CollectionVC {    /// ** commented code here is for animations
             previousTimeBlockPathSelected = defaultPathOutOfView
             
         } else {
-            
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
             
             if vcType == .hours {
@@ -42,14 +41,6 @@ extension CollectionVC {    /// ** commented code here is for animations
         textField.text = ""
         exitEventAddingMode()
         return true
-    }
-    
-    func exitEventAddingMode() {
-        eventField.removeFromSuperview()
-        eventField.resignFirstResponder()
-        UIApplication.shared.keyWindow!.backgroundColor = defaultWindowBackgroundColour
-        keyboardHeight = 0
-        self.reloadCV()
     }
 }
 
