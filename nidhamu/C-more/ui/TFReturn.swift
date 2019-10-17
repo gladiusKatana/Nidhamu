@@ -5,8 +5,8 @@ extension CollectionVC {    /// ** commented code here is for animations
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {          //print("text field returned")
         
-        textField.removeFromSuperview(); textField.resignFirstResponder()
-        textFieldDisplayed = false
+        ///textField.removeFromSuperview(); textField.resignFirstResponder()][[[[[=p
+        
         let textEntered = textField.text!
         
         if textEntered == "" || textEntered == " " || textEntered == "  " { // if user (for some reason) enters > 2 whitespaces, well, it's saved
@@ -15,17 +15,19 @@ extension CollectionVC {    /// ** commented code here is for animations
              if cell.xyCoordinate == selectedTimeBlockPath {
              cell.backgroundColor = headerColour
              }
-             }///animateSelectedCellColourBack()
+             }//animateSelectedCellColourBack()
              selectedTimeBlockPath = defaultPathOutOfView*/
             
-            previousTimeBlockPathSelected = defaultPathOutOfView
+            if !keyboardLocked {previousTimeBlockPathSelected = defaultPathOutOfView}
             
         } else {
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
             
             if vcType == .hours {
-                selectedTimeBlockPath = defaultPathOutOfView
-                previousTimeBlockPathSelected = defaultPathOutOfView
+                if !keyboardLocked {
+                    selectedTimeBlockPath = defaultPathOutOfView
+                    previousTimeBlockPathSelected = defaultPathOutOfView
+                }
             }
             
             if vcType == .todoList {
@@ -39,7 +41,11 @@ extension CollectionVC {    /// ** commented code here is for animations
         }
         
         textField.text = ""
+        
         exitEventAddingMode()
+        
+        reloadCV()
+        
         return true
     }
 }

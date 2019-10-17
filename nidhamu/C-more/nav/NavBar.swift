@@ -9,14 +9,22 @@ extension CollectionVC {
         let todoListButton = setupButton(selector: #selector(buttonWrapperMethodforTodoListVC), title: "calendarImage")
         let archiveButton = setupButton(selector: #selector(buttonWrapperMethodforArchiveVC), title: "calendarImage")
         let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
+        let lockKeyboardButton = setupButton(selector: #selector(keyboardLockWrapper), title: "wrench")
         
-        navigationItem.rightBarButtonItems = [timetableButton, archiveButton, todoListButton, reloadButton]
+        var barButtonColours = [UIColor]()
+        let buttons = [timetableButton, archiveButton, todoListButton, reloadButton, lockKeyboardButton]
+        navigationItem.rightBarButtonItems = buttons
         
-        let barButtonColours = [graySeven, graySeven, graySeven]   /// buttons are dark by default, then greyed-out when their corresponding vc is presented
+        for _ in buttons {
+            if barButtonColours.count <= buttons.count {barButtonColours.append(graySeven)} /// default colour, for the buttons that present all but the current vc
+        }
+        
+        ///let barButtonColours = [graySeven, graySeven, graySeven, graySeven, graySeven]   /// hardcoding button colours (may be easier, depends how many more buttons & colour exceptions)
         
         for button in navigationItem.rightBarButtonItems! {
             if button == todoListButton {button.tintColor = .clear}
             else if button == reloadButton {button.tintColor = grayBarelyThere}
+            else if button == lockKeyboardButton {button.tintColor = grayTwo}
             else {
                 if let index = navigationItem.rightBarButtonItems?.firstIndex(of: button) {
                     button.tintColor = barButtonColours[index]
@@ -42,12 +50,22 @@ extension CollectionVC {
         reloadCV() //exitEventAddingMode()
     }
     
-    @objc func buttonWrapperMethodforTimetableVC() {gotoView(vc: timetableVC)}
-    @objc func buttonWrapperMethodforTodoListVC() {}//gotoView(vc: todoListVC)
+    @objc func keyboardLockWrapper() {
+        if !textFieldDisplayed {
+            keyboardLocked = true
+        }
+        else {
+            keyboardLocked = false
+            exitEventAddingMode(); reloadCV()
+        }
+    }
     
     @objc func buttonWrapperMethodforArchiveVC() {
         archiveVC.downcastLayout!.rows = archiveEventDescriptions.count
         gotoView(vc: archiveVC)
     }
+    
+    @objc func buttonWrapperMethodforTodoListVC() {}//gotoView(vc: todoListVC)
+    @objc func buttonWrapperMethodforTimetableVC() {gotoView(vc: timetableVC)}
 }
 

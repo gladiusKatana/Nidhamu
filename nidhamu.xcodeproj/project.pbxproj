@@ -388,9 +388,9 @@
 			children = (
 				0625167422D6CF2B00EBB4C8 /* Notes.swift */,
 				0625167122D6CF2A00EBB4C8 /* Vars.swift */,
-				0625167022D6CF2A00EBB4C8 /* VCs.swift */,
 				0625166F22D6CF2A00EBB4C8 /* TimeVars.swift */,
 				06399204233F93C9008907FE /* EventData.swift */,
+				0625167022D6CF2A00EBB4C8 /* VCs.swift */,
 				0625167222D6CF2A00EBB4C8 /* AppDelegate.swift */,
 				0625167322D6CF2A00EBB4C8 /* AppLifecycle.swift */,
 			);

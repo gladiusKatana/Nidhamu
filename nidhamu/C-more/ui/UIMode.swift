@@ -3,15 +3,19 @@ import UIKit
 
 
 extension CollectionVC {
-
+    
     func exitEventAddingMode() {
-        eventField.removeFromSuperview()
-        eventField.resignFirstResponder()
-        globalWindow.backgroundColor = defaultWindowBackgroundColour
-        keyboardHeight = 0
-        self.reloadCV()
-    }
+        
+        if !keyboardLocked {
+            eventField.removeFromSuperview()
+            eventField.resignFirstResponder()
+            globalWindow.backgroundColor = defaultWindowBackgroundColour
+            keyboardHeight = 0
+            textFieldDisplayed = false
+        }
 
+    }
+    
 }
 
 /// also will add deferral-date selection mode methods here
