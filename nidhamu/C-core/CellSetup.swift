@@ -8,8 +8,10 @@ extension CollectionVC {
         switch vcType {
             
         case .hours:
-            
-            setHourlyCellDates(cell: cell, column: column, row: row, layout: layout, looping: loopWeeks, withColours: demarcateWeeksByColour)
+            if let loopWeeks = loopWeeks, let demarcateWeeksByColour = demarcateWeeksByColour {
+                setHourlyCellDates(cell: cell, column: column, row: row, layout: layout, looping: loopWeeks, withColours: demarcateWeeksByColour)
+            }
+            else {print("cell dates not set up: initialization bool(s) set to nil")}
             
             if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {
                 if events.count == 1 {

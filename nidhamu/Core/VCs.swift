@@ -2,7 +2,7 @@
 import UIKit
 
 var cellGap = CGFloat(0) // if nonzero, do not make this smaller than: 0.5 (iphone7), or lines drawn inconsistently
-var topVC = CollectionVC(.initial, backgroundColour: UIColor.clear, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: timetableLayout)
+var topVC = CollectionVC(.initial, backgroundColour: UIColor.clear, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: timetableLayout)
 
 var backgroundVC = UIViewController()
 
@@ -31,7 +31,7 @@ var todoListLayout = //---------
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
-var todoListVC = CollectionVC(.todoList, backgroundColour: defaultWindowBackgroundColour, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: nil, collectionViewLayout: todoListLayout)
+var todoListVC = CollectionVC(.todoList, backgroundColour: defaultWindowBackgroundColour, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: todoListLayout)
 
 
 var archiveLayout = //---------
@@ -45,7 +45,7 @@ var archiveLayout = //---------
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
-var archiveVC = CollectionVC(.archive, backgroundColour: UIColor.white, loopWeeks: false, demarcateWeeksByColour: false, colourIndex: 1, collectionViewLayout: archiveLayout)
+var archiveVC = CollectionVC(.archive, backgroundColour: UIColor.white, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: 1, collectionViewLayout: archiveLayout)
 
 
 var classifierLayout = //---------
