@@ -3,7 +3,6 @@ import UIKit
 
 extension CollectionVC {
     
-    
     func setCellDate(baseDate: Date, cellOffset: Int,
                      cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, looping: Bool, withColours: Bool) -> Date {
         
@@ -20,7 +19,6 @@ extension CollectionVC {
         
         return returnDate
     }
-    
     
     func setCellWeek(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, withColours: Bool) -> Int {
         

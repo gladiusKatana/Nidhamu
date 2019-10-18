@@ -58,6 +58,7 @@
 		062516D622D6CF4200EBB4C8 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516A922D6CF4200EBB4C8 /* Orientation.swift */; };
 		062516D722D6CF4200EBB4C8 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516AA22D6CF4200EBB4C8 /* DeviceType.swift */; };
 		062516D822D6CF4200EBB4C8 /* VCType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062516AB22D6CF4200EBB4C8 /* VCType.swift */; };
+		062AC10323593AE600427DC1 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062AC10223593AE600427DC1 /* Buttons.swift */; };
 		062BC1012314B43600AC852F /* SetCellDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062BC1002314B43600AC852F /* SetCellDate.swift */; };
 		062CDAA122E0033400848D78 /* Pinch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062CDAA022E0033400848D78 /* Pinch.swift */; };
 		0630650F233D59D700C4BB95 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0630650E233D59D700C4BB95 /* Keyboard.swift */; };
@@ -156,6 +157,7 @@
 		062516A922D6CF4200EBB4C8 /* Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		062516AA22D6CF4200EBB4C8 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		062516AB22D6CF4200EBB4C8 /* VCType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCType.swift; sourceTree = "<group>"; };
+		062AC10223593AE600427DC1 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		062BC1002314B43600AC852F /* SetCellDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCellDate.swift; sourceTree = "<group>"; };
 		062CDAA022E0033400848D78 /* Pinch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinch.swift; sourceTree = "<group>"; };
 		0630650E233D59D700C4BB95 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				062516A222D6CF4200EBB4C8 /* NavBar.swift */,
+				062AC10223593AE600427DC1 /* Buttons.swift */,
 				0625169F22D6CF4200EBB4C8 /* NavTitle.swift */,
 				062516A522D6CF4200EBB4C8 /* GoToVC.swift */,
 				062516A422D6CF4200EBB4C8 /* Reload.swift */,
@@ -622,6 +625,7 @@
 				062516C722D6CF4200EBB4C8 /* TagEvents.swift in Sources */,
 				062516C522D6CF4200EBB4C8 /* TapPopup.swift in Sources */,
 				0625167922D6CF2B00EBB4C8 /* AppLifecycle.swift in Sources */,
+				062AC10323593AE600427DC1 /* Buttons.swift in Sources */,
 				062516CA22D6CF4200EBB4C8 /* CellPath.swift in Sources */,
 				06306511233DA35F00C4BB95 /* PLifeCycle.swift in Sources */,
 				06A396572318B0F5008CFBD7 /* SwitchVC.swift in Sources */,

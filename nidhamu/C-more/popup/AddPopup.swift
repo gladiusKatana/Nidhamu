@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func presentPopupViewToTagEvents(column: Int, row: Int) {                       //print("-----------------")//print("presenting popup")
+    func presentPopupViewToTagEvents(column: Int, row: Int) {               //print("-----------------")//print("presenting popup")
         
         AppUtility.lockOrientation(.portrait)
         
@@ -36,10 +36,10 @@ extension CollectionVC {
                 let switchViewHeight = cellHeight * 4 //eventRecurringSwitchView.popupSwitch.frame.height + cellHeight * 2
                 eventRecurringSwitchView = PopupSwitchView(frame:
                     CGRect(x: x, y: y + popupCollectionViewFrame.height,
-                           width: wid, height: switchViewHeight))                   ; eventRecurringSwitchView.backgroundColor = headerColour
+                           width: wid, height: switchViewHeight))           ; eventRecurringSwitchView.backgroundColor = headerColour
                 
-                timetableVC.view.addSubview(classifierVC.view)                      //; print("----------------adding popup")
-                timetableVC.view.addSubview(eventRecurringSwitchView)               //; print("adding switch")
+                timetableVC.view.addSubview(classifierVC.view)              //; print("----------------adding popup")
+                timetableVC.view.addSubview(eventRecurringSwitchView)       //; print("adding switch")
                 
                 classifierVC.becomeFirstResponder()
                 classifierViewDisplayed = true

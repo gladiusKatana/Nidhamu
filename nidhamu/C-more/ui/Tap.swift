@@ -11,7 +11,6 @@ extension CollectionVC {
             
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
             ///print("\nselected date (unformatted gmt)  \(cell.cellDate)")     ///print(formattedDateString(cell.cellDate, roundedDown: false, prefix: "                 (formatted)    ", suffix: "", short: false))
-            
             selectedCellDate = cell.cellDate                                                                                        //➕
             selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: " Add an Event", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
             
@@ -28,7 +27,6 @@ extension CollectionVC {
                         
                         ///setNavBarTitle(customString: " Add an Event (Tap Done to quit)")                                                           // may not use.  Gives User too much extra stuff to look at?
                         animateTimeBlockTappedToAddEvent(cell: cell)                                /// may not use. Looks nice; slows User down a little bit?
-
                         showTimeInTitleLabels(cell: cell)
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {

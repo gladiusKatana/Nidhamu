@@ -17,12 +17,10 @@ func dateFromComponents(_ dateComponents: [Any]) -> Date { /// Note, weekday is 
         print("could not create date with loaded input, returning current date instead")
         return Date()
     }
-    
     return date
 }
 
-
-func dateFromInts(_ dateComponents: [Int]) -> Date { /// Note, weekday is not needed to create a Date; it's 'along for the ride' , somewhat, and used for prints, eg in pryntLastLoginDate()
+func dateFromInts(_ dateComponents: [Int]) -> Date { /// Note, weekday inot needed to create a Date; it's 'along for the ride', somewhat, & used for prints, eg in pryntLastLoginDate()
     let yearLoaded = dateComponents[0] //as! Int                                ///; print("year loaded: \(yearLoaded)")
     let monthLoaded = dateComponents[1] //as! Int                               ///; print("month loaded: \(monthLoaded)")
     let dayLoaded = dateComponents[2] //as! Int                                 ///; print("day loaded: \(dayLoaded)")
@@ -35,13 +33,10 @@ func dateFromInts(_ dateComponents: [Int]) -> Date { /// Note, weekday is not ne
         print("could not create date with loaded input, returning current date instead")
         return Date()
     }
-    
     return date
 }
 
-
 func truncateMinutesOf(_ inputDate: Date) -> Date {
-    
     let mn = 0
     
     let (year, _, month, _ , day, _, _, hour, _, _) = getChosenDateComponents(inputDate, roundedDown: false)
@@ -52,7 +47,6 @@ func truncateMinutesOf(_ inputDate: Date) -> Date {
         print("could not create truncated date with input, returning current date instead")
         return Date()
     }
-    
     return date
 }
 

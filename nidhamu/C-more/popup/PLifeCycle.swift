@@ -1,4 +1,5 @@
-// PopupLife        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// PLifeCycle       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+
 import UIKit
 
 extension PopupMenuVC {
@@ -26,22 +27,5 @@ extension PopupMenuVC {
         classifierViewDisplayed = false
     }
     
-    
-    func dismissPopupMenuAndSave() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {                        ///print("now paths to process: \(pathsToProcess)")
-            self.removePopupMenuAndSwitch()
-            earliestEventAddress = defaultPathOutOfView
-            selectedEventWillRecur = false
-            
-            timetableVC.reloadCV()                                                      ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
-            timetableVC.tagEventsSinceLastLogin()
-            
-            if pathsToProcess.isEmpty {
-                defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntEvents: true)
-                AppUtility.lockOrientation(.all)                                        ///; print("rotated back")
-            }
-            else {defaultSaveData(saveDate: true, resetLastLogin: false, showDate: true, pryntEvents: false)}
-        }
-    }
 }
 

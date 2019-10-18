@@ -1,6 +1,5 @@
 // UINotify         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
-import UIKit
-import NotificationCenter
+import UIKit; import NotificationCenter
 
 extension CollectionVC {
     
@@ -21,7 +20,6 @@ extension CollectionVC {
      super.viewWillTransition(to: size, with: coordinator) /// If this line is missing your child will not get the delegate call in its viewWillTransition
      reloadCV()    ; print("size changed")
      }*/
-    
     
     func keyboardNotificationSetup() {
         NotificationCenter.default.addObserver(self, selector: #selector(showKBoard), name: UIResponder.keyboardWillShowNotification, object: nil
@@ -53,6 +51,5 @@ extension CollectionVC {
     //        textFieldDisplayed = true
     //        timetableVC.reloadCV()
     //    }
-    
 }
 
