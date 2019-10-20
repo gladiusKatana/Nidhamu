@@ -4,12 +4,10 @@
  
  
  ! handle daylight savings
- dismiss or interrupt app in event tagging mode
- n / m  blank after deferralVC dismissed
- timetable deferral-date selection mode
+ ! defer task on multi-task block
  
- email plural
  popup dismiss end only
+ email plural
  
  nav buttons cleanup
  nav button colouring rewrite

@@ -44,8 +44,17 @@ extension CollectionVC {
                     gotoView(vc: todoListVC)
                 }
                 
-            case .todoList:     prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
-            case .archive:      presentEmail() ///sendArchiveAsCsv()
+            case .todoList:         prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
+            case .archive:          presentEmail() ///sendArchiveAsCsv()
+            case .deferralDates:
+                
+                deferralPath = [column, row]
+                cell.backgroundColor = eventAddingColour
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                    cell.backgroundColor = cell.cellColour
+                    self.gotoView(vc: timetableVC)
+                }
+                
             default: print("unrecognized collection view type's cell selected")}
         }///else {print("selected navbar-embeddd vc's header")}
     }

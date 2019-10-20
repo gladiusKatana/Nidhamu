@@ -18,6 +18,10 @@ var eventArraysToProcess = [[SimpleEvent]]();       var eventDescriptionsToProce
 var pathsToProcess = [[Int]]()
 
 
+/// Deferring tasks
+var deferralPath = [Int]();     var deferredDescription = ""
+
+
 /// Saving time blocks' components via separate UserDefaults arrays
 var timeBlockPaths = [[Int]]()
 var sortedTimeBlockPaths = [[Int]]();               var sortingTransform = [Int]()

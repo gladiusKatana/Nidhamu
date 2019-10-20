@@ -19,10 +19,13 @@ func ==<T:Hashable,U:Hashable>(lhs: TimeBlock<T,U>,
 
 extension CollectionVC {
     
-    func addToTimeBlocks(column: Int, row: Int, textEntered: String) {
+    func addToTimeBlocks(column: Int, row: Int, textEntered: String, eventDeadline: Date, withStatus: EventStatus?) {
+        
+        var status : EventStatus
+        if withStatus != nil {status = withStatus!} else {status = .upcoming}
         
         let timeBlockToAdd = TimeBlock(values:(column, row))
-        let simpleEvent = SimpleEvent(eventDescription: textEntered, eventDate: selectedCellDate, eventStatus: .upcoming)
+        let simpleEvent = SimpleEvent(eventDescription: textEntered, eventDate: eventDeadline, eventStatus: status)
         
         if eventsAtIndexPath[timeBlockToAdd] != nil {
             eventsAtIndexPath[timeBlockToAdd]!.append(simpleEvent)

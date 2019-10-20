@@ -24,13 +24,16 @@ extension CollectionVC {
                     else {
                         if [column, row] == pathsToProcess.first {cell.titleLabel.text = ""}
                         else {
-                            
-//                        if eventsInBlockToBeProcessed == 0 {
                             cell.titleLabel.text = "(\(events.count))"
-//                        }
-//                        else {cell.titleLabel.text = ""}
                         }
                     }
+                }
+                
+                if [column, row] == deferralPath {
+                    cell.titleLabel.text = deferredDescription
+                    addToTimeBlocks(column: column, row: row, textEntered: deferredDescription,
+                                    eventDeadline: cell.cellDate, withStatus: .deferred)
+                    deferralPath = defaultPathOutOfView
                 }
             }
         }

@@ -20,7 +20,8 @@ extension CollectionVC {    /// ** commented code here is for animations
             if !keyboardLocked {previousTimeBlockPathSelected = defaultPathOutOfView}
             
         } else {
-            addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered)
+            addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered,
+                            eventDeadline: selectedCellDate, withStatus: nil)
             
             if vcType == .hours {
                 if !keyboardLocked {
@@ -37,7 +38,6 @@ extension CollectionVC {    /// ** commented code here is for animations
                     setupTitleAndPresentViewController(vc: todoListVC) { () -> () in    /// re-presents view & reloads its data, to display updated todo list
                         ///(empty; may remove the completion handler from this method)
                     }*/
-                    
                 }
             }
         }
