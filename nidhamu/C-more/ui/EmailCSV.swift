@@ -7,12 +7,15 @@ extension CollectionVC {
     func presentEmail() { //print("\n📪EMAIL\n")
         
         if emailComposer.canSendEmail() {
+            
             emailComposer.emailComposeVC = emailComposer.configureEmailComposeVC()
             
-            backgroundVC.view.backgroundColor = .white
-            globalWindow.addSubview(backgroundVC.view)
+//            backgroundVC.view.backgroundColor = .white
+//            globalWindow.addSubview(backgroundVC.view)
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { ///Needs time, for configuration of email composer to complete, or top subject font can be seen resizing
+                if currentOrientation == "portrait" {AppUtility.lockOrientation(.portrait)}
+                if currentOrientation == "landscape" {AppUtility.lockOrientation(.landscape)} /// will change this current-orientation var to an enum case, not a string
                 globalWindow.addSubview(emailComposer.emailComposeVC.view)
             }
         }

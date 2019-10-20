@@ -1,61 +1,65 @@
-/* Notes            ･   nidhamu   ･     created by Garth Snyder                         ⚔️ all text aesthetically optimized for 13" screen
+/* Notes            ･   nidhamu   ･     created by Garth Snyder     ⚔️ Swift files aesthetically optimized for a 13" screen
  
- task                                                               deadline            type *              fun/difficulty/comments ✫ (optional)
- 
- 
- lock keyboard (for multiple event adding)
- font enums for different devices
- login date interval outlined/animated, not perma-coloured                              UI                  fairly fun
-                                                                    asap warmup                             1 task per day eg 'to start the day'
+ task                                                               deadline                        type *          comments
  
  
- Numbers template
+ ! handle daylight savings
+ dismiss or interrupt app in event tagging mode
+ n / m  blank after deferralVC dismissed
+ timetable deferral-date selection mode
+ 
+ email plural
+ popup dismiss end only
+ 
+ nav buttons cleanup
+ nav button colouring rewrite
+ 
+ 
+ Numbers template                                                                                   UX
  Excel template
  archive frequency reminders
- auto emailing?
- timetable deferral-date selection mode                                                 Data
- settings menu                                                                          UX
+ settings menu                                                      Mon Oct 21
  
  
- 
- buttons                                                                                Design              fun; easy
- icon                                                                                                       ""
+ buttons                                                                                            Design
+ icon
  launch screen
  triple check applogic, improve comments
- run on my devices that are same as Beta Users'
-                                                                    Sat Oct 12 BETA, downloaded by 1 or 2 beta users
-              
+ run on my devices that are same as Beta Users'                     ~ Oct 28 (BETA)
  
- loopWeeks = false behaviour as setting                                                 Data
- eventsAtDate on calendarVC
- mornAftEveNiteVC                                                                       VCs
+ 
+ 
+ eventsAtDate                                                                                       Data
+ calendarVC                                                                                         VCs
+ mornAftEveNiteVC
  listVC (today items)
  listVC (deadlineless items)
-                                                                    Oct ~15 APPSTORE
+ loopWeeks = false behaviour as setting?                            Oct ~15 (APPSTORE)              ✧
  
  
- dark mode (may be obviated/handled by iOS 13)                                          Design
- prevent User changing nowDate via Settings app                                         ✧
- cascading deferrals                                                                    ✧
-                                                                    later updates
+ 
+ login date interval outlined/animated, not perma-coloured
+ font enums for different devices
+ dark mode (may be obviated/handled by iOS 13)                                                      UI
+ prevent User changing nowDate via Settings app                                                     ✧
+ cascading deferrals                                                                                ✧
+ later updates
+ 
  
  
  
  1st commit                                                         July 8 '19
-
-
  
  
  
  
  
-                                                                    Notes
+ 
+ 
+ Notes
  
  
  * my DATA & UI labels are often loose proxies for the M & V of MVC, respectively. (Why this naming?  Mostly since, in Notes.swift, I want a categorization class for the project itself, and the code itself, not just the app)
- 
- 
- ✫ programming is always fun, but 'fun' means 'really fun' and 'FUN' means 'REALLY fun'
  
  
  ✧ denotes features that may not necessarily be a good idea to implement (eg, should Users be able to defer *all* their remaining tasks at once?)

@@ -14,8 +14,10 @@ extension CollectionVC {
             presentPopupViewToTagEvents(column: column, row: row)
         }
             
-        else {                                                                          ///print("\npaths to process empty\n")
-            self.downcastLayout?.autoFitHScale = 1
+        else {                                                  ///print("\npaths to process empty\n")
+            if topVC.vcType != .deferralDates {
+                downcastLayout?.autoFitHScale = 1              //; print("reset hScale to 1 on \(topVC.vcType)")
+            }
             ///eventArraysToProcess.removeAll()
         }
     }

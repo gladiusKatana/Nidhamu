@@ -6,25 +6,23 @@ extension CollectionVC {
     func setupNavBarButtons(_ withCustomColour: UIColor?, atIndex: Int?) {  //print("setting up nav bar buttons")
         
         let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableImage")
-        let todoListButton = setupButton(selector: #selector(buttonWrapperMethodforTodoListVC), title: "calendarImage")
         let archiveButton = setupButton(selector: #selector(buttonWrapperMethodforArchiveVC), title: "calendarImage")
-        let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
+        ///let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
         let lockKeyboardButton = setupButton(selector: #selector(keyboardLockWrapper), title: "wrench")
         
         var barButtonColours = [UIColor]()
-        let buttons = [timetableButton, archiveButton, todoListButton, reloadButton, lockKeyboardButton]
+        let buttons = [timetableButton, archiveButton, /*reloadButton,*/ lockKeyboardButton]
         navigationItem.rightBarButtonItems = buttons
         
         for _ in buttons {
             if barButtonColours.count <= buttons.count {barButtonColours.append(graySeven)} /// default colour, for the buttons that present all but the current vc
         }
         
-        ///let barButtonColours = [graySeven, graySeven, graySeven, graySeven, graySeven]   /// hardcoding button colours (may be easier, depends how many more buttons & colour exceptions)
+        ///let barButtonColours = [graySeven, graySeven, graySeven, graySeven,]   /// hardcoding button colours (may be easier, depends how many more buttons & colour exceptions)
         
         for button in navigationItem.rightBarButtonItems! {
-            if button == todoListButton {button.tintColor = .clear}
-            else if button == reloadButton {button.tintColor = grayBarelyThere}
-            else if button == lockKeyboardButton {button.tintColor = grayTwo}
+            ///if button == reloadButton {button.tintColor = grayBarelyThere}
+            /*else */if button == lockKeyboardButton {button.tintColor = grayTwo}
             else {
                 if let index = navigationItem.rightBarButtonItems?.firstIndex(of: button) {
                     button.tintColor = barButtonColours[index]

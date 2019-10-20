@@ -18,7 +18,7 @@ extension CollectionVC {
         
         cell.xyCoordinate = [column, row]
         
-        if vcType == .hours {
+        if vcType == .hours || vcType == .deferralDates {
             if currentOrientation == "landscape" { var size = 0
                 if textFieldDisplayed{size = 7} else {size = 8}
                 cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(size), weight: .ultraLight)
@@ -38,7 +38,9 @@ extension CollectionVC {
         else {
             if row < headerRows {
                 cell.backgroundColor = headerColour
-                if row == 1  {cell.titleLabel.text = headerWeekdayTitles[column - 1]}
+                if row == 1 && vcType == .hours || row == 4  && vcType == .deferralDates{
+                    cell.titleLabel.text = headerWeekdayTitles[column - 1]
+                }
                 if (2 ... headerRows - 1).contains(row) {
                     timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
                 }

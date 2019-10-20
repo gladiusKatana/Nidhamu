@@ -3,7 +3,8 @@ import UIKit
 
 enum CollectionViewType: Int {
     case initial = 0
-    case hours, todoList, archive, days, months, years, eventClassifier
+    case hours, todoList, archive, deferralDates,
+    days, months, years, eventClassifier
     
     func simpleDescription() -> String {
         
@@ -20,6 +21,9 @@ enum CollectionViewType: Int {
             
         case .archive:
             return "shows all events previously tagged on the timetable (organized by date)"
+            
+        case .deferralDates:
+            return "shows all time blocks in the coming week, for selection of a deadline-deferral"
             
         case .days:
             return "shows the days of this month"

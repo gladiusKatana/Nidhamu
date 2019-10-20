@@ -35,7 +35,7 @@ var firstBecameActive = false;                  var keyboardFirstPresented = fal
 var justPinched = false;                        var keyboardLocked = false
 var showConsoleLegend = true;                   var thereWillBeARowException = false
 var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false
-
+var tempGotoAnimationBool = false
 
 
 var defaultTimetableCellFont = UIFont.systemFont(ofSize: 12, weight: .ultraLight) //UIFont(name: "Helvetica Neue", size: 12)

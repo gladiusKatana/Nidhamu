@@ -16,23 +16,25 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
     func configureEmailComposeVC()  -> MFMailComposeViewController {
         emailComposeVC = MFMailComposeViewController()
         emailComposeVC.mailComposeDelegate = self                                               ///as? MFMailComposeViewControllerDelegate
+        
         let tempEmails = ["garthsnyder1@gmail.com"]
         emailComposeVC.setToRecipients(tempEmails)//(currentClientEmails)           //print("email recipient:\n\(currentClientEmails)")
         
         let path = archiveVC.createArchiveUrl()
         
         let messageText = "\(archiveEventDescriptions.count) new Events\nFrom\(archiveEventDateStrings.first!)\nTo\(archiveEventDateStrings.last!)"
-        
         emailComposeVC.setMessageBody(messageText, isHTML: false)                               /// <p> is for isHTML: true
         
         emailComposeVC.setSubject("[Nidhamu] Export to Excel") /// No use in using multiple spaces between words here, Gmail prohibits > 1 consecutive spaces
         
         do {
             let attachmentData = try Data(contentsOf: path)
-            emailComposeVC.addAttachmentData(attachmentData, mimeType: "text/csv", fileName: "Tagged events (\(dateString)).csv")    ///"text/comma-separated-values"   ///application/vnd.ms-excel
-            ///emailComposeVC.mailComposeDelegate = self
-            self.present(emailComposeVC, animated: true
-                , completion: nil)
+            emailComposeVC.addAttachmentData(attachmentData, mimeType: "text/csv", fileName: "Tagged events (\(dateString)).csv")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25 ) {
+                self.present(self.emailComposeVC, animated: true, completion: nil)
+            }
+            
         } catch let error {
             print("We have encountered error \(error.localizedDescription)")
         }
@@ -42,8 +44,8 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
     
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {      //print("\nEMAIL dismissed📪\n")
-        
-        backgroundVC.view.removeFromSuperview()
+        AppUtility.lockOrientation(.all)
+//        backgroundVC.view.removeFromSuperview()
         emailComposer.emailComposeVC.view.removeFromSuperview()
     }
 }

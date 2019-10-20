@@ -12,7 +12,7 @@ var eventIndex = 0;                                 var eventsInBlockToBeProcess
 
 var reloadedFromHourTickingOver = true;             var rotatedFromResignActive = false
 var textFieldDisplayed = false;                     ///var textFieldFirstDisplayed = false
-var savedTimeBlocksForProcessing = false;           var classifierViewDisplayed = false
+var savedBlocksAndPathsForProcessing = false;           var classifierViewDisplayed = false
 
 var selectedEventWillRecur = false
 var globalEventIdentifier = "(event)";              var selectedTimeBlockDateDescription = "(selected date)"

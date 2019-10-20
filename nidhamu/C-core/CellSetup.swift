@@ -5,35 +5,37 @@ extension CollectionVC {
     
     func timeBlockDateSetup (cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) { //cell. titleLabel.text = "\(column),\(row)"
         
-        switch vcType {
-            
-        case .hours:
+        if vcType == .hours || vcType == .deferralDates {
             if let loopWeeks = loopWeeks, let demarcateWeeksByColour = demarcateWeeksByColour {
                 setHourlyCellDates(cell: cell, column: column, row: row, layout: layout, looping: loopWeeks, withColours: demarcateWeeksByColour)
-            }
-            else {print("cell dates not set up: initialization bool(s) set to nil")}
+            } else {print("cell dates not set up: initialization bool(s) set to nil")}
             
-            if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {
-                if events.count == 1 {
-                    let eventName = events[0].eventDescription
-                    cell.titleLabel.text = eventName
-                    
-                    let truncTrailSize = truncationTrail.stringSize(font: cell.titleLabel.font).width
-                    let limit = layout.cellWidth! - truncTrailSize //+ averageLetterWidth * 1.3
-                    ///print("limit: \(limit)")  ///; print("dots: \(truncTrailSize)  avgLetter:\(averageLetterWidth)")
-                    
-                    cell.titleLabel.text = truncateString(eventName, sizeLimit: limit, font: cell.titleLabel.font)
-                }
-                else {
-                    if eventsInBlockToBeProcessed == 0 {
-                        cell.titleLabel.text = "(\(events.count))"
+            if vcType != .deferralDates {
+                if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {
+                    if events.count == 1 {
+                        let eventName = events[0].eventDescription
+                        cell.titleLabel.text = eventName
+                        
+                        let truncTrailSize = truncationTrail.stringSize(font: cell.titleLabel.font).width
+                        let limit = layout.cellWidth! - truncTrailSize //+ averageLetterWidth * 1.3
+                        ///print("limit: \(limit)")  ///; print("dots: \(truncTrailSize)  avgLetter:\(averageLetterWidth)")
+                        cell.titleLabel.text = truncateString(eventName, sizeLimit: limit, font: cell.titleLabel.font)
                     }
-                    else {cell.titleLabel.text = ""}
+                    else {
+                        if [column, row] == pathsToProcess.first {cell.titleLabel.text = ""}
+                        else {
+                            
+//                        if eventsInBlockToBeProcessed == 0 {
+                            cell.titleLabel.text = "(\(events.count))"
+//                        }
+//                        else {cell.titleLabel.text = ""}
+                        }
+                    }
                 }
             }
+        }
             
-        case .todoList:
-            
+        else if vcType == .todoList {
             cell.cellDate = selectedCellDate
             
             guard let eventAtTimeBlock = eventsAtIndexPath[timeBlock] else {
@@ -41,7 +43,6 @@ extension CollectionVC {
             }
             
             let status = eventAtTimeBlock[row].eventStatus
-            
             cell.titleLabel.textColor = .black
             
             if column == 0 {
@@ -54,9 +55,9 @@ extension CollectionVC {
             }
                 
             else {cell.titleLabel.text = "\(eventAtTimeBlock[row].eventStatus)"}
+        }
             
-        case .archive:
-            
+        else if vcType == .archive {
             cell.titleLabel.textColor = .darkGray;  cell.titleLabel.font = UIFont.systemFont(ofSize: 10, weight: .ultraLight)
             
             if column == 0 {
@@ -74,8 +75,9 @@ extension CollectionVC {
                 cell.titleLabel.text = "\(dateFromInts(archiveEventDateComponentArrays[row]))"
                 cell.titleLabel.font = UIFont.systemFont(ofSize: 6, weight: .ultraLight)
             }
+        }
             
-        default: print("[timeBlockDateSetup(:)] unrecognized collection view type")}
+        else {print("[timeBlockDateSetup(:)] unrecognized collection view type")}
     }
 }
 

@@ -4,8 +4,7 @@ import UIKit
 extension CollectionVC {    /// ** commented code here is for animations
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {          //print("text field returned")
-        
-        ///textField.removeFromSuperview(); textField.resignFirstResponder()][[[[[=p
+        ///textField.removeFromSuperview(); textField.resignFirstResponder()
         
         let textEntered = textField.text!
         
@@ -33,19 +32,19 @@ extension CollectionVC {    /// ** commented code here is for animations
             if vcType == .todoList {
                 if let events = eventsAtIndexPath[timeBlock] {  /// if time-block is not empty
                     todoListVC.downcastLayout!.rows = events.count
+                    ///reload CV()
+                    /*resetBackgroundColoursBasedOnTopVc(vc: topVC)
                     setupTitleAndPresentViewController(vc: todoListVC) { () -> () in    /// re-presents view & reloads its data, to display updated todo list
                         ///(empty; may remove the completion handler from this method)
-                    }
+                    }*/
+                    
                 }
             }
         }
         
         textField.text = ""
-        
-        exitEventAddingMode()
-        
+        if !keyboardLocked {exitEventAddingMode()}
         reloadCV()
-        
         return true
     }
 }

@@ -4,34 +4,46 @@ import UIKit
 extension CollectionVC {
     
     func prepareToProcessEventsSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
-        
         if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] { ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
-            
-            if !savedTimeBlocksForProcessing {
+            if !savedBlocksAndPathsForProcessing {
                 
-                if !eventArraysToProcess.contains(events) {eventArraysToProcess.append(events)}
-                ///else {print("event array-of-arrays already contains events: \(events)")}
-                
-                if !pathsToProcess.contains([column, row]) {pathsToProcess.append([column, row])}
+                if !pathsToProcess.contains([column, row]) {
+                    pathsToProcess.append([column, row])                //; print("appending path \([column, row])")
+                }
                 ///else {print("path array-of-arrays already contains path: \([column, row])")}
+                
+                /*if !eventArraysToProcess.contains(events) {
+                    eventArraysToProcess.append(events)
+                }*/
+                
+                var eventDescriptions = [String]()
+                for event in events {eventDescriptions.append(event.eventDescription)}
+                
+                if !eventDescriptionsToProcess.contains(eventDescriptions) {
+                    eventDescriptionsToProcess.append(eventDescriptions)    //; print("appending descriptions \(eventDescriptions)")
+                    eventArraysToProcess.append(events)
+                }
+                ///else {print("event array-of-arrays already contains events: \(events)")}
             }
-            
-            if row >= 21 {thereWillBeARowException = true} /// corresponds to the row whose cellDates are at 4pm
+            if row >= 21 {thereWillBeARowException = true}              /// corresponds to the row whose cellDates are at 4pm
         }
     }
     
     func processTimeBlocksSinceLastLogin(layout: CustomFlowLayout) {
         if vcType == .hours {
-            if eventArraysToProcess.count > 0 { //* or, could have used paths ToProcess.count > 0
-                if !savedTimeBlocksForProcessing {
-                    eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
-                    
-                    ///print("\n*eventsInBlock \(eventsInBlockToBeProcessed)")
-                    ///print("paths to process: \(pathsToProcess)")
+            if eventArraysToProcess.count > 0 {                         //* or, could have used paths ToProcess.count > 0
+                
+                if !savedBlocksAndPathsForProcessing {
                     
                     pathsToProcess = pathsToProcess.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
                     eventArraysToProcess = eventArraysToProcess.sorted(by: {$0.last!.eventDate < $1.last!.eventDate})
-                    savedTimeBlocksForProcessing = true
+                    
+                    eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
+                    
+                    print("paths to process: \(pathsToProcess)")
+                    print("events to process: \(eventDescriptionsToProcess)")
+                    
+                    savedBlocksAndPathsForProcessing = true
                     
                     if thereWillBeARowException {
                         let gap = CGFloat(5) / (self.downcastLayout!.cellHeight!)           // extra gap for better aesthetics
@@ -39,7 +51,7 @@ extension CollectionVC {
                             CGFloat(layout.rows) / (CGFloat(layout.rows + 8) + gap)         // popup window is 8 cells tall
                         
                         reloadWithDelay(after: 0)                                           //; print("reloaded for size adjustment")
-                        let count = pathsToProcess.count
+                        let count = pathsToProcess.count            /// row 21 = 4pm
                         if count >= 2 && pathsToProcess[count - 2][1] < 21 { /// if 2nd-last index path to process requires resizing (since cells can be swept over...
                             classifierVC.removePopupMenuAndSwitch() /// ...repeatedly, within 1 session (eg user could leave timetable open for multiple hours, it just auto-updates)
                         }
@@ -47,10 +59,10 @@ extension CollectionVC {
                     }
                     
                     tagEventsSinceLastLogin()
-                }
-            } else {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {AppUtility.lockOrientation(.all)}
-            }
+                    ///print(".\(eventArraysToProcess.count) blocks remaining now; \(eventsInBlockToBeProcessed) events; tag #\(eventIndex + 1)\n")
+                } ///else {print(".already processed")} ///already saved blocks & paths for processing
+
+            } else {DispatchQueue.main.asyncAfter(deadline: .now() + 1) {AppUtility.lockOrientation(.all)}}
         }
     }
 }

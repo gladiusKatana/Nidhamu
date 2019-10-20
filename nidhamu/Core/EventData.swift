@@ -14,7 +14,7 @@ var selectedTimeBlockPath = defaultPathOutOfView;   var previousTimeBlockPathSel
 
 
 /// Processing time blocks for tagging
-var eventArraysToProcess = [[SimpleEvent]]()
+var eventArraysToProcess = [[SimpleEvent]]();       var eventDescriptionsToProcess = [[String]]()
 var pathsToProcess = [[Int]]()
 
 

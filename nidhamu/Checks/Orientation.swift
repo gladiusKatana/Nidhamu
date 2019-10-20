@@ -23,10 +23,6 @@ extension AppDelegate {
         
         currentOrientation = launchOrientation
         previousOrientation = launchOrientation
-        
-        launchOrientation = "portrait"
-        currentOrientation = launchOrientation
-        previousOrientation = launchOrientation
     }
 }
 

@@ -6,6 +6,34 @@ extension CollectionVC {
     func setHourlyCellDates(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, looping: Bool, withColours: Bool) {
         cell.cellDate = setCellDate(baseDate: Date(), cellOffset: layout.lockedHeaderRows - row, cell: cell,
                                     column: column, row: row, layout: layout, looping: looping, withColours: withColours)
+        
+        if [2, 3, 4].contains(row) {
+            ///if vcType != .deferralDates {
+                setupHeaderDateLabels(cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
+            ///}
+        }
+        else {
+            cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 0,
+                                        cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
+            
+            if vcType != .deferralDates {processEventsBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)}
+            
+            if vcType == .deferralDates {showTimeInTitleLabels(cell: cell)}
+        }
+        
+        if row >= layout.lockedHeaderRows && vcType != .deferralDates {
+            showKeyTimeBlockDates(cell: cell)
+        }
+        
+        if [column, row] == selectedTimeBlockPath {
+            if textFieldDisplayed {
+                cell.backgroundColor = eventAddingColour
+                showTimeInTitleLabels(cell: cell)
+            }
+        }
+    }
+    
+    func setupHeaderDateLabels(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, looping: Bool, withColours: Bool) {
         if row == 2 {
             cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 3, cell: cell,
                                         column: column, row: row, layout: layout, looping: looping, withColours: withColours)
@@ -38,21 +66,6 @@ extension CollectionVC {
             }
         }
         else if row == 4 {} /// row 3 is covered by the general formula on line 8; this is just to exclude it from the else{}
-        else {
-            cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 0,
-                                        cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
-            processEventsBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)
-        }
-        
-        if row >= layout.lockedHeaderRows {showKeyTimeBlockDates(cell: cell)}
-        ///showTimeInTitleLabels(date: cell.cellDate, cell: cell)    //showDateInTitleLabels(date: cell.cellDate, cell: cell)
-        
-        if [column, row] == selectedTimeBlockPath {
-            if textFieldDisplayed {
-                cell.backgroundColor = eventAddingColour
-                showTimeInTitleLabels(cell: cell)
-            }
-        }
     }
 }
 

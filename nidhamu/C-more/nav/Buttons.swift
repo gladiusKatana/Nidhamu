@@ -16,12 +16,14 @@ extension CollectionVC {
     
     
     @objc func keyboardLockWrapper() {
-        if !textFieldDisplayed {
+        if !textFieldDisplayed {        /// else should probably grey out the button, since button is inactive in that scope
             keyboardLocked = true
         }
         else {
-            keyboardLocked = false
-            exitEventAddingMode(); reloadCV()
+            if keyboardLocked {
+                keyboardLocked = false
+                exitEventAddingMode(); reloadCV()
+            }
         }
     }
     
@@ -33,7 +35,9 @@ extension CollectionVC {
     
     @objc func buttonWrapperMethodforTodoListVC() {}//gotoView(vc: todoListVC)
     
-    @objc func buttonWrapperMethodforTimetableVC() {gotoView(vc: timetableVC)}
+    @objc func buttonWrapperMethodforTimetableVC() {
+        //        timetableVC.downcastLayout?.autoFitHScale = 1
+        gotoView(vc: timetableVC)}
     
 }
 

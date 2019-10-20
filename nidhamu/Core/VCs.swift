@@ -12,13 +12,25 @@ var timetableLayout = //---------
         customFrame: nil,                               //* if nil, defaults to a pre-set frame (e.g. global key window frame)
         rows: 29, cols: 8, lockedHeaderRows: 5, lockedHeaderSections: 1,
         cellWidth: nil, cellHeight: nil,                //* if either dimension entered nil, screen width &/or height is autofitted
-        autoFitWScale: nil, autoFitHScale: nil,         //* if either of these parameters are nil, they default to 1.0
+        autoFitWScale: 1, autoFitHScale: 1,         //* if either of these parameters are nil, they default to 1.0
+        hSpace: cellGap, vSpace: cellGap,               //* auto-fit scaling factors above are ignored if width/height are not nil
+        loadsHorizontally: false,                       //❗️if loadsHorizontally is true, 'rows' look like columns
+        squareCellMode: .noAutoSquare)
+
+var deferralLayout = //---------
+    CustomFlowLayout(
+        embeddedInNavController: true,                  //* if true, it's fullscreen (with nav bar button); else it's a custom window
+        customFrame: nil,                               //* if nil, defaults to a pre-set frame (e.g. global key window frame)
+        rows: 29, cols: 8, lockedHeaderRows: 5, lockedHeaderSections: 1,
+        cellWidth: nil, cellHeight: nil,                //* if either dimension entered nil, screen width &/or height is autofitted
+        autoFitWScale: 1, autoFitHScale: 1,         //* if either of these parameters are nil, they default to 1.0
         hSpace: cellGap, vSpace: cellGap,               //* auto-fit scaling factors above are ignored if width/height are not nil
         loadsHorizontally: false,                       //❗️if loadsHorizontally is true, 'rows' look like columns
         squareCellMode: .noAutoSquare)
 
 var timetableVC = CollectionVC(.hours, backgroundColour: defaultWindowBackgroundColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: 0, collectionViewLayout: timetableLayout)
 
+var deferralVC = CollectionVC(.deferralDates, backgroundColour: .white, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: nil, collectionViewLayout: deferralLayout)
 
 var todoListLayout = //---------
     CustomFlowLayout(

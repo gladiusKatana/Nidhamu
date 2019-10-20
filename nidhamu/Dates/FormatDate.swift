@@ -9,7 +9,7 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     var ampm = "";                              if hour < 13 {ampm = "am"} else {ampm = "pm"} // since hr is by default 24hr
     
     var hr = (hour < 13) ? hour : hour - 12
-    if hr == 0 {hr = 12} // this is just to make a string representing the date, not the date itself
+    if hr == 0 {hr = 12}                    // this is just to make a string representing the date, not the date itself
     
     var yearString = ""
     if showYear && (month == "January" || month == "December") {yearString = "\(year), "}// also add || (Date() > last-login-date by > ~30 days)}

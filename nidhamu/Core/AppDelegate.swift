@@ -17,9 +17,7 @@ import UIKit
             }
         } else if responds(to: Selector(("statusBar"))) {
             return value(forKey: "statusBar") as? UIView
-        } else {
-            return nil
-        }
+        } else {return nil}
     }
     
     var window: UIWindow?
@@ -34,12 +32,12 @@ import UIKit
         modelName = UIDevice.modelName
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = defaultWindowBackgroundColour
+        window?.backgroundColor = .white //defaultWindowBackgroundColour
         window?.makeKeyAndVisible()
         globalWindow = window!
         
         backgroundVC = UIViewController()
-        backgroundVC.view.backgroundColor = .clear   /// must match window's background colour, for rotating landscape->portrait
+        backgroundVC.view.backgroundColor = .white /// must match window's background colour, for rotating landscape->portrait
         backgroundVC.view.frame = globalWindow.frame
         
         getOrientationAtLaunch()                                    ; print("launching on \(modelName) in \(launchOrientation) orientation")

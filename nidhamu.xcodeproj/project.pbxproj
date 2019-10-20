@@ -226,6 +226,7 @@
 				06150A37232C2BBE004611AD /* FormatDate.swift */,
 				06164A2F22D6D19000DA608D /* DateRefresh.swift */,
 				06164A2E22D6D19000DA608D /* CellDates.swift */,
+				06306512233E7D5E00C4BB95 /* ShowDates.swift */,
 				062BC1002314B43600AC852F /* SetCellDate.swift */,
 				0631914322E2C5F5004DE476 /* LoginInterval.swift */,
 			);
@@ -352,6 +353,7 @@
 		0625169522D6CF4200EBB4C8 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				0625169622D6CF4200EBB4C8 /* TapPopup.swift */,
 				0625169722D6CF4200EBB4C8 /* Tap.swift */,
 				062CDAA022E0033400848D78 /* Pinch.swift */,
 				0625169922D6CF4200EBB4C8 /* TextField.swift */,
@@ -360,7 +362,6 @@
 				062516A022D6CF4200EBB4C8 /* UINotify.swift */,
 				06473CAB2346E03D009397AE /* EmailCSV.swift */,
 				0688C38F23481D92007DC878 /* EmailVC.swift */,
-				063E3C4F2357A6E10044727C /* UIMode.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -410,7 +411,6 @@
 				06AA5D18231727C500DC04FD /* PCellPath.swift */,
 				06306510233DA35F00C4BB95 /* PLifeCycle.swift */,
 				0682A49022FE5F0A00CE8075 /* AddPopup.swift */,
-				0625169622D6CF4200EBB4C8 /* TapPopup.swift */,
 			);
 			path = popup;
 			sourceTree = "<group>";
@@ -430,10 +430,10 @@
 				0625169322D6CF4200EBB4C8 /* VCLifecycle.swift */,
 				0625169B22D6CF4200EBB4C8 /* CellPath.swift */,
 				062516A622D6CF4200EBB4C8 /* CellSetup.swift */,
-				06306512233E7D5E00C4BB95 /* ShowDates.swift */,
 				06B872062329CA0700512B21 /* PrepBlocks.swift */,
 				0625169822D6CF4200EBB4C8 /* TagEvents.swift */,
 				062AC1042359464600427DC1 /* Archiving.swift */,
+				063E3C4F2357A6E10044727C /* UIMode.swift */,
 			);
 			path = "C-core";
 			sourceTree = "<group>";

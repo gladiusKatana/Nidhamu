@@ -5,13 +5,15 @@ extension PopupMenuVC {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  didSelectItemAt indexPath: IndexPath) {
+        
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
         let layout = downcastLayout!; let row = indexPath.item; let column = indexPath.section
         cell.backgroundColor = eventAddingColour
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
-            guard let firstPathToProcess = pathsToProcess.first else { print("no paths to process... even though popup was presented"); return}
+            guard let firstPathToProcess = pathsToProcess.first else {print("no paths to process... even though popup was presented"); return}
+            
             let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1]    /// components of path of current item being marked
             var eventWillShowUpNextWeek = false
             
@@ -19,35 +21,33 @@ extension PopupMenuVC {
                 
                 let selectedStatus = EventStatus(rawValue: row)
                 let eventBeingTagged = eventsOfBlockBeingTagged[eventIndex]
+                
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = selectedStatus!
                 
                 if [EventStatus.deferred, EventStatus.upcoming].contains(selectedStatus) {
                     eventWillShowUpNextWeek = true
-                    //eventsOfBlockBeingTagged[eventIndex].eventDate += TimeInterval(86400 * 7)
                 }
                 
-                if !eventWillShowUpNextWeek {
-                    addToArchives(eventBeingTagged)
-                }
-                
-                if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
-                if eventsInBlockToBeProcessed > 0 {eventsInBlockToBeProcessed -= 1}
-                
-                if eventsInBlockToBeProcessed == 0 {
-                    pathsToProcess.removeFirst(); eventArraysToProcess.removeFirst()
-                    if !eventWillShowUpNextWeek {
-                        eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(clm, rw)))!)
+                if !eventWillShowUpNextWeek {addToArchives(eventBeingTagged)}
+                else {
+                    if selectedStatus == .deferred {
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                            tempGotoAnimationBool = true
+                            deferralVC.downcastLayout?.autoFitHScale = timetableVC.downcastLayout?.autoFitHScale
+                            ///print("rescaled to \(deferralVC.downcastLayout?.autoFitHScale), tt scale is \(timetableVC.downcastLayout?.autoFitHScale)")
+                            timetableVC.gotoView(vc: deferralVC)
+                            tempGotoAnimationBool = false
+                            
+                            timetableVC.setNavBarTitle(customString: nil) /// call it on any of the CollectionVCs
+                        }
+                        //eventsOfBlockBeingTagged[eventIndex].eventDate =
                     }
-                    eventIndex = 0
-                    
-                    if !eventArraysToProcess.isEmpty {
-                        eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
-                    }
-                    else {eventsInBlockToBeProcessed = 0}
                 }
+                
+                updateBlockProcessingVariables(column: clm, row: rw, eventWillShowUpNextWeek: eventWillShowUpNextWeek)
                 dismissPopupMenuAndSave()
             }
-            
         } else {print("selected popup menu header")}
     }
 }

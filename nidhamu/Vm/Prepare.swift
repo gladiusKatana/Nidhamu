@@ -13,6 +13,7 @@ extension CustomFlowLayout {
             
             if textFieldDisplayed {
                 globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
+                backgroundVC.view.backgroundColor = globalWindow.backgroundColor
             }
             
             previousOrientation = currentOrientation
