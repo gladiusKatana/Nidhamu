@@ -20,9 +20,9 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         let tempEmails = ["garthsnyder1@gmail.com"]
         emailComposeVC.setToRecipients(tempEmails)//(currentClientEmails)           //print("email recipient:\n\(currentClientEmails)")
         
-        let path = archiveVC.createArchiveUrl()
+        let path = archiveVC.createArchiveUrl();    let count = archiveEventDescriptions.count; let s = (count > 1) ? "s" : ""
         
-        let messageText = "\(archiveEventDescriptions.count) new Events\nFrom\(archiveEventDateStrings.first!)\nTo\(archiveEventDateStrings.last!)"
+        let messageText = "\(count) new Event\(s)\nFrom\(archiveEventDateStrings.first!)\nTo\(archiveEventDateStrings.last!)"
         emailComposeVC.setMessageBody(messageText, isHTML: false)                               /// <p> is for isHTML: true
         
         emailComposeVC.setSubject("[Nidhamu] Export to Excel") /// No use in using multiple spaces between words here, Gmail prohibits > 1 consecutive spaces
