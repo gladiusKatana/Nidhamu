@@ -21,7 +21,7 @@
 		0625167722D6CF2B00EBB4C8 /* Vars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625167122D6CF2A00EBB4C8 /* Vars.swift */; };
 		0625167822D6CF2B00EBB4C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625167222D6CF2A00EBB4C8 /* AppDelegate.swift */; };
 		0625167922D6CF2B00EBB4C8 /* AppLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625167322D6CF2A00EBB4C8 /* AppLifecycle.swift */; };
-		0625167A22D6CF2B00EBB4C8 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625167422D6CF2B00EBB4C8 /* Notes.swift */; };
+		0625167A22D6CF2B00EBB4C8 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625167422D6CF2B00EBB4C8 /* Tasks.swift */; };
 		062516B122D6CF4200EBB4C8 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625167C22D6CF4100EBB4C8 /* Cell.swift */; };
 		062516B222D6CF4200EBB4C8 /* DefaultLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625167D22D6CF4100EBB4C8 /* DefaultLoad.swift */; };
 		062516B322D6CF4200EBB4C8 /* TimeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625167E22D6CF4100EBB4C8 /* TimeBlock.swift */; };
@@ -121,7 +121,7 @@
 		0625167122D6CF2A00EBB4C8 /* Vars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vars.swift; sourceTree = "<group>"; };
 		0625167222D6CF2A00EBB4C8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0625167322D6CF2A00EBB4C8 /* AppLifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLifecycle.swift; sourceTree = "<group>"; };
-		0625167422D6CF2B00EBB4C8 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		0625167422D6CF2B00EBB4C8 /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		0625167C22D6CF4100EBB4C8 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		0625167D22D6CF4100EBB4C8 /* DefaultLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultLoad.swift; sourceTree = "<group>"; };
 		0625167E22D6CF4100EBB4C8 /* TimeBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeBlock.swift; sourceTree = "<group>"; };
@@ -392,7 +392,7 @@
 		062BC1022315835E00AC852F /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				0625167422D6CF2B00EBB4C8 /* Notes.swift */,
+				0625167422D6CF2B00EBB4C8 /* Tasks.swift */,
 				0625167122D6CF2A00EBB4C8 /* Vars.swift */,
 				0625166F22D6CF2A00EBB4C8 /* TimeVars.swift */,
 				06399204233F93C9008907FE /* EventData.swift */,
@@ -577,7 +577,7 @@
 				062516B222D6CF4200EBB4C8 /* DefaultLoad.swift in Sources */,
 				062516BE22D6CF4200EBB4C8 /* Colours.swift in Sources */,
 				062AC1052359464600427DC1 /* Archiving.swift in Sources */,
-				0625167A22D6CF2B00EBB4C8 /* Notes.swift in Sources */,
+				0625167A22D6CF2B00EBB4C8 /* Tasks.swift in Sources */,
 				0625167722D6CF2B00EBB4C8 /* Vars.swift in Sources */,
 				06076F07232B3F6300189BB3 /* Sorting.swift in Sources */,
 				062516D322D6CF4200EBB4C8 /* GoToVC.swift in Sources */,
