@@ -2,11 +2,10 @@
   
   
   
-  ! handle daylight savings
-  ! defer task on multi-task block
+  ⁌o⁍ handle daylight savings
+  ⁌o⁍ defer task on multi-task block
   
   popup dismiss done tagging only
-  email plural
   
   nav buttons cleanup
   nav buttons colouring rewrite
@@ -40,6 +39,7 @@
   cascading deferrals?                                                                               ✧
   loopWeeks = false behaviour as setting?                                                            ✧
   prevent User changing nowDate via Settings app                                                     ✧
+  
   
   
   
