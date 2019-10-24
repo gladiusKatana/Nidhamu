@@ -7,11 +7,11 @@ extension CollectionVC {
         
         let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableImage")
         let archiveButton = setupButton(selector: #selector(buttonWrapperMethodforArchiveVC), title: "calendarImage")
-        let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
+        ///let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
         let lockKeyboardButton = setupButton(selector: #selector(keyboardLockWrapper), title: "wrench")
         
         var barButtonColours = [UIColor]()
-        let buttons = [timetableButton, archiveButton, reloadButton, lockKeyboardButton]
+        let buttons = [timetableButton, archiveButton, /*reloadButton,*/ lockKeyboardButton]
         navigationItem.rightBarButtonItems = buttons
         
         for _ in buttons {

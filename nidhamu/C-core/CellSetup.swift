@@ -22,10 +22,9 @@ extension CollectionVC {
                         cell.titleLabel.text = truncateString(eventName, sizeLimit: limit, font: cell.titleLabel.font)
                     }
                     else {
-//                        if [column, row] == pathsToProcess.first {cell.titleLabel.text = ""}
-//                        else {
+                        if !([column, row] == pathsToProcess.first) {
                             cell.titleLabel.text = "(\(events.count))"
-//                        }
+                        }
                     }
                 }
                 

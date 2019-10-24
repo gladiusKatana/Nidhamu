@@ -9,14 +9,12 @@ extension CollectionVC {
             globalWindow.backgroundColor = .white //defaultWindowBackgroundColour
             backgroundVC.view.backgroundColor = globalWindow.backgroundColor
         }
-        keyboardHeight = 0
-        textFieldDisplayed = false
+        keyboardHeight = 0; textFieldDisplayed = false
     }
 }
 
 extension PopupMenuVC {
     func updateBlockProcessingVariables(column: Int, row: Int, eventWillShowUpNextWeek: Bool) {
-        
         if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
         if eventsInBlockToBeProcessed > 0 {eventsInBlockToBeProcessed -= 1}
         
@@ -31,30 +29,22 @@ extension PopupMenuVC {
             
             dismissPopupMenuAndSave(newTimeBlock: true)
         }
-        else {dismissPopupMenuAndSave(newTimeBlock: false)}
-        
-        print("\(eventArraysToProcess.count) blocks remaining now; \(eventsInBlockToBeProcessed) events; tag #\(eventIndex + 1)\n")
+        else {dismissPopupMenuAndSave(newTimeBlock: false)} ///print("\(eventArraysToProcess.count) blocks now; \(eventsInBlockToBeProcessed) events; tag #\(eventIndex + 1)\n")
     }
     
     func dismissPopupMenuAndSave(newTimeBlock: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {                        ///print("now paths to process: \(pathsToProcess)")
             if newTimeBlock {
                 self.removePopupMenuAndSwitch()
-                
-            }
-            else {
-                classifierVC.collectionView.reloadData()
-            }
+                earliestEventAddress = defaultPathOutOfView
+            } else {classifierVC.collectionView.reloadData()}
             
-            earliestEventAddress = defaultPathOutOfView
-                
             selectedEventWillRecur = false
             
             if pathsToProcess.isEmpty {
                 defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntEvents: true)
                 AppUtility.lockOrientation(.all)                                        ///; print("rotated back")
-            }
-            else {defaultSaveData(saveDate: false, resetLastLogin: false, showDate: false, pryntEvents: false)}
+            } else {defaultSaveData(saveDate: false, resetLastLogin: false, showDate: false, pryntEvents: false)}
             
             timetableVC.reloadCV()                                                      ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
             timetableVC.tagEventsSinceLastLogin()
