@@ -37,7 +37,7 @@ extension CollectionVC {
             //                newVC.modalPresentationStyle = .
             //            }
             
-            navController?.present(newVC, animated: tempGotoAnimationBool, completion: nil)
+            navController?.present(newVC, animated: tempRescalingBool, completion: nil)
             self.setTopViewController()// try commenting this, you should see: vc of type 'initial' was root vc when this method was called
         }
     }

@@ -3,22 +3,15 @@ import UIKit
 
 var lastLoginDate = Date()
 var selectedCellDate = Date()
+
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 
 var nowRow = 0;                                     var nowColumn = 0
 var eventIndex = 0;                                 var eventsInBlockToBeProcessed = 0
 
 
-
-var reloadedFromHourTickingOver = true;             var rotatedFromResignActive = false
-var textFieldDisplayed = false;                     ///var textFieldFirstDisplayed = false
-var savedBlocksAndPathsForProcessing = false;           var classifierViewDisplayed = false
-
-var selectedEventWillRecur = false
 var globalEventIdentifier = "(event)";              var selectedTimeBlockDateDescription = "(selected date)"
-var firstTimeLoaded = false /// one-way bool: only flipped to  true  once in app lifecycle
-
-
+           
 
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 var monthsAbbreviated = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]

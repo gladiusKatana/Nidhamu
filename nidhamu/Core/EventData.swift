@@ -4,7 +4,7 @@ import UIKit
 
 var eventsAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleEvent]>()      /// Dictionary lookup for arrays of events (ie to-do-lists), keyed by collection view index path
 
-//var eventsAtDate = Dictionary<ArchiveBlock<Int,Int,Int,Int>,[SimpleEvent]>()/// Dictionary lookup for arrays of archived events, keyed by event-date components (y,m,d,h)
+///var eventsAtDate = Dictionary<ArchiveBlock<Int,Int,Int,Int>,[SimpleEvent]>()                 /// Dictionary lookup for arrays of archived events, keyed by event-date components (y,m,d,h)
 
 
 /// Adding events to time-blocks (ie cells, visually speaking)
@@ -37,8 +37,10 @@ var archiveEventDescriptions = [String]()
 var archiveEventStatuses = [Int]();                 var archiveEventStatusStrings = [String]()
 var archiveEventDateComponentArrays = [[Int]]();    var archiveEventDateStrings = [String]()
 
+/*
 //var archiveEventDescriptionArrays = [[String]]();                                               var allArchiveEventDescriptions = [String]()
 //var archiveEventStatusArrays = [[Int]](); /* Populated with raw values of enum EventStatus*/    var allArchiveEventStatuses = [Int]()
 //var archiveEventDateArrays = [[Date]]();                                                        var allArchiveEventDates = [Date]()
 //var sortedArchiveEventDateArrays = [[Date]]()
+*/
 

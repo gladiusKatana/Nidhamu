@@ -35,11 +35,11 @@ extension PopupMenuVC {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                             timetableVC.setNavBarTitle(customString: nil) /// call it on any of the CollectionVCs
                             
-                            tempGotoAnimationBool = true
+                            tempRescalingBool = true
                             deferralVC.downcastLayout?.autoFitHScale = timetableVC.downcastLayout?.autoFitHScale
                             ///print("rescaled to \(deferralVC.downcastLayout?.autoFitHScale), tt scale is \(timetableVC.downcastLayout?.autoFitHScale)")
                             timetableVC.gotoView(vc: deferralVC)
-                            tempGotoAnimationBool = false
+                            tempRescalingBool = false
                             
                             eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(clm, rw)))!)
                             deferredDescription = globalEventIdentifier

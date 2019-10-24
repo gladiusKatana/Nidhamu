@@ -5,7 +5,7 @@ extension CollectionVC {
     func exitEventAddingMode() {
         eventField.removeFromSuperview()
         eventField.resignFirstResponder()
-        if !tempGotoAnimationBool {
+        if !tempRescalingBool {
             globalWindow.backgroundColor = .white //defaultWindowBackgroundColour
             backgroundVC.view.backgroundColor = globalWindow.backgroundColor
         }

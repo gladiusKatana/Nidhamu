@@ -1,11 +1,8 @@
 // Vars             ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-//var globalKeyWindow = UIApplication.shared.keyWindow!
 var globalWindow = UIWindow(frame: UIScreen.main.bounds)
-
-//var sceneDelegate = SceneDelegate() // Not (currently) supporting multiple windows on iPad, or multiple-scene-view in modal vc presentations
-
+///var sceneDelegate = SceneDelegate() // Not (currently) supporting multiple windows on iPad, or multiple-scene-view in modal vc presentations
 var navController: UINavigationController? = UINavigationController()
 
 var dismissPinch = UIPinchGestureRecognizer()
@@ -18,7 +15,7 @@ var textFieldY = CGFloat(0)
 var textFieldHeight = CGFloat(30)  /// will rewrite this at some point, to be reset to a size calculated from its text height, plus a bit (with an initial value of 0). See stringSize(:), in Strings.swift
 var textFieldWidth = CGFloat(0)
 
-var keyboardHeight = CGFloat(0)  /// will rewrite the two lines below this one, and write an enum containing manually-determined* values for each device; this will be done by running the app...
+var keyboardHeight = CGFloat(0)  /// will rewrite the two lines below this one, & write an enum containing manually-determined* values for each device; this will be done by running the app...
 var portraitKeyboardHeight = CGFloat(246) /// ...on each simulator, with old versions of resetKeyboardHeight() & showKBoard(:); so, will be initializing these 2 values to 0, as below
 var landscapeKeyboardHeight = CGFloat(192)/// * why manually determined?  Because these values (keyboard heights for different iOS devices) do not seem to be recorded anywhere online
 //var portraitKeyboardHeight = CGFloat(0)
@@ -30,12 +27,13 @@ var statusBarHeight = 0.0;                      var lastStatusBarHeight = 0.0
 var navBarHeight = 0.0;                         var launchWidth = 0.0
 
 
-
-var firstBecameActive = false;                  var keyboardFirstPresented = false
+//; var firstBecameActive = false;
+var firstTimeLoaded = false                     /// one-way bool: only flipped to  true  once in app lifecycle
+var rotatedFromResignActive = false;            var reloadedFromHourTickingOver = true;          var savedBlocksAndPathsForProcessing = false
+var showConsoleLegend = true;                   var tempRescalingBool = false;                  var thereWillBeARowException = false
 var justPinched = false;                        var keyboardLocked = false
-var showConsoleLegend = true;                   var thereWillBeARowException = false
-var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false
-var tempGotoAnimationBool = false
+var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false;    var textFieldDisplayed = false
+var classifierViewDisplayed = false;            var selectedEventWillRecur = false
 
 
 var defaultTimetableCellFont = UIFont.systemFont(ofSize: 12, weight: .ultraLight) //UIFont(name: "Helvetica Neue", size: 12)
@@ -46,7 +44,7 @@ var lastActiveOrientation = "orientation (landscape or portrait) before sending 
 var launchOrientation = "orientation at the moment of launch"                                       //* " "
 
 var loadSymbolLegend = "                                        💾 = view loaded"
-var appearSymbolLegend = "                                        🏞 = view appeared"  //console legend
+//var appearSymbolLegend = "                                        🏞 = view appeared"  //console legend
 var truncationTrail = "…";                      ///var averageLetterWidth = CGFloat(0)
 var dateString = "global csv date string";      var fileName = "global csv file name"
 
