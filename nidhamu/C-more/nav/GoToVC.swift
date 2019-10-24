@@ -11,7 +11,7 @@ extension CollectionVC {
             
             if topVC.backgroundColour != .white {/// if it is, seeing any other colour for a split second (ie, background view), is visually jarring. Status bar & nav bar are white in this app
                 globalWindow.backgroundColor = vc.backgroundColour
-                backgroundVC.view.backgroundColor = vc.backgroundColour         ///print("reset background colours to \(vc.backgroundColour)")
+                backgroundVC.view.backgroundColor = vc.backgroundColour                     ///print("reset background colours to \(vc.backgroundColour)")
             }
             
             setupTitleAndPresentViewController(vc: vc) { () -> () in

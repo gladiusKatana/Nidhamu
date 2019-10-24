@@ -34,10 +34,6 @@ extension CollectionVC {    /// ** commented code here is for animations
                 if let events = eventsAtIndexPath[timeBlock] {  /// if time-block is not empty
                     todoListVC.downcastLayout!.rows = events.count
                     ///reload CV()
-                    /*resetBackgroundColoursBasedOnTopVc(vc: topVC)
-                    setupTitleAndPresentViewController(vc: todoListVC) { () -> () in    /// re-presents view & reloads its data, to display updated todo list
-                        ///(empty; may remove the completion handler from this method)
-                    }*/
                 }
             }
         }

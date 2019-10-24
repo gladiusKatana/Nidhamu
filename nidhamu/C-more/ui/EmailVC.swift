@@ -45,7 +45,7 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {      //print("\nEMAIL dismissed📪\n")
         AppUtility.lockOrientation(.all)
-//        backgroundVC.view.removeFromSuperview()
+        //backgroundVC.view.removeFromSuperview()
         emailComposer.emailComposeVC.view.removeFromSuperview()
     }
 }

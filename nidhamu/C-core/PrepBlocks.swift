@@ -13,8 +13,8 @@ extension CollectionVC {
                 ///else {print("path array-of-arrays already contains path: \([column, row])")}
                 
                 /*if !eventArraysToProcess.contains(events) {
-                    eventArraysToProcess.append(events)
-                }*/
+                 eventArraysToProcess.append(events)
+                 }*/
                 
                 var eventDescriptions = [String]()
                 for event in events {eventDescriptions.append(event.eventDescription)}

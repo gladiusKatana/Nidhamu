@@ -42,12 +42,6 @@ import UIKit
         
         getOrientationAtLaunch()                                    ; print("launching on \(modelName) in \(launchOrientation) orientation")
         
-        //        var statusBar = UIView()
-        //        statusBar = UIApplication.shared.value(forKey: "statusBar") as! UIView
-        //        if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
-        //            statusBar.backgroundColor = .clear
-        //        }
-        
         if statusBarUIView!.responds(to:#selector(setter: UIView.backgroundColor)) {
             statusBarUIView!.backgroundColor = .clear
         }
