@@ -28,15 +28,26 @@ extension PopupMenuVC {
             if !eventArraysToProcess.isEmpty {
                 eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
             }
+            
+            dismissPopupMenuAndSave(newTimeBlock: true)
         }
+        else {dismissPopupMenuAndSave(newTimeBlock: false)}
         
         print("\(eventArraysToProcess.count) blocks remaining now; \(eventsInBlockToBeProcessed) events; tag #\(eventIndex + 1)\n")
     }
     
-    func dismissPopupMenuAndSave() {
+    func dismissPopupMenuAndSave(newTimeBlock: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {                        ///print("now paths to process: \(pathsToProcess)")
-            self.removePopupMenuAndSwitch()
+            if newTimeBlock {
+                self.removePopupMenuAndSwitch()
+                
+            }
+            else {
+                classifierVC.collectionView.reloadData()
+            }
+            
             earliestEventAddress = defaultPathOutOfView
+                
             selectedEventWillRecur = false
             
             if pathsToProcess.isEmpty {

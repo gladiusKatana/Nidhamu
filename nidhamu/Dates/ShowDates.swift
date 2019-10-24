@@ -7,13 +7,13 @@ extension CollectionVC {
         
         let column = cell.xyCoordinate[0];  let row = cell.xyCoordinate[1]  /// for now: could also just pass in row & column from caller
         
-        if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
+        if row == earliestEventAddress[1] && column == earliestEventAddress[0] {                        print("showing key timeblock dates")
             cell.layer.borderColor = UIColor.white.cgColor                                              //; print("highlighted cell white")
-            if let events = eventsAtIndexPath[TimeBlock(values:(column, row))], events.count > 1 {
+            if let events = eventsAtIndexPath[TimeBlock(values:(column, row))]/*, events.count > 1*/ {
                 cell.titleLabel.text = "(\(eventIndex + 1)/\(events.count))"
                 //cell.titleLabel.text = "(\(events.count - eventsInBlockToBeProcessed + 1)/\(events.count))"
             }
-            else {cell.titleLabel.text = globalEventIdentifier}             /// for now... when evets.count == 1, can just use previously set event's description via this var
+            else {cell.titleLabel.text = ";;;"}//globalEventIdentifier}             /// for now... when evets.count == 1, can just use previously set event's description via this var
         }
         else {
             let cellWeekday = Calendar.current.component(.weekday, from: cell.cellDate)
@@ -39,7 +39,6 @@ extension CollectionVC {
                 
             default:
                 cell.layer.borderColor = UIColor.clear.cgColor
-                //cell.titleLabel.text = ",,,"
             }
         }
     }

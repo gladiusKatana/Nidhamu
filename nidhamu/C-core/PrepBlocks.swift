@@ -31,7 +31,7 @@ extension CollectionVC {
     
     func processTimeBlocksSinceLastLogin(layout: CustomFlowLayout) {
         if vcType == .hours {
-            if eventArraysToProcess.count > 0 {                         //* or, could have used paths ToProcess.count > 0
+            if eventArraysToProcess.count > 0 {
                 
                 if !savedBlocksAndPathsForProcessing {
                     
@@ -48,20 +48,23 @@ extension CollectionVC {
                     if thereWillBeARowException {
                         let gap = CGFloat(5) / (self.downcastLayout!.cellHeight!)           // extra gap for better aesthetics
                         downcastLayout?.autoFitHScale =
-                            CGFloat(layout.rows) / (CGFloat(layout.rows + 8) + gap)         // popup window is 8 cells tall
+                            CGFloat(layout.rows) / (CGFloat(layout.rows + 8) + gap)         // popup window is 9 cells tall
                         
                         reloadWithDelay(after: 0)                                           //; print("reloaded for size adjustment")
-                        let count = pathsToProcess.count            /// row 21 = 4pm
-                        if count >= 2 && pathsToProcess[count - 2][1] < 21 { /// if 2nd-last index path to process requires resizing (since cells can be swept over...
+                        
+                        let count = pathsToProcess.count
+                        
+                        if count >= 2                   /// * row 21 = 4pm
+                            && pathsToProcess[count - 2][1] < 21 {  /// if 2nd-last index path to process requires resizing (since cells can be swept over...
                             classifierVC.removePopupMenuAndSwitch() /// ...repeatedly, within 1 session (eg user could leave timetable open for multiple hours, it just auto-updates)
                         }
+                        
                         thereWillBeARowException = false
                     }
                     
-                    tagEventsSinceLastLogin()
-                    ///print(".\(eventArraysToProcess.count) blocks remaining now; \(eventsInBlockToBeProcessed) events; tag #\(eventIndex + 1)\n")
-                } ///else {print(".already processed")} ///already saved blocks & paths for processing
-
+                    tagEventsSinceLastLogin()       ///; print(".\(eventArraysToProcess.count) blocks remaining now; \(eventsInBlockToBeProcessed) events; tag #\(eventIndex + 1)\n")
+                }
+                
             } else {DispatchQueue.main.asyncAfter(deadline: .now() + 1) {AppUtility.lockOrientation(.all)}}
         }
     }
