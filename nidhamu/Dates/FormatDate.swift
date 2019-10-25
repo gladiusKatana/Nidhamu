@@ -6,6 +6,7 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     let (year, _, month, mnth, day, weekday, wkdy, hour, minute, second) = getChosenDateComponents(date, roundedDown: roundedDown)
     
     var minTwoDigits = "\(minute)";             if minute < 10 {minTwoDigits = "0\(minute)"}
+    var sec2Digs = "\(second)";                 if second < 10 {sec2Digs = "0\(second)"}
     var ampm = "";                              if hour < 13 {ampm = "am"} else {ampm = "pm"} // since hr is by default 24hr
     
     var hr = (hour < 13) ? hour : hour - 12
@@ -18,7 +19,7 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     switch dateFormat {
         
     case .fullDay:                  return "\(prefix)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits)\(ampm)\(suffix)"
-    case .fullDayWithSeconds:       return "\(prefix)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits):\(second)\(ampm)\(suffix)"
+    case .fullDayWithSeconds:       return "\(prefix)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits):\(sec2Digs)\(ampm)\(suffix)"
     case .fullDayShortForm:         return "\(prefix)\(wkdy). \(mnth). \(day), \(yearString)\(hr)\(ampm)\(suffix)"
     case .fullDayShortFormNoDots:   return "\(prefix)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString)\(hr)\(ampm)\(suffix)"
     case .archiveFormat:            return "\(prefix)\(weekday) \(month) \(day) \(year) @ \(hr)\(ampm)\(suffix)"
