@@ -24,14 +24,18 @@ extension PopupMenuVC {
                 
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = selectedStatus!
                 
-                if [EventStatus.deferred, EventStatus.upcoming].contains(selectedStatus) {
+                if [EventStatus.deferred, EventStatus.upcoming].contains(selectedStatus)
+                || selectedEventWillRecur {
                     eventWillShowUpNextWeek = true
                 }
                 
                 if !eventWillShowUpNextWeek {addToArchives(eventBeingTagged)}
                 else {
-                    if selectedStatus == .deferred {
-                        
+                    if selectedEventWillRecur {
+                        addToArchives(eventBeingTagged)
+                        eventBeingTagged.eventDate += TimeInterval(86400 * 7)
+                    }
+                    if selectedStatus == .deferred { /// if task is deferred, but also marked recurring, recurring has no additional effect: task shows up just once next week, not twice
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                             timetableVC.setNavBarTitle(customString: nil) /// call it on any of the CollectionVCs
                             
