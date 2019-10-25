@@ -6,7 +6,7 @@ extension CollectionVC {
         eventField.removeFromSuperview()
         eventField.resignFirstResponder()
         if !tempRescalingBool {
-            globalWindow.backgroundColor = .white //defaultWindowBackgroundColour
+            globalWindow.backgroundColor = .white
             backgroundVC.view.backgroundColor = globalWindow.backgroundColor
         }
         keyboardHeight = 0; textFieldDisplayed = false
@@ -43,7 +43,7 @@ extension PopupMenuVC {
             
             if pathsToProcess.isEmpty {
                 defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntEvents: true)
-                AppUtility.lockOrientation(.all)                                        ///; print("rotated back")
+                AppUtility.lockOrientation(.all)
             } else {defaultSaveData(saveDate: false, resetLastLogin: false, showDate: false, pryntEvents: false)}
             
             timetableVC.reloadCV()                                                      ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")

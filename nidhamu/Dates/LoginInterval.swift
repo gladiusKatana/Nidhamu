@@ -14,7 +14,9 @@ extension CollectionVC {
             ///if !saved TimeBlocksForProcessing { // this conditional would only be needed if doing the animation below
             ///if column < nowColumn || (column == nowColumn && row < nowRow) {cell.backgroundColor = .green; cell.cellColour = .green}
             ///else { // the  if  on the line above is purely for testing purposes
+            
             cell.backgroundColor = orangeForBlocksSinceLastLogin; cell.cellColour = orangeForBlocksSinceLastLogin
+            
             ///}
             ///animateCellColourBack(cell: cell, delay: 3, duration: 10)
             ///}

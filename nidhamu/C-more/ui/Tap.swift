@@ -25,7 +25,7 @@ extension CollectionVC {
                     
                     if previousTimeBlockPathSelected == defaultPathOutOfView {
                         previousTimeBlockPathSelected = selectedTimeBlockPath
-                        
+
                         ///setNavBarTitle(customString: " Add an Event (Tap Done to quit)")                                                           // may not use.  Gives User too much extra stuff to look at?
                         animateTimeBlockTappedToAddEvent(cell: cell)                                /// may not use. Looks nice; slows User down a little bit?
                         showTimeInTitleLabels(cell: cell)
@@ -66,3 +66,4 @@ extension CollectionVC {
  if !textFieldDisplayed {presentTextField(after: 1, dateString: selectedTimeBlockDateDescription)}
  else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}
  } else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}*/
+

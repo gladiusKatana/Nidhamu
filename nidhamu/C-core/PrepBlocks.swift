@@ -4,28 +4,24 @@ import UIKit
 extension CollectionVC {
     
     func prepareToProcessEventsSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
-        if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] { ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
+        if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {    ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             if !savedBlocksAndPathsForProcessing {
                 
                 if !pathsToProcess.contains([column, row]) {
-                    pathsToProcess.append([column, row])                //; print("appending path \([column, row])")
+                    pathsToProcess.append([column, row])                        //; print("appending path \([column, row])")
                 }
                 ///else {print("path array-of-arrays already contains path: \([column, row])")}
-                
-                /*if !eventArraysToProcess.contains(events) {
-                 eventArraysToProcess.append(events)
-                 }*/
                 
                 var eventDescriptions = [String]()
                 for event in events {eventDescriptions.append(event.eventDescription)}
                 
                 if !eventDescriptionsToProcess.contains(eventDescriptions) {
-                    eventDescriptionsToProcess.append(eventDescriptions)    //; print("appending descriptions \(eventDescriptions)")
+                    eventDescriptionsToProcess.append(eventDescriptions)        //; print("appending descriptions \(eventDescriptions)")
                     eventArraysToProcess.append(events)
                 }
                 ///else {print("event array-of-arrays already contains events: \(events)")}
             }
-            if row >= 21 {thereWillBeARowException = true}              /// corresponds to the row whose cellDates are at 4pm
+            if row >= 21 {thereWillBeARowException = true}  /// corresponds to the row whose cellDates are at 4pm
         }
     }
     
@@ -62,7 +58,7 @@ extension CollectionVC {
                         thereWillBeARowException = false
                     }
                     
-                    tagEventsSinceLastLogin()       ///; print(".\(eventArraysToProcess.count) blocks remaining now; \(eventsInBlockToBeProcessed) events; tag #\(eventIndex + 1)\n")
+                    tagEventsSinceLastLogin()   ///; print(".\(eventArraysToProcess.count) blocks remaining now; \(eventsInBlockToBeProcessed) events; tag #\(eventIndex + 1)\n")
                 }
                 
             } else {DispatchQueue.main.asyncAfter(deadline: .now() + 1) {AppUtility.lockOrientation(.all)}}

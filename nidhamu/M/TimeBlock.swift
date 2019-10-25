@@ -38,7 +38,7 @@ extension CollectionVC {
     }
 }
 
-//struct ArchiveBlock<T: Hashable, U: Hashable, V: Hashable, W: Hashable>: Hashable {
+//struct ArchiveBlock<T: Hashable, U: Hashable, V: Hashable, W: Hashable>: Hashable {           /// used in eventsAtDate (not implemented (yet).)
 //
 //    let values : (T, U, V, W)
 //    func hash(into hasher: inout Hasher) {
@@ -48,6 +48,7 @@ extension CollectionVC {
 //}
 //
 //func ==<T:Hashable,U:Hashable,V:Hashable,W:Hashable>(lhs: ArchiveBlock<T,U,V,W>,
-//                                                     rhs: ArchiveBlock<T,U,V,W>) -> Bool {   /// comparison function for conforming to Equatable protocol
+//                                                     rhs: ArchiveBlock<T,U,V,W>) -> Bool {    /// comparison function for conforming to Equatable protocol
 //    return lhs.values == rhs.values
 //}
+

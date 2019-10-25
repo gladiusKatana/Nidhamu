@@ -18,7 +18,7 @@ extension CollectionVC {
     
     func rePresentTextField() {        //print("re-presenting text field & keyboard")
         ///eventField.placeholder = "..."
-        ///eventField.removeFromSuperview()     /// causes a blink if keyboard is locked (since it dismisses & re-presents the keyboard & text field on every  reload Data (). )
+        ///eventField.removeFromSuperview()     /// do not uncomment: causes a blink if keyboard is locked (since it dismisses & re-presents the keyboard & text field on every  reload Data (). )
         
         if vcType != .archive {
             var contents = ""
@@ -41,7 +41,7 @@ extension CollectionVC {
         eventField.delegate = self
         eventField.frame = CGRect(x: eighthWidth, y: textFieldY, width: textFieldWidth, height: textFieldHeight)
         
-        ///        eventField.attributedPlaceholder = NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        ///eventField.attributedPlaceholder = NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         
         view.addSubview(eventField)
         eventField.becomeFirstResponder()

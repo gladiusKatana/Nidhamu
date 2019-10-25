@@ -43,12 +43,12 @@ func printEventsTabularized() { // optimized for console printing on an iPad Min
 
 func pryntLastLoginDate() { /// spelling 'prynt' with a y so this function's existence does not cause override of autocomplete for print statements
     print(formattedDateString(lastLoginDate, roundedDown: false, showYear: true,
-                              prefix: "last login              ", suffix: "", dateFormat: .fullDay))    ///print("              (unformatted gmt) \(lastLoggedInDate)\n")
+                              prefix: "last login              ", suffix: "", dateFormat: .fullDay))  ///print("              (unformatted gmt) \(lastLoggedInDate)\n")
 }
 
 func pryntCurrentDate() {
     print(formattedDateString(Date(), roundedDown: false, showYear: true,
                               prefix: "date right now          ", suffix: "", dateFormat: .fullDay))
-    print("")                                                                                           ///print("              (unformatted gmt)    \(Date())\n")
+    print("")                                                                                         ///print("              (unformatted gmt)    \(Date())\n")
 }
 

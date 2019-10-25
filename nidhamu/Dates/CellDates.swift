@@ -8,9 +8,7 @@ extension CollectionVC {
                                     column: column, row: row, layout: layout, looping: looping, withColours: withColours)
         
         if [2, 3, 4].contains(row) {
-            ///if vcType != .deferralDates {
             setupHeaderDateLabels(cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
-            ///}
         }
         else {
             cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 0,

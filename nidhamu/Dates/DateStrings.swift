@@ -28,6 +28,6 @@ func getChosenDateComponents(_ inputDate: Date, roundedDown: Bool)
         
         let second = Calendar.current.component(.second, from: inputDate)
         
-        return (year, monthInt, month, mnth, day, weekday, wkdy, hour, minute, second)    /// MAY CRASH IF DEVICE  NOT  ON 24HR TIME (seems bug is gone; will double check)
+        return (year, monthInt, month, mnth, day, weekday, wkdy, hour, minute, second)  /// MAY CRASH IF DEVICE  NOT  ON 24HR TIME (double check bug is gone;)
 }
 

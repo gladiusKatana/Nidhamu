@@ -37,11 +37,6 @@ extension CustomFlowLayout {
         if !embeddedInNavController {compensateForNavigationAndStatusBars(forCollectionVC: classifierVC, withDelta: 0)}
         else {
             var statusBarDelta = 0.0
-            
-            /*if UIApplication.shared.statusBarFrame.size.height > 20 {
-             statusBarDelta = Double(UIApplication.shared.statusBarFrame.size.height - 20)
-             }*/
-            
             let statusBarTestHeight = (globalWindow.windowScene?.statusBarManager!.statusBarFrame)!.height
             if statusBarTestHeight > 20 {
                 statusBarDelta = Double(statusBarTestHeight - 20)

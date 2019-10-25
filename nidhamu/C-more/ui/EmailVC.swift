@@ -9,6 +9,7 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
     override func viewDidLoad() {                                                               //print("email Composer didLoad")
         super.viewDidLoad()
     }
+    
     func canSendEmail() -> Bool {                                                               /// A wrapper function to indicate whether or not an email
         return MFMailComposeViewController.canSendMail()                                        /// can be sent from the user's device
     }
@@ -45,8 +46,7 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {      //print("\nEMAIL dismissed📪\n")
         AppUtility.lockOrientation(.all)
-        //backgroundVC.view.removeFromSuperview()
-        emailComposer.emailComposeVC.view.removeFromSuperview()
+        emailComposer.emailComposeVC.view.removeFromSuperview() ///; backgroundVC.view.removeFromSuperview()
     }
 }
 

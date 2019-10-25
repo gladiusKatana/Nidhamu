@@ -17,7 +17,7 @@ extension AppDelegate {
             lastStatusBarHeight = 0
         }
         else {
-            launchOrientation = " ?"                            ; print("launch orientation undefined")
+            launchOrientation = " ?"                        ; print("launch orientation undefined")
             lastStatusBarHeight = 99
         }
         
@@ -37,7 +37,7 @@ func checkOrientation() {
     else if currentHeight < currentWidth {
         currentOrientation = "landscape"
     }
-    else {print("\n\nUm, global key window frame height & width are equal...")}//shouldn't get called... unless Apple decides to make a square device
+    else {print("\n\nUm, global key window frame height & width are equal...")} /// shouldn't get called... unless Apple decides to make a square device
     
     //print("check orientation: \(currentOrientation)")
 }

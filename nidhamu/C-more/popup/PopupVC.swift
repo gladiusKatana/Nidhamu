@@ -3,8 +3,7 @@ import UIKit
 
 class PopupMenuVC: UICollectionViewController, UIGestureRecognizerDelegate {
     
-    var downcastLayout : CustomFlowLayout? 
-    
+    var downcastLayout : CustomFlowLayout?
     
     override init(collectionViewLayout layout: UICollectionViewLayout) {
         super.init(collectionViewLayout: layout)

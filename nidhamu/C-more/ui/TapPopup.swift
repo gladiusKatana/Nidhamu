@@ -48,7 +48,6 @@ extension PopupMenuVC {
                 }
                 
                 updateBlockProcessingVariables(column: clm, row: rw, eventWillShowUpNextWeek: eventWillShowUpNextWeek)
-                ///dismissPopupMenuAndSave()
             }
         } else {print("selected popup menu header")}
     }

@@ -12,11 +12,11 @@ func findSortingTransform(_ input: [[Int]], output: [[Int]]) -> [Int] { // Only 
 }
 
 func findDateSortingTransform(_ input: [[Date]], output: [[Date]]) -> [Int] {
-    var transform = [Int]()                                             // ...so duplication when looping over elements is not an issue
+    var transform = [Int]()                                             // see comments above
     
-    for element in input {                                              // Note, index path array (input) is date-sorted)...
+    for element in input {
         transform.append(output.firstIndex(of: element)!)
-    }                                                                   // ...that's why it's used to find the sorting transform
+    }
     return transform
 }
 
@@ -32,7 +32,7 @@ func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
         output[transform[i]] = element                                  //print("inserting \(element) at \(transform[i])")
         if i < transform.count - 1 {i += 1}
     }
-    return output // return the input, mutated (sorted); would make this a mutating func, but it's global
+    return output /// return the input, mutated (sorted); would make this a mutating func, but it's global
 }
 
 

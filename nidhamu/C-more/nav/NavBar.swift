@@ -11,7 +11,9 @@ extension CollectionVC {
         let lockKeyboardButton = setupButton(selector: #selector(keyboardLockWrapper), title: "wrench")
         
         var barButtonColours = [UIColor]()
+        
         let buttons = [timetableButton, archiveButton, /*reloadButton,*/ lockKeyboardButton]
+        
         navigationItem.rightBarButtonItems = buttons
         
         for _ in buttons {

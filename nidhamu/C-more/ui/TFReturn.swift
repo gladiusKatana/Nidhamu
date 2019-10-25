@@ -33,14 +33,16 @@ extension CollectionVC {    /// ** commented code here is for animations
             if vcType == .todoList {
                 if let events = eventsAtIndexPath[timeBlock] {  /// if time-block is not empty
                     todoListVC.downcastLayout!.rows = events.count
-                    ///reload CV()
                 }
             }
         }
         
         textField.text = ""
+        
         if !keyboardLocked {exitEventAddingMode()}
+        
         reloadCV()
+        
         return true
     }
 }

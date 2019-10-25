@@ -19,7 +19,8 @@ extension CollectionVC {
         cell.xyCoordinate = [column, row]
         
         if vcType == .hours || vcType == .deferralDates {
-            if currentOrientation == "landscape" { var size = 0
+            if currentOrientation == "landscape" {
+                var size = 0
                 if textFieldDisplayed{size = 7} else {size = 8}
                 cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(size), weight: .ultraLight)
             }

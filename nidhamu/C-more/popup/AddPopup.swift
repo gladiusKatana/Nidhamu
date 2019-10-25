@@ -28,7 +28,7 @@ extension CollectionVC {
                 classifierVC.downcastLayout?.customFrame = popupCollectionViewFrame
                 classifierVC.collectionView.frame = popupCollectionViewFrame
                 
-                let hscale = timetableVC.downcastLayout!.autoFitHScale!             //* make sure this is extensible (ie,  if column >= 6 )
+                let hscale = timetableVC.downcastLayout!.autoFitHScale!     //* make sure this is extensible (ie,  if column >= 6 )
                 classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
                                                                                   left: 0, bottom: 0, right: 0)
                 classifierVC.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
