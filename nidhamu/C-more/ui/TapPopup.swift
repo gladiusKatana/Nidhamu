@@ -25,7 +25,7 @@ extension PopupMenuVC {
                 eventsOfBlockBeingTagged[eventIndex].eventStatus = selectedStatus!
                 
                 if [EventStatus.deferred, EventStatus.upcoming].contains(selectedStatus)
-                || selectedEventWillRecur {
+                    || selectedEventWillRecur {
                     eventWillShowUpNextWeek = true
                 }
                 
@@ -45,14 +45,12 @@ extension PopupMenuVC {
                             timetableVC.gotoView(vc: deferralVC)
                             tempRescalingBool = false
                             
-                            eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(clm, rw)))!)
                             deferredDescription = globalEventIdentifier
                         }
                     }
                 }
-                
-                updateBlockProcessingVariables(column: clm, row: rw, eventWillShowUpNextWeek: eventWillShowUpNextWeek)
-            }
+                updateBlockProcessingVariables(column: clm, row: rw, eventWillShowUpNextWeek: eventWillShowUpNextWeek, selectedStatus: selectedStatus!)
+            } else {print("no event in dictionary at that indext path")}
         } else {print("selected popup menu header")}
     }
 }

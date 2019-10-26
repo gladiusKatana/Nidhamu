@@ -14,12 +14,14 @@ extension CollectionVC {
 }
 
 extension PopupMenuVC {
-    func updateBlockProcessingVariables(column: Int, row: Int, eventWillShowUpNextWeek: Bool) {
+    func updateBlockProcessingVariables(column: Int, row: Int, eventWillShowUpNextWeek: Bool, selectedStatus: EventStatus) {
         if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
         if eventsInBlockToBeProcessed > 0 {eventsInBlockToBeProcessed -= 1}
         
         if eventsInBlockToBeProcessed == 0 { ///print("ZERO!\n")
-            if !eventWillShowUpNextWeek {eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(column, row)))!)}
+            if !eventWillShowUpNextWeek || selectedStatus == .deferred {
+                eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(column, row)))!)
+            }
             
             eventIndex = 0
             pathsToProcess.removeFirst(); eventArraysToProcess.removeFirst(); eventDescriptionsToProcess.removeFirst()
