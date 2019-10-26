@@ -2,16 +2,15 @@
   
   
   
-  ⁌o⁍ handle daylight savings
-  ⁌o⁍ defer task on multi-task block
+  ⁌o⁍ handle daylight savings Nov 3
   
   nav buttons cleanup
   nav buttons colouring rewrite
   
   Numbers template                                                                                  UX
   Excel template
-  archive frequency reminders on*
-  settings menu                                                     Mon Oct 21
+  archive frequency reminders
+  settings menu                                                     Sun Oct 27
   
   
   
@@ -20,7 +19,7 @@
   launch screen
   triple check logic, refactor, cleanup
   improve comments
-  run on same devices as Beta Users'                                Oct 28 (public beta)
+  run on same devices as Beta Users'                                Wed Oct 30 (public beta)
   
   
   
