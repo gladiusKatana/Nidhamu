@@ -22,15 +22,12 @@ extension CollectionVC {
         
         ///let barButtonColours = [graySeven, graySeven, graySeven, graySeven,]   /// hardcoding button colours (may be easier, depends how many more buttons & colour exceptions)
         
-        for button in navigationItem.rightBarButtonItems! {
+        for button in buttons {
             ///if button == reloadButton {button.tintColor = grayBarelyThere}
-            /*else */if button == lockKeyboardButton {button.tintColor = grayTwo}
-            else {
-                if let index = navigationItem.rightBarButtonItems?.firstIndex(of: button) {
-                    button.tintColor = barButtonColours[index]
-                }
-                else {print("error with button index")}
+            if let index = buttons.firstIndex(of: button) {
+                button.tintColor = barButtonColours[index]
             }
+            else {print("error with button index")}
         }
         
         if let customColour = withCustomColour {
