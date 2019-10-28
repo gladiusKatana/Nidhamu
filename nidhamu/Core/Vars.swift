@@ -29,7 +29,7 @@ var navBarHeight = 0.0;                         var launchWidth = 0.0
 
 //; var firstBecameActive = false;
 var firstTimeLoaded = false                     /// one-way bool: only flipped to  true  once in app lifecycle
-var rotatedFromResignActive = false;            var reloadedFromHourTickingOver = true;         var savedBlocksAndPathsForProcessing = false
+var rotatedFromResignActive = false;            var reloadedFromHourTickingOver = true;         var cachedBlocksAndTheirPaths = false
 var showConsoleLegend = true;                   var tempRescalingBool = false;                  var thereWillBeARowException = false
 var justPinched = false;                        var keyboardLocked = false
 var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false;    var textFieldDisplayed = false

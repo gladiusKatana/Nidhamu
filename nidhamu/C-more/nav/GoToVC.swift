@@ -5,7 +5,7 @@ extension CollectionVC {
     
     func gotoView(vc: CollectionVC) {                                                       //print("\nshowing vc \(vc)")
         
-        timetableVC.downcastLayout?.autoFitHScale = 1
+        timetableVC.downcastLayout?.autoFitHeightScale = 1
         
         if topVC != vc {
             

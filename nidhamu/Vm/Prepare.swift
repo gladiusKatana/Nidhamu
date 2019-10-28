@@ -34,7 +34,7 @@ extension CustomFlowLayout {
         (cellWidth, cellHeight) = calculateSizes(); resetDimensionIfSquareCellsEnabled()
         widthPlusSpace = cellWidth! + hSpace;       heightPlusSpace = cellHeight! + vSpace
         
-        if !embeddedInNavController {compensateForNavigationAndStatusBars(forCollectionVC: classifierVC, withDelta: 0)}
+        if !embeddedInNavController {compensateForNavigationAndStatusBars(forCollectionVC: taskTaggingViewController, withDelta: 0)}
         else {
             var statusBarDelta = 0.0
             let statusBarTestHeight = (globalWindow.windowScene?.statusBarManager!.statusBarFrame)!.height

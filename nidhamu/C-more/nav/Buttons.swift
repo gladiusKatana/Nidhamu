@@ -16,15 +16,16 @@ extension CollectionVC {
     
     
     @objc func keyboardLockWrapper() {
-        if !textFieldDisplayed {        /// else should probably grey out the button, since button is inactive in that scope
-            keyboardLocked = true
+        
+        if textFieldDisplayed && keyboardLocked {
+            exitEventAddingMode()
+            previousTimeBlockPathSelected = defaultPathOutOfView
+            reloadCV()
         }
-        else {
-            if keyboardLocked {
-                keyboardLocked = false
-                exitEventAddingMode(); reloadCV()
-            }
-        }
+        
+        keyboardLocked = !keyboardLocked
+        
+        setupNavBarButtons(grayTwo, greyIndex: colourIndex)
     }
     
     

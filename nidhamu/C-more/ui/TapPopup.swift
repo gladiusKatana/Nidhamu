@@ -12,7 +12,7 @@ extension PopupMenuVC {
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
-            guard let firstPathToProcess = pathsToProcess.first else {print("no paths to process... even though popup was presented"); return}
+            guard let firstPathToProcess = indexPathsToProcess.first else {print("no paths to process... even though popup was presented"); return}
             
             let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1]    /// components of path of current item being marked
             var eventWillShowUpNextWeek = false
@@ -40,7 +40,7 @@ extension PopupMenuVC {
                             timetableVC.setNavBarTitle(customString: nil) /// call it on any of the CollectionVCs
                             
                             tempRescalingBool = true
-                            deferralVC.downcastLayout?.autoFitHScale = timetableVC.downcastLayout?.autoFitHScale
+                            deferralVC.downcastLayout?.autoFitHeightScale = timetableVC.downcastLayout?.autoFitHeightScale
                             ///print("rescaled to \(deferralVC.downcastLayout?.autoFitHScale), tt scale is \(timetableVC.downcastLayout?.autoFitHScale)")
                             timetableVC.gotoView(vc: deferralVC)
                             tempRescalingBool = false

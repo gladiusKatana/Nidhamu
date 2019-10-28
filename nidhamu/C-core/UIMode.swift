@@ -15,18 +15,18 @@ extension CollectionVC {
 
 extension PopupMenuVC {
     func updateBlockProcessingVariables(column: Int, row: Int, eventWillShowUpNextWeek: Bool, selectedStatus: EventStatus) {
-        if eventIndex < eventsInBlockToBeProcessed {eventIndex += 1}
-        if eventsInBlockToBeProcessed > 0 {eventsInBlockToBeProcessed -= 1}
+        if eventIndex < tasksInBlockToBeProcessed {eventIndex += 1}
+        if tasksInBlockToBeProcessed > 0 {tasksInBlockToBeProcessed -= 1}
         
-        if eventsInBlockToBeProcessed == 0 { ///print("ZERO!\n")
+        if tasksInBlockToBeProcessed == 0 { ///print("ZERO!\n")
             if !eventWillShowUpNextWeek || selectedStatus == .deferred {
                 eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(column, row)))!)
             }
             
             eventIndex = 0
-            pathsToProcess.removeFirst(); eventArraysToProcess.removeFirst(); eventDescriptionsToProcess.removeFirst()
-            if !eventArraysToProcess.isEmpty {
-                eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
+            indexPathsToProcess.removeFirst(); taskArraysToProcess.removeFirst(); eventDescriptionsToProcess.removeFirst()
+            if !taskArraysToProcess.isEmpty {
+                tasksInBlockToBeProcessed = taskArraysToProcess.first!.count
             }
             
             dismissPopupMenuAndSave(newTimeBlock: true)
@@ -37,13 +37,13 @@ extension PopupMenuVC {
     func dismissPopupMenuAndSave(newTimeBlock: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {                        ///print("now paths to process: \(pathsToProcess)")
             if newTimeBlock {
-                self.removePopupMenuAndSwitch()
+                self.dismissTaggingWizard()
                 earliestEventAddress = defaultPathOutOfView
-            } else {classifierVC.collectionView.reloadData()}
+            } else {taskTaggingViewController.collectionView.reloadData()}
             
             selectedEventWillRecur = false
             
-            if pathsToProcess.isEmpty {
+            if indexPathsToProcess.isEmpty {
                 defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntEvents: true)
                 AppUtility.lockOrientation(.all)
             } else {defaultSaveData(saveDate: false, resetLastLogin: false, showDate: false, pryntEvents: false)}

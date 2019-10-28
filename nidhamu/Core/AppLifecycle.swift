@@ -27,7 +27,7 @@ extension AppDelegate {
             defaultSaveData(saveDate: true, resetLastLogin: false, showDate: true, pryntEvents: true)
         }
         
-        savedBlocksAndPathsForProcessing = false
+        cachedBlocksAndTheirPaths = false
         
         if eventsAtIndexPath.values.count > 0 {  // autorotate for smoother event-tagging IF user dismisses app, then resumes it hours/days later
             if currentOrientation == "landscape" {                                      //print("becameActive from landscape")

@@ -19,7 +19,7 @@ extension CollectionVC {
     
     override func viewWillAppear(_ animated: Bool) {                super.viewWillAppear(animated)
         setNavBarTitle(customString: nil)
-        setupNavBarButtons(grayTwo, atIndex: colourIndex)
+        setupNavBarButtons(grayTwo, greyIndex: colourIndex)
     }
     
     override func viewDidAppear(_ animated: Bool) {                 super.viewDidAppear(animated)

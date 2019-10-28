@@ -34,9 +34,9 @@ extension CustomFlowLayout {
         
         switch cellDimensionsMode {
         case .widthAndHeightHardcoded:  cellWd = cellWidth!;                        cellHt = cellHeight!
-        case .widthHardcoded:           cellWd = cellWidth!;                        cellHt = autoFitHeight * autoFitHScale!
+        case .widthHardcoded:           cellWd = cellWidth!;                        cellHt = autoFitHeight * autoFitHeightScale!
         case .heightHardcoded:          cellWd = autofitWidth * autoFitWScale!;     cellHt = cellHeight!
-        case .neitherHardcoded:         cellWd = autofitWidth * autoFitWScale!;     cellHt = autoFitHeight * autoFitHScale!
+        case .neitherHardcoded:         cellWd = autofitWidth * autoFitWScale!;     cellHt = autoFitHeight * autoFitHeightScale!
         }
         
         return (cellWd, cellHt)

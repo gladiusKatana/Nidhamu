@@ -13,7 +13,7 @@ extension CollectionVC {
                 
                 let layout = self.downcastLayout!;                          let widthMultiplier = CGFloat(2)
                 let cellWidth = layout.widthPlusSpace;                      let cellHeight = layout.heightPlusSpace
-                let popupMenuLayout = classifierVC.downcastLayout!
+                let popupMenuLayout = taskTaggingViewController.downcastLayout!
                 popupMenuLayout.cellWidth = cellWidth * widthMultiplier;    popupMenuLayout.cellHeight = cellHeight
                 
                 let cols = CGFloat(popupMenuLayout.cols)
@@ -25,28 +25,28 @@ extension CollectionVC {
                 if row > 22 {y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)}
                 
                 let popupCollectionViewFrame = CGRect(x: x, y: y, width: wid, height: cellHeight * 5)
-                classifierVC.downcastLayout?.customFrame = popupCollectionViewFrame
-                classifierVC.collectionView.frame = popupCollectionViewFrame
+                taskTaggingViewController.downcastLayout?.customFrame = popupCollectionViewFrame
+                taskTaggingViewController.collectionView.frame = popupCollectionViewFrame
                 
-                let hscale = timetableVC.downcastLayout!.autoFitHScale!     //* make sure this is extensible (ie,  if column >= 6 )
-                classifierVC.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: classifierVC.downcastLayout!.cellHeight! * hscale,
+                let hscale = timetableVC.downcastLayout!.autoFitHeightScale!     //* make sure this is extensible (ie,  if column >= 6 )
+                taskTaggingViewController.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: taskTaggingViewController.downcastLayout!.cellHeight! * hscale,
                                                                                   left: 0, bottom: 0, right: 0)
-                classifierVC.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
-                classifierVC.collectionView.isUserInteractionEnabled = true
+                taskTaggingViewController.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
+                taskTaggingViewController.collectionView.isUserInteractionEnabled = true
                 
                 let switchViewHeight = cellHeight * 4 //eventRecurringSwitchView.popupSwitch.frame.height + cellHeight * 2
                 eventRecurringSwitchView = PopupSwitchView(frame:
                     CGRect(x: x, y: y + popupCollectionViewFrame.height,
                            width: wid, height: switchViewHeight))           ; eventRecurringSwitchView.backgroundColor = popupMenuLightGray
                 
-                timetableVC.view.addSubview(classifierVC.view)              //; print("----------------adding popup")
+                timetableVC.view.addSubview(taskTaggingViewController.view)              //; print("----------------adding popup")
                 timetableVC.view.addSubview(eventRecurringSwitchView)       //; print("adding switch")
                 
-                classifierVC.becomeFirstResponder()
+                taskTaggingViewController.becomeFirstResponder()
                 classifierViewDisplayed = true
-                classifierVC.collectionView.reloadData()
+                taskTaggingViewController.collectionView.reloadData()
                 
-                classifierVC.keepScrollIndicatorsVisible()
+                taskTaggingViewController.keepScrollIndicatorsVisible()
                 self.addBorderAroundTimeBlockCurrentlyBeingMarked()
             }
         }

@@ -3,16 +3,18 @@ import UIKit
 
 extension CollectionVC {
     
-    func setupNavBarButtons(_ withCustomColour: UIColor?, atIndex: Int?) {  //print("setting up nav bar buttons")
+    func setupNavBarButtons(_ greyoutColour: UIColor?, greyIndex: Int?) {  //print("setting up nav bar buttons")
         
         let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableImage")
         let archiveButton = setupButton(selector: #selector(buttonWrapperMethodforArchiveVC), title: "calendarImage")
-        ///let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
         let lockKeyboardButton = setupButton(selector: #selector(keyboardLockWrapper), title: "wrench")
+        
+        ///let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
+        ///let barButtonColours = [graySeven, graySeven, graySeven, graySeven,]   /// hardcoding button colours (may be easier, depends how many more buttons & colour exceptions)
         
         var barButtonColours = [UIColor]()
         
-        let buttons = [timetableButton, archiveButton, /*reloadButton,*/ lockKeyboardButton]
+        let buttons = [timetableButton, archiveButton, lockKeyboardButton/*, reloadButton*/]
         
         navigationItem.rightBarButtonItems = buttons
         
@@ -20,22 +22,25 @@ extension CollectionVC {
             if barButtonColours.count <= buttons.count {barButtonColours.append(graySeven)} /// default colour, for the buttons that present all but the current vc
         }
         
-        ///let barButtonColours = [graySeven, graySeven, graySeven, graySeven,]   /// hardcoding button colours (may be easier, depends how many more buttons & colour exceptions)
-        
         for button in buttons {
+            
             ///if button == reloadButton {button.tintColor = grayBarelyThere}
-            if let index = buttons.firstIndex(of: button) {
-                button.tintColor = barButtonColours[index]
+            guard let greyout = greyoutColour else {print("no greyout colour"); return}
+            guard let index = buttons.firstIndex(of: button) else {print("error finding button index"); return}
+            
+            let defaultColour = barButtonColours[index]
+            button.tintColor = defaultColour
+            
+            if index == greyIndex {
+                button.tintColor = greyout
             }
-            else {print("error with button index")}
+            
+            if index == buttons.firstIndex(of: lockKeyboardButton) {
+                if keyboardLocked {button.tintColor = greyout}
+                else {button.tintColor = defaultColour}
+            }
+            
         }
-        
-        if let customColour = withCustomColour {
-            if let colourIndex = atIndex {
-                navigationItem.rightBarButtonItems?[colourIndex].tintColor = customColour
-            } //else {print("<no custom colour index>")}
-        } //else {print("<no custom colour>")}
     }
-    
 }
 

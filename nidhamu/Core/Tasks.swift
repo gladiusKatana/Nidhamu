@@ -4,9 +4,6 @@
   
   ⁌o⁍ handle daylight savings Nov 3
   
-  nav buttons cleanup
-  nav buttons colouring rewrite
-  
   Numbers template                                                                                  UX
   Excel template
   archive frequency reminders

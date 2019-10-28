@@ -71,7 +71,7 @@ var classifierLayout = //---------
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
-var classifierVC = PopupMenuVC(collectionViewLayout: classifierLayout);     var eventRecurringSwitchView = PopupSwitchView()
+var taskTaggingViewController = PopupMenuVC(collectionViewLayout: classifierLayout);     var eventRecurringSwitchView = PopupSwitchView()
 
 let zeroFrame = CGRect(x: 0, y: 0, width: 0, height: 0)               //* Initial value for testing
 

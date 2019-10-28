@@ -4,7 +4,7 @@ import UIKit
 class CustomFlowLayout : UICollectionViewFlowLayout {
     
     var cellWidth: CGFloat?;                var cellHeight: CGFloat?
-    var autoFitWScale: CGFloat?;            var autoFitHScale: CGFloat?
+    var autoFitWScale: CGFloat?;            var autoFitHeightScale: CGFloat?
     
     var hSpace = CGFloat(0);                var vSpace = CGFloat(0)
     var widthPlusSpace = CGFloat(0);        var heightPlusSpace = CGFloat(0);   var xDefault = CGFloat(0);  var yDefault = CGFloat(0)
@@ -28,7 +28,7 @@ class CustomFlowLayout : UICollectionViewFlowLayout {
         
         self.lockedHeaderRows = lockedHeaderRows;   self.lockedHeaderSections = lockedHeaderSections
         self.cellWidth = cellWidth;                 self.cellHeight = cellHeight
-        self.autoFitHScale = (autoFitHScale != nil) ? autoFitHScale : 1
+        self.autoFitHeightScale = (autoFitHScale != nil) ? autoFitHScale : 1
         self.autoFitWScale = (autoFitWScale != nil) ? autoFitWScale : 1
         
         self.hSpace = hSpace;                       self.vSpace = vSpace

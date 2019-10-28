@@ -22,8 +22,8 @@ extension CollectionVC {
                     return
                 }
                 
-                if pathsToProcess.count > 0 {
-                    earliestEventAddress = pathsToProcess.first!
+                if indexPathsToProcess.count > 0 {
+                    earliestEventAddress = indexPathsToProcess.first!
                 }
                 
                 timetableVC.showKeyTimeBlockDates(cell: cell)
