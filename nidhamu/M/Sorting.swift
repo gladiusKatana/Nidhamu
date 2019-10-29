@@ -36,7 +36,7 @@ func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
 }
 
 
-func lastEventFromPath(_ path: [Int]) -> SimpleEvent {
+func lastTaskFromPath(_ path: [Int]) -> SimpleEvent {
     let err = "no item @ path [sort attempt]"
     
     /// arbitrary parameters to satisfy initializer:

@@ -20,9 +20,9 @@ extension PopupMenuVC {
             if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(clm, rw))] {  /// writing to the dictionary
                 
                 let selectedStatus = EventStatus(rawValue: row)
-                let eventBeingTagged = eventsOfBlockBeingTagged[eventIndex]
+                let eventBeingTagged = eventsOfBlockBeingTagged[taskIndex]
                 
-                eventsOfBlockBeingTagged[eventIndex].eventStatus = selectedStatus!
+                eventsOfBlockBeingTagged[taskIndex].eventStatus = selectedStatus!
                 
                 if [EventStatus.deferred, EventStatus.upcoming].contains(selectedStatus)
                     || selectedEventWillRecur {
@@ -33,7 +33,7 @@ extension PopupMenuVC {
                 else {
                     if selectedEventWillRecur {
                         addToArchives(eventBeingTagged)
-                        eventBeingTagged.eventDate += TimeInterval(86400 * 7)
+                        eventBeingTagged.deadline += TimeInterval(86400 * 7)
                     }
                     if selectedStatus == .deferred { /// if task is deferred, but also marked recurring, recurring has no additional effect: task shows up just once next week, not twice
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {

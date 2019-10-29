@@ -3,7 +3,7 @@ import UIKit
 
 enum CollectionViewType: Int {
     case initial = 0
-    case hours, todoList, archive, deferralDates,
+    case timetable, todoList, archive, deferralDates,
     days, months, years, eventClassifier
     
     func simpleDescription() -> String {
@@ -13,7 +13,7 @@ enum CollectionViewType: Int {
         case .initial:
             return "initial value to satisfy initializer of global collection view controller 'currentTopVC'"
             
-        case .hours:
+        case .timetable:
             return "shows the hours of this week"
             
         case .todoList:

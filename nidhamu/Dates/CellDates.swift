@@ -7,6 +7,8 @@ extension CollectionVC {
         cell.cellDate = setCellDate(baseDate: Date(), cellOffset: layout.lockedHeaderRows - row, cell: cell,
                                     column: column, row: row, layout: layout, looping: looping, withColours: withColours)
         
+
+        
         if [2, 3, 4].contains(row) {
             setupHeaderDateLabels(cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
         }
@@ -14,19 +16,18 @@ extension CollectionVC {
             cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 0,
                                         cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
             
-            if vcType != .deferralDates {processEventsBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)}
+            if viewControllerType != .deferralDates {processEventsBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)}
+            else {cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)}
             
-            if vcType == .deferralDates {showTimeInTitleLabels(cell: cell)}
-        }
-        
-        if row >= layout.lockedHeaderRows && vcType != .deferralDates {
-            showKeyTimeBlockDates(cell: cell)
+            if row >= layout.lockedHeaderRows && viewControllerType != .deferralDates {
+                showKeyTimeBlockDates(cell: cell)
+            }
         }
         
         if [column, row] == selectedTimeBlockPath {
             if textFieldDisplayed {
                 cell.backgroundColor = eventAddingColour
-                showTimeInTitleLabels(cell: cell)
+                cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
             }
         }
     }

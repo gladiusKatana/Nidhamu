@@ -23,14 +23,14 @@ extension CollectionVC {    /// ** commented code here is for animations
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered,
                             eventDeadline: selectedCellDate, withStatus: nil)
             
-            if vcType == .hours {
+            if viewControllerType == .timetable {
                 if !keyboardLocked {
                     selectedTimeBlockPath = defaultPathOutOfView
                     previousTimeBlockPathSelected = defaultPathOutOfView
                 }
             }
             
-            if vcType == .todoList {
+            if viewControllerType == .todoList {
                 if let events = eventsAtIndexPath[timeBlock] {  /// if time-block is not empty
                     todoListVC.downcastLayout!.rows = events.count
                 }

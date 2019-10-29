@@ -28,7 +28,7 @@ var deferralLayout = //---------
         loadsHorizontally: false,               //❗️if loadsHorizontally is true, 'rows' look like columns
         squareCellMode: .noAutoSquare)
 
-var timetableVC = CollectionVC(.hours, backgroundColour: defaultWindowBackgroundColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: 0, collectionViewLayout: timetableLayout)
+var timetableVC = CollectionVC(.timetable, backgroundColour: defaultWindowBackgroundColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: 0, collectionViewLayout: timetableLayout)
 
 var deferralVC = CollectionVC(.deferralDates, backgroundColour: .white, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: nil, collectionViewLayout: deferralLayout)
 

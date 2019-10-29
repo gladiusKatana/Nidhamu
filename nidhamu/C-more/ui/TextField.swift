@@ -20,7 +20,7 @@ extension CollectionVC {
         ///eventField.placeholder = "..."
         ///eventField.removeFromSuperview()     /// do not uncomment: causes a blink if keyboard is locked (since it dismisses & re-presents the keyboard & text field on every  reload Data (). )
         
-        if vcType != .archive {
+        if viewControllerType != .archive {
             var contents = ""
             
             if let placeholder = eventField.placeholder {

@@ -16,6 +16,7 @@ extension CollectionVC {
             ///else { // the  if  on the line above is purely for testing purposes
             
             cell.backgroundColor = orangeForBlocksSinceLastLogin; cell.cellColour = orangeForBlocksSinceLastLogin
+            cell.titleLabel.font = defaultTimetableCellFont
             
             ///}
             ///animateCellColourBack(cell: cell, delay: 3, duration: 10)

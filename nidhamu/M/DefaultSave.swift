@@ -12,7 +12,7 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
         timeBlockPaths.append([a, b])
     }
     
-    sortedTimeBlockPaths = timeBlockPaths.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
+    sortedTimeBlockPaths = timeBlockPaths.sorted(by: {lastTaskFromPath($0).deadline < lastTaskFromPath($1).deadline})
     sortingTransform = findSortingTransform(timeBlockPaths, output: sortedTimeBlockPaths)           //; print("T:\(sortingTransform)\n")
     
     for vals in eventsAtIndexPath.values {
@@ -25,7 +25,7 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
             for event in vals {
                 eventDescriptions.append(event.eventDescription)
                 eventStatuses.append(event.eventStatus.rawValue)
-                let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(event.eventDate, roundedDown: true)
+                let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(event.deadline, roundedDown: true)
                 eventDateComponents.append([year, month, day, weekday, hour, minute])
             }
             eventDescriptionArrays.append(eventDescriptions)
@@ -60,7 +60,7 @@ func setForKeys(_ defaults: UserDefaults, saveDate: Bool, resetLastLogin: Bool) 
 }
 
 func getEventDateComponents(_ event: SimpleEvent) -> [Int] {
-    let (year, monthInt, _, _ , day, _, _, hour, _, _) = getChosenDateComponents(event.eventDate, roundedDown: false)
+    let (year, monthInt, _, _ , day, _, _, hour, _, _) = getChosenDateComponents(event.deadline, roundedDown: false)
     
     return [year, monthInt, day, hour]
 }

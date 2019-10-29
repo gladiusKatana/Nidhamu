@@ -12,7 +12,7 @@ extension CollectionVC {
     }
     
     
-    func reloadWithDelay(after timeDelay: Double) {                 /// called 2 times in this program
+    func reloadCollectionViewAfterDelay(_ timeDelay: Double) {                 /// called 2 times in this program
         
         //print("↺d")
         

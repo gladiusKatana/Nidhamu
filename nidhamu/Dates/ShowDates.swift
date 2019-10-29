@@ -5,14 +5,15 @@ extension CollectionVC {
     
     func showKeyTimeBlockDates(cell: CustomCell) {
         
-        let column = cell.xyCoordinate[0];  let row = cell.xyCoordinate[1]          /// for now: could also just pass in row & column from caller
+        let column = cell.xyCoordinate[0];  let row = cell.xyCoordinate[1]         /// for now: could also just pass in row & column from caller
         
         if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
-            cell.layer.borderColor = UIColor.white.cgColor                          //; print("highlighted cell white")
+            cell.layer.borderColor = UIColor.white.cgColor                         //; print("highlighted cell white")
             if let events = eventsAtIndexPath[TimeBlock(values:(column, row))], events.count > 1 {
-                cell.titleLabel.text = "(\(eventIndex + 1)/\(events.count))"        ///= "(\(events.count - eventsInBlockToBeProcessed + 1)/\(events.count))"
+                cell.titleLabel.text = "(\(taskIndex + 1)/\(events.count))"        ///= "(\(events.count - eventsInBlockToBeProcessed + 1)/\(events.count))"
+                cell.titleLabel.font = defaultTimetableCellFont
             }
-            else {cell.titleLabel.text = globalEventIdentifier}                     /// when evets.count == 1, can just use previously set event's description via this var
+            else {cell.titleLabel.text = globalEventIdentifier}                    /// when evets.count == 1, can just use previously set event's description via this var
         }
         else {
             let cellWeekday = Calendar.current.component(.weekday, from: cell.cellDate)
@@ -27,13 +28,13 @@ extension CollectionVC {
             switch (cellWeekday, cellHour) {
                 
             case (thisWeek, thisHour) :
+                
                 pryntConditionalKeyDateID("now", cell: cell, row: row, column: column)
-                cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
                 cell.layer.borderColor = UIColor.black.cgColor
                 
             case (lastLoginWeek, lastLoginHour) :
                 pryntConditionalKeyDateID("last login", cell: cell, row: row, column: column)
-                cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
+                cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)
                 cell.layer.borderColor = UIColor.clear.cgColor
                 
             default:
@@ -54,8 +55,8 @@ extension CollectionVC {
         cell.titleLabel.text = "\(mo) \(dy)" // will add this to formattedDateString(:), if it gets used anywhere else as well
     }
     
-    func showTimeInTitleLabels(cell: CustomCell) {              // not used-- at the moment. for testing
-        cell.titleLabel.text = formattedDateString(cell.cellDate, roundedDown: true, showYear: false, prefix: "", suffix: "", dateFormat: .timeOnly)
+    func showTimeInTitleLabels(_ date: Date) -> String {
+        return formattedDateString(date, roundedDown: true, showYear: false, prefix: "", suffix: "", dateFormat: .timeOnly)
     }
 }
 

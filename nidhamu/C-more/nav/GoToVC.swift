@@ -18,7 +18,7 @@ extension CollectionVC {
                 ///(empty; may remove the completion handler from this method)
             }
             
-        } else {print("you're already looking at the \(vc.vcType)-view")}
+        } else {print("you're already looking at the \(vc.viewControllerType)-view")}
     }
     
     func setupTitleAndPresentViewController(vc: CollectionVC, completion: () -> ()) {       //print("\ndismissing/presenting vc: \(vc)")

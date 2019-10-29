@@ -4,7 +4,7 @@ import MessageUI
 
 class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRecognizerDelegate/*, MFMailComposeViewControllerDelegate*/ {
     
-    var vcType = CollectionViewType.days;               var downcastLayout: CustomFlowLayout?
+    var viewControllerType = CollectionViewType.days;               var downcastLayout: CustomFlowLayout?
     var colourIndex: Int?;                              var loopWeeks: Bool?; var demarcateWeeksByColour: Bool?
     var showLoadAndAppearIndicationInConsole = false;   var backgroundColour = UIColor.clear
     
@@ -25,7 +25,7 @@ class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRe
     init(_ vcType: CollectionViewType, backgroundColour: UIColor, loopWeeks: Bool?, demarcateWeeksByColour: Bool?,
          colourIndex: Int?, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(collectionViewLayout: layout)
-        self.vcType = vcType
+        self.viewControllerType = vcType
         self.backgroundColour = backgroundColour
         self.loopWeeks = loopWeeks
         self.demarcateWeeksByColour = demarcateWeeksByColour

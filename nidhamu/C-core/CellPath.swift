@@ -5,7 +5,7 @@ extension CollectionVC {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if vcType == .hours {
+        if viewControllerType == .timetable {
             if indexPath.row == 0 {return registerAndReturnLeftCell(collectionView, at: indexPath)}
             else {return registerAndReturnCell(collectionView, at: indexPath)}
         } else {return registerAndReturnCell(collectionView, at: indexPath)}
@@ -18,7 +18,7 @@ extension CollectionVC {
         
         cell.xyCoordinate = [column, row]
         
-        if vcType == .hours || vcType == .deferralDates {
+        if viewControllerType == .timetable || viewControllerType == .deferralDates {
             if currentOrientation == "landscape" {
                 var size = 0
                 if textFieldDisplayed{size = 7} else {size = 8}
@@ -39,7 +39,7 @@ extension CollectionVC {
         else {
             if row < headerRows {
                 cell.backgroundColor = headerColour
-                if row == 1 && vcType == .hours || row == 4  && vcType == .deferralDates{
+                if row == 1 && viewControllerType == .timetable || row == 4  && viewControllerType == .deferralDates{
                     cell.titleLabel.text = headerWeekdayTitles[column - 1]
                 }
                 if (2 ... headerRows - 1).contains(row) {
@@ -56,7 +56,7 @@ extension CollectionVC {
             }
         }
         
-        if vcType == .archive {cell.backgroundColor = .white}
+        if viewControllerType == .archive {cell.backgroundColor = .white}
         
         return cell
     }

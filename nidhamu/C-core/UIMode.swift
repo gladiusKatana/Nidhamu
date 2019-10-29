@@ -15,7 +15,7 @@ extension CollectionVC {
 
 extension PopupMenuVC {
     func updateBlockProcessingVariables(column: Int, row: Int, eventWillShowUpNextWeek: Bool, selectedStatus: EventStatus) {
-        if eventIndex < tasksInBlockToBeProcessed {eventIndex += 1}
+        if taskIndex < tasksInBlockToBeProcessed {taskIndex += 1}
         if tasksInBlockToBeProcessed > 0 {tasksInBlockToBeProcessed -= 1}
         
         if tasksInBlockToBeProcessed == 0 { ///print("ZERO!\n")
@@ -23,7 +23,7 @@ extension PopupMenuVC {
                 eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(column, row)))!)
             }
             
-            eventIndex = 0
+            taskIndex = 0
             indexPathsToProcess.removeFirst(); taskArraysToProcess.removeFirst(); eventDescriptionsToProcess.removeFirst()
             if !taskArraysToProcess.isEmpty {
                 tasksInBlockToBeProcessed = taskArraysToProcess.first!.count
@@ -49,7 +49,7 @@ extension PopupMenuVC {
             } else {defaultSaveData(saveDate: false, resetLastLogin: false, showDate: false, pryntEvents: false)}
             
             timetableVC.reloadCV()                                                      ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
-            timetableVC.tagEventsSinceLastLogin()
+            timetableVC.tagTasksSinceLastLogin()
         }
     }
 }

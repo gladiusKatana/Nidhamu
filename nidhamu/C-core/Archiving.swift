@@ -11,7 +11,7 @@ extension PopupMenuVC {
             archiveEventStatuses.append(eventBeingTagged.eventStatus.rawValue)
             archiveEventDateComponentArrays.append(getEventDateComponents(eventBeingTagged))
             
-            archiveEventDateStrings.append(formattedDateString(eventBeingTagged.eventDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
+            archiveEventDateStrings.append(formattedDateString(eventBeingTagged.deadline, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
             ///let casename = eventBeingTagged.eventStatus.caseName()                                                                                                                       ; print("tagged as: \(casename)\n")
             archiveEventStatusStrings.append(eventBeingTagged.eventStatus.caseName())
             

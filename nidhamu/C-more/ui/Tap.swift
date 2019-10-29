@@ -15,8 +15,8 @@ extension CollectionVC {
             selectedCellDate = cell.cellDate                                                                                        //➕
             selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: " Add an Event", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
             
-            switch vcType {
-            case .hours:
+            switch viewControllerType {
+            case .timetable:
                 
                 selectedTimeBlockPath = [column, row]                                               ///; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
@@ -28,7 +28,7 @@ extension CollectionVC {
 
                         ///setNavBarTitle(customString: " Add an Event (Tap Done to quit)")                                                           // may not use.  Gives User too much extra stuff to look at?
                         animateTimeBlockTappedToAddEvent(cell: cell)                                /// may not use. Looks nice; slows User down a little bit?
-                        showTimeInTitleLabels(cell: cell)
+                        cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                             self.prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)

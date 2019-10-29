@@ -22,7 +22,7 @@ func printEventsTabularized() { // optimized for console printing on an iPad Min
             var count = (titleCount < bound) ? bound - titleCount : 0 ///titleCount - bound
             let titleExcess = String(repeating: " ", count: count)
             
-            let dateString = formattedDateString(event.eventDate, roundedDown: false,
+            let dateString = formattedDateString(event.deadline, roundedDown: false,
                                                  showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortFormNoDots)
             let dateStringCount = dateString.count
             count = (dateStringCount < bound) ? bound - dateStringCount : 0 ///dateStringCount - bound

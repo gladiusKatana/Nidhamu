@@ -4,7 +4,7 @@ import UIKit
 extension CollectionVC {
     
     func prepareToProcessEventsSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
-        if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {    ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
+        if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {            ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             if !cachedBlocksAndTheirPaths {
                 
                 if !indexPathsToProcess.contains([column, row]) {indexPathsToProcess.append([column, row])} //; print("appending path \([column, row])")
@@ -19,48 +19,48 @@ extension CollectionVC {
                 }
                 ///else {print("event array-of-arrays already contains events: \(events)")}
             }
-            if row >= 21 {thereWillBeARowException = true}  /// corresponds to the row whose cellDates are at 4pm
+            if row >= 21 {thereWillBeARowException = true}              /// this is the row whose event deadlines are at 4pm
         }
     }
     
-    func processTimeBlocksSinceLastLogin(layout: CustomFlowLayout) { /* Live code from Nidhamu, an open-source project planner + logbook
+    func processTimeBlocksSinceLastLogin(layout: CustomFlowLayout) {    /* Live code from Nidhamu, an open-source project-planner + logbook
                                                                         github.com/gladiusKatana/Nidhamu) */
-        guard vcType == .hours, !cachedBlocksAndTheirPaths else {
+        guard viewControllerType == .timetable,
+            !cachedBlocksAndTheirPaths else {
             return
         }
         
         guard taskArraysToProcess.count > 0 else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {   /// after 1 second the screen becomes rotatable (locked to .portrait when in task-tagging mode)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // 1/2 second after you finish tagging tasks, screen becomes rotatable again
                 AppUtility.lockOrientation(.all)
             }
             return
         }
 
-        indexPathsToProcess = indexPathsToProcess.sorted(by:    {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
-        taskArraysToProcess = taskArraysToProcess.sorted(by:  {$0.last!.eventDate < $1.last!.eventDate})
+        indexPathsToProcess = indexPathsToProcess.sorted(by: {lastTaskFromPath($0).deadline < lastTaskFromPath($1).deadline})
+        taskArraysToProcess = taskArraysToProcess.sorted(by: {$0.last!.deadline < $1.last!.deadline})
         
         tasksInBlockToBeProcessed = taskArraysToProcess.first!.count
         cachedBlocksAndTheirPaths = true
         
-        if thereWillBeARowException {
-            
+        if thereWillBeARowException {                               /// if any time-blocks are >= 4pm, timetable will need to shrink to accomodate wizard (window beside cell)
             let rows = CGFloat(layout.rows)
-            let gap = CGFloat(5) / (layout.cellHeight!)             // extra gap for better aesthetics
             
-            layout.autoFitHeightScale = rows / (rows + 8 + gap)     // popup window is 9 cells tall
+            layout.autoFitHeightScale = rows / (rows + 9)           /// wizard (popup menu window) is 9 timetable-cells tall
             
-            reloadWithDelay(after: 0)                               //; print("reloaded for size adjustment")
+            reloadCollectionViewAfterDelay(0)
             
             let paths = indexPathsToProcess.count
             
-            if paths >= 2                         ///* row 21 = 4pm
-                && indexPathsToProcess[paths - 2][1] < 21 {         /// if second-last index path to process requires resizing (since cells can be swept over repeatedly...
-                taskTaggingViewController.dismissTaggingWizard()    /// ...within 1 session. (eg, user could leave timetable open for multiple hours-- it just automatically updates)
+            if paths >= 2                        /* row 21 = 4pm*/
+                && indexPathsToProcess[paths - 2] [1] < 21 {        /// ie, if second-last time block to process requires resizing (since cells could be swept over repeatedly...
+                taskTaggingViewController.dismissTaggingWizard()    /// ...within 1 session. (eg, user could leave timetable open for many hours -- it just automatically updates)
             }
             
             thereWillBeARowException = false
         }
-        tagEventsSinceLastLogin() ///; print("\(taskArraysToProcess.count) blocks remaining now; \(tasksInBlockToBeProcessed) events; tag #\(eventIndex + 1)\n")
+        tagTasksSinceLastLogin()
+        print("\(taskArraysToProcess.count) blocks remaining now, and \(tasksInBlockToBeProcessed) tasks remaining (tag #\(taskIndex + 1))\n")
     }
     
     

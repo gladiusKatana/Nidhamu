@@ -22,11 +22,11 @@ extension CustomFlowLayout {
                 ///(empty; may remove the completion handler from this method)
             }
             
-        } else {if topVC.vcType == .hours {processCurrentDate()}}
+        } else {if topVC.viewControllerType == .timetable {processCurrentDate()}}
         
         if textFieldDisplayed {
             topVC.rePresentTextField()
-            if topVC.vcType == .todoList {topVC.reloadWithDelay(after: 0)}
+            if topVC.viewControllerType == .todoList {topVC.reloadCollectionViewAfterDelay(0)}
         }
     }
     

@@ -10,13 +10,13 @@ extension CollectionVC {
             title = customString
         }
         else {
-            if vcType == .hours {
+            if viewControllerType == .timetable {
                 title = "Timetable"
             }
-            else if vcType == .archive {
+            else if viewControllerType == .archive {
                 title = "Archive"
             }
-            else if vcType == .deferralDates {
+            else if viewControllerType == .deferralDates {
                 title = "Select date to defer '\(globalEventIdentifier)'"
             }
             else { /// ie if vcType is the todoList VC.   Note, will add more VCs soon (see Notes.swift)

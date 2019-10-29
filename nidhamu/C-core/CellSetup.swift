@@ -5,12 +5,12 @@ extension CollectionVC {
     
     func timeBlockDateSetup (cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) { //cell. titleLabel.text = "\(column),\(row)"
         
-        if vcType == .hours || vcType == .deferralDates {
+        if viewControllerType == .timetable || viewControllerType == .deferralDates {
             if let loopWeeks = loopWeeks, let demarcateWeeksByColour = demarcateWeeksByColour {
                 setHourlyCellDates(cell: cell, column: column, row: row, layout: layout, looping: loopWeeks, withColours: demarcateWeeksByColour)
             } else {print("cell dates not set up: initialization bool(s) set to nil")}
             
-            if vcType != .deferralDates {
+            if viewControllerType != .deferralDates {
                 if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {
                     if events.count == 1 {
                         let eventName = events[0].eventDescription
@@ -37,7 +37,7 @@ extension CollectionVC {
             }
         }
             
-        else if vcType == .todoList {
+        else if viewControllerType == .todoList {
             cell.cellDate = selectedCellDate
             
             guard let eventAtTimeBlock = eventsAtIndexPath[timeBlock] else {
@@ -53,13 +53,13 @@ extension CollectionVC {
             }
                 
             else if column == 1 {
-                cell.titleLabel.text = formattedDateString(eventAtTimeBlock[row].eventDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
+                cell.titleLabel.text = formattedDateString(eventAtTimeBlock[row].deadline, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
             }
                 
             else {cell.titleLabel.text = "\(eventAtTimeBlock[row].eventStatus)"}
         }
             
-        else if vcType == .archive {
+        else if viewControllerType == .archive {
             cell.titleLabel.textColor = .darkGray;  cell.titleLabel.font = UIFont.systemFont(ofSize: 10, weight: .ultraLight)
             
             if column == 0 {

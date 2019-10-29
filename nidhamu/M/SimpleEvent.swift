@@ -3,13 +3,13 @@ import UIKit
 
 class SimpleEvent: NSObject {
     var eventDescription = ""               // description of an event coming up (or todo-list item) on this day
-    var eventDate = Date()                  // date the task must be done by
+    var deadline = Date()                  // date the task must be done by
     var eventStatus = EventStatus.upcoming
     var recurring = false //* will use soon
     
     init(eventDescription: String, eventDate: Date, eventStatus: EventStatus) {
         self.eventDescription = eventDescription
-        self.eventDate = eventDate
+        self.deadline = eventDate
         self.eventStatus = eventStatus
     }
     
@@ -18,7 +18,7 @@ class SimpleEvent: NSObject {
         if eventStatus == .upcoming {
             descriptor = "will occur on"
         } else {descriptor = "occurred on"}
-        print("\n Event: \(eventDescription)\n (\(eventStatus)); \(descriptor): \(eventDate)\n")
+        print("\n Event: \(eventDescription)\n (\(eventStatus)); \(descriptor): \(deadline)\n")
     }
 }
 
