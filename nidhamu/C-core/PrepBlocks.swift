@@ -3,23 +3,23 @@ import UIKit
 
 extension CollectionVC {
     
-    func prepareToProcessEventsSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
-        if let events = eventsAtIndexPath[TimeBlock(values:(column, row))] {            ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
+    func prepareToProcessTasksSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
+        if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))] {            ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             if !cachedBlocksAndTheirPaths {
                 
                 if !indexPathsToProcess.contains([column, row]) {indexPathsToProcess.append([column, row])} //; print("appending path \([column, row])")
                 ///else {print("path array-of-arrays already contains path: \([column, row])")}
                 
-                var eventDescriptions = [String]()
-                for event in events {eventDescriptions.append(event.eventDescription)}
+                var taskDescriptions = [String]()
+                for task in tasks {taskDescriptions.append(task.taskDescription)}
                 
-                if !eventDescriptionsToProcess.contains(eventDescriptions) {
-                    eventDescriptionsToProcess.append(eventDescriptions)                //; print("appending descriptions \(eventDescriptions)")
-                    taskArraysToProcess.append(events)
+                if !taskDescriptionsToProcess.contains(taskDescriptions) {
+                    taskDescriptionsToProcess.append(taskDescriptions)                //; print("appending descriptions \(taskDescriptions)")
+                    taskArraysToProcess.append(tasks)
                 }
-                ///else {print("event array-of-arrays already contains events: \(events)")}
+                ///else {print("task array-of-arrays already contains tasks: \(tasks)")}
             }
-            if row >= 21 {thereWillBeARowException = true}              /// this is the row whose event deadlines are at 4pm
+            if row >= 21 {thereWillBeARowException = true}              /// this is the row whose task deadlines are at 4pm
         }
     }
     
@@ -66,15 +66,15 @@ extension CollectionVC {
     
 //    func processTimeBlocksSinceLastLogin(layout: CustomFlowLayout) {
 //        if vcType == .hours {
-//            if eventArraysToProcess.count > 0 {
+//            if taskArraysToProcess.count > 0 {
 //
 //                if !savedBlocksAndPathsForProcessing {
 //
-//                    pathsToProcess = pathsToProcess.sorted(by: {lastEventFromPath($0).eventDate < lastEventFromPath($1).eventDate})
-//                    eventArraysToProcess = eventArraysToProcess.sorted(by: {$0.last!.eventDate < $1.last!.eventDate})
-//                    ///print("paths to process: \(pathsToProcess)"); print("events to process: \(eventDescriptionsToProcess)")
+//                    pathsToProcess = pathsToProcess.sorted(by: {lasttaskFromPath($0).taskDate < lasttaskFromPath($1).taskDate})
+//                    taskArraysToProcess = taskArraysToProcess.sorted(by: {$0.last!.taskDate < $1.last!.taskDate})
+//                    ///print("paths to process: \(pathsToProcess)"); print("tasks to process: \(taskDescriptionsToProcess)")
 //
-//                    eventsInBlockToBeProcessed = eventArraysToProcess.first!.count
+//                    tasksInBlockToBeProcessed = taskArraysToProcess.first!.count
 //                    savedBlocksAndPathsForProcessing = true
 //
 //                    if thereWillBeARowException {
@@ -90,7 +90,7 @@ extension CollectionVC {
 //                        }
 //                        thereWillBeARowException = false
 //                    }
-//                    tagEventsSinceLastLogin()   ///; print(".\(eventArraysToProcess.count) blocks remaining now; \(eventsInBlockToBeProcessed) events; tag #\(eventIndex + 1)\n")
+//                    tagtasksSinceLastLogin()   ///; print(".\(taskArraysToProcess.count) blocks remaining now; \(tasksInBlockToBeProcessed) tasks; tag #\(taskIndex + 1)\n")
 //                }
 //            } else {DispatchQueue.main.asyncAfter(deadline: .now() + 1) {AppUtility.lockOrientation(.all)}}
 //        }

@@ -33,7 +33,7 @@ var rotatedFromResignActive = false;            var reloadedFromHourTickingOver 
 var showConsoleLegend = true;                   var tempRescalingBool = false;                  var thereWillBeARowException = false
 var justPinched = false;                        var keyboardLocked = false
 var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false;    var textFieldDisplayed = false
-var classifierViewDisplayed = false;            var selectedEventWillRecur = false
+var classifierViewDisplayed = false;            var selectedTaskWillRecur = false
 
 
 var defaultTimetableCellFont = UIFont.systemFont(ofSize: 12, weight: .ultraLight) //UIFont(name: "Helvetica Neue", size: 12)

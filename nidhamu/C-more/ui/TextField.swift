@@ -17,13 +17,13 @@ extension CollectionVC {
     }
     
     func rePresentTextField() {        //print("re-presenting text field & keyboard")
-        ///eventField.placeholder = "..."
-        ///eventField.removeFromSuperview()     /// do not uncomment: causes a blink if keyboard is locked (since it dismisses & re-presents the keyboard & text field on every  reload Data (). )
+        ///taskField.placeholder = "..."
+        ///taskField.removeFromSuperview()     /// do not uncomment: causes a blink if keyboard is locked (since it dismisses & re-presents the keyboard & text field on every  reload Data (). )
         
         if viewControllerType != .archive {
             var contents = ""
             
-            if let placeholder = eventField.placeholder {
+            if let placeholder = taskField.placeholder {
                 
                 contents = placeholder
                 
@@ -37,14 +37,14 @@ extension CollectionVC {
         textFieldWidth = globalWindow.frame.width * 3 / 4    /// 3/4 = 6/8 e.g. 8 - 2 columns (1 right, 1 left of text field)
         let eighthWidth = globalWindow.frame.width / 8
         
-        eventField.placeholder = textFieldContents
-        eventField.delegate = self
-        eventField.frame = CGRect(x: eighthWidth, y: textFieldY, width: textFieldWidth, height: textFieldHeight)
+        taskField.placeholder = textFieldContents
+        taskField.delegate = self
+        taskField.frame = CGRect(x: eighthWidth, y: textFieldY, width: textFieldWidth, height: textFieldHeight)
         
-        ///eventField.attributedPlaceholder = NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        ///taskField.attributedPlaceholder = NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         
-        view.addSubview(eventField)
-        eventField.becomeFirstResponder()
+        view.addSubview(taskField)
+        taskField.becomeFirstResponder()
         textFieldDisplayed = true
     }
 }

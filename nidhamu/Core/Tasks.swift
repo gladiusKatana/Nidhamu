@@ -27,7 +27,7 @@
   
   
   
-  eventsAtDate                                                                                      Data
+  even tsAtDate                                                                                      Data
   login date interval outlined/animated, not perma-coloured
   device specific fonts
   dark mode                                                                                         UI
@@ -35,7 +35,7 @@
   
   ✧cascading deferrals?                                                                             ✧
   ✧loopWeeks = false behaviour as setting?                                                          ✧
-  ✧prevent User changing nowDate via Settings app                                                   ✧
+  ✧prev ent User changing nowDate via Settings app                                                   ✧
   
   
   

@@ -6,7 +6,7 @@ func defaultLoadData(showDate: Bool) {                                          
     let defaults = UserDefaults.standard
     
     if let components = defaults.array(forKey: "savedLastLoginDate") {
-        lastLoginDateComponents = components  
+        lastLoginDateComponents = components
         lastLoginDate = dateFromComponents(lastLoginDateComponents)
         if showDate {
             pryntLastLoginDate()
@@ -19,16 +19,16 @@ func defaultLoadData(showDate: Bool) {                                          
     }
     
     timeBlockPaths = defaults.array(forKey: "savedTimeBlockPaths") as? [[Int]] ?? []
-    eventDescriptionArrays = defaults.array(forKey: "savedEventDescriptionArrays") as? [[String]] ?? []
-    eventDateArrays = defaults.array(forKey: "savedEventDateArrays") as? [[[Any]]] ?? [[[]]]
-    eventStatusArrays = defaults.array(forKey: "savedEventStatusArrays") as? [[Int]] ?? []
+    taskDescriptionArrays = defaults.array(forKey: "savedTaskDescriptionArrays") as? [[String]] ?? []
+    taskDateArrays = defaults.array(forKey: "savedTaskDateArrays") as? [[[Any]]] ?? [[[]]]
+    taskStatusArrays = defaults.array(forKey: "savedTaskStatusArrays") as? [[Int]] ?? []
     
-    archiveEventDescriptions = defaults.array(forKey: "savedArchiveEventDescriptions") as? [String] ?? []
-    archiveEventStatuses = defaults.array(forKey: "savedArchiveEventStatuses") as? [Int] ?? []
-    archiveEventDateComponentArrays = defaults.array(forKey: "savedArchiveEventDateComponentArrays") as? [[Int]] ?? []
+    archiveTaskDescriptions = defaults.array(forKey: "savedArchiveTaskDescriptions") as? [String] ?? []
+    archiveTaskStatuses = defaults.array(forKey: "savedArchiveTaskStatuses") as? [Int] ?? []
+    archiveTaskDateComponentArrays = defaults.array(forKey: "savedArchiveTaskDateComponentArrays") as? [[Int]] ?? []
     
-    populateDictionaryFromDefaults()                                                        //; print("loaded event paths: \(timeBlockPaths)")
-    if !firstTimeLoaded {populateEventDatesAndStatusesFromDefaults()}
+    populateDictionaryFromDefaults()                                                        //; print("loaded task paths: \(timeBlockPaths)")
+    if !firstTimeLoaded {populateTaskDatesAndStatusesFromDefaults()}
     firstTimeLoaded = true
 }
 
@@ -37,32 +37,32 @@ func populateDictionaryFromDefaults() {
     
     for path in timeBlockPaths {                                                            //print("path: \(path)")
         
-        let eventDescriptions = eventDescriptionArrays[i] //!*
-        var events = [SimpleEvent]()
+        let taskDescriptions = taskDescriptionArrays[i] //!*
+        var tasks = [SimpleTask]()
         var j = 0
         
-        for description in eventDescriptions {
-            let eventStatus = eventStatusArrays[i][j]
-            let dateComponents = eventDateArrays[i][j]                                      //; print("event date components: \(dateComponents)")
+        for description in taskDescriptions {
+            let taskStatus = taskStatusArrays[i][j]
+            let dateComponents = taskDateArrays[i][j]                                       //; print("task date components: \(dateComponents)")
             let date = dateFromComponents(dateComponents)                                   //; print("date: \(date)")
-            let event = SimpleEvent(eventDescription: description, eventDate: date, eventStatus: EventStatus(rawValue: eventStatus)!)
+            let task = SimpleTask(taskDescription: description, taskDate: date, taskStatus: TaskStatus(rawValue: taskStatus)!)
             
-            ///print("loaded: '\(event.eventDescription)' [\(event.eventStatus)] with deadline:\(formattedDateString(date, roundedDown: true, prefix: "", suffix: "", short: false))")
+            ///print("loaded: '\(task.taskDescription)' [\(task.taskStatus)] with deadline:\(formattedDateString(date, roundedDown: true, prefix: "", suffix: "", short: false))")
             
-            events.append(event)
+            tasks.append(task)
             j += 1
         }
         
-        eventsAtIndexPath[TimeBlock(values: (path[0], path[1]))] = events
+        tasksAtIndexPath[TimeBlock(values: (path[0], path[1]))] = tasks
         i += 1
     }
 }
 
-func populateEventDatesAndStatusesFromDefaults() {
+func populateTaskDatesAndStatusesFromDefaults() {
     var i = 0
-    for _ in archiveEventStatuses {
-        archiveEventDateStrings.append(formattedDateString(dateFromInts(archiveEventDateComponentArrays[i]), roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
-        archiveEventStatusStrings.append(EventStatus(rawValue: archiveEventStatuses[i])!.caseName())
+    for _ in archiveTaskStatuses {
+        archiveTaskDateStrings.append(formattedDateString(dateFromInts(archiveTaskDateComponentArrays[i]), roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
+        archiveTaskStatusStrings.append(TaskStatus(rawValue: archiveTaskStatuses[i])!.caseName())
         i += 1
     }
 }

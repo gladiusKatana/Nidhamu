@@ -24,17 +24,17 @@ extension AppDelegate {
     
     func applicationWillResignActive(_ application: UIApplication) {                    ///customApplicationStatusPrint("⏸will resign active")
         if !classifierViewDisplayed {
-            defaultSaveData(saveDate: true, resetLastLogin: false, showDate: true, pryntEvents: true)
+            defaultSaveData(saveDate: true, resetLastLogin: false, showDate: true, pryntTasks: true)
         }
         
         cachedBlocksAndTheirPaths = false
         
-        if eventsAtIndexPath.values.count > 0 {  // autorotate for smoother event-tagging IF user dismisses app, then resumes it hours/days later
+        if tasksAtIndexPath.values.count > 0 {  // autorotate for smoother task-tagging IF user dismisses app, then resumes it hours/days later
             if currentOrientation == "landscape" {                                      //print("becameActive from landscape")
                 AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)           //print("locking/rotating to portrait from resignActive")
                 rotatedFromResignActive = true
             }
-        } //else {print("no event items yet")}
+        } //else {print("no task items yet")}
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {                  print("\n🌘entered background")

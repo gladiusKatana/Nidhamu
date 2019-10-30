@@ -9,7 +9,7 @@
 //        let dateString = formattedDateString(lastLoginDate, roundedDown: false, showYear: true,
 //                                             prefix: "", suffix: "", dateFormat: .archiveCSVTitle)
 //        
-//        let fileName = "Tagged events (\(dateString)).csv" ///don't insert a space after "as of" : formattedDateString(:) already builds one in
+//        let fileName = "Tagged tasks (\(dateString)).csv" ///don't insert a space after "as of" : formattedDateString(:) already builds one in
 //        guard let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName) else {
 //            print("failed to create url")
 //            return
@@ -19,8 +19,8 @@
 //        csvText.append("Description, Status, Date\n")
 //        
 //        var i = 0
-//        for _ in archiveEventDescriptions {
-//            csvText.append("\(archiveEventDescriptions[i]),\(archiveEventStatusStrings[i]),\(archiveEventDateStrings[i])\n")
+//        for _ in archiveTaskDescriptions {
+//            csvText.append("\(archiveTaskDescriptions[i]),\(archiveTaskStatusStrings[i]),\(archiveTaskDateStrings[i])\n")
 //            i += 1
 //        }
 //        

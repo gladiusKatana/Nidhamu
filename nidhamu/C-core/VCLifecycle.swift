@@ -23,7 +23,7 @@ extension CollectionVC {
     }
     
     override func viewDidAppear(_ animated: Bool) {                 super.viewDidAppear(animated)
-        if viewControllerType != .eventClassifier {
+        if viewControllerType != .taskClassifier {
             setTopViewController()
         }
         
@@ -39,9 +39,9 @@ extension CollectionVC {
     }
     
     override func viewWillDisappear(_ animated: Bool) {             super.viewWillDisappear(animated)
-        if viewControllerType == .todoList {        ///since it's not (currently) possible, anyway, to navigate away from the timetable vc when in event-adding mode (ie when text field is displayed)
+        if viewControllerType == .todoList {        ///since it's not (currently) possible, anyway, to navigate away from the timetable vc when in task-adding mode (ie when text field is displayed)
             if textFieldDisplayed {
-                exitEventAddingMode()
+                exitTaskAddingMode()
                 textFieldDisplayed = false
             }
         }

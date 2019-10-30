@@ -36,16 +36,16 @@ func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
 }
 
 
-func lastTaskFromPath(_ path: [Int]) -> SimpleEvent {
+func lastTaskFromPath(_ path: [Int]) -> SimpleTask {
     let err = "no item @ path [sort attempt]"
     
     /// arbitrary parameters to satisfy initializer:
-    var lastEvent = SimpleEvent(eventDescription: err, eventDate: Date(), eventStatus: .done) /// initial values are arbitrary because lastEvent is reset soon anyway
+    var lastTask = SimpleTask(taskDescription: err, taskDate: Date(), taskStatus: .done) /// initial values are arbitrary because lastTasks is reset soon anyway
     
-    if let eventsToProcess = eventsAtIndexPath[TimeBlock(values:(path[0], path[1]))] {
-        lastEvent = eventsToProcess.last!
+    if let tasksToProcess = tasksAtIndexPath[TimeBlock(values:(path[0], path[1]))] {
+        lastTask = tasksToProcess.last!
     }
     else {print(err)}
-    return lastEvent
+    return lastTask
 }
 

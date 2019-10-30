@@ -11,14 +11,14 @@ extension CollectionVC {
     
     
     @objc func reloadCVWrapperMethod() { //print("*")
-        reloadCV() //exitEventAddingMode()
+        reloadCV() //exitTaskAddingMode()
     }
     
     
     @objc func keyboardLockWrapper() {
         
         if textFieldDisplayed && keyboardLocked {
-            exitEventAddingMode()
+            exitTaskAddingMode()
             previousTimeBlockPathSelected = defaultPathOutOfView
             reloadCV()
         }
@@ -30,7 +30,7 @@ extension CollectionVC {
     
     
     @objc func buttonWrapperMethodforArchiveVC() {
-        archiveVC.downcastLayout!.rows = archiveEventDescriptions.count
+        archiveVC.downcastLayout!.rows = archiveTaskDescriptions.count
         gotoView(vc: archiveVC)
     }
     

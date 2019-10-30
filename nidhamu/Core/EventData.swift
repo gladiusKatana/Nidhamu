@@ -1,20 +1,20 @@
-// EventData        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// TaskData         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 
-var eventsAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleEvent]>()      /// Dictionary lookup for arrays of events (ie to-do-lists), keyed by collection view index path
+var tasksAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleTask]>()      /// Dictionary lookup for arrays of tasks (ie to-do-lists), keyed by collection view index path
 
-///var eventsAtDate = Dictionary<ArchiveBlock<Int,Int,Int,Int>,[SimpleEvent]>()                 /// Dictionary lookup for arrays of archived events, keyed by event-date components (y,m,d,h)
+///var tasksAtDate = Dictionary<ArchiveBlock<Int,Int,Int,Int>,[SimpleTask]>()                 /// Dictionary lookup for arrays of archived tasks, keyed by task-date components (y,m,d,h)
 
 
-/// Adding events to time-blocks (ie cells, visually speaking)
+/// Adding tasks to time-blocks (ie cells, visually speaking)
 var timeBlock = TimeBlock(values:(0, 0))
-var defaultPathOutOfView = [-1, -1];                var earliestEventAddress = defaultPathOutOfView
+var defaultPathOutOfView = [-1, -1];                var earliestTaskAddress = defaultPathOutOfView
 var selectedTimeBlockPath = defaultPathOutOfView;   var previousTimeBlockPathSelected = defaultPathOutOfView /// for animations: see Tap.swift
 
 
 /// Processing time blocks for tagging
-var taskArraysToProcess = [[SimpleEvent]]();       var eventDescriptionsToProcess = [[String]]()
+var taskArraysToProcess = [[SimpleTask]]();         var taskDescriptionsToProcess = [[String]]()
 var indexPathsToProcess = [[Int]]()
 
 
@@ -26,21 +26,21 @@ var deferralPath = [Int]();     var deferredDescription = ""
 var timeBlockPaths = [[Int]]()
 var sortedTimeBlockPaths = [[Int]]();               var sortingTransform = [Int]()
 
-var eventDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]]
-var eventDescriptionArrays = [[String]]()
-var eventStatusArrays = [[Int]]() /* Populated with raw values of enum EventStatus*/
+var taskDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]]
+var taskDescriptionArrays = [[String]]()
+var taskStatusArrays = [[Int]]() /* Populated with raw values of enum TaskStatus*/
 
 
 /// Saving archived time blocks' components via separate UserDefaults arrays
-var archiveEvents = [SimpleEvent]()
-var archiveEventDescriptions = [String]()
-var archiveEventStatuses = [Int]();                 var archiveEventStatusStrings = [String]()
-var archiveEventDateComponentArrays = [[Int]]();    var archiveEventDateStrings = [String]()
+var archiveTasks = [SimpleTask]()
+var archiveTaskDescriptions = [String]()
+var archiveTaskStatuses = [Int]();                  var archiveTaskStatusStrings = [String]()
+var archiveTaskDateComponentArrays = [[Int]]();     var archiveTaskDateStrings = [String]()
 
 /*
-//var archiveEventDescriptionArrays = [[String]]();                                               var allArchiveEventDescriptions = [String]()
-//var archiveEventStatusArrays = [[Int]](); /* Populated with raw values of enum EventStatus*/    var allArchiveEventStatuses = [Int]()
-//var archiveEventDateArrays = [[Date]]();                                                        var allArchiveEventDates = [Date]()
-//var sortedArchiveEventDateArrays = [[Date]]()
+//var archiveTaskDescriptionArrays = [[String]]();                                              var allArchiveTaskDescriptions = [String]()
+//var archiveTaskStatusArrays = [[Int]](); /* Populated with raw values of enum TaskStatus*/    var allArchiveTaskStatuses = [Int]()
+//var archiveTaskDateArrays = [[Date]]();                                                       var allArchiveTaskDates = [Date]()
+//var sortedArchiveTaskDateArrays = [[Date]]()
 */
 

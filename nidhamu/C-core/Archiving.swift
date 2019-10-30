@@ -3,19 +3,19 @@ import UIKit
 
 extension PopupMenuVC {
     
-    func addToArchives(_ eventBeingTagged: SimpleEvent) {
-        if !archiveEvents.contains(eventBeingTagged) {
-            archiveEvents.append(eventBeingTagged)
+    func addToArchives(_ taskBeingTagged: SimpleTask) {
+        if !archiveTasks.contains(taskBeingTagged) {
+            archiveTasks.append(taskBeingTagged)
             
-            archiveEventDescriptions.append(eventBeingTagged.eventDescription)
-            archiveEventStatuses.append(eventBeingTagged.eventStatus.rawValue)
-            archiveEventDateComponentArrays.append(getEventDateComponents(eventBeingTagged))
+            archiveTaskDescriptions.append(taskBeingTagged.taskDescription)
+            archiveTaskStatuses.append(taskBeingTagged.taskStatus.rawValue)
+            archiveTaskDateComponentArrays.append(getTaskDateComponents(taskBeingTagged))
             
-            archiveEventDateStrings.append(formattedDateString(eventBeingTagged.deadline, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
-            ///let casename = eventBeingTagged.eventStatus.caseName()                                                                                                                       ; print("tagged as: \(casename)\n")
-            archiveEventStatusStrings.append(eventBeingTagged.eventStatus.caseName())
+            archiveTaskDateStrings.append(formattedDateString(taskBeingTagged.deadline, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
+            ///let casename = taskBeingTagged.taskStatus.caseName()                                                                                                                       ; print("tagged as: \(casename)\n")
+            archiveTaskStatusStrings.append(taskBeingTagged.taskStatus.caseName())
             
-            archiveEvents.removeAll()
+            archiveTasks.removeAll()
         }
     }
     

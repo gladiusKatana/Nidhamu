@@ -21,7 +21,7 @@ extension CollectionVC {    /// ** commented code here is for animations
             
         } else {
             addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered,
-                            eventDeadline: selectedCellDate, withStatus: nil)
+                            taskDeadline: selectedCellDate, withStatus: nil)
             
             if viewControllerType == .timetable {
                 if !keyboardLocked {
@@ -31,15 +31,15 @@ extension CollectionVC {    /// ** commented code here is for animations
             }
             
             if viewControllerType == .todoList {
-                if let events = eventsAtIndexPath[timeBlock] {  /// if time-block is not empty
-                    todoListVC.downcastLayout!.rows = events.count
+                if let tasks = tasksAtIndexPath[timeBlock] {  /// if time-block is not empty
+                    todoListVC.downcastLayout!.rows = tasks.count
                 }
             }
         }
         
         textField.text = ""
         
-        if !keyboardLocked {exitEventAddingMode()}
+        if !keyboardLocked {exitTaskAddingMode()}
         
         reloadCV()
         

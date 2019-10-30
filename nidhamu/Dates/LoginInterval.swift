@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func processEventsBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
+    func processTasksBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
         
         let oneWeekAgo = truncateMinutesOf(cell.cellDate - TimeInterval(86400 * 7))
         
@@ -24,7 +24,7 @@ extension CollectionVC {
             
             ///showDateInTitleLabels(date: oneWeekAgo, cell: cell)   // useful for testing
             
-            prepareToProcessEventsSinceLastLogin(cell: cell, column: column, row: row)
+            prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
             
         }
         

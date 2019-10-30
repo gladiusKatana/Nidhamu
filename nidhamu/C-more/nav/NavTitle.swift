@@ -17,7 +17,7 @@ extension CollectionVC {
                 title = "Archive"
             }
             else if viewControllerType == .deferralDates {
-                title = "Select date to defer '\(globalEventIdentifier)'"
+                title = "Select date to defer '\(globalTaskIdentifier)'"
             }
             else { /// ie if vcType is the todoList VC.   Note, will add more VCs soon (see Notes.swift)
                 title = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: "Tasks", suffix: "", dateFormat: .hourlyTimeBlock)

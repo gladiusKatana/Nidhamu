@@ -13,7 +13,7 @@ extension CollectionVC {
             ///print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "block: ", suffix: "", dateFormat: .fullDay)) //("\nselected date (unformatted gmt)  \(cell.cellDate)")
             
             selectedCellDate = cell.cellDate                                                                                        //➕
-            selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: " Add an Event", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
+            selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: " Add a Task", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
             
             switch viewControllerType {
             case .timetable:
@@ -21,13 +21,13 @@ extension CollectionVC {
                 selectedTimeBlockPath = [column, row]                                               ///; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
                 
-                if eventsAtIndexPath[timeBlock] == nil || textFieldDisplayed {
+                if tasksAtIndexPath[timeBlock] == nil || textFieldDisplayed {
                     
                     if previousTimeBlockPathSelected == defaultPathOutOfView {
                         previousTimeBlockPathSelected = selectedTimeBlockPath
 
-                        ///setNavBarTitle(customString: " Add an Event (Tap Done to quit)")                                                           // may not use.  Gives User too much extra stuff to look at?
-                        animateTimeBlockTappedToAddEvent(cell: cell)                                /// may not use. Looks nice; slows User down a little bit?
+                        ///setNavBarTitle(customString: " Add a Task (Tap Done to quit)")                                                           // may not use.  Gives User too much extra stuff to look at?
+                        animateTimeBlockTappedToAddTask(cell: cell)                                /// may not use. Looks nice; slows User down a little bit?
                         cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
@@ -35,12 +35,12 @@ extension CollectionVC {
                         }
                     }
                     else {
-                        cell.backgroundColor = eventAddingColour
+                        cell.backgroundColor = taskAddingColour
                         prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
                     }
                     ///see (*) re. animation-logic, below
                 } else {
-                    if let events = eventsAtIndexPath[timeBlock] {todoListVC.downcastLayout!.rows = events.count}
+                    if let tasks = tasksAtIndexPath[timeBlock] {todoListVC.downcastLayout!.rows = tasks.count}
                     gotoView(vc: todoListVC)
                 }
                 
@@ -49,7 +49,7 @@ extension CollectionVC {
             case .deferralDates:
                 
                 deferralPath = [column, row]
-                cell.backgroundColor = eventAddingColour
+                cell.backgroundColor = taskAddingColour
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     cell.backgroundColor = cell.cellColour
                     self.gotoView(vc: timetableVC)

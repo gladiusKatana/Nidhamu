@@ -2,9 +2,9 @@
 import UIKit
 
 extension CollectionVC {
-    func exitEventAddingMode() {
-        eventField.removeFromSuperview()
-        eventField.resignFirstResponder()
+    func exitTaskAddingMode() {
+        taskField.removeFromSuperview()
+        taskField.resignFirstResponder()
         if !tempRescalingBool {
             globalWindow.backgroundColor = .white
             backgroundVC.view.backgroundColor = globalWindow.backgroundColor
@@ -14,41 +14,41 @@ extension CollectionVC {
 }
 
 extension PopupMenuVC {
-    func updateBlockProcessingVariables(column: Int, row: Int, eventWillShowUpNextWeek: Bool, selectedStatus: EventStatus) {
+    func updateBlockProcessingVariables(column: Int, row: Int, taskWillShowUpNextWeek: Bool, selectedStatus: TaskStatus) {
         if taskIndex < tasksInBlockToBeProcessed {taskIndex += 1}
         if tasksInBlockToBeProcessed > 0 {tasksInBlockToBeProcessed -= 1}
         
         if tasksInBlockToBeProcessed == 0 { ///print("ZERO!\n")
-            if !eventWillShowUpNextWeek || selectedStatus == .deferred {
-                eventsAtIndexPath.remove(at: eventsAtIndexPath.index(forKey: TimeBlock(values:(column, row)))!)
+            if !taskWillShowUpNextWeek || selectedStatus == .deferred {
+                tasksAtIndexPath.remove(at: tasksAtIndexPath.index(forKey: TimeBlock(values:(column, row)))!)
             }
             
             taskIndex = 0
-            indexPathsToProcess.removeFirst(); taskArraysToProcess.removeFirst(); eventDescriptionsToProcess.removeFirst()
+            indexPathsToProcess.removeFirst(); taskArraysToProcess.removeFirst(); taskDescriptionsToProcess.removeFirst()
             if !taskArraysToProcess.isEmpty {
                 tasksInBlockToBeProcessed = taskArraysToProcess.first!.count
             }
             
             dismissPopupMenuAndSave(newTimeBlock: true)
         }
-        else {dismissPopupMenuAndSave(newTimeBlock: false)} ///print("\(eventArraysToProcess.count) blocks now; \(eventsInBlockToBeProcessed) events; tag #\(eventIndex + 1)\n")
+        else {dismissPopupMenuAndSave(newTimeBlock: false)} ///print("\(taskArraysToProcess.count) blocks now; \(tasksInBlockToBeProcessed) tasks; tag #\(taskIndex + 1)\n")
     }
     
     func dismissPopupMenuAndSave(newTimeBlock: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {                        ///print("now paths to process: \(pathsToProcess)")
             if newTimeBlock {
                 self.dismissTaggingWizard()
-                earliestEventAddress = defaultPathOutOfView
+                earliestTaskAddress = defaultPathOutOfView
             } else {taskTaggingViewController.collectionView.reloadData()}
             
-            selectedEventWillRecur = false
+            selectedTaskWillRecur = false
             
             if indexPathsToProcess.isEmpty {
-                defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntEvents: true)
+                defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntTasks: true)
                 AppUtility.lockOrientation(.all)
-            } else {defaultSaveData(saveDate: false, resetLastLogin: false, showDate: false, pryntEvents: false)}
+            } else {defaultSaveData(saveDate: false, resetLastLogin: false, showDate: false, pryntTasks: false)}
             
-            timetableVC.reloadCV()                                                      ///; print("block events remaining now: \(eventsInBlockToBeProcessed)\n")
+            timetableVC.reloadCV()                                                      ///; print("block tasks remaining now: \(tasksInBlockToBeProcessed)\n")
             timetableVC.tagTasksSinceLastLogin()
         }
     }

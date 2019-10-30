@@ -8,32 +8,32 @@ extension PopupMenuVC {
         
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
         let layout = downcastLayout!; let row = indexPath.item; let column = indexPath.section
-        cell.backgroundColor = eventAddingColour
+        cell.backgroundColor = taskAddingColour
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
             guard let firstPathToProcess = indexPathsToProcess.first else {print("no paths to process... even though popup was presented"); return}
             
             let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1]    /// components of path of current item being marked
-            var eventWillShowUpNextWeek = false
+            var taskWillShowUpNextWeek = false
             
-            if let eventsOfBlockBeingTagged = eventsAtIndexPath[TimeBlock(values:(clm, rw))] {  /// writing to the dictionary
+            if let tasksOfBlockBeingTagged = tasksAtIndexPath[TimeBlock(values:(clm, rw))] {  /// writing to the dictionary
                 
-                let selectedStatus = EventStatus(rawValue: row)
-                let eventBeingTagged = eventsOfBlockBeingTagged[taskIndex]
+                let selectedStatus = TaskStatus(rawValue: row)
+                let taskBeingTagged = tasksOfBlockBeingTagged[taskIndex]
                 
-                eventsOfBlockBeingTagged[taskIndex].eventStatus = selectedStatus!
+                tasksOfBlockBeingTagged[taskIndex].taskStatus = selectedStatus!
                 
-                if [EventStatus.deferred, EventStatus.upcoming].contains(selectedStatus)
-                    || selectedEventWillRecur {
-                    eventWillShowUpNextWeek = true
+                if [TaskStatus.deferred, TaskStatus.upcoming].contains(selectedStatus)
+                    || selectedTaskWillRecur {
+                    taskWillShowUpNextWeek = true
                 }
                 
-                if !eventWillShowUpNextWeek {addToArchives(eventBeingTagged)}
+                if !taskWillShowUpNextWeek {addToArchives(taskBeingTagged)}
                 else {
-                    if selectedEventWillRecur {
-                        addToArchives(eventBeingTagged)
-                        eventBeingTagged.deadline += TimeInterval(86400 * 7)
+                    if selectedTaskWillRecur {
+                        addToArchives(taskBeingTagged)
+                        taskBeingTagged.deadline += TimeInterval(86400 * 7)
                     }
                     if selectedStatus == .deferred { /// if task is deferred, but also marked recurring, recurring has no additional effect: task shows up just once next week, not twice
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
@@ -45,12 +45,12 @@ extension PopupMenuVC {
                             timetableVC.gotoView(vc: deferralVC)
                             tempRescalingBool = false
                             
-                            deferredDescription = globalEventIdentifier
+                            deferredDescription = globalTaskIdentifier
                         }
                     }
                 }
-                updateBlockProcessingVariables(column: clm, row: rw, eventWillShowUpNextWeek: eventWillShowUpNextWeek, selectedStatus: selectedStatus!)
-            } else {print("no event in dictionary at that indext path")}
+                updateBlockProcessingVariables(column: clm, row: rw, taskWillShowUpNextWeek: taskWillShowUpNextWeek, selectedStatus: selectedStatus!)
+            } else {print("no task in dictionary at that indext path")}
         } else {print("selected popup menu header")}
     }
 }

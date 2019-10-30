@@ -8,18 +8,18 @@ class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRe
     var colourIndex: Int?;                              var loopWeeks: Bool?; var demarcateWeeksByColour: Bool?
     var showLoadAndAppearIndicationInConsole = false;   var backgroundColour = UIColor.clear
     
-    lazy var eventField: UITextField = {
-        let eventField =  UITextField(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        eventField.font = UIFont.systemFont(ofSize: 15)
-        eventField.borderStyle = UITextField.BorderStyle.roundedRect
-        eventField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        eventField.keyboardType = UIKeyboardType.default
-        eventField.returnKeyType = UIReturnKeyType.done
-        eventField.autocorrectionType = UITextAutocorrectionType.no
-        eventField.clearButtonMode = UITextField.ViewMode.whileEditing
-        eventField.isEnabled = true
-        ///eventField.clearsOnBeginEditing = true
-        return eventField
+    lazy var taskField: UITextField = {
+        let taskField =  UITextField(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        taskField.font = UIFont.systemFont(ofSize: 15)
+        taskField.borderStyle = UITextField.BorderStyle.roundedRect
+        taskField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        taskField.keyboardType = UIKeyboardType.default
+        taskField.returnKeyType = UIReturnKeyType.done
+        taskField.autocorrectionType = UITextAutocorrectionType.no
+        taskField.clearButtonMode = UITextField.ViewMode.whileEditing
+        taskField.isEnabled = true
+        ///taskField.clearsOnBeginEditing = true
+        return taskField
     }()
     
     init(_ vcType: CollectionViewType, backgroundColour: UIColor, loopWeeks: Bool?, demarcateWeeksByColour: Bool?,

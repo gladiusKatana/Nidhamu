@@ -14,13 +14,13 @@ var randomColours =     // used in TestSquare.swift
 
 var iosSettingsGray = UIColor.rgb(240, g: 240, b: 247, a: 1)
 var iosKeyboardDefaultColourApprox = UIColor.rgb(206, g: 213, b: 219, a: 1) ///b: 218 // (207, g: 212, b: 225, a: 1)
-var defaultWindowBackgroundColour = icyBlue                                 ///timetableVC.eventField.keyboardAppearance    //UIColor.darkGray//icyBlue
+var defaultWindowBackgroundColour = icyBlue                                 ///timetableVC.taskField.keyboardAppearance    //UIColor.darkGray//icyBlue
 
 
 var cellDefaultColour = icyBlue;                                            var cellTextDefaultColour = UIColor.black;
 var lastWeekColour = darkerIce;                                             var headerTextDefaultColour = UIColor.black
 
-var headerColour = UIColor.white;                                           var eventAddingColour = lightNavy
+var headerColour = UIColor.white;                                           var taskAddingColour = lightNavy
 var popupMenuLightGray = UIColor.lightGray
 
 var orangeForBlocksSinceLastLogin = UIColor.rgb(180, g: 70, b: 0, a: 0.5)   ///(220, g: 70, b: 20, a: 0.5)
@@ -31,7 +31,7 @@ var icyBlue = UIColor.rgb(180, g: 210, b: 240, a: 1)                        ///a
 var darkerIce = UIColor.rgb(130, g: 160, b: 200, a: 1)                      ///a: 0.6 ///(150, g: 180, b: 220, a: 0.7) //(120, g: 150, b: 180, a: 1)
 var navyBlue = UIColor.rgb(0, g: 50, b: 96, a: 1)
 var lightNavy = UIColor.rgb(0, g: 56, b: 116, a: 0.75)
-///var halfIcyBlue = UIColor.rgb(150, g: 180, b: 220, a: 0.25)                                                                       ///; var eventTextBlue = UIColor.rgb(50, g: 50, b: 250, a: 1)
+///var halfIcyBlue = UIColor.rgb(150, g: 180, b: 220, a: 0.25)                                                                       ///; var taskTextBlue = UIColor.rgb(50, g: 50, b: 250, a: 1)
 var bluishGray = UIColor.rgb(60, g: 80, b: 120, a: 1);                      ///; var darkNavy = UIColor.rgb(0, g: 36, b: 82, a: 1)
 
 

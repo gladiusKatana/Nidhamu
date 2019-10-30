@@ -21,16 +21,16 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         let tempEmails = ["garthsnyder1@gmail.com"]
         emailComposeVC.setToRecipients(tempEmails)//(currentClientEmails)           //print("email recipient:\n\(currentClientEmails)")
         
-        let path = archiveVC.createArchiveUrl();    let count = archiveEventDescriptions.count; let s = (count > 1) ? "s" : ""
+        let path = archiveVC.createArchiveUrl();    let count = archiveTaskDescriptions.count; let s = (count > 1) ? "s" : ""
         
-        let messageText = "\(count) new Event\(s)\nFrom\(archiveEventDateStrings.first!)\nTo\(archiveEventDateStrings.last!)"
+        let messageText = "\(count) new Task\(s)\nFrom\(archiveTaskDateStrings.first!)\nTo\(archiveTaskDateStrings.last!)"
         emailComposeVC.setMessageBody(messageText, isHTML: false)                               /// <p> is for isHTML: true
         
         emailComposeVC.setSubject("[Nidhamu] Export to Excel") /// No use in using multiple spaces between words here, Gmail prohibits > 1 consecutive spaces
         
         do {
             let attachmentData = try Data(contentsOf: path)
-            emailComposeVC.addAttachmentData(attachmentData, mimeType: "text/csv", fileName: "Tagged events (\(dateString)).csv")
+            emailComposeVC.addAttachmentData(attachmentData, mimeType: "text/csv", fileName: "Tagged tasks (\(dateString)).csv")
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25 ) {
                 self.present(self.emailComposeVC, animated: true, completion: nil)

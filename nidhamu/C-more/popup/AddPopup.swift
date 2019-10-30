@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func presentPopupViewToTagEvents(column: Int, row: Int) {               //print("-----------------")//print("presenting popup")
+    func presentPopupViewToTagTasks(column: Int, row: Int) {               //print("-----------------")//print("presenting popup")
         
         if currentOrientation == "portrait" {AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)}
         if currentOrientation == "landscape" {AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)}
@@ -34,13 +34,13 @@ extension CollectionVC {
                 taskTaggingViewController.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
                 taskTaggingViewController.collectionView.isUserInteractionEnabled = true
                 
-                let switchViewHeight = cellHeight * 4 //eventRecurringSwitchView.popupSwitch.frame.height + cellHeight * 2
-                eventRecurringSwitchView = PopupSwitchView(frame:
+                let switchViewHeight = cellHeight * 4 //taskRecurringSwitchView.popupSwitch.frame.height + cellHeight * 2
+                taskRecurringSwitchView = PopupSwitchView(frame:
                     CGRect(x: x, y: y + popupCollectionViewFrame.height,
-                           width: wid, height: switchViewHeight))           ; eventRecurringSwitchView.backgroundColor = popupMenuLightGray
+                           width: wid, height: switchViewHeight))           ; taskRecurringSwitchView.backgroundColor = popupMenuLightGray
                 
                 timetableVC.view.addSubview(taskTaggingViewController.view)              //; print("----------------adding popup")
-                timetableVC.view.addSubview(eventRecurringSwitchView)       //; print("adding switch")
+                timetableVC.view.addSubview(taskRecurringSwitchView)       //; print("adding switch")
                 
                 taskTaggingViewController.becomeFirstResponder()
                 classifierViewDisplayed = true

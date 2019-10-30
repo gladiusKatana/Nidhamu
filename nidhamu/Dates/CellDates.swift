@@ -16,7 +16,7 @@ extension CollectionVC {
             cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 0,
                                         cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
             
-            if viewControllerType != .deferralDates {processEventsBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)}
+            if viewControllerType != .deferralDates {processTasksBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)}
             else {cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)}
             
             if row >= layout.lockedHeaderRows && viewControllerType != .deferralDates {
@@ -26,7 +26,7 @@ extension CollectionVC {
         
         if [column, row] == selectedTimeBlockPath {
             if textFieldDisplayed {
-                cell.backgroundColor = eventAddingColour
+                cell.backgroundColor = taskAddingColour
                 cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
             }
         }

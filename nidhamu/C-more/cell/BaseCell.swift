@@ -7,7 +7,7 @@ class BaseCell: UICollectionViewCell {
     var cellColour = UIColor.clear
     var cellDate = Date()
     var xyCoordinate = [-2, -2]
-    //var event = SimpleEvent() // may add as a property of a cell; or may simply keep it in a detached data structure (dictionary) as it is now
+    //var task = SimpleTask() // may add as a property of a cell; or may simply keep it in a detached data structure (dictionary) as it is now
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -23,7 +23,7 @@ extension CollectionVC {
                 }
                 
                 if indexPathsToProcess.count > 0 {
-                    earliestEventAddress = indexPathsToProcess.first!
+                    earliestTaskAddress = indexPathsToProcess.first!
                 }
                 
                 timetableVC.showKeyTimeBlockDates(cell: cell)

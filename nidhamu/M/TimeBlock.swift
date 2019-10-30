@@ -19,26 +19,26 @@ func ==<T:Hashable,U:Hashable>(lhs: TimeBlock<T,U>,
 
 extension CollectionVC {
     
-    func addToTimeBlocks(column: Int, row: Int, textEntered: String, eventDeadline: Date, withStatus: EventStatus?) {
+    func addToTimeBlocks(column: Int, row: Int, textEntered: String, taskDeadline: Date, withStatus: TaskStatus?) {
         
-        var status : EventStatus
+        var status : TaskStatus
         if withStatus != nil {status = withStatus!} else {status = .upcoming}
         
         let timeBlockToAdd = TimeBlock(values:(column, row))
-        let simpleEvent = SimpleEvent(eventDescription: textEntered, eventDate: eventDeadline, eventStatus: status)
+        let simpleTask = SimpleTask(taskDescription: textEntered, taskDate: taskDeadline, taskStatus: status)
         
-        if eventsAtIndexPath[timeBlockToAdd] != nil {
-            eventsAtIndexPath[timeBlockToAdd]!.append(simpleEvent)
+        if tasksAtIndexPath[timeBlockToAdd] != nil {
+            tasksAtIndexPath[timeBlockToAdd]!.append(simpleTask)
         }
             
         else {
-            eventsAtIndexPath[timeBlockToAdd] = [simpleEvent]
+            tasksAtIndexPath[timeBlockToAdd] = [simpleTask]
         }
         
     }
 }
 
-//struct ArchiveBlock<T: Hashable, U: Hashable, V: Hashable, W: Hashable>: Hashable {           /// used in eventsAtDate (not implemented (yet).)
+//struct ArchiveBlock<T: Hashable, U: Hashable, V: Hashable, W: Hashable>: Hashable {           /// used in tasksAtDate (not implemented (yet).)
 //
 //    let values : (T, U, V, W)
 //    func hash(into hasher: inout Hasher) {

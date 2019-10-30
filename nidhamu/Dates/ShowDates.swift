@@ -7,13 +7,13 @@ extension CollectionVC {
         
         let column = cell.xyCoordinate[0];  let row = cell.xyCoordinate[1]         /// for now: could also just pass in row & column from caller
         
-        if row == earliestEventAddress[1] && column == earliestEventAddress[0] {
+        if row == earliestTaskAddress[1] && column == earliestTaskAddress[0] {
             cell.layer.borderColor = UIColor.white.cgColor                         //; print("highlighted cell white")
-            if let events = eventsAtIndexPath[TimeBlock(values:(column, row))], events.count > 1 {
-                cell.titleLabel.text = "(\(taskIndex + 1)/\(events.count))"        ///= "(\(events.count - eventsInBlockToBeProcessed + 1)/\(events.count))"
+            if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))], tasks.count > 1 {
+                cell.titleLabel.text = "(\(taskIndex + 1)/\(tasks.count))"        ///= "(\(tasks.count - tasksInBlockToBeProcessed + 1)/\(tasks.count))"
                 cell.titleLabel.font = defaultTimetableCellFont
             }
-            else {cell.titleLabel.text = globalEventIdentifier}                    /// when evets.count == 1, can just use previously set event's description via this var
+            else {cell.titleLabel.text = globalTaskIdentifier}                    /// when evets.count == 1, can just use previously set task's description via this var
         }
         else {
             let cellWeekday = Calendar.current.component(.weekday, from: cell.cellDate)
@@ -44,7 +44,7 @@ extension CollectionVC {
     }
     
     func pryntConditionalKeyDateID(_ id: String, cell: CustomCell, row: Int, column: Int) {
-        if eventsAtIndexPath[TimeBlock(values:(column, row))] == nil {
+        if tasksAtIndexPath[TimeBlock(values:(column, row))] == nil {
             cell.titleLabel.text = id
         }
     }

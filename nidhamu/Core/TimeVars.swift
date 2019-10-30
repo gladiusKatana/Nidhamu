@@ -7,10 +7,10 @@ var selectedCellDate = Date()
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 
 var nowRow = 0;                                     var nowColumn = 0
-var taskIndex = 0;                                 var tasksInBlockToBeProcessed = 0
+var taskIndex = 0;                                  var tasksInBlockToBeProcessed = 0
 
 
-var globalEventIdentifier = "(event)";              var selectedTimeBlockDateDescription = "(selected date)"
+var globalTaskIdentifier = "(task)";                var selectedTimeBlockDateDescription = "(selected date)"
            
 
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
