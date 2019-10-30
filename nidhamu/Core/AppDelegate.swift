@@ -3,23 +3,6 @@ import UIKit
 
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var statusBarUIView: UIView? {
-        if #available(iOS 13.0, *) {
-            let tag = 38482458385
-            if let statusBar = globalWindow.viewWithTag(tag) {
-                return statusBar
-            } else {
-                ///let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)   // deprecated
-                let statusBarView = UIView(frame: (globalWindow.windowScene?.statusBarManager!.statusBarFrame)!)
-                statusBarView.tag = tag
-                globalWindow.addSubview(statusBarView)
-                return statusBarView
-            }
-        } else if responds(to: Selector(("statusBar"))) {
-            return value(forKey: "statusBar") as? UIView
-        } else {return nil}
-    }
-    
     var window: UIWindow?
     lazy var orientationLock = UIInterfaceOrientationMask.all     /// set orientations you want allowed by default
     
@@ -60,8 +43,24 @@ import UIKit
         window?.rootViewController = navController                  //; print("VCs*: \(String(describing: nav Controller?.viewControllers))")
         
         timetableVC.setupAndPresent(vc: timetableVC)                /// just need a uiviewcontroller (any of them) to call this method
-        
         return true
+    }
+    
+    var statusBarUIView: UIView? {
+        if #available(iOS 13.0, *) {
+            let tag = 38482458385
+            if let statusBar = globalWindow.viewWithTag(tag) {
+                return statusBar
+            } else {
+                ///let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)   // deprecated
+                let statusBarView = UIView(frame: (globalWindow.windowScene?.statusBarManager!.statusBarFrame)!)
+                statusBarView.tag = tag
+                globalWindow.addSubview(statusBarView)
+                return statusBarView
+            }
+        } else if responds(to: Selector(("statusBar"))) {
+            return value(forKey: "statusBar") as? UIView
+        } else {return nil}
     }
 }
 

@@ -29,7 +29,7 @@ extension AppDelegate {
         
         cachedBlocksAndTheirPaths = false
         
-        if tasksAtIndexPath.values.count > 0 {  // autorotate for smoother task-tagging IF user dismisses app, then resumes it hours/days later
+        if tasksAtIndexPath.values.count > 0 {  // autorotate for smoother task-tagging if user dismisses app, then resumes it hours/days later
             if currentOrientation == "landscape" {                                      //print("becameActive from landscape")
                 AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)           //print("locking/rotating to portrait from resignActive")
                 rotatedFromResignActive = true

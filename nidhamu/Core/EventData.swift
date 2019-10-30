@@ -7,31 +7,38 @@ var tasksAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleTask]>()      /// Di
 ///var tasksAtDate = Dictionary<ArchiveBlock<Int,Int,Int,Int>,[SimpleTask]>()                 /// Dictionary lookup for arrays of archived tasks, keyed by task-date components (y,m,d,h)
 
 
-/// Adding tasks to time-blocks (ie cells, visually speaking)
+
+/// Adding tasks to time-blocks (ie cells, visually speaking) --------------------------------------------------------------------
 var timeBlock = TimeBlock(values:(0, 0))
 var defaultPathOutOfView = [-1, -1];                var earliestTaskAddress = defaultPathOutOfView
 var selectedTimeBlockPath = defaultPathOutOfView;   var previousTimeBlockPathSelected = defaultPathOutOfView /// for animations: see Tap.swift
 
 
-/// Processing time blocks for tagging
+
+/// Processing time blocks for tagging -----------------------------------------------------------------------------------------------
 var taskArraysToProcess = [[SimpleTask]]();         var taskDescriptionsToProcess = [[String]]()
 var indexPathsToProcess = [[Int]]()
 
 
-/// Deferring tasks
+
+/// Deferring tasks -------------------------------------------------------------------------------------------------------------------------
 var deferralPath = [Int]();     var deferredDescription = ""
 
 
-/// Saving time blocks' components via separate UserDefaults arrays
+
+
+/// Saving time blocks' components via separate UserDefaults arrays ------------------------------------------------------
 var timeBlockPaths = [[Int]]()
 var sortedTimeBlockPaths = [[Int]]();               var sortingTransform = [Int]()
 
 var taskDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]]
 var taskDescriptionArrays = [[String]]()
-var taskStatusArrays = [[Int]]() /* Populated with raw values of enum TaskStatus*/
+var taskStatusArrays = [[Int]]() /// populated with raw values of enum TaskStatus*/
 
 
-/// Saving archived time blocks' components via separate UserDefaults arrays
+
+
+/// Saving ARCHIVED time blocks' components via separate UserDefaults arrays -------------------------------------------
 var archiveTasks = [SimpleTask]()
 var archiveTaskDescriptions = [String]()
 var archiveTaskStatuses = [Int]();                  var archiveTaskStatusStrings = [String]()

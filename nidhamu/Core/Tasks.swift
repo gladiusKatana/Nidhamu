@@ -4,44 +4,47 @@
   
   ⁌o⁍ handle daylight savings Nov 3
   
-  Numbers template                                                                                  UX
-  Excel template
+  
+  
+  settings menu                                                                                     UI
   archive frequency reminders
-  settings menu                                                     Sun Oct 27
-  
-  
-  
   buttons                                                                                           Design
   icon
   launch screen
-  triple check logic, refactor, cleanup
-  improve comments
-  run on same devices as Beta Users'                                Wed Oct 30 (public beta)
+  Numbers template                                                                                  UX
+  Excel template
   
   
   
-  mornAftEveNiteVC
+  triple check logic
+  refactor, improve comments
+  run on same devices as Beta Users'                                Thurs Oct 31 (private beta)
+  
+  
+  
+  mornAftEveNiteVC                                                                                  VCs
   listVC (today items)
   listVC (deadlineless items)
-  calendarVC                                                        Nov ~15 (appstore)              VCs
-  
-  
-  
-  even tsAtDate                                                                                      Data
-  login date interval outlined/animated, not perma-coloured
-  device specific fonts
-  dark mode                                                                                         UI
+  calendarVC
+  tasksAtDate                                                                                       Data
+  login date interval outlined/animated, not perma-coloured                                         UI
+  device specific fonts & keyboard colour
+  dark mode
+  orientation enum
+                                                                    Nov ~15 (appstore)
   
   
   ✧cascading deferrals?                                                                             ✧
   ✧loopWeeks = false behaviour as setting?                                                          ✧
-  ✧prev ent User changing nowDate via Settings app                                                   ✧
+  ✧prev ent User changing nowDate via Settings app                                                  ✧
+  
   
   
   
   
   
   1st commit                                                         July 8 '19
+  
   
   
   

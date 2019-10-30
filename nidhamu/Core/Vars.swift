@@ -15,9 +15,9 @@ var textFieldY = CGFloat(0)
 var textFieldHeight = CGFloat(30)  /// will rewrite this at some point, to be reset to a size calculated from its text height, plus a bit (with an initial value of 0). See stringSize(:), in Strings.swift
 var textFieldWidth = CGFloat(0)
 
-var keyboardHeight = CGFloat(0)  /// will rewrite the two lines below this one, & write an enum containing manually-determined* values for each device; this will be done by running the app...
+var keyboardHeight = CGFloat(0)  /// will rewrite the two lines below this one, & write an enum containing manually-determined** values for each device; this will be done by running the app...
 var portraitKeyboardHeight = CGFloat(246) /// ...on each simulator, with old versions of resetKeyboardHeight() & showKBoard(:); so, will be initializing these 2 values to 0, as below
-var landscapeKeyboardHeight = CGFloat(192)/// * why manually determined?  Because these values (keyboard heights for different iOS devices) do not seem to be recorded anywhere online
+var landscapeKeyboardHeight = CGFloat(192)/// **why manually determined?  Because these values (keyboard heights for different iOS devices) do not seem to be recorded anywhere online
 //var portraitKeyboardHeight = CGFloat(0)
 //var landscapeKeyboardHeight = CGFloat(0)
 
@@ -26,9 +26,8 @@ var xOffSet = CGFloat(0);                       var yOffset = CGFloat(0)
 var statusBarHeight = 0.0;                      var lastStatusBarHeight = 0.0
 var navBarHeight = 0.0;                         var launchWidth = 0.0
 
-
 //; var firstBecameActive = false;
-var firstTimeLoaded = false                     /// one-way bool: only flipped to  true  once in app lifecycle
+var firstTimeLoaded = false                     /// one-way bool: only flipped to  true once in entire app lifecycle
 var rotatedFromResignActive = false;            var reloadedFromHourTickingOver = true;         var cachedBlocksAndTheirPaths = false
 var showConsoleLegend = true;                   var tempRescalingBool = false;                  var thereWillBeARowException = false
 var justPinched = false;                        var keyboardLocked = false
@@ -43,8 +42,8 @@ var previousOrientation = "previous orientation (landscape or portrait) for prep
 var lastActiveOrientation = "orientation (landscape or portrait) before sending app to background"  //* " "
 var launchOrientation = "orientation at the moment of launch"                                       //* " "
 
+//var appearSymbolLegend = "                                        🏞 = view appeared"  // console legend
 var loadSymbolLegend = "                                        💾 = view loaded"
-//var appearSymbolLegend = "                                        🏞 = view appeared"  //console legend
 var truncationTrail = "…";                      ///var averageLetterWidth = CGFloat(0)
 var dateString = "global csv date string";      var fileName = "global csv file name"
 
