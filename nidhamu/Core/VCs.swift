@@ -20,7 +20,7 @@ var timetableVC = CollectionVC(.timetable, backgroundColour: defaultWindowBackgr
 var deferralVC = CollectionVC(.deferralDates, backgroundColour: .white, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: nil, collectionViewLayout: timetableLayout)
 
 
-var todoListLayout = ///------------------------------------------------
+var taskListLayout = ///------------------------------------------------
     CustomFlowLayout(
         embeddedInNavController: true,
         customFrame: globalWindow.frame,
@@ -31,7 +31,7 @@ var todoListLayout = ///------------------------------------------------
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
-var todoListVC = CollectionVC(.todoList, backgroundColour: defaultWindowBackgroundColour, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: todoListLayout)
+var taskListVC = CollectionVC(.todoList, backgroundColour: defaultWindowBackgroundColour, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: taskListLayout)
 
 
 var archiveLayout = ///--------------------------------------------------

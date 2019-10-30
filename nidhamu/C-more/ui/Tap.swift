@@ -40,8 +40,8 @@ extension CollectionVC {
                     }
                     ///see (*) re. animation-logic, below
                 } else {
-                    if let tasks = tasksAtIndexPath[timeBlock] {todoListVC.downcastLayout!.rows = tasks.count}
-                    gotoView(vc: todoListVC)
+                    if let tasks = tasksAtIndexPath[timeBlock] {taskListVC.downcastLayout!.rows = tasks.count}
+                    gotoView(vc: taskListVC)
                 }
                 
             case .todoList:         prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)

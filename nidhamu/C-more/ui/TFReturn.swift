@@ -32,7 +32,7 @@ extension CollectionVC {    /// ** commented code here is for animations
             
             if viewControllerType == .todoList {
                 if let tasks = tasksAtIndexPath[timeBlock] {  /// if time-block is not empty
-                    todoListVC.downcastLayout!.rows = tasks.count
+                    taskListVC.downcastLayout!.rows = tasks.count
                 }
             }
         }
