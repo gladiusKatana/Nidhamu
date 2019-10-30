@@ -2,7 +2,7 @@
 import UIKit
 
 class SimpleTask: NSObject {
-    var taskDescription = ""               // description of a task coming up (or todo-list item) on this day
+    var taskDescription = ""               // description of a task coming up (or task list item) on this day
     var deadline = Date()                  // date the task must be done by
     var taskStatus = TaskStatus.upcoming
     var recurring = false //* will use soon

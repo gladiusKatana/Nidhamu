@@ -53,7 +53,7 @@
   Notes
   
   
-  * DATA, UI (etc) labels map loosely to M, V, C (etc).  Tasks.swift todo list emphasizes features, design, etc., not very code-specific
+  * DATA, UI (etc) labels map loosely to M, V, C (etc).  Tasks.swift task list emphasizes features, design, etc., not very code-specific
   
   
   ✧ denotes features that may not necessarily be a good idea to implement (eg should User be able to defer *all* their upcoming tasks at once?)

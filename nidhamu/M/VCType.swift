@@ -17,7 +17,7 @@ enum CollectionViewType: Int {
             return "shows the hours of this week"
             
         case .taskList:
-            return "shows the tasks (todo list items) of this hour"
+            return "shows the tasks (task list items) of this hour"
             
         case .archive:
             return "shows all tasks previously tagged on the timetable (organized by date)"

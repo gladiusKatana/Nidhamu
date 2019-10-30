@@ -65,5 +65,5 @@ let zeroFrame = CGRect(x: 0, y: 0, width: 0, height: 0)               //* Initia
 
 //let popupFrame = CGRect(x: timetableLayout.cellWidth! * 2, y: 0, width: timetableLayout.cellWidth!, height: timetableLayout.cellHeight! * 5)
 
-//* For todoListVC: will probably remove loopWeeks & demarcateWeeksByColour, via subclassing / making them optional parameters
+//* For taskListVC: will probably remove loopWeeks & demarcateWeeksByColour, via subclassing / making them optional parameters
 
