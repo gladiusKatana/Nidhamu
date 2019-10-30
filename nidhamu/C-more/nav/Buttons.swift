@@ -35,7 +35,7 @@ extension CollectionVC {
     }
     
     
-    @objc func buttonWrapperMethodforTodoListVC() {}//gotoView(vc: todoListVC)
+    @objc func buttonWrapperMethodforTaskListVC() {}//gotoView(vc: todoListVC)
     
     
     @objc func buttonWrapperMethodforTimetableVC() {
