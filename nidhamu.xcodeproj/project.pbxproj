@@ -296,9 +296,10 @@
 			children = (
 				0625168022D6CF4100EBB4C8 /* DefaultSave.swift */,
 				0625167D22D6CF4100EBB4C8 /* DefaultLoad.swift */,
-				06076F06232B3F6300189BB3 /* Sorting.swift */,
+				062516AB22D6CF4200EBB4C8 /* VCType.swift */,
 				0625167E22D6CF4100EBB4C8 /* TimeBlock.swift */,
 				0625167F22D6CF4100EBB4C8 /* SimpleTask.swift */,
+				06076F06232B3F6300189BB3 /* Sorting.swift */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -383,7 +384,6 @@
 			children = (
 				062516A922D6CF4200EBB4C8 /* Orientation.swift */,
 				062516A822D6CF4200EBB4C8 /* TestSquare.swift */,
-				062516AB22D6CF4200EBB4C8 /* VCType.swift */,
 				062516AA22D6CF4200EBB4C8 /* DeviceType.swift */,
 			);
 			path = Checks;
