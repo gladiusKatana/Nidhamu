@@ -26,7 +26,7 @@ extension CustomFlowLayout {
         
         if textFieldDisplayed {
             topVC.rePresentTextField()
-            if topVC.viewControllerType == .todoList {topVC.reloadCollectionViewAfterDelay(0)}
+            if topVC.viewControllerType == .taskList {topVC.reloadCollectionViewAfterDelay(0)}
         }
     }
     

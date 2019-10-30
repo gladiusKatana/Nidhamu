@@ -31,7 +31,7 @@ var taskListLayout = ///------------------------------------------------
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
-var taskListVC = CollectionVC(.todoList, backgroundColour: defaultWindowBackgroundColour, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: taskListLayout)
+var taskListVC = CollectionVC(.taskList, backgroundColour: defaultWindowBackgroundColour, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: taskListLayout)
 
 
 var archiveLayout = ///--------------------------------------------------

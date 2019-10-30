@@ -16,8 +16,8 @@
   
   
   
+  refactor, rename improve comments
   triple check logic
-  refactor, improve comments
   run on same devices as Beta Users'                                Thurs Oct 31 (private beta)
   
   

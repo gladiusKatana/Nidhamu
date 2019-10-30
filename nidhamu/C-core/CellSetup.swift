@@ -37,7 +37,7 @@ extension CollectionVC {
             }
         }
             
-        else if viewControllerType == .todoList {
+        else if viewControllerType == .taskList {
             cell.cellDate = selectedCellDate
             
             guard let taskAtTimeBlock = tasksAtIndexPath[timeBlock] else {

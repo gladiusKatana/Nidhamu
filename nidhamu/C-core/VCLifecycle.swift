@@ -27,7 +27,7 @@ extension CollectionVC {
             setTopViewController()
         }
         
-        if [.todoList, .archive].contains(viewControllerType) {setupPinchToExit()}
+        if [.taskList, .archive].contains(viewControllerType) {setupPinchToExit()}
         
         //        if !showLoadAndAppearIndicationInConsole { // if the below print hasn't been done already for this vc
         //            let str = (showConsoleLegend) ? appearSymbolLegend : ""; print("🏞\(topVC.vcType)\(str)") // picture-emoji means appeared 🏞
@@ -39,7 +39,7 @@ extension CollectionVC {
     }
     
     override func viewWillDisappear(_ animated: Bool) {             super.viewWillDisappear(animated)
-        if viewControllerType == .todoList {        ///since it's not (currently) possible, anyway, to navigate away from the timetable vc when in task-adding mode (ie when text field is displayed)
+        if viewControllerType == .taskList {        ///since it's not (currently) possible, anyway, to navigate away from the timetable vc when in task-adding mode (ie when text field is displayed)
             if textFieldDisplayed {
                 exitTaskAddingMode()
                 textFieldDisplayed = false

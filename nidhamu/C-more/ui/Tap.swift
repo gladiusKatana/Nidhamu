@@ -44,7 +44,7 @@ extension CollectionVC {
                     gotoView(vc: taskListVC)
                 }
                 
-            case .todoList:         prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
+            case .taskList:         prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
             case .archive:          presentEmail() ///sendArchiveAsCsv()
             case .deferralDates:
                 
