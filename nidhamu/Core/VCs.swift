@@ -48,7 +48,7 @@ var archiveLayout = ///--------------------------------------------------
 var archiveVC = CollectionVC(.archive, backgroundColour: UIColor.white, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: 1, collectionViewLayout: archiveLayout)
 
 
-var classifierLayout = ///--------------------------------------------
+var taskTaggerLayout = ///--------------------------------------------
     CustomFlowLayout(
         embeddedInNavController: false,
         customFrame: nil,
@@ -59,7 +59,7 @@ var classifierLayout = ///--------------------------------------------
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
-var taskTaggingViewController = PopupMenuVC(collectionViewLayout: classifierLayout);     var taskRecurringSwitchView = PopupSwitchView()
+var taskTaggingViewController = PopupMenuVC(collectionViewLayout: taskTaggerLayout);     var taskRecurringSwitchView = PopupSwitchView()
 
 let zeroFrame = CGRect(x: 0, y: 0, width: 0, height: 0)               //* Initial value for testing
 
