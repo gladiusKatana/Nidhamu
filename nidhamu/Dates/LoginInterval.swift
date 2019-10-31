@@ -11,18 +11,22 @@ extension CollectionVC {
             && oneWeekAgo < truncateMinutesOf(Date())
         {
             
-            ///if !saved TimeBlocksForProcessing { // this conditional would only be needed if doing the animation below
-            ///if column < nowColumn || (column == nowColumn && row < nowRow) {cell.backgroundColor = .green; cell.cellColour = .green}
-            ///else { // the  if  on the line above is purely for testing purposes
+            
+            //            if !cached BlocksAndTheirPaths {    // this conditional would only be needed if doing the animation below
+            //            if column < nowColumn || (column == nowColumn && row < nowRow) {cell.backgroundColor = .green; cell.cellColour = .green}
+            //            else {                              // the  if  on the line above is purely for testing purposes
+            
             
             cell.backgroundColor = orangeForBlocksSinceLastLogin; cell.cellColour = orangeForBlocksSinceLastLogin
             cell.titleLabel.font = defaultTimetableCellFont
             
-            ///}
-            ///animateCellColourBack(cell: cell, delay: 3, duration: 10)
-            ///}
+            
+            //            }
+            //            animateCellColourBack(cell: cell, delay: 3, duration: 10)
+            //            }
             
             ///showDateInTitleLabels(date: oneWeekAgo, cell: cell)   // useful for testing
+            
             
             prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
             

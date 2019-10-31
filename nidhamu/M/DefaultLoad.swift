@@ -9,8 +9,7 @@ func defaultLoadData(showDate: Bool) {                                          
         lastLoginDateComponents = components
         lastLoginDate = dateFromComponents(lastLoginDateComponents)
         if showDate {
-            pryntLastLoginDate()
-            pryntCurrentDate()
+            pryntLastLoginDate(); pryntCurrentDate()
         }
     }
     else {                                                                                  //print("\nfirst login")
@@ -28,7 +27,6 @@ func defaultLoadData(showDate: Bool) {                                          
     archiveTaskDateComponentArrays = defaults.array(forKey: "savedArchiveTaskDateComponentArrays") as? [[Int]] ?? []
     
     populateDictionaryFromDefaults()                                                        //; print("loaded task paths: \(timeBlockPaths)")
-    
     if !firstTimeLoaded {populateArchivedDatesAndStatusesFromDefaults()}
     firstTimeLoaded = true
 }
@@ -37,7 +35,6 @@ func populateDictionaryFromDefaults() {
     var i = 0
     
     for path in timeBlockPaths {                                                            //print("path: \(path)")
-        
         let taskDescriptions = taskDescriptionArrays[i] //!*
         var tasks = [SimpleTask]()
         var j = 0

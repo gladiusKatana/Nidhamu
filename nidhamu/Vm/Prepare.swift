@@ -18,9 +18,7 @@ extension CustomFlowLayout {
             
             previousOrientation = currentOrientation
             
-            topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in
-                ///(empty; may remove the completion handler from this method)
-            }
+            topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in /*(empty; may remove the completion handler from this method)*/ }
             
         } else {if topVC.viewControllerType == .timetable {processCurrentDate()}}
         

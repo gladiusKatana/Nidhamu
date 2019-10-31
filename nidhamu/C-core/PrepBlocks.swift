@@ -7,7 +7,7 @@ extension CollectionVC {
         if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))] {              ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             if !cachedBlocksAndTheirPaths {
                 
-                if !indexPathsToProcess.contains([column, row]) {indexPathsToProcess.append([column, row])} //; print("appending path \([column, row])")
+                if !indexPathsToProcess.contains([column, row]) {indexPathsToProcess.append([column, row])} ///; print("appending path \([column, row])")
                 ///else {print("path array-of-arrays already contains path: \([column, row])")}
                 
                 var taskDescriptions = [String]()
@@ -16,15 +16,14 @@ extension CollectionVC {
                 if !taskDescriptionsToProcess.contains(taskDescriptions) {
                     taskDescriptionsToProcess.append(taskDescriptions)                  //; print("appending descriptions \(taskDescriptions)")
                     taskArraysToProcess.append(tasks)
-                }
-                ///else {print("task array-of-arrays already contains tasks: \(tasks)")}
+                } ///else {print("task array-of-arrays already contains tasks: \(tasks)")}
             }
             if row >= 21 {thereWillBeARowException = true}                              /// this is the row whose task deadlines are at 4pm
         }
     }
     
-    func processTimeBlocksSinceLastLogin(layout: CustomFlowLayout) {    /* Live code from Nidhamu, an open-source project-planner + logbook
-                                                                        github.com/gladiusKatana/Nidhamu) */
+    func processTimeBlocksSinceLastLogin(layout: CustomFlowLayout) {
+        
         guard viewControllerType == .timetable,
             !cachedBlocksAndTheirPaths else {
             return

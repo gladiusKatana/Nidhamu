@@ -30,8 +30,7 @@ extension PopupMenuVC {
             }
             
             dismissPopupMenuAndSave(newTimeBlock: true)
-        }
-        else {dismissPopupMenuAndSave(newTimeBlock: false)} ///print("\(taskArraysToProcess.count) blocks now; \(tasksInBlockToBeProcessed) tasks; tag #\(taskIndex + 1)\n")
+        } else {dismissPopupMenuAndSave(newTimeBlock: false)} ///print("\(taskArraysToProcess.count) blocks now; \(tasksInBlockToBeProcessed) tasks; tag #\(taskIndex + 1)\n")
     }
     
     func dismissPopupMenuAndSave(newTimeBlock: Bool) {

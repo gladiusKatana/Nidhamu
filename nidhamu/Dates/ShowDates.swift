@@ -5,15 +5,15 @@ extension CollectionVC {
     
     func showKeyTimeBlockDates(cell: CustomCell) {
         
-        let column = cell.xyCoordinate[0];  let row = cell.xyCoordinate[1]         /// for now: could also just pass in row & column from caller
+        let column = cell.xyCoordinate[0];  let row = cell.xyCoordinate[1]          /// for now: could also just pass in row & column from caller
         
         if row == earliestTaskAddress[1] && column == earliestTaskAddress[0] {
-            cell.layer.borderColor = UIColor.white.cgColor                         //; print("highlighted cell white")
+            cell.layer.borderColor = UIColor.white.cgColor                          //; print("highlighted cell white")
             if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))], tasks.count > 1 {
-                cell.titleLabel.text = "(\(taskIndex + 1)/\(tasks.count))"        ///= "(\(tasks.count - tasksInBlockToBeProcessed + 1)/\(tasks.count))"
+                cell.titleLabel.text = "(\(taskIndex + 1)/\(tasks.count))"          ///= "(\(tasks.count - tasksInBlockToBeProcessed + 1)/\(tasks.count))"
                 cell.titleLabel.font = defaultTimetableCellFont
             }
-            else {cell.titleLabel.text = globalTaskIdentifier}                    /// when evets.count == 1, can just use previously set task's description via this var
+            else {cell.titleLabel.text = globalTaskIdentifier}                      /// when evets.count == 1, can just use previously set task's description via this var
         }
         else {
             let cellWeekday = Calendar.current.component(.weekday, from: cell.cellDate)
@@ -49,10 +49,10 @@ extension CollectionVC {
         }
     }
     
-    func showDateInTitleLabels(date: Date, cell: CustomCell) {  // for testing
+    func showDateInTitleLabels(date: Date, cell: CustomCell) {  /// for testing
         let mo = monthsAbbreviated[Calendar.current.component(.month, from: date) - 1]
         let dy = Calendar.current.component(.day, from: date)
-        cell.titleLabel.text = "\(mo) \(dy)" // will add this to formattedDateString(:), if it gets used anywhere else as well
+        cell.titleLabel.text = "\(mo) \(dy)" /// will add this to formattedDateString(:), if it gets used anywhere else as well
     }
     
     func showTimeInTitleLabels(_ date: Date) -> String {

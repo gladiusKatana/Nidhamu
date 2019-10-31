@@ -21,13 +21,13 @@ extension CustomFlowLayout {
                 if i < lockedHeaderRows && j < lockedHeaderSections {
                     xO = xOffSet + CGFloat(j) * widthPlusSpace
                     
-                    if self != taskTaggerLayout {yO = yOffset + CGFloat(i) * heightPlusSpace}
+                    if self != taskTaggingLayout {yO = yOffset + CGFloat(i) * heightPlusSpace}
                     else {                       yO = yOffset - CGFloat(navBarHeight + statusBarHeight)}
                 }
                     
                 else if i < lockedHeaderRows {
                     xO = xDefault
-                    if self != taskTaggerLayout {yO = yOffset + CGFloat(i) * heightPlusSpace}
+                    if self != taskTaggingLayout {yO = yOffset + CGFloat(i) * heightPlusSpace}
                     else {                       yO = yOffset - CGFloat(navBarHeight + statusBarHeight)}
                 }
                     

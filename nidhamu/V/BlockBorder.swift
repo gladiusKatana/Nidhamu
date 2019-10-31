@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    
+
     func addBorderAroundTimeBlockCurrentlyBeingMarked() {
         
         for cell in timetableVC.collectionView.visibleCells {

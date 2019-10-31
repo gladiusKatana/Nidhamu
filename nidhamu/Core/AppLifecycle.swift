@@ -23,7 +23,7 @@ extension AppDelegate {
     
     
     func applicationWillResignActive(_ application: UIApplication) {                    ///customApplicationStatusPrint("⏸will resign active")
-        if !classifierViewDisplayed {
+        if !taggingViewDisplayed {
             defaultSaveData(saveDate: true, resetLastLogin: false, showDate: true, pryntTasks: true)
         }
         

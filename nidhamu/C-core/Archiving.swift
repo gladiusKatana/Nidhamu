@@ -4,6 +4,7 @@ import UIKit
 extension PopupMenuVC {
     
     func addToArchives(_ taskBeingTagged: SimpleTask) {
+        
         if !archiveTasks.contains(taskBeingTagged) {
             archiveTasks.append(taskBeingTagged)
             
@@ -12,7 +13,9 @@ extension PopupMenuVC {
             archiveTaskDateComponentArrays.append(getArchiveTaskDateComponents(taskBeingTagged))
             
             archiveTaskDateStrings.append(formattedDateString(taskBeingTagged.deadline, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
-            ///let casename = taskBeingTagged.taskStatus.caseName()                                                                                                                       ; print("tagged as: \(casename)\n")
+            
+            ///let casename = taskBeingTagged.taskStatus.caseName()                                                                                                                       ; print("archived: \(casename)\n")
+            
             archiveTaskStatusStrings.append(taskBeingTagged.taskStatus.caseName())
             
             archiveTasks.removeAll()

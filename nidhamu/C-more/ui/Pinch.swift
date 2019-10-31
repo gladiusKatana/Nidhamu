@@ -12,7 +12,7 @@ extension CollectionVC {
         
     }
     
-    
+
     @objc func handlePinch() {
         
         if !justPinched { justPinched = true
@@ -20,6 +20,7 @@ extension CollectionVC {
         }
         
     }
+    
     
 }
 

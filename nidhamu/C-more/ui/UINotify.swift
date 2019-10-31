@@ -34,7 +34,6 @@ extension CollectionVC {
     //        checkOrientation()
     //
     //        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-    //
     //            keyboardHeight = keyboardFrame.cgRectValue.height + textFieldHeight             //; print("⌨️height: \(keyboardHeight)")
     //
     //            if currentOrientation == "portrait" {

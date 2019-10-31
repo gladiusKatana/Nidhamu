@@ -40,6 +40,7 @@ var grayTwo = UIColor.rgb(0, g: 0, b: 0, a: 0.2);                           var 
 var graySeven = UIColor.rgb(0, g: 0, b: 0, a: 0.7)
 var platinum = UIColor.rgb(214, g: 214, b: 214, a: 1)
 var platinumLite = UIColor.rgb(214, g: 214, b: 255, a: 0.25)
+
 ///var frostedGlass = UIColor.rgb(230, g: 230, b: 230, a: 0.7)  //(255, g: 255, b: 255, a: 0.4)
 ///var clearGlass = UIColor.rgb(255, g: 255, b: 255, a: 0.05)
 ///var skyBackgroundImage = UIImage(named: "skyB")?.withRenderingMode(.alwaysOriginal) // sky background (blue with light clouds)

@@ -1,7 +1,7 @@
 // Prynts           ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func printTasksTabularized() { // optimized for console printing on an iPad Mini 4, landscape orientation (using Duet app & metal iPad stand)
+func printTasksTabularized() { // optimized for console printing on an iPad Mini 4, landscape orientation (using Duet app & iPad stand)
     
     let gap = " "; var i = 0
     ///if timeBlockPaths.isEmpty {print("[no tasks]")}

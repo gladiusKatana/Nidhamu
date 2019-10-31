@@ -4,7 +4,7 @@ import UIKit
 enum CollectionViewType: Int {
     case initial = 0
     case timetable, taskList, archive, deferralDates,
-    days, months, years, taskClassifier
+    days, months, years /// not implemented (yet)-- see below comment
     
     func simpleDescription() -> String {
         
@@ -20,7 +20,7 @@ enum CollectionViewType: Int {
             return "shows the tasks (task list items) added to each hour of this week"
             
         case .archive:
-            return "shows all tasks previously tagged by the app (organized by date) since the last archive export (to CSV)"
+            return "shows all tasks previously tagged in the app since the last archive export (to CSV)"
             
         case .deferralDates:
             return "shows all time blocks over a 1-week period from the current hour, for deferral of a task to a later deadline"
@@ -38,9 +38,6 @@ enum CollectionViewType: Int {
             
         case .years:
             return "shows the years of this century"
-            
-        case .taskClassifier:
-            return "prompts the user to classify an task"
         }
     }
 }

@@ -30,12 +30,12 @@ extension CollectionVC {
         dismissNavController {
             let newVC = UINavigationController(rootViewController: vc)
             
-            //            if !tempGotoAnimationBool {
+            //if !tempGotoAnimationBool {
             newVC.modalPresentationStyle = .fullScreen  /// disabling this prevents CollectionVCs with non-nav-bar-embedded layouts from being presented
-            //            }
-            //            else {
-            //                newVC.modalPresentationStyle = .
-            //            }
+            //}
+            //else {
+            //newVC.modalPresentationStyle = . //...
+            //}
             
             navController?.present(newVC, animated: tempRescalingBool, completion: nil)
             self.setTopViewController()// try commenting this, you should see: vc of type 'initial' was root vc when this method was called

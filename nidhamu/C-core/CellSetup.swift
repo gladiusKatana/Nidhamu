@@ -17,8 +17,7 @@ extension CollectionVC {
                         cell.titleLabel.text = taskName
                         
                         let truncTrailSize = truncationTrail.stringSize(font: cell.titleLabel.font).width
-                        let limit = layout.cellWidth! - truncTrailSize //+ averageLetterWidth * 1.3
-                        ///print("limit: \(limit)")  ///; print("dots: \(truncTrailSize)  avgLetter:\(averageLetterWidth)")
+                        let limit = layout.cellWidth! - truncTrailSize ///print("limit: \(limit)")  ///; print("dots: \(truncTrailSize)  avgLetter:\(averageLetterWidth)")
                         cell.titleLabel.text = truncateString(taskName, sizeLimit: limit, font: cell.titleLabel.font)
                     }
                     else {
@@ -67,12 +66,7 @@ extension CollectionVC {
             }
                 
             else if column == 1 {cell.titleLabel.text = "\(archiveTaskDescriptions[row])"}
-                
-            else if column == 2 {
-                //let rawVal = archiveTaskStatuses[row]
-                cell.titleLabel.text = archiveTaskStatusStrings[row]//TaskStatus(rawValue: rawVal)!.caseName()
-            }
-                
+            else if column == 2 {cell.titleLabel.text = archiveTaskStatusStrings[row]}
             else {
                 cell.titleLabel.text = "\(dateFromInts(archiveTaskDateComponentArrays[row]))"
                 cell.titleLabel.font = UIFont.systemFont(ofSize: 6, weight: .ultraLight)

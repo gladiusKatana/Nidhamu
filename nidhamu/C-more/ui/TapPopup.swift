@@ -22,7 +22,7 @@ extension PopupMenuVC {
                 let selectedStatus = TaskStatus(rawValue: row)
                 let taskBeingTagged = tasksOfBlockBeingTagged[taskIndex]
                 
-                tasksOfBlockBeingTagged[taskIndex].taskStatus = selectedStatus!
+                tasksOfBlockBeingTagged[taskIndex].taskStatus = selectedStatus! ///; print("tagged as: \(casename)\n")
                 
                 if [TaskStatus.deferred, TaskStatus.upcoming].contains(selectedStatus)
                     || selectedTaskWillRecur {

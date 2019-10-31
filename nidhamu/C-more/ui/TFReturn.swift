@@ -1,7 +1,7 @@
 // TFReturn         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-extension CollectionVC {    /// ** commented code here is for animations
+extension CollectionVC {    ///  /**/  commented code here is for animations
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {          //print("text field returned")
         ///textField.removeFromSuperview(); textField.resignFirstResponder()

@@ -3,7 +3,8 @@ import UIKit
 
 extension CollectionVC {
     
-    override func viewDidLoad() {                                   super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         collectionView.backgroundColor = backgroundColour
         collectionView.bounces = false
         
@@ -17,15 +18,15 @@ extension CollectionVC {
         //kickoffTimer()                                            // does the timer kickoff then checks the date ('starts on the 1st callback')
     }
     
-    override func viewWillAppear(_ animated: Bool) {                super.viewWillAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setNavBarTitle(customString: nil)
         setupNavBarButtons(grayTwo, greyIndex: colourIndex)
     }
     
-    override func viewDidAppear(_ animated: Bool) {                 super.viewDidAppear(animated)
-        if viewControllerType != .taskClassifier {
-            setTopViewController()
-        }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setTopViewController()
         
         if [.taskList, .archive].contains(viewControllerType) {setupPinchToExit()}
         
@@ -38,12 +39,11 @@ extension CollectionVC {
         reloadCV()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {             super.viewWillDisappear(animated)
-        if viewControllerType == .taskList {        ///since it's not (currently) possible, anyway, to navigate away from the timetable vc when in task-adding mode (ie when text field is displayed)
-            if textFieldDisplayed {
-                exitTaskAddingMode()
-                textFieldDisplayed = false
-            }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if viewControllerType == .taskList && textFieldDisplayed {
+            exitTaskAddingMode()
+            textFieldDisplayed = false
         }
     }
 }

@@ -24,9 +24,9 @@ extension PopupMenuVC {
     
     
     func dismissTaggingWizard() {
-        taskRecurringSwitchView.removeFromSuperview()                                  ///; print("removing switch")
+        taskRecurringSwitchView.removeFromSuperview()       ///; print("removing switch")
         taskTaggingViewController.view.removeFromSuperview(); taskTaggingViewController.resignFirstResponder()
-        classifierViewDisplayed = false
+        taggingViewDisplayed = false
     }
     
 }

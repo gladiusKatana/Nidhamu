@@ -21,10 +21,10 @@ func dateFromComponents(_ dateComponents: [Any]) -> Date { /// Note, weekday is 
 }
 
 func dateFromInts(_ dateComponents: [Int]) -> Date { /// Note, weekday inot needed to create a Date; it's 'along for the ride', somewhat, & used for prints, eg in pryntLastLoginDate()
-    let yearLoaded = dateComponents[0] //as! Int                            ///; print("year loaded: \(yearLoaded)")
-    let monthLoaded = dateComponents[1] //as! Int                           ///; print("month loaded: \(monthLoaded)")
-    let dayLoaded = dateComponents[2] //as! Int                             ///; print("day loaded: \(dayLoaded)")
-    let hourLoaded = dateComponents[3] //as! Int                            ///; print("hour loaded: \(hourLoaded)")
+    let yearLoaded = dateComponents[0]                                      ///; print("year loaded: \(yearLoaded)")
+    let monthLoaded = dateComponents[1]                                     ///; print("month loaded: \(monthLoaded)")
+    let dayLoaded = dateComponents[2]                                       ///; print("day loaded: \(dayLoaded)")
+    let hourLoaded = dateComponents[3]                                      ///; print("hour loaded: \(hourLoaded)")
     
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy/MM/dd HH"

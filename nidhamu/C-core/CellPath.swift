@@ -5,8 +5,9 @@ extension CollectionVC {
     
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         if viewControllerType == .timetable {
-            if indexPath.row == 0 {return registerAndReturnLeftCell(collectionView, at: indexPath)}
+            if indexPath.row == 0 {return registerAndReturnLeftCell(collectionView, at: indexPath)} /// cell with text (and title label constraints) left-aligned
             else {return registerAndReturnCell(collectionView, at: indexPath)}
         } else {return registerAndReturnCell(collectionView, at: indexPath)}
     }

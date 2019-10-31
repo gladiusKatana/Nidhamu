@@ -3,9 +3,11 @@
 //import MessageUI
 //
 //extension CollectionVC {
-//    
-//    func sendArchiveAsCsv() {
-//        
+
+
+//    func sendArchiveAsCsv() {             /// first (less optimal) way of sending an email / message, using a UIActivityViewController
+
+    
 //        let dateString = formattedDateString(lastLoginDate, roundedDown: false, showYear: true,
 //                                             prefix: "", suffix: "", dateFormat: .archiveCSVTitle)
 //        

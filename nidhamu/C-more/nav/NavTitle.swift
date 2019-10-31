@@ -20,7 +20,8 @@ extension CollectionVC {
                 title = "Select date to defer '\(globalTaskIdentifier)'"
             }
             else { /// ie if vcType is the task list VC.   Note, will add more VCs soon (see Notes.swift)
-                title = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: "Tasks", suffix: "", dateFormat: .hourlyTimeBlock)
+                title = formattedDateString(selectedCellDate, roundedDown: true, showYear: false,
+                                            prefix: "Tasks", suffix: "", dateFormat: .hourlyTimeBlock)
             }
         }
         

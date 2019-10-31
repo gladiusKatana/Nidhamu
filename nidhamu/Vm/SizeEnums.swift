@@ -5,7 +5,8 @@ extension CustomFlowLayout {
     
     enum CellDimensionsMode: Int {
         
-        case widthAndHeightHardcoded = 0; case widthHardcoded, heightHardcoded, neitherHardcoded
+        case widthAndHeightHardcoded = 0
+        case widthHardcoded, heightHardcoded, neitherHardcoded
         
         func simpleDescription() -> String {
             switch self {
@@ -28,7 +29,8 @@ extension CustomFlowLayout {
     
     enum SquareCellMode: Int {
         
-        case noAutoSquare = 0; case autoSquareHeightFromWidth, autoSquareWidthFromHeight
+        case noAutoSquare = 0
+        case autoSquareHeightFromWidth, autoSquareWidthFromHeight
         
         func simpleDescription() -> String {
             switch self {

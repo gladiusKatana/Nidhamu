@@ -2,15 +2,13 @@
 import UIKit
 
 var lastLoginDate = Date()
-var selectedCellDate = Date()
 
+var selectedCellDate = Date()
 
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 
-
 var nowRow = 0;                         var nowColumn = 0
 var taskIndex = 0;                      var tasksInBlockToBeProcessed = 0
-
 
 var globalTaskIdentifier = "(task)";    var selectedTimeBlockDateDescription = "(selected date)"
 

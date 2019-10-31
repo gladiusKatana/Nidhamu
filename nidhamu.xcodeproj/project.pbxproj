@@ -43,7 +43,7 @@
 		062516C422D6CF4200EBB4C8 /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169422D6CF4200EBB4C8 /* PopupVC.swift */; };
 		062516C522D6CF4200EBB4C8 /* TapPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169622D6CF4200EBB4C8 /* TapPopup.swift */; };
 		062516C622D6CF4200EBB4C8 /* Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169722D6CF4200EBB4C8 /* Tap.swift */; };
-		062516C722D6CF4200EBB4C8 /* TagEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169822D6CF4200EBB4C8 /* TagEvents.swift */; };
+		062516C722D6CF4200EBB4C8 /* TagTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169822D6CF4200EBB4C8 /* TagTasks.swift */; };
 		062516C822D6CF4200EBB4C8 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169922D6CF4200EBB4C8 /* TextField.swift */; };
 		062516CA22D6CF4200EBB4C8 /* CellPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169B22D6CF4200EBB4C8 /* CellPath.swift */; };
 		062516CC22D6CF4200EBB4C8 /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */; };
@@ -66,7 +66,7 @@
 		06306511233DA35F00C4BB95 /* PLifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06306510233DA35F00C4BB95 /* PLifeCycle.swift */; };
 		06306513233E7D5E00C4BB95 /* ShowDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06306512233E7D5E00C4BB95 /* ShowDates.swift */; };
 		0631914422E2C5F5004DE476 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0631914322E2C5F5004DE476 /* LoginInterval.swift */; };
-		06399205233F93C9008907FE /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06399204233F93C9008907FE /* EventData.swift */; };
+		06399205233F93C9008907FE /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06399204233F93C9008907FE /* TaskData.swift */; };
 		063E3C502357A6E10044727C /* UIMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063E3C4F2357A6E10044727C /* UIMode.swift */; };
 		06473CA82346DF00009397AE /* SendMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06473CA72346DF00009397AE /* SendMsg.swift */; };
 		06473CAC2346E03D009397AE /* EmailCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06473CAB2346E03D009397AE /* EmailCSV.swift */; };
@@ -143,7 +143,7 @@
 		0625169422D6CF4200EBB4C8 /* PopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
 		0625169622D6CF4200EBB4C8 /* TapPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapPopup.swift; sourceTree = "<group>"; };
 		0625169722D6CF4200EBB4C8 /* Tap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tap.swift; sourceTree = "<group>"; };
-		0625169822D6CF4200EBB4C8 /* TagEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagEvents.swift; sourceTree = "<group>"; };
+		0625169822D6CF4200EBB4C8 /* TagTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTasks.swift; sourceTree = "<group>"; };
 		0625169922D6CF4200EBB4C8 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		0625169B22D6CF4200EBB4C8 /* CellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPath.swift; sourceTree = "<group>"; };
 		0625169D22D6CF4200EBB4C8 /* CollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		06306510233DA35F00C4BB95 /* PLifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLifeCycle.swift; sourceTree = "<group>"; };
 		06306512233E7D5E00C4BB95 /* ShowDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDates.swift; sourceTree = "<group>"; };
 		0631914322E2C5F5004DE476 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
-		06399204233F93C9008907FE /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		06399204233F93C9008907FE /* TaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
 		063E3C4F2357A6E10044727C /* UIMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMode.swift; sourceTree = "<group>"; };
 		06473CA72346DF00009397AE /* SendMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMsg.swift; sourceTree = "<group>"; };
 		06473CAB2346E03D009397AE /* EmailCSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCSV.swift; sourceTree = "<group>"; };
@@ -332,7 +332,6 @@
 				0625169022D6CF4200EBB4C8 /* Prynts.swift */,
 				06482791233414FC0035774F /* Strings.swift */,
 				0625168D22D6CF4200EBB4C8 /* Colours.swift */,
-				0625168E22D6CF4200EBB4C8 /* ScrollBars.swift */,
 				0625168F22D6CF4200EBB4C8 /* Animations.swift */,
 				06F2A969231725980062FE02 /* RotateLock.swift */,
 				064A44B42331982D00AD82E4 /* BlockBorder.swift */,
@@ -395,7 +394,7 @@
 				0625167422D6CF2B00EBB4C8 /* Tasks.swift */,
 				0625167122D6CF2A00EBB4C8 /* Vars.swift */,
 				0625166F22D6CF2A00EBB4C8 /* TimeVars.swift */,
-				06399204233F93C9008907FE /* EventData.swift */,
+				06399204233F93C9008907FE /* TaskData.swift */,
 				0625167022D6CF2A00EBB4C8 /* VCs.swift */,
 				0625167222D6CF2A00EBB4C8 /* AppDelegate.swift */,
 				0625167322D6CF2A00EBB4C8 /* AppLifecycle.swift */,
@@ -419,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				06473CA72346DF00009397AE /* SendMsg.swift */,
+				0625168E22D6CF4200EBB4C8 /* ScrollBars.swift */,
 			);
 			path = Inactive;
 			sourceTree = "<group>";
@@ -431,7 +431,7 @@
 				0625169B22D6CF4200EBB4C8 /* CellPath.swift */,
 				062516A622D6CF4200EBB4C8 /* CellSetup.swift */,
 				06B872062329CA0700512B21 /* PrepBlocks.swift */,
-				0625169822D6CF4200EBB4C8 /* TagEvents.swift */,
+				0625169822D6CF4200EBB4C8 /* TagTasks.swift */,
 				062AC1042359464600427DC1 /* Archiving.swift */,
 				063E3C4F2357A6E10044727C /* UIMode.swift */,
 			);
@@ -610,7 +610,7 @@
 				0625163E22D6C71900EBB4C8 /* nidhamu.xcdatamodeld in Sources */,
 				06164A3322D6D19000DA608D /* DateRefresh.swift in Sources */,
 				0625167822D6CF2B00EBB4C8 /* AppDelegate.swift in Sources */,
-				06399205233F93C9008907FE /* EventData.swift in Sources */,
+				06399205233F93C9008907FE /* TaskData.swift in Sources */,
 				0687565E232992FA0052818A /* TFReturn.swift in Sources */,
 				062516BA22D6CF4200EBB4C8 /* SizeEnums.swift in Sources */,
 				06473CAC2346E03D009397AE /* EmailCSV.swift in Sources */,
@@ -626,7 +626,7 @@
 				062516B122D6CF4200EBB4C8 /* Cell.swift in Sources */,
 				06AA5D19231727C500DC04FD /* PCellPath.swift in Sources */,
 				06164A3122D6D19000DA608D /* Dates.swift in Sources */,
-				062516C722D6CF4200EBB4C8 /* TagEvents.swift in Sources */,
+				062516C722D6CF4200EBB4C8 /* TagTasks.swift in Sources */,
 				062516C522D6CF4200EBB4C8 /* TapPopup.swift in Sources */,
 				0625167922D6CF2B00EBB4C8 /* AppLifecycle.swift in Sources */,
 				062AC10323593AE600427DC1 /* Buttons.swift in Sources */,

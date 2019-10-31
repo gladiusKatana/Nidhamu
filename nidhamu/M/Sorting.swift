@@ -11,6 +11,7 @@ func findSortingTransform(_ input: [[Int]], output: [[Int]]) -> [Int] { // Only 
     return transform
 }
 
+
 func findDateSortingTransform(_ input: [[Date]], output: [[Date]]) -> [Int] {
     var transform = [Int]()                                             // see comments above
     
@@ -20,19 +21,19 @@ func findDateSortingTransform(_ input: [[Date]], output: [[Date]]) -> [Int] {
     return transform
 }
 
+
 func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
-    
     var output = [Any]()
-    for _ in input {output.append(0)}
-    
     var i = 0
+    
+    for _ in input {output.append(0)}
     
     for element in input {
         ///let i = output.firstIndex(of: element)!   ///Remember, using this method would not handle duplication. Need to use the old-school way, via index integer. (Also see comment above...
         output[transform[i]] = element                                  //print("inserting \(element) at \(transform[i])")
         if i < transform.count - 1 {i += 1}
     }
-    return output /// return the input, mutated (sorted); would make this a mutating func, but it's global
+    return output
 }
 
 
@@ -44,18 +45,6 @@ func lastTaskFromPath(_ path: [Int]) -> SimpleTask {
         print(err)
         return SimpleTask(taskDescription: err, deadline: Date(), taskStatus: .done)
     }
-
     return tasksToProcess.last!
-    
-    /*let err = "no item @ path [sort attempt]"
-
-    /// arbitrary parameters to satisfy initializer:
-    var lastTask = SimpleTask(taskDescription: err, deadline: Date(), taskStatus: .done) /// initial values are arbitrary because lastTasks is reset soon anyway
-
-    if let tasksToProcess = tasksAtIndexPath[TimeBlock(values:(path[0], path[1]))] {
-        lastTask = tasksToProcess.last!
-    }
-    else {print(err)}
-    return lastTask*/
 }
 

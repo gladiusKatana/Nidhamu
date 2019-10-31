@@ -3,13 +3,13 @@ import UIKit
 
 extension CollectionVC {
     
-    func presentPopupViewToTagTasks(column: Int, row: Int) {               //print("-----------------")//print("presenting popup")
+    func presentPopupViewToTagTasks(column: Int, row: Int) {                    //print("-----------------")//print("presenting popup")
         
         if currentOrientation == "portrait" {AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)}
         if currentOrientation == "landscape" {AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)}
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-            if !classifierViewDisplayed {
+            if !taggingViewDisplayed {
                 
                 let layout = self.downcastLayout!;                          let widthMultiplier = CGFloat(2)
                 let cellWidth = layout.widthPlusSpace;                      let cellHeight = layout.heightPlusSpace
@@ -29,8 +29,8 @@ extension CollectionVC {
                 taskTaggingViewController.collectionView.frame = popupCollectionViewFrame
                 
                 let hscale = timetableVC.downcastLayout!.autoFitHeightScale!     //* make sure this is extensible (ie,  if column >= 6 )
-                taskTaggingViewController.collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: taskTaggingViewController.downcastLayout!.cellHeight! * hscale,
-                                                                                  left: 0, bottom: 0, right: 0)
+                taskTaggingViewController.collectionView?.scrollIndicatorInsets =
+                    UIEdgeInsets(top: taskTaggingViewController.downcastLayout!.cellHeight! * hscale, left: 0, bottom: 0, right: 0)
                 taskTaggingViewController.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
                 taskTaggingViewController.collectionView.isUserInteractionEnabled = true
                 
@@ -39,14 +39,14 @@ extension CollectionVC {
                     CGRect(x: x, y: y + popupCollectionViewFrame.height,
                            width: wid, height: switchViewHeight))           ; taskRecurringSwitchView.backgroundColor = popupMenuLightGray
                 
-                timetableVC.view.addSubview(taskTaggingViewController.view)              //; print("----------------adding popup")
-                timetableVC.view.addSubview(taskRecurringSwitchView)       //; print("adding switch")
+                timetableVC.view.addSubview(taskTaggingViewController.view)     //; print("----------------adding popup")
+                timetableVC.view.addSubview(taskRecurringSwitchView)            //; print("adding switch")
                 
                 taskTaggingViewController.becomeFirstResponder()
-                classifierViewDisplayed = true
+                taggingViewDisplayed = true
                 taskTaggingViewController.collectionView.reloadData()
                 
-                taskTaggingViewController.keepScrollIndicatorsVisible()
+                ///taskTaggingViewController.keepScrollIndicatorsVisible()
                 self.addBorderAroundTimeBlockCurrentlyBeingMarked()
             }
         }

@@ -7,8 +7,6 @@ extension CollectionVC {
         cell.cellDate = setCellDate(baseDate: Date(), cellOffset: layout.lockedHeaderRows - row, cell: cell,
                                     column: column, row: row, layout: layout, looping: looping, withColours: withColours)
         
-
-        
         if [2, 3, 4].contains(row) {
             setupHeaderDateLabels(cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
         }

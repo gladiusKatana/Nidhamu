@@ -24,7 +24,7 @@ extension CustomFlowLayout {
                 frame = safeFrame
             } else {
                 frame = zeroFrame                                                       //;print("\n\nit's the nil catcher frame, rows \(rows)")
-            }                             //* default frame is overridden anyway (see above comment); hence its initialization with all 0's
+            } //* default frame is overridden anyway (see above comment); hence its initialization with all 0's
         }
         
         let gap = CGFloat(5) /// extra gap for better aesthetics

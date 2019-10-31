@@ -39,7 +39,7 @@ extension CollectionVC {
     
     
     @objc func buttonWrapperMethodforTimetableVC() {
-        //        timetableVC.downcastLayout?.autoFitHScale = 1
+        ///timetableVC.downcastLayout?.autoFitHScale = 1
         gotoView(vc: timetableVC)}
     
 }

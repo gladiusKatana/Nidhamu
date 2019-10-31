@@ -30,10 +30,9 @@ var navBarHeight = 0.0;                         var launchWidth = 0.0
 var firstTimeLoaded = false                     /// one-way bool: only flipped to  true once in entire app lifecycle
 var rotatedFromResignActive = false;            var reloadedFromHourTickingOver = true;         var cachedBlocksAndTheirPaths = false
 var showConsoleLegend = true;                   var tempRescalingBool = false;                  var thereWillBeARowException = false
-var justPinched = false;                        var keyboardLocked = false
-var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false;    var textFieldDisplayed = false
-var classifierViewDisplayed = false;            var selectedTaskWillRecur = false
-
+var justPinched = false;                        var keyboardLocked = false;                     var textFieldDisplayed = false
+var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false
+var taggingViewDisplayed = false;            var selectedTaskWillRecur = false
 
 var defaultTimetableCellFont = UIFont.systemFont(ofSize: 12, weight: .ultraLight) //UIFont(name: "Helvetica Neue", size: 12)
 
@@ -47,6 +46,6 @@ var loadSymbolLegend = "                                        💾 = view load
 var truncationTrail = "…";                      ///var averageLetterWidth = CGFloat(0)
 var dateString = "global csv date string";      var fileName = "global csv file name"
 
-var modelName = "device you're running on"
+var modelName = "device you're running on"      // <- update me
 var phones = ["iPhone4", "iPhone 4s", "iPhone 5", "iPhone 5c", "iPhone 5s", "iPhone 6", "iPhone 6 Plus", "iPhone 6s", "iPhone 6s Plus", "iPhone 7", "iPhone 7 Plus", "iPhone SE", "iPhone 8", "iPhone 8 Plus", "iPhone X", "iPhone XS", "iPhone XS Max", "iPhone XR"]
 

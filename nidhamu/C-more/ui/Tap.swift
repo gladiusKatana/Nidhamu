@@ -11,8 +11,7 @@ extension CollectionVC {
             
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
             ///print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "block: ", suffix: "", dateFormat: .fullDay)) //("\nselected date (unformatted gmt)  \(cell.cellDate)")
-            
-            selectedCellDate = cell.cellDate                                                                                        //➕
+            selectedCellDate = cell.cellDate
             selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: " Add a Task", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
             
             switch viewControllerType {
@@ -25,20 +24,18 @@ extension CollectionVC {
                     
                     if previousTimeBlockPathSelected == defaultPathOutOfView {
                         previousTimeBlockPathSelected = selectedTimeBlockPath
-
-                        ///setNavBarTitle(customString: " Add a Task (Tap Done to quit)")                                                           // may not use.  Gives User too much extra stuff to look at?
-                        animateTimeBlockTappedToAddTask(cell: cell)                                /// may not use. Looks nice; slows User down a little bit?
+                        
+                        ///setNavBarTitle(customString: " Add a Task (Tap Done to quit)")                                                               // may not use.  Gives User too much extra stuff to look at?
+                        animateTimeBlockTappedToAddTask(cell: cell)                                 /// may not use. Looks nice; slows User down a little bit?
                         cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                             self.prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
                         }
-                    }
-                    else {
+                    } else {
                         cell.backgroundColor = taskAddingColour
                         prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
-                    }
-                    ///see (*) re. animation-logic, below
+                    } ///see (*) re. animation-logic, below
                 } else {
                     if let tasks = tasksAtIndexPath[timeBlock] {taskListVC.downcastLayout!.rows = tasks.count}
                     gotoView(vc: taskListVC)
@@ -47,14 +44,12 @@ extension CollectionVC {
             case .taskList:         prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
             case .archive:          presentEmail() ///sendArchiveAsCsv()
             case .deferralDates:
-                
                 deferralPath = [column, row]
                 cell.backgroundColor = taskAddingColour
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     cell.backgroundColor = cell.cellColour
                     self.gotoView(vc: timetableVC)
                 }
-                
             default: print("unrecognized collection view type's cell selected")}
         }///else {print("selected navbar-embeddd vc's header")}
     }
