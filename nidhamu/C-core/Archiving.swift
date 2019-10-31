@@ -9,7 +9,7 @@ extension PopupMenuVC {
             
             archiveTaskDescriptions.append(taskBeingTagged.taskDescription)
             archiveTaskStatuses.append(taskBeingTagged.taskStatus.rawValue)
-            archiveTaskDateComponentArrays.append(getTaskDateComponents(taskBeingTagged))
+            archiveTaskDateComponentArrays.append(getArchiveTaskDateComponents(taskBeingTagged))
             
             archiveTaskDateStrings.append(formattedDateString(taskBeingTagged.deadline, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
             ///let casename = taskBeingTagged.taskStatus.caseName()                                                                                                                       ; print("tagged as: \(casename)\n")

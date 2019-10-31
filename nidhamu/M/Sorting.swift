@@ -37,15 +37,25 @@ func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
 
 
 func lastTaskFromPath(_ path: [Int]) -> SimpleTask {
+    
     let err = "no item @ path [sort attempt]"
     
-    /// arbitrary parameters to satisfy initializer:
-    var lastTask = SimpleTask(taskDescription: err, taskDate: Date(), taskStatus: .done) /// initial values are arbitrary because lastTasks is reset soon anyway
+    guard let tasksToProcess = tasksAtIndexPath[TimeBlock(values:(path[0], path[1]))] else {
+        print(err)
+        return SimpleTask(taskDescription: err, deadline: Date(), taskStatus: .done)
+    }
+
+    return tasksToProcess.last!
     
+    /*let err = "no item @ path [sort attempt]"
+
+    /// arbitrary parameters to satisfy initializer:
+    var lastTask = SimpleTask(taskDescription: err, deadline: Date(), taskStatus: .done) /// initial values are arbitrary because lastTasks is reset soon anyway
+
     if let tasksToProcess = tasksAtIndexPath[TimeBlock(values:(path[0], path[1]))] {
         lastTask = tasksToProcess.last!
     }
     else {print(err)}
-    return lastTask
+    return lastTask*/
 }
 

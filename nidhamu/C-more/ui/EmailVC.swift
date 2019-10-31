@@ -10,7 +10,7 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         super.viewDidLoad()
     }
     
-    func canSendEmail() -> Bool {                                                               /// A wrapper function to indicate whether or not an email
+    func canSendEmail() -> Bool {                                                               /// A wrapper method to indicate whether or not an email
         return MFMailComposeViewController.canSendMail()                                        /// can be sent from the user's device
     }
     
@@ -21,7 +21,9 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         let tempEmails = ["garthsnyder1@gmail.com"]
         emailComposeVC.setToRecipients(tempEmails)//(currentClientEmails)           //print("email recipient:\n\(currentClientEmails)")
         
-        let path = archiveVC.createArchiveUrl();    let count = archiveTaskDescriptions.count; let s = (count > 1) ? "s" : ""
+        let path = archiveVC.createArchiveUrl()
+        let count = archiveTaskDescriptions.count
+        let s = (count > 1) ? "s" : ""
         
         let messageText = "\(count) new Task\(s)\nFrom\(archiveTaskDateStrings.first!)\nTo\(archiveTaskDateStrings.last!)"
         emailComposeVC.setMessageBody(messageText, isHTML: false)                               /// <p> is for isHTML: true

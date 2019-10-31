@@ -11,19 +11,24 @@ enum CollectionViewType: Int {
         switch self {
             
         case .initial:
-            return "initial value to satisfy initializer of global collection view controller 'currentTopVC'"
+            return "initial value to satisfy initializer of global collection view controller 'topVC'"
             
         case .timetable:
-            return "shows the hours of this week"
+            return "shows each hour of this week"
             
         case .taskList:
-            return "shows the tasks (task list items) of this hour"
+            return "shows the tasks (task list items) added to each hour of this week"
             
         case .archive:
-            return "shows all tasks previously tagged on the timetable (organized by date)"
+            return "shows all tasks previously tagged by the app (organized by date) since the last archive export (to CSV)"
             
         case .deferralDates:
-            return "shows all time blocks in the coming week, for selection of a deadline-deferral"
+            return "shows all time blocks over a 1-week period from the current hour, for deferral of a task to a later deadline"
+            
+            
+            /// The next 3 cases are not implemented in this app (but have been in other time-block-based apps written by gladiusKatana)...
+            /// ...and they will likely be added in in the future
+            
             
         case .days:
             return "shows the days of this month"

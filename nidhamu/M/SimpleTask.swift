@@ -2,14 +2,15 @@
 import UIKit
 
 class SimpleTask: NSObject {
-    var taskDescription = ""               // description of a task coming up (or task list item) on this day
-    var deadline = Date()                  // date the task must be done by
-    var taskStatus = TaskStatus.upcoming
-    var recurring = false //* will use soon
     
-    init(taskDescription: String, taskDate: Date, taskStatus: TaskStatus) {
+    var taskDescription = ""               // description of a task coming up (or task list item) on this day
+    var taskStatus = TaskStatus.upcoming
+    var deadline = Date()                  // date the task must be done by
+    //var recurring = false //* replacing global selectedTaskWillRecur with this seems logical
+    
+    init(taskDescription: String, deadline: Date, taskStatus: TaskStatus) {
         self.taskDescription = taskDescription
-        self.deadline = taskDate
+        self.deadline = deadline
         self.taskStatus = taskStatus
     }
     

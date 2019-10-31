@@ -20,7 +20,7 @@ func defaultLoadData(showDate: Bool) {                                          
     
     timeBlockPaths = defaults.array(forKey: "savedTimeBlockPaths") as? [[Int]] ?? []
     taskDescriptionArrays = defaults.array(forKey: "savedTaskDescriptionArrays") as? [[String]] ?? []
-    taskDateArrays = defaults.array(forKey: "savedTaskDateArrays") as? [[[Any]]] ?? [[[]]]
+    taskDeadlineArrays = defaults.array(forKey: "savedTaskDeadlineArrays") as? [[[Any]]] ?? [[[]]]
     taskStatusArrays = defaults.array(forKey: "savedTaskStatusArrays") as? [[Int]] ?? []
     
     archiveTaskDescriptions = defaults.array(forKey: "savedArchiveTaskDescriptions") as? [String] ?? []
@@ -28,7 +28,8 @@ func defaultLoadData(showDate: Bool) {                                          
     archiveTaskDateComponentArrays = defaults.array(forKey: "savedArchiveTaskDateComponentArrays") as? [[Int]] ?? []
     
     populateDictionaryFromDefaults()                                                        //; print("loaded task paths: \(timeBlockPaths)")
-    if !firstTimeLoaded {populateTaskDatesAndStatusesFromDefaults()}
+    
+    if !firstTimeLoaded {populateArchivedDatesAndStatusesFromDefaults()}
     firstTimeLoaded = true
 }
 
@@ -43,11 +44,11 @@ func populateDictionaryFromDefaults() {
         
         for description in taskDescriptions {
             let taskStatus = taskStatusArrays[i][j]
-            let dateComponents = taskDateArrays[i][j]                                       //; print("task date components: \(dateComponents)")
-            let date = dateFromComponents(dateComponents)                                   //; print("date: \(date)")
-            let task = SimpleTask(taskDescription: description, taskDate: date, taskStatus: TaskStatus(rawValue: taskStatus)!)
+            let dateComponents = taskDeadlineArrays[i][j]                                   //; print("task date components: \(dateComponents)")
+            let deadline = dateFromComponents(dateComponents)                               //; print("date: \(date)")
+            let task = SimpleTask(taskDescription: description, deadline: deadline, taskStatus: TaskStatus(rawValue: taskStatus)!)
             
-            ///print("loaded: '\(task.taskDescription)' [\(task.taskStatus)] with deadline:\(formattedDateString(date, roundedDown: true, prefix: "", suffix: "", short: false))")
+            ///print("loaded: '\(task.taskDescription)' [\(task.taskStatus)] with deadline:\(formattedDateString(deadline, roundedDown: true, prefix: "", suffix: "", short: false))")
             
             tasks.append(task)
             j += 1
@@ -58,11 +59,11 @@ func populateDictionaryFromDefaults() {
     }
 }
 
-func populateTaskDatesAndStatusesFromDefaults() {
+func populateArchivedDatesAndStatusesFromDefaults() {
     var i = 0
     for _ in archiveTaskStatuses {
-        archiveTaskDateStrings.append(formattedDateString(dateFromInts(archiveTaskDateComponentArrays[i]), roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
         archiveTaskStatusStrings.append(TaskStatus(rawValue: archiveTaskStatuses[i])!.caseName())
+        archiveTaskDateStrings.append(formattedDateString(dateFromInts(archiveTaskDateComponentArrays[i]), roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
         i += 1
     }
 }

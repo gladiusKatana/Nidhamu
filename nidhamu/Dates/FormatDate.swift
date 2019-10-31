@@ -34,14 +34,15 @@ enum CustomDateFormat: Int {
     case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayWithSeconds, fullDayShortForm, fullDayShortFormNoDots, archiveFormat, archiveCSVTitle, timeOnly
 }
 
-func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
+
+/*func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
     var formattedDatesArrays = [[String]]()
-    
+
     for timeBlock in cells {
         var timeBlockDateStrings = [String]()
-        
-        for taskDateComponents in timeBlock {
-            let date = dateFromComponents(taskDateComponents)
+
+        for taskDateComponents in timeBlock {   /// should probably use the word  deadline  rather than  date  here (code is not currently used)
+            let date = dateFromComponents(taskDateComponents)   /// see comment in the line above
             let dateString = formattedDateString(date, roundedDown: true, showYear: false,
                                                  prefix: "", suffix: " ", dateFormat: .fullDayShortForm) /// 2nd space to match default left one
             timeBlockDateStrings.append(dateString)
@@ -49,5 +50,5 @@ func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
         formattedDatesArrays.append(timeBlockDateStrings)
     }
     return formattedDatesArrays
-}
+}*/
 

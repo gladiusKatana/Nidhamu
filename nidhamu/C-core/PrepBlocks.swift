@@ -4,7 +4,7 @@ import UIKit
 extension CollectionVC {
     
     func prepareToProcessTasksSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
-        if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))] {            ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
+        if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))] {              ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             if !cachedBlocksAndTheirPaths {
                 
                 if !indexPathsToProcess.contains([column, row]) {indexPathsToProcess.append([column, row])} //; print("appending path \([column, row])")
@@ -14,12 +14,12 @@ extension CollectionVC {
                 for task in tasks {taskDescriptions.append(task.taskDescription)}
                 
                 if !taskDescriptionsToProcess.contains(taskDescriptions) {
-                    taskDescriptionsToProcess.append(taskDescriptions)                //; print("appending descriptions \(taskDescriptions)")
+                    taskDescriptionsToProcess.append(taskDescriptions)                  //; print("appending descriptions \(taskDescriptions)")
                     taskArraysToProcess.append(tasks)
                 }
                 ///else {print("task array-of-arrays already contains tasks: \(tasks)")}
             }
-            if row >= 21 {thereWillBeARowException = true}              /// this is the row whose task deadlines are at 4pm
+            if row >= 21 {thereWillBeARowException = true}                              /// this is the row whose task deadlines are at 4pm
         }
     }
     
@@ -64,36 +64,36 @@ extension CollectionVC {
     }
     
     
-//    func processTimeBlocksSinceLastLogin(layout: CustomFlowLayout) {
-//        if vcType == .hours {
-//            if taskArraysToProcess.count > 0 {
-//
-//                if !savedBlocksAndPathsForProcessing {
-//
-//                    pathsToProcess = pathsToProcess.sorted(by: {lasttaskFromPath($0).taskDate < lasttaskFromPath($1).taskDate})
-//                    taskArraysToProcess = taskArraysToProcess.sorted(by: {$0.last!.taskDate < $1.last!.taskDate})
-//                    ///print("paths to process: \(pathsToProcess)"); print("tasks to process: \(taskDescriptionsToProcess)")
-//
-//                    tasksInBlockToBeProcessed = taskArraysToProcess.first!.count
-//                    savedBlocksAndPathsForProcessing = true
-//
-//                    if thereWillBeARowException {
-//                        let gap = CGFloat(5) / (self.downcastLayout!.cellHeight!)       // extra gap for better aesthetics
-//                        downcastLayout?.autoFitHScale =
-//                            CGFloat(layout.rows) / (CGFloat(layout.rows + 8) + gap)     // popup window is 9 cells tall
-//                        reloadWithDelay(after: 0)                                       //; print("reloaded for size adjustment")
-//
-//                        let count = pathsToProcess.count
-//                        if count >= 2                   /// * row 21 = 4pm
-//                            && pathsToProcess[count - 2][1] < 21 {  /// if 2nd-last index path to process requires resizing (since cells can be swept over repeatedly, ...
-//                            classifierVC.removePopupMenuAndSwitch() /// ... within 1 session (eg user could leave timetable open for multiple hours, it just auto-updates)
-//                        }
-//                        thereWillBeARowException = false
-//                    }
-//                    tagtasksSinceLastLogin()   ///; print(".\(taskArraysToProcess.count) blocks remaining now; \(tasksInBlockToBeProcessed) tasks; tag #\(taskIndex + 1)\n")
-//                }
-//            } else {DispatchQueue.main.asyncAfter(deadline: .now() + 1) {AppUtility.lockOrientation(.all)}}
-//        }
-//    }
+    /*func processTimeBlocksSinceLastLogin(layout: CustomFlowLayout) {
+        if vcType == .hours {
+            if taskArraysToProcess.count > 0 {
+                
+                if !savedBlocksAndPathsForProcessing {
+                    
+                    pathsToProcess = pathsToProcess.sorted(by: {lasttaskFromPath($0).deadline < lasttaskFromPath($1).deadline})
+                    taskArraysToProcess = taskArraysToProcess.sorted(by: {$0.last!.deadline < $1.last!.deadline})
+                    ///print("paths to process: \(pathsToProcess)"); print("tasks to process: \(taskDescriptionsToProcess)")
+                    
+                    tasksInBlockToBeProcessed = taskArraysToProcess.first!.count
+                    savedBlocksAndPathsForProcessing = true
+                    
+                    if thereWillBeARowException {
+                        let gap = CGFloat(5) / (self.downcastLayout!.cellHeight!)       // extra gap for better aesthetics
+                        downcastLayout?.autoFitHScale =
+                            CGFloat(layout.rows) / (CGFloat(layout.rows + 8) + gap)     // popup window is 9 cells tall
+                        reloadWithDelay(after: 0)                                       //; print("reloaded for size adjustment")
+                        
+                        let count = pathsToProcess.count
+                        if count >= 2                   /// * row 21 = 4pm
+                            && pathsToProcess[count - 2][1] < 21 {  /// if 2nd-last index path to process requires resizing (since cells can be swept over repeatedly, ...
+                            classifierVC.removePopupMenuAndSwitch() /// ... within 1 session (eg user could leave timetable open for multiple hours, it just auto-updates)
+                        }
+                        thereWillBeARowException = false
+                    }
+                    tagtasksSinceLastLogin()   ///; print(".\(taskArraysToProcess.count) blocks remaining now; \(tasksInBlockToBeProcessed) tasks; tag #\(taskIndex + 1)\n")
+                }
+            } else {DispatchQueue.main.asyncAfter(deadline: .now() + 1) {AppUtility.lockOrientation(.all)}}
+        }
+    }*/
 }
 

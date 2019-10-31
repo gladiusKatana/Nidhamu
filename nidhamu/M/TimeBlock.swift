@@ -25,7 +25,7 @@ extension CollectionVC {
         if withStatus != nil {status = withStatus!} else {status = .upcoming}
         
         let timeBlockToAdd = TimeBlock(values:(column, row))
-        let simpleTask = SimpleTask(taskDescription: textEntered, taskDate: taskDeadline, taskStatus: status)
+        let simpleTask = SimpleTask(taskDescription: textEntered, deadline: taskDeadline, taskStatus: status)
         
         if tasksAtIndexPath[timeBlockToAdd] != nil {
             tasksAtIndexPath[timeBlockToAdd]!.append(simpleTask)

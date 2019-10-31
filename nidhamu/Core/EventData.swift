@@ -31,14 +31,14 @@ var deferralPath = [Int]();     var deferredDescription = ""
 var timeBlockPaths = [[Int]]()
 var sortedTimeBlockPaths = [[Int]]();               var sortingTransform = [Int]()
 
-var taskDateArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]]
+var taskDeadlineArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]]
 var taskDescriptionArrays = [[String]]()
 var taskStatusArrays = [[Int]]() /// populated with raw values of enum TaskStatus*/
 
 
 
 
-/// Saving ARCHIVED time blocks' components via separate UserDefaults arrays -------------------------------------------
+/// Saving ARCHIVED time blocks' components via separate UserDefaults arrays -----------------------------------------
 var archiveTasks = [SimpleTask]()
 var archiveTaskDescriptions = [String]()
 var archiveTaskStatuses = [Int]();                  var archiveTaskStatusStrings = [String]()
