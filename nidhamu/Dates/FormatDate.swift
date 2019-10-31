@@ -38,19 +38,19 @@ enum CustomDateFormat: Int {
 
 
 /*func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {
-    var formattedDatesArrays = [[String]]()
-
-    for timeBlock in cells {
-        var timeBlockDateStrings = [String]()
-
-        for taskDateComponents in timeBlock {   /// should probably use the word  deadline  rather than  date  here (code is not currently used)
-            let date = dateFromComponents(taskDateComponents)   /// see comment in the line above
-            let dateString = formattedDateString(date, roundedDown: true, showYear: false,
-                                                 prefix: "", suffix: " ", dateFormat: .fullDayShortForm) /// 2nd space to match default left one
-            timeBlockDateStrings.append(dateString)
-        }
-        formattedDatesArrays.append(timeBlockDateStrings)
-    }
-    return formattedDatesArrays
-}*/
+ var formattedDatesArrays = [[String]]()
+ 
+ for timeBlock in cells {
+ var timeBlockDateStrings = [String]()
+ 
+ for taskDateComponents in timeBlock {   /// should probably use the word  deadline  rather than  date  here (code is not currently used)
+ let date = dateFromComponents(taskDateComponents)   /// see comment in the line above
+ let dateString = formattedDateString(date, roundedDown: true, showYear: false,
+ prefix: "", suffix: " ", dateFormat: .fullDayShortForm) /// 2nd space to match default left one
+ timeBlockDateStrings.append(dateString)
+ }
+ formattedDatesArrays.append(timeBlockDateStrings)
+ }
+ return formattedDatesArrays
+ }*/
 

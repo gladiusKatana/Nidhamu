@@ -26,7 +26,7 @@ extension CollectionVC {
         
         guard viewControllerType == .timetable,
             !cachedBlocksAndTheirPaths else {
-            return
+                return
         }
         
         guard taskArraysToProcess.count > 0 else {
@@ -35,7 +35,7 @@ extension CollectionVC {
             }
             return
         }
-
+        
         indexPathsToProcess = indexPathsToProcess.sorted(by: {lastTaskFromPath($0).deadline < lastTaskFromPath($1).deadline})
         taskArraysToProcess = taskArraysToProcess.sorted(by: {$0.last!.deadline < $1.last!.deadline})
         
