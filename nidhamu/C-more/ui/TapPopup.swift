@@ -41,16 +41,15 @@ extension PopupMenuVC {
                             
                             tempRescalingBool = true
                             deferralVC.downcastLayout?.autoFitHeightScale = timetableVC.downcastLayout?.autoFitHeightScale
-                            ///print("rescaled to \(deferralVC.downcastLayout?.autoFitHScale), tt scale is \(timetableVC.downcastLayout?.autoFitHScale)")
+                            /// print("rescaled to \(deferralVC.downcastLayout?.autoFitHeightScale), tt scale is \(timetableVC.downcastLayout?.autoFitHeightScale)")
                             timetableVC.gotoView(vc: deferralVC)
                             tempRescalingBool = false
-                            
                             deferredDescription = globalTaskIdentifier
                         }
                     }
                 }
                 updateBlockProcessingVariables(column: clm, row: rw, taskWillShowUpNextWeek: taskWillShowUpNextWeek, selectedStatus: selectedStatus!)
-            } else {print("no task in dictionary at that indext path")}
+            } else {print("no task in dictionary at that index path")}
         } else {print("selected popup menu header")}
     }
 }

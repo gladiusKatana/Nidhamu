@@ -31,7 +31,7 @@ extension CollectionVC {
         if [.taskList, .archive].contains(viewControllerType) {setupPinchToExit()}
         
         //        if !showLoadAndAppearIndicationInConsole { // if the below print hasn't been done already for this vc
-        //            let str = (showConsoleLegend) ? appearSymbolLegend : ""; print("🏞\(topVC.vcType)\(str)") // picture-emoji means appeared 🏞
+        //            let str = (showConsoleLegend) ? appearSymbolLegend : ""; print("🏞\(topVC.viewControllerType)\(str)") // picture-emoji means appeared 🏞
         //            showLoadAndAppearIndicationInConsole = true
         if showConsoleLegend {showConsoleLegend = false}        // legend only needs to be shown once
         //        }

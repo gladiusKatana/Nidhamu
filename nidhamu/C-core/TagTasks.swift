@@ -17,7 +17,9 @@ extension CollectionVC {
         else {                                                  //print("\npaths to process empty\n")
             
             if topVC.viewControllerType != .deferralDates {
-                downcastLayout?.autoFitHeightScale = 1          //; print("reset hScale to 1 on \(topVC.vcType)")
+                if downcastLayout?.autoFitHeightScale != 1 {
+                    downcastLayout?.autoFitHeightScale = 1          ; print("reset hScale to 1 on \(topVC.viewControllerType)")
+                }
             }
             ///taskArraysToProcess.removeAll()
         }

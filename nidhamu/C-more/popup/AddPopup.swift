@@ -5,8 +5,10 @@ extension CollectionVC {
     
     func presentPopupViewToTagTasks(column: Int, row: Int) {                    //print("-----------------")//print("presenting popup")
         
-        if currentOrientation == "portrait" {AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)}
-        if currentOrientation == "landscape" {AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)}
+//        if currentOrientation == "portrait" {
+            AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+//        }
+//        if currentOrientation == "landscape" {AppUtility.lockOrientation(.landscape, andRotateTo: .landscapeRight)}
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             if !taggingViewDisplayed {

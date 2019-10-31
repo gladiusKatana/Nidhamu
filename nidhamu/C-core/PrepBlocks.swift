@@ -58,13 +58,12 @@ extension CollectionVC {
             
             thereWillBeARowException = false
         }
-        tagTasksSinceLastLogin()
-        print("\(taskArraysToProcess.count) blocks remaining now, and \(tasksInBlockToBeProcessed) tasks remaining (tag #\(taskIndex + 1))\n")
+        tagTasksSinceLastLogin()            ///; print("\(taskArraysToProcess.count) blocks remaining now, and \(tasksInBlockToBeProcessed) tasks remaining (tag #\(taskIndex + 1))\n")
     }
     
     
     /*func processTimeBlocksSinceLastLogin(layout: CustomFlowLayout) {
-        if vcType == .hours {
+        if viewControllerType == .hours {
             if taskArraysToProcess.count > 0 {
                 
                 if !savedBlocksAndPathsForProcessing {

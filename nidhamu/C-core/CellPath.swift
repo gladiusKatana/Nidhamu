@@ -65,5 +65,5 @@ extension CollectionVC {
 
 ///For cell title label text truncation
 /*if row == 5 && column == 1 {
- if vcType == .hours {findAverageLetterWidthWithCellLabelFont(cell: cell)} /// done here so it's only called once, but can access a cell
+ if viewControllerType == .hours {findAverageLetterWidthWithCellLabelFont(cell: cell)} /// done here so it's only called once, but can access a cell
  }*/
