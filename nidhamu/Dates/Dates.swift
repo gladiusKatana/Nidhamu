@@ -50,3 +50,58 @@ func truncateMinutesOf(_ inputDate: Date) -> Date {
     return date
 }
 
+
+func findDSTDates(startingDate: Date) {
+    //let year = Calendar.current.component(.year, from: Date())
+    let startDate = truncateMinutesOf(startingDate)
+    //print("starting date is \(formattedDateString(startDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDay))")
+    
+    var testDate = startDate
+    
+    for _ in (0 ... 365 * 24 - 1) {
+        
+        let tz = NSTimeZone.local
+        
+        let oneHourAfterTestDate = testDate + TimeInterval(3600)
+        
+        if tz.isDaylightSavingTime(for: testDate)
+            && !(tz.isDaylightSavingTime(for: oneHourAfterTestDate)) {
+            
+            if !foundNextFallBackDate {
+                fallBackDate = testDate
+                print("next fall-back day will occur on \(formattedDateString(testDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear))")
+                foundNextFallBackDate = true
+            }
+        }
+        
+        if !(tz.isDaylightSavingTime(for: testDate))
+            && tz.isDaylightSavingTime(for: oneHourAfterTestDate) {
+            
+            if !foundNextSpringForwardDate {
+                springForwardDate = testDate
+                print("next spring-forward day will occur on \(formattedDateString(testDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear))")
+                foundNextSpringForwardDate = true
+            }
+        }
+        
+        testDate += TimeInterval(3600)
+    }
+}
+
+func hoursSince(_ startDate: Date, testDate: Date) -> Int {
+    var truncStartDate = truncateMinutesOf(startDate)
+    let truncTestDate = truncateMinutesOf(testDate)
+    var hours = 0
+    
+    while truncStartDate < truncTestDate {
+        truncStartDate += TimeInterval(3600)
+        hours += 1
+    }
+    
+    while truncTestDate < truncStartDate - TimeInterval(3600) {
+        truncStartDate -= TimeInterval(3600)
+        hours -= 1
+    }
+    
+    return hours
+}

@@ -10,7 +10,7 @@ extension CollectionVC {
     }
     
     
-    @objc func reloadCVWrapperMethod() { //print("*")
+    @objc func reloadCVWrapperMethod() { print("*reload")
         reloadCV() //exitTaskAddingMode()
     }
     

@@ -7,9 +7,13 @@ extension CollectionVC {
         
         let oneWeekAgo = truncateMinutesOf(cell.cellDate - TimeInterval(86400 * 7))
         
-        if oneWeekAgo >= truncateMinutesOf(lastLoginDate)
-            && oneWeekAgo < truncateMinutesOf(Date())
+        
+        
+        if oneWeekAgo - (dstCompensation + dstCancelor) * TimeInterval(3600) >= truncateMinutesOf(lastLoginDate)
+            && oneWeekAgo <= truncateMinutesOf(Date())
         {
+            
+            print("\nLOGIN INTERVAL SWEEP (dst compensation = \(dstCompensation))")
             
             
             //            if !cached BlocksAndTheirPaths {    // this conditional would only be needed if doing the animation below

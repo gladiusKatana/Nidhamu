@@ -30,9 +30,16 @@ var navBarHeight = 0.0;                         var launchWidth = 0.0
 var firstTimeLoaded = false                     /// one-way bool: only flipped to  true once in entire app lifecycle
 var rotatedFromResignActive = false;            var reloadedFromHourTickingOver = true;         var cachedBlocksAndTheirPaths = false
 var showConsoleLegend = true;                   var tempRescalingBool = false;                  var thereWillBeARowException = false
-var justPinched = false;                        var keyboardLocked = false;                     var textFieldDisplayed = false
-var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false
-var taggingViewDisplayed = false;            var selectedTaskWillRecur = false
+var justPinched = false;
+
+
+var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false;    var textFieldDisplayed = false
+var taggingViewDisplayed = false;               var selectedTaskWillRecur = false;              var keyboardLocked = false
+
+//var fallingBackThisWeek = false;
+var foundNextFallBackDate = false;              var foundNextSpringForwardDate = false
+var passedFallBackBlock = false;                //var inSpringForwardBlock = false
+var fellBack = false;   var fallBackBlockCounter = 0
 
 var defaultTimetableCellFont = UIFont.systemFont(ofSize: 12, weight: .ultraLight) //UIFont(name: "Helvetica Neue", size: 12)
 

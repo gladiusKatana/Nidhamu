@@ -4,9 +4,9 @@ import MessageUI
 
 class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRecognizerDelegate/*, MFMailComposeViewControllerDelegate*/ {
     
-    var viewControllerType = CollectionViewType.days;   var downcastLayout: CustomFlowLayout?
-    var colourIndex: Int?;                              var loopWeeks: Bool?; var demarcateWeeksByColour: Bool?
-    var showLoadAndAppearIndicationInConsole = false;   var backgroundColour = UIColor.clear
+    var viewControllerType = CollectionViewType.timetable;      var downcastLayout: CustomFlowLayout?
+    var colourIndex: Int?;                                      var loopWeeks: Bool?; var demarcateWeeksByColour: Bool?
+    var showLoadAndAppearIndicationInConsole = false;           var backgroundColour = UIColor.clear
     
     lazy var taskField: UITextField = {
         let taskField = UITextField(frame: CGRect(x: 0, y: 0, width: 0, height: 0))

@@ -40,7 +40,7 @@ extension CollectionVC {
         else {
             if row < headerRows {
                 cell.backgroundColor = headerColour
-                if row == 1 && viewControllerType == .timetable || row == 4  && viewControllerType == .deferralDates{
+                if row == 1 && viewControllerType == .timetable || row == 4  && viewControllerType == .deferralDates {
                     cell.titleLabel.text = headerWeekdayTitles[column - 1]
                 }
                 if (2 ... headerRows - 1).contains(row) {
@@ -51,9 +51,20 @@ extension CollectionVC {
                 timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
                 /**/
                 
-                if row == customLayout.rows - 1 && column == customLayout.cols - 1 {          /// so it's called on the final cell dequeued
+                if row == customLayout.rows - 1 && column == customLayout.cols - 1 {          /// so it's called on the FINAL cell dequeued
+                    
                     processTimeBlocksSinceLastLogin(layout: customLayout)
+                    
+//                    if passedFallBackBlock {
+//                        foundNextFallBackDate = false
+//                        if viewControllerType == .timetable {
+//                            findDSTDates()
+//                        }
+//                    }
                 }
+                
+//                if row == customLayout.lockedHeaderRows && column == customLayout.lockedHeaderSections { /// so it's called on the FIRST cell dequeued
+//                }
             }
         }
         

@@ -33,6 +33,7 @@ import UIKit
         UINavigationBar.appearance().shadowImage = UIImage()
         
         //print(formattedDateString(Date(), roundedDown: false, prefix: "                      on", suffix: "", short: false))
+        findDSTDates(startingDate: Date() - TimeInterval(3600))
         return true
     }
     

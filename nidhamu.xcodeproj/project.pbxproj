@@ -222,12 +222,12 @@
 			isa = PBXGroup;
 			children = (
 				06164A2D22D6D19000DA608D /* Dates.swift */,
-				06164A2C22D6D19000DA608D /* DateStrings.swift */,
 				06150A37232C2BBE004611AD /* FormatDate.swift */,
+				06164A2C22D6D19000DA608D /* DateStrings.swift */,
 				06164A2F22D6D19000DA608D /* DateRefresh.swift */,
 				06164A2E22D6D19000DA608D /* CellDates.swift */,
-				06306512233E7D5E00C4BB95 /* ShowDates.swift */,
 				062BC1002314B43600AC852F /* SetCellDate.swift */,
+				06306512233E7D5E00C4BB95 /* ShowDates.swift */,
 				0631914322E2C5F5004DE476 /* LoginInterval.swift */,
 			);
 			path = Dates;

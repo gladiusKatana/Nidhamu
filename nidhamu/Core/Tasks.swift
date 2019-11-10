@@ -27,6 +27,9 @@
   listVC (deadlineless items)
   calendarVC
   tasksAtDate                                                                                       Data
+  
+  
+  
   login date interval outlined/animated, not perma-coloured                                         UI
   device specific fonts & keyboard colour
   dark mode
@@ -34,17 +37,15 @@
                                                                     Nov ~15 (appstore)
   
   
-  ✧cascading deferrals?                                                                             ✧
-  ✧loopWeeks = false behaviour as setting?                                                          ✧
-  ✧prev ent User changing nowDate via Settings app                                                  ✧
-  
+  ✧ cascading deferrals?                                                                            ✧
+  ✧ loopWeeks = false behaviour as setting?                                                         ✧
+  ✧ prev ent User changing nowDate via Settings app                                                 ✧
   
   
   
   
   
   1st commit                                                         July 8 '19
-  
   
   
   

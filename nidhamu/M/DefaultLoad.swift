@@ -11,6 +11,9 @@ func defaultLoadData(showDate: Bool) {                                          
         if showDate {
             pryntLastLoginDate(); pryntCurrentDate()
         }
+        if Calendar.current.component(.hour, from: lastLoginDate) == 1
+        && Calendar.current.component(.hour, from: Date()) >= 2
+        {dstCancelor = 0}
     }
     else {                                                                                  //print("\nfirst login")
         let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(Date(), roundedDown: true)

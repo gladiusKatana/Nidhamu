@@ -9,12 +9,12 @@ extension CollectionVC {
         let archiveButton = setupButton(selector: #selector(buttonWrapperMethodforArchiveVC), title: "calendarImage")
         let lockKeyboardButton = setupButton(selector: #selector(keyboardLockWrapper), title: "wrench")
         
-        ///let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
+        let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
         ///let barButtonColours = [graySeven, graySeven, graySeven, graySeven,]   /// hardcoding button colours (may be easier, depends how many more buttons & colour exceptions)
         
         var barButtonColours = [UIColor]()
         
-        let buttons = [timetableButton, archiveButton, lockKeyboardButton/*, reloadButton*/]
+        let buttons = [timetableButton, archiveButton, lockKeyboardButton, reloadButton]
         
         navigationItem.rightBarButtonItems = buttons
         
@@ -24,7 +24,6 @@ extension CollectionVC {
         
         for button in buttons {
             
-            ///if button == reloadButton {button.tintColor = grayBarelyThere}
             guard let greyout = greyoutColour else {print("no greyout colour"); return}
             guard let index = buttons.firstIndex(of: button) else {print("error finding button index"); return}
             
@@ -39,6 +38,8 @@ extension CollectionVC {
                 if keyboardLocked {button.tintColor = greyout}
                 else {button.tintColor = defaultColour}
             }
+            
+            if button == reloadButton {button.tintColor = grayBarelyThere}
             
         }
     }

@@ -13,6 +13,9 @@ extension AppDelegate {
         checkOrientation()
         defaultLoadData(showDate: false)
         topVC.reloadCV()
+        
+//        print("background at \(Calendar.current.component(.hour, from: Date())):00")
+//        if Calendar.current.component(.hour, from: Date()) >= 2 {dstCancelor = 0}
     }
     
     
@@ -24,7 +27,7 @@ extension AppDelegate {
     
     func applicationWillResignActive(_ application: UIApplication) {                    ///customApplicationStatusPrint("⏸will resign active")
         if !taggingViewDisplayed {
-            defaultSaveData(saveDate: true, resetLastLogin: false, showDate: true, pryntTasks: true)
+            defaultSaveData(saveDate: true, resetLastLogin: false, showDate: false, pryntTasks: true)
         }
         
         cachedBlocksAndTheirPaths = false
@@ -35,6 +38,8 @@ extension AppDelegate {
                 rotatedFromResignActive = true
             }
         } //else {print("no task items yet")}
+        
+//        previousNowRow = nowRow; previousNowColumn = nowColumn
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {                  print("\n🌘entered background")
