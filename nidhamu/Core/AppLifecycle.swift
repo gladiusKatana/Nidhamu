@@ -38,8 +38,6 @@ extension AppDelegate {
                 rotatedFromResignActive = true
             }
         } //else {print("no task items yet")}
-        
-//        previousNowRow = nowRow; previousNowColumn = nowColumn
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {                  print("\n🌘entered background")

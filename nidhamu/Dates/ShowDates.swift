@@ -26,31 +26,13 @@ extension CollectionVC {
             let lastLoginHour = Calendar.current.component(.hour, from: lastLoginDate)
             
             
-//            let cellDateString = formattedDateString(cell.cellDate, roundedDown: true,
-//                                                     showYear: false, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
-//            let fallBackDateString = formattedDateString(fallBackDate, roundedDown: true,
-//                                                         showYear: false, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
-            
             switch (cellWeekday, cellHour) {
-                
                 
             case (thisWeekday, thisHour) :
                 
                 //pryntConditionalKeyDateID("now", cell: cell, row: row, column: column)
-                //pryntConditionalKeyDateID("\(cell.fallBackCount)", cell: cell, row: row, column: column)
                 
-                if cell.fallBackCount < 2 {
-                    cell.layer.borderColor = UIColor.black.cgColor
-                }
-                
-                
-                
-                
-//            case (thisWeekday, Calendar.current.component(.hour, from: Date() + TimeInterval(3600))): /// if cell date is 1 hr after now-date
-//
-//                //if cellDateString == fallBackDateString {print("\n...preparing to find new fall-back time")}
-//                passedFallBackBlock = true
-                
+                cell.layer.borderColor = UIColor.black.cgColor
                 
             case (lastLoginWeek, lastLoginHour) :
                 pryntConditionalKeyDateID("last login", cell: cell, row: row, column: column)
@@ -80,26 +62,3 @@ extension CollectionVC {
     }
 }
 
-/*
- //                    let roundedDateString = formattedDateString(Date(), roundedDown: true,
- //                                                                showYear: false, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
- //                    let fallBackDateString = formattedDateString(fallBackDate + TimeInterval(0), roundedDown: false,
- //                                                                showYear: false, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
- //
- //                    if viewControllerType == .timetable {
- //                        print("right now it's: \(roundedDateString)")
- //                        print("fall back date: \(fallBackDateString)")
- //                    }
- //
- //                    if roundedDateString == fallBackDateString
- //                        ///&& (previousNowRow, previousNowColumn) == (nowRow, nowColumn)
- //                    {
- //                        fallingBackThisWeek = false
- //                        ///fallBackDate = dateFromInts([3030, 1, 1, 0])
- //                        print("done compensating for the fall back date\n")
- //                    }
- 
- //findDSTDates()
- //fallBackDate = dateFromInts([3030, 1, 1, 0])
- //dstCompensator = 0
- */

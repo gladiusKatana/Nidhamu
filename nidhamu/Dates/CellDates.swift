@@ -17,7 +17,6 @@ extension CollectionVC {
             if viewControllerType != .deferralDates {processTasksBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)}
             
             cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
-//            cell.titleLabel.text = "\(cell.fallBackCount)" /// for DST exception handling testing
             
             if row >= layout.lockedHeaderRows && viewControllerType != .deferralDates {
                 showKeyTimeBlockDates(cell: cell)
@@ -67,31 +66,4 @@ extension CollectionVC {
         else if row == 4 {} /// row 3 is covered by the general formula on line 8; this is just to exclude it from the else{}
     }
 }
-
-//            var r = 0, c = 0
-//            var nextHourCell = [0, 0]
-//            var dateOfNextHourCell = Date()
-//
-//            if row < layout.rows - 1 {
-//                r = row + 1
-//                c = column
-//            }
-//            else if row == layout.rows - 1 {
-//                r = layout.lockedHeaderSections
-//                c = 0
-//            }
-//            var nextHourCell = [r, c]
-
-
-//            let dateOfNextHourCell = cell.cellDate + TimeInterval(3600)
-//
-//            let tz = NSTimeZone.local
-//            if tz.isDaylightSavingTime(for: cell.cellDate)
-//                //&& !(tz.isDaylightSavingTime(for: dateOfNextHourCell))
-//            {
-//                //cell.titleLabel.text = "DST"
-//            }
-//            else {
-//                //cell.titleLabel.text = ">DST"
-//            }
 

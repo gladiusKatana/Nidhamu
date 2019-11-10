@@ -36,10 +36,8 @@ var justPinched = false;
 var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresented = false;    var textFieldDisplayed = false
 var taggingViewDisplayed = false;               var selectedTaskWillRecur = false;              var keyboardLocked = false
 
-//var fallingBackThisWeek = false;
 var foundNextFallBackDate = false;              var foundNextSpringForwardDate = false
-var passedFallBackBlock = false;                //var inSpringForwardBlock = false
-var fellBack = false;   var fallBackBlockCounter = 0
+var passedFallBackBlock = false;                var fallBackBlockCounter = 0
 
 var defaultTimetableCellFont = UIFont.systemFont(ofSize: 12, weight: .ultraLight) //UIFont(name: "Helvetica Neue", size: 12)
 

@@ -52,19 +52,8 @@ extension CollectionVC {
                 /**/
                 
                 if row == customLayout.rows - 1 && column == customLayout.cols - 1 {          /// so it's called on the FINAL cell dequeued
-                    
                     processTimeBlocksSinceLastLogin(layout: customLayout)
-                    
-//                    if passedFallBackBlock {
-//                        foundNextFallBackDate = false
-//                        if viewControllerType == .timetable {
-//                            findDSTDates()
-//                        }
-//                    }
                 }
-                
-//                if row == customLayout.lockedHeaderRows && column == customLayout.lockedHeaderSections { /// so it's called on the FIRST cell dequeued
-//                }
             }
         }
         

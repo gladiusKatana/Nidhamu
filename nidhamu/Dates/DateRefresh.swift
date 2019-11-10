@@ -31,18 +31,12 @@ extension CollectionVC {
         
         if "\(Date())".contains(":59:5") {      print("DATE: \(Date())")
             reloadedFromHourTickingOver = false
-            
-            
-
-            
-            
         }
         
         if "\(Date())".contains(":00:") {
             if !reloadedFromHourTickingOver {
                 
                 cachedBlocksAndTheirPaths = false
-                
                 
                 let cellDateString = formattedDateString(Date(), roundedDown: true,
                                                          showYear: false, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
@@ -60,17 +54,10 @@ extension CollectionVC {
                         findDSTDates(startingDate: Date() + TimeInterval(3600 * 24)) /// find the next fall-back date, start search 1 day from last fall-back date
                         
                         fallBackBlockCounter = 0
-                        
                         dstCancelor = 1
-                        
-                        //lastLoginDate = Date()
-                        
-                        //                        let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(Date(), roundedDown: true)
-                        //                        lastLoginDateComponents = [year, month, day, weekday, hour, minute]
-                        //                        lastLoginDate = dateFromComponents(lastLoginDateComponents)
+                        ///lastLoginDate = Date()
                     }
                 }
-                
                 
                 DispatchQueue.main.asyncAfter(deadline: .now()) { /// must be on main queue: periodic callback inside the completion handler, is called on a background thread
                     topVC.reloadCV()
