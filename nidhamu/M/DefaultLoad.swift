@@ -12,7 +12,7 @@ func defaultLoadData(showDate: Bool) {                                          
             pryntLastLoginDate(); pryntCurrentDate()
         }
         if Calendar.current.component(.hour, from: lastLoginDate) == 1
-        && Calendar.current.component(.hour, from: Date()) >= 2
+            && Calendar.current.component(.hour, from: Date()) >= 2
         {dstCancelor = 0}
     }
     else {                                                                                  //print("\nfirst login")

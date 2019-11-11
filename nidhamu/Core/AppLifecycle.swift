@@ -14,8 +14,8 @@ extension AppDelegate {
         defaultLoadData(showDate: false)
         topVC.reloadCV()
         
-//        print("background at \(Calendar.current.component(.hour, from: Date())):00")
-//        if Calendar.current.component(.hour, from: Date()) >= 2 {dstCancelor = 0}
+        //print("background at \(Calendar.current.component(.hour, from: Date())):00")
+        //if Calendar.current.component(.hour, from: Date()) >= 2 {dstCancelor = 0}
     }
     
     
