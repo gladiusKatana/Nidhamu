@@ -1,8 +1,6 @@
 // SetCellDate      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-var dstCompensation = 0.0; var dstCancelor = 0.0
-
 extension CollectionVC {
     
     func setCellDate(baseDate: Date, cellOffset: Int,
@@ -19,7 +17,7 @@ extension CollectionVC {
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
         let returnDateWithoutDST = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset)
         
-        let afterFallBackDate = fallBackDate + TimeInterval(3600)
+        let afterFallBackDate = fallBackDate //+ TimeInterval(3600)
         
         dstCompensation = (returnDateWithoutDST > afterFallBackDate) ? 1.0 : 0
         ///cell.titleLabel.text = "\(dstCompensation)"

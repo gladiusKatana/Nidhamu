@@ -25,6 +25,7 @@ var xOffSet = CGFloat(0);                       var yOffset = CGFloat(0)
 
 var statusBarHeight = 0.0;                      var lastStatusBarHeight = 0.0
 var navBarHeight = 0.0;                         var launchWidth = 0.0
+var dstCompensation = 0.0
 
 //; var firstBecameActive = false;
 var firstTimeLoaded = false                     /// one-way bool: only flipped to  true once in entire app lifecycle
@@ -37,7 +38,7 @@ var firstPortraitKeyboardPresented = false;     var firstLandscapeKeyboardPresen
 var taggingViewDisplayed = false;               var selectedTaskWillRecur = false;              var keyboardLocked = false
 
 var foundNextFallBackDate = false;              var foundNextSpringForwardDate = false
-var passedFallBackBlock = false;                var fallBackBlockCounter = 0
+var passedFallBackBlock = false;                var fellBack = false
 
 var defaultTimetableCellFont = UIFont.systemFont(ofSize: 12, weight: .ultraLight) //UIFont(name: "Helvetica Neue", size: 12)
 

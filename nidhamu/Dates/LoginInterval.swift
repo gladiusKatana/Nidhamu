@@ -7,9 +7,12 @@ extension CollectionVC {
         
         let oneWeekAgo = truncateMinutesOf(cell.cellDate - TimeInterval(86400 * 7))
         
+        let lastLoginHour = Calendar.current.component(.hour, from: lastLoginDate)
+        print("last login hour: \(lastLoginHour)")
         
+        let dstCancelor = (lastLoginHour == 1 && dstCompensation == 1) ? -1.0 : 0.0
         
-        if oneWeekAgo - (dstCompensation + dstCancelor) * TimeInterval(3600) >= truncateMinutesOf(lastLoginDate)
+        if oneWeekAgo + (-dstCompensation + dstCancelor) * TimeInterval(3600) >= truncateMinutesOf(lastLoginDate)
             && oneWeekAgo <= truncateMinutesOf(Date())
         {
             

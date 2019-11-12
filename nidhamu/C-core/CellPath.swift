@@ -54,6 +54,10 @@ extension CollectionVC {
                 if row == customLayout.rows - 1 && column == customLayout.cols - 1 {          /// so it's called on the FINAL cell dequeued
                     processTimeBlocksSinceLastLogin(layout: customLayout)
                 }
+                
+//                if row == customLayout.lockedHeaderRows && column == customLayout.lockedHeaderSections {
+//                    if nowRow >= 7 {fellBack = false}
+//                }
             }
         }
         
