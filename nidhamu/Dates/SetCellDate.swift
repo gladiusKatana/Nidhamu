@@ -17,11 +17,11 @@ extension CollectionVC {
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
         let returnDateWithoutDST = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset)
         
-        let afterFallBackDate = fallBackDate //+ TimeInterval(3600)
+        dstOffset = (returnDateWithoutDST > fallBackDate) ? 1.0 : 0
         
-        dstCompensation = (returnDateWithoutDST > afterFallBackDate) ? 1.0 : 0
-        ///cell.titleLabel.text = "\(dstCompensation)"
-        return returnDateWithoutDST + dstCompensation * TimeInterval(3600)
+        ///if row >= layout.lockedHeaderRows {cell.titleLabel.text = "\(dstOffset)"}
+        
+        return returnDateWithoutDST + dstOffset * TimeInterval(3600)
     }
     
     

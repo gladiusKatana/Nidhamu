@@ -3,7 +3,7 @@ import UIKit
 
 extension CustomFlowLayout {
     
-    override func prepare() {                                                               //print(".", terminator: "")
+    override func prepare() {                                                               //print("◆", terminator: "")
         
         checkOrientation()
         resetKeyboardHeight()
@@ -18,7 +18,10 @@ extension CustomFlowLayout {
             
             previousOrientation = currentOrientation
             
-            topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in /*(empty; may remove the completion handler from this method)*/ }
+            topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in
+                /*(may remove the completion handler from this method, if below code can be avoided/relocated)*/
+                topVC.reloadCV() /// only really needed for cell font size readjustment upon rotations / other layout scaling changes
+            }
             
         } else {if topVC.viewControllerType == .timetable {processCurrentDate()}}
         

@@ -10,20 +10,18 @@ extension AppDelegate {
         /*if firstBecameActive {print("🔅became active")}
          else {firstBecameActive = true}*/
         
-        checkOrientation()
-        defaultLoadData(showDate: false)
-        topVC.reloadCV()
+        findDSTDates(startingDate: Date(), setting: true)
         
-        //print("background at \(Calendar.current.component(.hour, from: Date())):00")
-        //if Calendar.current.component(.hour, from: Date()) >= 2 {dstCancelor = 0}
+        checkOrientation()
+        defaultLoadData(showDate: true)
+        
+        topVC.reloadCV()
     }
-    
     
     func applicationWillEnterForeground(_ application: UIApplication) {                 print("🌔will enter foreground\n")
         checkOrientation()
         if currentOrientation == "landscape" {print("returned from landscape")}
     }
-    
     
     func applicationWillResignActive(_ application: UIApplication) {                    ///customApplicationStatusPrint("⏸will resign active")
         if !taggingViewDisplayed {

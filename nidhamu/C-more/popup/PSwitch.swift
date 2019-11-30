@@ -1,4 +1,4 @@
-// SwitchVC         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// PSwitch          ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 class PopupSwitchView: UIView {

@@ -12,15 +12,16 @@ import UIKit
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
+        processCurrentDate() /// may move further down app lifecycle, to applicationDidBecomeActive(:); but this further accommodates 'going back in time' via device settings, without glitches
         modelName = UIDevice.modelName
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
+        window?.backgroundColor = whiteOrGray
         window?.makeKeyAndVisible()
         globalWindow = window!
         
         backgroundVC = UIViewController()
-        backgroundVC.view.backgroundColor = .white                  /// must match window's background colour, for rotating landscape->portrait
+        backgroundVC.view.backgroundColor = whiteOrGray             /// must match window's background colour, for rotating landscape->portrait
         backgroundVC.view.frame = globalWindow.frame
         
         getOrientationAtLaunch()                                    ; print("launching on \(modelName) in \(launchOrientation) orientation")
@@ -29,11 +30,10 @@ import UIKit
             statusBarUIView!.backgroundColor = .clear
         }
         
-        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().barTintColor = whiteOrGray
         UINavigationBar.appearance().shadowImage = UIImage()
         
         //print(formattedDateString(Date(), roundedDown: false, prefix: "                      on", suffix: "", short: false))
-        findDSTDates(startingDate: Date() - TimeInterval(3600))
         return true
     }
     

@@ -14,13 +14,13 @@ extension CollectionVC {
             cell.cellDate = setCellDate(baseDate: Date(), cellOffset: 0,
                                         cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
             
-            if viewControllerType != .deferralDates {processTasksBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)}
-            
             cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
             
             if row >= layout.lockedHeaderRows && viewControllerType != .deferralDates {
                 showKeyTimeBlockDates(cell: cell)
             }
+            
+            if viewControllerType != .deferralDates {processTasksBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)}
         }
         
         if [column, row] == selectedTimeBlockPath {

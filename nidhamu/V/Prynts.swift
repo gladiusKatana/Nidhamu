@@ -41,14 +41,16 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
     if !(timeBlockPaths.isEmpty) {print("")}
 }
 
-func pryntLastLoginDate() { /// spelling 'prynt' with a y so this function's existence does not cause override of autocomplete for print statements
+func pryntLastLoginDate() { /// spelling 'prynt' with a y so this function's existence does not override Xcode autocomplete for print statements
+    let dst = notifyIfDateIsDST(lastLoginDate)
     print(formattedDateString(lastLoginDate, roundedDown: false, showYear: true,
-                              prefix: "last login              ", suffix: "", dateFormat: .fullDay))  ///print("              (unformatted gmt) \(lastLoggedInDate)\n")
+                              prefix: "last login              ", suffix: " \(dst)", dateFormat: .fullDay))  ///print("              (unformatted gmt) \(lastLoggedInDate)\n")
 }
 
 func pryntCurrentDate() {
+    let dst = notifyIfDateIsDST(Date())
     print(formattedDateString(Date(), roundedDown: false, showYear: true,
-                              prefix: "date right now          ", suffix: "", dateFormat: .fullDay))
+                              prefix: "date right now          ", suffix: " \(dst)", dateFormat: .fullDay))
     print("")                                                                                         ///print("              (unformatted gmt)    \(Date())\n")
 }
 

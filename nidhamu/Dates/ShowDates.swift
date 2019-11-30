@@ -25,22 +25,19 @@ extension CollectionVC {
             let lastLoginWeek = Calendar.current.component(.weekday, from: lastLoginDate)
             let lastLoginHour = Calendar.current.component(.hour, from: lastLoginDate)
             
-            
             switch (cellWeekday, cellHour) {
                 
             case (thisWeekday, thisHour) :
+                //pryntConditionalKeyDateID("Now", cell: cell, row: row, column: column)      //;print("verified now cell @ [\(column),\(row)]")
+                cell.backgroundColor = subtleBlue
                 
-                //pryntConditionalKeyDateID("now", cell: cell, row: row, column: column)
+            case (lastLoginWeek, lastLoginHour): //break
+                //pryntConditionalKeyDateID("Last login", cell: cell, row: row, column: column)
+                //cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight) ///; cell.backgroundColor = lastLoginDimOrange
                 
-                cell.layer.borderColor = UIColor.black.cgColor
+                previousFallBackDate = fallBackDate
                 
-            case (lastLoginWeek, lastLoginHour) :
-                pryntConditionalKeyDateID("last login", cell: cell, row: row, column: column)
-                cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)
-                cell.layer.borderColor = UIColor.clear.cgColor
-                
-            default:
-                cell.layer.borderColor = UIColor.clear.cgColor
+            default: break
             }
         }
     }

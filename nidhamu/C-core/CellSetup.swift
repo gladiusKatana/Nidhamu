@@ -59,7 +59,7 @@ extension CollectionVC {
         }
             
         else if viewControllerType == .archive {
-            cell.titleLabel.textColor = .darkGray;  cell.titleLabel.font = UIFont.systemFont(ofSize: 10, weight: .ultraLight)
+            cell.titleLabel.textColor = .black;  cell.titleLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
             
             if column == 0 {
                 cell.titleLabel.text = formattedDateString(dateFromInts(archiveTaskDateComponentArrays[row]), roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
@@ -69,7 +69,7 @@ extension CollectionVC {
             else if column == 2 {cell.titleLabel.text = archiveTaskStatusStrings[row]}
             else {
                 cell.titleLabel.text = "\(dateFromInts(archiveTaskDateComponentArrays[row]))"
-                cell.titleLabel.font = UIFont.systemFont(ofSize: 6, weight: .ultraLight)
+                cell.titleLabel.font = UIFont.systemFont(ofSize: 6, weight: .regular)
             }
         }
             

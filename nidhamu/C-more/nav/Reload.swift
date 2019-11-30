@@ -4,15 +4,15 @@ import UIKit
 extension CollectionVC {
     
     
-    @objc func reloadCV() {                                         /// called 9 times in this program
+    @objc func reloadCV() {
         
-        //; print("↺")
+        //print("↺")
         
         self.collectionView.reloadData()
     }
     
     
-    func reloadCollectionViewAfterDelay(_ timeDelay: Double) {      /// called 2 times in this program
+    func reloadCollectionViewAfterDelay(_ timeDelay: Double) {
         
         //print("↺d")
         

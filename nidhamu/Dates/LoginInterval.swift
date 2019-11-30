@@ -1,45 +1,52 @@
 // LoginInterval    ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
+//var dstShift = TimeInterval(0)
+
 extension CollectionVC {
     
     func processTasksBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
         
-        let oneWeekAgo = truncateMinutesOf(cell.cellDate - TimeInterval(86400 * 7))
+        let oneWeekAgo = truncateMinutesOf(cell.cellDate) - TimeInterval(86400 * 7)     /// Note, truncate ONLY the cell's cell-date-- not the large time interval
         
-        let lastLoginHour = Calendar.current.component(.hour, from: lastLoginDate)
-        print("last login hour: \(lastLoginHour)")
+        var dstShift = TimeInterval(0)
+        let truncFallBack = truncateMinutesOf(fallBackDate)
         
-        let dstCancelor = (lastLoginHour == 1 && dstCompensation == 1) ? -1.0 : 0.0
+        if truncateMinutesOf(Date()) == truncFallBack {
+            dstShift = TimeInterval(3599)
+        }
+        else if truncateMinutesOf(lastLoginDate) < truncFallBack && truncateMinutesOf(Date()) < truncFallBack {
+            if truncateMinutesOf(lastLoginDate) < truncateMinutesOf(previousFallBackDate) {
+                dstShift = 0
+                previousFallBackDate = fallBackDate /// by this time the fall-back date has been reset
+            }
+            else {
+                dstShift = TimeInterval(3600)
+            }
+        }
+        else {dstShift = TimeInterval(0) ; print("dst interval undefined")}
         
-        if oneWeekAgo + (-dstCompensation + dstCancelor) * TimeInterval(3600) >= truncateMinutesOf(lastLoginDate)
-            && oneWeekAgo <= truncateMinutesOf(Date())
-        {
+        //if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
+        
+        
+        if oneWeekAgo.isBetween(truncateMinutesOf(lastLoginDate) + dstShift, and: truncateMinutesOf(Date() + dstShift)) {
             
-            print("\nLOGIN INTERVAL SWEEP (dst compensation = \(dstCompensation))")
+            //print("login interval sweep [\(column),\(row)] (dst shift \(dstShift); dst offset = \(dstOffset))")
             
-            
-            //            if !cached BlocksAndTheirPaths {    // this conditional would only be needed if doing the animation below
-            //            if column < nowColumn || (column == nowColumn && row < nowRow) {cell.backgroundColor = .green; cell.cellColour = .green}
-            //            else {                              // the  if  on the line above is purely for testing purposes
-            
+            //if !cached BlocksAndTheirPaths {    // only needed if doing the animation below
+            //if column < nowColumn || (column == nowColumn && row < nowRow) {cell.backgroundColor = .green; cell.cellColour = .green}
+            //else {                              // line above is purely for testing purposes
             
             cell.backgroundColor = orangeForBlocksSinceLastLogin; cell.cellColour = orangeForBlocksSinceLastLogin
-            cell.titleLabel.font = defaultTimetableCellFont
             
-            
-            //            }
-            //            animateCellColourBack(cell: cell, delay: 3, duration: 10)
-            //            }
+            //}
+            //animateCellColourBack(cell: cell, delay: 3, duration: 10)
+            //}
             
             ///showDateInTitleLabels(date: oneWeekAgo, cell: cell)   // useful for testing
             
-            
             prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
-            
         }
-        
     }
-    
 }
 

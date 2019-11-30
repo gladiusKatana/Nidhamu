@@ -9,7 +9,7 @@ extension CollectionVC {
         
         if topVC != vc {
             
-            if topVC.backgroundColour != .white {/// if it is, seeing any other colour for a split second (ie, background view), is visually jarring. Status bar & nav bar are white in this app
+            if topVC.backgroundColour != whiteOrGray {/// if it is (ie,) white, seeing any other colour for a split second (ie, background view), is visually jarring
                 globalWindow.backgroundColor = vc.backgroundColour
                 backgroundVC.view.backgroundColor = vc.backgroundColour                     ///print("reset background colours to \(vc.backgroundColour)")
             }

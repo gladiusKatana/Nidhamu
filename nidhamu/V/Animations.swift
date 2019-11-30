@@ -6,7 +6,7 @@ extension CollectionVC {
     func animateTimeBlockTappedToAddTask(cell: CustomCell) {
         
         UIView.animate(
-            withDuration: 1, delay: 0,
+            withDuration: 0.5, delay: 0,
             usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveLinear, animations: {
                 cell.backgroundColor = taskAddingColour
         }, completion: nil /*{(finished:Bool) in self.prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)}*/

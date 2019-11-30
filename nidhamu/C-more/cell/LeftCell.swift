@@ -33,15 +33,16 @@ extension CollectionVC {
     
     func doRestOfLeftCellProcessing(cell: LeftAlignedCell, indexPath: IndexPath) -> LeftAlignedCell  {
         cell.backgroundColor = headerColour
-        cell.titleLabel.font = UIFont.systemFont(ofSize: 8, weight: .ultraLight)
+        cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)
+        
         if currentOrientation == "landscape" {cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(7), weight: .ultraLight)}
-        cell.titleLabel.textColor = grayThree
+        
         cell.titleLabel.textAlignment = .left
         cell.titleLabel.numberOfLines = 0
         cell.titleLabel.lineBreakMode = .byCharWrapping
         
         if indexPath.section == 0 { // to do this in column 1, you need to rewrite the layout attributes (zIndex)
-            cell.titleLabel.text = formattedDateString(lastLoginDate, roundedDown: false, showYear: true, prefix: "Last Login", suffix: "", dateFormat: .fullDay)
+            cell.titleLabel.text = formattedDateString(lastLoginDate, roundedDown: false, showYear: true, prefix: " Last Login", suffix: "", dateFormat: .fullDay)
         }
         else {cell.titleLabel.text = ""}
         return cell

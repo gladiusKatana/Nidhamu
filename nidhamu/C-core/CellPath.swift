@@ -54,14 +54,10 @@ extension CollectionVC {
                 if row == customLayout.rows - 1 && column == customLayout.cols - 1 {          /// so it's called on the FINAL cell dequeued
                     processTimeBlocksSinceLastLogin(layout: customLayout)
                 }
-                
-//                if row == customLayout.lockedHeaderRows && column == customLayout.lockedHeaderSections {
-//                    if nowRow >= 7 {fellBack = false}
-//                }
             }
         }
         
-        if viewControllerType == .archive {cell.backgroundColor = .white}
+        if viewControllerType == .archive {cell.backgroundColor = whiteOrGray}
         
         return cell
     }
@@ -71,3 +67,4 @@ extension CollectionVC {
 /*if row == 5 && column == 1 {
  if viewControllerType == .hours {findAverageLetterWidthWithCellLabelFont(cell: cell)} /// done here so it's only called once, but can access a cell
  }*/
+

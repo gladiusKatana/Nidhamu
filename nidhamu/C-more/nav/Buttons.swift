@@ -10,8 +10,9 @@ extension CollectionVC {
     }
     
     
-    @objc func reloadCVWrapperMethod() { print("*reload")
-        reloadCV() //exitTaskAddingMode()
+    @objc func reloadCVWrapperMethod() {
+        print("↺(button)")
+        reloadCV()
     }
     
     
@@ -40,7 +41,7 @@ extension CollectionVC {
     
     @objc func buttonWrapperMethodforTimetableVC() {
         ///timetableVC.downcastLayout?.autoFitHScale = 1
-        gotoView(vc: timetableVC)}
-    
+        gotoView(vc: timetableVC)
+    }
 }
 

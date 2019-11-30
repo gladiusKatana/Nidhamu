@@ -13,7 +13,6 @@ extension CollectionVC {
         statusBarHeightChangeNotificationSetup()
         keyboardNotificationSetup()
         
-        processCurrentDate()
         periodicDateRefresh(){kickoffTimer()}                       // checks the date then does the timer kickoff ('starts on the 0th callback')
         //kickoffTimer()                                            // does the timer kickoff then checks the date ('starts on the 1st callback')
     }
@@ -36,7 +35,9 @@ extension CollectionVC {
         if showConsoleLegend {showConsoleLegend = false}        // legend only needs to be shown once
         //        }
         
-        reloadCV()
+        if viewControllerType == .archive { /// reload collection view because archive contents are dynamically updated
+            reloadCV()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

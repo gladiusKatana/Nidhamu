@@ -10,7 +10,7 @@ extension CollectionVC {
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
-            print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "block: ", suffix: "", dateFormat: .fullDay)) //("\nselected date (unformatted gmt)  \(cell.cellDate)")
+            ///print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "block: ", suffix: "", dateFormat: .fullDay)) //("\nselected date (unformatted gmt)  \(cell.cellDate)")
             selectedCellDate = cell.cellDate
             selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: " Add a Task", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
             
@@ -29,7 +29,7 @@ extension CollectionVC {
                         animateTimeBlockTappedToAddTask(cell: cell)                                 /// may not use. Looks nice; slows User down a little bit?
                         cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                             self.prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
                         }
                     } else {

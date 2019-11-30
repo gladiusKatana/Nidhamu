@@ -5,16 +5,16 @@ var lastLoginDate = Date()
 
 var selectedCellDate = Date()
 
-var springForwardDate = Date()
-var fallBackDate = Date()
+var springForwardDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec: 1)   /// so timeIntervalSince1970 = 0
+var fallBackDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec: 1)        /// ""
+var previousFallBackDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec: 1)/// ""
 
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 
+
 var nowRow = 0;                         var nowColumn = 0
-//var previousNowRow = 0;                 var previousNowColumn = 0
 var taskIndex = 0;                      var tasksInBlockToBeProcessed = 0
 
-var dstCompensator = 0.0
 
 var globalTaskIdentifier = "(task)";    var selectedTimeBlockDateDescription = "(selected date)"
 

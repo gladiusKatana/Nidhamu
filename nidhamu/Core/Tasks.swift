@@ -2,15 +2,17 @@
   
   
   
-  ⁌o⁍ handle daylight savings Nov 3
+  handle daylight savings Nov1, Mar 8 (these are the next fall-back and spring-forward dates in Canada, respectively)
   
   
   
   settings menu                                                                                     UI
   archive frequency reminders
+  
   buttons                                                                                           Design
   icon
   launch screen
+  
   Numbers template                                                                                  UX
   Excel template
   
@@ -54,13 +56,18 @@
   Notes
   
   
-  * DATA, UI (etc) labels map loosely to M, V, C (etc).  Tasks.swift task list emphasizes features, design, etc., not very code-specific
+  * DATA, UI (etc) labels map loosely to M, V, C (etc).  Tasks.swift task-list emphasizes features, design, etc., not very code-specific
   
   
   ✧ denotes features that may not necessarily be a good idea to implement (eg should User be able to defer *all* their upcoming tasks at once?)
+  
+  
+  ⁌o⁍ denotes bugfixes
   
   
   ⚔️ all Swift files in this version are aesthetically optimized for a 13" screen
   
   
   ✎ this is Open Source software. Always looking for contributors. https://github.com/gladiusKatana/Nidhamu */
+
+ 

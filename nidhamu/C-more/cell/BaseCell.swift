@@ -9,8 +9,6 @@ class BaseCell: UICollectionViewCell {
     var xyCoordinate = [-2, -2]
     //var task = SimpleTask() // may add as a property of a cell; or may simply keep it in a detached data structure (dictionary) as it is now
     
-    var dstCompensator = 0.0
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

@@ -13,21 +13,25 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     if hr == 0 {hr = 12}                    // * this is just to make a string representing the date, not the date itself
     
     var yearString = ""
-    if showYear && (month == "January" || month == "December") {yearString = "\(year), "}// also add  || (Date() > last-login-date + ~30 days)
-    let prefix = (prefix == "") ? " " : "\(prefix ?? "") "
+    if showYear && (month == "January" || month == "December") {yearString = "\(year), "}/// also add  || (Date() > last-login-date + ~30 days)
+    let prx = (prefix == "") ? " " : "\(prefix ?? "") "
     
     switch dateFormat {
         
-    case .fullDay:                  return "\(prefix)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits)\(ampm)\(suffix)"
-    case .fullDayWithYear:          return "\(prefix)\(weekday) \(month) \(day), \(year) \(hr):\(minTwoDigits)\(ampm)\(suffix)"
-    case .fullDayWithSeconds:       return "\(prefix)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits):\(sec2Digs)\(ampm)\(suffix)"
-    case .fullDayShortForm:         return "\(prefix)\(wkdy). \(mnth). \(day), \(yearString)\(hr)\(ampm)\(suffix)"
-    case .fullDayShortFormNoDots:   return "\(prefix)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString)\(hr)\(ampm)\(suffix)"
-    case .archiveFormat:            return "\(prefix)\(weekday) \(month) \(day) \(year) @ \(hr)\(ampm)\(suffix)"
+    case .fullDay:                  return "\(prx)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits)\(ampm)\(suffix)"
+    case .fullDayWithYear:          return "\(prx)\(weekday) \(month) \(day), \(year) \(hr):\(minTwoDigits)\(ampm)\(suffix)"
+        
+    case .fullDayWithSeconds:       return "\(prx)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits):\(sec2Digs)\(ampm)\(suffix)"
+        
+    case .fullDayShortForm:         return "\(prx)\(wkdy). \(mnth). \(day), \(yearString)\(hr)\(ampm)\(suffix)"
+    case .fullDayShortFormNoDots:   return "\(prx)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString)\(hr)\(ampm)\(suffix)"
+    case .archiveFormat:            return "\(prx)\(weekday) \(month) \(day) \(year) @ \(hr)\(ampm)\(suffix)"
+        
     case .archiveCSVTitle:          return "\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(year), \(hr)꞉\(minTwoDigits)\(ampm)"/// see  **  below
+        
     case .timeOnly:                 return "\(hr)\(ampm)"
         
-    default: return "\(prefix)\(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
+    default: return "\(prx)\(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
     }
 }
 
@@ -47,7 +51,7 @@ enum CustomDateFormat: Int {
  for taskDateComponents in timeBlock {   /// should probably use the word  deadline  rather than  date  here (code is not currently used)
  let date = dateFromComponents(taskDateComponents)   /// see comment in the line above
  let dateString = formattedDateString(date, roundedDown: true, showYear: false,
- prefix: "", suffix: " ", dateFormat: .fullDayShortForm) /// 2nd space to match default left one
+ pre: "", suffix: " ", dateFormat: .fullDayShortForm) /// 2nd space to match default left one
  timeBlockDateStrings.append(dateString)
  }
  formattedDatesArrays.append(timeBlockDateStrings)

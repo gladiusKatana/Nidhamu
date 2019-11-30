@@ -8,12 +8,14 @@ func defaultLoadData(showDate: Bool) {                                          
     if let components = defaults.array(forKey: "savedLastLoginDate") {
         lastLoginDateComponents = components
         lastLoginDate = dateFromComponents(lastLoginDateComponents)
-        if showDate {
-            pryntLastLoginDate(); pryntCurrentDate()
+        if showDate {pryntLastLoginDate(); pryntCurrentDate()}
+        
+        if Date() >= fallBackDate {
+            if dateOfLastSecond(fallBackDate).isBetween(lastLoginDate, and: Date() + TimeInterval(3600)) {
+                foundNextFallBackDate = false
+                findDSTDates(startingDate: Date(), setting: true)
+            } //else {print("fall back hour never rolled over")}
         }
-//        if Calendar.current.component(.hour, from: lastLoginDate) == 1
-//            && Calendar.current.component(.hour, from: Date()) >= 2
-//        {dstCancelor = 0}
     }
     else {                                                                                  //print("\nfirst login")
         let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(Date(), roundedDown: true)
