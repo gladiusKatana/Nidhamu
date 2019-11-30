@@ -2,7 +2,7 @@
   
   
   
-  handle daylight savings Nov1, Mar 8 (these are the next fall-back and spring-forward dates in Canada, respectively)
+  handle daylight savings Mar 8 (these are the next fall-back and spring-forward dates in Canada, respectively)
   
   
   
@@ -36,7 +36,7 @@
   device specific fonts & keyboard colour
   dark mode
   orientation enum
-                                                                    Nov ~15 (appstore)
+  Nov ~15 (appstore)
   
   
   ✧ cascading deferrals?                                                                            ✧
@@ -69,5 +69,5 @@
   
   
   ✎ this is Open Source software. Always looking for contributors. https://github.com/gladiusKatana/Nidhamu */
-
+ 
  
