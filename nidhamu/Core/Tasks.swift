@@ -2,7 +2,7 @@
   
   
   
-  handle daylight savings Mar 8 (these are the next fall-back and spring-forward dates in Canada, respectively)
+  handle daylight savings Mar 8 (this is the spring-forward date in 2020 in Canada)
   
   
   
