@@ -40,7 +40,7 @@ extension CollectionVC {
                 let fallBackDateString = formattedDateString(fallBackDate, roundedDown: true,
                                                              showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
                 let springForwardDateString = formattedDateString(springForwardDate + TimeInterval(3600), roundedDown: true,
-                                                             showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
+                                                                  showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
                 
                 if dateString == fallBackDateString || dateString == springForwardDateString {
                     foundNextFallBackDate = false; foundNextSpringForwardDate = false

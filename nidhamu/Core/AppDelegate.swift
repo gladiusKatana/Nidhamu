@@ -16,12 +16,12 @@ import UIKit
         modelName = UIDevice.modelName
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = whiteOrGray
+        window?.backgroundColor = defaultColour
         window?.makeKeyAndVisible()
         globalWindow = window!
         
         backgroundVC = UIViewController()
-        backgroundVC.view.backgroundColor = whiteOrGray             /// must match window's background colour, for rotating landscape->portrait
+        backgroundVC.view.backgroundColor = defaultColour             /// must match window's background colour, for rotating landscape->portrait
         backgroundVC.view.frame = globalWindow.frame
         
         getOrientationAtLaunch()                                    ; print("launching on \(modelName) in \(launchOrientation) orientation")
@@ -30,7 +30,7 @@ import UIKit
             statusBarUIView!.backgroundColor = .clear
         }
         
-        UINavigationBar.appearance().barTintColor = whiteOrGray
+        UINavigationBar.appearance().barTintColor = defaultColour
         UINavigationBar.appearance().shadowImage = UIImage()
         
         //print(formattedDateString(Date(), roundedDown: false, prefix: "                      on", suffix: "", short: false))

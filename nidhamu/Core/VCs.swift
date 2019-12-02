@@ -32,7 +32,7 @@ var deferralLayout = ///---------------------------------------------
         loadsHorizontally: false,               ///❗️if loadsHorizontally is true, 'rows' look like columns
         squareCellMode: .noAutoSquare)
 
-var deferralVC = CollectionVC(.deferralDates, backgroundColour: whiteOrGray, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: nil, collectionViewLayout: deferralLayout)
+var deferralVC = CollectionVC(.deferralDates, backgroundColour: defaultColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: nil, collectionViewLayout: deferralLayout)
 
 
 var taskListLayout = ///------------------------------------------------
@@ -60,7 +60,7 @@ var archiveLayout = ///--------------------------------------------------
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
-var archiveVC = CollectionVC(.archive, backgroundColour: whiteOrGray, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: 1, collectionViewLayout: archiveLayout)
+var archiveVC = CollectionVC(.archive, backgroundColour: defaultColour, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: 1, collectionViewLayout: archiveLayout)
 
 
 var taskTaggingLayout = ///--------------------------------------------

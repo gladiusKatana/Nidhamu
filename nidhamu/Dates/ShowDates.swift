@@ -28,13 +28,14 @@ extension CollectionVC {
             switch (cellWeekday, cellHour) {
                 
             case (thisWeekday, thisHour) :
-                //pryntConditionalKeyDateID("Now", cell: cell, row: row, column: column)      //;print("verified now cell @ [\(column),\(row)]")
+                let timeString = showTimeInTitleLabels(cell.cellDate)
+                pryntConditionalKeyDateID(timeString, cell: cell, row: row, column: column)      ///;print("verified now cell @ [\(column),\(row)]")
                 cell.backgroundColor = subtleBlue
                 nowDate = cell.cellDate
                 
             case (lastLoginWeek, lastLoginHour): //break
-                //pryntConditionalKeyDateID("Last login", cell: cell, row: row, column: column)
-                //cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight) ///; cell.backgroundColor = lastLoginDimOrange
+                pryntConditionalKeyDateID("Last login", cell: cell, row: row, column: column)
+                cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight) ///; cell.backgroundColor = lastLoginDimOrange
                 
                 previousFallBackDate = fallBackDate
                 previousSpringForwardDate = springForwardDate   ; print("reset previous spring forward date")

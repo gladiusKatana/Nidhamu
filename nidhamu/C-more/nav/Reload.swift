@@ -8,7 +8,7 @@ extension CollectionVC {
         
         //print("↺")
         
-        self.collectionView.reloadData()
+        collectionView.reloadData()
     }
     
     

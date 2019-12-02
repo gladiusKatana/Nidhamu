@@ -24,10 +24,10 @@ extension CollectionVC {
         }
         else {dstShift = TimeInterval(0) ; print("dst interval undefined")}
         
-        if truncateMinutesOf(lastLoginDate) < truncateMinutesOf(previousSpringForwardDate) {
-            dstShift = TimeInterval(-3600)
-            previousSpringForwardDate = springForwardDate
-        }
+//        if truncateMinutesOf(lastLoginDate) < truncateMinutesOf(previousSpringForwardDate) {
+//            dstShift = TimeInterval(-3600)
+//            previousSpringForwardDate = springForwardDate
+//        }
 
         
         //if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
@@ -41,7 +41,7 @@ extension CollectionVC {
             //if column < nowColumn || (column == nowColumn && row < nowRow) {cell.backgroundColor = .green; cell.cellColour = .green}
             //else {                              // line above is purely for testing purposes
             
-            cell.backgroundColor = orangeForBlocksSinceLastLogin; cell.cellColour = orangeForBlocksSinceLastLogin
+            cell.backgroundColor = lastLoginDimOrange; cell.cellColour = lastLoginDimOrange
             
             //}
             //animateCellColourBack(cell: cell, delay: 3, duration: 10)

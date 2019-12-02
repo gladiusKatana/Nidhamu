@@ -6,7 +6,7 @@ extension CollectionVC {
         taskField.removeFromSuperview()
         taskField.resignFirstResponder()
         if !tempRescalingBool {
-            globalWindow.backgroundColor = whiteOrGray
+            globalWindow.backgroundColor = defaultColour
             backgroundVC.view.backgroundColor = globalWindow.backgroundColor
         }
         keyboardHeight = 0; textFieldDisplayed = false

@@ -30,11 +30,12 @@ extension CollectionVC {
         if column < headerSections {
             cell.backgroundColor = headerColour
             
-            if row > headerRows {                                           // time-of-day labels
+            if row >= headerRows {                                              // time-of-day labels
                 var ampm = ""
                 if row < headerRows + 12 {ampm = "am"}
                 else {ampm = "pm"}
                 cell.titleLabel.text = "\(amPmHours[row - headerRows])\(ampm)"
+                cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .thin)
             }
         }
         else {
@@ -57,7 +58,7 @@ extension CollectionVC {
             }
         }
         
-        if viewControllerType == .archive {cell.backgroundColor = whiteOrGray}
+        if viewControllerType == .archive {cell.backgroundColor = defaultColour}
         
         return cell
     }
