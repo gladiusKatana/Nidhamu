@@ -19,7 +19,6 @@ extension CustomFlowLayout {
             previousOrientation = currentOrientation
             
             topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in
-                /*(may remove the completion handler from this method, if below code can be avoided/relocated)*/
                 topVC.reloadCV() /// only really useful for cell font size readjustment upon rotations / other layout scaling changes
             }
             

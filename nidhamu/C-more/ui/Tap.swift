@@ -7,11 +7,11 @@ extension CollectionVC {
                                  didSelectItemAt indexPath: IndexPath) {                            ///print("tapped tt cell")
         
         let layout = downcastLayout!;  let row = indexPath.item;  let column = indexPath.section
-//        if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
+        if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
             print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "block: ", suffix: "", dateFormat: .fullDay)) //("\nselected date (unformatted gmt)  \(cell.cellDate)")
-        print("block date: \(cell.cellDate)\n")
+            print("block date: \(cell.cellDate)\n")
             selectedCellDate = cell.cellDate
             selectedTimeBlockDateDescription = formattedDateString(selectedCellDate, roundedDown: true, showYear: false, prefix: " Add a Task", suffix: "", dateFormat: .fullDayShortForm) // ! probably needs smaller font on iPhone SEs in portrait
             
@@ -52,7 +52,7 @@ extension CollectionVC {
                     self.gotoView(vc: timetableVC)
                 }
             default: print("unrecognized collection view type's cell selected")}
-//        }///else {print("selected navbar-embeddd vc's header")}
+        }///else {print("selected navbar-embeddd vc's header")}
     }
 }
 

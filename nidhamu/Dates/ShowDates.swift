@@ -53,7 +53,7 @@ extension CollectionVC {
     
     func showDateInTitleLabels(date: Date, cell: CustomCell) {  /// for testing
         cell.titleLabel.text = (formattedDateString(date, roundedDown: false, showYear: true,
-        prefix: "", suffix: "", dateFormat: .monthAndDay))
+                                                    prefix: "", suffix: "", dateFormat: .monthAndDay))
     }
     
     func showTimeInTitleLabels(_ date: Date) -> String {

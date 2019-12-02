@@ -11,7 +11,7 @@ extension CollectionVC {
         
         var dstShift = TimeInterval(0)
         let truncFallBack = truncateMinutesOf(fallBackDate)
-
+        
         if truncateMinutesOf(Date()) == truncFallBack {
             dstShift = TimeInterval(3599)
         }
@@ -24,11 +24,11 @@ extension CollectionVC {
         }
         else {dstShift = TimeInterval(0) ; print("dst interval undefined")}
         
-//        if truncateMinutesOf(lastLoginDate) < truncateMinutesOf(previousSpringForwardDate) {
-//            dstShift = TimeInterval(-3600)
-//            previousSpringForwardDate = springForwardDate
-//        }
-
+        //        if truncateMinutesOf(lastLoginDate) < truncateMinutesOf(previousSpringForwardDate) {
+        //            dstShift = TimeInterval(-3600)
+        //            previousSpringForwardDate = springForwardDate
+        //        }
+        
         
         //if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
         

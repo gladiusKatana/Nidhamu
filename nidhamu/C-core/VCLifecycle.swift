@@ -35,9 +35,9 @@ extension CollectionVC {
         if showConsoleLegend {showConsoleLegend = false}        // legend only needs to be shown once
         //        }
         
-//        if viewControllerType == .archive { /// reload collection view because archive contents are dynamically updated
-            reloadCV()
-//        }
+        ///if viewControllerType == .archive { /// reload collection view because archive contents are dynamically updated
+        reloadCV()
+        ///}
     }
     
     override func viewWillDisappear(_ animated: Bool) {

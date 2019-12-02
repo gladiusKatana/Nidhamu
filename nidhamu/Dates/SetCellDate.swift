@@ -19,10 +19,9 @@ extension CollectionVC {
         
         returnDateWithoutDST = truncateMinutesOf(returnDateWithoutDST)
         
-//        dstOffset = (returnDateWithoutDST > fallBackDate) ? 1.0 : 0
+        //        dstOffset = (returnDateWithoutDST > fallBackDate) ? 1.0 : 0
         
-//        var dstOffset = 0.0
-        
+        //        var dstOffset = 0.0
         
         if returnDateWithoutDST > springForwardDate ///&& !(returnDateWithoutDST > fallBackDate)
         {
@@ -37,13 +36,11 @@ extension CollectionVC {
             else {
                 dstOffset = 0
             }
-
         }
         
-        
-//        if row >= layout.lockedHeaderRows {
-//            cell.titleLabel.text = "\(dstOffset)"
-//        }
+        //        if row >= layout.lockedHeaderRows {
+        //            cell.titleLabel.text = "\(dstOffset)"
+        //        }
         
         return returnDateWithoutDST + dstOffset * TimeInterval(3600)
     }

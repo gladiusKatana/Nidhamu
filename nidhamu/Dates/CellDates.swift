@@ -18,7 +18,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
         if [column, row] == selectedTimeBlockPath {
             if textFieldDisplayed {
                 cell.backgroundColor = taskAddingColour
-//                cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
+                //cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
             }
         }
         
@@ -42,10 +42,10 @@ extension CollectionVC { /// probably will refactor this whole file soon
             else {}
         }
         
-//        if row > layout.lockedHeaderRows - 1 {
-//            //cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
-//            //showDateInTitleLabels(date: cell.cellDate, cell: cell)
-//        }
+        //        if row > layout.lockedHeaderRows - 1 {
+        //            //cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
+        //            //showDateInTitleLabels(date: cell.cellDate, cell: cell)
+        //        }
     }
 }
 
