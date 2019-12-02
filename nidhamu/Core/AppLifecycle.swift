@@ -10,7 +10,8 @@ extension AppDelegate {
         /*if firstBecameActive {print("🔅became active")}
          else {firstBecameActive = true}*/
         
-        findDSTDates(startingDate: Date(), setting: true)
+        findFallbackDate(startingDate: Date() - TimeInterval(3600), setting: true)
+        findSpringForwardDate(startingDate: Date(), setting: true)
         
         checkOrientation()
         defaultLoadData(showDate: true)

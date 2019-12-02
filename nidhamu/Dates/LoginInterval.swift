@@ -7,11 +7,11 @@ extension CollectionVC {
     
     func processTasksBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
         
-        let oneWeekAgo = truncateMinutesOf(cell.cellDate) - TimeInterval(86400 * 7)     /// Note, truncate ONLY the cell's cell-date-- not the large time interval
+        let oneWeekAgo = truncateMinutesOf(cell.cellDate) - TimeInterval(86400 * 7)     /// Note, truncate ONLY the cell's cell-date-- not the large time interval term
         
         var dstShift = TimeInterval(0)
         let truncFallBack = truncateMinutesOf(fallBackDate)
-        
+
         if truncateMinutesOf(Date()) == truncFallBack {
             dstShift = TimeInterval(3599)
         }
@@ -20,11 +20,15 @@ extension CollectionVC {
                 dstShift = 0
                 previousFallBackDate = fallBackDate /// by this time the fall-back date has been reset
             }
-            else {
-                dstShift = TimeInterval(3600)
-            }
+            else {dstShift = TimeInterval(3600)}
         }
         else {dstShift = TimeInterval(0) ; print("dst interval undefined")}
+        
+        if truncateMinutesOf(lastLoginDate) < truncateMinutesOf(previousSpringForwardDate) {
+            dstShift = TimeInterval(-3600)
+            previousSpringForwardDate = springForwardDate
+        }
+
         
         //if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
         

@@ -39,9 +39,13 @@ extension CollectionVC {
                                                      showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
                 let fallBackDateString = formattedDateString(fallBackDate, roundedDown: true,
                                                              showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
-                if dateString == fallBackDateString {
-                    foundNextFallBackDate = false
-                    findDSTDates(startingDate: Date(), setting: true)
+                let springForwardDateString = formattedDateString(springForwardDate + TimeInterval(3600), roundedDown: true,
+                                                             showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
+                
+                if dateString == fallBackDateString || dateString == springForwardDateString {
+                    foundNextFallBackDate = false; foundNextSpringForwardDate = false
+                    findFallbackDate(startingDate: Date(), setting: true)
+                    findSpringForwardDate(startingDate: Date(), setting: true)
                 }
                 
                 DispatchQueue.main.asyncAfter(deadline: .now()) { /// must be on main queue: periodic callback inside the completion handler, is called on a background thread

@@ -30,12 +30,14 @@ extension CollectionVC {
             case (thisWeekday, thisHour) :
                 //pryntConditionalKeyDateID("Now", cell: cell, row: row, column: column)      //;print("verified now cell @ [\(column),\(row)]")
                 cell.backgroundColor = subtleBlue
+                nowDate = cell.cellDate
                 
             case (lastLoginWeek, lastLoginHour): //break
                 //pryntConditionalKeyDateID("Last login", cell: cell, row: row, column: column)
                 //cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight) ///; cell.backgroundColor = lastLoginDimOrange
                 
                 previousFallBackDate = fallBackDate
+                previousSpringForwardDate = springForwardDate   ; print("reset previous spring forward date")
                 
             default: break
             }
@@ -49,9 +51,8 @@ extension CollectionVC {
     }
     
     func showDateInTitleLabels(date: Date, cell: CustomCell) {  /// for testing
-        let mo = monthsAbbreviated[Calendar.current.component(.month, from: date) - 1]
-        let dy = Calendar.current.component(.day, from: date)
-        cell.titleLabel.text = "\(mo) \(dy)" /// will add this to formattedDateString(:), if it gets used anywhere else as well
+        cell.titleLabel.text = (formattedDateString(date, roundedDown: false, showYear: true,
+        prefix: "", suffix: "", dateFormat: .monthAndDay))
     }
     
     func showTimeInTitleLabels(_ date: Date) -> String {

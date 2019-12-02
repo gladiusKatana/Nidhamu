@@ -7,10 +7,11 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     
     var minTwoDigits = "\(minute)";             if minute < 10 {minTwoDigits = "0\(minute)"}
     var sec2Digs = "\(second)";                 if second < 10 {sec2Digs = "0\(second)"}
-    var ampm = "";                              if hour < 13 {ampm = "am"} else {ampm = "pm"} // since hr is an integer from 0 to 23
+    var ampm = ""
     
     var hr = (hour < 13) ? hour : hour - 12
-    if hr == 0 {hr = 12}                    // * this is just to make a string representing the date, not the date itself
+    if hr == 0 {hr = 12}                            // * this is just to make a string representing the date, not the date itself
+    if hour < 12 {ampm = "am"} else {ampm = "pm"}   // since hr is an integer from 0 to 23
     
     var yearString = ""
     if showYear && (month == "January" || month == "December") {yearString = "\(year), "}/// also add  || (Date() > last-login-date + ~30 days)
@@ -30,13 +31,14 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     case .archiveCSVTitle:          return "\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(year), \(hr)꞉\(minTwoDigits)\(ampm)"/// see  **  below
         
     case .timeOnly:                 return "\(hr)\(ampm)"
+    case .monthAndDay:              return "\(month.prefix(3))\(day)"
         
     default: return "\(prx)\(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
     }
 }
 
 enum CustomDateFormat: Int {
-    case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayWithYear, fullDayWithSeconds, fullDayShortForm, fullDayShortFormNoDots, archiveFormat, archiveCSVTitle, timeOnly
+    case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayWithYear, fullDayWithSeconds, fullDayShortForm, fullDayShortFormNoDots, archiveFormat, archiveCSVTitle, timeOnly, monthAndDay
 }
 
 ///** atypical, slightly larger colon (꞉ not :) used for case archiveCSVTitle, because typical colon is a CSV column separator in Mac Numbers, and archived tagged tasks are exported via CSV in this app

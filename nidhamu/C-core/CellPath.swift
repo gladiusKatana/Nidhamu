@@ -30,7 +30,7 @@ extension CollectionVC {
         if column < headerSections {
             cell.backgroundColor = headerColour
             
-            if row > headerRows - 1 {                                           // time-of-day labels
+            if row > headerRows {                                           // time-of-day labels
                 var ampm = ""
                 if row < headerRows + 12 {ampm = "am"}
                 else {ampm = "pm"}
@@ -43,7 +43,7 @@ extension CollectionVC {
                 if row == 1 && viewControllerType == .timetable || row == 4  && viewControllerType == .deferralDates {
                     cell.titleLabel.text = headerWeekdayTitles[column - 1]
                 }
-                if (2 ... headerRows - 1).contains(row) {
+                if (2 ... headerRows).contains(row) {
                     timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
                 }
             } else {
