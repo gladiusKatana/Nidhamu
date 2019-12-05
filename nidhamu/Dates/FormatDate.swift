@@ -31,7 +31,7 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     case .archiveCSVTitle:          return "\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(year), \(hr)꞉\(minTwoDigits)\(ampm)"/// see  **  below
         
     case .timeOnly:                 return "\(hr)\(ampm)"
-    case .monthAndDay:              return "\(month.prefix(3))\(day)"
+    case .monthAndDay:              return "\(month.prefix(3)) \(day)"
         
     default: return "\(prx)\(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
     }

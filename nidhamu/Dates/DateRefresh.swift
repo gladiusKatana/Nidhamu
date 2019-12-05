@@ -51,6 +51,9 @@ extension CollectionVC {
                 DispatchQueue.main.asyncAfter(deadline: .now()) { /// must be on main queue: periodic callback inside the completion handler, is called on a background thread
                     topVC.reloadCV()
                 }
+                
+                pryntLastLoginDate()
+                pryntCurrentDate()
             }
         }
         completion()

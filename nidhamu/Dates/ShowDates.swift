@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func showKeyTimeBlockDates(cell: CustomCell) {
+    func showKeyTimeBlockDates(cell: CustomCell, layout: CustomFlowLayout) {
         
         let column = cell.xyCoordinate[0];  let row = cell.xyCoordinate[1]          /// for now: could also just pass in row & column from caller
         
@@ -30,15 +30,23 @@ extension CollectionVC {
             case (thisWeekday, thisHour) :
                 let timeString = showTimeInTitleLabels(cell.cellDate)
                 pryntConditionalKeyDateID(timeString, cell: cell, row: row, column: column)      ///;print("verified now cell @ [\(column),\(row)]")
-                cell.backgroundColor = subtleBlue
-                nowDate = cell.cellDate
+                cell.layer.borderColor = graySeven.cgColor
+                
+//                if (layout.cols - 1, layout.rows - 1) == (column, row) {
+//                    previousSpringForwardDate = springForwardDate                               ; print("reset previous spring-forward")
+//                    setPreviousSpringForward = false
+//                }
                 
             case (lastLoginWeek, lastLoginHour): //break
                 pryntConditionalKeyDateID("Last login", cell: cell, row: row, column: column)
-                cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight) ///; cell.backgroundColor = lastLoginDimOrange
+                ///cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight) ///; cell.backgroundColor = lastLoginDimOrange
                 
                 previousFallBackDate = fallBackDate
-                previousSpringForwardDate = springForwardDate   ; print("reset previous spring forward date")
+                
+//                if !setPreviousSpringForward {
+                    previousSpringForwardDate = springForwardDate
+//                    setPreviousSpringForward = true                                             //; print("set previous DSTs")
+//                }
                 
             default: break
             }

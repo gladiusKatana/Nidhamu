@@ -15,21 +15,16 @@ extension CollectionVC {
         }
         
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
-        var returnDateWithoutDST = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset)
+        let date = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset)
         
-        returnDateWithoutDST = truncateMinutesOf(returnDateWithoutDST)
         
-        //        dstOffset = (returnDateWithoutDST > fallBackDate) ? 1.0 : 0
-        
-        //        var dstOffset = 0.0
-        
-        if returnDateWithoutDST > springForwardDate ///&& !(returnDateWithoutDST > fallBackDate)
+        if date >= springForwardDate + TimeInterval(3600)
         {
             dstOffset = -1
         }
         else {
             
-            if returnDateWithoutDST > fallBackDate ///&& !(returnDateWithoutDST < springForwardDate)
+            if date > fallBackDate ///&& !(returnDateWithoutDST < springForwardDate)
             {
                 dstOffset = 1
             }
@@ -38,11 +33,12 @@ extension CollectionVC {
             }
         }
         
-        //        if row >= layout.lockedHeaderRows {
-        //            cell.titleLabel.text = "\(dstOffset)"
-        //        }
         
-        return returnDateWithoutDST + dstOffset * TimeInterval(3600)
+        if row >= layout.lockedHeaderRows {
+            cell.titleLabel.text = "\(dstOffset)"
+        }
+        
+        return date + dstOffset * TimeInterval(3600)
     }
     
     

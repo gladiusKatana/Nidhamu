@@ -26,7 +26,7 @@ extension CollectionVC {
                     earliestTaskAddress = indexPathsToProcess.first!
                 }
                 
-                timetableVC.showKeyTimeBlockDates(cell: cell)
+                timetableVC.showKeyTimeBlockDates(cell: cell, layout: downcastLayout!)
             }
             
         }

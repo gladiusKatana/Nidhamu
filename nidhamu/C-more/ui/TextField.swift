@@ -5,7 +5,7 @@ extension CollectionVC {
     
     func prepareAndPresentTextField(dateString: String) {
         globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
-//        backgroundVC.view.backgroundColor = globalWindow.backgroundColor
+        //backgroundVC.view.backgroundColor = globalWindow.backgroundColor
         
         collectionView.backgroundColor = .clear
         presentTextField(after: 1, dateString: selectedTimeBlockDateDescription)

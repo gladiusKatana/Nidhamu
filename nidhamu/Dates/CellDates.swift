@@ -11,8 +11,10 @@ extension CollectionVC { /// probably will refactor this whole file soon
                                     cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)
         
         if row >= layout.lockedHeaderRows && viewControllerType != .deferralDates {
-            showKeyTimeBlockDates(cell: cell)
-            if viewControllerType != .deferralDates {processTasksBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)}
+            showKeyTimeBlockDates(cell: cell, layout: layout)
+            if viewControllerType != .deferralDates {
+                processTasksBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)
+            }
         }
         
         if [column, row] == selectedTimeBlockPath {
@@ -31,21 +33,30 @@ extension CollectionVC { /// probably will refactor this whole file soon
             ///print("at \(column),\(row); dstHeaderShift = \(springForwardHeaderShift)")
         }
         
-        if row == 2 && column <= nowColumn
-            || row == 3 && column >= nowColumn
-        {
-            //cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
-            showDateInTitleLabels(date: cell.cellDate, cell: cell)
-            
-            if row == 2 && column <= nowColumn {cell.backgroundColor = lastWeekColour}
-            else if row == 3 && column >= nowColumn {cell.backgroundColor = cellDefaultColour}
-            else {}
+        if row == 2 {
+            if column <= nowColumn {
+                if !(nowRow == layout.lockedHeaderRows && column == nowColumn) {
+                    showDateInTitleLabels(date: cell.cellDate, cell: cell)
+                    cell.backgroundColor = lastWeekColour
+                }
+                else {
+                    cell.backgroundColor = cellDefaultColour
+                }
+            }
+            else {cell.backgroundColor = cellDefaultColour}
         }
         
-        //        if row > layout.lockedHeaderRows - 1 {
-        //            //cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
-        //            //showDateInTitleLabels(date: cell.cellDate, cell: cell)
-        //        }
+        if row == 3 {
+            if column >= nowColumn {
+                showDateInTitleLabels(date: cell.cellDate, cell: cell)
+                cell.backgroundColor = cellDefaultColour
+            }
+            else {cell.backgroundColor = lastWeekColour}
+        }
+        
+        if row > layout.lockedHeaderRows - 1 {
+            cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate) //; showDateInTitleLabels(date: cell.cellDate, cell: cell)
+        }
     }
 }
 

@@ -8,32 +8,49 @@ extension CollectionVC {
     func processTasksBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
         
         let oneWeekAgo = truncateMinutesOf(cell.cellDate) - TimeInterval(86400 * 7)     /// Note, truncate ONLY the cell's cell-date-- not the large time interval term
-        
         var dstShift = TimeInterval(0)
-        let truncFallBack = truncateMinutesOf(fallBackDate)
         
-        if truncateMinutesOf(Date()) == truncFallBack {
-            dstShift = TimeInterval(3599)
+        let truncDate = truncateMinutesOf(Date());  let truncLastLogin = truncateMinutesOf(lastLoginDate)
+        let truncFallBack = truncateMinutesOf(fallBackDate)
+        let truncSpringForward = truncateMinutesOf(springForwardDate)
+        ///let truncPrevSpringForward = truncateMinutesOf(previousSpringForwardDate) //+ TimeInterval(3600)
+        
+        
+        if truncDate == truncFallBack {
+            dstShift = TimeInterval(3600)
         }
-        else if truncateMinutesOf(lastLoginDate) < truncFallBack && truncateMinutesOf(Date()) < truncFallBack {
-            if truncateMinutesOf(lastLoginDate) < truncateMinutesOf(previousFallBackDate) {
+            
+        else if truncLastLogin < truncFallBack && truncDate < truncFallBack {
+            if truncLastLogin < truncateMinutesOf(previousFallBackDate) {
                 dstShift = 0
                 previousFallBackDate = fallBackDate /// by this time the fall-back date has been reset
             }
             else {dstShift = TimeInterval(3600)}
         }
-        else {dstShift = TimeInterval(0) ; print("dst interval undefined")}
-        
-        //        if truncateMinutesOf(lastLoginDate) < truncateMinutesOf(previousSpringForwardDate) {
-        //            dstShift = TimeInterval(-3600)
-        //            previousSpringForwardDate = springForwardDate
-        //        }
+            
+        else {dstShift = TimeInterval(0)                                                        ; print("dst interval undefined")}
         
         
-        //if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
+//        if truncLastLogin < truncSpringForward && truncDate <= truncSpringForward {
+//            if truncLastLogin < truncateMinutesOf(previousSpringForwardDate) {
+//                dstShift = TimeInterval(-3600)
+////                previousSpringForwardDate = springForwardDate
+//            }
+//            else {dstShift = TimeInterval(3600)}
+//        }
+//
+//        else {dstShift = TimeInterval(-3601)}
         
         
-        if oneWeekAgo.isBetween(truncateMinutesOf(lastLoginDate) + dstShift, and: truncateMinutesOf(Date() + dstShift)) {
+//        if truncLastLogin < truncPrevSpringForward && truncDate < truncPrevSpringForward {
+//            dstShift = TimeInterval(-3600)
+//        }
+//        else {dstShift = TimeInterval(3600)}
+        
+        
+        if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
+        
+        if oneWeekAgo.isBetween(truncLastLogin + dstShift, and: truncateMinutesOf(Date() + dstShift)) {
             
             //print("login interval sweep [\(column),\(row)] (dst shift \(dstShift); dst offset = \(dstOffset))")
             
