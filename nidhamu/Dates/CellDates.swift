@@ -54,8 +54,11 @@ extension CollectionVC { /// probably will refactor this whole file soon
             else {cell.backgroundColor = lastWeekColour}
         }
         
-        if row > layout.lockedHeaderRows - 1 {
-            cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate) //; showDateInTitleLabels(date: cell.cellDate, cell: cell)
+//        if row > layout.lockedHeaderRows - 1 {
+//            cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate) //; showDateInTitleLabels(date: cell.cellDate, cell: cell)
+//        }
+        if row >= layout.lockedHeaderRows {
+            cell.titleLabel.text = "\(dstOffset)"
         }
     }
 }

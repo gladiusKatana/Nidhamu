@@ -10,45 +10,20 @@ extension CollectionVC {
         let oneWeekAgo = truncateMinutesOf(cell.cellDate) - TimeInterval(86400 * 7)     /// Note, truncate ONLY the cell's cell-date-- not the large time interval term
         var dstShift = TimeInterval(0)
         
-        let truncDate = truncateMinutesOf(Date());  let truncLastLogin = truncateMinutesOf(lastLoginDate)
+        let truncLastLogin = truncateMinutesOf(lastLoginDate)
         let truncFallBack = truncateMinutesOf(fallBackDate)
-        let truncSpringForward = truncateMinutesOf(springForwardDate)
-        ///let truncPrevSpringForward = truncateMinutesOf(previousSpringForwardDate) //+ TimeInterval(3600)
+        var springForwardExtraHour = 0.0
         
-        
-        if truncDate == truncFallBack {
-            dstShift = TimeInterval(3600)
+        if setPreviousSpringForward && nowRow == 8 {
+            springForwardExtraHour = -1
+            previousSpringForwardDate = springForwardDate
+            setPreviousSpringForward = false
+            if (layout.cols - 1, layout.rows - 1) == (column, row) {print("extra adjustment to \((dstOffset + springForwardExtraHour))")}
         }
-            
-        else if truncLastLogin < truncFallBack && truncDate < truncFallBack {
-            if truncLastLogin < truncateMinutesOf(previousFallBackDate) {
-                dstShift = 0
-                previousFallBackDate = fallBackDate /// by this time the fall-back date has been reset
-            }
-            else {dstShift = TimeInterval(3600)}
-        }
-            
-        else {dstShift = TimeInterval(0)                                                        ; print("dst interval undefined")}
         
+        dstShift = (dstOffset + springForwardExtraHour) * TimeInterval(3600)
         
-//        if truncLastLogin < truncSpringForward && truncDate <= truncSpringForward {
-//            if truncLastLogin < truncateMinutesOf(previousSpringForwardDate) {
-//                dstShift = TimeInterval(-3600)
-////                previousSpringForwardDate = springForwardDate
-//            }
-//            else {dstShift = TimeInterval(3600)}
-//        }
-//
-//        else {dstShift = TimeInterval(-3601)}
-        
-        
-//        if truncLastLogin < truncPrevSpringForward && truncDate < truncPrevSpringForward {
-//            dstShift = TimeInterval(-3600)
-//        }
-//        else {dstShift = TimeInterval(3600)}
-        
-        
-        if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
+//        if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
         
         if oneWeekAgo.isBetween(truncLastLogin + dstShift, and: truncateMinutesOf(Date() + dstShift)) {
             
@@ -59,6 +34,10 @@ extension CollectionVC {
             //else {                              // line above is purely for testing purposes
             
             cell.backgroundColor = lastLoginDimOrange; cell.cellColour = lastLoginDimOrange
+            
+//            if truncLastLogin == truncateMinutesOf(previousSpringForwardDate) {
+//                cell.backgroundColor = .green
+//            }
             
             //}
             //animateCellColourBack(cell: cell, delay: 3, duration: 10)

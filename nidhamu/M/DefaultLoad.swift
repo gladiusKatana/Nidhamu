@@ -11,7 +11,9 @@ func defaultLoadData(showDate: Bool) {                                          
         if showDate {pryntLastLoginDate(); pryntCurrentDate()}
         
         if Date() >= fallBackDate || Date() > springForwardDate {
-            if dateOfLastSecond(fallBackDate).isBetween(lastLoginDate, and: Date() + TimeInterval(3600)) { /// if fall-back occurred (eg 1:59->1:00)....
+            if dateOfLastSecond(fallBackDate).isBetween(lastLoginDate, and: Date() + TimeInterval(3600))
+                || dateOfLastSecond(springForwardDate).isBetween(lastLoginDate, and: Date() + TimeInterval(3600))
+            { /// if fall-back occurred (eg 1:59->1:00)....
                 foundNextFallBackDate = false; foundNextSpringForwardDate = false                          /// ...while app was in background
                 findFallbackDate(startingDate: Date(), setting: true)
             } //else {print("fall back hour never rolled over")}

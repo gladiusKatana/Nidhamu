@@ -17,8 +17,7 @@ extension CollectionVC {
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
         let date = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset)
         
-        
-        if date >= springForwardDate + TimeInterval(3600)
+        if date > springForwardDate + TimeInterval(3600)
         {
             dstOffset = -1
         }
@@ -33,14 +32,8 @@ extension CollectionVC {
             }
         }
         
-        
-        if row >= layout.lockedHeaderRows {
-            cell.titleLabel.text = "\(dstOffset)"
-        }
-        
         return date + dstOffset * TimeInterval(3600)
     }
-    
     
     func setCellWeek(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, withColours: Bool) -> Int {
         var weekAhead = 0

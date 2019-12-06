@@ -28,14 +28,14 @@ extension CollectionVC {
             switch (cellWeekday, cellHour) {
                 
             case (thisWeekday, thisHour) :
-                let timeString = showTimeInTitleLabels(cell.cellDate)
-                pryntConditionalKeyDateID(timeString, cell: cell, row: row, column: column)      ///;print("verified now cell @ [\(column),\(row)]")
-                cell.layer.borderColor = graySeven.cgColor
+                //                let timeString = showTimeInTitleLabels(cell.cellDate)
+                //                pryntConditionalKeyDateID(timeString, cell: cell, row: row, column: column)      ///;print("verified now cell @ [\(column),\(row)]")
+                ///cell.layer.borderColor = graySeven.cgColor
+                cell.backgroundColor = subtleBlue
                 
-//                if (layout.cols - 1, layout.rows - 1) == (column, row) {
-//                    previousSpringForwardDate = springForwardDate                               ; print("reset previous spring-forward")
-//                    setPreviousSpringForward = false
-//                }
+                if (nowColumn, nowRow) == (column, row) { ///if (layout.cols - 1, layout.rows - 1) == (column, row) {
+                    previousSpringForwardDate = springForwardDate                               //; print("reset previous spring-forward")
+                }
                 
             case (lastLoginWeek, lastLoginHour): //break
                 pryntConditionalKeyDateID("Last login", cell: cell, row: row, column: column)
@@ -43,10 +43,10 @@ extension CollectionVC {
                 
                 previousFallBackDate = fallBackDate
                 
-//                if !setPreviousSpringForward {
+                if !setPreviousSpringForward {
                     previousSpringForwardDate = springForwardDate
-//                    setPreviousSpringForward = true                                             //; print("set previous DSTs")
-//                }
+                    setPreviousSpringForward = true                                             //; print("set previous DSTs")
+                }
                 
             default: break
             }
