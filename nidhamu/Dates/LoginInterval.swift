@@ -11,7 +11,6 @@ extension CollectionVC {
         var dstShift = TimeInterval(0)
         
         let truncLastLogin = truncateMinutesOf(lastLoginDate)
-        let truncFallBack = truncateMinutesOf(fallBackDate)
         var springForwardExtraHour = 0.0
         
         if setPreviousSpringForward && nowRow == 8 {
@@ -23,7 +22,7 @@ extension CollectionVC {
         
         dstShift = (dstOffset + springForwardExtraHour) * TimeInterval(3600)
         
-//        if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
+        //if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
         
         if oneWeekAgo.isBetween(truncLastLogin + dstShift, and: truncateMinutesOf(Date() + dstShift)) {
             
@@ -34,10 +33,6 @@ extension CollectionVC {
             //else {                              // line above is purely for testing purposes
             
             cell.backgroundColor = lastLoginDimOrange; cell.cellColour = lastLoginDimOrange
-            
-//            if truncLastLogin == truncateMinutesOf(previousSpringForwardDate) {
-//                cell.backgroundColor = .green
-//            }
             
             //}
             //animateCellColourBack(cell: cell, delay: 3, duration: 10)

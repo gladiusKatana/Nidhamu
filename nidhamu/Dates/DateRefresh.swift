@@ -52,8 +52,8 @@ extension CollectionVC {
                     topVC.reloadCV()
                 }
                 
-//                pryntLastLoginDate()
-//                pryntCurrentDate()
+                //                pryntLastLoginDate()
+                //                pryntCurrentDate()
             }
         }
         completion()

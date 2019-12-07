@@ -2,53 +2,55 @@
   
   
   
-  handle daylight savings Mar 8 (this is the spring-forward date in 2020 in Canada)
   
+  buttons                                                                                           UI
   
+  icon
   
-  settings menu                                                                                     UI
+  launch screen
+
+  settings menu
+  
+  dst notification
+  
   archive frequency reminders
   
-  buttons                                                                                           Design
-  icon
-  launch screen
+  
+  
   
   Numbers template                                                                                  UX
+  
   Excel template
   
   
   
-  refactor, improve comments
-  triple check logic
-  run on same devices as Beta Users'                                Thurs Oct 31 (private beta)
   
+  checklogic, refactor,  comments                                                                   M
   
+  mornAftEveNightVC                                                                                 VCs
   
-  mornAftEveNiteVC                                                                                  VCs
   listVC (today items)
+  
   listVC (deadlineless items)
+                                                                    Jan. 1 '20 AppStore
   calendarVC
+    
   tasksAtDate                                                                                       Data
   
   
   
-  login date interval outlined/animated, not perma-coloured                                         UI
-  device specific fonts & keyboard colour
-  dark mode
-  orientation enum
-  Nov ~15 (appstore)
   
-  
+  + login date interval outlined/animated, not perma-coloured                                       UI
+  + device specific fonts
+  + orientation enum
   ✧ cascading deferrals?                                                                            ✧
-  ✧ loopWeeks = false behaviour as setting?                                                         ✧
-  ✧ prev ent User changing nowDate via Settings app                                                 ✧
-  
+  ✧ loopWeeks = false as setting?                                                                   ✧
+  ✧ prevent changing date via Settings app                                                          ✧
   
   
   
   
   1st commit                                                         July 8 '19
-  
   
   
   
@@ -69,5 +71,4 @@
   
   
   ✎ this is Open Source software. Always looking for contributors. https://github.com/gladiusKatana/Nidhamu */
- 
  
