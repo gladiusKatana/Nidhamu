@@ -23,7 +23,7 @@ extension CollectionVC {
         }
         else {
             
-            if date > fallBackDate ///&& !(returnDateWithoutDST < springForwardDate)
+            if date > fallBackDate
             {
                 dstOffset = 1
             }

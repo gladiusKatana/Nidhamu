@@ -1,30 +1,29 @@
 // LoginInterval    ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-//var dstShift = TimeInterval(0)
-
 extension CollectionVC {
     
     func processTasksBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
         
-        let oneWeekAgo = truncateMinutesOf(cell.cellDate) - TimeInterval(86400 * 7)     /// Note, truncate ONLY the cell's cell-date-- not the large time interval term
         var dstShift = TimeInterval(0)
-        
-        let truncLastLogin = truncateMinutesOf(lastLoginDate)
         var springForwardExtraHour = 0.0
         
-        if setPreviousSpringForward && nowRow == 8 {
+        let truncLastLogin = truncateMinutesOf(lastLoginDate)
+        let tz = NSTimeZone.local
+        
+        if !(tz.isDaylightSavingTime(for: lastLoginDate))
+            && tz.isDaylightSavingTime(for: Date()) {
             springForwardExtraHour = -1
-            previousSpringForwardDate = springForwardDate
-            setPreviousSpringForward = false
-            if (layout.cols - 1, layout.rows - 1) == (column, row) {print("extra adjustment to \((dstOffset + springForwardExtraHour))")}
         }
         
         dstShift = (dstOffset + springForwardExtraHour) * TimeInterval(3600)
         
+        let oneWeekAgo = truncateMinutesOf(cell.cellDate) - TimeInterval(86400 * 7) - dstShift   ///truncate ONLY the cell's cell-date-- not the large time interval term
+        
         //if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
         
-        if oneWeekAgo.isBetween(truncLastLogin + dstShift, and: truncateMinutesOf(Date() + dstShift)) {
+        
+        if oneWeekAgo.isBetween(truncLastLogin, and: truncateMinutesOf(Date())) {
             
             //print("login interval sweep [\(column),\(row)] (dst shift \(dstShift); dst offset = \(dstOffset))")
             
@@ -33,6 +32,9 @@ extension CollectionVC {
             //else {                              // line above is purely for testing purposes
             
             cell.backgroundColor = lastLoginDimOrange; cell.cellColour = lastLoginDimOrange
+            
+//            print("extra hour: \(springForwardExtraHour)")
+//            cell.titleLabel.text = "\(dstShift)"
             
             //}
             //animateCellColourBack(cell: cell, delay: 3, duration: 10)

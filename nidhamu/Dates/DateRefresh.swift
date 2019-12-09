@@ -34,26 +34,11 @@ extension CollectionVC {
             if !reloadedFromHourTickingOver {
                 
                 cachedBlocksAndTheirPaths = false
-                
-                let dateString = formattedDateString(Date(), roundedDown: true,
-                                                     showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
-                let fallBackDateString = formattedDateString(fallBackDate, roundedDown: true,
-                                                             showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
-                let springForwardDateString = formattedDateString(springForwardDate + TimeInterval(3600), roundedDown: true,
-                                                                  showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
-                
-                if dateString == fallBackDateString || dateString == springForwardDateString {
-                    foundNextFallBackDate = false; foundNextSpringForwardDate = false
-                    findFallbackDate(startingDate: Date(), setting: true)
-                    findSpringForwardDate(startingDate: Date(), setting: true)
-                }
+                searchForDST()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now()) { /// must be on main queue: periodic callback inside the completion handler, is called on a background thread
                     topVC.reloadCV()
                 }
-                
-                //                pryntLastLoginDate()
-                //                pryntCurrentDate()
             }
         }
         completion()
@@ -62,6 +47,21 @@ extension CollectionVC {
     func kickoffTimer() {
         DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 3) { [weak self] in
             self?.periodicDateRefresh(){self!.kickoffTimer()}
+        }
+    }
+    
+    func searchForDST() {
+        let dateString = formattedDateString(Date(), roundedDown: true,
+                                             showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
+        let fallBackDateString = formattedDateString(fallBackDate, roundedDown: true,
+                                                     showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
+        let springForwardDateString = formattedDateString(springForwardDate + TimeInterval(3600), roundedDown: true,
+                                                          showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
+        
+        if dateString == fallBackDateString || dateString == springForwardDateString {      //print("\nDST\n")
+            foundNextFallBackDate = false; foundNextSpringForwardDate = false
+            findFallbackDate(startingDate: Date(), setting: true)
+            findSpringForwardDate(startingDate: Date(), setting: true)
         }
     }
 }

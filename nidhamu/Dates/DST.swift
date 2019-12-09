@@ -70,9 +70,9 @@ func hoursSince(_ startDate: Date, testDate: Date) -> Int {
     return hours
 }
 
-func notifyIfDateIsDST(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
-    let fbk = (truncateMinutesOf(date) == truncateMinutesOf(fallBackDate)) ? "(dst:fall-back)" : ""
-    let spf = (truncateMinutesOf(date) == truncateMinutesOf(springForwardDate)) ? "(dst:spring-forward)" : ""
+func dstMarker(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
+    let fbk = (truncateMinutesOf(date) == truncateMinutesOf(fallBackDate)) ? "(fall-back)" : ""
+    let spf = (truncateMinutesOf(date) == truncateMinutesOf(springForwardDate)) ? "(spring-forward)" : ""
     return "\(fbk)\(spf)"
 }
 

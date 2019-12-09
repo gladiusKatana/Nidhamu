@@ -11,9 +11,11 @@
 
   settings menu
   
-  dst notification
+  dst notification                                                                                  Dates
   
   archive frequency reminders
+  
+  prevent changing date via Settings app
   
   
   
@@ -43,9 +45,8 @@
   + login date interval outlined/animated, not perma-coloured                                       UI
   + device specific fonts
   + orientation enum
-  ✧ cascading deferrals?                                                                            ✧
+  ✧ cascading task deferrals?                                                                       ✧
   ✧ loopWeeks = false as setting?                                                                   ✧
-  ✧ prevent changing date via Settings app                                                          ✧
   
   
   
@@ -58,13 +59,13 @@
   Notes
   
   
-  * DATA, UI (etc) labels map loosely to M, V, C (etc).  Tasks.swift task-list emphasizes features, design, etc., not very code-specific
-  
-  
-  ✧ denotes features that may not necessarily be a good idea to implement (eg should User be able to defer *all* their upcoming tasks at once?)
-  
-  
   ⁌o⁍ denotes bugfixes
+  
+  
+  ✧ denotes features that may not necessarily be a good idea to implement (eg should user be able to defer *all* their upcoming tasks at once?)
+  
+  
+  * Data, UI, VCs (etc) labels map loosely to MVC. (This Task List emphasizes features, design, etc.: not very code-specific)
   
   
   ⚔️ all Swift files in this version are aesthetically optimized for a 13" screen
