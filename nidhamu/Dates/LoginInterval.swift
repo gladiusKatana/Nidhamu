@@ -7,6 +7,7 @@ extension CollectionVC {
         
         var dstShift = TimeInterval(0)
         var springForwardExtraHour = 0.0
+        var fallBackExtraHour = 0.0
         
         let truncLastLogin = truncateMinutesOf(lastLoginDate)
         let tz = NSTimeZone.local
@@ -16,25 +17,25 @@ extension CollectionVC {
             springForwardExtraHour = -1
         }
         
-        dstShift = (dstOffset + springForwardExtraHour) * TimeInterval(3600)
+        if tz.isDaylightSavingTime(for: lastLoginDate)
+            && !(tz.isDaylightSavingTime(for: Date())) {
+            fallBackExtraHour = 1
+        }
         
-        let oneWeekAgo = truncateMinutesOf(cell.cellDate) - TimeInterval(86400 * 7) - dstShift   ///truncate ONLY the cell's cell-date-- not the large time interval term
+        dstShift = (dstOffset + springForwardExtraHour + fallBackExtraHour) * TimeInterval(3600)
+        
+        let oneWeekAgo = truncateMinutesOf(cell.cellDate) - TimeInterval(86400 * 7) ///truncate ONLY the cell's cell-date-- not the large time interval term
         
         //if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
         
         
-        if oneWeekAgo.isBetween(truncLastLogin, and: truncateMinutesOf(Date())) {
-            
-            //print("login interval sweep [\(column),\(row)] (dst shift \(dstShift); dst offset = \(dstOffset))")
+        if oneWeekAgo.isBetween(truncLastLogin + dstShift, and: truncateMinutesOf(Date() + dstShift)) {
             
             //if !cached BlocksAndTheirPaths {    // only needed if doing the animation below
             //if column < nowColumn || (column == nowColumn && row < nowRow) {cell.backgroundColor = .green; cell.cellColour = .green}
             //else {                              // line above is purely for testing purposes
             
             cell.backgroundColor = lastLoginDimOrange; cell.cellColour = lastLoginDimOrange
-            
-//            print("extra hour: \(springForwardExtraHour)")
-//            cell.titleLabel.text = "\(dstShift)"
             
             //}
             //animateCellColourBack(cell: cell, delay: 3, duration: 10)

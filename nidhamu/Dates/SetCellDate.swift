@@ -17,12 +17,10 @@ extension CollectionVC {
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
         let date = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset)
         
-        if date > springForwardDate + TimeInterval(3600)
-        {
+        if date > springForwardDate + TimeInterval(3600) {
             dstOffset = -1
         }
         else {
-            
             if date > fallBackDate
             {
                 dstOffset = 1
@@ -30,6 +28,12 @@ extension CollectionVC {
             else {
                 dstOffset = 0
             }
+        }
+        
+        if truncateMinutesOf(Date()) > truncateMinutesOf(springForwardDate) {   //print("^")
+            foundNextSpringForwardDate = false
+            findSpringForwardDate(startingDate: Date(), setting: true)
+            reloadCollectionViewAfterDelay(0)
         }
         
         return date + dstOffset * TimeInterval(3600)
