@@ -78,7 +78,7 @@ var taskTaggingViewController = PopupMenuVC(collectionViewLayout: taskTaggingLay
 
 let zeroFrame = CGRect(x: 0, y: 0, width: 0, height: 0) /// Initial value for testing
 
-//let popupFrame = CGRect(x: timetableLayout.cellWidth! * 2, y: 0, width: timetableLayout.cellWidth!, height: timetableLayout.cellHeight! * 5)
+///let popupFrame = CGRect(x: timetableLayout.cellWidth! * 2, y: 0, width: timetableLayout.cellWidth!, height: timetableLayout.cellHeight! * 5)
 
-//* For taskListVC: will probably remove loopWeeks & demarcateWeeksByColour, via subclassing / making them optional parameters
+//* taskList VC: remove loopWeeks & demarcateWeeksByColour, via subclassing / making them optional parameters
 

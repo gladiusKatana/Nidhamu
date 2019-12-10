@@ -78,7 +78,7 @@
 		0654130F237A6D840080F3EF /* VCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412CC237A6D840080F3EF /* VCs.swift */; };
 		06541310237A6D840080F3EF /* TimeVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412CD237A6D840080F3EF /* TimeVars.swift */; };
 		06541311237A6D840080F3EF /* AppLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412CE237A6D840080F3EF /* AppLifecycle.swift */; };
-		06541312237A6D840080F3EF /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412CF237A6D840080F3EF /* TaskData.swift */; };
+		06541312237A6D840080F3EF /* TaskVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412CF237A6D840080F3EF /* TaskVars.swift */; };
 		06541313237A6D840080F3EF /* Vars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D0237A6D840080F3EF /* Vars.swift */; };
 		06541314237A6D840080F3EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D1237A6D840080F3EF /* AppDelegate.swift */; };
 		06541315237A6D840080F3EF /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D2237A6D840080F3EF /* Tasks.swift */; };
@@ -179,7 +179,7 @@
 		065412CC237A6D840080F3EF /* VCs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCs.swift; sourceTree = "<group>"; };
 		065412CD237A6D840080F3EF /* TimeVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeVars.swift; sourceTree = "<group>"; };
 		065412CE237A6D840080F3EF /* AppLifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLifecycle.swift; sourceTree = "<group>"; };
-		065412CF237A6D840080F3EF /* TaskData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
+		065412CF237A6D840080F3EF /* TaskVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskVars.swift; sourceTree = "<group>"; };
 		065412D0237A6D840080F3EF /* Vars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vars.swift; sourceTree = "<group>"; };
 		065412D1237A6D840080F3EF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		065412D2237A6D840080F3EF /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
@@ -424,7 +424,7 @@
 				065412D2237A6D840080F3EF /* Tasks.swift */,
 				065412CC237A6D840080F3EF /* VCs.swift */,
 				065412D0237A6D840080F3EF /* Vars.swift */,
-				065412CF237A6D840080F3EF /* TaskData.swift */,
+				065412CF237A6D840080F3EF /* TaskVars.swift */,
 				065412CD237A6D840080F3EF /* TimeVars.swift */,
 				065412D1237A6D840080F3EF /* AppDelegate.swift */,
 				065412CE237A6D840080F3EF /* AppLifecycle.swift */,
@@ -625,7 +625,7 @@
 				065412F1237A6D840080F3EF /* PrepBlocks.swift in Sources */,
 				06541301237A6D840080F3EF /* SizeEnums.swift in Sources */,
 				06541305237A6D840080F3EF /* Prepare.swift in Sources */,
-				06541312237A6D840080F3EF /* TaskData.swift in Sources */,
+				06541312237A6D840080F3EF /* TaskVars.swift in Sources */,
 				065412F4237A6D840080F3EF /* CollectionVC.swift in Sources */,
 				0654130F237A6D840080F3EF /* VCs.swift in Sources */,
 				06541303237A6D840080F3EF /* SetTopVC.swift in Sources */,

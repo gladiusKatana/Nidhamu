@@ -1,24 +1,30 @@
 // TimeVars         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-var lastLoginDate = Date()
+var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 
+
+
+var lastLoginDate = Date()
 var selectedCellDate = Date()
 
 var springForwardDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec: 1)   /// so timeIntervalSince1970 = 0
 var fallBackDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec: 1)        /// ""
-var previousFallBackDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec: 1)/// ""
-var previousSpringForwardDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec: 1)/// ""
-
-var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 
 
-var nowRow = 0;                         var nowColumn = 0
-var taskIndex = 0;                      var tasksInBlockToBeProcessed = 0
 
-var setPreviousSpringForward = false
+var nowRow = 0;                                 var nowColumn = 0
 
-var globalTaskIdentifier = "(task)";    var selectedTimeBlockDateDescription = "(selected date)"
+var dstOffset = 0.0
+
+
+
+var foundNextFallBackDate = false;              var foundNextSpringForwardDate = false
+
+
+
+
+var selectedTimeBlockDateDescription = "(selected date)"
 
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 var monthsAbbreviated = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]

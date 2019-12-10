@@ -28,25 +28,14 @@ extension CollectionVC {
             switch (cellWeekday, cellHour) {
                 
             case (thisWeekday, thisHour) :
-                //                let timeString = showTimeInTitleLabels(cell.cellDate)
-                //                pryntConditionalKeyDateID(timeString, cell: cell, row: row, column: column)      ///;print("verified now cell @ [\(column),\(row)]")
-                ///cell.layer.borderColor = graySeven.cgColor
+                //let timeString = showTimeInTitleLabels(cell.cellDate)
+                ///pryntConditionalKeyDateID(timeString, cell: cell, row: row, column: column)                          ///;print("verified now cell @ [\(column),\(row)]")
+                //cell.layer.borderColor = graySeven.cgColor
                 cell.backgroundColor = subtleBlue
-                
-                if (nowColumn, nowRow) == (column, row) { ///if (layout.cols - 1, layout.rows - 1) == (column, row) {
-                    previousSpringForwardDate = springForwardDate                               //; print("reset previous spring-forward")
-                }
                 
             case (lastLoginWeek, lastLoginHour): //break
                 pryntConditionalKeyDateID("Last login", cell: cell, row: row, column: column)
-                ///cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight) ///; cell.backgroundColor = lastLoginDimOrange
-                
-                previousFallBackDate = fallBackDate
-                
-                if !setPreviousSpringForward {
-                    previousSpringForwardDate = springForwardDate
-                    setPreviousSpringForward = true                                             //; print("set previous DSTs")
-                }
+                ///cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)                                     ///; cell.backgroundColor = lastLoginDimOrange
                 
             default: break
             }
