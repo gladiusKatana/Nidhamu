@@ -55,43 +55,9 @@ extension CollectionVC {
                 && indexPathsToProcess[paths - 2] [1] < 21 {        /// ie, if second-last time block to process requires resizing (since cells could be swept over repeatedly...
                 taskTaggingViewController.dismissTaggingWizard()    /// ...within 1 session. (eg, user could leave timetable open for many hours -- it just automatically updates)
             }
-            
             thereWillBeARowException = false
         }
         tagTasksSinceLastLogin()            ///; print("\(taskArraysToProcess.count) blocks remaining now, and \(tasksInBlockToBeProcessed) tasks remaining (tag #\(taskIndex + 1))\n")
     }
-    
-    
-    /*func processTimeBlocksSinceLastLogin(layout: CustomFlowLayout) { /// old version, pre-refactor
-     if viewControllerType == .hours {
-     if taskArraysToProcess.count > 0 {
-     
-     if !savedBlocksAndPathsForProcessing {
-     
-     pathsToProcess = pathsToProcess.sorted(by: {lasttaskFromPath($0).deadline < lasttaskFromPath($1).deadline})
-     taskArraysToProcess = taskArraysToProcess.sorted(by: {$0.last!.deadline < $1.last!.deadline})
-     ///print("paths to process: \(pathsToProcess)"); print("tasks to process: \(taskDescriptionsToProcess)")
-     
-     tasksInBlockToBeProcessed = taskArraysToProcess.first!.count
-     savedBlocksAndPathsForProcessing = true
-     
-     if thereWillBeARowException {
-     let gap = CGFloat(5) / (self.downcastLayout!.cellHeight!)       // extra gap for better aesthetics
-     downcastLayout?.autoFitHScale =
-     CGFloat(layout.rows) / (CGFloat(layout.rows + 8) + gap)     // popup window is 9 cells tall
-     reloadWithDelay(after: 0)                                       //; print("reloaded for size adjustment")
-     
-     let count = pathsToProcess.count
-     if count >= 2                   /// * row 21 = 4pm
-     && pathsToProcess[count - 2][1] < 21 {  /// if 2nd-last index path to process requires resizing (since cells can be swept over repeatedly, ...
-     classifierVC.removePopupMenuAndSwitch() /// ... within 1 session (eg user could leave timetable open for multiple hours, it just auto-updates)
-     }
-     thereWillBeARowException = false
-     }
-     tagtasksSinceLastLogin()   ///; print(".\(taskArraysToProcess.count) blocks remaining now; \(tasksInBlockToBeProcessed) tasks; tag #\(taskIndex + 1)\n")
-     }
-     } else {DispatchQueue.main.asyncAfter(deadline: .now() + 1) {AppUtility.lockOrientation(.all)}}
-     }
-     }*/
 }
 
