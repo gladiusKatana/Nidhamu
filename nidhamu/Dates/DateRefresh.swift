@@ -49,20 +49,17 @@ extension CollectionVC {
             self?.periodicDateRefresh(){self!.kickoffTimer()}
         }
     }
+}
+
+func dateOfLastSecond(_ date: Date) -> Date {
+    let truncDate = truncateMinutesOf(date)
+    let (year, _, month, _ , day, _, _, hour, _, _) = getChosenDateComponents(truncDate, roundedDown: false)
+    let formatter = DateFormatter(); formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
     
-    func searchForDST() {
-        let dateString = formattedDateString(Date(), roundedDown: true,
-                                             showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
-        let fallBackDateString = formattedDateString(fallBackDate, roundedDown: true,
-                                                     showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
-        let springForwardDateString = formattedDateString(springForwardDate + TimeInterval(3600), roundedDown: true,
-                                                          showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
-        
-        if dateString == fallBackDateString || dateString == springForwardDateString {      //print("\nDST\n")
-            foundNextFallBackDate = false; foundNextSpringForwardDate = false
-            findFallbackDate(startingDate: Date(), setting: true)
-            findSpringForwardDate(startingDate: Date(), setting: true)
-        }
-    }
+    guard let lastSecondDate = formatter.date(from: "\(year)/\(month)/\(day) \(hour):\(59):\(59)") else {
+        print("could not create last-second-date with input, returning current date instead")
+        return Date()
+    } ///print("last-second-date: \(formattedDateString(lastSecondDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithSeconds))")
+    return lastSecondDate
 }
 

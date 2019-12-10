@@ -2,9 +2,8 @@
 import UIKit
 
 func printTasksTabularized() { // optimized for console printing on an iPad Mini 4, landscape orientation (using Duet app & iPad stand)
-    
-    let gap = " "; var i = 0
     ///if timeBlockPaths.isEmpty {print("[no tasks]")}
+    let gap = " "; var i = 0
     
     for path in timeBlockPaths {
         
@@ -43,14 +42,17 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
 
 func pryntLastLoginDate() { /// spelling 'prynt' with a y so this function's existence does not override Xcode autocomplete for print statements
     let dst = dstMarker(lastLoginDate)
-    print(formattedDateString(lastLoginDate, roundedDown: false, showYear: true,
-                              prefix: "last login              ", suffix: " \(dst)", dateFormat: .fullDay))  ///print("              (unformatted gmt) \(lastLoggedInDate)\n")
+    print(formattedDateString(lastLoginDate, roundedDown: false, showYear: true, prefix: "last login              ", suffix: " \(dst)", dateFormat: .fullDay))                  ///print("              (unformatted gmt) \(lastLoggedInDate)\n")
 }
 
 func pryntCurrentDate() {
     let dst = dstMarker(Date())
-    print(formattedDateString(Date(), roundedDown: false, showYear: true,
-                              prefix: "date right now          ", suffix: " \(dst)", dateFormat: .fullDay))
-    print("")                                                                                         ///print("              (unformatted gmt)    \(Date())\n")
+    print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "date right now          ", suffix: " \(dst)", dateFormat: .fullDay))             ; print("")      ///print("              (unformatted gmt)    \(Date())\n")
+}
+
+func dstMarker(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
+    let fbk = (truncateMinutesOf(date) == truncateMinutesOf(fallBackDate)) ? "(fall-back)" : ""
+    let spf = (truncateMinutesOf(date) == truncateMinutesOf(springForwardDate)) ? "(spring-forward)" : ""
+    return "\(fbk)\(spf)"
 }
 

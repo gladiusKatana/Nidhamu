@@ -4,7 +4,7 @@ import UIKit
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    lazy var orientationLock = UIInterfaceOrientationMask.all     /// set orientations you want allowed by default
+    lazy var orientationLock = UIInterfaceOrientationMask.all       /// set orientations you want allowed by default
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         return orientationLock
@@ -21,7 +21,7 @@ import UIKit
         globalWindow = window!
         
         backgroundVC = UIViewController()
-        backgroundVC.view.backgroundColor = defaultColour             /// must match window's background colour, for rotating landscape->portrait
+        backgroundVC.view.backgroundColor = defaultColour           /// must match window's background colour, for rotating landscape->portrait
         backgroundVC.view.frame = globalWindow.frame
         
         getOrientationAtLaunch()                                    ; print("launching on \(modelName) in \(launchOrientation) orientation")

@@ -15,7 +15,7 @@ func getChosenDateComponents(_ inputDate: Date, roundedDown: Bool)
         let day = Calendar.current.component(.day, from: inputDate)
         
         let weekday = fullWeekdaysDefaultOrder[Calendar.current.component(.weekday, from: inputDate) - 1]
-        let wkdy = customWkdysDefaultOrder[Calendar.current.component(.weekday, from: inputDate) - 1] //wkdysDefaultOrder[
+        let wkdy = customWkdysDefaultOrder[Calendar.current.component(.weekday, from: inputDate) - 1]
         
         let hour = Calendar.current.component(.hour, from: inputDate)
         

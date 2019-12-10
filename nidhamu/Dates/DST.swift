@@ -1,6 +1,20 @@
 // DST              ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
+func searchForDST() {
+    let dateString = formattedDateString(Date(), roundedDown: true,
+                                         showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
+    let fallBackDateString = formattedDateString(fallBackDate, roundedDown: true,
+                                                 showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
+    let springForwardDateString = formattedDateString(springForwardDate + TimeInterval(3600), roundedDown: true,
+                                                      showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
+    
+    if dateString == fallBackDateString || dateString == springForwardDateString {      //print("\nDST\n")
+        foundNextFallBackDate = false; foundNextSpringForwardDate = false
+        findFallbackDate(startingDate: Date(), setting: true)
+        findSpringForwardDate(startingDate: Date(), setting: true)
+    }
+}
 
 ///Note, the 'spring-forward time block' and the 'fall-back time block' are the time blocks which, when they *end* (ie, clock rolls over from :59 -> :00, either while app is in foreground or background),
 ///cause the setting forward or backward of clocks.  Therefore, these time blocks' dates may *seem* to differ from the daylight savings time you look up online (eg, https://www.timeanddate.com/time/change/canada?year=2020) , since these are the hours in which the time-changes occur, at the *start* of the hour.
@@ -51,28 +65,5 @@ func findSpringForwardDate(startingDate: Date, setting: Bool) {
         
         testDate += TimeInterval(3600)
     }
-}
-
-func hoursSince(_ startDate: Date, testDate: Date) -> Int {
-    var truncStartDate = truncateMinutesOf(startDate)
-    let truncTestDate = truncateMinutesOf(testDate)
-    var hours = 0
-    
-    while truncStartDate < truncTestDate {
-        truncStartDate += TimeInterval(3600)
-        hours += 1
-    }
-    
-    while truncTestDate < truncStartDate - TimeInterval(3600) {
-        truncStartDate -= TimeInterval(3600)
-        hours -= 1
-    }
-    return hours
-}
-
-func dstMarker(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
-    let fbk = (truncateMinutesOf(date) == truncateMinutesOf(fallBackDate)) ? "(fall-back)" : ""
-    let spf = (truncateMinutesOf(date) == truncateMinutesOf(springForwardDate)) ? "(spring-forward)" : ""
-    return "\(fbk)\(spf)"
 }
 

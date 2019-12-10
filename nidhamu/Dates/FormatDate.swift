@@ -1,7 +1,7 @@
 // FormatDate       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix: String?, suffix: String, dateFormat: CustomDateFormat) -> String {
+func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix: String?, suffix: String, dateFormat: CustomDateFormat) -> String { // * probably will clean this method up at some point
     
     let (year, _, month, mnth, day, weekday, wkdy, hour, minute, second) = getChosenDateComponents(date, roundedDown: roundedDown)
     
@@ -18,30 +18,33 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     let prx = (prefix == "") ? " " : "\(prefix ?? "") "
     
     switch dateFormat {
-        
     case .fullDay:                  return "\(prx)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits)\(ampm)\(suffix)"
+        
     case .fullDayWithYear:          return "\(prx)\(weekday) \(month) \(day), \(year) \(hr):\(minTwoDigits)\(ampm)\(suffix)"
         
     case .fullDayWithSeconds:       return "\(prx)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits):\(sec2Digs)\(ampm)\(suffix)"
         
     case .fullDayShortForm:         return "\(prx)\(wkdy). \(mnth). \(day), \(yearString)\(hr)\(ampm)\(suffix)"
-    case .fullDayShortFormNoDots:   return "\(prx)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString)\(hr)\(ampm)\(suffix)"
-    case .archiveFormat:            return "\(prx)\(weekday) \(month) \(day) \(year) @ \(hr)\(ampm)\(suffix)"
         
-    case .archiveCSVTitle:          return "\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(year), \(hr)꞉\(minTwoDigits)\(ampm)"/// see  **  below
+    case .fullDayShortFormNoDots:   return "\(prx)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString)\(hr)\(ampm)\(suffix)"
+        
+    case .archiveFormat:            return "\(prx)\(weekday) \(month) \(day) \(year) @ \(hr)\(ampm)\(suffix)"
+        ///** atypical, larger colon ('꞉' , not ':') used for above case, because typical colon is a .csv column separator in Mac Numbers, and archived tagged tasks are exported via .csv in this app
+        
+    case .archiveCSVTitle:          return "\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(year), \(hr)꞉\(minTwoDigits)\(ampm)"/// see  **  above
         
     case .timeOnly:                 return "\(hr)\(ampm)"
+        
     case .monthAndDay:              return "\(month.prefix(3)) \(day)"
         
-    default: return "\(prx)\(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
+    default:    return "\(prx)\(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
     }
 }
+
 
 enum CustomDateFormat: Int {
     case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayWithYear, fullDayWithSeconds, fullDayShortForm, fullDayShortFormNoDots, archiveFormat, archiveCSVTitle, timeOnly, monthAndDay
 }
-
-///** atypical, slightly larger colon (꞉ not :) used for case archiveCSVTitle, because typical colon is a CSV column separator in Mac Numbers, and archived tagged tasks are exported via CSV in this app
 
 
 /*func formatDatesFromComponentsArray(_ cells: [[[Any]]]) -> [[String]] {

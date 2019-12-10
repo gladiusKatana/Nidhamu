@@ -24,7 +24,7 @@ extension CollectionVC {
         
         dstShift = (dstOffset + springForwardExtraHour + fallBackExtraHour) * TimeInterval(3600)
         
-        let oneWeekAgo = truncateMinutesOf(cell.cellDate) - TimeInterval(86400 * 7) ///truncate ONLY the cell's cell-date-- not the large time interval term
+        let oneWeekAgo = truncateMinutesOf(cell.cellDate) - TimeInterval(86400 * 7) /// * truncate only the cell's cell-date-- not the large time interval term
         
         //if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
         
