@@ -10,12 +10,11 @@ extension AppDelegate {
         /*if firstBecameActive {print("🔅became active")}
          else {firstBecameActive = true}*/
         
-        findFallbackDate(startingDate: Date() - TimeInterval(3600), setting: true)
-        findSpringForwardDate(startingDate: Date(), setting: true)
+        findFallbackDate(startingDate: Date() - TimeInterval(3600), printDSTDates: false)
+        findSpringForwardDate(startingDate: Date(), printDSTDates: false)
         
         checkOrientation()
         defaultLoadData(showDate: true)
-        
         topVC.reloadCV()
     }
     

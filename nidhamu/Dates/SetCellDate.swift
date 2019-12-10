@@ -32,7 +32,7 @@ extension CollectionVC {
         
         if truncateMinutesOf(Date()) > truncateMinutesOf(springForwardDate) { ///print("finding next spring-forward date, to prevent off-by-1-hour bug")
             foundNextSpringForwardDate = false
-            findSpringForwardDate(startingDate: Date(), setting: true)
+            findSpringForwardDate(startingDate: Date(), printDSTDates: true)
             reloadCollectionViewAfterDelay(0)
         }
         
