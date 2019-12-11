@@ -41,18 +41,24 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
 }
 
 func pryntLastLoginDate() { /// spelling 'prynt' with a y so this function's existence does not override Xcode autocomplete for print statements
-    let dst = dstMarker(lastLoginDate)
+    let dst = dstMarkerForConsole(lastLoginDate)
     print(formattedDateString(lastLoginDate, roundedDown: false, showYear: true, prefix: "last login              ", suffix: " \(dst)", dateFormat: .fullDay))                  ///print("              (unformatted gmt) \(lastLoggedInDate)\n")
 }
 
 func pryntCurrentDate() {
-    let dst = dstMarker(Date())
+    let dst = dstMarkerForConsole(Date())
     print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "date right now          ", suffix: " \(dst)", dateFormat: .fullDay))             ; print("")      ///print("              (unformatted gmt)    \(Date())\n")
 }
 
-func dstMarker(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
+func dstMarkerForConsole(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
     let fbk = (truncateMinutesOf(date) == truncateMinutesOf(fallBackDate)) ? "(fall-back)" : ""
     let spf = (truncateMinutesOf(date) == truncateMinutesOf(springForwardDate)) ? "(spring-forward)" : ""
+    return "\(fbk)\(spf)"
+}
+
+func dstMarkerForLeftCell(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
+    let fbk = (truncateMinutesOf(date) == truncateMinutesOf(fallBackDate)) ? "      *it's the fall-back hour" : ""
+    let spf = (truncateMinutesOf(date) == truncateMinutesOf(springForwardDate)) ? "     *it's the spring-forward hour" : ""
     return "\(fbk)\(spf)"
 }
 

@@ -41,8 +41,11 @@ extension CollectionVC {
         cell.titleLabel.numberOfLines = 0
         cell.titleLabel.lineBreakMode = .byCharWrapping
         
+        let str = dstMarkerForLeftCell(Date())
+        
         if indexPath.section == 0 { // to do this in column 1, you need to rewrite the layout attributes (zIndex)
-            cell.titleLabel.text = formattedDateString(lastLoginDate, roundedDown: false, showYear: true, prefix: " Last Login", suffix: "", dateFormat: .fullDay)
+            cell.titleLabel.text = formattedDateString(lastLoginDate, roundedDown: false, showYear: true,
+                                                       prefix: " Last Login", suffix: str, dateFormat: .fullDay)
         }
         else {cell.titleLabel.text = ""}
         return cell
