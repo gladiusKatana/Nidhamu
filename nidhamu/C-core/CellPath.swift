@@ -7,7 +7,7 @@ extension CollectionVC {
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if viewControllerType == .timetable {
-            if indexPath.row == 0 {return registerAndReturnLeftCell(collectionView, at: indexPath)} /// cell with text (and title label constraints) left-aligned
+            if (0...1).contains(indexPath.row) {return registerAndReturnLeftCell(collectionView, at: indexPath)}/// cell with text & label-constraints left-aligned
             else {return registerAndReturnCell(collectionView, at: indexPath)}
         } else {return registerAndReturnCell(collectionView, at: indexPath)}
     }
@@ -22,7 +22,7 @@ extension CollectionVC {
         if viewControllerType == .timetable || viewControllerType == .deferralDates {
             if currentOrientation == "landscape" {
                 var size = 0
-                if textFieldDisplayed{size = 7} else {size = 8}
+                if textFieldDisplayed{size = 7} else {size = 9}
                 cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(size), weight: .ultraLight)
             }
         }

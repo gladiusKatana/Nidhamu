@@ -47,7 +47,7 @@ func pryntLastLoginDate() { /// spelling 'prynt' with a y so this function's exi
 
 func pryntCurrentDate() {
     let dst = dstMarkerForConsole(Date())
-    print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "date right now          ", suffix: " \(dst)", dateFormat: .fullDay))             ; print("")      ///print("              (unformatted gmt)    \(Date())\n")
+    print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "date right now          ", suffix: " \(dst)", dateFormat: .fullDay))             //; print("")      ///print("              (unformatted gmt)    \(Date())\n")
 }
 
 func dstMarkerForConsole(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
@@ -56,9 +56,11 @@ func dstMarkerForConsole(_ date: Date) -> String { /// creates a string notifyin
     return "\(fbk)\(spf)"
 }
 
-func dstMarkerForLeftCell(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
-    let fbk = (truncateMinutesOf(date) == truncateMinutesOf(fallBackDate)) ? "      *it's the fall-back hour" : ""
-    let spf = (truncateMinutesOf(date) == truncateMinutesOf(springForwardDate)) ? "     *it's the spring-forward hour" : ""
+func dstMarkerForHeader(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
+    let fbk = (truncateMinutesOf(date) != truncateMinutesOf(fallBackDate)) ? "" :
+    " Daylight Savings (fall-back) : will remain at the 1am time-block for 2 hours"
+    let spf = (truncateMinutesOf(date) != truncateMinutesOf(springForwardDate)) ? "" :
+    " Daylight Savings (spring-forward) : will skip over the 2am time-block (1:59→ 3:00)"
     return "\(fbk)\(spf)"
 }
 

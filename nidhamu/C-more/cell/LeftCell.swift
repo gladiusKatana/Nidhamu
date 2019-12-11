@@ -1,6 +1,45 @@
 // LeftCell         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
+extension CollectionVC {
+    
+    func registerAndReturnLeftCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> LeftAlignedCell {
+        collectionView.register(LeftAlignedCell.self, forCellWithReuseIdentifier: LeftAlignedCell.reuseIdentifier)
+        var leftCell = collectionView.dequeueReusableCell(withReuseIdentifier: LeftAlignedCell.reuseIdentifier, for: indexPath) as! LeftAlignedCell
+        leftCell = doRestOfLeftCellProcessing(cell: leftCell, indexPath: indexPath)
+        return leftCell
+    }
+    
+    func doRestOfLeftCellProcessing(cell: LeftAlignedCell, indexPath: IndexPath) -> LeftAlignedCell  {
+        var weight = UIFont.Weight.ultraLight
+        let row = indexPath.row; let col = indexPath.section
+        
+        cell.backgroundColor = headerColour
+        cell.titleLabel.textAlignment = .left
+        cell.titleLabel.numberOfLines = 0
+        cell.titleLabel.lineBreakMode = .byCharWrapping
+        
+        let str = dstMarkerForHeader(Date())
+        
+        if (col, row) == (0, 0) {
+            cell.titleLabel.text = formattedDateString(lastLoginDate, roundedDown: false, showYear: true,
+                                                       prefix: " Last Login", suffix: "", dateFormat: .fullDay); if str != "" {weight = .light}
+        }
+        else if (col, row) == dstNotificationCellPath {
+            cell.titleLabel.text = str
+            cell.titleLabel.textColor = darkNavy; weight = .medium}
+        else {cell.titleLabel.textColor = cellTextDefaultColour; cell.titleLabel.text = ""}
+        
+        if currentOrientation == "landscape" {
+            var size = 0
+            if textFieldDisplayed{size = 7} else {size = 9}
+            cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(size), weight: weight)
+        }
+        else {cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: weight)}
+        return cell
+    }
+}
+
 class LeftAlignedCell: BaseCell {
     
     static let reuseIdentifier = "CustomLeftAlignedCell"
@@ -20,35 +59,5 @@ class LeftAlignedCell: BaseCell {
                                          toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
     }
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
-}
-
-extension CollectionVC {
-    
-    func registerAndReturnLeftCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> LeftAlignedCell {
-        collectionView.register(LeftAlignedCell.self, forCellWithReuseIdentifier: LeftAlignedCell.reuseIdentifier)
-        var leftCell = collectionView.dequeueReusableCell(withReuseIdentifier: LeftAlignedCell.reuseIdentifier, for: indexPath) as! LeftAlignedCell
-        leftCell = doRestOfLeftCellProcessing(cell: leftCell, indexPath: indexPath)
-        return leftCell
-    }
-    
-    func doRestOfLeftCellProcessing(cell: LeftAlignedCell, indexPath: IndexPath) -> LeftAlignedCell  {
-        cell.backgroundColor = headerColour
-        cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)
-        
-        if currentOrientation == "landscape" {cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(7), weight: .ultraLight)}
-        
-        cell.titleLabel.textAlignment = .left
-        cell.titleLabel.numberOfLines = 0
-        cell.titleLabel.lineBreakMode = .byCharWrapping
-        
-        let str = dstMarkerForLeftCell(Date())
-        
-        if indexPath.section == 0 { // to do this in column 1, you need to rewrite the layout attributes (zIndex)
-            cell.titleLabel.text = formattedDateString(lastLoginDate, roundedDown: false, showYear: true,
-                                                       prefix: " Last Login", suffix: str, dateFormat: .fullDay)
-        }
-        else {cell.titleLabel.text = ""}
-        return cell
-    }
 }
 

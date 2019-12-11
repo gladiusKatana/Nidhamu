@@ -28,14 +28,19 @@ extension CollectionVC {
             switch (cellWeekday, cellHour) {
                 
             case (thisWeekday, thisHour) :
-                //let timeString = showTimeInTitleLabels(cell.cellDate)
-                ///pryntConditionalKeyDateID(timeString, cell: cell, row: row, column: column)                          ///;print("verified now cell @ [\(column),\(row)]")
-                //cell.layer.borderColor = graySeven.cgColor
-                cell.backgroundColor = subtleBlue
+                var nowString = showTimeInTitleLabels(cell.cellDate)
+                if truncateMinutesOf(cell.cellDate) == truncateMinutesOf(springForwardDate)
+                    && ((column, row) == (nowColumn, nowRow + 1))
+                {
+                    nowString = "-"
+                }
+                pryntConditionalKeyDateID(nowString, cell: cell, row: row, column: column)     ///;print("verified now cell @ [\(column),\(row)]")
                 
-            case (lastLoginWeek, lastLoginHour): //break
+                cell.backgroundColor = subtleBlue ///cell.layer.borderColor = graySeven.cgColor
+                
+            case (lastLoginWeek, lastLoginHour):  ///break
                 pryntConditionalKeyDateID("Last login", cell: cell, row: row, column: column)
-                ///cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)                                     ///; cell.backgroundColor = lastLoginDimOrange
+                ///cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight) ///; cell.backgroundColor = lastLoginDimOrange
                 
             default: break
             }

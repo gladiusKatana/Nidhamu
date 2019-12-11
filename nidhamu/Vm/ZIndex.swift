@@ -17,6 +17,10 @@ extension CustomFlowLayout {
             cellAttributes.zIndex = 4
         }
         
+        if (section, row) == dstNotificationCellPath {
+            cellAttributes.zIndex = 4
+        }
+        
     }
 }
 

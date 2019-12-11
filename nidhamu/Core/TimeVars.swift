@@ -1,7 +1,9 @@
 // TimeVars         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
+
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
+
 
 
 
@@ -13,13 +15,18 @@ var fallBackDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec
 
 
 
+
 var nowRow = 0;                                 var nowColumn = 0
+
+var dstNotificationCellPath = (0, 1)
 
 var dstOffset = 0.0
 
 
 
-var foundNextFallBackDate = false;              var foundNextSpringForwardDate = false
+
+var foundNextFallBackDate = false
+var foundNextSpringForwardDate = false
 
 
 
