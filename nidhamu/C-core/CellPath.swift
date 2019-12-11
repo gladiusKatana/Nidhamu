@@ -35,14 +35,14 @@ extension CollectionVC {
                 if row < headerRows + 12 {ampm = "am"}
                 else {ampm = "pm"}
                 cell.titleLabel.text = "\(amPmHours[row - headerRows])\(ampm)"
-                cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .thin)
+                cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
             }
-        }
-        else {
+        } else {
             if row < headerRows {
                 cell.backgroundColor = headerColour
-                if row == 1 && viewControllerType == .timetable || row == 4  && viewControllerType == .deferralDates {
+                if row == 4 && viewControllerType == .timetable || row == 4  && viewControllerType == .deferralDates {
                     cell.titleLabel.text = headerWeekdayTitles[column - 1]
+                    cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
                 }
                 if (2 ... headerRows).contains(row) {
                     timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
