@@ -30,7 +30,7 @@ extension CollectionVC {
             }
         }
         
-        if truncateMinutesOf(Date()) > truncateMinutesOf(springForwardDate) { ///print("finding next spring-forward date, to prevent off-by-1-hour bug")
+        if truncateMins(Date()) > truncateMins(springForwardDate) { ///print("finding next spring-forward date, to prevent off-by-1-hour bug")
             foundNextSpringForwardDate = false
             findSpringForwardDate(startingDate: Date(), printDSTDates: true)
             reloadCollectionViewAfterDelay(0)
@@ -38,7 +38,7 @@ extension CollectionVC {
         
         let returnDate = date + dstOffset * TimeInterval(3600)
         
-        if truncateMinutesOf(Date()) == truncateMinutesOf(springForwardDate)
+        if truncateMins(Date()) == truncateMins(springForwardDate)
             && ((column, row) == (nowColumn, nowRow + 1))
         {
             cell.titleLabel.text = "-"; cell.backgroundColor = subtleBlue

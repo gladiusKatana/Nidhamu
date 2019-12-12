@@ -21,7 +21,7 @@ func searchForDST() {
 
 func findFallbackDate(startingDate: Date, printDSTDates: Bool) {
     
-    let startDate = truncateMinutesOf(startingDate) ///print("start date \(formattedDateString(startDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDay))")
+    let startDate = truncateMins(startingDate) ///print("start date \(formattedDateString(startDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDay))")
     var testDate = startDate
     
     for _ in (0 ... 380 * 24) { /// 380 = 365 + margin of 15 to account for variance in fall-back date, year-to-year. No harm in overshooting, unless it were *all the way* to next fall-back
@@ -45,7 +45,7 @@ func findFallbackDate(startingDate: Date, printDSTDates: Bool) {
 
 func findSpringForwardDate(startingDate: Date, printDSTDates: Bool) {
     
-    let startDate = truncateMinutesOf(startingDate) ///print("start date \(formattedDateString(startDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDay))")
+    let startDate = truncateMins(startingDate) ///print("start date \(formattedDateString(startDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDay))")
     var testDate = startDate
     
     for _ in (0 ... 400 * 24) { /// 380 = 365 + margin of 15 to account for variance in fall-back date, year-to-year. No harm in overshooting, unless it were *all the way* to next fall-back

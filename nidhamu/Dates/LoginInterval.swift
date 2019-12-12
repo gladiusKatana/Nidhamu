@@ -9,7 +9,7 @@ extension CollectionVC {
         var springForwardExtraHour = 0.0
         var fallBackExtraHour = 0.0
         
-        let truncLastLogin = truncateMinutesOf(lastLoginDate)
+        let truncLastLogin = truncateMins(lastLoginDate)
         let tz = NSTimeZone.local
         
         if !(tz.isDaylightSavingTime(for: lastLoginDate))
@@ -24,12 +24,12 @@ extension CollectionVC {
         
         dstShift = (dstOffset + springForwardExtraHour + fallBackExtraHour) * TimeInterval(3600)
         
-        let oneWeekAgo = truncateMinutesOf(cell.cellDate) - TimeInterval(86400 * 7) /// * truncate only the cell's cell-date-- not the large time interval term
+        let oneWeekAgo = truncateMins(cell.cellDate) - TimeInterval(86400 * 7) /// * truncate only the cell's cell-date-- not the large time interval term
         
         //if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
         
         
-        if oneWeekAgo.isBetween(truncLastLogin + dstShift, and: truncateMinutesOf(Date() + dstShift)) {
+        if oneWeekAgo.isBetween(truncLastLogin + dstShift, and: truncateMins(Date() + dstShift)) {
             
             //if !cached BlocksAndTheirPaths {    // only needed if doing the animation below
             //if column < nowColumn || (column == nowColumn && row < nowRow) {cell.backgroundColor = .green; cell.cellColour = .green}

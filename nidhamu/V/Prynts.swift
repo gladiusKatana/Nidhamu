@@ -51,15 +51,15 @@ func pryntCurrentDate() {
 }
 
 func dstMarkerForConsole(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
-    let fbk = (truncateMinutesOf(date) == truncateMinutesOf(fallBackDate)) ? "(fall-back)" : ""
-    let spf = (truncateMinutesOf(date) == truncateMinutesOf(springForwardDate)) ? "(spring-forward)" : ""
+    let fbk = (truncateMins(date) == truncateMins(fallBackDate)) ? "(fall-back)" : ""
+    let spf = (truncateMins(date) == truncateMins(springForwardDate)) ? "(spring-forward)" : ""
     return "\(fbk)\(spf)"
 }
 
 func dstMarkerForHeader(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
-    let fbk = (truncateMinutesOf(date) != truncateMinutesOf(fallBackDate)) ? "" :
+    let fbk = (truncateMins(date) != truncateMins(fallBackDate)) ? "" :
     " Daylight Savings (fall-back) : will remain at the 1am time-block for 2 hours"
-    let spf = (truncateMinutesOf(date) != truncateMinutesOf(springForwardDate)) ? "" :
+    let spf = (truncateMins(date) != truncateMins(springForwardDate)) ? "" :
     " Daylight Savings (spring-forward) : will skip over the 2am time-block (1:59→ 3:00)"
     return "\(fbk)\(spf)"
 }

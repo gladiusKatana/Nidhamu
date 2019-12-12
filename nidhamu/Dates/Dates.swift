@@ -43,7 +43,7 @@ func dateFromInts(_ dateComponents: [Int]) -> Date { /// Note, weekday inot need
     return date
 }
 
-func truncateMinutesOf(_ inputDate: Date) -> Date {
+func truncateMins(_ inputDate: Date) -> Date {
     let mn = 0
     let (year, _, month, _ , day, _, _, hour, _, _) = getChosenDateComponents(inputDate, roundedDown: false)
     let formatter = DateFormatter();    formatter.dateFormat = "yyyy/MM/dd HH:mm"

@@ -52,7 +52,7 @@ extension CollectionVC {
 }
 
 func dateOfLastSecond(_ date: Date) -> Date {
-    let truncDate = truncateMinutesOf(date)
+    let truncDate = truncateMins(date)
     let (year, _, month, _ , day, _, _, hour, _, _) = getChosenDateComponents(truncDate, roundedDown: false)
     let formatter = DateFormatter(); formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
     

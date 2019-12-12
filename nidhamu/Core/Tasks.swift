@@ -3,17 +3,15 @@
   
   
   
-  buttons                                                                                           UI
-  
-  icon
+  icon                                                                                              UI
   
   launch screen
 
-  settings menu                                                                                     Dates
+  buttons
   
   archive frequency reminders
   
-  prevent changing date via Settings app
+  prevent using incorrect date
   
   
   
@@ -25,7 +23,7 @@
   
   
   
-  checklogic, refactor,  comments                                                                   M
+  checklogic, refactor, comments                                                                    M
   
   mornAftEveNightVC                                                                                 VCs
   
@@ -40,17 +38,17 @@
   
   
   
-  + login date interval outlined/animated, not perma-coloured                                       UI
-  + device specific fonts
-  + orientation enum
-  ✧ cascading task deferrals?                                                                       ✧
-  ✧ loopWeeks = false as setting?                                                                   ✧
+  + perfect orientation independence? (consult apple engineer)                                      UI
+  + login date interval outlined/animated, not perma-coloured
+  + device specific fonts; orientation enum
+  
+  cascading task deferrals? (probably not)                                                          ✧
+  loopWeeks = false as setting? (probably not)                                                      ✧
   
   
   
   
   1st commit                                                         July 8 '19
-  
   
   
   
