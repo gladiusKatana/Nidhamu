@@ -36,7 +36,15 @@ extension CollectionVC {
             reloadCollectionViewAfterDelay(0)
         }
         
-        return date + dstOffset * TimeInterval(3600)
+        let returnDate = date + dstOffset * TimeInterval(3600)
+        
+        if truncateMinutesOf(Date()) == truncateMinutesOf(springForwardDate)
+            && ((column, row) == (nowColumn, nowRow + 1))
+        {
+            cell.titleLabel.text = "-"; cell.backgroundColor = subtleBlue
+        }
+        
+        return returnDate
     }
     
     func setCellWeek(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, withColours: Bool) -> Int {

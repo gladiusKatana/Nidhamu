@@ -15,36 +15,41 @@ extension CollectionVC {
             }
             else {cell.titleLabel.text = globalTaskIdentifier}                      /// when evets.count == 1, can just use previously set task's description via this var
         }
-        else {
-            let cellWeekday = Calendar.current.component(.weekday, from: cell.cellDate)
-            let cellHour = Calendar.current.component(.hour, from: cell.cellDate)
-            
-            let thisWeekday = Calendar.current.component(.weekday, from: Date())
-            let thisHour = Calendar.current.component(.hour, from: Date())
-            
-            let lastLoginWeek = Calendar.current.component(.weekday, from: lastLoginDate)
-            let lastLoginHour = Calendar.current.component(.hour, from: lastLoginDate)
-            
-            switch (cellWeekday, cellHour) {
-                
-            case (thisWeekday, thisHour) :
-                var nowString = showTimeInTitleLabels(cell.cellDate)
-                if truncateMinutesOf(cell.cellDate) == truncateMinutesOf(springForwardDate)
-                    && ((column, row) == (nowColumn, nowRow + 1))
-                {
-                    nowString = "-"
-                }
-                pryntConditionalKeyDateID(nowString, cell: cell, row: row, column: column)     ///;print("verified now cell @ [\(column),\(row)]")
-                
-                cell.backgroundColor = subtleBlue ///cell.layer.borderColor = graySeven.cgColor
-                
-            case (lastLoginWeek, lastLoginHour):  ///break
-                pryntConditionalKeyDateID("Last login", cell: cell, row: row, column: column)
-                ///cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight) ///; cell.backgroundColor = lastLoginDimOrange
-                
-            default: break
-            }
-        }
+//        else {
+//            let cellWeekday = Calendar.current.component(.weekday, from: cell.cellDate)
+//            let cellHour = Calendar.current.component(.hour, from: cell.cellDate)
+//
+//            let thisWeekday = Calendar.current.component(.weekday, from: Date())
+//            let thisHour = Calendar.current.component(.hour, from: Date())
+//
+//            let lastLoginWeek = Calendar.current.component(.weekday, from: lastLoginDate)
+//            let lastLoginHour = Calendar.current.component(.hour, from: lastLoginDate)
+//
+//            switch (cellWeekday, cellHour) {
+//
+//            case (thisWeekday, thisHour) :
+//                var nowString = showTimeInTitleLabels(cell.cellDate)
+//                if truncateMinutesOf(cell.cellDate) == truncateMinutesOf(springForwardDate)
+//                    && ((column, row) == (nowColumn, nowRow + 1))
+//                {
+//                    nowString = "-"
+//                }
+//                pryntConditionalKeyDateID(nowString, cell: cell, row: row, column: column)     ///;print("verified now cell @ [\(column),\(row)]")
+//
+//                cell.backgroundColor = subtleBlue ///cell.layer.borderColor = graySeven.cgColor
+//
+//            case (lastLoginWeek, lastLoginHour):  ///break
+//                pryntConditionalKeyDateID("Last login", cell: cell, row: row, column: column)
+//                ///cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight) ///; cell.backgroundColor = lastLoginDimOrange
+//
+//            default: break
+//            }
+//        }
+    }
+    
+    func showNowCell(_ cell: CustomCell, column: Int, row: Int, forSpringForward: Bool) {
+        let nowString = showTimeInTitleLabels(Date())
+        pryntConditionalKeyDateID(nowString, cell: cell, row: row, column: column)     ///;print("verified now cell @ [\(column),\(row)]")
     }
     
     func pryntConditionalKeyDateID(_ id: String, cell: CustomCell, row: Int, column: Int) {

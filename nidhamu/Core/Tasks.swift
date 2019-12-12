@@ -9,9 +9,7 @@
   
   launch screen
 
-  settings menu
-  
-  dst notification                                                                                  Dates
+  settings menu                                                                                     Dates
   
   archive frequency reminders
   

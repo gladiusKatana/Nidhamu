@@ -48,7 +48,14 @@ extension CollectionVC {
                     timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
                 }
             } else {
-                cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
+                
+                if row == nowRow && column == nowColumn {
+                    cell.backgroundColor = subtleBlue
+                    showNowCell(cell, column: column, row: row, forSpringForward: false)
+                }
+                else {
+                    cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
+                }
                 timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
                 /**/
                 
