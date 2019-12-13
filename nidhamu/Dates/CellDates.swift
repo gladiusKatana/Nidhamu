@@ -42,32 +42,26 @@ extension CollectionVC { /// probably will refactor this whole file soon
             else {cell.backgroundColor = lastWeekColour}
         }
         
-        
         if row >= layout.lockedHeaderRows {
-            
-            let cellDateIsBetweenLogins = processTasksBasedOnLoginInterval(cell: cell, column: column, row: row, layout: layout)
-            
+            let cellDateIsBetweenLogins = prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row, layout: layout)
             if truncateMins(cell.cellDate) == truncateMins(Date())
                 || row == nowRow && column == nowColumn         /// these 2 conditionals are equivalent but the latter is calculated faster
             {
                 cell.backgroundColor = subtleBlue
                 showNowCell(cell, column: column, row: row, forSpringForward: false)
                 
-                if truncateMins(Date()) == truncateMins(springForwardDate)
-                    && (column, row) == (nowColumn, nowRow + 1)
-                {
+                if truncateMins(Date()) == truncateMins(springForwardDate) && (column, row) == (nowColumn, nowRow + 1) {
                     cell.titleLabel.text = "-"
                 }
             } else {
                 if cellDateIsBetweenLogins {
-                    
-                    if cellDateIsLastLogin { ///if truncateMins(cell.cellDate - TimeInterval(86400 * 7) + dstOffset * TimeInterval(3600)) == truncateMins(lastLoginDate) {
+                    if cellDateIsLastLogin {
                         cell.titleLabel.text = "last login"; cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)
                     }
-                    
                     cell.backgroundColor = lastLoginDimOrange; cell.cellColour = lastLoginDimOrange
-                }
-                else {
+                    
+                    prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
+                } else {
                     if cellDateIsNextWeek {cell.backgroundColor = lastWeekColour; cell.cellColour = lastWeekColour}
                     else {cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour}
                 }
@@ -78,10 +72,10 @@ extension CollectionVC { /// probably will refactor this whole file soon
             showKeyTimeBlockDates(cell: cell, layout: layout)
         }
         
-//        if row > layout.lockedHeaderRows - 1 {
-            //cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate) //; showDateInTitleLabels(date: cell.cellDate, cell: cell)
-            //cell.titleLabel.text = "\(dstOffset)"
-//        }
+        //        if row > layout.lockedHeaderRows - 1 {
+        //cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate) //; showDateInTitleLabels(date: cell.cellDate, cell: cell)
+        //cell.titleLabel.text = "\(dstOffset)"
+        //        }
     }
 }
 
