@@ -8,6 +8,8 @@
 
   buttons
   
+  make dst notifications look nicer
+  
   archive frequency reminders
   
   prevent using incorrect date
