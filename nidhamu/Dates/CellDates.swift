@@ -43,7 +43,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
         }
         
         if row >= layout.lockedHeaderRows {
-            let cellDateIsBetweenLogins = prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row, layout: layout)
+            let cellDateIsBetweenLogins = sweepLoginInterval(cell: cell, column: column, row: row, layout: layout)
             if truncateMins(cell.cellDate) == truncateMins(Date())
                 || row == nowRow && column == nowColumn         /// these 2 conditionals are equivalent but the latter is calculated faster
             {

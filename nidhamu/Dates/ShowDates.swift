@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func prepareToProcessTasksSinceLastLogin(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) -> Bool {
+    func sweepLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) -> Bool {
         var dstShift = TimeInterval(0)
         springForwardExtraHour = 0.0; fallBackExtraHour = 0.0
         
