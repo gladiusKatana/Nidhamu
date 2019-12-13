@@ -47,7 +47,7 @@ func pryntLastLoginDate() { /// spelling 'prynt' with a y so this function's exi
 
 func pryntCurrentDate() {
     let dst = dstMarkerForConsole(Date())
-    print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "date right now          ", suffix: " \(dst)", dateFormat: .fullDay))             //; print("")      ///print("              (unformatted gmt)    \(Date())\n")
+    print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "date right now          ", suffix: " \(dst)\n", dateFormat: .fullDay))             //; print("")      ///print("              (unformatted gmt)    \(Date())\n")
 }
 
 func dstMarkerForConsole(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)

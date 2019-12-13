@@ -3,13 +3,13 @@ import UIKit
 
 extension CollectionVC {
     
-    override func collectionView(_ collectionView: UICollectionView,
-                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if viewControllerType == .timetable {
-            if (0...1).contains(indexPath.row) {return registerAndReturnLeftCell(collectionView, at: indexPath)}/// cell with text & label-constraints left-aligned
-            else {return registerAndReturnCell(collectionView, at: indexPath)}
-        } else {return registerAndReturnCell(collectionView, at: indexPath)}
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
+        -> UICollectionViewCell {
+            
+            if viewControllerType == .timetable {
+                if (0...1).contains(indexPath.row) {return registerAndReturnLeftCell(collectionView, at: indexPath)}/// cell w/ text & constraints left-aligned
+                else {return registerAndReturnCell(collectionView, at: indexPath)}
+            } else {return registerAndReturnCell(collectionView, at: indexPath)}
     }
     
     func doRestOfCellProcessing(cell: CustomCell, indexPath: IndexPath) -> CustomCell {
@@ -37,26 +37,29 @@ extension CollectionVC {
                 cell.titleLabel.text = "\(amPmHours[row - headerRows])\(ampm)"
                 cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
             }
-        } else {
+        }
+        else {
             if row < headerRows {
                 cell.backgroundColor = headerColour
-                if row == 4 && viewControllerType == .timetable || row == 4  && viewControllerType == .deferralDates {
+                if row == 4 && viewControllerType == .timetable
+                    || row == 4  && viewControllerType == .deferralDates {
                     cell.titleLabel.text = headerWeekdayTitles[column - 1]
                     cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
                 }
-                if (2 ... headerRows).contains(row) {
-                    timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
-                }
-            } else {
-                
-                if row == nowRow && column == nowColumn {
-                    cell.backgroundColor = subtleBlue
-                    showNowCell(cell, column: column, row: row, forSpringForward: false)
-                }
-                else {
-                    cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
-                }
+            }
+            
+            //                if (2 ... headerRows).contains(row) {
+            //                    timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
+            //                }
+            //            } else {
+            
+            if row >= (headerRows - 3) { /// since cell dates are set in the 3 rows above the cell representing 12am (the first non-header cell)
                 timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
+                
+                //                else {
+                //                    cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
+                //                }
+                
                 /**/
                 
                 if row == customLayout.rows - 1 && column == customLayout.cols - 1 {          /// so it's called on the FINAL cell dequeued

@@ -1,13 +1,14 @@
 // LoginInterval    ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
+var springForwardExtraHour = 0.0; var fallBackExtraHour = 0.0
+
 extension CollectionVC {
     
-    func processTasksBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) {
+    func processTasksBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) -> Bool {
         
         var dstShift = TimeInterval(0)
-        var springForwardExtraHour = 0.0
-        var fallBackExtraHour = 0.0
+        springForwardExtraHour = 0.0; fallBackExtraHour = 0.0
         
         let truncLastLogin = truncateMins(lastLoginDate)
         let tz = NSTimeZone.local
@@ -29,22 +30,25 @@ extension CollectionVC {
         //if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
         
         
-        if oneWeekAgo.isBetween(truncLastLogin + dstShift, and: truncateMins(Date() + dstShift)) {
-            
-            //if !cached BlocksAndTheirPaths {    // only needed if doing the animation below
-            //if column < nowColumn || (column == nowColumn && row < nowRow) {cell.backgroundColor = .green; cell.cellColour = .green}
-            //else {                              // line above is purely for testing purposes
-            
-            cell.backgroundColor = lastLoginDimOrange; cell.cellColour = lastLoginDimOrange
-            
-            //}
-            //animateCellColourBack(cell: cell, delay: 3, duration: 10)
-            //}
-            
-            ///showDateInTitleLabels(date: oneWeekAgo, cell: cell)   // useful for testing
-            
-            prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
-        }
+        //        if
+        return
+            oneWeekAgo.isBetween(truncLastLogin + dstShift, and: truncateMins(Date() + dstShift))
+        //        {
+        //
+        //            //if !cached BlocksAndTheirPaths {    // only needed if doing the animation below
+        //            //if column < nowColumn || (column == nowColumn && row < nowRow) {cell.backgroundColor = .green; cell.cellColour = .green}
+        //            //else {                              // line above is purely for testing purposes
+        //
+        //            cell.backgroundColor = lastLoginDimOrange; cell.cellColour = lastLoginDimOrange
+        //
+        //            //}
+        //            //animateCellColourBack(cell: cell, delay: 3, duration: 10)
+        //            //}
+        //
+        //            ///showDateInTitleLabels(date: oneWeekAgo, cell: cell)   // useful for testing
+        //
+        //            prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
+        //        }
     }
 }
 

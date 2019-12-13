@@ -2,7 +2,6 @@
   
   
   
-  
   icon                                                                                              UI
   
   launch screen
@@ -38,12 +37,14 @@
   
   
   
-  + perfect orientation independence? (consult apple engineer)                                      UI
+  + (complete) orientation independence (ask apple engineer)                                        UI
+  
   + login date interval outlined/animated, not perma-coloured
+  
   + device specific fonts; orientation enum
   
-  cascading task deferrals? (probably not)                                                          ✧
-  loopWeeks = false as setting? (probably not)                                                      ✧
+  ✧ cascading task deferrals? (probably not)
+  ✧ loopWeeks = false as setting? (probably not)
   
   
   
@@ -67,5 +68,5 @@
   ⚔️ all Swift files in this version are aesthetically optimized for a 13" screen
   
   
-  ✎ this is Open Source software. Always looking for contributors. https://github.com/gladiusKatana/Nidhamu */
+  ✎ this is Open Source software. Forks & Contributors welcomed. https://github.com/gladiusKatana/Nidhamu */
  

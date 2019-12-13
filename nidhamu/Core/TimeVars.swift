@@ -15,6 +15,9 @@ var fallBackDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec
 
 
 
+var oneHour = TimeInterval(3600)
+
+
 
 var nowRow = 0;                                 var nowColumn = 0
 
@@ -24,7 +27,7 @@ var dstOffset = 0.0
 
 
 
-
+var showDSTDates = false
 var foundNextFallBackDate = false
 var foundNextSpringForwardDate = false
 

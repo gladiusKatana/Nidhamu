@@ -10,8 +10,8 @@ extension AppDelegate {
         /*if firstBecameActive {print("🔅became active")}
          else {firstBecameActive = true}*/
         
-        findFallbackDate(startingDate: Date() - TimeInterval(3600), printDSTDates: false)
-        findSpringForwardDate(startingDate: Date(), printDSTDates: false)
+        findFallbackDate(startingDate: Date() - TimeInterval(3600), printDSTDates: showDSTDates) /// generally want =true when testing timetable around DST dates
+        findSpringForwardDate(startingDate: Date(), printDSTDates: showDSTDates)                 /// see above
         
         checkOrientation()
         defaultLoadData(showDate: true)

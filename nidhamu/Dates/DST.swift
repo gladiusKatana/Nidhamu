@@ -11,8 +11,8 @@ func searchForDST() {
     
     if dateString == fallBackDateString || dateString == springForwardDateString {      //print("\nDST\n")
         foundNextFallBackDate = false; foundNextSpringForwardDate = false
-        findFallbackDate(startingDate: Date(), printDSTDates: true)
-        findSpringForwardDate(startingDate: Date(), printDSTDates: true)
+        findFallbackDate(startingDate: Date(), printDSTDates: showDSTDates)
+        findSpringForwardDate(startingDate: Date(), printDSTDates: showDSTDates)
     }
 }
 
@@ -24,7 +24,7 @@ func findFallbackDate(startingDate: Date, printDSTDates: Bool) {
     let startDate = truncateMins(startingDate) ///print("start date \(formattedDateString(startDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDay))")
     var testDate = startDate
     
-    for _ in (0 ... 380 * 24) { /// 380 = 365 + margin of 15 to account for variance in fall-back date, year-to-year. No harm in overshooting, unless it were *all the way* to next fall-back
+    for _ in (0 ... 380 * 24) { /// 380 = 365 + margin to account for variance in fall-back date, year-to-year. No harm in overshooting, unless it were *all the way* to next fall-back
         
         let tz = NSTimeZone.local
         let oneHourAfterTestDate = testDate + TimeInterval(3600)
@@ -48,7 +48,7 @@ func findSpringForwardDate(startingDate: Date, printDSTDates: Bool) {
     let startDate = truncateMins(startingDate) ///print("start date \(formattedDateString(startDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDay))")
     var testDate = startDate
     
-    for _ in (0 ... 400 * 24) { /// 380 = 365 + margin of 15 to account for variance in fall-back date, year-to-year. No harm in overshooting, unless it were *all the way* to next fall-back
+    for _ in (0 ... 400 * 24) { /// 400 = 365 + margin to account for variance in fall-back date, year-to-year. No harm in overshooting, unless it were *all the way* to next fall-back
         
         let tz = NSTimeZone.local
         let oneHourAfterTestDate = testDate + TimeInterval(3600)
