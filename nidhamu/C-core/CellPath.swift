@@ -48,19 +48,8 @@ extension CollectionVC {
                 }
             }
             
-            //                if (2 ... headerRows).contains(row) {
-            //                    timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
-            //                }
-            //            } else {
-            
             if row >= (headerRows - 3) { /// since cell dates are set in the 3 rows above the cell representing 12am (the first non-header cell)
                 timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
-                
-                //                else {
-                //                    cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour
-                //                }
-                
-                /**/
                 
                 if row == customLayout.rows - 1 && column == customLayout.cols - 1 {          /// so it's called on the FINAL cell dequeued
                     processTimeBlocksSinceLastLogin(layout: customLayout)

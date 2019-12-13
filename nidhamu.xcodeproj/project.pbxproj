@@ -54,7 +54,6 @@
 		065412F6237A6D840080F3EF /* Archiving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412AE237A6D830080F3EF /* Archiving.swift */; };
 		065412F7237A6D840080F3EF /* FormatDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412B0237A6D840080F3EF /* FormatDate.swift */; };
 		065412F8237A6D840080F3EF /* SetCellDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412B1237A6D840080F3EF /* SetCellDate.swift */; };
-		065412F9237A6D840080F3EF /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412B2237A6D840080F3EF /* LoginInterval.swift */; };
 		065412FA237A6D840080F3EF /* ShowDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412B3237A6D840080F3EF /* ShowDates.swift */; };
 		065412FB237A6D840080F3EF /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412B4237A6D840080F3EF /* Dates.swift */; };
 		065412FC237A6D840080F3EF /* CellDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412B5237A6D840080F3EF /* CellDates.swift */; };
@@ -156,7 +155,6 @@
 		065412AE237A6D830080F3EF /* Archiving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Archiving.swift; sourceTree = "<group>"; };
 		065412B0237A6D840080F3EF /* FormatDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatDate.swift; sourceTree = "<group>"; };
 		065412B1237A6D840080F3EF /* SetCellDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetCellDate.swift; sourceTree = "<group>"; };
-		065412B2237A6D840080F3EF /* LoginInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
 		065412B3237A6D840080F3EF /* ShowDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDates.swift; sourceTree = "<group>"; };
 		065412B4237A6D840080F3EF /* Dates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		065412B5237A6D840080F3EF /* CellDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDates.swift; sourceTree = "<group>"; };
@@ -377,7 +375,6 @@
 				065412B5237A6D840080F3EF /* CellDates.swift */,
 				065412B1237A6D840080F3EF /* SetCellDate.swift */,
 				065412B3237A6D840080F3EF /* ShowDates.swift */,
-				065412B2237A6D840080F3EF /* LoginInterval.swift */,
 				063A3DA6238E4B2B00DACE48 /* DST.swift */,
 			);
 			path = Dates;
@@ -639,7 +636,6 @@
 				065412FB237A6D840080F3EF /* Dates.swift in Sources */,
 				065412F3237A6D840080F3EF /* CellSetup.swift in Sources */,
 				065412EE237A6D840080F3EF /* RotateLock.swift in Sources */,
-				065412F9237A6D840080F3EF /* LoginInterval.swift in Sources */,
 				065412F5237A6D840080F3EF /* CellPath.swift in Sources */,
 				065412E0237A6D840080F3EF /* PCellPath.swift in Sources */,
 				062516BF22D6CF4200EBB4C8 /* ScrollBars.swift in Sources */,

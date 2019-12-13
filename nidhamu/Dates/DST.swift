@@ -38,7 +38,6 @@ func findFallbackDate(startingDate: Date, printDSTDates: Bool) {
                 foundNextFallBackDate = true
             }
         }
-        
         testDate += TimeInterval(3600)
     }
 }
@@ -62,7 +61,6 @@ func findSpringForwardDate(startingDate: Date, printDSTDates: Bool) {
                 foundNextSpringForwardDate = true
             }
         }
-        
         testDate += TimeInterval(3600)
     }
 }

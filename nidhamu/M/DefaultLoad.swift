@@ -10,16 +10,12 @@ func defaultLoadData(showDate: Bool) {                                          
         lastLoginDate = dateFromComponents(lastLoginDateComponents)
         if showDate {pryntLastLoginDate(); pryntCurrentDate()} ///  * may want to modify these methods to adjust cell string (printed in the console only) to adjust for DST
         
-        //        if Date() >= fallBackDate /*|| Date() > springForwardDate*/ {
-        if dateOfLastSecond(fallBackDate).isBetween(lastLoginDate, and: Date() + oneHour) /// if fall-back occurred (eg 1:59->1:00) while app was in background
-            /*|| dateOfLastSecond(springForwardDate).isBetween(lastLoginDate, and: Date() + TimeInterval(3600))*/
-        {
+        if dateOfLastSecond(fallBackDate).isBetween(lastLoginDate, and: Date() + oneHour) { /// if fall-back occurred (eg 1:59->1:00) while app was in background
             foundNextFallBackDate = false /*; foundNextSpringForwardDate = false*/
             findFallbackDate(startingDate: Date(), printDSTDates: showDSTDates)
         } ///else {print("no background dst rollover")} /// "fall back hour did not roll over while app in background"
-        //        }
     }
-    else {                                                                                  //print("\nfirst login")
+    else { ///print("\nfirst login")
         let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(Date(), roundedDown: true)
         lastLoginDateComponents = [year, month, day, weekday, hour, minute]
     }
@@ -51,13 +47,11 @@ func populateDictionaryFromDefaults() {
             let dateComponents = taskDeadlineArrays[i][j]                                   //; print("task date components: \(dateComponents)")
             let deadline = dateFromComponents(dateComponents)                               //; print("date: \(date)")
             let task = SimpleTask(taskDescription: description, deadline: deadline, taskStatus: TaskStatus(rawValue: taskStatus)!)
-            
             ///print("loaded: '\(task.taskDescription)' [\(task.taskStatus)] with deadline:\(formattedDateString(deadline, roundedDown: true, prefix: "", suffix: "", short: false))")
             
             tasks.append(task)
             j += 1
         }
-        
         tasksAtIndexPath[TimeBlock(values: (path[0], path[1]))] = tasks
         i += 1
     }

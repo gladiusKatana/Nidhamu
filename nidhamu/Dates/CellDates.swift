@@ -78,10 +78,10 @@ extension CollectionVC { /// probably will refactor this whole file soon
             showKeyTimeBlockDates(cell: cell, layout: layout)
         }
         
-        if row > layout.lockedHeaderRows - 1 {
+//        if row > layout.lockedHeaderRows - 1 {
             //cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate) //; showDateInTitleLabels(date: cell.cellDate, cell: cell)
             //cell.titleLabel.text = "\(dstOffset)"
-        }
+//        }
     }
 }
 

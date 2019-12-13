@@ -48,9 +48,6 @@ extension CollectionVC {
         var weekAhead = 0
         if column < nowColumn || column == nowColumn && row < nowRow {
             weekAhead = 1
-            //            if withColours && !(1 ..< layout.lockedHeaderRows).contains(row) {
-            //                cell.backgroundColor = lastWeekColour; cell.cellColour = lastWeekColour
-            //            }
         }
         return weekAhead
     }

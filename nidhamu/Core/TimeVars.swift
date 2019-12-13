@@ -6,7 +6,6 @@ var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int()
 
 
 
-
 var lastLoginDate = Date()
 var selectedCellDate = Date()
 
@@ -19,18 +18,18 @@ var oneHour = TimeInterval(3600)
 
 
 
+var springForwardExtraHour = 0.0;               var fallBackExtraHour = 0.0
+var dstOffset = 0.0
+
 var nowRow = 0;                                 var nowColumn = 0
 
 var dstNotificationCellPath = (0, 1)
-
-var dstOffset = 0.0
 
 
 
 var showDSTDates = false
 var foundNextFallBackDate = false
 var foundNextSpringForwardDate = false
-
 
 
 

@@ -3,8 +3,30 @@ import UIKit
 
 extension CollectionVC {
     
-    func showKeyTimeBlockDates(cell: CustomCell, layout: CustomFlowLayout) {
+    func processTasksBasedOnLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) -> Bool {
+        var dstShift = TimeInterval(0)
+        springForwardExtraHour = 0.0; fallBackExtraHour = 0.0
         
+        let truncLastLogin = truncateMins(lastLoginDate)
+        let tz = NSTimeZone.local
+        
+        if !(tz.isDaylightSavingTime(for: lastLoginDate))
+            && tz.isDaylightSavingTime(for: Date()) {
+            springForwardExtraHour = -1
+        }
+        
+        if tz.isDaylightSavingTime(for: lastLoginDate)
+            && !(tz.isDaylightSavingTime(for: Date())) {
+            fallBackExtraHour = 1
+        }
+        
+        dstShift = (dstOffset + springForwardExtraHour + fallBackExtraHour) * TimeInterval(3600)
+        let oneWeekAgo = truncateMins(cell.cellDate) - TimeInterval(86400 * 7)      /// * truncate only the cell's cell-date-- not the large time interval term
+        //if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
+        return oneWeekAgo.isBetween(truncLastLogin + dstShift, and: truncateMins(Date() + dstShift))
+    }
+    
+    func showKeyTimeBlockDates(cell: CustomCell, layout: CustomFlowLayout) {
         let column = cell.xyCoordinate[0];  let row = cell.xyCoordinate[1]          /// for now: could also just pass in row & column from caller
         
         if row == earliestTaskAddress[1] && column == earliestTaskAddress[0] {
@@ -15,42 +37,12 @@ extension CollectionVC {
             }
             else {cell.titleLabel.text = globalTaskIdentifier}                      /// when evets.count == 1, can just use previously set task's description via this var
         }
-        //        else {
-        //            let cellWeekday = Calendar.current.component(.weekday, from: cell.cellDate)
-        //            let cellHour = Calendar.current.component(.hour, from: cell.cellDate)
-        //
-        //            let thisWeekday = Calendar.current.component(.weekday, from: Date())
-        //            let thisHour = Calendar.current.component(.hour, from: Date())
-        //
-        //            let lastLoginWeek = Calendar.current.component(.weekday, from: lastLoginDate)
-        //            let lastLoginHour = Calendar.current.component(.hour, from: lastLoginDate)
-        //
-        //            switch (cellWeekday, cellHour) {
-        //
-        //            case (thisWeekday, thisHour) :
-        //                var nowString = showTimeInTitleLabels(cell.cellDate)
-        //                if truncateMinutesOf(cell.cellDate) == truncateMinutesOf(springForwardDate)
-        //                    && ((column, row) == (nowColumn, nowRow + 1))
-        //                {
-        //                    nowString = "-"
-        //                }
-        //                pryntConditionalKeyDateID(nowString, cell: cell, row: row, column: column)     ///;print("verified now cell @ [\(column),\(row)]")
-        //
-        //                cell.backgroundColor = subtleBlue ///cell.layer.borderColor = graySeven.cgColor
-        //
-        //            case (lastLoginWeek, lastLoginHour):  ///break
-        //                pryntConditionalKeyDateID("Last login", cell: cell, row: row, column: column)
-        //                ///cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)   ///; cell.backgroundColor = lastLoginDimOrange
-        //
-        //            default: break
-        //            }
-        //        }
     }
     
     func showNowCell(_ cell: CustomCell, column: Int, row: Int, forSpringForward: Bool) {
         if tasksAtIndexPath[TimeBlock(values:(column, row))] == nil {
             cell.titleLabel.text = showTimeInTitleLabels(Date())
-        }                                                                                       ///;print("verified now cell @ [\(column),\(row)]")
+        }                                                                           ///;print("verified now cell @ [\(column),\(row)]")
     }
     
     func showDateInTitleLabels(date: Date, cell: CustomCell) {  /// for testing
