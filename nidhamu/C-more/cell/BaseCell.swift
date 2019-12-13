@@ -22,8 +22,6 @@ class BaseCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        backgroundColor = .clear; cellColour = .clear
-        
         layer.borderWidth = 1
         layer.borderColor = UIColor.clear.cgColor
         
