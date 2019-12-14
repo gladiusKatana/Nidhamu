@@ -7,7 +7,7 @@ extension CollectionVC {
         -> UICollectionViewCell {
             
             if viewControllerType == .timetable {
-                if (0...1).contains(indexPath.row) {return registerAndReturnLeftCell(collectionView, at: indexPath)}/// cell w/ text & constraints left-aligned
+                if (0...1).contains(indexPath.row) {return registerAndReturnRightCell(collectionView, at: indexPath)}/// cell w/ text & constraints left-aligned
                 else {return registerAndReturnCell(collectionView, at: indexPath)}
             } else {return registerAndReturnCell(collectionView, at: indexPath)}
     }

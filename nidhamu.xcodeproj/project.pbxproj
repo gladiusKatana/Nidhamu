@@ -320,6 +320,7 @@
 			children = (
 				06541296237A6D830080F3EF /* Cell.swift */,
 				06541297237A6D830080F3EF /* LeftCell.swift */,
+				0629972223A09157001D178D /* RightCell.swift */,
 				06541298237A6D830080F3EF /* BaseCell.swift */,
 			);
 			path = cell;
@@ -434,7 +435,6 @@
 		0688C38E23481D45007DC878 /* Inactive */ = {
 			isa = PBXGroup;
 			children = (
-				0629972223A09157001D178D /* RightCell.swift */,
 				06473CA72346DF00009397AE /* SendMsg.swift */,
 				0625168E22D6CF4200EBB4C8 /* ScrollBars.swift */,
 			);
