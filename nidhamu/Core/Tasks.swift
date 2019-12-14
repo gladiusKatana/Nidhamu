@@ -2,13 +2,12 @@
   
   
   
+  
   icon                                                                                              UI
   
   launch screen
 
   buttons
-  
-  make dst notifications look nicer
   
   archive frequency reminders
   
@@ -46,6 +45,7 @@
   + device specific fonts; orientation enum
   
   ✧ cascading task deferrals? (probably not)
+  
   ✧ loopWeeks = false as setting? (probably not)
   
   
