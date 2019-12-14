@@ -58,9 +58,9 @@ func dstMarkerForConsole(_ date: Date) -> String { /// creates a string notifyin
 
 func dstMarkerForHeader(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
     let fbk = (truncateMins(date) != truncateMins(fallBackDate)) ? "" :
-    " Daylight Savings (fall-back) : will remain at the 1am time-block for 2 hours"
+    "🌖 Daylight Savings (fall-back): the 1am time-block lasts for 2 hours "
     let spf = (truncateMins(date) != truncateMins(springForwardDate)) ? "" :
-    " Daylight Savings (spring-forward) : will skip over the 2am time-block (1:59→ 3:00)"
+    "🌔 Daylight Savings (spring-forward): the 2am time-block gets skipped "  //(1:59→ 3:00)"
     return "\(fbk)\(spf)"
 }
 

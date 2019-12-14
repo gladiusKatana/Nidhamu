@@ -30,6 +30,8 @@ func leftOrRightCellSetup(_ cell: BaseCell, indexPath: IndexPath, paths: [(Int, 
     
     let str = dstMarkerForHeader(Date())
     
+    if str != "" && row > 0 && col > 0 {cell.backgroundColor = subtleBlue} /// highlights the daylight savings notification the same colour as the now-cell
+    
     if (col, row) == paths[0] {
         cell.titleLabel.text = formattedDateString(lastLoginDate, roundedDown: false, showYear: true,
                                                    prefix: " Last Login", suffix: " ", dateFormat: .fullDay); if str != "" {weight = .light}
