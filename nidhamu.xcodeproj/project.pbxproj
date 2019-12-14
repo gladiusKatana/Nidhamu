@@ -321,10 +321,10 @@
 			isa = PBXGroup;
 			children = (
 				06541296237A6D830080F3EF /* Cell.swift */,
+				06541298237A6D830080F3EF /* BaseCell.swift */,
 				06541297237A6D830080F3EF /* LeftCell.swift */,
 				0629972223A09157001D178D /* RightCell.swift */,
 				0665328E23A55A05006EC559 /* LRSetup.swift */,
-				06541298237A6D830080F3EF /* BaseCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
