@@ -82,6 +82,7 @@
 		06541313237A6D840080F3EF /* Vars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D0237A6D840080F3EF /* Vars.swift */; };
 		06541314237A6D840080F3EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D1237A6D840080F3EF /* AppDelegate.swift */; };
 		06541315237A6D840080F3EF /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D2237A6D840080F3EF /* Tasks.swift */; };
+		0665328F23A55A05006EC559 /* LRSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665328E23A55A05006EC559 /* LRSetup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,7 @@
 		065412D0237A6D840080F3EF /* Vars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vars.swift; sourceTree = "<group>"; };
 		065412D1237A6D840080F3EF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		065412D2237A6D840080F3EF /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		0665328E23A55A05006EC559 /* LRSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRSetup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +323,7 @@
 				06541296237A6D830080F3EF /* Cell.swift */,
 				06541297237A6D830080F3EF /* LeftCell.swift */,
 				0629972223A09157001D178D /* RightCell.swift */,
+				0665328E23A55A05006EC559 /* LRSetup.swift */,
 				06541298237A6D830080F3EF /* BaseCell.swift */,
 			);
 			path = cell;
@@ -623,6 +626,7 @@
 				06541314237A6D840080F3EF /* AppDelegate.swift in Sources */,
 				065412DC237A6D840080F3EF /* PSwitch.swift in Sources */,
 				065412D8237A6D840080F3EF /* TextField.swift in Sources */,
+				0665328F23A55A05006EC559 /* LRSetup.swift in Sources */,
 				065412F1237A6D840080F3EF /* PrepBlocks.swift in Sources */,
 				06541301237A6D840080F3EF /* SizeEnums.swift in Sources */,
 				06541305237A6D840080F3EF /* Prepare.swift in Sources */,

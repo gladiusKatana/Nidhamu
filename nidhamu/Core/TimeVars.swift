@@ -23,7 +23,7 @@ var dstOffset = 0.0
 
 var nowRow = 0;                                 var nowColumn = 0
 
-var dstNotificationCellPath = (7, 1) /// (0, 1) if left-justified
+var dstNotificationCellPath = (-1, -1)
 
 
 

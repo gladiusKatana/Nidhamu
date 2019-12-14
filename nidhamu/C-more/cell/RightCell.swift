@@ -5,57 +5,20 @@ extension CollectionVC {
     
     func registerAndReturnRightCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> RightAlignedCell {
         collectionView.register(RightAlignedCell.self, forCellWithReuseIdentifier: RightAlignedCell.reuseIdentifier)
-        var rightCell = collectionView.dequeueReusableCell(withReuseIdentifier: RightAlignedCell.reuseIdentifier, for: indexPath) as! RightAlignedCell
+        
+        var rightCell = collectionView.dequeueReusableCell(withReuseIdentifier:
+            RightAlignedCell.reuseIdentifier, for: indexPath) as! RightAlignedCell
+        
         rightCell = doRestOfRightCellProcessing(cell: rightCell, indexPath: indexPath)
         return rightCell
     }
     
     func doRestOfRightCellProcessing(cell: RightAlignedCell, indexPath: IndexPath) -> RightAlignedCell  {
-        var weight = UIFont.Weight.ultraLight
-        let row = indexPath.row; let col = indexPath.section
         
-        cell.backgroundColor = headerColour
-        cell.titleLabel.textAlignment = .left
-        cell.titleLabel.numberOfLines = 0
-        cell.titleLabel.lineBreakMode = .byCharWrapping
+        leftOrRightCellSetup(cell, indexPath: indexPath, paths: [(7,0), (7,1)])
         
-        let str = dstMarkerForHeader(Date())
-        
-        if (col, row) == (7, 0) {
-            cell.titleLabel.text = formattedDateString(lastLoginDate, roundedDown: false, showYear: true,
-                                                       prefix: " Last Login", suffix: " ", dateFormat: .fullDay); if str != "" {weight = .light}
-        }
-        else if (col, row) == dstNotificationCellPath {
-            cell.titleLabel.text = str
-            cell.titleLabel.textColor = darkNavy; weight = .medium}
-        else {cell.titleLabel.textColor = cellTextDefaultColour; cell.titleLabel.text = ""}
-        
-        if currentOrientation == "landscape" {
-            var size = 0
-            if textFieldDisplayed{size = 7} else {size = 9}
-            cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(size), weight: weight)
-        }
-        else {cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: weight)}
         return cell
     }
-    //        cell.backgroundColor = headerColour
-    //        cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)
-    //
-    //        if currentOrientation == "landscape" {cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(7), weight: .ultraLight)}
-    //
-    //        cell.titleLabel.textAlignment = .right
-    //        cell.titleLabel.numberOfLines = 0
-    //        cell.titleLabel.lineBreakMode = .byCharWrapping
-    //
-    //        let str = dstMarkerForHeader(Date())
-    //
-    //        if indexPath.section == 7 { // to do this in column 1, you need to rewrite the layout attributes (zIndex)
-    //            cell.titleLabel.text = formattedDateString(lastLoginDate, roundedDown: false, showYear: true,
-    //                                                       prefix: " Last Login", suffix: str, dateFormat: .fullDay)
-    //        }
-    //        else {cell.titleLabel.text = ""}
-    //        return cell
-    //    }
 }
 
 class RightAlignedCell: BaseCell {
