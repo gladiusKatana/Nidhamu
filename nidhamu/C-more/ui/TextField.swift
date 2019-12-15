@@ -5,15 +5,10 @@ extension CollectionVC {
     
     func prepareAndPresentTextField(dateString: String) {
         globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
-        //backgroundVC.view.backgroundColor = globalWindow.backgroundColor
+        backgroundVC.view.backgroundColor = globalWindow.backgroundColor
         
-        collectionView.backgroundColor = .clear
-        presentTextField(after: 1, dateString: selectedTimeBlockDateDescription)
-        reloadCV()
-    }
-    
-    func presentTextField(after delay: Double, dateString: String) { /// commented stuff in this method is double-commented on purpose; see next few commits
         formatAndPresentTextField(dateString)
+        reloadCV()
     }
     
     func rePresentTextField() {         //print("re-presenting text field & keyboard")

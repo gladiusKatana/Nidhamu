@@ -17,7 +17,7 @@ var timetableLayout = ///---------------------------------------------
         loadsHorizontally: false,               ///❗️if loadsHorizontally is true, 'rows' look like columns
         squareCellMode: .noAutoSquare)
 
-var timetableVC = CollectionVC(.timetable, backgroundColour: defaultWindowBackgroundColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: 0, collectionViewLayout: timetableLayout)
+var timetableVC = CollectionVC(.timetable, backgroundColour: defaultColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: 0, collectionViewLayout: timetableLayout)
 
 
 var deferralLayout = ///---------------------------------------------
@@ -46,7 +46,7 @@ var taskListLayout = ///------------------------------------------------
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
-var taskListVC = CollectionVC(.taskList, backgroundColour: defaultWindowBackgroundColour, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: taskListLayout)
+var taskListVC = CollectionVC(.taskList, backgroundColour: defaultColour, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: taskListLayout)
 
 
 var archiveLayout = ///--------------------------------------------------

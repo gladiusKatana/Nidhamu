@@ -18,7 +18,7 @@ class PopupSwitchView: UIView {
         label.text = "Recurring?"
         label.font = UIFont.systemFont(ofSize: 12, weight: .thin)//defaultTimetableCellFont
         label.backgroundColor = .clear
-        label.textColor = cellTextDefaultColour
+        label.textColor = defaultCellTextColour
         label.numberOfLines = 1
         label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false

@@ -5,7 +5,7 @@ extension CollectionVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = .clear //backgroundColour
+        collectionView.backgroundColor = backgroundColour
         collectionView.bounces = false
         
         setTopViewController()

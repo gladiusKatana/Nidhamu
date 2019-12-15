@@ -13,7 +13,7 @@ class BaseCell: UICollectionViewCell {
         super.init(frame: frame)
         
         self.backgroundColor = cellDefaultColour
-        titleLabel.textColor = cellTextDefaultColour
+        titleLabel.textColor = defaultCellTextColour
         titleLabel.font = defaultTimetableCellFont
     }
     
@@ -26,7 +26,7 @@ class BaseCell: UICollectionViewCell {
         layer.borderColor = UIColor.clear.cgColor
         
         titleLabel.text = "" /// use if title label text is ever set to a non-blank string
-        titleLabel.textColor = cellTextDefaultColour
+        titleLabel.textColor = defaultCellTextColour
         titleLabel.font = defaultTimetableCellFont
     }
 }

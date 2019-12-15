@@ -12,8 +12,6 @@ var randomColours =     // used in TestSquare.swift
     [UIColor.red.cgColor, UIColor.orange.cgColor, UIColor.yellow.cgColor, UIColor.green.cgColor, UIColor.blue.cgColor, UIColor.purple.cgColor, UIColor.white.cgColor]
 
 
-
-var defaultWindowBackgroundColour = UIColor.darkGray
 var iosSettingsGray = UIColor.rgb(240, g: 240, b: 247, a: 1)
 var iosKeyboardDefaultColourApprox = UIColor.rgb(206, g: 213, b: 219, a: 1) ///b: 218 // (207, g: 212, b: 225, a: 1)
 
@@ -21,8 +19,7 @@ var defaultColour = platinum;                           var cellDefaultColour = 
 var headerColour = defaultColour;                       var taskAddingColour = UIColor.darkGray
 
 var lastWeekColour = extraLightNavy;                    var popupMenuLightGray = UIColor.lightGray
-var cellTextDefaultColour = UIColor.black;              ///var headerTextDefaultColour = UIColor.black
-
+var defaultCellTextColour = UIColor.black;              ///var headerTextDefaultColour = UIColor.black
 
 
 ///var niceOrangeDark = UIColor.rgb(228, g: 100, b: 44, a: 0.75);                                               ///var orangeForBlocksSinceLastLogin = UIColor.rgb(180, g: 70, b: 0, a: 0.5) ///(220, g: 70, b: 20, a: 0.5)

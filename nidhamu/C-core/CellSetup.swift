@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func timeBlockDateSetup (cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) { //cell. titleLabel.text = "\(column),\(row)"
+    func timeBlockDateSetup (cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) { ///cell. titleLabel.text = "\(column),\(row)"
         
         if viewControllerType == .timetable || viewControllerType == .deferralDates {
             if let loopWeeks = loopWeeks, let demarcateWeeksByColour = demarcateWeeksByColour {
@@ -38,6 +38,8 @@ extension CollectionVC {
             
         else if viewControllerType == .taskList {
             cell.cellDate = selectedCellDate
+            
+            cell.backgroundColor = cellDefaultColour
             
             guard let taskAtTimeBlock = tasksAtIndexPath[timeBlock] else {
                 cell.titleLabel.text = "(no items yet)"; return // will not be executed since task list vc is only go-to-able via a time block

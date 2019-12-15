@@ -11,10 +11,10 @@ extension CustomFlowLayout {
         
         if previousOrientation != currentOrientation {                                      //print("prepare(rotated to \(currentOrientation)):")
             
-            if textFieldDisplayed {
-                globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
-                backgroundVC.view.backgroundColor = globalWindow.backgroundColor
-            }
+            //            if textFieldDisplayed {
+            //                globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
+            //                backgroundVC.view.backgroundColor = globalWindow.backgroundColor
+            //            }
             
             previousOrientation = currentOrientation
             

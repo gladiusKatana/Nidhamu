@@ -40,7 +40,7 @@ func leftOrRightCellSetup(_ cell: BaseCell, indexPath: IndexPath, paths: [(Int, 
         dstNotificationCellPath = (col, row)
         cell.titleLabel.text = str
         cell.titleLabel.textColor = darkNavy; weight = .medium}
-    else {cell.titleLabel.textColor = cellTextDefaultColour; cell.titleLabel.text = ""}
+    else {cell.titleLabel.textColor = defaultCellTextColour; cell.titleLabel.text = ""}
     
     if currentOrientation == "landscape" {
         var size = 0
