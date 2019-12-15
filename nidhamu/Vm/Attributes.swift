@@ -17,16 +17,13 @@ extension CustomFlowLayout {
                 let xDefault : CGFloat = CGFloat(j) * widthPlusSpace
                 let yDefault : CGFloat = CGFloat(i) * heightPlusSpace
                 var xO = CGFloat(0);    var yO = CGFloat(0)                                                     //; print("*", terminator: "")
-                
-                if i < lockedHeaderRows && j < lockedHeaderSections {
-                    xO = xOffSet + CGFloat(j) * widthPlusSpace
                     
-                    if self != taskTaggingLayout {yO = yOffset + CGFloat(i) * heightPlusSpace}
-                    else {                       yO = yOffset - CGFloat(navBarHeight + statusBarHeight)}
-                }
+                if i < lockedHeaderRows {
                     
-                else if i < lockedHeaderRows {
-                    xO = xDefault
+                    if j < lockedHeaderSections {
+                        xO = xOffSet + CGFloat(j) * widthPlusSpace
+                    } else {xO = xDefault}
+                    
                     if self != taskTaggingLayout {yO = yOffset + CGFloat(i) * heightPlusSpace}
                     else {                       yO = yOffset - CGFloat(navBarHeight + statusBarHeight)}
                 }
