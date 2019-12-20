@@ -17,8 +17,12 @@ extension CustomFlowLayout {
                 var xO = CGFloat(0);    var yO = CGFloat(0)                                                     //; print("*", terminator: "")
                 let xDefault : CGFloat = CGFloat(j) * widthPlusSpace
                 
+                let regularRows = CGFloat(rows - lockedHeaderRows)
+                
                 let headerHeightFactor = CGFloat(0.5)
-                let cellHeightFactor = CGFloat(1.625) /// 1.625 = (0.5 * 5 header rows) / 4 non-header rows + 1
+                let cellHeightIncrease = headerHeightFactor * CGFloat(lockedHeaderRows) / regularRows
+                let cellHeightFactor = CGFloat(1) + cellHeightIncrease
+                ///(1.625) /// 1.625 = (0.5 * 5 header rows) / 4 non-header rows + 1
                 
                 if i < lockedHeaderRows {
                     if j < lockedHeaderSections {
@@ -32,7 +36,7 @@ extension CustomFlowLayout {
                     attribute.frame = CGRect(x: xO, y: yO, width: cellWidth!, height: cellHeight! * headerHeightFactor)
                 }
                 else {
-                    let headerDelta = CGFloat(lockedHeaderRows) * heightPlusSpace + CGFloat(0.625) * heightPlusSpace
+                    let headerDelta = CGFloat(lockedHeaderRows) * heightPlusSpace + cellHeightIncrease * heightPlusSpace
 
                     let yDefault = CGFloat(i) * heightPlusSpace * cellHeightFactor - headerDelta ///- CGFloat(navBarHeight + statusBarHeight)
                     
