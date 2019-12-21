@@ -18,31 +18,32 @@ extension CustomFlowLayout {
                 let xDefault : CGFloat = CGFloat(j) * widthPlusSpace
                 
                 let regularRows = CGFloat(rows - lockedHeaderRows)
-                let rowDifference = CGFloat(lockedHeaderRows) - regularRows
                 
-                let headerHeightFactor = CGFloat(0.5)
-                let cellHeightIncrease = headerHeightFactor * CGFloat(lockedHeaderRows) / regularRows
-                let cellHeightFactor = CGFloat(1) + cellHeightIncrease
+                let one = CGFloat(1)
+                let headerHeightFactor = CGFloat(0.8)
+                let cellHeightIncrease = (one - headerHeightFactor) * CGFloat(lockedHeaderRows) / regularRows
+                let cellHeightFactor = one + cellHeightIncrease
                 
                 if i < lockedHeaderRows {
                     if j < lockedHeaderSections {
                         xO = xOffSet + CGFloat(j) * widthPlusSpace
                     } else {xO = xDefault}
-                    if self != taskTaggingLayout {yO = yOffset + CGFloat(i) * heightPlusSpace * headerHeightFactor}
+                    
+                    if self == taskTaggingLayout {yO = yOffset - CGFloat(navBarHeight + statusBarHeight)}
                     else {
-                        yO = yOffset - CGFloat(navBarHeight + statusBarHeight)
+                        yO = yOffset + CGFloat(i) * heightPlusSpace * headerHeightFactor
                     }
                     
                     attribute.frame = CGRect(x: xO, y: yO, width: cellWidth!, height: cellHeight! * headerHeightFactor)
                 }
                 else {
-                    let headerDelta = CGFloat(lockedHeaderRows) * heightPlusSpace + cellHeightIncrease * heightPlusSpace * rowDifference
+                    let headerDelta = yOffset + CGFloat(lockedHeaderRows) * heightPlusSpace * headerHeightFactor
                     
-                    let yDefault = CGFloat(i) * heightPlusSpace * cellHeightFactor - headerDelta
+                    let y = headerDelta + CGFloat(i - lockedHeaderRows) * heightPlusSpace * cellHeightFactor
                     
                     if j < lockedHeaderSections {
-                        xO = xOffSet + CGFloat(j) * widthPlusSpace;     yO = yDefault
-                    } else { xO = xDefault;                             yO = yDefault}
+                        xO = xOffSet + CGFloat(j) * widthPlusSpace;     yO = y
+                    } else { xO = xDefault;                             yO = y}
                     
                     attribute.frame = CGRect(x: xO, y: yO, width: cellWidth!, height: cellHeight! * cellHeightFactor)
                 }
