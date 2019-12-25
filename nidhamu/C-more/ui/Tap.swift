@@ -23,26 +23,26 @@ extension CollectionVC {
                 
                 cell.backgroundColor = taskAddingColour
                 
-//                if tasksAtIndexPath[timeBlock] == nil || textFieldDisplayed {
-//
-//                    if previousTimeBlockPathSelected == defaultPathOutOfView {
-//                        previousTimeBlockPathSelected = selectedTimeBlockPath
-//
-//                        ///setNavBarTitle(customString: " Add a Task (Tap Done to quit)")                                                               // may not use.  Gives User too much extra stuff to look at?
-//                        animateTimeBlockTappedToAddTask(cell: cell)                                 /// may not use. Looks nice; slows User down a little bit?
-//                        cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
-//
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//                            self.prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
-//                        }
-//                    } else {
-//                        cell.backgroundColor = taskAddingColour
-//                        prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
-//                    } ///see (*) re. animation-logic, below
-//                } else {
-//                    if let tasks = tasksAtIndexPath[timeBlock] {taskListVC.downcastLayout!.rows = tasks.count}
-//                    gotoView(vc: taskListVC)
-//                }
+                if tasksAtIndexPath[timeBlock] == nil || textFieldDisplayed {
+                    
+                    if previousTimeBlockPathSelected == defaultPathOutOfView {
+                        previousTimeBlockPathSelected = selectedTimeBlockPath
+                        
+                        ///setNavBarTitle(customString: " Add a Task (Tap Done to quit)")                                                               // may not use.  Gives User too much extra stuff to look at?
+                        animateTimeBlockTappedToAddTask(cell: cell)                                 /// may not use. Looks nice; slows User down a little bit?
+                        cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            self.prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
+                        }
+                    } else {
+                        cell.backgroundColor = taskAddingColour
+                        prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
+                    } ///see (*) re. animation-logic, below
+                } else {
+                    if let tasks = tasksAtIndexPath[timeBlock] {taskListVC.downcastLayout!.rows = tasks.count}
+                    gotoView(vc: taskListVC)
+                }
                 
             case .taskList:         prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
             case .archive:          presentEmail() ///sendArchiveAsCsv()
