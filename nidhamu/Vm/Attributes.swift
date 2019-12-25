@@ -20,7 +20,7 @@ extension CustomFlowLayout {
                 let regularRows = CGFloat(rows - lockedHeaderRows)
                 
                 let one = CGFloat(1)
-                let headerHeightFactor = CGFloat(0.8)
+                let headerHeightFactor = CGFloat(0.3)
                 let cellHeightIncrease = (one - headerHeightFactor) * CGFloat(lockedHeaderRows) / regularRows
                 let cellHeightFactor = one + cellHeightIncrease
                 

@@ -4,14 +4,15 @@ import UIKit
 var cellGap = CGFloat(0) // if nonzero, do not make this smaller than: 0.5 (iphone7), or lines drawn inconsistently
 var backgroundVC = UIViewController()
 var topVC = CollectionVC(.initial, backgroundColour: UIColor.clear, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: timetableLayout)
-var timetableRows = 29
+var timetableHeaders = 5
+var timetableRows = 24 / blockSize + timetableHeaders
 
 var timetableLayout = ///---------------------------------------------
     CustomFlowLayout(
         embeddedInNavController: true,          ///  if true, it's fullscreen (with a nav bar button to navigate to its collection view controller's view); else it's a window with a custom frame
         customFrame: nil,                       ///  if nil, defaults to a pre-set frame, the app's window frame (as described in above comment)
         rows: timetableRows, cols: 8,
-        lockedHeaderRows: 5, lockedHeaderSections: 1,
+        lockedHeaderRows: timetableHeaders, lockedHeaderSections: 1,
         cellWidth: nil, cellHeight: nil,        ///  if either parameter is nil, screen width and/or height is autofitted (else, auto-fit scalars below are ignored, ie set to 1.0)
         autoFitWScale: 1, autoFitHScale: 1,     ///  if either of these parameters are nil, they default to 1.0
         hSpace: cellGap, vSpace: cellGap,       ///  gaps between the cells
@@ -26,7 +27,7 @@ var deferralLayout = ///---------------------------------------------
         embeddedInNavController: true,          ///  if true, it's fullscreen (with a nav bar button to navigate to its collection view controller's view); else it's a window with a custom frame
         customFrame: nil,                       ///  if nil, defaults to a pre-set frame, the app's window frame (as described in above comment)
         rows: timetableRows, cols: 8,
-        lockedHeaderRows: 5, lockedHeaderSections: 1,
+        lockedHeaderRows: timetableHeaders, lockedHeaderSections: 1,
         cellWidth: nil, cellHeight: nil,        ///  if either parameter is nil, screen width and/or height is autofitted (else, auto-fit scalars below are ignored, ie set to 1.0)
         autoFitWScale: 1, autoFitHScale: 1,     ///  if either of these parameters are nil, they default to 1.0
         hSpace: cellGap, vSpace: cellGap,       ///  gaps between the cells
