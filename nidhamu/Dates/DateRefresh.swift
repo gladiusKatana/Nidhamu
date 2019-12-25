@@ -5,10 +5,11 @@ func processCurrentDate() {
     
     let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(Date(), roundedDown: true)
     
-    nowRow = Calendar.current.component(.hour, from: Date()) + timetableLayout.lockedHeaderRows                 /// for 'nowCell': tabular position of current date
+    let timeOfDay = Calendar.current.component(.hour, from: Date()) / timeBlockSize
+    nowRow = timeOfDay + timetableLayout.lockedHeaderRows                 /// for 'nowCell': tabular position of current date
     nowColumn = fullWeekdaysDisplayedOrder.firstIndex(of: weekday)! + timetableLayout.lockedHeaderSections
     
-    ///print(formattedDateString(Date(), comment: "process dates @ ", short: false))   ///print("finding current date (now-cell [\(nowColumn),\(nowRow)])")
+    //print("finding current date (now-cell [\(nowColumn),\(nowRow)])")
     
     if !reloadedFromHourTickingOver {
         if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections {    /// if the now-cell is at Monday, 12am

@@ -5,7 +5,7 @@ var cellGap = CGFloat(0) // if nonzero, do not make this smaller than: 0.5 (ipho
 var backgroundVC = UIViewController()
 var topVC = CollectionVC(.initial, backgroundColour: UIColor.clear, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: timetableLayout)
 var timetableHeaders = 5
-var timetableRows = 24 / blockSize + timetableHeaders
+var timetableRows = 24 / timeBlockSize + timetableHeaders
 
 var timetableLayout = ///---------------------------------------------
     CustomFlowLayout(

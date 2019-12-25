@@ -51,7 +51,7 @@ extension CollectionVC {
     }
     
     func showTimeInTitleLabels(_ date: Date) -> String {
-        return formattedDateString(date, roundedDown: true, showYear: false, prefix: "", suffix: "", dateFormat: .timeOnly)
+        return formattedDateString(date, roundedDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .hourAndMinute)
     }
 }
 

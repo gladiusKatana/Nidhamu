@@ -6,7 +6,7 @@ extension CollectionVC {
     func setCellDate(baseDate: Date, cellOffset: Int, cell: CustomCell, column: Int, row: Int,
                      layout: CustomFlowLayout, looping: Bool, withColours: Bool) -> (Date, Bool, Bool) {
         
-        let hoursFromNow = TimeInterval(3600 * blockSize * (row - nowRow))
+        let hoursFromNow = TimeInterval(3600 * timeBlockSize * (row - nowRow))
         let daysFromNow = TimeInterval(86400 * (column - nowColumn))
         var weekAheadInt = 0
         
