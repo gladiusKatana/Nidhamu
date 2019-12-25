@@ -3,37 +3,37 @@
   
   
   
-  icon                                                                                              UI
-  
-  launch screen
-
-  buttons
+  adjustable time block sizes               almost done                                             M
   
   archive frequency reminders
   
   prevent using incorrect date
   
+  checklogic, refactor, comments
   
   
+  
+  
+  buttons                                                                                           UI
+  
+  icon
+  
+  launch screen
   
   Numbers template                                                                                  UX
   
   Excel template
   
   
+
   
-  
-  checklogic, refactor, comments                                                                    M
-  
-  mornAftEveNightVC                                                                                 VCs
-  
-  listVC (today items)
+  listVC (today items)                                                                              VCs
   
   listVC (deadlineless items)
                                                                     Jan. 1 '20 AppStore
   calendarVC
     
-  tasksAtDate                                                                                       Data
+  tasksAtDate                                                                                       M
   
   
   
