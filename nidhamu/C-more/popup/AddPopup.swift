@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func presentPopupViewToTagTasks(column: Int, row: Int) {                    //print("-----------------")//print("presenting popup")
+    func presentPopupViewToTagTasks(column: Int, row: Int) {                    ///print("-----------------")//print("presenting popup")
         
         //if currentOrientation == "portrait" {
         AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
@@ -13,14 +13,19 @@ extension CollectionVC {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             if !taggingViewDisplayed {
                 
-                let layout = self.downcastLayout!;                          let widthMultiplier = CGFloat(2)
-                let cellWidth = layout.widthPlusSpace;                      let cellHeight = layout.heightPlusSpace
+                let layout = self.downcastLayout!;          let widthMultiplier = CGFloat(2)
+                let cellWidth = layout.widthPlusSpace;      let cellHeight = layout.heightPlusSpace
+                
                 let popupMenuLayout = taskTaggingViewController.downcastLayout!
-                popupMenuLayout.cellWidth = cellWidth * widthMultiplier;    popupMenuLayout.cellHeight = cellHeight
+                popupMenuLayout.cellWidth = cellWidth * widthMultiplier
+                popupMenuLayout.cellHeight = cellHeight
+                
+                let headerRows = popupMenuLayout.lockedHeaderRows
                 
                 let cols = CGFloat(popupMenuLayout.cols)
                 var x = cellWidth * CGFloat(column + 1)
-                var y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)
+                let yO = CGFloat(navBarHeight + statusBarHeight) //+ cellHeight * CGFloat(headerRows)
+                var y = yO + cellHeight * CGFloat(row)
                 let wid = cellWidth * cols * widthMultiplier
                 
                 if column >= 6 {x = cellWidth * CGFloat(column - 2)}

@@ -20,12 +20,13 @@ extension CustomFlowLayout {
                 let regularRows = CGFloat(rows - lockedHeaderRows)
                 
                 let one = CGFloat(1)
-                let headerHeightFactor = CGFloat(0.3)
+                let headerHeightFactor = CGFloat(1)
                 let cellHeightIncrease = (one - headerHeightFactor) * CGFloat(lockedHeaderRows) / regularRows
                 let cellHeightFactor = one + cellHeightIncrease
                 
                 if i < lockedHeaderRows {
-                    if j < lockedHeaderSections {
+                    
+                    if j < lockedHeaderSections {                   /// factor next 3 lines out (see lines 42-44)
                         xO = xOffSet + CGFloat(j) * widthPlusSpace
                     } else {xO = xDefault}
                     
@@ -37,13 +38,18 @@ extension CustomFlowLayout {
                     attribute.frame = CGRect(x: xO, y: yO, width: cellWidth!, height: cellHeight! * headerHeightFactor)
                 }
                 else {
-                    let headerDelta = yOffset + CGFloat(lockedHeaderRows) * heightPlusSpace * headerHeightFactor
-                    
-                    let y = headerDelta + CGFloat(i - lockedHeaderRows) * heightPlusSpace * cellHeightFactor
                     
                     if j < lockedHeaderSections {
-                        xO = xOffSet + CGFloat(j) * widthPlusSpace;     yO = y
-                    } else { xO = xDefault;                             yO = y}
+                        xO = xOffSet + CGFloat(j) * widthPlusSpace
+                    } else {xO = xDefault}
+                    
+                    let headerDelta = yOffset + CGFloat(lockedHeaderRows) * heightPlusSpace * headerHeightFactor
+                    let y = headerDelta + CGFloat(i - lockedHeaderRows) * heightPlusSpace * cellHeightFactor
+                    
+                    if self == taskTaggingLayout {yO = y - CGFloat(navBarHeight + statusBarHeight)}
+                    else {
+                        yO = y
+                    }
                     
                     attribute.frame = CGRect(x: xO, y: yO, width: cellWidth!, height: cellHeight! * cellHeightFactor)
                 }
