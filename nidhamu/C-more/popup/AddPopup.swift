@@ -20,12 +20,12 @@ extension CollectionVC {
                 popupMenuLayout.cellWidth = cellWidth * widthMultiplier
                 popupMenuLayout.cellHeight = cellHeight
                 
-                let headerRows = popupMenuLayout.lockedHeaderRows
+                let headerRows = layout.lockedHeaderRows
                 
                 let cols = CGFloat(popupMenuLayout.cols)
                 var x = cellWidth * CGFloat(column + 1)
-                let yO = CGFloat(navBarHeight + statusBarHeight) //+ cellHeight * CGFloat(headerRows)
-                var y = yO + cellHeight * CGFloat(row)
+                let yO = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(headerRows) * headerHeightFactor
+                var y = yO + cellHeight * CGFloat(row - headerRows) * cellHeightFactor
                 let wid = cellWidth * cols * widthMultiplier
                 
                 if column >= 6 {x = cellWidth * CGFloat(column - 2)}

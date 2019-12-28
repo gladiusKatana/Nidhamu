@@ -4,8 +4,10 @@ import UIKit
 var cellGap = CGFloat(0) // if nonzero, do not make this smaller than: 0.5 (iphone7), or lines drawn inconsistently
 var backgroundVC = UIViewController()
 var topVC = CollectionVC(.initial, backgroundColour: UIColor.clear, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: timetableLayout)
+
 var timetableHeaders = 5
 var timetableRows = 24 / timeBlockSize + timetableHeaders
+var cellHeightFactor = CGFloat(1);  var headerHeightFactor = CGFloat(1)
 
 var timetableLayout = ///---------------------------------------------
     CustomFlowLayout(

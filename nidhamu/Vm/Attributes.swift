@@ -20,9 +20,9 @@ extension CustomFlowLayout {
                 let regularRows = CGFloat(rows - lockedHeaderRows)
                 
                 let one = CGFloat(1)
-                let headerHeightFactor = CGFloat(1)
+                if self == taskTaggingLayout {headerHeightFactor = 1} else {headerHeightFactor = 0.5}
                 let cellHeightIncrease = (one - headerHeightFactor) * CGFloat(lockedHeaderRows) / regularRows
-                let cellHeightFactor = one + cellHeightIncrease
+                cellHeightFactor = one + cellHeightIncrease
                 
                 if i < lockedHeaderRows {
                     
