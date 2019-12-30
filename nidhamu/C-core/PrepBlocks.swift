@@ -57,6 +57,7 @@ extension CollectionVC {
             }
             thereWillBeARowException = false
         }
+        
         tagTasksSinceLastLogin()            ///; print("\(taskArraysToProcess.count) blocks remaining now, and \(tasksInBlockToBeProcessed) tasks remaining (tag #\(taskIndex + 1))\n")
     }
 }

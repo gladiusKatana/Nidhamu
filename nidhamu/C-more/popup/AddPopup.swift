@@ -41,13 +41,13 @@ extension CollectionVC {
                 taskTaggingViewController.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
                 taskTaggingViewController.collectionView.isUserInteractionEnabled = true
                 
-                let switchViewHeight = cellHeight * 4 //taskRecurringSwitchView.popupSwitch.frame.height + cellHeight * 2
-                taskRecurringSwitchView = PopupSwitchView(frame:
-                    CGRect(x: x, y: y + popupCollectionViewFrame.height,
-                           width: wid, height: switchViewHeight))           ; taskRecurringSwitchView.backgroundColor = popupMenuLightGray
+//                let switchViewHeight = cellHeight * 4 / CGFloat(timeBlockSize)  ///taskRecurringSwitchView.popupSwitch.frame.height + cellHeight * 2
+//                taskRecurringSwitchView = PopupSwitchView(frame:
+//                    CGRect(x: x, y: y + popupCollectionViewFrame.height,
+//                           width: wid, height: switchViewHeight))           ; taskRecurringSwitchView.backgroundColor = popupMenuLightGray
                 
                 timetableVC.view.addSubview(taskTaggingViewController.view)     //; print("----------------adding popup")
-                timetableVC.view.addSubview(taskRecurringSwitchView)            //; print("adding switch")
+//                timetableVC.view.addSubview(taskRecurringSwitchView)            //; print("adding switch")
                 
                 taskTaggingViewController.becomeFirstResponder()
                 taggingViewDisplayed = true

@@ -14,19 +14,28 @@ extension CustomFlowLayout {
                 else                {ip = IndexPath(item: j, section: i)}
                 
                 let attribute = UICollectionViewLayoutAttributes(forCellWith: ip) //let attribute = self.layoutAttributesForItem(at: ip)!
-                var xO = CGFloat(0);    var yO = CGFloat(0)                                                     //; print("*", terminator: "")
                 let xDefault : CGFloat = CGFloat(j) * widthPlusSpace
-                
+
                 let regularRows = CGFloat(rows - lockedHeaderRows)
-                
                 let one = CGFloat(1)
-                if self == taskTaggingLayout {headerHeightFactor = 1} else {headerHeightFactor = 0.5}
+                
+                var xO = CGFloat(0);    var yO = CGFloat(0)                                                     //; print("*", terminator: "")
+                var scalar = CGFloat(0)
+                
+//                let fraction = CGFloat(1)
+                if self == taskTaggingLayout {
+//                    let popupHeaderHeightIncrease = (one - fraction) * CGFloat(lockedHeaderRows) / regularRows
+                    headerHeightFactor = 1
+                }
+                else {
+                    headerHeightFactor = 0.25
+                }
+                
                 let cellHeightIncrease = (one - headerHeightFactor) * CGFloat(lockedHeaderRows) / regularRows
-                cellHeightFactor = one + cellHeightIncrease
                 
                 if i < lockedHeaderRows {
                     
-                    if j < lockedHeaderSections {                   /// factor next 3 lines out (see lines 42-44)
+                    if j < lockedHeaderSections {                                                               /// factor next 3 lines out (see lines 42-44)
                         xO = xOffSet + CGFloat(j) * widthPlusSpace
                     } else {xO = xDefault}
                     
@@ -35,13 +44,16 @@ extension CustomFlowLayout {
                         yO = yOffset + CGFloat(i) * heightPlusSpace * headerHeightFactor
                     }
                     
-                    attribute.frame = CGRect(x: xO, y: yO, width: cellWidth!, height: cellHeight! * headerHeightFactor)
-                }
-                else {
+                    scalar = headerHeightFactor
+                    
+                } else {
                     
                     if j < lockedHeaderSections {
                         xO = xOffSet + CGFloat(j) * widthPlusSpace
                     } else {xO = xDefault}
+                    
+                    if self == taskTaggingLayout {cellHeightFactor = one + cellHeightIncrease} /// 2 / CGFloat(timeBlockSize)
+                    else {cellHeightFactor = one + cellHeightIncrease}
                     
                     let headerDelta = yOffset + CGFloat(lockedHeaderRows) * heightPlusSpace * headerHeightFactor
                     let y = headerDelta + CGFloat(i - lockedHeaderRows) * heightPlusSpace * cellHeightFactor
@@ -51,13 +63,16 @@ extension CustomFlowLayout {
                         yO = y
                     }
                     
-                    attribute.frame = CGRect(x: xO, y: yO, width: cellWidth!, height: cellHeight! * cellHeightFactor)
+                    scalar = cellHeightFactor
                 }
+                
+                attribute.frame = CGRect(x: xO, y: yO, width: cellWidth!, height: cellHeight! * scalar)
                 
                 setZIndex(row: i, section: j, cellAttributes: attribute)
                 attributesForElements.append(attribute)
             }
         }
+        
         return attributesForElements
     }
 }
