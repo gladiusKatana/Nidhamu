@@ -13,27 +13,29 @@ extension CollectionVC {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             if !taggingViewDisplayed {
                 
-                let layout = self.downcastLayout!;          let widthMultiplier = CGFloat(2)
-                let cellWidth = layout.widthPlusSpace;      let cellHeight = layout.heightPlusSpace
-                
+                let layout = self.downcastLayout!
                 let popupMenuLayout = taskTaggingViewController.downcastLayout!
-                popupMenuLayout.cellWidth = cellWidth * widthMultiplier
-                popupMenuLayout.cellHeight = cellHeight
                 
                 let headerRows = layout.lockedHeaderRows
-                
                 let cols = CGFloat(popupMenuLayout.cols)
+                
+                let widthFactor = CGFloat(2)
+                let cellHeight = layout.heightPlusSpace;    let cellWidth = layout.widthPlusSpace;
+                popupMenuLayout.cellHeight = cellHeight;    popupMenuLayout.cellWidth = cellWidth * widthFactor
+            
                 var x = cellWidth * CGFloat(column + 1)
+                
                 let yO = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(headerRows) * headerHeightFactor
                 var y = yO + cellHeight * CGFloat(row - headerRows) * cellHeightFactor
-                let wid = cellWidth * cols * widthMultiplier
                 
                 if column >= 6 {x = cellWidth * CGFloat(column - 2)}
                 if row > 22 {y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)}
                 
-                let popupCollectionViewFrame = CGRect(x: x, y: y, width: wid, height: cellHeight * 5)
+                
+                let popupCollectionViewFrame = CGRect(x: x, y: y, width: cellWidth * cols * widthFactor, height: cellHeight * 5)
                 taskTaggingViewController.downcastLayout?.customFrame = popupCollectionViewFrame
                 taskTaggingViewController.collectionView.frame = popupCollectionViewFrame
+                
                 
                 let hscale = timetableVC.downcastLayout!.autoFitHeightScale!     //* make sure this is extensible (ie,  if column >= 6 )
                 taskTaggingViewController.collectionView?.scrollIndicatorInsets =
