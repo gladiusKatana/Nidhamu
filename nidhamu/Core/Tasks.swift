@@ -4,15 +4,7 @@
   
   ⁌o⁍ header date display when timeBlockSize = 6
   * archive record of deferral
-  
-  
   adjustable time block sizes               almost done                                             M
-  
-  archive frequency reminders
-  
-  prevent using incorrect date
-  
-  checklogic, refactor, comments
   
   
   
@@ -28,7 +20,16 @@
   Excel template
   
   
+  
+  
+  archive frequency reminders
+  
+  prevent using incorrect date
+  
+  checklogic, refactor, comments
+  
 
+  
   
   listVC (today items)                                                                              VCs
   
@@ -42,15 +43,10 @@
   
   
   + (complete) orientation independence (ask apple engineer)                                        UI
-  
   + login date interval outlined/animated, not perma-coloured
-  
   + device specific fonts; orientation enum
-  
   ✧ cascading task deferrals? (probably not)
-  
   ✧ loopWeeks = false as setting? (probably not)
-  
   
   
   

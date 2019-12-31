@@ -27,7 +27,6 @@ extension CollectionVC {
     }
     
     func processTimeBlocksSinceLastLogin(layout: CustomFlowLayout) {
-        
         guard viewControllerType == .timetable,
             !cachedBlocksAndTheirPaths else {
                 return
@@ -47,7 +46,6 @@ extension CollectionVC {
         cachedBlocksAndTheirPaths = true
         
         if thereWillBeARowException {                               /// if any time-blocks are >= 4pm, timetable will need to shrink to accomodate wizard (window beside cell)
-            let rows = CGFloat(layout.rows)
             let heightMinusBars = globalWindow.frame.height - CGFloat(navBarHeight + statusBarHeight)
             let cellHeight = layout.heightPlusSpace
             layout.autoFitHeightScale = heightMinusBars / (heightMinusBars + cellHeight * cellHeightFactor / CGFloat(timeBlockSize) * 3)

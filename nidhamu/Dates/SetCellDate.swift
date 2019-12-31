@@ -14,7 +14,7 @@ extension CollectionVC {
         
         let oneHour = TimeInterval(3600); let oneWeek = TimeInterval(86400 * 7)
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
-        let date = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset)
+        let date = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset * timeBlockSize)
         
         if date > springForwardDate + oneHour {
             dstOffset = -1
