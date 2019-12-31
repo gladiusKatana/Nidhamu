@@ -14,13 +14,7 @@ class SimpleTask: NSObject {
         self.taskStatus = taskStatus
     }
     
-    //    func showTaskProperties() {
-    //        var descriptor = ""
-    //        if taskStatus == .upcoming {
-    //            descriptor = "will occur on"
-    //        } else {descriptor = "occurred on"}
-    //        print("\n Task: \(taskDescription)\n (\(taskStatus)); \(descriptor): \(deadline)\n")
-    //    }
+    /**/
 }
 
 enum TaskStatus: Int, CaseIterable {
@@ -48,3 +42,12 @@ enum TaskStatus: Int, CaseIterable {
     }
 }
 
+/*
+ //    func showTaskProperties() {
+ //        var descriptor = ""
+ //        if taskStatus == .upcoming {
+ //            descriptor = "will occur on"
+ //        } else {descriptor = "occurred on"}
+ //        print("\n Task: \(taskDescription)\n (\(taskStatus)); \(descriptor): \(deadline)\n")
+ //    }
+ */
