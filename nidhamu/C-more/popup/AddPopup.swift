@@ -22,17 +22,18 @@ extension CollectionVC {
                 let widthFactor = CGFloat(2)
                 let cellHeight = layout.heightPlusSpace;    let cellWidth = layout.widthPlusSpace;
                 popupMenuLayout.cellHeight = cellHeight;    popupMenuLayout.cellWidth = cellWidth * widthFactor
-            
+                
                 var x = cellWidth * CGFloat(column + 1)
                 
-                let yO = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(headerRows) * headerHeightFactor
+                let yO = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(headerRows - 1) * headerHeightFactor
                 var y = yO + cellHeight * CGFloat(row - headerRows) * cellHeightFactor
                 
                 if column >= 6 {x = cellWidth * CGFloat(column - 2)}
                 if row > 22 {y = CGFloat(navBarHeight + statusBarHeight) + cellHeight * CGFloat(row)}
                 
-                
-                let popupCollectionViewFrame = CGRect(x: x, y: y, width: cellWidth * cols * widthFactor, height: cellHeight * 5)
+                let heightFactor = timeBlockSize == 1 ? CGFloat(taskTaggingLayout.rows) : cellHeightFactor + headerHeightFactor
+                let popupFrameHeight = cellHeight * heightFactor
+                let popupCollectionViewFrame = CGRect(x: x, y: y, width: cellWidth * cols * widthFactor, height: popupFrameHeight)
                 taskTaggingViewController.downcastLayout?.customFrame = popupCollectionViewFrame
                 taskTaggingViewController.collectionView.frame = popupCollectionViewFrame
                 
@@ -43,13 +44,13 @@ extension CollectionVC {
                 taskTaggingViewController.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
                 taskTaggingViewController.collectionView.isUserInteractionEnabled = true
                 
-//                let switchViewHeight = cellHeight * 4 / CGFloat(timeBlockSize)  ///taskRecurringSwitchView.popupSwitch.frame.height + cellHeight * 2
-//                taskRecurringSwitchView = PopupSwitchView(frame:
-//                    CGRect(x: x, y: y + popupCollectionViewFrame.height,
-//                           width: wid, height: switchViewHeight))           ; taskRecurringSwitchView.backgroundColor = popupMenuLightGray
+                let switchViewHeight = cellHeight * cellHeightFactor / CGFloat(timeBlockSize) * 3
+                taskRecurringSwitchView = PopupSwitchView(frame: CGRect(x: x, y: y + popupCollectionViewFrame.height,
+                                                                        width: cellWidth * widthFactor, height: switchViewHeight))
+                taskRecurringSwitchView.backgroundColor = popupMenuLightGray
                 
                 timetableVC.view.addSubview(taskTaggingViewController.view)     //; print("----------------adding popup")
-//                timetableVC.view.addSubview(taskRecurringSwitchView)            //; print("adding switch")
+                timetableVC.view.addSubview(taskRecurringSwitchView)            //; print("adding switch")
                 
                 taskTaggingViewController.becomeFirstResponder()
                 taggingViewDisplayed = true

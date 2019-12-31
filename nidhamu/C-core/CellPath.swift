@@ -32,12 +32,13 @@ extension CollectionVC {
             
             if row >= headerRows {                                              /// time-of-day labels
                 
-//                var ampm = ""
-//                if row < headerRows + 12 {ampm = "am"}
-//                else {ampm = "pm"}
-//                cell.titleLabel.text = "\(amPmHours[row - headerRows])\(ampm)"  // use if time block size is 1 hr
-                
-                cell.titleLabel.text = dayQuarters[row - headerRows]          // use if time block size is 6 hrs
+                if timeBlockSize == 1 {
+                    var ampm = ""
+                    if row < headerRows + 12 {ampm = "am"}
+                    else {ampm = "pm"}
+                    cell.titleLabel.text = "\(amPmHours[row - headerRows])\(ampm)"
+                }
+                else {cell.titleLabel.text = dayQuarters[row - headerRows]}
                 
                 cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
             }

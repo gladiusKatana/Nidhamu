@@ -21,7 +21,6 @@ var oneHour = TimeInterval(3600)
 var springForwardExtraHour = 0.0;               var fallBackExtraHour = 0.0
 var dstOffset = 0.0
 
-var timeBlockSize = 6 /// length, in hours, of each time-block (cell)
 var nowRow = 0;                                 var nowColumn = 0
 
 var dstNotificationCellPath = (-1, -1)
@@ -47,3 +46,4 @@ var fullWeekdaysDisplayedOrder = ["Monday", "Tuesday", "Wednesday", "Thursday", 
 
 var amPmHours = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
 var dayQuarters = ["Morn", "Aft", "Eve", "Nite"]
+

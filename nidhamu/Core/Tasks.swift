@@ -2,6 +2,9 @@
   
   
   
+  ⁌o⁍ header date display when timeBlockSize = 6
+  * archive record of deferral
+  
   
   adjustable time block sizes               almost done                                             M
   
