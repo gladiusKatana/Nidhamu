@@ -2,9 +2,7 @@
   
   
   
-  ⁌o⁍ header date display when timeBlockSize = 6
-  * archive record of deferral
-  adjustable time block sizes               almost done                                             M
+  adjustable time block sizes               essentially done (verify extensibility)                 M
   
   
   
@@ -34,7 +32,7 @@
   listVC (today items)                                                                              VCs
   
   listVC (deadlineless items)
-                                                                    Jan. 1 '20 AppStore
+                                                                    APP STORE - week of Jan. 1-7 '20
   calendarVC
     
   tasksAtDate                                                                                       M
