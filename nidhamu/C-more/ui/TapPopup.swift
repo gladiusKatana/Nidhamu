@@ -25,17 +25,18 @@ extension PopupMenuVC {
                 
                 tasksOfBlockBeingTagged[taskIndex].taskStatus = selectedStatus! ///; print("tagged as: \(casename)\n")
                 
-                if [/*TaskStatus.deferred, */TaskStatus.upcoming].contains(selectedStatus)
+                if [TaskStatus.upcoming].contains(selectedStatus)
                     || selectedTaskWillRecur {
                     taskWillShowUpNextWeek = true
                 }
                 
-                if !taskWillShowUpNextWeek {addToArchives(taskBeingTagged)}
-                else {
+                if taskWillShowUpNextWeek {
                     if selectedTaskWillRecur {
                         addToArchives(taskBeingTagged)
                         taskBeingTagged.deadline += TimeInterval(86400 * 7)
                     }
+                } else {
+                    addToArchives(taskBeingTagged)
                 }
                 
                 if selectedStatus == .deferred { /// if task is deferred, but also marked recurring, recurring has no additional effect: task shows up just once next week, not twice
