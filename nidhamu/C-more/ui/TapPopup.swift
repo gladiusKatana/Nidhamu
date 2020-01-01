@@ -25,7 +25,7 @@ extension PopupMenuVC {
                 
                 tasksOfBlockBeingTagged[taskIndex].taskStatus = selectedStatus! ///; print("tagged as: \(casename)\n")
                 
-                if [TaskStatus.deferred, TaskStatus.upcoming].contains(selectedStatus)
+                if [/*TaskStatus.deferred, */TaskStatus.upcoming].contains(selectedStatus)
                     || selectedTaskWillRecur {
                     taskWillShowUpNextWeek = true
                 }
@@ -36,19 +36,21 @@ extension PopupMenuVC {
                         addToArchives(taskBeingTagged)
                         taskBeingTagged.deadline += TimeInterval(86400 * 7)
                     }
-                    if selectedStatus == .deferred { /// if task is deferred, but also marked recurring, recurring has no additional effect: task shows up just once next week, not twice
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                            timetableVC.setNavBarTitle(customString: nil) /// call it on any of the CollectionVCs
-                            
-                            tempRescalingBool = true
-                            deferralVC.downcastLayout?.autoFitHeightScale = timetableVC.downcastLayout?.autoFitHeightScale
-                            /// print("rescaled to \(deferralVC.downcastLayout?.autoFitHeightScale), tt scale is \(timetableVC.downcastLayout?.autoFitHeightScale)")
-                            timetableVC.gotoView(vc: deferralVC)
-                            tempRescalingBool = false
-                            deferredDescription = globalTaskIdentifier
-                        }
+                }
+                
+                if selectedStatus == .deferred { /// if task is deferred, but also marked recurring, recurring has no additional effect: task shows up just once next week, not twice
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        timetableVC.setNavBarTitle(customString: nil) /// call it on any of the CollectionVCs
+                        
+                        tempRescalingBool = true
+                        deferralVC.downcastLayout?.autoFitHeightScale = timetableVC.downcastLayout?.autoFitHeightScale
+                        /// print("rescaled to \(deferralVC.downcastLayout?.autoFitHeightScale), tt scale is \(timetableVC.downcastLayout?.autoFitHeightScale)")
+                        timetableVC.gotoView(vc: deferralVC)
+                        tempRescalingBool = false
+                        deferredDescription = globalTaskIdentifier
                     }
                 }
+                
                 updateBlockProcessingVariables(column: clm, row: rw, taskWillShowUpNextWeek: taskWillShowUpNextWeek, selectedStatus: selectedStatus!)
             } else {print("no task in dictionary at that index path")}
         } else {print("selected popup menu header")}
