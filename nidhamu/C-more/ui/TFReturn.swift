@@ -20,7 +20,7 @@ extension CollectionVC {    ///  /**/  commented code here is for animations
             if !keyboardLocked {previousTimeBlockPathSelected = defaultPathOutOfView}
             
         } else {
-            addToTimeBlocks(column: selectedTimeBlockPath[0], row: selectedTimeBlockPath[1], textEntered: textEntered,
+            addToTimeBlock(withColumn: selectedTimeBlockPath[0], withRow: selectedTimeBlockPath[1], textEntered: textEntered,
                             taskDeadline: selectedCellDate, withStatus: nil)
             
             if viewControllerType == .timetable {

@@ -19,7 +19,7 @@ func ==<T:Hashable,U:Hashable>(lhs: TimeBlock<T,U>,
 
 extension CollectionVC {
     
-    func addToTimeBlocks(column: Int, row: Int, textEntered: String, taskDeadline: Date, withStatus: TaskStatus?) {
+    func addToTimeBlock(withColumn column: Int, withRow row: Int, textEntered: String, taskDeadline: Date, withStatus: TaskStatus?) {
         
         var status : TaskStatus
         if withStatus != nil {status = withStatus!} else {status = .upcoming}
