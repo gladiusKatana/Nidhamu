@@ -52,7 +52,10 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         
         if result == .sent {lastArchiveEmailDate = Date()
             deleteArchivesLocally()
-            topVC.reloadCV()
+            defaultSaveData(saveDate: false, resetLastLogin: false, showDate: true, pryntTasks: false)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25 ) {
+                topVC.reloadCV()
+            }
         }
         
         ///print("handled email with result \(result.rawValue)")
@@ -61,7 +64,7 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
 
 func deleteArchivesLocally() {
     archiveTaskDescriptions.removeAll()
-    archiveTaskStatusStrings.removeAll()
+    archiveTaskStatusStrings.removeAll()        //; archiveTaskStatuses.removeAll()
     archiveTaskDateComponentArrays.removeAll()
 }
 
