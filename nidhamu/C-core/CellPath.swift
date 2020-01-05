@@ -16,14 +16,13 @@ extension CollectionVC {
         let customLayout = downcastLayout!
         let row = indexPath.item;                       let column = indexPath.section;
         let headerRows = customLayout.lockedHeaderRows; let headerSections = customLayout.lockedHeaderSections
-        
+        var fontSize = 0
         cell.xyCoordinate = [column, row]
         
         if viewControllerType == .timetable || viewControllerType == .deferralDates {
             if currentOrientation == "landscape" {
-                var size = 0
-                if textFieldDisplayed{size = 7} else {size = 9}
-                cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(size), weight: .ultraLight)
+                if textFieldDisplayed{fontSize = 7} else {fontSize = 9}
+                cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .ultraLight)
             }
         }
         
@@ -40,7 +39,8 @@ extension CollectionVC {
                 }
                 else {cell.titleLabel.text = dayQuarters[row - headerRows]}
                 
-                cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
+                if timeBlockSize == 1 && textFieldDisplayed && currentOrientation == "landscape" {fontSize = 7} else {fontSize = 12} 
+                cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .light)
             }
         }
         else {
@@ -49,7 +49,9 @@ extension CollectionVC {
                 if row == 4 && viewControllerType == .timetable
                     || row == 4  && viewControllerType == .deferralDates {
                     cell.titleLabel.text = headerWeekdayTitles[column - 1]
-                    cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
+                    
+                    if textFieldDisplayed && currentOrientation == "landscape" {fontSize = 7} else {fontSize = 12}
+                    cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .light)
                 }
             }
             
