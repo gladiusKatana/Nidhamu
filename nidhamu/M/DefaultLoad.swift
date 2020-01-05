@@ -20,6 +20,12 @@ func defaultLoadData(showDate: Bool) {                                          
         lastLoginDateComponents = [year, month, day, weekday, hour, minute]
     }
     
+    if let components = defaults.array(forKey: "savedLastArchiveEmailDate") {
+        lastArchiveDateComponents = components
+        lastArchiveEmailDate = dateFromComponents(lastArchiveDateComponents)
+        if showDate && lastArchiveEmailDate.timeIntervalSince1970 > 0 {pryntArchiveEmailDate()}
+    }
+    
     timeBlockPaths = defaults.array(forKey: "savedTimeBlockPaths") as? [[Int]] ?? []
     taskDescriptionArrays = defaults.array(forKey: "savedTaskDescriptionArrays") as? [[String]] ?? []
     taskDeadlineArrays = defaults.array(forKey: "savedTaskDeadlineArrays") as? [[[Any]]] ?? [[[]]]

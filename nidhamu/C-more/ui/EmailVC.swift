@@ -49,6 +49,8 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
                                didFinishWith result: MFMailComposeResult, error: Error?) {      //print("\nEMAIL dismissed📪\n")
         AppUtility.lockOrientation(.all)
         emailComposer.emailComposeVC.view.removeFromSuperview() ///; backgroundVC.view.removeFromSuperview()
+        
+        lastArchiveEmailDate = Date()
     }
 }
 

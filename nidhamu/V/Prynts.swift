@@ -50,6 +50,11 @@ func pryntCurrentDate() {
     print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "date right now          ", suffix: " \(dst)\n", dateFormat: .fullDay))             //; print("")      ///print("              (unformatted gmt)    \(Date())\n")
 }
 
+func pryntArchiveEmailDate() {
+    let dst = dstMarkerForConsole(lastArchiveEmailDate)
+    print(formattedDateString(lastArchiveEmailDate, roundedDown: false, showYear: true, prefix: "archives last emailed on          ", suffix: " \(dst)\n", dateFormat: .fullDay))             //; print("")      ///print("              (unformatted gmt)    \(Date())\n")
+}
+
 func dstMarkerForConsole(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
     let fbk = (truncateMins(date) == truncateMins(fallBackDate)) ? "(fall-back)" : ""
     let spf = (truncateMins(date) == truncateMins(springForwardDate)) ? "(spring-forward)" : ""

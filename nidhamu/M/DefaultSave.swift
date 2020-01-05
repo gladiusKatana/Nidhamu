@@ -43,12 +43,19 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
 }
 
 func setForKeys(_ defaults: UserDefaults, saveDate: Bool, resetLastLogin: Bool) {
+    
+    let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(lastArchiveEmailDate, roundedDown: false)
+    lastArchiveDateComponents = [year, month, day, weekday, hour, minute]
+    lastArchiveEmailDate = dateFromComponents(lastArchiveDateComponents)
+    defaults.set(lastArchiveDateComponents, forKey: "savedLastArchiveEmailDate")
+    
     if saveDate {
         let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(Date(), roundedDown: false)
         lastLoginDateComponents = [year, month, day, weekday, hour, minute]
         if resetLastLogin {lastLoginDate = dateFromComponents(lastLoginDateComponents)}
         defaults.set(lastLoginDateComponents, forKey: "savedLastLoginDate")
     }
+    
     defaults.set(timeBlockPaths, forKey: "savedTimeBlockPaths")
     defaults.set(taskDescriptionArrays, forKey: "savedTaskDescriptionArrays")
     defaults.set(taskStatusArrays, forKey: "savedTaskStatusArrays")

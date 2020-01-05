@@ -2,12 +2,12 @@
 import UIKit
 
 
+var lastLoginDate = Date();                     var selectedCellDate = Date()
+var lastArchiveEmailDate = makeDateFrom(year: 1969, month: 1, day: 1, hr: 0, min: 0, sec: 0)
+
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
+var lastArchiveDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 
-
-
-var lastLoginDate = Date()
-var selectedCellDate = Date()
 
 var springForwardDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec: 1)   /// so timeIntervalSince1970 = 0
 var fallBackDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec: 1)        /// ""
