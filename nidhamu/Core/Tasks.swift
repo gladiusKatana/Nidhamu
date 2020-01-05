@@ -20,8 +20,6 @@
   
   
   
-  archive frequency reminders
-  
   prevent using incorrect date
   
   checklogic, refactor, comments
@@ -49,6 +47,7 @@
   
   
   1st commit                                                         July 8 '19
+  
   
   
   Notes

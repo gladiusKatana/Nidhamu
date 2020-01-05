@@ -23,7 +23,7 @@ func defaultLoadData(showDate: Bool) {                                          
     if let components = defaults.array(forKey: "savedLastArchiveEmailDate") {
         lastArchiveDateComponents = components
         lastArchiveEmailDate = dateFromComponents(lastArchiveDateComponents)
-//        if showDate && lastArchiveEmailDate.timeIntervalSince1970 > 0 {pryntArchiveEmailDate()}
+        //        if showDate && lastArchiveEmailDate.timeIntervalSince1970 > 0 {pryntArchiveEmailDate()}
     }
     
     timeBlockPaths = defaults.array(forKey: "savedTimeBlockPaths") as? [[Int]] ?? []
@@ -65,10 +65,12 @@ func populateDictionaryFromDefaults() {
 
 func populateArchivedDatesAndStatusesFromDefaults() {
     var i = 0
-    for _ in archiveTaskStatuses {
-        archiveTaskStatusStrings.append(TaskStatus(rawValue: archiveTaskStatuses[i])!.caseName())
-        archiveTaskDateStrings.append(formattedDateString(dateFromInts(archiveTaskDateComponentArrays[i]), roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
-        i += 1
+    if !(archiveTaskStatuses.isEmpty || archiveTaskDateComponentArrays.isEmpty || archiveTaskStatusStrings.isEmpty) {
+        for _ in archiveTaskStatuses {
+            archiveTaskStatusStrings.append(TaskStatus(rawValue: archiveTaskStatuses[i])!.caseName())
+            archiveTaskDateStrings.append(formattedDateString(dateFromInts(archiveTaskDateComponentArrays[i]), roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
+            i += 1
+        }
     }
 }
 

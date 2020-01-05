@@ -50,7 +50,16 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         AppUtility.lockOrientation(.all)
         emailComposer.emailComposeVC.view.removeFromSuperview() ///; backgroundVC.view.removeFromSuperview()
         
-        lastArchiveEmailDate = Date()
+        if result == .sent {lastArchiveEmailDate = Date()
+            deleteArchivesLocally()
+            topVC.reloadCV()
+        }
     }
+}
+
+func deleteArchivesLocally() {
+    archiveTaskDescriptions.removeAll()
+    archiveTaskStatusStrings.removeAll()
+    archiveTaskDateComponentArrays.removeAll()
 }
 
