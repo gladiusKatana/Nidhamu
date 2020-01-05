@@ -3,7 +3,7 @@ import UIKit
 
 
 var lastLoginDate = Date();                     var selectedCellDate = Date()
-var lastArchiveEmailDate = makeDateFrom(year: 1969, month: 1, day: 1, hr: 0, min: 0, sec: 0)
+var lastArchiveEmailDate = Date()///makeDateFrom(year: 1969, month: 1, day: 1, hr: 0, min: 0, sec: 0)
 
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 var lastArchiveDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]

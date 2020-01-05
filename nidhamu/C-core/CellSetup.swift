@@ -30,7 +30,7 @@ extension CollectionVC {
                 if [column, row] == deferralPath {
                     cell.titleLabel.text = deferredDescription
                     addToTimeBlock(withColumn: column, withRow: row, textEntered: deferredDescription,
-                                    taskDeadline: cell.cellDate, withStatus: .deferred)
+                                   taskDeadline: cell.cellDate, withStatus: .deferred)
                     deferralPath = defaultPathOutOfView
                 }
             }
@@ -63,18 +63,23 @@ extension CollectionVC {
         else if viewControllerType == .archive {
             cell.titleLabel.textColor = .black;  cell.titleLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
             
-            if !(archiveTaskDescriptions.isEmpty || archiveTaskStatusStrings.isEmpty || archiveTaskDateComponentArrays.isEmpty) {
-                if column == 0 {
-                    cell.titleLabel.text = formattedDateString(dateFromInts(archiveTaskDateComponentArrays[row]), roundedDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
-                }
-                    
-                else if column == 1 {cell.titleLabel.text = "\(archiveTaskDescriptions[row])"}
-                else if column == 2 {cell.titleLabel.text = archiveTaskStatusStrings[row]}
-                else {
-                    cell.titleLabel.text = "\(dateFromInts(archiveTaskDateComponentArrays[row]))"
-                    cell.titleLabel.font = UIFont.systemFont(ofSize: 6, weight: .regular)
-                }
+            if column == 0 {
+                cell.titleLabel.text = archiveTaskDateComponentArrays.isEmpty ? "" : formattedDateString(dateFromInts(archiveTaskDateComponentArrays[row]), roundedDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
             }
+                
+            else if column == 1 {
+                cell.titleLabel.text = archiveTaskDescriptions.isEmpty ? "" : "\(archiveTaskDescriptions[row])"
+            }
+                
+            else if column == 2 {
+                cell.titleLabel.text = archiveTaskStatusStrings.isEmpty ? "" : "\(archiveTaskStatusStrings[row])"
+            }
+                
+            else {
+                cell.titleLabel.text = archiveTaskDateComponentArrays.isEmpty ? "" : "\(dateFromInts(archiveTaskDateComponentArrays[row]))"
+                cell.titleLabel.font = UIFont.systemFont(ofSize: 6, weight: .regular)
+            }
+            
         }
             
         else {print("[timeBlockDateSetup(:)] unrecognized collection view type")}

@@ -64,12 +64,14 @@ func dstMarkerForConsole(_ date: Date) -> String { /// creates a string notifyin
 }
 
 func dstMarkerForHeader(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
+    
     let fbk = (truncateMins(date) != truncateMins(fallBackDate)) ? "" :
     "🌖 Daylight Savings (fall-back): the 1am time-block lasts for 2 hours "
     let spf = (truncateMins(date) != truncateMins(springForwardDate)) ? "" :
     "🌔 Daylight Savings (spring-forward): the 2am time-block gets skipped "  //(1:59→ 3:00)"
     var archiveIntervalNotification = ""
     let daysSinceLastArchiveEmail = Int(Date().timeIntervalSince(lastArchiveEmailDate) / 86400)
+    
     if daysSinceLastArchiveEmail >= 30
     && fbk == "" && spf == ""
     {
