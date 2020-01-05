@@ -41,18 +41,20 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
 }
 
 func pryntLastLoginDate() { /// spelling 'prynt' with a y so this function's existence does not override Xcode autocomplete for print statements
-    let dst = dstMarkerForConsole(lastLoginDate)
-    print(formattedDateString(lastLoginDate, roundedDown: false, showYear: true, prefix: "last login              ", suffix: " \(dst)", dateFormat: .fullDay))                  ///print("              (unformatted gmt) \(lastLoggedInDate)\n")
+    pryntDate(lastLoginDate, prefix: "last login              ")
 }
 
 func pryntCurrentDate() {
-    let dst = dstMarkerForConsole(Date())
-    print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "date right now          ", suffix: " \(dst)\n", dateFormat: .fullDay))             //; print("")      ///print("              (unformatted gmt)    \(Date())\n")
+    pryntDate(Date(), prefix: "date right now          ")
 }
 
 func pryntArchiveEmailDate() {
-    let dst = dstMarkerForConsole(lastArchiveEmailDate)
-    print(formattedDateString(lastArchiveEmailDate, roundedDown: false, showYear: true, prefix: "archives last emailed on          ", suffix: " \(dst)\n", dateFormat: .fullDay))             //; print("")      ///print("              (unformatted gmt)    \(Date())\n")
+    pryntDate(lastArchiveEmailDate, prefix: "archives last emailed on")
+}
+
+func pryntDate(_ date: Date, prefix: String) {
+    let dst = dstMarkerForConsole(date)
+    print(formattedDateString(date, roundedDown: false, showYear: true, prefix: prefix, suffix: " \(dst)", dateFormat: .fullDay)) //; print("")
 }
 
 func dstMarkerForConsole(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
