@@ -68,6 +68,13 @@ func dstMarkerForHeader(_ date: Date) -> String { /// creates a string notifying
     "🌖 Daylight Savings (fall-back): the 1am time-block lasts for 2 hours "
     let spf = (truncateMins(date) != truncateMins(springForwardDate)) ? "" :
     "🌔 Daylight Savings (spring-forward): the 2am time-block gets skipped "  //(1:59→ 3:00)"
-    return "\(fbk)\(spf)"
+    var archiveIntervalNotification = ""
+    let daysSinceLastArchiveEmail = Int(Date().timeIntervalSince(lastArchiveEmailDate) / 86400)
+    if daysSinceLastArchiveEmail >= 30
+    && fbk == "" && spf == ""
+    {
+        archiveIntervalNotification = "You haven't backed up past-event archives for \(daysSinceLastArchiveEmail) days"
+    }
+    return "\(fbk)\(spf)\(archiveIntervalNotification)"
 }
 

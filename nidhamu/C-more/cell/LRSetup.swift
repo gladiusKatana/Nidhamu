@@ -16,7 +16,6 @@ extension BaseCell {
         addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .centerY, relatedBy: .equal,
                                          toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
     }
-    
 }
 
 func leftOrRightCellSetup(_ cell: BaseCell, indexPath: IndexPath, paths: [(Int, Int)])  {
@@ -39,7 +38,8 @@ func leftOrRightCellSetup(_ cell: BaseCell, indexPath: IndexPath, paths: [(Int, 
     else if (col, row) == paths[1] {
         dstNotificationCellPath = (col, row)
         cell.titleLabel.text = str
-        cell.titleLabel.textColor = darkNavy; weight = .medium}
+        cell.titleLabel.textColor = darkNavy; weight = .medium
+    }
     else {cell.titleLabel.textColor = defaultCellTextColour; cell.titleLabel.text = ""}
     
     if currentOrientation == "landscape" {

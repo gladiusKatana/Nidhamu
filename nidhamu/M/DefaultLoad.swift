@@ -23,7 +23,7 @@ func defaultLoadData(showDate: Bool) {                                          
     if let components = defaults.array(forKey: "savedLastArchiveEmailDate") {
         lastArchiveDateComponents = components
         lastArchiveEmailDate = dateFromComponents(lastArchiveDateComponents)
-        if showDate && lastArchiveEmailDate.timeIntervalSince1970 > 0 {pryntArchiveEmailDate()}
+//        if showDate && lastArchiveEmailDate.timeIntervalSince1970 > 0 {pryntArchiveEmailDate()}
     }
     
     timeBlockPaths = defaults.array(forKey: "savedTimeBlockPaths") as? [[Int]] ?? []
