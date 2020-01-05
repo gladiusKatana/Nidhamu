@@ -2,16 +2,8 @@
   
   
   
-  adjustable time block sizes               essentially done (verify extensibility)                 M
   
-  
-  
-  
-  buttons                                                                                           UI
-  
-  icon
-  
-  launch screen
+  adjustable time block sizes (essentially done; verify extensibility)                              M
   
   Numbers template                                                                                  UX
   
@@ -20,33 +12,42 @@
   
   
   
-  prevent using incorrect date
+  tasksAtDate                                                                                       M
+  
+  listVC (today items)                                                                              VCs
+                                                                    
+  week-navigation buttons                                                                           UX
+  
+  prevent user changing date
+  
+  
+  
   
   checklogic, refactor, comments
   
-
+  readme
   
+  buttons                                                                                           UI
   
-  listVC (today items)                                                                              VCs
+  icon
   
-  listVC (deadlineless items)
-                                                                    APP STORE - week of Jan. 1-7 '20
-  calendarVC
-    
-  tasksAtDate                                                                                       M
+  launch screen                             APP STORE ASAP aim for: Jan.12/13
   
   
   
   
-  + (complete) orientation independence (ask apple engineer)                                        UI
+  
+  
+  + calendarVC
   + login date interval outlined/animated, not perma-coloured
   + device specific fonts; orientation enum
-  ✧ cascading task deferrals? (probably not)
-  ✧ loopWeeks = false as setting? (probably not)
+  + complete orientation independence (consult apple engineer)
+  
   
   
   
   1st commit                                                         July 8 '19
+  
   
   
   
@@ -56,14 +57,11 @@
   ⁌o⁍ denotes bugfixes
   
   
-  ✧ denotes features that may not necessarily be a good idea to implement (eg should user be able to defer *all* their upcoming tasks at once?)
+  * "type" labels may refer to development pattern categories M, V, C, VM etc. (VC = view controller)
   
   
-  * Data, UI, VCs (etc) labels map loosely to MVC. (This Task List emphasizes features, design, etc.: not very code-specific)
+  * all .swift files in this version are aesthetically optimized for a 13" screen
   
   
-  ⚔️ all Swift files in this version are aesthetically optimized for a 13" screen
-  
-  
-  ✎ this is Open Source software. Forks & Contributors welcomed. https://github.com/gladiusKatana/Nidhamu */
+  * this is Open Source software. Contributors welcomed. https://github.com/gladiusKatana/Nidhamu */
  
