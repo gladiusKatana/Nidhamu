@@ -18,7 +18,7 @@ extension CollectionVC {
                     taskArraysToProcess.append(tasks)
                 } ///else {print("task array-of-arrays already contains tasks: \(tasks)")}
             }
-            if row >= 23 && timeBlockSize == 1 /// this is the row whose task deadlines are at 6pm
+            if row >= 24 && timeBlockSize == 1 /// this is the row whose task deadlines are at 7pm
                 || row >= 8 && timeBlockSize == 6
             {
                 thereWillBeARowException = true

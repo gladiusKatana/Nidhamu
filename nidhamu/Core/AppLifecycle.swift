@@ -14,7 +14,7 @@ extension AppDelegate {
         findSpringForwardDate(startingDate: Date(), printDSTDates: showDSTDates)                 /// see above
         
         checkOrientation()
-        defaultLoadData(showDate: true)
+        defaultLoadData(showDate: false)
         topVC.reloadCV()
     }
     
@@ -24,6 +24,7 @@ extension AppDelegate {
     }
     
     func applicationWillResignActive(_ application: UIApplication) {                    ///customApplicationStatusPrint("⏸will resign active")
+        thereWillBeARowException = false
         if !taggingViewDisplayed {
             defaultSaveData(saveDate: true, resetLastLogin: false, showDate: false, pryntTasks: true)
         }

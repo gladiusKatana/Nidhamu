@@ -54,6 +54,8 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
             deleteArchivesLocally()
             topVC.reloadCV()
         }
+        
+        ///print("handled email with result \(result.rawValue)")
     }
 }
 
