@@ -9,9 +9,9 @@ extension CollectionVC {
         var hoursFromNow = TimeInterval(0)
         let headers = layout.lockedHeaderRows
         let headerOffset = row >= headers ? 0 : 3600 * (row - headers) * (timeBlockSize - 1)
- 
+        
         hoursFromNow = TimeInterval(3600 * timeBlockSize * (row - nowRow) - headerOffset)
-
+        
         let daysFromNow = TimeInterval(86400 * (column - nowColumn))
         var weekAheadInt = 0
         
@@ -19,7 +19,13 @@ extension CollectionVC {
         
         let oneHour = TimeInterval(3600); let oneWeek = TimeInterval(86400 * 7)
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
-        let date = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset)
+        var date = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset)
+        
+        if timeBlockSize > 1 && row >= headers {                            /// truncates HOUR of cell dates, when multi-hour-length time blocks are enabled
+            let timeBlockStartHr = (row - headers) * timeBlockSize
+            let hrsIntoCurrentBlock = Calendar.current.component(.hour, from: date) - timeBlockStartHr
+            if  hrsIntoCurrentBlock > 0 {date = date - TimeInterval(3600 * hrsIntoCurrentBlock)}
+        }
         
         if date > springForwardDate + oneHour {
             dstOffset = -1
@@ -30,13 +36,15 @@ extension CollectionVC {
             } else {dstOffset = 0}
         }
         
-        if truncateMins(Date()) > truncateMins(springForwardDate) { ///print("finding next spring-forward date, to prevent off-by-1-hour bug")
+        if truncateMins(Date()) > truncateMins(springForwardDate) {         ///print("finding next spring-forward date, to prevent off-by-1-hour bug")
             foundNextSpringForwardDate = false
             findSpringForwardDate(startingDate: Date(), printDSTDates: showDSTDates)
             reloadCollectionViewAfterDelay(0)
         }
         
-        let cellDate = date + dstOffset * oneHour
+        let minTrunkDate = timeBlockSize > 1 ? truncateMins(date) : date    /// truncates MINUTES of cell dates, when multi-hour-length time blocks are enabled
+        
+        let cellDate = minTrunkDate + dstOffset * oneHour
         let isNextWeek = weekAheadInt == 1 ? true : false
         
         var isLastLogin = false
