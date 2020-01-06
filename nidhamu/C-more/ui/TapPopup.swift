@@ -7,11 +7,10 @@ extension PopupMenuVC {
                                  didSelectItemAt indexPath: IndexPath) {
         
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
-        cell.backgroundColor = taskAddingColour
-        
         let layout = downcastLayout!; let row = indexPath.item; let column = indexPath.section
         
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
+            cell.backgroundColor = taskAddingColour
             
             guard let firstPathToProcess = indexPathsToProcess.first else {print("no paths to process... even though popup was presented"); return}
             
@@ -54,7 +53,7 @@ extension PopupMenuVC {
                 
                 updateBlockProcessingVariables(column: clm, row: rw, taskWillShowUpNextWeek: taskWillShowUpNextWeek, selectedStatus: selectedStatus!)
             } else {print("no task in dictionary at that index path")}
-        } else {print("selected popup menu header")}
+        } ///else {print("selected popup menu header")}
     }
 }
 
