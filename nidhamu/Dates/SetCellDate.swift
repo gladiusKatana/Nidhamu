@@ -6,7 +6,12 @@ extension CollectionVC {
     func setCellDate(baseDate: Date, cellOffset: Int, cell: CustomCell, column: Int, row: Int,
                      layout: CustomFlowLayout, looping: Bool, withColours: Bool) -> (Date, Bool, Bool) {
         
-        let hoursFromNow = TimeInterval(3600 * timeBlockSize * (row - nowRow))
+        var hoursFromNow = TimeInterval(0)
+        let headers = layout.lockedHeaderRows
+        let headerOffset = row >= headers ? 0 : 3600 * (row - headers) * (timeBlockSize - 1)
+ 
+        hoursFromNow = TimeInterval(3600 * timeBlockSize * (row - nowRow) - headerOffset)
+
         let daysFromNow = TimeInterval(86400 * (column - nowColumn))
         var weekAheadInt = 0
         
@@ -14,7 +19,7 @@ extension CollectionVC {
         
         let oneHour = TimeInterval(3600); let oneWeek = TimeInterval(86400 * 7)
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
-        let date = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset * timeBlockSize)
+        let date = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset)
         
         if date > springForwardDate + oneHour {
             dstOffset = -1
