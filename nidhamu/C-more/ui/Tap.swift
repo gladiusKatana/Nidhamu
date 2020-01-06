@@ -21,8 +21,6 @@ extension CollectionVC {
                 selectedTimeBlockPath = [column, row]                                               ///; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
                 
-                cell.backgroundColor = taskAddingColour
-                
                 if tasksAtIndexPath[timeBlock] == nil || textFieldDisplayed {
                     
                     if previousTimeBlockPathSelected == defaultPathOutOfView {
@@ -32,7 +30,7 @@ extension CollectionVC {
                         animateTimeBlockTappedToAddTask(cell: cell)                                 /// may not use. Looks nice; slows User down a little bit?
                         cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
                             self.prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)
                         }
                     } else {

@@ -29,8 +29,9 @@ extension CollectionVC {
     }
     
     func formatAndPresentTextField(_ textFieldContents: String) {
-        textFieldWidth = globalWindow.frame.width * 3 / 4           /// 3/4 = 6/8 e.g. 8 - 2 columns (1 right, 1 left of text field)
-        let eighthWidth = globalWindow.frame.width / 8
+        let width = globalWindow.frame.width
+        textFieldWidth = width * 3 / 4           /// 3/4 = 6/8 e.g. 8 - 2 columns (1 right, 1 left of text field)
+        let eighthWidth = width / 8
         
         taskField.placeholder = textFieldContents
         taskField.delegate = self
