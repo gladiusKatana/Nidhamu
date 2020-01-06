@@ -21,7 +21,7 @@ extension CollectionVC {    ///  /**/  commented code here is for animations
             
         } else {
             addToTimeBlock(withColumn: selectedTimeBlockPath[0], withRow: selectedTimeBlockPath[1], textEntered: textEntered,
-                            taskDeadline: selectedCellDate, withStatus: nil)
+                           taskDeadline: selectedCellDate, withStatus: nil)
             
             if viewControllerType == .timetable {
                 if !keyboardLocked {

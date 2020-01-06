@@ -3,7 +3,7 @@ import UIKit
 
 extension PopupMenuVC {
     
-    func addToArchives(_ taskBeingTagged: SimpleTask) {     print("adding \(taskBeingTagged.taskDescription) to archives")
+    func addToArchives(_ taskBeingTagged: SimpleTask) {     print("adding task '\(taskBeingTagged.taskDescription)' to archives")
         
         if !archiveTasks.contains(taskBeingTagged) {
             archiveTasks.append(taskBeingTagged)

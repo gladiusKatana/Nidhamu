@@ -73,7 +73,7 @@ func dstMarkerForHeader(_ date: Date) -> String { /// creates a string notifying
     let daysSinceLastArchiveEmail = Int(Date().timeIntervalSince(lastArchiveEmailDate) / 86400)
     
     if daysSinceLastArchiveEmail >= 30
-    && fbk == "" && spf == ""
+        && fbk == "" && spf == ""
     {
         archiveIntervalNotification = "You haven't backed up past-event archives for \(daysSinceLastArchiveEmail) days"
     }
