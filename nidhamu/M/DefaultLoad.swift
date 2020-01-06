@@ -65,12 +65,10 @@ func populateDictionaryFromDefaults() {
 
 func populateArchivedDatesAndStatusesFromDefaults() {
     var i = 0
-    if !(archiveTaskStatuses.isEmpty || archiveTaskDateComponentArrays.isEmpty || archiveTaskStatusStrings.isEmpty) {
-        for _ in archiveTaskStatuses {
-            archiveTaskStatusStrings.append(TaskStatus(rawValue: archiveTaskStatuses[i])!.caseName())
-            archiveTaskDateStrings.append(formattedDateString(dateFromInts(archiveTaskDateComponentArrays[i]), roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
-            i += 1
-        }
+    for _ in archiveTaskStatuses {
+        archiveTaskStatusStrings.append(TaskStatus(rawValue: archiveTaskStatuses[i])!.caseName())
+        archiveTaskDateStrings.append(formattedDateString(dateFromInts(archiveTaskDateComponentArrays[i]), roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
+        i += 1
     }
 }
 
