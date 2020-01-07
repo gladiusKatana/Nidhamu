@@ -34,12 +34,12 @@ extension CollectionVC {
         if let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName) {
             
             var csvText = ""
-            csvText.append("Description; Status; Date; Timestamp\n")
+            csvText.append("Description; Status; Timestamp (always uses GMT timezone)\n")
             
             var i = 0
             for _ in archiveTaskDescriptions { /// Comma Separated Values is a misnomer, when exporting to Numbers -- must separate columns by semicolon, not comma
                 let timestamp = dateFromInts(archiveTaskDateComponentArrays[i]).timeIntervalSince1970
-                csvText.append("\(archiveTaskDescriptions[i]);\(archiveTaskStatusStrings[i]);\(archiveTaskDateStrings[i]);\(timestamp)\n")
+                csvText.append("\(archiveTaskDescriptions[i]);\(archiveTaskStatusStrings[i]);\(timestamp)\n") ///;\(archiveTaskDateStrings[i])
                 i += 1
             }
             

@@ -9,6 +9,8 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     var sec2Digs = "\(second)";                 if second < 10 {sec2Digs = "0\(second)"}
     var ampm = ""
     
+    let dy = day < 10 ? "0\(day)" : "\(day)"
+    
     var hr = (hour < 13) ? hour : hour - 12
     if hr == 0 {hr = 12}                            // * this is just to make a string representing the date, not the date itself
     if hour < 12 {ampm = "am"} else {ampm = "pm"}   // since hr is an integer from 0 to 23
@@ -18,18 +20,19 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     let prx = (prefix == "") ? " " : "\(prefix ?? "") "
     
     switch dateFormat {
-    case .fullDay:                  return "\(prx)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits)\(ampm)\(suffix)"
+    case .fullDay:                  return "\(prx)\(weekday) \(month) \(day), \(yearString), \(hr):\(minTwoDigits)\(ampm)\(suffix)"
         
     case .fullDayWithYear:          return "\(prx)\(weekday) \(month) \(day), \(year) \(hr):\(minTwoDigits)\(ampm)\(suffix)"
         
-    case .fullDayWithSeconds:       return "\(prx)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits):\(sec2Digs)\(ampm)\(suffix)"
+    case .fullDayWithSeconds:       return "\(prx)\(weekday) \(month) \(day), \(yearString), \(hr):\(minTwoDigits):\(sec2Digs)\(ampm)\(suffix)"
         
     case .fullDayShortForm:         return "\(prx)\(wkdy) \(mnth) \(day) \(yearString), \(hr)\(ampm)\(suffix)"
         
-    case .fullDayShortFormNoDots:   return "\(prx)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString)\(hr)\(ampm)\(suffix)"
+    case .fullDayShortFormNoDots:   return "\(prx)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString), \(hr)\(ampm)\(suffix)"
         
-    case .archiveFormat:            return "\(prx)\(weekday) \(month) \(day) \(year) @ \(hr)\(ampm)\(suffix)"
-        ///** atypical, larger colon ('꞉' , not ':') used for above case, because typical colon is a .csv column separator in Mac Numbers, and archived tagged tasks are exported via .csv in this app
+    case .archiveFormat:            if hour < 12 {ampm = "AM"} else {ampm = "PM"}
+        return "\(weekday) \(dy) \(month) \(year) \(hr)\(ampm)"/// not for use in csv emails (timestamps used instead; can paste csv data into template spreadsheet to see dates * )
+        ///* IF dates were used in csv emails, would need to use atypical, larger colon in .archiveFormat return ('꞉' , not ':'), since a (regular) colon is a .csv column separator in Mac Numbers
         
     case .archiveCSVTitle:          return "\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(year), \(hr)꞉\(minTwoDigits)\(ampm)"/// see  **  above
         
