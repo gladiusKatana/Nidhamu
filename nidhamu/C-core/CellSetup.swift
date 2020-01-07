@@ -64,20 +64,22 @@ extension CollectionVC {
             cell.titleLabel.textColor = .black;  cell.titleLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
             
             if column == 0 {
-                cell.titleLabel.text = archiveTaskDateComponentArrays.isEmpty ? "" : formattedDateString(dateFromInts(archiveTaskDateComponentArrays[row]), roundedDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
+                cell.titleLabel.text = archiveTaskDateComponentArrays.isEmpty ? "" : formattedDateString(dateFromInts(archiveTaskDateComponentArrays[row]), roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
             }
                 
             else if column == 1 {
                 cell.titleLabel.text = archiveTaskDescriptions.isEmpty ? "" : "\(archiveTaskDescriptions[row])"
             }
                 
-            else if column == 2 {
-                cell.titleLabel.text = archiveTaskStatusStrings.isEmpty ? "" : "\(archiveTaskStatusStrings[row])"
-            }
+//            else if column == 2 {
+//                cell.titleLabel.text = archiveTaskStatusStrings.isEmpty ? "" : "\(archiveTaskStatusStrings[row])"
+//            }
                 
             else {
-                cell.titleLabel.text = archiveTaskDateComponentArrays.isEmpty ? "" : "\(dateFromInts(archiveTaskDateComponentArrays[row]))"
-                cell.titleLabel.font = UIFont.systemFont(ofSize: 6, weight: .regular)
+//                cell.titleLabel.text = archiveTaskDateComponentArrays.isEmpty ? "" : "\(dateFromInts(archiveTaskDateComponentArrays[row]))"
+//                cell.titleLabel.font = UIFont.systemFont(ofSize: 6, weight: .regular)
+                
+                cell.titleLabel.text = archiveTaskStatusStrings.isEmpty ? "" : "\(archiveTaskStatusStrings[row])"
             }
             
         }
