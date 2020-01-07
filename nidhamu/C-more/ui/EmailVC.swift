@@ -64,7 +64,7 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
 
 func deleteArchivesLocally() {
     archiveTaskDescriptions.removeAll()
-    archiveTaskStatusStrings.removeAll()        //; archiveTaskStatuses.removeAll()
+    archiveTaskStatuses.removeAll();            archiveTaskStatusStrings.removeAll()
     archiveTaskDateComponentArrays.removeAll()
 }
 
