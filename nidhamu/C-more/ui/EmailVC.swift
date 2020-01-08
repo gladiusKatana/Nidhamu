@@ -48,20 +48,23 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         AppUtility.lockOrientation(.all)
         emailComposer.emailComposeVC.view.removeFromSuperview() ///; backgroundVC.view.removeFromSuperview()
         
-        if result == .sent {
-            lastArchiveEmailDate = Date()
-            deleteArchivesLocally()
-            defaultSaveData(saveDate: false, resetLastLogin: false, showDate: true, pryntTasks: false)
-            topVC.reloadCV()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25 ) {
-                topVC.gotoView(vc: timetableVC)
-            }
-        }
+        updateArchiveRelatedData(result: result)
         
         ///print("handled email with result \(result.rawValue)")
     }
 }
 
+func updateArchiveRelatedData(result: MFMailComposeResult) {
+    if result == .sent {
+        lastArchiveEmailDate = Date()
+        deleteArchivesLocally()
+        defaultSaveData(saveDate: false, resetLastLogin: false, showDate: true, pryntTasks: false)
+        topVC.reloadCV()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25 ) {
+            topVC.gotoView(vc: timetableVC)
+        }
+    }
+}
 
 func deleteArchivesLocally() {
     archiveTaskDescriptions.removeAll()
