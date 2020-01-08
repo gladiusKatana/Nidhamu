@@ -38,9 +38,7 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
                 self.present(self.emailComposeVC, animated: true, completion: nil)
             }
             
-        } catch let error {
-            print("We have encountered error \(error.localizedDescription)")
-        }
+        } catch let error {print("We have encountered error \(error.localizedDescription)")}
         
         return emailComposeVC
     }
@@ -50,17 +48,20 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         AppUtility.lockOrientation(.all)
         emailComposer.emailComposeVC.view.removeFromSuperview() ///; backgroundVC.view.removeFromSuperview()
         
-        if result == .sent {lastArchiveEmailDate = Date()
+        if result == .sent {
+            lastArchiveEmailDate = Date()
             deleteArchivesLocally()
             defaultSaveData(saveDate: false, resetLastLogin: false, showDate: true, pryntTasks: false)
+            topVC.reloadCV()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25 ) {
-                topVC.reloadCV()
+                topVC.gotoView(vc: timetableVC)
             }
         }
         
         ///print("handled email with result \(result.rawValue)")
     }
 }
+
 
 func deleteArchivesLocally() {
     archiveTaskDescriptions.removeAll()
