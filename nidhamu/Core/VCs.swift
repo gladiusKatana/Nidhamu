@@ -7,7 +7,7 @@ var backgroundVC = UIViewController()
 var topVC = CollectionVC(.initial, backgroundColour: UIColor.clear, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: timetableLayout)
 
 
-var timeBlockSize = 1                           /// length, in hours, of each time-block (cell)             /// * * may make this an enum, with values = 1, 3, 6, 12, 24 etc
+var timeBlockSize = 6                           /// length, in hours, of each time-block (cell)             /// * * may make this an enum, with values = 1, 3, 6, 12, 24 etc
 var timetableHeaders = 5
 var timetableRows = 24 / timeBlockSize + timetableHeaders
 var cellHeightFactor = CGFloat(1);  var headerHeightFactor = CGFloat(1)

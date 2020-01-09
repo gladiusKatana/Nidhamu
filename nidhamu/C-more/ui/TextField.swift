@@ -6,7 +6,7 @@ extension CollectionVC {
     func prepareAndPresentTextField() {
         globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
         backgroundVC.view.backgroundColor = globalWindow.backgroundColor
-        let dateStr = formattedDateString(selectedCellDate, roundedDown: false, showYear: false, prefix: "Task Deadline: ", suffix: "", dateFormat: .fullDayShortForm) /// ! probably needs smaller font on iPhone SE in portrait
+        let dateStr = formattedDateString(selectedCellDate, roundedDown: false, showYear: false, prefix: "Add Task [Due:", suffix: "]", dateFormat: .fullDayShortForm) /// ! probably needs smaller font on iPhone SE in portrait
         formatAndPresentTextField(dateStr)
     }
     

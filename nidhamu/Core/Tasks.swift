@@ -13,10 +13,12 @@
   
   
   tasksAtDate                                                                                       M
-  
-  listVC (today items)                                                                              VCs
                                                                     
-  week-navigation buttons                                                                           UX
+  week-navigation buttons                                                                           UI
+  
+  list tasks if time blocks > 1hr
+  
+  list VC: entire day, week
   
   prevent user changing date
   

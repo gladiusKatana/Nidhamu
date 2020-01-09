@@ -14,14 +14,14 @@ extension CollectionVC {
                 title = "Timetable"
             }
             else if viewControllerType == .archive {
-                title = "Past-Deadline Tasks"
+                title = "Past-Due Tasks"
             }
             else if viewControllerType == .deferralDates {
                 title = "Select date to defer '\(globalTaskIdentifier)'"
             }
             else { /// ie if viewControllerType is the task list VC.   Note, will add more VCs soon (see Notes.swift)
                 title = formattedDateString(selectedCellDate, roundedDown: true, showYear: false,
-                                            prefix: "Tasks", suffix: "", dateFormat: .hourlyTimeBlock)
+                                            prefix: "Tasks Due", suffix: "", dateFormat: .hourlyTimeBlock)
             }
         }
         

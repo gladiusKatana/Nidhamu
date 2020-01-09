@@ -10,7 +10,7 @@ class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRe
     
     lazy var taskField: UITextField = {
         let taskField = UITextField(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        taskField.font = UIFont.systemFont(ofSize: 15)
+        taskField.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         taskField.borderStyle = UITextField.BorderStyle.roundedRect
         taskField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         taskField.keyboardType = UIKeyboardType.default

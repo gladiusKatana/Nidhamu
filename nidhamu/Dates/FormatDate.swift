@@ -9,24 +9,23 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     var sec2Digs = "\(second)";                 if second < 10 {sec2Digs = "0\(second)"}
     var ampm = ""
     
-    let dy = day < 10 ? "0\(day)" : "\(day)"
+    let prx = (prefix == "") ? " " : "\(prefix ?? "") "
+    let dy = day < 10 ? "0\(day)" : String(day)//"\(day)"
     
     var hr = (hour < 13) ? hour : hour - 12
     if hr == 0 {hr = 12}                            // * this is just to make a string representing the date, not the date itself
     if hour < 12 {ampm = "am"} else {ampm = "pm"}   // since hr is an integer from 0 to 23
     
-    var yearString = ""
-    if showYear && (month == "January" || month == "December") {yearString = "\(year)"}/// also add  || (Date() > last-login-date + ~30 days)
-    let prx = (prefix == "") ? " " : "\(prefix ?? "") "
+    let yearString = showYear && (month == "January" || month == "December") ? "\(year)" : "" /// also add  || (Date() > last-login-date + ~30 days)
     
     switch dateFormat {
     case .fullDay:                  return "\(prx)\(weekday) \(month) \(day), \(yearString), \(hr):\(minTwoDigits)\(ampm)\(suffix)"
         
     case .fullDayWithYear:          return "\(prx)\(weekday) \(month) \(day), \(year) \(hr):\(minTwoDigits)\(ampm)\(suffix)"
         
-    case .fullDayWithSeconds:       return "\(prx)\(weekday) \(month) \(day), \(yearString), \(hr):\(minTwoDigits):\(sec2Digs)\(ampm)\(suffix)"
+    case .fullDayWithSeconds:       return "\(prx)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits):\(sec2Digs)\(ampm)\(suffix)"
         
-    case .fullDayShortForm:         return "\(prx)\(wkdy) \(mnth) \(day) \(yearString), \(hr)\(ampm)\(suffix)"
+    case .fullDayShortForm:         return "\(prx)\(wkdy) \(mnth) \(day)\(yearString), \(hr)\(ampm)\(suffix)"
         
     case .fullDayShortFormNoDots:
         return "\(prx)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString), \(hr):\(minTwoDigits)\(ampm)\(suffix)"
