@@ -17,14 +17,15 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
             
             let title = task.taskDescription
             let titleCount = "\(title)".count
-            let bound = 24
-            var count = (titleCount < bound) ? bound - titleCount : 0 ///titleCount - bound
+            let titleBound = 24
+            var count = (titleCount < titleBound) ? titleBound - titleCount : 0 ///titleCount - bound
             let titleExcess = String(repeating: " ", count: count)
             
             let dateString = formattedDateString(task.deadline, roundedDown: false,
                                                  showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortFormNoDots)
+            let dateBound = 28
             let dateStringCount = dateString.count
-            count = (dateStringCount < bound) ? bound - dateStringCount : 0 ///dateStringCount - bound
+            count = (dateStringCount < dateBound) ? dateBound - dateStringCount : 0 ///dateStringCount - bound
             let dateExcess = String(repeating: " ", count: count)
             
             let restOfString = "\(gap)\(excess)\(title)\(titleExcess)\(dateString)\(dateExcess)\(task.taskStatus)"
