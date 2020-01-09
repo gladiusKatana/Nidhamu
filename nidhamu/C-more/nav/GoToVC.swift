@@ -9,8 +9,7 @@ extension CollectionVC {
         
         if topVC != vc {
             
-            globalWindow.backgroundColor = cellDefaultColour
-            
+            globalWindow.backgroundColor = defaultColour
             backgroundVC.view.backgroundColor = globalWindow.backgroundColor
             
             setupTitleAndPresentViewController(vc: vc) { () -> () in

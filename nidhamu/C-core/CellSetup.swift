@@ -38,7 +38,7 @@ extension CollectionVC {
             
         else if viewControllerType == .taskList {
             cell.cellDate = selectedCellDate
-            cell.backgroundColor = cellDefaultColour
+            cell.backgroundColor = defaultColour
             
             guard let taskAtTimeBlock = tasksAtIndexPath[timeBlock] else {
                 cell.titleLabel.text = "(no items yet)"; return // will not be executed since task list vc is only go-to-able via a time block
