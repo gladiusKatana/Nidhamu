@@ -21,12 +21,6 @@ extension CollectionVC {
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
         let date = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead + TimeInterval(3600 * cellOffset)
         
-        //        if timeBlockSize > 1 && row >= headers {                            /// truncates HOUR of cell dates, when multi-hour-length time blocks are enabled
-        //            let timeBlockStartHr = (row - headers) * timeBlockSize
-        //            let hrsIntoCurrentBlock = Calendar.current.component(.hour, from: date) - timeBlockStartHr
-        //            if  hrsIntoCurrentBlock > 0 {date = date - TimeInterval(3600 * hrsIntoCurrentBlock)}
-        //        }
-        
         if date > springForwardDate + oneHour {
             dstOffset = -1
         }

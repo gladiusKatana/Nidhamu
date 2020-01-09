@@ -1,17 +1,17 @@
 // Animations       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
-import UIKit
-
-extension CollectionVC {
+//import UIKit
+//
+//extension CollectionVC {
     
-    func animateTimeBlockTappedToAddTask(cell: CustomCell) {
-        
-        UIView.animate(
-            withDuration: 0.5, delay: 0,
-            usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveLinear, animations: {
-                cell.backgroundColor = taskAddingColour
-        }, completion: nil /*{(finished:Bool) in self.prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)}*/
-        )
-    }
+//    func animateTimeBlockTappedToAddTask(cell: CustomCell) {
+//
+//        UIView.animate(
+//            withDuration: 0.5, delay: 0,
+//            usingSpringWithDamping: 1, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveLinear, animations: {
+//                cell.backgroundColor = taskAddingColour
+//        }, completion: nil /*{(finished:Bool) in self.prepareAndPresentTextField(dateString: selectedTimeBlockDateDescription)}*/
+//        )
+//    }
     
     // commented out only for now; may be implemented again soon
     
@@ -41,5 +41,5 @@ extension CollectionVC {
     //        }, completion: nil)
     //    }
     
-}
+//}
 

@@ -6,7 +6,7 @@ func processCurrentDate() {
     let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(Date(), roundedDown: true)
     
     let timeOfDay = Calendar.current.component(.hour, from: Date()) / timeBlockSize
-    nowRow = timeOfDay + timetableLayout.lockedHeaderRows                 /// for 'nowCell': tabular position of current date
+    nowRow = timeOfDay + timetableLayout.lockedHeaderRows /// for 'nowCell': tabular position of current date
     nowColumn = fullWeekdaysDisplayedOrder.firstIndex(of: weekday)! + timetableLayout.lockedHeaderSections
     
     //print("finding current date (now-cell [\(nowColumn),\(nowRow)])")
@@ -25,9 +25,9 @@ func processCurrentDate() {
 
 extension CollectionVC {
     
-    func periodicDateRefresh(completion: () -> ()) {                            //print("·", terminator: "")
+    func periodicDateRefresh(completion: () -> ()) {                    //print("·", terminator: "")
         
-        if "\(Date())".contains(":59:5") {                                      //print("DATE: \(Date())")
+        if "\(Date())".contains(":59:5") {                              //print("DATE: \(Date())")
             reloadedFromHourTickingOver = false
         }
         

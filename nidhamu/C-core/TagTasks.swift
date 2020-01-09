@@ -3,9 +3,9 @@ import UIKit
 
 extension CollectionVC {
     
-    func tagTasksSinceLastLogin() {                             //print("tagging blocks (saved timeblocks? \(cached BlocksAndTheirPaths)")
+    func tagTasksSinceLastLogin() {                                 //print("tagging blocks (saved timeblocks? \(cached BlocksAndTheirPaths)")
         
-        if !indexPathsToProcess.isEmpty {                       /// already (sort of) checked for this, in the caller (but used  task ArraysToProcess)
+        if !indexPathsToProcess.isEmpty {                           /// already (sort of) checked for this, in the caller (but used  task ArraysToProcess)
             
             let column = indexPathsToProcess.first![0]; let row = indexPathsToProcess.first![1]     ///; print("presenting popup at (\(column), \(row))")
             
@@ -14,7 +14,7 @@ extension CollectionVC {
             presentPopupViewToTagTasks(column: column, row: row)
         }
             
-        else {                                                  //print("\npaths to process empty\n")
+        else {                                                      //print("\npaths to process empty\n")
             
             if topVC.viewControllerType != .deferralDates {
                 if downcastLayout?.autoFitHeightScale != 1 {
