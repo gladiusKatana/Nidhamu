@@ -15,6 +15,7 @@ extension PopupMenuVC {
             guard let firstPathToProcess = indexPathsToProcess.first else {print("no paths to process... even though popup was presented"); return}
             
             let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1]    /// components of path of current item being marked
+            
             var taskWillShowUpNextWeek = false
             
             if let tasksOfBlockBeingTagged = tasksAtIndexPath[TimeBlock(values:(clm, rw))] {  /// writing to the dictionary
@@ -24,8 +25,9 @@ extension PopupMenuVC {
                 
                 tasksOfBlockBeingTagged[taskIndex].taskStatus = selectedStatus! ///; print("tagged as: \(casename)\n")
                 
-                if [TaskStatus.upcoming].contains(selectedStatus) || selectedTaskWillRecur {
-                    taskWillShowUpNextWeek = true
+                if /*[TaskStatus.upcoming].contains(selectedStatus) ||*/  /// ability to tag an event as .recurring no longer enabled: .recurring is only default initial status
+                    selectedTaskWillRecur {
+                    taskWillShowUpNextWeek = true /// probably eliminate this variable soon
                 }
                 
                 if taskWillShowUpNextWeek {
@@ -35,8 +37,11 @@ extension PopupMenuVC {
                     }
                 } else {addToArchives(taskBeingTagged)}
                 
+                updateBlockProcessingVariables(column: clm, row: rw,
+                                               taskWillShowUpNextWeek: taskWillShowUpNextWeek, selectedStatus: selectedStatus!)
+                
                 if selectedStatus == .deferred { /// if task is deferred, but also marked recurring, recurring has no additional effect: task shows up just once next week, not twice
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         timetableVC.setNavBarTitle(customString: nil) /// call it on any of the CollectionVCs
                         
                         tempRescalingBool = true
@@ -47,8 +52,7 @@ extension PopupMenuVC {
                         deferredDescription = globalTaskIdentifier
                     }
                 }
-                updateBlockProcessingVariables(column: clm, row: rw,
-                                               taskWillShowUpNextWeek: taskWillShowUpNextWeek, selectedStatus: selectedStatus!)
+                
             } else {print("no task in dictionary at that index path")}
         } ///else {print("selected popup menu header")}
     }
