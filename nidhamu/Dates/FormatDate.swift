@@ -28,7 +28,8 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
         
     case .fullDayShortForm:         return "\(prx)\(wkdy) \(mnth) \(day) \(yearString), \(hr)\(ampm)\(suffix)"
         
-    case .fullDayShortFormNoDots:   return "\(prx)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString), \(hr)\(ampm)\(suffix)"
+    case .fullDayShortFormNoDots:
+        return "\(prx)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString), \(hr):\(minTwoDigits)\(ampm)\(suffix)"
         
     case .archiveFormat:            if hour < 12 {ampm = "AM"} else {ampm = "PM"}
         return "\(weekday) \(dy) \(month) \(year) \(hr)\(ampm)"/// not for use in csv emails (timestamps used instead; can paste csv data into template spreadsheet to see dates * )

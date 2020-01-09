@@ -14,7 +14,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
             
             if [column, row] == selectedTimeBlockPath && textFieldDisplayed {
                 cell.backgroundColor = taskAddingColour
-                cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
+                cell.titleLabel.text = showTimeInTitleLabels(selectedCellDate) ///cell.cellDate
             } else {
                 let cellDateIsBetweenLogins = sweepLoginInterval(cell: cell, column: column, row: row, layout: layout)
                 if truncateMins(cell.cellDate) == truncateMins(Date())

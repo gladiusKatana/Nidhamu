@@ -3,12 +3,11 @@ import UIKit
 
 extension CollectionVC {
     
-    func prepareAndPresentTextField(dateString: String) {
+    func prepareAndPresentTextField() {
         globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
         backgroundVC.view.backgroundColor = globalWindow.backgroundColor
-        
-        formatAndPresentTextField(dateString)
-        reloadCV()
+        let dateStr = formattedDateString(selectedCellDate, roundedDown: false, showYear: false, prefix: "Task Deadline: ", suffix: "", dateFormat: .fullDayShortForm) /// ! probably needs smaller font on iPhone SE in portrait
+        formatAndPresentTextField(dateStr)
     }
     
     func rePresentTextField() {         //print("re-presenting text field & keyboard")
