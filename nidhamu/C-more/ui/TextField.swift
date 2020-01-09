@@ -25,6 +25,9 @@ extension CollectionVC {
             
             formatAndPresentTextField(contents)
         }
+        
+        let str = viewControllerType == CollectionViewType.taskList ? "Add Task to Time Block " : "Add Task to Timetable"
+        setNavBarTitle(customString: str)
     }
     
     func formatAndPresentTextField(_ textFieldContents: String) {

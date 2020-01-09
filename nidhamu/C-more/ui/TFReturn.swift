@@ -42,6 +42,7 @@ extension CollectionVC {    ///  /**/  commented code here is for animations
         if !keyboardLocked {exitTaskAddingMode()}
         
         reloadCV()
+        topVC.setNavBarTitle(customString: nil)
         
         return true
     }

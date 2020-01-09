@@ -53,7 +53,7 @@ extension CollectionVC {
             }
                 
             else if column == 1 {
-                cell.titleLabel.text = formattedDateString(taskAtTimeBlock[row].deadline, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
+                cell.titleLabel.text = formattedDateString(taskAtTimeBlock[row].deadline, roundedDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
             }
                 
             else {cell.titleLabel.text = "\(taskAtTimeBlock[row].taskStatus)"}

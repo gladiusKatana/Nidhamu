@@ -36,8 +36,9 @@ extension CollectionVC {
                     DispatchQueue.main.asyncAfter(deadline: .now()) {
                         cell.titleLabel.text = formattedDateString(selectedCellDate, roundedDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .hourAndMinute)
                         cell.backgroundColor = taskAddingColour
-                        self.reloadCV()
+                        
                         self.prepareAndPresentTextField()
+                        self.reloadCV()
                     }
                     /**/
                 } else {
@@ -45,7 +46,11 @@ extension CollectionVC {
                     gotoView(vc: taskListVC)
                 }
                 
-            case .taskList:         prepareAndPresentTextField()
+            case .taskList:
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    self.prepareAndPresentTextField()
+                    self.reloadCV()
+                }
             case .archive:          presentEmail() ///sendArchiveAsCsv()
             case .deferralDates:
                 deferralPath = [column, row]
