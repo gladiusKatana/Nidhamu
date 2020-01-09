@@ -24,8 +24,7 @@ extension PopupMenuVC {
                 
                 tasksOfBlockBeingTagged[taskIndex].taskStatus = selectedStatus! ///; print("tagged as: \(casename)\n")
                 
-                if [TaskStatus.upcoming].contains(selectedStatus)
-                    || selectedTaskWillRecur {
+                if [TaskStatus.upcoming].contains(selectedStatus) || selectedTaskWillRecur {
                     taskWillShowUpNextWeek = true
                 }
                 
@@ -34,9 +33,7 @@ extension PopupMenuVC {
                         addToArchives(taskBeingTagged)
                         taskBeingTagged.deadline += TimeInterval(86400 * 7)
                     }
-                } else {
-                    addToArchives(taskBeingTagged)
-                }
+                } else {addToArchives(taskBeingTagged)}
                 
                 if selectedStatus == .deferred { /// if task is deferred, but also marked recurring, recurring has no additional effect: task shows up just once next week, not twice
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -50,8 +47,8 @@ extension PopupMenuVC {
                         deferredDescription = globalTaskIdentifier
                     }
                 }
-                
-                updateBlockProcessingVariables(column: clm, row: rw, taskWillShowUpNextWeek: taskWillShowUpNextWeek, selectedStatus: selectedStatus!)
+                updateBlockProcessingVariables(column: clm, row: rw,
+                                               taskWillShowUpNextWeek: taskWillShowUpNextWeek, selectedStatus: selectedStatus!)
             } else {print("no task in dictionary at that index path")}
         } ///else {print("selected popup menu header")}
     }
