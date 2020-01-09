@@ -18,8 +18,8 @@ extension CollectionVC {
                     taskArraysToProcess.append(tasks)
                 } ///else {print("task array-of-arrays already contains tasks: \(tasks)")}
             }
-            if row >= 24 && timeBlockSize == 1 /// this is the row whose task deadlines are at 7pm
-                || row >= 8 && timeBlockSize == 6
+            if row >= 24 && timeBlockSize == 1      /// this is the row whose task deadlines are in the 7pm time block
+                || row >= 8 && timeBlockSize == 6   /// this is the row whose task deadlines are in the "Evening" time block
             {
                 thereWillBeARowException = true
             }
@@ -48,7 +48,9 @@ extension CollectionVC {
         if thereWillBeARowException {                               /// if any time-blocks are >= 4pm, timetable will need to shrink to accomodate wizard (window beside cell)
             let heightMinusBars = globalWindow.frame.height - CGFloat(navBarHeight + statusBarHeight)
             let cellHeight = layout.heightPlusSpace
-            layout.autoFitHeightScale = heightMinusBars / (heightMinusBars + cellHeight * cellHeightFactor / CGFloat(timeBlockSize) * 7)
+            let extraRowspaceFromPopup = timeBlockSize == 1 ? CGFloat(7) : CGFloat(3)
+            let heightDenominator = heightMinusBars + cellHeight * cellHeightFactor / CGFloat(timeBlockSize) * extraRowspaceFromPopup
+            layout.autoFitHeightScale = heightMinusBars / heightDenominator
             
             reloadCollectionViewAfterDelay(0)
             
