@@ -36,9 +36,6 @@ extension CollectionVC {
     }
     
     
-    @objc func buttonWrapperMethodforTaskListVC() {}//gotoView(vc: taskListVC)
-    
-    
     @objc func buttonWrapperMethodforTimetableVC() {
         ///timetableVC.downcastLayout?.autoFitHScale = 1
         gotoView(vc: timetableVC)
