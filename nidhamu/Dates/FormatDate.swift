@@ -42,7 +42,7 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
         
     case .monthAndDay:              return "\(month.prefix(3)) \(day)"
         
-    default:    return "\(prx)\(weekday) \(hr)\(ampm)" // for hourly or (soon-to-be-implemented) quarter-day time-blocks
+    default:    return "\(prx)\(weekday) \(hr)\(ampm)" // for hourly or quarter-day time-blocks
     }
 }
 

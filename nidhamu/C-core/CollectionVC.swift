@@ -1,6 +1,5 @@
 // CollectionVC     ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
-import MessageUI
 
 class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRecognizerDelegate/*, MFMailComposeViewControllerDelegate*/ {
     

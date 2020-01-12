@@ -43,7 +43,7 @@ import UIKit
         navController = UINavigationController(rootViewController: backgroundVC) /// temporary, unseen initial root view controller
         window?.rootViewController = navController                  //; print("VCs*: \(String(describing: nav Controller?.viewControllers))")
         
-        timetableVC.setupAndPresent(vc: timetableVC)                /// just need a uiviewcontroller (any of them) to call this method
+        timetableVC.setupAndPresent(vc: timetableVC)
         return true
     }
     

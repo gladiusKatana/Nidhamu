@@ -1,6 +1,5 @@
 // EmailCSV         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
-import MessageUI
 
 extension CollectionVC {
     
