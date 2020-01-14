@@ -84,6 +84,8 @@
 		06541315237A6D840080F3EF /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D2237A6D840080F3EF /* Tasks.swift */; };
 		0665328F23A55A05006EC559 /* LRSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665328E23A55A05006EC559 /* LRSetup.swift */; };
 		0699C04B23BB0F23009D1DD2 /* VCs_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699C04A23BB0F23009D1DD2 /* VCs_II.swift */; };
+		06B6630923CD73A5001449D8 /* [Nidhamu] Task Archive.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */; };
+		06B6630A23CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 06B6630823CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +189,8 @@
 		065412D2237A6D840080F3EF /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		0665328E23A55A05006EC559 /* LRSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRSetup.swift; sourceTree = "<group>"; };
 		0699C04A23BB0F23009D1DD2 /* VCs_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCs_II.swift; sourceTree = "<group>"; };
+		06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = "[Nidhamu] Task Archive.numbers"; sourceTree = "<group>"; };
+		06B6630823CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "[Nidhamu] Task Archive.xlsx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +251,7 @@
 				065412C0237A6D840080F3EF /* Checks */,
 				0688C38E23481D45007DC878 /* Inactive */,
 				0625168922D6CF4100EBB4C8 /* Base.lproj */,
+				06B6630623CD73A5001449D8 /* Spreadsheets */,
 				0625168822D6CF4100EBB4C8 /* Assets.xcassets */,
 				0625164422D6C71A00EBB4C8 /* Info.plist */,
 				0625163C22D6C71900EBB4C8 /* nidhamu.xcdatamodeld */,
@@ -447,6 +452,15 @@
 			path = Inactive;
 			sourceTree = "<group>";
 		};
+		06B6630623CD73A5001449D8 /* Spreadsheets */ = {
+			isa = PBXGroup;
+			children = (
+				06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */,
+				06B6630823CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx */,
+			);
+			path = Spreadsheets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -553,7 +567,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				062516BD22D6CF4200EBB4C8 /* LaunchScreen.storyboard in Resources */,
+				06B6630923CD73A5001449D8 /* [Nidhamu] Task Archive.numbers in Resources */,
 				062516BC22D6CF4200EBB4C8 /* Assets.xcassets in Resources */,
+				06B6630A23CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
