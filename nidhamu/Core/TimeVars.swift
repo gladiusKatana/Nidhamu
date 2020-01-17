@@ -39,7 +39,7 @@ var months = ["January", "February", "March", "April", "May", "June", "July", "A
 var monthsAbbreviated = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
 
 var headerWeekdayTitles = ["Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"] //["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-var customWkdysDefaultOrder = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]
+var customWkdysDefaultOrder = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 var fullWeekdaysDefaultOrder = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 var fullWeekdaysDisplayedOrder = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]

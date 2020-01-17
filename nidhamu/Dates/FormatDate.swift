@@ -16,7 +16,7 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     if hr == 0 {hr = 12}                            // * this is just to make a string representing the date, not the date itself
     if hour < 12 {ampm = "am"} else {ampm = "pm"}   // since hr is an integer from 0 to 23
     
-    let yearString = showYear && (month == "January" || month == "December") ? "\(year)" : "" /// also add  || (Date() > last-login-date + ~30 days)
+    let yearString = showYear && ["January", "December"].contains(month) ? ", \(year)" : "" /// also add  || (Date() > last-login-date + ~30 days)
     
     switch dateFormat {
     case .fullDay:                  return "\(prx)\(weekday) \(month) \(day), \(yearString), \(hr):\(minTwoDigits)\(ampm)\(suffix)"
