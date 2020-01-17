@@ -14,7 +14,7 @@ extension AppDelegate {
         findSpringForwardDate(startingDate: Date(), printDSTDates: showDSTDates)                 /// see above
         
         checkOrientation()
-        defaultLoadData(showDate: false)
+        defaultLoadData(showDate: true)
         topVC.reloadCV()
     }
     

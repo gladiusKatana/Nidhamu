@@ -12,18 +12,10 @@ extension CollectionVC {
         if row >= headers && column >= layout.lockedHeaderSections {
             
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
-            ///print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "selected cell date: ", suffix: "", dateFormat: .fullDay))
+            print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "selected cell date: ", suffix: "", dateFormat: .fullDay))
             ///print(formattedDateString(selectedCellDate, roundedDown: false, showYear: true, prefix: "future task deadline: ", suffix: "", dateFormat: .fullDay))
             
-            selectedCellDate = cell.cellDate
-            
-            if timeBlockSize > 1 && row >= headers {                                /// truncates HOUR of cell dates, when multi-hour-length time blocks are enabled
-                let timeBlockStartHr = (row - headers) * timeBlockSize
-                let hrsIntoCurrentBlock = Calendar.current.component(.hour, from: selectedCellDate) - timeBlockStartHr
-                if  hrsIntoCurrentBlock > 0 {selectedCellDate = selectedCellDate - TimeInterval(3600 * hrsIntoCurrentBlock)}
-            }
-            
-            selectedCellDate = truncateMins(selectedCellDate) + TimeInterval(3600 * 6) /// for task deadline: final minute of tapped time block
+            selectedCellDate = cell.cellDate + TimeInterval(3600) //for task deadline: = start of the next time block after the one tapped
             
             switch viewControllerType {
             case .timetable:
