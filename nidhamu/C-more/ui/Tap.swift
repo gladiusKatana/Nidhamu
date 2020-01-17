@@ -7,15 +7,14 @@ extension CollectionVC {
                                  didSelectItemAt indexPath: IndexPath) {                            ///print("tapped tt cell")
         
         let layout = downcastLayout!;  let row = indexPath.item;  let column = indexPath.section
-        let headers = layout.lockedHeaderRows
         
-        if row >= headers && column >= layout.lockedHeaderSections {
+        if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
             print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "selected cell date: ", suffix: "", dateFormat: .fullDay))
             ///print(formattedDateString(selectedCellDate, roundedDown: false, showYear: true, prefix: "future task deadline: ", suffix: "", dateFormat: .fullDay))
             
-            selectedCellDate = cell.cellDate + TimeInterval(3600) //for task deadline: = start of the next time block after the one tapped
+            selectedCellDate = cell.cellDate + TimeInterval(3600 * timeBlockSize) ///for task deadline: = start of the next time block after the one tapped
             
             switch viewControllerType {
             case .timetable:

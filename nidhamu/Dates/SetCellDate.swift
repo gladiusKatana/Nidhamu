@@ -38,12 +38,18 @@ extension CollectionVC {
         
         let minTrunkDate = timeBlockSize > 1 ? truncateMins(date) : date    /// truncates MINUTES of cell dates, when multi-hour-length time blocks are enabled
         
-        let cellDate = minTrunkDate + dstOffset * oneHour
+        var cellDate = minTrunkDate + dstOffset * oneHour
         let isNextWeek = weekAheadInt == 1 ? true : false
+        
+        if timeBlockSize > 1 {
+            let timeBlockStartHr = (row - headers) * timeBlockSize
+            let hrsIntoCurrentBlock = Calendar.current.component(.hour, from: cellDate) - timeBlockStartHr
+            if  hrsIntoCurrentBlock > 0 {cellDate = truncateMins(cellDate - TimeInterval(3600 * hrsIntoCurrentBlock))}/// refactor w/ time block size conditn'l
+        }
         
         var isLastLogin = false
         if  truncateMins(cellDate) - (dstOffset + springForwardExtraHour + fallBackExtraHour) * oneHour - oneWeek
-            == truncateMins(lastLoginDate)
+            == truncateMins(timeBlockRoundedLastLogin)
         {
             isLastLogin = true
         }

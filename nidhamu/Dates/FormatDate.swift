@@ -19,16 +19,16 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     let yearString = showYear && ["January", "December"].contains(month) ? ", \(year)" : "" /// also add  || (Date() > last-login-date + ~30 days)
     
     switch dateFormat {
-    case .fullDay:                  return "\(prx)\(weekday) \(month) \(day), \(yearString), \(hr):\(minTwoDigits)\(ampm)\(suffix)"
+    case .fullDay:                  return "\(prx)\(weekday) \(month) \(day)\(yearString), \(hr):\(minTwoDigits)\(ampm)\(suffix)"
         
     case .fullDayWithYear:          return "\(prx)\(weekday) \(month) \(day), \(year) \(hr):\(minTwoDigits)\(ampm)\(suffix)"
         
-    case .fullDayWithSeconds:       return "\(prx)\(weekday) \(month) \(day), \(yearString)\(hr):\(minTwoDigits):\(sec2Digs)\(ampm)\(suffix)"
+    case .fullDayWithSeconds:       return "\(prx)\(weekday) \(month) \(day)\(yearString)\(hr):\(minTwoDigits):\(sec2Digs)\(ampm)\(suffix)"
         
     case .fullDayShortForm:         return "\(prx)\(wkdy) \(mnth) \(day)\(yearString), \(hr)\(ampm)\(suffix)"
         
     case .fullDayShortFormNoDots:
-        return "\(prx)\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(yearString), \(hr)\(ampm)\(suffix)"
+        return "\(prx)\(weekday.prefix(3)) \(month.prefix(3)) \(day)\(yearString), \(hr)\(ampm)\(suffix)"
         
     case .archiveFormat:            if hour < 12 {ampm = "AM"} else {ampm = "PM"}
         return "\(weekday) \(dy) \(month) \(year) \(hr)\(ampm)"/// not for use in csv emails (timestamps used instead; can paste csv data into template spreadsheet to see dates * )

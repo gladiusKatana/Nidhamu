@@ -4,10 +4,20 @@ import UIKit
 extension CollectionVC {
     
     func sweepLoginInterval(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) -> Bool {
-        var dstShift = TimeInterval(0)
         springForwardExtraHour = 0.0; fallBackExtraHour = 0.0
         
-        let truncLastLogin = truncateMins(lastLoginDate)
+        var dstShift = TimeInterval(0)
+        
+        let roundedLastLoginRow = Calendar.current.component(.hour, from: lastLoginDate) / timeBlockSize  ///; print("last login row: \(roundedLastLoginRow)")
+        let year = Calendar.current.component(.year, from: lastLoginDate)
+        let month = Calendar.current.component(.month, from: lastLoginDate)
+        let day = Calendar.current.component(.day, from: lastLoginDate)
+        
+        if timeBlockSize == 1 {timeBlockRoundedLastLogin = lastLoginDate}
+        else {
+            timeBlockRoundedLastLogin = makeDateFrom(year: year, month: month, day: day, hr: roundedLastLoginRow * timeBlockSize, min: 0, sec: 0)
+        }
+        
         let tz = NSTimeZone.local
         
         if !(tz.isDaylightSavingTime(for: lastLoginDate))
@@ -23,7 +33,7 @@ extension CollectionVC {
         dstShift = (dstOffset + springForwardExtraHour + fallBackExtraHour) * TimeInterval(3600)
         let oneWeekAgo = truncateMins(cell.cellDate) - TimeInterval(86400 * 7)      /// * truncate only the cell's cell-date-- not the large time interval term
         //if (layout.cols - 1, layout.rows - 1) == (column, row) {print("dst shift = \(dstShift)")}
-        return oneWeekAgo.isBetween(truncLastLogin + dstShift, and: truncateMins(Date() + dstShift))
+        return oneWeekAgo.isBetween(timeBlockRoundedLastLogin + dstShift, and: truncateMins(Date() + dstShift))
     }
     
     func showKeyTimeBlockDates(cell: CustomCell, layout: CustomFlowLayout) {

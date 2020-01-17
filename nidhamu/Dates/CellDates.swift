@@ -73,11 +73,11 @@ extension CollectionVC { /// probably will refactor this whole file soon
             ///if row == 4 {cell.backgroundColor = .orange} /// so that it isn't white (indistinguishable from what might be below it: having no cell at that position)
         }
         
-        if row > layout.lockedHeaderRows - 1 {
-            //cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
-            //showDateInTitleLabels(date: cell.cellDate, cell: cell)
-            //cell.titleLabel.text = "\(dstOffset)"
-        }
+//        if row > layout.lockedHeaderRows - 1 {
+//            cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
+//            //showDateInTitleLabels(date: cell.cellDate, cell: cell)
+//            //cell.titleLabel.text = "\(dstOffset)"
+//        }
     }
 }
 
