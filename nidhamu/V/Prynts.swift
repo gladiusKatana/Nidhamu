@@ -4,6 +4,7 @@ import UIKit
 func printTasksTabularized() { // optimized for console printing on an iPad Mini 4, landscape orientation (using Duet app & iPad stand)
     ///if timeBlockPaths.isEmpty {print("[no tasks]")}
     let gap = " "; var i = 0
+    print("")
     
     for path in timeBlockPaths {
         
@@ -11,7 +12,7 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
         var j = 0
         
         for task in tasks {
-            let pathString = "\(path[0]),\(path[1])";  let maxPathString = " 24,7 "
+            let pathString = "\(path[0]),\(path[1])";  let maxPathString = " 8,7 "//" 28,7 "
             let excess = String(repeating: " ", count: maxPathString.count - "\(pathString)".count)
             let spaces = String(repeating: " ", count: maxPathString.count - 2)
             

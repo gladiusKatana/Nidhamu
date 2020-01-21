@@ -3,11 +3,7 @@
   
   
   
-  adjustable time block sizes (essentially done; verify extensibility)                              M
-  
-  Numbers template                                                                                  UX
-  
-  Excel template
+  adjustable time block sizes (done; verify extensibility)                              M
   
   
   
