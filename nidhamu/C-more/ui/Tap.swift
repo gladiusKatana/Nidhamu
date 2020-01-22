@@ -53,22 +53,6 @@ extension CollectionVC {
             default: print("unrecognized collection view type's cell selected")}
         }///else {print("selected navbar-embeddd vc's header")}
     }
-    
-    @objc func handleLongPress(gestureRecognizer : UILongPressGestureRecognizer) {
-        
-        if (gestureRecognizer.state != UIGestureRecognizer.State.ended) {
-            return
-        }
-        
-        let location = gestureRecognizer.location(in: self.collectionView)
-        
-        if let indexPath = self.collectionView?.indexPathForItem(at: location) {
-            rowLongPressed = indexPath.row;                                         //print("long pressed task \(rowLongPressed)")
-            prepareAndPresentTextField()
-            reloadCV()
-        }
-    }
-    
 }
 
 

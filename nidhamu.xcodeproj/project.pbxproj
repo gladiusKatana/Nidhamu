@@ -84,6 +84,7 @@
 		06541315237A6D840080F3EF /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D2237A6D840080F3EF /* Tasks.swift */; };
 		0665328F23A55A05006EC559 /* LRSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665328E23A55A05006EC559 /* LRSetup.swift */; };
 		0699C04B23BB0F23009D1DD2 /* VCs_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699C04A23BB0F23009D1DD2 /* VCs_II.swift */; };
+		06A2035323D8096B00E4FA0A /* LongPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A2035223D8096B00E4FA0A /* LongPress.swift */; };
 		06B6630923CD73A5001449D8 /* [Nidhamu] Task Archive.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */; };
 		06B6630A23CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 06B6630823CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx */; };
 /* End PBXBuildFile section */
@@ -189,6 +190,7 @@
 		065412D2237A6D840080F3EF /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		0665328E23A55A05006EC559 /* LRSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRSetup.swift; sourceTree = "<group>"; };
 		0699C04A23BB0F23009D1DD2 /* VCs_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCs_II.swift; sourceTree = "<group>"; };
+		06A2035223D8096B00E4FA0A /* LongPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPress.swift; sourceTree = "<group>"; };
 		06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = "[Nidhamu] Task Archive.numbers"; sourceTree = "<group>"; };
 		06B6630823CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "[Nidhamu] Task Archive.xlsx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				06541285237A6D830080F3EF /* ui */,
+				06A2035423D809EC00E4FA0A /* messages */,
 				0654128F237A6D830080F3EF /* popup */,
 				06541295237A6D830080F3EF /* cell */,
 				06541299237A6D830080F3EF /* nav */,
@@ -300,13 +303,12 @@
 			isa = PBXGroup;
 			children = (
 				06541288237A6D830080F3EF /* Tap.swift */,
+				06A2035223D8096B00E4FA0A /* LongPress.swift */,
 				06541286237A6D830080F3EF /* TapPopup.swift */,
 				0654128A237A6D830080F3EF /* Pinch.swift */,
 				0654128B237A6D830080F3EF /* TextField.swift */,
 				06541287237A6D830080F3EF /* TFReturn.swift */,
 				0654128D237A6D830080F3EF /* Keyboard.swift */,
-				06541289237A6D830080F3EF /* EmailVC.swift */,
-				0654128E237A6D830080F3EF /* EmailCSV.swift */,
 				0654128C237A6D830080F3EF /* UINotify.swift */,
 			);
 			path = ui;
@@ -450,6 +452,15 @@
 				0625168E22D6CF4200EBB4C8 /* ScrollBars.swift */,
 			);
 			path = Inactive;
+			sourceTree = "<group>";
+		};
+		06A2035423D809EC00E4FA0A /* messages */ = {
+			isa = PBXGroup;
+			children = (
+				06541289237A6D830080F3EF /* EmailVC.swift */,
+				0654128E237A6D830080F3EF /* EmailCSV.swift */,
+			);
+			path = messages;
 			sourceTree = "<group>";
 		};
 		06B6630623CD73A5001449D8 /* Spreadsheets */ = {
@@ -657,6 +668,7 @@
 				065412FF237A6D840080F3EF /* Sizes.swift in Sources */,
 				065412D4237A6D840080F3EF /* TFReturn.swift in Sources */,
 				06541302237A6D840080F3EF /* ZIndex.swift in Sources */,
+				06A2035323D8096B00E4FA0A /* LongPress.swift in Sources */,
 				065412FB237A6D840080F3EF /* Dates.swift in Sources */,
 				065412F3237A6D840080F3EF /* CellSetup.swift in Sources */,
 				065412EE237A6D840080F3EF /* RotateLock.swift in Sources */,
