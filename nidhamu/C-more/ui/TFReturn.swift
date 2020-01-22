@@ -15,7 +15,7 @@ extension CollectionVC {
         else {
             if viewControllerType == .timetable {
                 
-                addToTimeBlock(withColumn: selectedTimeBlockPath[0], withRow: selectedTimeBlockPath[1],
+                addToTimeBlock(atColumn: selectedTimeBlockPath[0], atRow: selectedTimeBlockPath[1],
                                textEntered: textEntered, taskDeadline: selectedCellDate, withStatus: nil)
                 
                 if !keyboardLocked {
@@ -27,11 +27,11 @@ extension CollectionVC {
             if viewControllerType == .taskList {
                 
                 if rowLongPressed != -1 {
-                    rewriteTask(withColumn: selectedTimeBlockPath[0], withRow: selectedTimeBlockPath[1], index: rowLongPressed,
+                    rewriteTask(atColumn: selectedTimeBlockPath[0], atRow: selectedTimeBlockPath[1], index: rowLongPressed,
                                 textEntered: textEntered, taskDeadline: selectedCellDate, withStatus: nil)
                 }
                 else {
-                    addToTimeBlock(withColumn: selectedTimeBlockPath[0], withRow: selectedTimeBlockPath[1],
+                    addToTimeBlock(atColumn: selectedTimeBlockPath[0], atRow: selectedTimeBlockPath[1],
                                    textEntered: textEntered, taskDeadline: selectedCellDate, withStatus: nil)
                     
                     if let tasks = tasksAtIndexPath[timeBlock] {  /// if time-block is not empty

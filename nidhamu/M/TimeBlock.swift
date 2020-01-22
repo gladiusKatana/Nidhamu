@@ -17,7 +17,7 @@ func ==<T:Hashable,U:Hashable>(lhs: TimeBlock<T,U>,
 
 extension CollectionVC {
     
-    func addToTimeBlock(withColumn column: Int, withRow row: Int,
+    func addToTimeBlock(atColumn column: Int, atRow row: Int,
                         textEntered: String, taskDeadline: Date, withStatus: TaskStatus?) {                     //print("adding task")
         var status : TaskStatus
         if withStatus != nil {status = withStatus!} else {status = .upcoming}
@@ -34,7 +34,7 @@ extension CollectionVC {
         }
     }
     
-    func rewriteTask(withColumn column: Int, withRow row: Int, index: Int,
+    func rewriteTask(atColumn column: Int, atRow row: Int, index: Int,
                      textEntered: String, taskDeadline: Date, withStatus: TaskStatus?) {                        //print("editing task")
         var status : TaskStatus
         if withStatus != nil {status = withStatus!} else {status = .upcoming}
@@ -43,11 +43,6 @@ extension CollectionVC {
         let simpleTask = SimpleTask(taskDescription: textEntered, deadline: taskDeadline, taskStatus: status)
         
         if tasksAtIndexPath[timeBlockToAdd] != nil {
-            /*tasksAtIndexPath[timeBlockToAdd]!.append(simpleTask)
-             }
-             
-             else {*/
-            //            tasksAtIndexPath.remove(at: tasksAtIndexPath.index(forKey: TimeBlock(values:(column, row)))!)
             tasksAtIndexPath[timeBlockToAdd]![index] = simpleTask
         }
     }

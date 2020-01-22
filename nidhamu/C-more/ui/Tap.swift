@@ -63,12 +63,10 @@ extension CollectionVC {
         let location = gestureRecognizer.location(in: self.collectionView)
         
         if let indexPath = self.collectionView?.indexPathForItem(at: location) {
-            rowLongPressed = indexPath.row;                                     //print("long pressed task \(rowLongPressed)")
-            ///longPressedToEditTask = true
+            rowLongPressed = indexPath.row;                                         //print("long pressed task \(rowLongPressed)")
             prepareAndPresentTextField()
             reloadCV()
         }
-        
     }
     
 }

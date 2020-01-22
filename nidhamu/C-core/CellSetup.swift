@@ -29,7 +29,7 @@ extension CollectionVC {
                 
                 if [column, row] == deferralPath {
                     cell.titleLabel.text = deferredDescription
-                    addToTimeBlock(withColumn: column, withRow: row, textEntered: deferredDescription,
+                    addToTimeBlock(atColumn: column, atRow: row, textEntered: deferredDescription,
                                    taskDeadline: cell.cellDate, withStatus: .deferred)
                     deferralPath = defaultPathOutOfView
                 }

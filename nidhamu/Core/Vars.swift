@@ -28,7 +28,7 @@ var landscapeKeyboardHeight = CGFloat(192)/// **why manually determined?  Becaus
 
 
 var keyboardLocked = false;                     ///var firstPortraitKeyboardPresented = false;                          var firstLandscapeKeyboardPresented = false
-var textFieldDisplayed = false;                 var justPinched = false;                    var rowLongPressed = -1 ///var longPressedToEditTask = false
+var textFieldDisplayed = false;                 var justPinched = false;                    var rowLongPressed = -1
 var taggingViewDisplayed = false;               var selectedTaskWillRecur = false
 var firstTimeLoaded = false                     // one-way bool: only flipped to  true once in entire app lifecycle
 ///var firstBecameActive = false
