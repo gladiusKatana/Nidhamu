@@ -28,10 +28,15 @@ extension CollectionVC {
                 }
                 
                 if [column, row] == deferralPath {
+                    var deadline = Date(); let baseDeadline = cell.cellDate + TimeInterval(3600 * timeBlockSize)
+                    
+                    if (column, row) == (nowColumn, nowRow) {
+                        deadline = baseDeadline + TimeInterval(86400 * 7)
+                    } else {deadline = baseDeadline}
+                    
                     cell.titleLabel.text = deferredDescription
-                    let deadline = cell.cellDate + TimeInterval(3600 * timeBlockSize)
-                    addToTimeBlock(atColumn: column, atRow: row, textEntered: deferredDescription,
-                                   taskDeadline: deadline, withStatus: .deferred)
+                    addToTimeBlock(atColumn: column, atRow: row, textEntered: "\(deferredDescription)*",
+                        taskDeadline: deadline, withStatus: .deferred)
                     deferralPath = defaultPathOutOfView
                 }
             }

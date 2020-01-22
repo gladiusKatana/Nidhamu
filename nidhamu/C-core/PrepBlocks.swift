@@ -5,24 +5,56 @@ extension CollectionVC {
     
     func prepareToProcessTasksSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
         if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))] {              ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
+            
             if !cachedBlocksAndTheirPaths {
                 
-                if !indexPathsToProcess.contains([column, row]) {indexPathsToProcess.append([column, row])} ///; print("appending path \([column, row])")
-                ///else {print("path array-of-arrays already contains path: \([column, row])")}
+                /*for task in tasks {
+                 let deadlineIsWithinLoginDateSweep = sweepLoginInterval(dateToCheck: task.deadline, forEventDeadline: true,
+                 column: nil, row: nil, layout: nil)
+                 //                    let dateString = formattedDateString(task.deadline, roundedDown: false,
+                 //                    showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortFormNoDots)
+                 
+                 print("time block @ (\(column),\(row)), task: \(task.taskDescription), \(deadlineIsWithinLoginDateSweep)")
+                 //                    //deadline: \(dateString)
+                 }*/
                 
+                
+                var nonDeferredTasks = [SimpleTask]() /// called it this because...
                 var taskDescriptions = [String]()
-                for task in tasks {taskDescriptions.append(task.taskDescription)}
+                
+                for task in tasks {
+                    
+                    let deadlineIsWithinLoginDateSweep = sweepLoginInterval(dateToCheck: task.deadline, forEventDeadline: true,
+                                                                            column: nil, row: nil, layout: nil)
+                    
+                    print("time block @ (\(column),\(row)), task: \(task.taskDescription), \(deadlineIsWithinLoginDateSweep)")
+                    
+                    if deadlineIsWithinLoginDateSweep {
+                        if !indexPathsToProcess.contains([column, row]) {indexPathsToProcess.append([column, row])} ///; print("appending path \([column, row])")
+                        ///else {print("path array-of-arrays already contains path: \([column, row])")}
+                        
+                        nonDeferredTasks.append(task)
+                        taskDescriptions.append(task.taskDescription)
+                    }
+                    
+                }
                 
                 if !taskDescriptionsToProcess.contains(taskDescriptions) {
                     taskDescriptionsToProcess.append(taskDescriptions)                  //; print("appending descriptions \(taskDescriptions)")
-                    taskArraysToProcess.append(tasks)
+                    taskArraysToProcess.append(nonDeferredTasks)
                 } ///else {print("task array-of-arrays already contains tasks: \(tasks)")}
+                
+                //                if taskArraysToProcess.contains(nonDeferredTasks) {
+                //                    taskArraysToProcess.append(nonDeferredTasks)
+                //                }
             }
+            
             if row >= 24 && timeBlockSize == 1      /// this is the row whose task deadlines are in the 7pm time block
                 || row >= 8 && timeBlockSize == 6   /// this is the row whose task deadlines are in the "Evening" time block
             {
                 thereWillBeARowException = true
             }
+            
         }
     }
     
@@ -39,8 +71,10 @@ extension CollectionVC {
             return
         }
         
-        indexPathsToProcess = indexPathsToProcess.sorted(by: {lastTaskFromPath($0).deadline < lastTaskFromPath($1).deadline})
-        taskArraysToProcess = taskArraysToProcess.sorted(by: {$0.last!.deadline < $1.last!.deadline})
+        if indexPathsToProcess.count > 1 && taskArraysToProcess.count > 1 {
+            indexPathsToProcess = indexPathsToProcess.sorted(by: {lastTaskFromPath($0).deadline < lastTaskFromPath($1).deadline})
+            taskArraysToProcess = taskArraysToProcess.sorted(by: {$0.last!.deadline < $1.last!.deadline})
+        }
         
         tasksInBlockToBeProcessed = taskArraysToProcess.first!.count
         cachedBlocksAndTheirPaths = true

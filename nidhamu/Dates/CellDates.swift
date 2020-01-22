@@ -16,7 +16,8 @@ extension CollectionVC { /// probably will refactor this whole file soon
                 cell.backgroundColor = taskAddingColour
                 cell.titleLabel.text = "+"
             } else {
-                let cellDateIsBetweenLogins = sweepLoginInterval(cell: cell, column: column, row: row, layout: layout)
+                let cellDateIsBetweenLogins = sweepLoginInterval(dateToCheck: cell.cellDate, forEventDeadline: false,
+                                                                 column: column, row: row, layout: layout)
                 if truncateMins(cell.cellDate) == truncateMins(Date())
                     || row == nowRow && column == nowColumn         /// these 2 conditionals are equivalent but the latter is calculated faster
                 {
@@ -34,6 +35,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
                         cell.backgroundColor = lastLoginDimOrange; cell.cellColour = lastLoginDimOrange
                         
                         prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
+                        
                     } else {
                         if cellDateIsNextWeek {cell.backgroundColor = lastWeekColour; cell.cellColour = lastWeekColour}
                         else {cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour}
