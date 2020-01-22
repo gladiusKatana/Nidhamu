@@ -10,17 +10,15 @@ struct TimeBlock<T: Hashable, U: Hashable>: Hashable {
     }
 }
 
-
 func ==<T:Hashable,U:Hashable>(lhs: TimeBlock<T,U>,
                                rhs: TimeBlock<T,U>) -> Bool {   /// comparison function for conforming to Equatable protocol
     return lhs.values == rhs.values
 }
 
-
 extension CollectionVC {
     
-    func addToTimeBlock(withColumn column: Int, withRow row: Int, textEntered: String, taskDeadline: Date, withStatus: TaskStatus?) {
-        
+    func addToTimeBlock(withColumn column: Int, withRow row: Int,
+                        textEntered: String, taskDeadline: Date, withStatus: TaskStatus?) {                     //print("adding task")
         var status : TaskStatus
         if withStatus != nil {status = withStatus!} else {status = .upcoming}
         
@@ -34,7 +32,24 @@ extension CollectionVC {
         else {
             tasksAtIndexPath[timeBlockToAdd] = [simpleTask]
         }
+    }
+    
+    func rewriteTask(withColumn column: Int, withRow row: Int, index: Int,
+                     textEntered: String, taskDeadline: Date, withStatus: TaskStatus?) {                        //print("editing task")
+        var status : TaskStatus
+        if withStatus != nil {status = withStatus!} else {status = .upcoming}
         
+        let timeBlockToAdd = TimeBlock(values:(column, row))
+        let simpleTask = SimpleTask(taskDescription: textEntered, deadline: taskDeadline, taskStatus: status)
+        
+        if tasksAtIndexPath[timeBlockToAdd] != nil {
+            /*tasksAtIndexPath[timeBlockToAdd]!.append(simpleTask)
+             }
+             
+             else {*/
+            //            tasksAtIndexPath.remove(at: tasksAtIndexPath.index(forKey: TimeBlock(values:(column, row)))!)
+            tasksAtIndexPath[timeBlockToAdd]![index] = simpleTask
+        }
     }
 }
 

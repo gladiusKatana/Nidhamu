@@ -11,7 +11,7 @@ extension CollectionVC {
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
-            print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "selected cell date: ", suffix: "", dateFormat: .fullDay))
+            ///print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "selected cell date: ", suffix: "", dateFormat: .fullDay))
             ///print(formattedDateString(selectedCellDate, roundedDown: false, showYear: true, prefix: "future task deadline: ", suffix: "", dateFormat: .fullDay))
             
             selectedCellDate = cell.cellDate + TimeInterval(3600 * timeBlockSize) ///for task deadline: = start of the next time block after the one tapped
@@ -53,6 +53,24 @@ extension CollectionVC {
             default: print("unrecognized collection view type's cell selected")}
         }///else {print("selected navbar-embeddd vc's header")}
     }
+    
+    @objc func handleLongPress(gestureRecognizer : UILongPressGestureRecognizer) {
+        
+        if (gestureRecognizer.state != UIGestureRecognizer.State.ended) {
+            return
+        }
+        
+        let location = gestureRecognizer.location(in: self.collectionView)
+        
+        if let indexPath = self.collectionView?.indexPathForItem(at: location) {
+            rowLongPressed = indexPath.row;                                     //print("long pressed task \(rowLongPressed)")
+            ///longPressedToEditTask = true
+            prepareAndPresentTextField()
+            reloadCV()
+        }
+        
+    }
+    
 }
 
 

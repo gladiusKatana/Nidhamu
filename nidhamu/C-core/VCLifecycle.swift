@@ -15,6 +15,14 @@ extension CollectionVC {
         
         periodicDateRefresh(){kickoffTimer()}               /// checks the date then does the timer kickoff ('starts on the 0th callback')
         ///kickoffTimer()                                                                                       // does the timer kickoff then checks the date ('starts on the 1st callback')
+        
+        if viewControllerType == .taskList {
+            let longPress : UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+            longPress.minimumPressDuration = 0.5
+            longPress.delegate = self
+            longPress.delaysTouchesBegan = true
+            self.collectionView?.addGestureRecognizer(longPress)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

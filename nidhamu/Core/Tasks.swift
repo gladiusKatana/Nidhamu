@@ -8,6 +8,8 @@
   
   
   
+  edit task
+  
   tasksAtDate                                                                                       M
                                                                     
   week-navigation buttons                                                                           UI
@@ -16,10 +18,10 @@
   
   list VC: entire day, week
   
+  
+  
+  
   prevent user changing date
-  
-  
-  
   
   checklogic, refactor, comments
   
@@ -32,7 +34,7 @@
   
   icon
   
-  launch screen                             APP STORE ASAP aim for: Jan.12/13
+  launch screen                             APP STORE ASAP aim for: end Jan.
   
   
   
