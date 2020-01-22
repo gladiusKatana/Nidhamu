@@ -291,8 +291,8 @@
 			isa = PBXGroup;
 			children = (
 				06541285237A6D830080F3EF /* ui */,
-				06A2035423D809EC00E4FA0A /* messages */,
 				0654128F237A6D830080F3EF /* popup */,
+				06A2035423D809EC00E4FA0A /* messages */,
 				06541295237A6D830080F3EF /* cell */,
 				06541299237A6D830080F3EF /* nav */,
 			);

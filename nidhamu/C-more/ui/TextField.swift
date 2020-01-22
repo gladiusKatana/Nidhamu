@@ -6,7 +6,9 @@ extension CollectionVC {
     func prepareAndPresentTextField() {
         globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
         backgroundVC.view.backgroundColor = globalWindow.backgroundColor
-        let dateStr = formattedDateString(selectedCellDate, roundedDown: false, showYear: false, prefix: "Add Task [Due:", suffix: "]", dateFormat: .fullDayShortForm) /// ! probably needs smaller font on iPhone SE in portrait
+        let pre = rowLongPressed == -1 ? "Add Task [Due:" : "Edit Task Due:"
+        let suf = rowLongPressed == -1 ? "]" : ""
+        let dateStr = formattedDateString(selectedCellDate, roundedDown: false, showYear: false, prefix: pre, suffix: suf, dateFormat: .fullDayShortForm) /// ! probably needs smaller font on iPhone SE in portrait
         formatAndPresentTextField(dateStr)
     }
     
@@ -18,15 +20,16 @@ extension CollectionVC {
             var contents = ""
             
             if let placeholder = taskField.placeholder {
-                
                 contents = placeholder
-                
             } else {contents = "!"}
             
             formatAndPresentTextField(contents)
         }
         
-        let str = viewControllerType == CollectionViewType.taskList ? "Add Task to Time Block " : "Add Task to Timetable"
+        var str = ""
+        if rowLongPressed != -1 {
+            str = "Edit Task"
+        } else {str = viewControllerType == CollectionViewType.taskList ? "Add Task to Time Block " : "Add Task to Timetable"}
         setNavBarTitle(customString: str)
     }
     
