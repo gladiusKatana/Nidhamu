@@ -29,8 +29,9 @@ extension CollectionVC {
                 
                 if [column, row] == deferralPath {
                     cell.titleLabel.text = deferredDescription
+                    let deadline = cell.cellDate + TimeInterval(3600 * timeBlockSize)
                     addToTimeBlock(atColumn: column, atRow: row, textEntered: deferredDescription,
-                                   taskDeadline: cell.cellDate, withStatus: .deferred)
+                                   taskDeadline: deadline, withStatus: .deferred)
                     deferralPath = defaultPathOutOfView
                 }
             }

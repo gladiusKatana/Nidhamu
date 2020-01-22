@@ -14,7 +14,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
             
             if [column, row] == selectedTimeBlockPath && textFieldDisplayed {
                 cell.backgroundColor = taskAddingColour
-                cell.titleLabel.text = showTimeInTitleLabels(selectedCellDate) ///cell.cellDate
+                cell.titleLabel.text = "+"
             } else {
                 let cellDateIsBetweenLogins = sweepLoginInterval(cell: cell, column: column, row: row, layout: layout)
                 if truncateMins(cell.cellDate) == truncateMins(Date())
@@ -73,11 +73,11 @@ extension CollectionVC { /// probably will refactor this whole file soon
             ///if row == 4 {cell.backgroundColor = .orange} /// so that it isn't white (indistinguishable from what might be below it: having no cell at that position)
         }
         
-//        if row > layout.lockedHeaderRows - 1 {
-//            cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
-//            //showDateInTitleLabels(date: cell.cellDate, cell: cell)
-//            //cell.titleLabel.text = "\(dstOffset)"
-//        }
+        //        if row > layout.lockedHeaderRows - 1 {
+        //            cell.titleLabel.text = showTimeInTitleLabels(cell.cellDate)
+        //            showDateInTitleLabels(date: cell.cellDate, cell: cell)
+        //            cell.titleLabel.text = "\(dstOffset)"
+        //        }
     }
 }
 

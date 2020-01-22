@@ -3,12 +3,10 @@
   
   
   
-  adjustable time block sizes (done; verify extensibility)                              M
+  > adjustable time block sizes (done; verify extensibility)                                          M
   
   
   
-  
-  edit task
   
   tasksAtDate                                                                                       M
                                                                     
@@ -18,10 +16,11 @@
   
   list VC: entire day, week
   
-  
-  
-  
   prevent user changing date
+  
+  
+  
+  
   
   checklogic, refactor, comments
   
@@ -57,6 +56,9 @@
   Notes
   
   
+  > denotes tasks I'm working on most actively at present -Garth Snyder aka gladiusKatana
+  
+  
   ⁌o⁍ denotes bugfixes
   
   
@@ -67,4 +69,3 @@
   
   
   * this is Open Source software. Contributors welcomed. https://github.com/gladiusKatana/Nidhamu */
- 

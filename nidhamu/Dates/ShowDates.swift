@@ -13,10 +13,10 @@ extension CollectionVC {
         let month = Calendar.current.component(.month, from: lastLoginDate)
         let day = Calendar.current.component(.day, from: lastLoginDate)
         
-        if timeBlockSize == 1 {timeBlockRoundedLastLogin = lastLoginDate}
-        else {
-            timeBlockRoundedLastLogin = makeDateFrom(year: year, month: month, day: day, hr: roundedLastLoginRow * timeBlockSize, min: 0, sec: 0)
-        }
+        //if timeBlockSize == 1 {timeBlockRoundedLastLogin = lastLoginDate}
+        //else {
+        timeBlockRoundedLastLogin = makeDateFrom(year: year, month: month, day: day, hr: roundedLastLoginRow * timeBlockSize, min: 0, sec: 0)
+        //}
         
         let tz = NSTimeZone.local
         

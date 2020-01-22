@@ -25,7 +25,6 @@ extension CollectionVC {
                 if tasksAtIndexPath[timeBlock] == nil || textFieldDisplayed {
                     
                     DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        cell.titleLabel.text = formattedDateString(selectedCellDate, roundedDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .hourAndMinute)
                         cell.backgroundColor = taskAddingColour
                         
                         self.prepareAndPresentTextField()
