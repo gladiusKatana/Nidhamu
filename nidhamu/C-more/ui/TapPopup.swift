@@ -46,11 +46,11 @@ extension PopupMenuVC {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         timetableVC.setNavBarTitle(customString: nil) /// call it on any of the CollectionVCs
                         
-                        //tempRescalingBool = true
-                        //deferralVC.downcastLayout?.autoFitHeightScale = timetableVC.downcastLayout?.autoFitHeightScale
+                        tempRescalingBool = true
+                        deferralVC.downcastLayout?.autoFitHeightScale = timetableVC.downcastLayout?.autoFitHeightScale
                         /// print("rescaled to \(deferralVC.downcastLayout?.autoFitHeightScale), tt scale is \(timetableVC.downcastLayout?.autoFitHeightScale)")
                         timetableVC.gotoView(vc: deferralVC)
-                        //tempRescalingBool = false
+                        tempRescalingBool = false
                         deferredDescription = globalTaskIdentifier
                     }
                 }

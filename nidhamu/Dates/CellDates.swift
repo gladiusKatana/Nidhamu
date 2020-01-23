@@ -16,35 +16,34 @@ extension CollectionVC { /// probably will refactor this whole file soon
                 cell.backgroundColor = taskAddingColour
                 cell.titleLabel.text = "+"
             } else {
-                let cellDateIsBetweenLogins = sweepLoginInterval(dateToCheck: cell.cellDate, forEventDeadline: false,
-                                                                 column: column, row: row, layout: layout)
-                if truncateMins(cell.cellDate) == truncateMins(Date())
-                    || row == nowRow && column == nowColumn         /// these 2 conditionals are equivalent but the latter is calculated faster
-                {
-                    cell.backgroundColor = subtleBlue
-                    showNowCell(cell, column: column, row: row, forSpringForward: false)
-                    
-                    if truncateMins(Date()) == truncateMins(springForwardDate) && (column, row) == (nowColumn, nowRow + 1) {
-                        cell.titleLabel.text = "-"
-                    }
-                } else {
-                    if cellDateIsBetweenLogins {
-                        if cellDateIsLastLogin {
-                            cell.titleLabel.text = "last login"; cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)
+                if viewControllerType == .timetable {
+                    let cellDateIsBetweenLogins = sweepLoginInterval(dateToCheck: cell.cellDate, forEventDeadline: false,
+                                                                     column: column, row: row, layout: layout)
+                    if truncateMins(cell.cellDate) == truncateMins(Date())
+                        || row == nowRow && column == nowColumn         /// these 2 conditionals are equivalent but the latter is calculated faster
+                    {
+                        cell.backgroundColor = subtleBlue
+                        showNowCell(cell, column: column, row: row, forSpringForward: false)
+                        
+                        if truncateMins(Date()) == truncateMins(springForwardDate) && (column, row) == (nowColumn, nowRow + 1) {
+                            cell.titleLabel.text = "-"
                         }
-                        cell.backgroundColor = lastLoginDimOrange; cell.cellColour = lastLoginDimOrange
-                        
-                        prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
-                        
                     } else {
-                        if cellDateIsNextWeek {cell.backgroundColor = lastWeekColour; cell.cellColour = lastWeekColour}
-                        else {cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour}
+                        if cellDateIsBetweenLogins {
+                            if cellDateIsLastLogin {
+                                cell.titleLabel.text = "last login"; cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)
+                            }
+                            cell.backgroundColor = lastLoginDimOrange; cell.cellColour = lastLoginDimOrange
+                            
+                            prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
+                            
+                        } else {setCellColourBasedOnWeek(cell: cell, cellDateIsNextWeek: cellDateIsNextWeek)}
                     }
-                }
-                
-                if viewControllerType != .deferralDates {
-                    showKeyTimeBlockDates(cell: cell, layout: layout)
-                }
+                    
+                    if viewControllerType != .deferralDates {
+                        showKeyTimeBlockDates(cell: cell, layout: layout)
+                    }
+                } else {setCellColourBasedOnWeek(cell: cell, cellDateIsNextWeek: cellDateIsNextWeek)}
             }
         } else {
             if row == 3 && column == nowColumn {
@@ -80,6 +79,11 @@ extension CollectionVC { /// probably will refactor this whole file soon
         //            showDateInTitleLabels(date: cell.cellDate, cell: cell)
         //            cell.titleLabel.text = "\(dstOffset)"
         //        }
+    }
+    
+    func setCellColourBasedOnWeek(cell: CustomCell, cellDateIsNextWeek: Bool) {
+        if cellDateIsNextWeek {cell.backgroundColor = lastWeekColour; cell.cellColour = lastWeekColour}
+        else {cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour}
     }
 }
 
