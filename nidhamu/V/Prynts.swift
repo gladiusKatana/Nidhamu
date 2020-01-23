@@ -18,7 +18,7 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
             
             let title = task.taskDescription
             let titleCount = "\(title)".count
-            let titleBound = 24
+            let titleBound = 22
             var count = (titleCount < titleBound) ? titleBound - titleCount : 0 ///titleCount - bound
             let titleExcess = String(repeating: " ", count: count)
             

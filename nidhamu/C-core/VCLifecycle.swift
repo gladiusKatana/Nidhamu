@@ -9,7 +9,7 @@ extension CollectionVC {
         collectionView.bounces = false
         
         setTopViewController()
-        let str = (showConsoleLegend) ? loadSymbolLegend : ""       ; print("💾\(topVC.viewControllerType)\(str)")// disk emoji means loaded 💾
+//        let str = (showConsoleLegend) ? loadSymbolLegend : "" //; print("💾\(topVC.viewControllerType)\(str)")// disk emoji means loaded 💾
         statusBarHeightChangeNotificationSetup()
         keyboardNotificationSetup()
         
