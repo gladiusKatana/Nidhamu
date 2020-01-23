@@ -13,9 +13,11 @@ extension PopupMenuVC {
         if row < customLayout.lockedHeaderRows
             //|| column < customLayout.lockedHeaderSections {           // our popup menu has no need for header columns
         {
-            cell.backgroundColor = popupMenuLightGray
-            cell.titleLabel.text = "Mark '\(globalTaskIdentifier)':"
+            let taskId = globalTaskIdentifier
+            cell.titleLabel.text = taskId == defaultTaskIdentifier ? "Mark \(defaultTaskIdentifier):" : "Mark '\(taskId)':"
             cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .thin)
+            
+            cell.backgroundColor = popupMenuLightGray
         }
         else {
             cell.backgroundColor = platinum

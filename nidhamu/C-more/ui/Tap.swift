@@ -14,10 +14,10 @@ extension CollectionVC {
             ///print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "selected cell date: ", suffix: "", dateFormat: .fullDay))
             ///print(formattedDateString(selectedCellDate, roundedDown: false, showYear: true, prefix: "future task deadline: ", suffix: "", dateFormat: .fullDay))
             
-            selectedCellDate = cell.cellDate + TimeInterval(3600 * timeBlockSize) ///for task deadline: = start of the next time block after the one tapped
-            
             switch viewControllerType {
             case .timetable:
+                
+                selectedCellDate = cell.cellDate + TimeInterval(3600 * timeBlockSize) ///for task deadline: = start of the next time block after the one tapped
                 
                 selectedTimeBlockPath = [column, row]                                               ///; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
@@ -43,9 +43,9 @@ extension CollectionVC {
                 }
             case .archive:          presentEmail() ///sendArchiveAsCsv()
             case .deferralDates:
-                deferralPath = [column, row]
-                cell.backgroundColor = taskAddingColour
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                    deferralPath = [column, row]
                     cell.backgroundColor = cell.cellColour
                     self.gotoView(vc: timetableVC)
                 }

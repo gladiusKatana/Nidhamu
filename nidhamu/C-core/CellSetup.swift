@@ -35,7 +35,7 @@ extension CollectionVC {
                     } else {deadline = baseDeadline}
                     
                     cell.titleLabel.text = deferredDescription
-                    addToTimeBlock(atColumn: column, atRow: row, textEntered: "\(deferredDescription)*",
+                    addToTimeBlock(atColumn: column, atRow: row, textEntered: "\(deferredDescription)",
                         taskDeadline: deadline, withStatus: .deferred)
                     deferralPath = defaultPathOutOfView
                 }

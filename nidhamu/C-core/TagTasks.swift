@@ -9,21 +9,29 @@ extension CollectionVC {
             
             let column = indexPathsToProcess.first![0]; let row = indexPathsToProcess.first![1]     ///; print("presenting popup at (\(column), \(row))")
             
-            globalTaskIdentifier = "\(taskArraysToProcess.first![taskIndex].taskDescription)"
+            if let firstTaskArrayToProcess = taskArraysToProcess.first {                            ///if taskArraysToProcess.count > 1 {
+                
+                if taskIndex < firstTaskArrayToProcess.count {
+                    globalTaskIdentifier = "\(firstTaskArrayToProcess[taskIndex].taskDescription)"
+                }
+                else {print("task index exceeds task array size")}
+                
+            }
+            else {print("could not cast to task array first item")}
+            
+            /*}else {globalTaskIdentifier = "\(taskArraysToProcess[0][taskIndex].taskDescription)"}*/
             
             presentPopupViewToTagTasks(column: column, row: row)
         }
-            
         else {                                                      //print("\npaths to process empty\n")
             
             if topVC.viewControllerType != .deferralDates {
                 if downcastLayout?.autoFitHeightScale != 1 {
-                    downcastLayout?.autoFitHeightScale = 1          ; print("reset hScale to 1 on \(topVC.viewControllerType)")
+                    downcastLayout?.autoFitHeightScale = 1          //; print("reset hScale to 1 on \(topVC.viewControllerType)")
                 }
             }
             ///taskArraysToProcess.removeAll()
         }
     }
-    
 }
 

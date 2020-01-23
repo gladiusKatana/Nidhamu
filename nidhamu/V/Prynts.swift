@@ -59,6 +59,10 @@ func pryntDate(_ date: Date, prefix: String) {
     print(formattedDateString(date, roundedDown: false, showYear: true, prefix: prefix, suffix: " \(dst)", dateFormat: .fullDay)) //; print("")
 }
 
+func pryntTaskTaggingVariables() {
+    print("\n\(taskArraysToProcess.count) task arrays to process;\ndescriptions to process: \(taskDescriptionsToProcess);\npaths to process: \(indexPathsToProcess)\nindex \(taskIndex) of \(tasksInBlockToBeProcessed) tasks in block")
+}
+
 func dstMarkerForConsole(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
     let fbk = (truncateMins(date) == truncateMins(fallBackDate)) ? "(fall-back)" : ""
     let spf = (truncateMins(date) == truncateMins(springForwardDate)) ? "(spring-forward)" : ""
@@ -77,7 +81,7 @@ func dstMarkerForHeader(_ date: Date) -> String { /// creates a string notifying
     if daysSinceLastArchiveEmail >= 30
         && fbk == "" && spf == ""
     {
-        archiveIntervalNotification = "You haven't backed up past-event archives for \(daysSinceLastArchiveEmail) days"
+        archiveIntervalNotification = "⌛️Note: Your Past-Event Archives were last updated \(daysSinceLastArchiveEmail) days ago... " //⭐️
     }
     return "\(fbk)\(spf)\(archiveIntervalNotification)"
 }

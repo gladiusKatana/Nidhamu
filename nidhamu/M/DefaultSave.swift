@@ -2,8 +2,8 @@
 import UIKit
 
 func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, pryntTasks: Bool) {
+    if showDate {pryntDate(Date(), prefix: "✔︎saved")}
     
-    if showDate {print(formattedDateString(Date(), roundedDown: false, showYear: true, prefix: "✔︎saved", suffix: "", dateFormat: .fullDayWithSeconds))}
     let defaults = UserDefaults.standard
     timeBlockPaths.removeAll(); taskDescriptionArrays.removeAll(); taskStatusArrays.removeAll(); taskDeadlineArrays.removeAll()
     
@@ -38,7 +38,11 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
     taskDescriptionArrays = applySortingTransform(taskDescriptionArrays, transform: sortingTransform) as! [[String]]
     taskStatusArrays = applySortingTransform(taskStatusArrays, transform: sortingTransform) as! [[Int]]
     taskDeadlineArrays = applySortingTransform(taskDeadlineArrays, transform: sortingTransform) as! [[[Any]]]
-    if pryntTasks {printTasksTabularized()}
+    if pryntTasks {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            printTasksTabularized()
+        }
+    }
     setForKeys(defaults, saveDate: saveDate, resetLastLogin: resetLastLogin)
 }
 

@@ -15,9 +15,11 @@ extension CollectionVC {
 
 extension PopupMenuVC {
     func updateBlockProcessingVariables(column: Int, row: Int, taskWillShowUpNextWeek: Bool, selectedStatus: TaskStatus) {
-//        if taskIndex <= tasksInBlockToBeProcessed {
+        
+        if taskIndex <= tasksInBlockToBeProcessed {
             taskIndex += 1
-//        }
+        }
+        
         if tasksInBlockToBeProcessed > 0 {tasksInBlockToBeProcessed -= 1}
         
         if tasksInBlockToBeProcessed == 0 { ///print("ZERO!\n")
@@ -26,7 +28,9 @@ extension PopupMenuVC {
             }
             
             taskIndex = 0
+            
             indexPathsToProcess.removeFirst(); taskArraysToProcess.removeFirst(); taskDescriptionsToProcess.removeFirst()
+            
             if !taskArraysToProcess.isEmpty {
                 tasksInBlockToBeProcessed = taskArraysToProcess.first!.count
             }

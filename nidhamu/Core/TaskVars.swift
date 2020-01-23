@@ -4,7 +4,8 @@ import UIKit
 
 var taskIndex = 0;                      var tasksInBlockToBeProcessed = 0
 
-var globalTaskIdentifier = "(task)"
+var defaultTaskIdentifier = "Task"
+var globalTaskIdentifier = "Task"
 
 var tasksAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleTask]>()      /// Dictionary lookup for arrays of tasks (ie to-do-lists), keyed by index path of collection view
 
