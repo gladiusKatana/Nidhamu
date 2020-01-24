@@ -29,8 +29,7 @@ extension CollectionVC {
                         
                         self.prepareAndPresentTextField()
                         self.reloadCV()
-                    }
-                    /**/
+                    } /**/
                 } else {
                     if let tasks = tasksAtIndexPath[timeBlock] {taskListVC.downcastLayout!.rows = tasks.count}
                     gotoView(vc: taskListVC)

@@ -68,6 +68,18 @@ extension Date {
     //    }
 }
 
+func dateOfLastSecond(_ date: Date) -> Date {
+    let truncDate = truncateMins(date)
+    let (year, _, month, _ , day, _, _, hour, _, _) = getChosenDateComponents(truncDate, roundedDown: false)
+    let formatter = DateFormatter(); formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+    
+    guard let lastSecondDate = formatter.date(from: "\(year)/\(month)/\(day) \(hour):\(59):\(59)") else {
+        print("could not create last-second-date with input, returning current date instead")
+        return Date()
+    } ///print("last-second-date: \(formattedDateString(lastSecondDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithSeconds))")
+    return lastSecondDate
+}
+
 //func hoursSince(_ startDate: Date, testDate: Date) -> Int {
 //    var truncStartDate = truncateMinutesOf(startDate)
 //    let truncTestDate = truncateMinutesOf(testDate)

@@ -39,7 +39,6 @@ extension PopupMenuVC {
                 
                 updateBlockProcessingVariables(column: clm, row: rw,
                                                taskWillShowUpNextWeek: taskWillShowUpNextWeek, selectedStatus: selectedStatus!)
-                
                 //pryntTaskTaggingVariables()
                 
                 if selectedStatus == .deferred { /// if task is deferred, but also marked recurring, recurring has no additional effect: task shows up just once next week, not twice

@@ -40,7 +40,6 @@ extension CollectionVC {
                 DispatchQueue.main.asyncAfter(deadline: .now()) { /// must be on main queue: periodic callback inside the completion handler, is called on a background thread
                     topVC.reloadCV()
                 }
-                
                 pryntLastLoginDate(); pryntCurrentDate()
             }
         }
@@ -52,17 +51,5 @@ extension CollectionVC {
             self?.periodicDateRefresh(){self!.kickoffTimer()}
         }
     }
-}
-
-func dateOfLastSecond(_ date: Date) -> Date {
-    let truncDate = truncateMins(date)
-    let (year, _, month, _ , day, _, _, hour, _, _) = getChosenDateComponents(truncDate, roundedDown: false)
-    let formatter = DateFormatter(); formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
-    
-    guard let lastSecondDate = formatter.date(from: "\(year)/\(month)/\(day) \(hour):\(59):\(59)") else {
-        print("could not create last-second-date with input, returning current date instead")
-        return Date()
-    } ///print("last-second-date: \(formattedDateString(lastSecondDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithSeconds))")
-    return lastSecondDate
 }
 

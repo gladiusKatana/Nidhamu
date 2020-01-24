@@ -7,9 +7,8 @@ extension CollectionVC {
         super.viewDidLoad()
         collectionView.backgroundColor = backgroundColour
         collectionView.bounces = false
-        
+        ///let str = (showConsoleLegend) ? loadSymbolLegend : "" //; print("💾\(topVC.viewControllerType)\(str)")// disk emoji means loaded 💾
         setTopViewController()
-//        let str = (showConsoleLegend) ? loadSymbolLegend : "" //; print("💾\(topVC.viewControllerType)\(str)")// disk emoji means loaded 💾
         statusBarHeightChangeNotificationSetup()
         keyboardNotificationSetup()
         
@@ -42,7 +41,6 @@ extension CollectionVC {
         ///showLoadAndAppearIndicationInConsole = true
         if showConsoleLegend {showConsoleLegend = false}                              /// legend only needs to be shown once
         ///}
-        
         reloadCV()
     }
     

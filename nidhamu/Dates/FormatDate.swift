@@ -46,7 +46,6 @@ func formattedDateString(_ date: Date, roundedDown: Bool, showYear: Bool, prefix
     }
 }
 
-
 enum CustomDateFormat: Int {
     case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayWithYear, fullDayWithSeconds, fullDayShortForm, fullDayShortFormNoDots, archiveFormat, archiveCSVTitle, hourOnly, hourAndMinute, monthAndDay
 }

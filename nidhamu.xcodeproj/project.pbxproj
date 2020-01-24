@@ -46,7 +46,7 @@
 		065412EE237A6D840080F3EF /* RotateLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A5237A6D830080F3EF /* RotateLock.swift */; };
 		065412EF237A6D840080F3EF /* VCLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A7237A6D830080F3EF /* VCLifecycle.swift */; };
 		065412F0237A6D840080F3EF /* UIMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A8237A6D830080F3EF /* UIMode.swift */; };
-		065412F1237A6D840080F3EF /* PrepBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A9237A6D830080F3EF /* PrepBlocks.swift */; };
+		065412F1237A6D840080F3EF /* PrepareTBs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A9237A6D830080F3EF /* PrepareTBs.swift */; };
 		065412F2237A6D840080F3EF /* TagTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412AA237A6D830080F3EF /* TagTasks.swift */; };
 		065412F3237A6D840080F3EF /* CellSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412AB237A6D830080F3EF /* CellSetup.swift */; };
 		065412F4237A6D840080F3EF /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412AC237A6D830080F3EF /* CollectionVC.swift */; };
@@ -83,6 +83,8 @@
 		06541314237A6D840080F3EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D1237A6D840080F3EF /* AppDelegate.swift */; };
 		06541315237A6D840080F3EF /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D2237A6D840080F3EF /* Tasks.swift */; };
 		0665328F23A55A05006EC559 /* LRSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665328E23A55A05006EC559 /* LRSetup.swift */; };
+		0678FC5C23DAA4E0009B25B8 /* ProcessTBs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678FC5B23DAA4E0009B25B8 /* ProcessTBs.swift */; };
+		0678FC5E23DAA6CB009B25B8 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678FC5D23DAA6CB009B25B8 /* LoginInterval.swift */; };
 		0699C04B23BB0F23009D1DD2 /* VCs_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699C04A23BB0F23009D1DD2 /* VCs_II.swift */; };
 		06A2035323D8096B00E4FA0A /* LongPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A2035223D8096B00E4FA0A /* LongPress.swift */; };
 		06B6630923CD73A5001449D8 /* [Nidhamu] Task Archive.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */; };
@@ -152,7 +154,7 @@
 		065412A5237A6D830080F3EF /* RotateLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateLock.swift; sourceTree = "<group>"; };
 		065412A7237A6D830080F3EF /* VCLifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCLifecycle.swift; sourceTree = "<group>"; };
 		065412A8237A6D830080F3EF /* UIMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMode.swift; sourceTree = "<group>"; };
-		065412A9237A6D830080F3EF /* PrepBlocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepBlocks.swift; sourceTree = "<group>"; };
+		065412A9237A6D830080F3EF /* PrepareTBs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepareTBs.swift; sourceTree = "<group>"; };
 		065412AA237A6D830080F3EF /* TagTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTasks.swift; sourceTree = "<group>"; };
 		065412AB237A6D830080F3EF /* CellSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellSetup.swift; sourceTree = "<group>"; };
 		065412AC237A6D830080F3EF /* CollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
@@ -189,6 +191,8 @@
 		065412D1237A6D840080F3EF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		065412D2237A6D840080F3EF /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		0665328E23A55A05006EC559 /* LRSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRSetup.swift; sourceTree = "<group>"; };
+		0678FC5B23DAA4E0009B25B8 /* ProcessTBs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessTBs.swift; sourceTree = "<group>"; };
+		0678FC5D23DAA6CB009B25B8 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
 		0699C04A23BB0F23009D1DD2 /* VCs_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCs_II.swift; sourceTree = "<group>"; };
 		06A2035223D8096B00E4FA0A /* LongPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPress.swift; sourceTree = "<group>"; };
 		06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = "[Nidhamu] Task Archive.numbers"; sourceTree = "<group>"; };
@@ -369,7 +373,8 @@
 				065412A7237A6D830080F3EF /* VCLifecycle.swift */,
 				065412AD237A6D830080F3EF /* CellPath.swift */,
 				065412AB237A6D830080F3EF /* CellSetup.swift */,
-				065412A9237A6D830080F3EF /* PrepBlocks.swift */,
+				065412A9237A6D830080F3EF /* PrepareTBs.swift */,
+				0678FC5B23DAA4E0009B25B8 /* ProcessTBs.swift */,
 				065412AA237A6D830080F3EF /* TagTasks.swift */,
 				065412AE237A6D830080F3EF /* Archiving.swift */,
 				065412A8237A6D830080F3EF /* UIMode.swift */,
@@ -387,6 +392,7 @@
 				065412B5237A6D840080F3EF /* CellDates.swift */,
 				065412B1237A6D840080F3EF /* SetCellDate.swift */,
 				065412B3237A6D840080F3EF /* ShowDates.swift */,
+				0678FC5D23DAA6CB009B25B8 /* LoginInterval.swift */,
 				063A3DA6238E4B2B00DACE48 /* DST.swift */,
 			);
 			path = Dates;
@@ -622,6 +628,7 @@
 				065412D9237A6D840080F3EF /* UINotify.swift in Sources */,
 				065412E3237A6D840080F3EF /* BaseCell.swift in Sources */,
 				065412ED237A6D840080F3EF /* Prynts.swift in Sources */,
+				0678FC5E23DAA6CB009B25B8 /* LoginInterval.swift in Sources */,
 				065412DA237A6D840080F3EF /* Keyboard.swift in Sources */,
 				06541304237A6D840080F3EF /* Layout.swift in Sources */,
 				06541308237A6D840080F3EF /* DeviceType.swift in Sources */,
@@ -630,6 +637,7 @@
 				0625163E22D6C71900EBB4C8 /* nidhamu.xcdatamodeld in Sources */,
 				063A3DA7238E4B2B00DACE48 /* DST.swift in Sources */,
 				0629972323A09157001D178D /* RightCell.swift in Sources */,
+				0678FC5C23DAA4E0009B25B8 /* ProcessTBs.swift in Sources */,
 				065412EB237A6D840080F3EF /* BlockBorder.swift in Sources */,
 				065412D3237A6D840080F3EF /* TapPopup.swift in Sources */,
 				065412E7237A6D840080F3EF /* Reload.swift in Sources */,
@@ -657,7 +665,7 @@
 				065412DC237A6D840080F3EF /* PSwitch.swift in Sources */,
 				065412D8237A6D840080F3EF /* TextField.swift in Sources */,
 				0665328F23A55A05006EC559 /* LRSetup.swift in Sources */,
-				065412F1237A6D840080F3EF /* PrepBlocks.swift in Sources */,
+				065412F1237A6D840080F3EF /* PrepareTBs.swift in Sources */,
 				06541301237A6D840080F3EF /* SizeEnums.swift in Sources */,
 				06541305237A6D840080F3EF /* Prepare.swift in Sources */,
 				0699C04B23BB0F23009D1DD2 /* VCs_II.swift in Sources */,

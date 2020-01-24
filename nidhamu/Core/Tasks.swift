@@ -3,7 +3,8 @@
   
   
   
-  > adjustable time block sizes (done; verify extensibility)                                          M
+  > adjustable time block sizes (done; verify extensibility)                                        M
+  
   
   
   
@@ -29,12 +30,12 @@
   
   
   
+  
   buttons                                                                                           UI
   
   icon
   
-  launch screen                             APP STORE ASAP aim for: end Jan.
-  
+  launch screen                                                         APP STORE ASAP aim for: end Jan.
   
   
   
@@ -44,6 +45,7 @@
   + login date interval outlined/animated, not perma-coloured
   + device specific fonts; orientation enum
   + complete orientation independence (consult apple engineer)
+  
   
   
   
