@@ -33,9 +33,7 @@ extension CollectionVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setTopViewController()
-        
         if [.taskList, .archive].contains(viewControllerType) {setupPinchToExit()}
-        
         ///if !showLoadAndAppearIndicationInConsole {                                                                                               // if the below print hasn't been done already for this vc
         ///let str = (showConsoleLegend) ? appearSymbolLegend : ""; print("🏞\(topVC.viewControllerType)\(str)")  // picture-emoji means appeared 🏞
         ///showLoadAndAppearIndicationInConsole = true

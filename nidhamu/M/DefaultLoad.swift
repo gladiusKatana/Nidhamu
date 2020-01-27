@@ -8,10 +8,7 @@ func defaultLoadData(showDate: Bool) {                                          
     if let components = defaults.array(forKey: "savedLastLoginDate") {
         lastLoginDateComponents = components
         lastLoginDate = dateFromComponents(lastLoginDateComponents)
-        if showDate {pryntLastLoginDate(); pryntCurrentDate()
-            print("taskDescriptionArrays: \(taskDescriptionArrays)")
-            print("timeBlockPaths: \(timeBlockPaths)")
-        } ///  * may want to modify these methods to adjust cell string (printed in the console only) to adjust for DST
+        if showDate {pryntLastLoginDate(); pryntCurrentDate()} ///  * may want to modify these methods to adjust cell string (printed in the console only) to adjust for DST
         
         if dateOfLastSecond(fallBackDate).isBetween(lastLoginDate, and: Date() + oneHour) { /// if fall-back occurred (eg 1:59->1:00) while app was in background
             foundNextFallBackDate = false /*; foundNextSpringForwardDate = false*/

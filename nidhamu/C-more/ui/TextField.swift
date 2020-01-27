@@ -48,5 +48,12 @@ extension CollectionVC {
         taskField.becomeFirstResponder()
         textFieldDisplayed = true
     }
+    
+    func presentTextFieldAndReload(after delay: Double) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            self.prepareAndPresentTextField()
+            self.reloadCV()
+        } /**/
+    }
 }
 

@@ -17,7 +17,7 @@ extension CollectionVC {
                 let longPressDuration = Date().timeIntervalSince1970 - latestLongPressOnTask.timeIntervalSince1970
                 ///print("Long pressed for \(longPressDuration) seconds")
                 
-                if longPressDuration >= TimeInterval(3) {
+                if longPressDuration > TimeInterval(2) {
                     if let task = tasksAtIndexPath[timeBlock] {
                         taskIsDeletable = true
                         setNavBarTitle(customString: "Tap to Delete Task '\(task[indexPath.row].taskDescription)':")

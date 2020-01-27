@@ -7,29 +7,23 @@ extension CollectionVC {
                                  didSelectItemAt indexPath: IndexPath) {                ///print("tapped tt cell")
         
         let layout = downcastLayout!;  let row = indexPath.item;  let column = indexPath.section
-        
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
             ///print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "selected cell date: ", suffix: "", dateFormat: .fullDay))
-            ///print(formattedDateString(selectedCellDate, roundedDown: false, showYear: true, prefix: "future task deadline: ", suffix: "", dateFormat: .fullDay))
             
             switch viewControllerType {
             case .timetable:
-                
                 selectedCellDate = cell.cellDate + TimeInterval(3600 * timeBlockSize)   ///for task deadline: = start of the next time block after the one tapped
-                
                 selectedTimeBlockPath = [column, row]                                   ///; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
                 
                 if tasksAtIndexPath[timeBlock] == nil || textFieldDisplayed {
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        cell.backgroundColor = taskAddingColour                                                     //** refactor ?
-                        self.prepareAndPresentTextField()
-                        self.reloadCV()
-                    } /**/
+                    cell.backgroundColor = taskAddingColour
+                    if textFieldDisplayed {presentTextFieldAndReload(after: 0)}
+                    else {presentTextFieldAndReload(after: 0.05)}
                 } else {
-                    if let tasks = tasksAtIndexPath[timeBlock] {taskListVC.downcastLayout!.rows = tasks.count}      //** refactor
+                    if let tasks = tasksAtIndexPath[timeBlock] {taskListVC.downcastLayout!.rows = tasks.count}
                     gotoView(vc: taskListVC)
                 }
                 
@@ -43,18 +37,9 @@ extension CollectionVC {
                     
                     if let tasks = tasksAtIndexPath[timeBlock] {taskListVC.downcastLayout!.rows = tasks.count == 0 ? 1 : tasks.count}
                     reloadCV()
-                    
                     timetableVC.collectionView.reloadData()
-                    taskIsDeletable = false
-                    print("taskDescriptionArrays: \(taskDescriptionArrays)")
-                    print("timeBlockPaths: \(timeBlockPaths)")
-                }
-                else {
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        self.prepareAndPresentTextField()
-                        self.reloadCV()
-                    }
-                }
+                    taskIsDeletable = false                         ///; print("taskDescriptionArrays: \(taskDescriptionArrays)")    ///print("timeBlockPaths: \(timeBlockPaths)")
+                } else {presentTextFieldAndReload(after: 0)}
                 
             case .archive:          presentEmail() ///sendArchiveAsCsv()
             case .deferralDates:
@@ -90,3 +75,4 @@ extension CollectionVC {
  if !textFieldDisplayed {presentTextField(after: 1, dateString: selectedTimeBlockDateDescription)}
  else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}
  } else {presentTextField(after: 0, dateString: selectedTimeBlockDateDescription)}*/
+

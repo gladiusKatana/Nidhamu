@@ -9,28 +9,30 @@
   list VC: entire day, week
   
   tasksAtDate                                                                                       M
-                                                                    
+  
   week-navigation buttons                                                                           UI
   
   prevent user changing date
   
-
-  
-
-  
-  checklogic, refactor, comments
-  
-  readme
   
   
   
   
+  app intro
   
   buttons                                                                                           UI
   
   icon
   
-  launch screen                                                         APP STORE ASAP aim for: end Jan.
+  launch screen
+  
+  
+  
+  
+  
+  checklogic, refactor, comments
+  
+  readme                                                            APP STORE ASAP aim for: end Jan.
   
   
   
@@ -44,7 +46,6 @@
   
   
   
-  
   1st commit                                                         July 8 '19
   
   
@@ -53,7 +54,7 @@
   Notes
   
   
-  > denotes tasks I'm working on most actively at present -Garth Snyder aka gladiusKatana
+  > denotes tasks I'm working on most actively at present (may not always be marked) -gladiusKatana
   
   
   ⁌o⁍ denotes bugfixes
