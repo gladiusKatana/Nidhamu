@@ -4,6 +4,9 @@ import UIKit
 
 var lastLoginDate = Date();                     var selectedCellDate = Date()
 var timeBlockRoundedLastLogin = Date()
+
+var latestLongPressOnTask = Date()
+
 var lastArchiveEmailDate = Date()///makeDateFrom(year: 1969, month: 1, day: 1, hr: 0, min: 0, sec: 0)
 
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
@@ -14,9 +17,7 @@ var springForwardDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1
 var fallBackDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec: 1)        /// ""
 
 
-
 var oneHour = TimeInterval(3600)
-
 
 
 var springForwardExtraHour = 0.0;               var fallBackExtraHour = 0.0
@@ -27,11 +28,9 @@ var nowRow = 0;                                 var nowColumn = 0
 var dstNotificationCellPath = (-1, -1)
 
 
-
 var showDSTDates = false
 var foundNextFallBackDate = false
 var foundNextSpringForwardDate = false
-
 
 
 var selectedTimeBlockDateDescription = "(selected date)"

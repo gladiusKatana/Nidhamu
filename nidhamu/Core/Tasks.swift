@@ -3,25 +3,20 @@
   
   
   
-  > adjustable time block sizes (done; verify extensibility)                                        M
-  
-  
-  
-  
-  
-  tasksAtDate                                                                                       M
-                                                                    
-  week-navigation buttons                                                                           UI
   
   list tasks if time blocks > 1hr
   
   list VC: entire day, week
   
+  tasksAtDate                                                                                       M
+                                                                    
+  week-navigation buttons                                                                           UI
+  
   prevent user changing date
   
+
   
-  
-  
+
   
   checklogic, refactor, comments
   

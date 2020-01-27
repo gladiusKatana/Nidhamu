@@ -26,7 +26,7 @@ extension CollectionVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setNavBarTitle(customString: nil)
+        if !taskIsDeletable {setNavBarTitle(customString: nil)}
         setupNavBarButtons(grayTwo, greyIndex: colourIndex)
     }
     

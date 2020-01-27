@@ -1,7 +1,6 @@
 // TaskData         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-
 var taskIndex = 0;                      var tasksInBlockToBeProcessed = 0
 
 var defaultTaskIdentifier = "Task"
@@ -31,6 +30,10 @@ var deferralPath = [Int]();                         var deferredDescription = ""
 
 
 
+// Deleting tasks (literally, not just classifying them as .deleted)
+var taskIsDeletable = false
+
+
 
 // Saving time blocks' components via separate UserDefaults arrays --------------------------------------------------------------
 var timeBlockPaths = [[Int]]()
@@ -39,7 +42,6 @@ var sortedTimeBlockPaths = [[Int]]();               var sortingTransform = [Int]
 var taskDeadlineArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]]
 var taskDescriptionArrays = [[String]]()
 var taskStatusArrays = [[Int]]() /// populated with raw values of enum TaskStatus*/
-
 
 
 

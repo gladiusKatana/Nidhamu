@@ -308,7 +308,6 @@
 			children = (
 				06541288237A6D830080F3EF /* Tap.swift */,
 				06A2035223D8096B00E4FA0A /* LongPress.swift */,
-				06541286237A6D830080F3EF /* TapPopup.swift */,
 				0654128A237A6D830080F3EF /* Pinch.swift */,
 				0654128B237A6D830080F3EF /* TextField.swift */,
 				06541287237A6D830080F3EF /* TFReturn.swift */,
@@ -321,6 +320,7 @@
 		0654128F237A6D830080F3EF /* popup */ = {
 			isa = PBXGroup;
 			children = (
+				06541286237A6D830080F3EF /* TapPopup.swift */,
 				06541291237A6D830080F3EF /* AddPopup.swift */,
 				06541290237A6D830080F3EF /* PSwitch.swift */,
 				06541292237A6D830080F3EF /* PopupVC.swift */,

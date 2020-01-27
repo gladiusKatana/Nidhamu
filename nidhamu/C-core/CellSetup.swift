@@ -22,7 +22,7 @@ extension CollectionVC {
                     }
                     else {
                         if !([column, row] == indexPathsToProcess.first) {
-                            cell.titleLabel.text = "(\(tasks.count))"
+                            cell.titleLabel.text = tasks.isEmpty ? "" : "(\(tasks.count))"
                         }
                     }
                 }
@@ -46,10 +46,9 @@ extension CollectionVC {
             cell.cellDate = selectedCellDate
             cell.backgroundColor = defaultColour
             
-            guard let taskAtTimeBlock = tasksAtIndexPath[timeBlock] else {
-                cell.titleLabel.text = "(no items yet)"; return // will not be executed since task list vc is only go-to-able via a time block
+            guard let taskAtTimeBlock = tasksAtIndexPath[timeBlock], !taskAtTimeBlock.isEmpty else {
+                cell.titleLabel.text = "(no items yet)"; return
             }
-            
             let status = taskAtTimeBlock[row].taskStatus
             cell.titleLabel.textColor = .black
             
