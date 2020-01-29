@@ -12,7 +12,8 @@ extension PopupMenuVC {
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             cell.backgroundColor = taskAddingColour
             
-            guard let firstPathToProcess = indexPathsToProcess.first else {print("no paths to process... even though popup was presented"); return}
+            guard let firstPathToProcess = indexPathsToProcess.first
+                else {print("no paths to process... even though popup was presented"); return}
             
             let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1]    /// components of path of current item being marked
             
@@ -37,22 +38,25 @@ extension PopupMenuVC {
                     }
                 } else {addToArchives(taskBeingTagged)}
                 
-                updateBlockProcessingVariables(column: clm, row: rw,
-                                               taskWillShowUpNextWeek: taskWillShowUpNextWeek, selectedStatus: selectedStatus!)
-                //pryntTaskTaggingVariables()
+                ///pryntTaskTaggingVariables()
                 
                 if selectedStatus == .deferred { /// if task is deferred, but also marked recurring, recurring has no additional effect: task shows up just once next week, not twice
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         timetableVC.setNavBarTitle(customString: nil) /// call it on any of the CollectionVCs
                         
-                        tempRescalingBool = true
-                        deferralVC.downcastLayout?.autoFitHeightScale = timetableVC.downcastLayout?.autoFitHeightScale
+//                        tempRescalingBool = true
+//                        deferralVC.downcastLayout?.autoFitHeightScale = timetableVC.downcastLayout?.autoFitHeightScale
                         /// print("rescaled to \(deferralVC.downcastLayout?.autoFitHeightScale), tt scale is \(timetableVC.downcastLayout?.autoFitHeightScale)")
                         timetableVC.gotoView(vc: deferralVC)
-                        tempRescalingBool = false
+//                        tempRescalingBool = false
                         deferredDescription = globalTaskIdentifier
                     }
                 }
+                else {
+                    let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1]    /// components of path of current item being marked
+                    taskTaggingViewController.updateBlockProcessingVariables(column: clm, row: rw, taskWillShowUpNextWeek: taskWillShowUpNextWeek, selectedStatus: selectedStatus!)
+                }
+                
             } else {print("no task in dictionary at that index path")}
         } ///else {print("selected popup menu header")}
     }

@@ -48,6 +48,8 @@ extension CollectionVC {
             exitTaskAddingMode()
             textFieldDisplayed = false
         }
+        
+        if viewControllerType == .deferralDates {collectionView.reloadData()}
     }
 }
 

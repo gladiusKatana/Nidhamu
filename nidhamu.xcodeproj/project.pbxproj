@@ -307,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				06541288237A6D830080F3EF /* Tap.swift */,
+				06541286237A6D830080F3EF /* TapPopup.swift */,
 				06A2035223D8096B00E4FA0A /* LongPress.swift */,
 				0654128A237A6D830080F3EF /* Pinch.swift */,
 				0654128B237A6D830080F3EF /* TextField.swift */,
@@ -320,7 +321,6 @@
 		0654128F237A6D830080F3EF /* popup */ = {
 			isa = PBXGroup;
 			children = (
-				06541286237A6D830080F3EF /* TapPopup.swift */,
 				06541291237A6D830080F3EF /* AddPopup.swift */,
 				06541290237A6D830080F3EF /* PSwitch.swift */,
 				06541292237A6D830080F3EF /* PopupVC.swift */,
@@ -360,7 +360,6 @@
 				065412A4237A6D830080F3EF /* Prynts.swift */,
 				065412A0237A6D830080F3EF /* Strings.swift */,
 				065412A1237A6D830080F3EF /* Colours.swift */,
-				065412A2237A6D830080F3EF /* BlockBorder.swift */,
 				065412A5237A6D830080F3EF /* RotateLock.swift */,
 			);
 			path = V;
@@ -378,6 +377,7 @@
 				065412AA237A6D830080F3EF /* TagTasks.swift */,
 				065412AE237A6D830080F3EF /* Archiving.swift */,
 				065412A8237A6D830080F3EF /* UIMode.swift */,
+				065412A2237A6D830080F3EF /* BlockBorder.swift */,
 			);
 			path = "C-core";
 			sourceTree = "<group>";

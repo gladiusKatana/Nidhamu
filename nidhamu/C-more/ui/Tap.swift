@@ -43,11 +43,17 @@ extension CollectionVC {
                 
             case .archive:          presentEmail() ///sendArchiveAsCsv()
             case .deferralDates:
+                cell.backgroundColor = taskAddingColour
+                
+                guard let firstPathToProcess = indexPathsToProcess.first else {print("no paths to process... ..."); return}
+                let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1]    /// components of path of current item being marked
+                taskTaggingViewController.updateBlockProcessingVariables(column: clm, row: rw, taskWillShowUpNextWeek: false, selectedStatus: .done)
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     deferralPath = [column, row]
-                    cell.backgroundColor = cell.cellColour
-                    self.gotoView(vc: timetableVC)
+                    self.gotoView(vc: timetableVC)                  ///; print("******************should be highlighting: \(earliestTaskAddress)")
                 }
+                
             default: print("unrecognized collection view type's cell selected")}
         }///else {print("selected navbar-embeddd vc's header")}
     }

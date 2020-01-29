@@ -13,7 +13,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
         if row >= layout.lockedHeaderRows {
             
             if [column, row] == selectedTimeBlockPath && textFieldDisplayed {
-                cell.backgroundColor = taskAddingColour
+                if viewControllerType != .deferralDates {cell.backgroundColor = taskAddingColour}
                 cell.titleLabel.text = "+"
             } else {
                 if viewControllerType == .timetable {
