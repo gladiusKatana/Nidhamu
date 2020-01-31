@@ -5,10 +5,10 @@ extension BaseCell {
     
     func initializeTextAndConstraints(_ titleLabel: UILabel, attribute: NSLayoutConstraint.Attribute) {
         
-        titleLabel.numberOfLines = 1
-        titleLabel.sizeToFit()
-        titleLabel.adjustsFontSizeToFitWidth = true
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+//        titleLabel.numberOfLines = 1
+//        titleLabel.sizeToFit()
+//        titleLabel.adjustsFontSizeToFitWidth = true
+//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(titleLabel)
         
         addConstraint(NSLayoutConstraint(item: titleLabel, attribute: attribute, relatedBy: .equal,
@@ -24,8 +24,8 @@ func leftOrRightCellSetup(_ cell: BaseCell, indexPath: IndexPath, paths: [(Int, 
     
     cell.backgroundColor = headerColour
     cell.titleLabel.textAlignment = .left
-    cell.titleLabel.numberOfLines = 0
-    cell.titleLabel.lineBreakMode = .byCharWrapping
+//    cell.titleLabel.numberOfLines = 0
+//    cell.titleLabel.lineBreakMode = .byCharWrapping
     
     let str = dstMarkerForHeader(Date())
     

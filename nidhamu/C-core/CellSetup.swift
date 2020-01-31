@@ -39,6 +39,18 @@ extension CollectionVC {
                         taskDeadline: deadline, withStatus: .deferred)
                     deferralPath = defaultPathOutOfView
                 }
+                
+
+                    cell.titleLabel.numberOfLines = 0
+                    cell.titleLabel.lineBreakMode = .byWordWrapping
+                    
+                    if let currentWidth = currentCellWidth, let currentHeight = currentCellHeight {
+                        cell.titleLabel.frame.size.width = currentWidth
+                        cell.titleLabel.frame.size.height = currentHeight ///print("just sized title label width to \(currentWidth), height to \(currentHeight)")
+                    }
+                    
+                    cell.titleLabel.sizeToFit()
+
             }
         }
             

@@ -9,7 +9,6 @@ class CustomCell: BaseCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(titleLabel)
         
         addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .centerX, relatedBy: .equal,

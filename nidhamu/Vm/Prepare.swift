@@ -27,6 +27,7 @@ extension CustomFlowLayout {
     func calculateAndResetSizes() {
         (cellWidth, cellHeight) = calculateSizes(); resetDimensionIfSquareCellsEnabled()
         widthPlusSpace = cellWidth! + hSpace;       heightPlusSpace = cellHeight! + vSpace
+        currentCellWidth = cellWidth;               currentCellHeight = cellHeight
         
         if !embeddedInNavController {compensateForNavigationAndStatusBars(forCollectionVC: taskTaggingViewController, withDelta: 0)}
         else {

@@ -12,7 +12,7 @@ var emailComposer = EmailComposer();            ///var timerForShowingScrollIndi
 var defaultTimetableCellFont = UIFont.systemFont(ofSize: 12, weight: .ultraLight) /// UIFont(name: "Helvetica Neue", size: 12)
 
 
-
+var currentCellWidth: CGFloat?;                 var currentCellHeight: CGFloat?
 var statusBarHeight = 0.0;                      var lastStatusBarHeight = 0.0
 var navBarHeight = 0.0;                         var launchWidth = 0.0
 

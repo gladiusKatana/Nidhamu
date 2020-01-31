@@ -13,8 +13,25 @@ class BaseCell: UICollectionViewCell {
         super.init(frame: frame)
         
         self.backgroundColor = cellDefaultColour
+        
         titleLabel.textColor = defaultCellTextColour
         titleLabel.font = defaultTimetableCellFont
+//        titleLabel.numberOfLines = 3
+        
+//        titleLabel.backgroundColor = .green
+//
+//        titleLabel.numberOfLines = 0
+//        titleLabel.lineBreakMode = .byWordWrapping
+//
+//        if let currentWidth = currentCellWidth, let currentHeight = currentCellHeight {
+//            titleLabel.frame.size.width = currentWidth
+//            titleLabel.frame.size.height = currentHeight
+//            //print("just sized title label width to \(currentWidth), height to \(currentHeight)")
+//        }
+//
+//        titleLabel.sizeToFit()
+//        //print("sizing label based on text: '\(titleLabel.text)'")
+//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}

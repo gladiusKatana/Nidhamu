@@ -3,7 +3,7 @@
   
   
   
-  ⁌o⁍ cell border after deferralVC dismissed
+  
   list tasks if time blocks > 1hr
   
   list VC: entire day, week
