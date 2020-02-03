@@ -42,10 +42,10 @@ class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRe
         return (downcastLayout!.loadsHorizontally) ? downcastLayout!.rows : downcastLayout!.cols
     }
     
-    func registerAndReturnCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> CustomCell {
+    func registerCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> CustomCell {
         collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.reuseIdentifier)
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
-        cell = doRestOfCellProcessing(cell: cell, indexPath: indexPath)
+        cell = multilineCellProcessing(cell: cell, indexPath: indexPath)
         return cell
     }
 }

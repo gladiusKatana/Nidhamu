@@ -82,9 +82,9 @@
 		06541313237A6D840080F3EF /* Vars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D0237A6D840080F3EF /* Vars.swift */; };
 		06541314237A6D840080F3EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D1237A6D840080F3EF /* AppDelegate.swift */; };
 		06541315237A6D840080F3EF /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D2237A6D840080F3EF /* Tasks.swift */; };
-		0665328F23A55A05006EC559 /* LRSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665328E23A55A05006EC559 /* LRSetup.swift */; };
 		0678FC5C23DAA4E0009B25B8 /* ProcessTBs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678FC5B23DAA4E0009B25B8 /* ProcessTBs.swift */; };
 		0678FC5E23DAA6CB009B25B8 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678FC5D23DAA6CB009B25B8 /* LoginInterval.swift */; };
+		067BC42A23E4B85F008096AF /* CenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BC42923E4B85F008096AF /* CenterCell.swift */; };
 		0699C04B23BB0F23009D1DD2 /* VCs_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699C04A23BB0F23009D1DD2 /* VCs_II.swift */; };
 		06A2035323D8096B00E4FA0A /* LongPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A2035223D8096B00E4FA0A /* LongPress.swift */; };
 		06B6630923CD73A5001449D8 /* [Nidhamu] Task Archive.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */; };
@@ -190,9 +190,9 @@
 		065412D0237A6D840080F3EF /* Vars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vars.swift; sourceTree = "<group>"; };
 		065412D1237A6D840080F3EF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		065412D2237A6D840080F3EF /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
-		0665328E23A55A05006EC559 /* LRSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRSetup.swift; sourceTree = "<group>"; };
 		0678FC5B23DAA4E0009B25B8 /* ProcessTBs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessTBs.swift; sourceTree = "<group>"; };
 		0678FC5D23DAA6CB009B25B8 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
+		067BC42923E4B85F008096AF /* CenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCell.swift; sourceTree = "<group>"; };
 		0699C04A23BB0F23009D1DD2 /* VCs_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCs_II.swift; sourceTree = "<group>"; };
 		06A2035223D8096B00E4FA0A /* LongPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPress.swift; sourceTree = "<group>"; };
 		06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = "[Nidhamu] Task Archive.numbers"; sourceTree = "<group>"; };
@@ -333,11 +333,11 @@
 		06541295237A6D830080F3EF /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				06541296237A6D830080F3EF /* Cell.swift */,
 				06541298237A6D830080F3EF /* BaseCell.swift */,
+				06541296237A6D830080F3EF /* Cell.swift */,
 				06541297237A6D830080F3EF /* LeftCell.swift */,
 				0629972223A09157001D178D /* RightCell.swift */,
-				0665328E23A55A05006EC559 /* LRSetup.swift */,
+				067BC42923E4B85F008096AF /* CenterCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -635,6 +635,7 @@
 				0654130A237A6D840080F3EF /* SimpleTask.swift in Sources */,
 				065412F6237A6D840080F3EF /* Archiving.swift in Sources */,
 				0625163E22D6C71900EBB4C8 /* nidhamu.xcdatamodeld in Sources */,
+				067BC42A23E4B85F008096AF /* CenterCell.swift in Sources */,
 				063A3DA7238E4B2B00DACE48 /* DST.swift in Sources */,
 				0629972323A09157001D178D /* RightCell.swift in Sources */,
 				0678FC5C23DAA4E0009B25B8 /* ProcessTBs.swift in Sources */,
@@ -664,7 +665,6 @@
 				06541314237A6D840080F3EF /* AppDelegate.swift in Sources */,
 				065412DC237A6D840080F3EF /* PSwitch.swift in Sources */,
 				065412D8237A6D840080F3EF /* TextField.swift in Sources */,
-				0665328F23A55A05006EC559 /* LRSetup.swift in Sources */,
 				065412F1237A6D840080F3EF /* PrepareTBs.swift in Sources */,
 				06541301237A6D840080F3EF /* SizeEnums.swift in Sources */,
 				06541305237A6D840080F3EF /* Prepare.swift in Sources */,

@@ -3,20 +3,31 @@ import UIKit
 
 extension CollectionVC {
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
-        -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let row = indexPath.row; let col = indexPath.section
+        let layout = downcastLayout!
+        
+        if viewControllerType == .timetable {
             
-            if viewControllerType == .timetable {
-                if (0...1).contains(indexPath.row) {return registerAndReturnRightCell(collectionView, at: indexPath)}/// cell w/ text & constraints left-aligned
-                else {return registerAndReturnCell(collectionView, at: indexPath)}
-            } else {return registerAndReturnCell(collectionView, at: indexPath)}
+            if (col,row) == (7,0) { //or:  if (0...1).contains(row) && col == layout.cols - 1 {
+                return registerRightCell(collectionView, at: indexPath)
+            } else {
+                if col < layout.lockedHeaderSections {return registerCenterCell(collectionView, at: indexPath)}
+                else {
+                    return registerCell(collectionView, at: indexPath)
+                }
+            }
+        } else {return registerCell(collectionView, at: indexPath)}
     }
     
-    func doRestOfCellProcessing(cell: CustomCell, indexPath: IndexPath) -> CustomCell {
+    func multilineCellProcessing(cell: CustomCell, indexPath: IndexPath) -> CustomCell {
+        
         let customLayout = downcastLayout!
         let row = indexPath.item;                       let column = indexPath.section;
         let headerRows = customLayout.lockedHeaderRows; let headerSections = customLayout.lockedHeaderSections
         var fontSize = 0
+        
         cell.xyCoordinate = [column, row]
         
         if viewControllerType == .timetable || viewControllerType == .deferralDates {
@@ -28,20 +39,6 @@ extension CollectionVC {
         
         if column < headerSections {
             cell.backgroundColor = headerColour
-            
-            if row >= headerRows {                                              /// time-of-day labels
-                
-                if timeBlockSize == 1 {
-                    var ampm = ""
-                    if row < headerRows + 12 {ampm = "am"}
-                    else {ampm = "pm"}
-                    cell.titleLabel.text = "\(amPmHours[row - headerRows])\(ampm)"
-                }
-                else {cell.titleLabel.text = dayQuarters[row - headerRows]}
-                
-                if timeBlockSize == 1 && textFieldDisplayed && currentOrientation == "landscape" {fontSize = 7} else {fontSize = 11} 
-                cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .light)
-            }
         }
         else {
             if row < headerRows {
@@ -64,9 +61,32 @@ extension CollectionVC {
             }
         }
         
+        resetTitleLabel(cell: cell, row: row, col: column, layout: customLayout)
+        
         if viewControllerType == .archive {cell.backgroundColor = defaultColour}
         
         return cell
+    }
+    
+    func resetTitleLabel(cell: BaseCell, row: Int, col: Int, layout: CustomFlowLayout) {              //print("resetting title label")
+        if let safeCell = cell as? CustomCell {
+            
+            if self.downcastLayout!.embeddedInNavController {
+                safeCell.titleLabel.numberOfLines = 0
+                safeCell.titleLabel.lineBreakMode = .byWordWrapping
+                
+                if let currentWidth = currentCellWidth, let currentHeight = currentCellHeight {
+                    safeCell.titleLabel.frame.size.width = currentWidth
+                    safeCell.titleLabel.frame.size.height = currentHeight   ///print("just sized title label width to \(currentWidth), height to \(currentHeight)")
+                }
+                
+                safeCell.titleLabel.sizeToFit()
+            }
+            
+        } else {
+            print("unsuccessful downcast @ (\(row),\(col))")
+            cell.titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        }
     }
 }
 
@@ -74,4 +94,17 @@ extension CollectionVC {
 /*if row == 5 && column == 1 {
  if viewControllerType == .hours {findAverageLetterWidthWithCellLabelFont(cell: cell)} /// done here so it's only called once, but can access a cell
  }*/
+
+
+//        for cell in timetableVC.collectionView.visibleCells {
+//
+//            guard let cell = cell as? BaseCell else {
+//                print("could not downcast to base cell in cell reference")
+//                return
+//            }
+//
+//            let col = cell.xyCoordinate[0]
+//            let row = cell.xyCoordinate[1]
+//            resetTitleLabel(cell: cell, row: row, col: col)
+//        }
 

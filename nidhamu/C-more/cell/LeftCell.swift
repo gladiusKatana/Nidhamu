@@ -1,26 +1,6 @@
 // LeftCell         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-extension CollectionVC {
-    /*
-    func registerAndReturnLeftCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> LeftAlignedCell {
-        collectionView.register(LeftAlignedCell.self, forCellWithReuseIdentifier: LeftAlignedCell.reuseIdentifier)
-
-        var leftCell = collectionView.dequeueReusableCell(withReuseIdentifier:
-            LeftAlignedCell.reuseIdentifier, for: indexPath) as! LeftAlignedCell
-
-        leftCell = doRestOfLeftCellProcessing(cell: leftCell, indexPath: indexPath)
-        return leftCell
-    }
-    
-    func doRestOfLeftCellProcessing(cell: LeftAlignedCell, indexPath: IndexPath) -> LeftAlignedCell  {
-
-        leftOrRightCellSetup(cell, indexPath: indexPath, paths: [(0,0), (0,1)])
-
-        return cell
-    }*/
-}
-
 class LeftAlignedCell: BaseCell {
     
     static let reuseIdentifier = "CustomLeftAlignedCell"
@@ -28,9 +8,32 @@ class LeftAlignedCell: BaseCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        initializeTextAndConstraints(titleLabel, attribute: .left)
+        addTitleLabelConstraints(titleLabel, attribute: .left)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
+}
+
+extension CollectionVC {
+    
+    /*func registerAndReturnLeftCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> LeftAlignedCell {
+     collectionView.register(LeftAlignedCell.self, forCellWithReuseIdentifier: LeftAlignedCell.reuseIdentifier)
+     
+     var leftCell = collectionView.dequeueReusableCell(withReuseIdentifier:
+     LeftAlignedCell.reuseIdentifier, for: indexPath) as! LeftAlignedCell
+     
+     leftCell = doRestOfLeftCellProcessing(cell: leftCell, indexPath: indexPath)
+     return leftCell
+     }*/
+    
+    func doRestOfLeftCellProcessing(cell: LeftAlignedCell, indexPath: IndexPath) -> LeftAlignedCell  {
+        
+        let paths = [(0,0), (0,1)] /// this is where the content at cells (7,0) & (7,1) used to be (now right-aligned text, so as to be right under the nav-bar buttons)
+        
+        singleLineCellSetup(cell, indexPath: indexPath, paths: paths)
+        
+        return cell
+    }
 }
 

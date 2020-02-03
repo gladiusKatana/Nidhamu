@@ -7,7 +7,9 @@ extension PopupMenuVC {
         super.viewDidLoad()                                 //; collectionView.frame = downcastLayout!.customFrame
         
         collectionView.backgroundColor = iosSettingsGray    /// * experiment with:  why do i see this colour at all, upon rotation?
-        collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.popupReuseIdentifier)
+        
+        collectionView.register(CenterAlignedCell.self, forCellWithReuseIdentifier: CenterAlignedCell.popupReuseIdentifier)
+        
         collectionView?.isUserInteractionEnabled = true
         
         collectionView?.isScrollEnabled = false
