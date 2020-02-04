@@ -23,7 +23,7 @@ extension CollectionVC {
     func registerCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> CustomCell {
         collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.reuseIdentifier)
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
-        cell = multilineCellProcessing(cell: cell, indexPath: indexPath)
+        cell = multiLineCellSetup(cell: cell, indexPath: indexPath)
         return cell
     }
     
@@ -31,17 +31,19 @@ extension CollectionVC {
         collectionView.register(CenterAlignedCell.self, forCellWithReuseIdentifier: CenterAlignedCell.reuseIdentifier)
         var centerCell = collectionView.dequeueReusableCell(withReuseIdentifier:
             CenterAlignedCell.reuseIdentifier, for: indexPath) as! CenterAlignedCell
-        centerCell = doRestOfCenterCellProcessing(cell: centerCell, indexPath: indexPath)
+        centerCell = centerCellSetup(cell: centerCell, indexPath: indexPath)
         return centerCell
     }
+    
     /*func registerLeftCell(:) -- see comment block below (not currently using left aligned cells)*/
     func registerRightCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> RightAlignedCell {
         collectionView.register(RightAlignedCell.self, forCellWithReuseIdentifier: RightAlignedCell.reuseIdentifier)
         
-        var rightCell = collectionView.dequeueReusableCell(withReuseIdentifier:
+        let rightCell = collectionView.dequeueReusableCell(withReuseIdentifier:
             RightAlignedCell.reuseIdentifier, for: indexPath) as! RightAlignedCell
         
-        rightCell = doRestOfRightCellProcessing(cell: rightCell, indexPath: indexPath)
+        let paths = [(7,0), (7,1)]
+        singleLineCellSetup(rightCell, indexPath: indexPath, paths: paths)
         return rightCell
     }
     
@@ -58,7 +60,6 @@ extension CollectionVC {
 /*if row == 5 && column == 1 {
  if viewControllerType == .hours {findAverageLetterWidthWithCellLabelFont(cell: cell)} /// done here so it's only called once, but can access a cell
  }*/
-
 
 //        for cell in timetableVC.collectionView.visibleCells {
 //

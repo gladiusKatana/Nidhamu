@@ -15,15 +15,3 @@ class LeftAlignedCell: BaseCell {
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
 }
 
-extension CollectionVC {
-    
-    func doRestOfLeftCellProcessing(cell: LeftAlignedCell, indexPath: IndexPath) -> LeftAlignedCell  {
-        
-        let paths = [(0,0), (0,1)] /// this is where the content at cells (7,0) & (7,1) used to be (now right-aligned text, so as to be right under the nav-bar buttons)
-        
-        singleLineCellSetup(cell, indexPath: indexPath, paths: paths)
-        
-        return cell
-    }
-}
-

@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func multilineCellProcessing(cell: CustomCell, indexPath: IndexPath) -> CustomCell {
+    func multiLineCellSetup(cell: CustomCell, indexPath: IndexPath) -> CustomCell {
         
         let customLayout = downcastLayout!
         let row = indexPath.item;                       let column = indexPath.section;
@@ -35,7 +35,8 @@ extension CollectionVC {
             }
             
             if row >= (headerRows - 3) { /// since cell dates are set in the 3 rows above the cell representing 12am (the first non-header cell)
-                timeBlockDateSetup(cell: cell, column: column, row: row, layout: customLayout)
+                
+                getCellContents(cell: cell, column: column, row: row, layout: customLayout)
                 
                 if row == customLayout.rows - 1 && column == customLayout.cols - 1 {          /// so it's called on the FINAL cell dequeued
                     processTimeBlocksSinceLastLogin(layout: customLayout)
