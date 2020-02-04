@@ -42,6 +42,5 @@ extension CollectionVC {
             }
         }
     }
-    
 }
 

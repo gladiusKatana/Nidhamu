@@ -30,7 +30,7 @@
 		065412DE237A6D840080F3EF /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06541292237A6D830080F3EF /* PopupVC.swift */; };
 		065412DF237A6D840080F3EF /* PLifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06541293237A6D830080F3EF /* PLifeCycle.swift */; };
 		065412E0237A6D840080F3EF /* PCellPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06541294237A6D830080F3EF /* PCellPath.swift */; };
-		065412E1237A6D840080F3EF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06541296237A6D830080F3EF /* Cell.swift */; };
+		065412E1237A6D840080F3EF /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06541296237A6D830080F3EF /* CustomCell.swift */; };
 		065412E2237A6D840080F3EF /* LeftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06541297237A6D830080F3EF /* LeftCell.swift */; };
 		065412E3237A6D840080F3EF /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06541298237A6D830080F3EF /* BaseCell.swift */; };
 		065412E4237A6D840080F3EF /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0654129A237A6D830080F3EF /* Buttons.swift */; };
@@ -48,9 +48,9 @@
 		065412F0237A6D840080F3EF /* UIMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A8237A6D830080F3EF /* UIMode.swift */; };
 		065412F1237A6D840080F3EF /* PrepareTBs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A9237A6D830080F3EF /* PrepareTBs.swift */; };
 		065412F2237A6D840080F3EF /* TagTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412AA237A6D830080F3EF /* TagTasks.swift */; };
-		065412F3237A6D840080F3EF /* CellSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412AB237A6D830080F3EF /* CellSetup.swift */; };
+		065412F3237A6D840080F3EF /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412AB237A6D830080F3EF /* CellData.swift */; };
 		065412F4237A6D840080F3EF /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412AC237A6D830080F3EF /* CollectionVC.swift */; };
-		065412F5237A6D840080F3EF /* CellPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412AD237A6D830080F3EF /* CellPath.swift */; };
+		065412F5237A6D840080F3EF /* ReturnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412AD237A6D830080F3EF /* ReturnCell.swift */; };
 		065412F6237A6D840080F3EF /* Archiving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412AE237A6D830080F3EF /* Archiving.swift */; };
 		065412F7237A6D840080F3EF /* FormatDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412B0237A6D840080F3EF /* FormatDate.swift */; };
 		065412F8237A6D840080F3EF /* SetCellDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412B1237A6D840080F3EF /* SetCellDate.swift */; };
@@ -84,6 +84,8 @@
 		06541315237A6D840080F3EF /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D2237A6D840080F3EF /* Tasks.swift */; };
 		0678FC5C23DAA4E0009B25B8 /* ProcessTBs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678FC5B23DAA4E0009B25B8 /* ProcessTBs.swift */; };
 		0678FC5E23DAA6CB009B25B8 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678FC5D23DAA6CB009B25B8 /* LoginInterval.swift */; };
+		067A844F23E92C090058E1B4 /* MLCellSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A844E23E92C090058E1B4 /* MLCellSetup.swift */; };
+		067A845223E92D5D0058E1B4 /* SLCellSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A845123E92D5D0058E1B4 /* SLCellSetup.swift */; };
 		067BC42A23E4B85F008096AF /* CenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BC42923E4B85F008096AF /* CenterCell.swift */; };
 		0699C04B23BB0F23009D1DD2 /* VCs_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699C04A23BB0F23009D1DD2 /* VCs_II.swift */; };
 		06A2035323D8096B00E4FA0A /* LongPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A2035223D8096B00E4FA0A /* LongPress.swift */; };
@@ -138,7 +140,7 @@
 		06541292237A6D830080F3EF /* PopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
 		06541293237A6D830080F3EF /* PLifeCycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PLifeCycle.swift; sourceTree = "<group>"; };
 		06541294237A6D830080F3EF /* PCellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCellPath.swift; sourceTree = "<group>"; };
-		06541296237A6D830080F3EF /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		06541296237A6D830080F3EF /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		06541297237A6D830080F3EF /* LeftCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftCell.swift; sourceTree = "<group>"; };
 		06541298237A6D830080F3EF /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		0654129A237A6D830080F3EF /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
@@ -156,9 +158,9 @@
 		065412A8237A6D830080F3EF /* UIMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIMode.swift; sourceTree = "<group>"; };
 		065412A9237A6D830080F3EF /* PrepareTBs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrepareTBs.swift; sourceTree = "<group>"; };
 		065412AA237A6D830080F3EF /* TagTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTasks.swift; sourceTree = "<group>"; };
-		065412AB237A6D830080F3EF /* CellSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellSetup.swift; sourceTree = "<group>"; };
+		065412AB237A6D830080F3EF /* CellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
 		065412AC237A6D830080F3EF /* CollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
-		065412AD237A6D830080F3EF /* CellPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellPath.swift; sourceTree = "<group>"; };
+		065412AD237A6D830080F3EF /* ReturnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnCell.swift; sourceTree = "<group>"; };
 		065412AE237A6D830080F3EF /* Archiving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Archiving.swift; sourceTree = "<group>"; };
 		065412B0237A6D840080F3EF /* FormatDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatDate.swift; sourceTree = "<group>"; };
 		065412B1237A6D840080F3EF /* SetCellDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetCellDate.swift; sourceTree = "<group>"; };
@@ -192,6 +194,8 @@
 		065412D2237A6D840080F3EF /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		0678FC5B23DAA4E0009B25B8 /* ProcessTBs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessTBs.swift; sourceTree = "<group>"; };
 		0678FC5D23DAA6CB009B25B8 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
+		067A844E23E92C090058E1B4 /* MLCellSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCellSetup.swift; sourceTree = "<group>"; };
+		067A845123E92D5D0058E1B4 /* SLCellSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLCellSetup.swift; sourceTree = "<group>"; };
 		067BC42923E4B85F008096AF /* CenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCell.swift; sourceTree = "<group>"; };
 		0699C04A23BB0F23009D1DD2 /* VCs_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCs_II.swift; sourceTree = "<group>"; };
 		06A2035223D8096B00E4FA0A /* LongPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPress.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 				0654129F237A6D830080F3EF /* V */,
 				065412B8237A6D840080F3EF /* Vm */,
 				065412A6237A6D830080F3EF /* C-core */,
+				067A845023E92C790058E1B4 /* TaskProcessing */,
 				06541284237A6D830080F3EF /* C-more */,
 				065412C0237A6D840080F3EF /* Checks */,
 				0688C38E23481D45007DC878 /* Inactive */,
@@ -334,10 +339,10 @@
 			isa = PBXGroup;
 			children = (
 				06541298237A6D830080F3EF /* BaseCell.swift */,
-				06541296237A6D830080F3EF /* Cell.swift */,
-				06541297237A6D830080F3EF /* LeftCell.swift */,
-				0629972223A09157001D178D /* RightCell.swift */,
+				06541296237A6D830080F3EF /* CustomCell.swift */,
 				067BC42923E4B85F008096AF /* CenterCell.swift */,
+				0629972223A09157001D178D /* RightCell.swift */,
+				06541297237A6D830080F3EF /* LeftCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -370,14 +375,10 @@
 			children = (
 				065412AC237A6D830080F3EF /* CollectionVC.swift */,
 				065412A7237A6D830080F3EF /* VCLifecycle.swift */,
-				065412AD237A6D830080F3EF /* CellPath.swift */,
-				065412AB237A6D830080F3EF /* CellSetup.swift */,
-				065412A9237A6D830080F3EF /* PrepareTBs.swift */,
-				0678FC5B23DAA4E0009B25B8 /* ProcessTBs.swift */,
-				065412AA237A6D830080F3EF /* TagTasks.swift */,
-				065412AE237A6D830080F3EF /* Archiving.swift */,
-				065412A8237A6D830080F3EF /* UIMode.swift */,
-				065412A2237A6D830080F3EF /* BlockBorder.swift */,
+				065412AD237A6D830080F3EF /* ReturnCell.swift */,
+				067A845123E92D5D0058E1B4 /* SLCellSetup.swift */,
+				067A844E23E92C090058E1B4 /* MLCellSetup.swift */,
+				065412AB237A6D830080F3EF /* CellData.swift */,
 			);
 			path = "C-core";
 			sourceTree = "<group>";
@@ -448,6 +449,19 @@
 				065412CE237A6D840080F3EF /* AppLifecycle.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		067A845023E92C790058E1B4 /* TaskProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				065412A9237A6D830080F3EF /* PrepareTBs.swift */,
+				0678FC5B23DAA4E0009B25B8 /* ProcessTBs.swift */,
+				065412AA237A6D830080F3EF /* TagTasks.swift */,
+				065412AE237A6D830080F3EF /* Archiving.swift */,
+				065412A8237A6D830080F3EF /* UIMode.swift */,
+				065412A2237A6D830080F3EF /* BlockBorder.swift */,
+			);
+			path = TaskProcessing;
 			sourceTree = "<group>";
 		};
 		0688C38E23481D45007DC878 /* Inactive */ = {
@@ -622,7 +636,7 @@
 				06541309237A6D840080F3EF /* Sorting.swift in Sources */,
 				06473CA82346DF00009397AE /* SendMsg.swift in Sources */,
 				065412F2237A6D840080F3EF /* TagTasks.swift in Sources */,
-				065412E1237A6D840080F3EF /* Cell.swift in Sources */,
+				065412E1237A6D840080F3EF /* CustomCell.swift in Sources */,
 				065412E6237A6D840080F3EF /* NavBar.swift in Sources */,
 				065412F7237A6D840080F3EF /* FormatDate.swift in Sources */,
 				065412D9237A6D840080F3EF /* UINotify.swift in Sources */,
@@ -639,6 +653,7 @@
 				063A3DA7238E4B2B00DACE48 /* DST.swift in Sources */,
 				0629972323A09157001D178D /* RightCell.swift in Sources */,
 				0678FC5C23DAA4E0009B25B8 /* ProcessTBs.swift in Sources */,
+				067A844F23E92C090058E1B4 /* MLCellSetup.swift in Sources */,
 				065412EB237A6D840080F3EF /* BlockBorder.swift in Sources */,
 				065412D3237A6D840080F3EF /* TapPopup.swift in Sources */,
 				065412E7237A6D840080F3EF /* Reload.swift in Sources */,
@@ -668,6 +683,7 @@
 				065412F1237A6D840080F3EF /* PrepareTBs.swift in Sources */,
 				06541301237A6D840080F3EF /* SizeEnums.swift in Sources */,
 				06541305237A6D840080F3EF /* Prepare.swift in Sources */,
+				067A845223E92D5D0058E1B4 /* SLCellSetup.swift in Sources */,
 				0699C04B23BB0F23009D1DD2 /* VCs_II.swift in Sources */,
 				06541312237A6D840080F3EF /* TaskVars.swift in Sources */,
 				065412F4237A6D840080F3EF /* CollectionVC.swift in Sources */,
@@ -678,9 +694,9 @@
 				06541302237A6D840080F3EF /* ZIndex.swift in Sources */,
 				06A2035323D8096B00E4FA0A /* LongPress.swift in Sources */,
 				065412FB237A6D840080F3EF /* Dates.swift in Sources */,
-				065412F3237A6D840080F3EF /* CellSetup.swift in Sources */,
+				065412F3237A6D840080F3EF /* CellData.swift in Sources */,
 				065412EE237A6D840080F3EF /* RotateLock.swift in Sources */,
-				065412F5237A6D840080F3EF /* CellPath.swift in Sources */,
+				065412F5237A6D840080F3EF /* ReturnCell.swift in Sources */,
 				065412E0237A6D840080F3EF /* PCellPath.swift in Sources */,
 				062516BF22D6CF4200EBB4C8 /* ScrollBars.swift in Sources */,
 				065412F0237A6D840080F3EF /* UIMode.swift in Sources */,

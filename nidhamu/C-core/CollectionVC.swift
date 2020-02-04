@@ -41,12 +41,5 @@ class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRe
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return (downcastLayout!.loadsHorizontally) ? downcastLayout!.rows : downcastLayout!.cols
     }
-    
-    func registerCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> CustomCell {
-        collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.reuseIdentifier)
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
-        cell = multilineCellProcessing(cell: cell, indexPath: indexPath)
-        return cell
-    }
 }
 

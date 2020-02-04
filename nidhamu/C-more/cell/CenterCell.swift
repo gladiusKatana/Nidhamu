@@ -17,14 +17,6 @@ class CenterAlignedCell: BaseCell {
 
 extension CollectionVC {
     
-    func registerCenterCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> CenterAlignedCell {
-        collectionView.register(CenterAlignedCell.self, forCellWithReuseIdentifier: CenterAlignedCell.reuseIdentifier)
-        var centerCell = collectionView.dequeueReusableCell(withReuseIdentifier:
-            CenterAlignedCell.reuseIdentifier, for: indexPath) as! CenterAlignedCell
-        centerCell = doRestOfCenterCellProcessing(cell: centerCell, indexPath: indexPath)
-        return centerCell
-    }
-    
     func doRestOfCenterCellProcessing(cell: CenterAlignedCell, indexPath: IndexPath) -> CenterAlignedCell  {
         
         let customLayout = downcastLayout!
