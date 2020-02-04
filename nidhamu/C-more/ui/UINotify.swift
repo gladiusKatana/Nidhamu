@@ -1,10 +1,28 @@
 // UINotify         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit; import NotificationCenter
 
+/// only below method does not use NotificationCenter
+func dateHeaderNotification(_ date: Date) -> String { /// creates a string notifying if input date is a daylight-savings date, OR if user has not backed up past-task archives in > 30 days
+    
+    let fbk = (truncateMins(date) != truncateMins(fallBackDate)) ? "" :
+    "🌖 Daylight Savings (fall-back): the 1am time-block lasts for 2 hours "
+    let spf = (truncateMins(date) != truncateMins(springForwardDate)) ? "" :
+    "🌔 Daylight Savings (spring-forward): the 2am time-block gets skipped "  //(1:59→ 3:00)"
+    var archiveIntervalNotification = ""
+    let daysSinceLastArchiveEmail = Int(Date().timeIntervalSince(lastArchiveEmailDate) / 86400)
+    
+    if daysSinceLastArchiveEmail >= 30
+        && fbk == "" && spf == ""
+    {
+        archiveIntervalNotification = "⌛️Note: Your Past-Event Archives were last updated \(daysSinceLastArchiveEmail) days ago... " //⭐️
+    }
+    
+    return "\(fbk)\(spf)\(archiveIntervalNotification)"
+}
+
 extension CollectionVC {
     
     func statusBarHeightChangeNotificationSetup() {
-        
         if phones.contains(modelName) {
             let center = UNUserNotificationCenter.current()
             center.removeAllDeliveredNotifications()          // to remove all delivered notifications

@@ -6,7 +6,7 @@ extension CollectionVC {
     func centerCellSetup(cell: CenterAlignedCell, indexPath: IndexPath) -> CenterAlignedCell  {
         
         let customLayout = downcastLayout!
-        let row = indexPath.item;                       //let column = indexPath.section;
+        let row = indexPath.item;                       ///let column = indexPath.section;
         let headerRows = customLayout.lockedHeaderRows  //; let headerSections = customLayout.lockedHeaderSections
         var fontSize = 0
         
@@ -25,6 +25,9 @@ extension CollectionVC {
             cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .light)
             
         }
+        
+        ///testForCellBannerNotification(cell, row: row, col: column, notificationColour: nil, notificationText: nil)
+        
         return cell
     }
 }

@@ -9,14 +9,18 @@ extension CollectionVC {
         let layout = downcastLayout!
         
         if viewControllerType == .timetable {
-            if (col,row) == (7,0) { //or:  if (0...1).contains(row) && col == layout.cols - 1 {
+            
+            if (0...1).contains(row) && col == layout.cols - 1 {
                 return registerRightCell(collectionView, at: indexPath)
-            } else {
+            }
+                
+            else {
                 if col < layout.lockedHeaderSections {return registerCenterCell(collectionView, at: indexPath)}
                 else {
                     return registerCell(collectionView, at: indexPath)
                 }
             }
+            
         } else {return registerCell(collectionView, at: indexPath)}
     }
     
@@ -36,6 +40,7 @@ extension CollectionVC {
     }
     
     /*func registerLeftCell(:) -- see comment block below (not currently using left aligned cells)*/
+    
     func registerRightCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> RightAlignedCell {
         collectionView.register(RightAlignedCell.self, forCellWithReuseIdentifier: RightAlignedCell.reuseIdentifier)
         
@@ -55,11 +60,6 @@ extension CollectionVC {
      return leftCell
      }*/
 }
-
-///For cell title label text truncation
-/*if row == 5 && column == 1 {
- if viewControllerType == .hours {findAverageLetterWidthWithCellLabelFont(cell: cell)} /// done here so it's only called once, but can access a cell
- }*/
 
 //        for cell in timetableVC.collectionView.visibleCells {
 //

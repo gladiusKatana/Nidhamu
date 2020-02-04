@@ -62,3 +62,7 @@ extension String {
 //    }
 //}
 
+///For cell title label text truncation
+/*if row == 5 && column == 1 {
+ if viewControllerType == .hours {findAverageLetterWidthWithCellLabelFont(cell: cell)} /// done here so it's only called once, but can access a cell
+ }*/

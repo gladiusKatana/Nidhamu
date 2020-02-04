@@ -48,6 +48,7 @@ extension CollectionVC {
         
         if viewControllerType == .archive {cell.backgroundColor = defaultColour}
         
+        testForCellBannerNotification(cell, row: row, col: column, notificationColour: nil, notificationText: nil)
         return cell
     }
 }
