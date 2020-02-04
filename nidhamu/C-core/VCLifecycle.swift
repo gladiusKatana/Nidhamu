@@ -7,7 +7,6 @@ extension CollectionVC {
         super.viewDidLoad()
         collectionView.backgroundColor = backgroundColour
         collectionView.bounces = false
-        ///let str = (showConsoleLegend) ? loadSymbolLegend : "" //; print("💾\(topVC.viewControllerType)\(str)")// disk emoji means loaded 💾
         setTopViewController()
         statusBarHeightChangeNotificationSetup()
         keyboardNotificationSetup()
@@ -26,20 +25,19 @@ extension CollectionVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         if !taskIsDeletable {setNavBarTitle(customString: nil)}
         setupNavBarButtons(grayTwo, greyIndex: colourIndex)
+        
+        cellDefaultColour = icyBlue /// * this is the only time this global, ubiquitous colour is mutated; it was initially lighter-coloured only for visual simplicity/continuity (all cells looking alike)
+        
+        reloadCV()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setTopViewController()
         if [.taskList, .archive].contains(viewControllerType) {setupPinchToExit()}
-        ///if !showLoadAndAppearIndicationInConsole {                                                                                               // if the below print hasn't been done already for this vc
-        ///let str = (showConsoleLegend) ? appearSymbolLegend : ""; print("🏞\(topVC.viewControllerType)\(str)")  // picture-emoji means appeared 🏞
-        ///showLoadAndAppearIndicationInConsole = true
-        if showConsoleLegend {showConsoleLegend = false}                              /// legend only needs to be shown once
-        ///}
-        reloadCV()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -52,3 +50,12 @@ extension CollectionVC {
     }
 }
 
+/// for printing console-symbol, in viewDidLoad(:)
+///let str = (showConsoleLegend) ? loadSymbolLegend : "" //; print("💾\(topVC.viewControllerType)\(str)")// disk emoji means loaded 💾
+
+/// for printing console-legend / symbols, in viewDid(/Will)Appear(:)
+/*if !showLoadAndAppearIndicationInConsole { /// if the below print hasn't been done already for this vc
+let str = (showConsoleLegend) ? appearSymbolLegend : ""; print("🏞\(topVC.viewControllerType)\(str)")  /// picture-emoji means appeared 🏞
+showLoadAndAppearIndicationInConsole = true
+if showConsoleLegend {showConsoleLegend = false}                              /// legend only needs to be shown once
+}*/
