@@ -27,7 +27,7 @@ extension CustomFlowLayout {
             } //* default frame is overridden anyway (see above comment); hence its initialization with all 0's
         }
         
-        let gap = CGFloat(1) /// extra gap for better aesthetics
+        let gap = CGFloat(0) /// extra gap for better aesthetics
         let autofitWidth = CGFloat(frame.width) / CGFloat(cols) - hSpace
         let barsHeight = navBarHeight + statusBarHeight
         let autoFitHeight = CGFloat(Double(frame.height - keyboardHeight /*- textFieldHeight*/ - gap) - barsHeight) / CGFloat(rows) - vSpace
