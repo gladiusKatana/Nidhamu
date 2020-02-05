@@ -16,7 +16,7 @@ import UIKit
         modelName = UIDevice.modelName
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = cellDefaultColour
+        window?.backgroundColor = icyBlue///cellDefaultColour
         window?.makeKeyAndVisible()
         globalWindow = window!
         

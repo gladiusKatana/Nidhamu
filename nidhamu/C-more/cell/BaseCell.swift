@@ -9,7 +9,6 @@ class BaseCell: UICollectionViewCell {
     var xyCoordinate = [-2, -2]
     //var task = SimpleTask() // may add as a property of a cell; or may simply keep it in a detached data structure (dictionary) as it is now
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -31,6 +30,8 @@ class BaseCell: UICollectionViewCell {
         
         titleLabel.textColor = defaultCellTextColour
         titleLabel.font = defaultTimetableCellFont
+        
+        self.backgroundColor = .orange
     }
     
     func addTitleLabelConstraints(_ titleLabel: UILabel, attribute: NSLayoutConstraint.Attribute) {
@@ -43,6 +44,5 @@ class BaseCell: UICollectionViewCell {
         addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .centerY, relatedBy: .equal,
                                          toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
     }
-    
 }
 

@@ -30,13 +30,13 @@ extension CollectionVC {
         setupNavBarButtons(grayTwo, greyIndex: colourIndex)
         
         cellDefaultColour = icyBlue /// * this is the only time this global, ubiquitous colour is mutated; it was initially lighter-coloured only for visual simplicity/continuity (all cells looking alike)
+        backgroundVC.view.backgroundColor = cellDefaultColour
         
-        reloadCV()
+        setTopViewController()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setTopViewController()
         if [.taskList, .archive].contains(viewControllerType) {setupPinchToExit()}
     }
     
