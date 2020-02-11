@@ -8,7 +8,7 @@
   
   list VC: entire day, week
   
-  tasksAtDate Dictionary                                                                            M 
+  tasksAtDate Dictionary                                                                            M
   
   week-navigation buttons                                                                           UI
   
