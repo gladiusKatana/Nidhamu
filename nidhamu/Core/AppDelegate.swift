@@ -21,7 +21,7 @@ import UIKit
         globalWindow = window!
         
         backgroundVC = UIViewController()
-        backgroundVC.view.backgroundColor = cellDefaultColour           /// must match window's background colour, for rotating landscape->portrait
+        backgroundVC.view.backgroundColor = cellDefaultColour       /// must match window's background colour, for rotating landscape->portrait
         backgroundVC.view.frame = globalWindow.frame
         
         getOrientationAtLaunch()                                    ; print("launching on \(modelName) in \(launchOrientation) orientation")
