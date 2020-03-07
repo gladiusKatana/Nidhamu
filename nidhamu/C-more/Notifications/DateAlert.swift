@@ -43,6 +43,7 @@ func dateHeaderCellNotification(_ date: Date) -> String { /// creates a string n
     let daysSinceLastArchiveEmail = Int(Date().timeIntervalSince(lastArchiveEmailDate) / 86400)
     
     if daysSinceLastArchiveEmail >= 30
+        && archiveTaskDescriptions.count > 0
         && fbk == "" && spf == ""
     {
         archiveIntervalNotification = "⌛️Note: Your Past-Event Archives were last updated \(daysSinceLastArchiveEmail) days ago... " //⭐️
