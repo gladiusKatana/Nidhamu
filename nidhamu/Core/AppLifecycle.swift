@@ -10,8 +10,8 @@ extension AppDelegate {
         /*if firstBecameActive {print("🔅became active")}
          else {firstBecameActive = true}*/
         
-        findFallbackDate(startingDate: Date() - TimeInterval(3600), printDSTDates: showDSTDates) /// generally want =true when testing timetable around DST dates
-        findSpringForwardDate(startingDate: Date(), printDSTDates: showDSTDates)                 /// see above
+        findFallbackDate(startingDate: Date() - TimeInterval(3600), printDSTDates: showDSTDates) /// generally want =true for testing timetable around DST
+        findSpringForwardDate(startingDate: Date(), printDSTDates: showDSTDates)                 /// see above.  (DST = daylight savings time)
         
         checkOrientation()
         defaultLoadData(showDate: true)
@@ -40,7 +40,7 @@ extension AppDelegate {
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {                  print("\n🌘entered background")
-        lastActiveOrientation = currentOrientation                                      ///customApplicationStatusPrint("🌘entered background")
+        lastActiveOrientation = currentOrientation                                      //customApplicationStatusPrint("🌘entered background")
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

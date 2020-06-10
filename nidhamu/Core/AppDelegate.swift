@@ -12,11 +12,13 @@ import UIKit
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        processCurrentDate() /// may move further down app lifecycle, to applicationDidBecomeActive(:); but this further accommodates 'going back in time' via device settings, without glitches
         modelName = UIDevice.modelName
         
+        processCurrentDate()
+        /// may move further down app lifecycle, to applicationDidBecomeActive(:); but this further accommodates 'going back in time' via device settings, without glitches
+        
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = icyBlue///cellDefaultColour
+        window?.backgroundColor = icyBlue//cellDefaultColour
         window?.makeKeyAndVisible()
         globalWindow = window!
         
@@ -32,7 +34,6 @@ import UIKit
         
         UINavigationBar.appearance().barTintColor = defaultColour
         UINavigationBar.appearance().shadowImage = UIImage()
-        
         //print(formattedDateString(Date(), roundedDown: false, prefix: "                      on", suffix: "", short: false))
         return true
     }
@@ -53,7 +54,7 @@ import UIKit
             if let statusBar = globalWindow.viewWithTag(tag) {
                 return statusBar
             } else {
-                ///let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)   // deprecated
+                //let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)   // deprecated
                 let statusBarView = UIView(frame: (globalWindow.windowScene?.statusBarManager!.statusBarFrame)!)
                 statusBarView.tag = tag
                 globalWindow.addSubview(statusBarView)

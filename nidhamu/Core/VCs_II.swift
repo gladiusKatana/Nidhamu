@@ -3,14 +3,14 @@ import UIKit
 
 var deferralLayout = ///---------------------------------------------
     CustomFlowLayout(
-        embeddedInNavController: true,          ///  if true, it's fullscreen (with a nav bar button to navigate to its collection view controller's view); else it's a window with a custom frame
-        customFrame: nil,                       ///  if nil, defaults to a pre-set frame, the app's window frame (as described in above comment)
+        embeddedInNavController: true,
+        customFrame: nil,
         rows: timetableRows, cols: 8,
         lockedHeaderRows: timetableHeaders, lockedHeaderSections: 1,
-        cellWidth: nil, cellHeight: nil,        ///  if either parameter is nil, screen width and/or height is autofitted (else, auto-fit scalars below are ignored, ie set to 1.0)
-        autoFitWScale: 1, autoFitHScale: 1,     ///  if either of these parameters are nil, they default to 1.0
-        hSpace: cellGap, vSpace: cellGap,       ///  gaps between the cells
-        loadsHorizontally: false,               ///❗️if loadsHorizontally is true, 'rows' look like columns
+        cellWidth: nil, cellHeight: nil,
+        autoFitWScale: 1, autoFitHScale: 1,
+        hSpace: cellGap, vSpace: cellGap,
+        loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
 var deferralVC = CollectionVC(.deferralDates, backgroundColour: defaultColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: nil, collectionViewLayout: deferralLayout)
