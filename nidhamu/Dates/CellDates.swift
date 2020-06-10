@@ -51,7 +51,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
                 let dstPlusFour = cell.cellDate + TimeInterval(3600 * 4)
                 let springForwardHeaderShift = tz.isDaylightSavingTime(for: dstPlusFour) ? 1.0 : 0
                 
-                (cell.cellDate, cellDateIsNextWeek, cellDateIsLastLogin) = setCellDate(baseDate: Date() - TimeInterval(86400 * 7) + TimeInterval(3600 * springForwardHeaderShift), cellOffset: offset, cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)                        ///print("at \(column),\(row); dstHeaderShift = \(springForwardHeaderShift)")
+                (cell.cellDate, cellDateIsNextWeek, cellDateIsLastLogin) = setCellDate(baseDate: Date() - TimeInterval(86400 * 7) + TimeInterval(3600 * springForwardHeaderShift), cellOffset: offset, cell: cell, column: column, row: row, layout: layout, looping: looping, withColours: withColours)    //; print("at \(column),\(row); dstHeaderShift = \(springForwardHeaderShift)")
             }
             
             if row == 2 {
@@ -71,7 +71,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
                 else {cell.backgroundColor = lastWeekColour}
             }
             
-            ///if row == 4 {cell.backgroundColor = .orange} /// so that it isn't white (indistinguishable from what might be below it: having no cell at that position)
+            ///if row == 4 {cell.backgroundColor = .orange} /// so that it isn't white (indistinguishable from what might be below it: no cell at that position)
         }
         
         //        if row > layout.lockedHeaderRows - 1 {

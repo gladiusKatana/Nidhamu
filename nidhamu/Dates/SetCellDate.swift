@@ -8,7 +8,6 @@ extension CollectionVC {
         
         var hoursFromNow = TimeInterval(0)
         let headers = layout.lockedHeaderRows
-        
         let headerOffset = row < headers ? 3600 * (row - headers) * (timeBlockSize) : 0
         
         hoursFromNow = TimeInterval(3600 * timeBlockSize * (row - nowRow) - headerOffset)
@@ -26,9 +25,8 @@ extension CollectionVC {
             dstOffset = -1
         }
         else {
-            if date > fallBackDate {
-                dstOffset = 1
-            } else {dstOffset = 0}
+            if date > fallBackDate {dstOffset = 1}
+            else {dstOffset = 0}
         }
         
         if truncateMins(Date()) > truncateMins(springForwardDate) {         ///print("finding next spring-forward date, to prevent off-by-1-hour bug")
@@ -38,24 +36,20 @@ extension CollectionVC {
         }
         
         let minTrunkDate = timeBlockSize > 1 ? truncateMins(date) : date    /// truncates MINUTES of cell dates, when multi-hour-length time blocks are enabled
-        
         var cellDate = minTrunkDate + dstOffset * oneHour
         let isNextWeek = weekAheadInt == 1 ? true : false
         
         let timeBlockStartHr = (row - headers) * timeBlockSize - headerOffset / 3600
         let hrsIntoTimeBlock = Calendar.current.component(.hour, from: cellDate) - timeBlockStartHr ///print("\(hrsIntoTimeBlock) hrs into this block")
         
-        if timeBlockSize > 1 {
-            if hrsIntoTimeBlock > 0 {cellDate = truncateMins(cellDate - TimeInterval(3600 * hrsIntoTimeBlock))} /// probably refactor w/ time block size conditn'l
+        if timeBlockSize > 1 {  /// *probably refactor below line w/ time block size conditional
+            if hrsIntoTimeBlock > 0 {cellDate = truncateMins(cellDate - TimeInterval(3600 * hrsIntoTimeBlock))}
         }
         
-        var isLastLogin = false
-        if  truncateMins(cellDate) - (dstOffset + springForwardExtraHour + fallBackExtraHour) * oneHour - oneWeek /// probably will do some refactoring here
+        var isLastLogin = false /// *probably will do some refactoring with below  if  ...
+        if  truncateMins(cellDate) - (dstOffset + springForwardExtraHour + fallBackExtraHour) * oneHour - oneWeek
             == truncateMins(timeBlockRoundedLastLogin)
-        {
-            isLastLogin = true
-        }
-        
+        { isLastLogin = true }
         return (cellDate, isNextWeek, isLastLogin)
     }
     

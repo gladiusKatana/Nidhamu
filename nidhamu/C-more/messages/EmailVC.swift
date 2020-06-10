@@ -19,7 +19,7 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         emailComposeVC.mailComposeDelegate = self                                               ///as? MFMailComposeViewControllerDelegate
         
         let tempEmails = ["garthsnyder1@gmail.com"]
-        emailComposeVC.setToRecipients(tempEmails)//(currentClientEmails)           //print("email recipient:\n\(currentClientEmails)")
+        emailComposeVC.setToRecipients(tempEmails)//(currentClientEmails)                           //print("email recipient:\n\(currentClientEmails)")
         
         let path = archiveVC.createArchiveUrl()
         let count = archiveTaskDescriptions.count

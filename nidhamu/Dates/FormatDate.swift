@@ -12,7 +12,7 @@ func formattedDateString(_ date: Date, roundDown: Bool, showYear: Bool, prefix: 
     
     let prx = (prefix == "") ? " " : "\(prefix ?? "") "
     let dy = day < 10 ? "0\(day)" : String(day)//"\(day)"
-
+    
     if hr == 0 {hr = 12}                            // * this is just to make a string representing the date, not the date itself
     if hour < 12 {ampm = "am"} else {ampm = "pm"}   // since hr is an integer from 0 to 23
     

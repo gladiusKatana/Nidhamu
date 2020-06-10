@@ -16,15 +16,19 @@ func searchForDST() {
     }
 }
 
-///Note, the 'spring-forward time block' and the 'fall-back time block' are the time blocks which, when they *end* (ie, clock rolls over from :59 -> :00, either while app is in foreground or background),
-///cause the setting forward or backward of clocks.  Therefore, these time blocks' dates may *seem* to differ from the daylight savings time you look up online (eg, https://www.timeanddate.com/time/change/canada?year=2020) , since these are the hours in which the time-changes occur, at the *start* of the hour.
+/// Note, the 'spring-forward time block' & 'fall-back time block' are the time blocks which, when they END (*),
+/// cause the setting forward or backward of clocks.  Therefore, these time blocks' dates may *seem* different from the daylight savings time you look up online
+/// (eg, https://www.timeanddate.com/time/change/canada?year=2020), since those are the hours in which the time-changes occur at the *start* of the hour.
+/// (*)  ie, clock rolls over from :59 -> :00 either while app is in foreground or background*
 
 func findFallbackDate(startingDate: Date, printDSTDates: Bool) {
     
-    let startDate = truncateMins(startingDate) ///print("start date \(formattedDateString(startDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDay))")
+    let startDate = truncateMins(startingDate)
+    ///print("start date \(formattedDateString(startDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDay))")
     var testDate = startDate
     
-    for _ in (0 ... 380 * 24) { /// 380 = 365 + margin to account for variance in fall-back date, year-to-year. No harm in overshooting, unless it were *all the way* to next fall-back
+    for _ in (0 ... 380 * 24) {
+        /// 380 = 365 + margin to account for variance in fall-back date, year-to-year. No harm in overshooting, unless it were *all the way* to next fall-back (and there is no accumulation)
         
         let tz = NSTimeZone.local
         let oneHourAfterTestDate = testDate + TimeInterval(3600)
@@ -44,10 +48,11 @@ func findFallbackDate(startingDate: Date, printDSTDates: Bool) {
 
 func findSpringForwardDate(startingDate: Date, printDSTDates: Bool) {
     
-    let startDate = truncateMins(startingDate) ///print("start date \(formattedDateString(startDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDay))")
+    let startDate = truncateMins(startingDate)
+    ///print("start date \(formattedDateString(startDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDay))")
     var testDate = startDate
     
-    for _ in (0 ... 400 * 24) { /// 400 = 365 + margin to account for variance in fall-back date, year-to-year. No harm in overshooting, unless it were *all the way* to next fall-back
+    for _ in (0 ... 400 * 24) { /// see comment after similar for-loop in findFallbackDate(:)
         
         let tz = NSTimeZone.local
         let oneHourAfterTestDate = testDate + TimeInterval(3600)
@@ -67,7 +72,7 @@ func findSpringForwardDate(startingDate: Date, printDSTDates: Bool) {
 
 // DST-related prynts: (yes that's spelled with a y on purpose)
 
-func dstMarkerForConsole(_ date: Date) -> String { /// creates a string notifying whether input date is a daylight-savings date (correct to 1 hr, which is time block size)
+func dstMarkerForConsole(_ date: Date) -> String { /// creates a string notifying whether input date is a DST date (correct to 1 hr, which is time block size)
     let fbk = (truncateMins(date) == truncateMins(fallBackDate)) ? "(fall-back)" : ""
     let spf = (truncateMins(date) == truncateMins(springForwardDate)) ? "(spring-forward)" : ""
     return "\(fbk)\(spf)"

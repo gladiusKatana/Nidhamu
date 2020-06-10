@@ -63,5 +63,3 @@ func pryntTaskTaggingVariables() {
     print("\n\(taskArraysToProcess.count) task arrays to process;\ndescriptions to process: \(taskDescriptionsToProcess);\npaths to process: \(indexPathsToProcess)\nindex \(taskIndex) of \(tasksInBlockToBeProcessed) tasks in block")
 }
 
-
-
