@@ -63,7 +63,6 @@
 		06541300237A6D840080F3EF /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412BA237A6D840080F3EF /* Attributes.swift */; };
 		06541301237A6D840080F3EF /* SizeEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412BB237A6D840080F3EF /* SizeEnums.swift */; };
 		06541302237A6D840080F3EF /* ZIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412BC237A6D840080F3EF /* ZIndex.swift */; };
-		06541303237A6D840080F3EF /* SetTopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412BD237A6D840080F3EF /* SetTopVC.swift */; };
 		06541304237A6D840080F3EF /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412BE237A6D840080F3EF /* Layout.swift */; };
 		06541305237A6D840080F3EF /* Prepare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412BF237A6D840080F3EF /* Prepare.swift */; };
 		06541306237A6D840080F3EF /* TestSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412C1237A6D840080F3EF /* TestSquare.swift */; };
@@ -82,6 +81,7 @@
 		06541313237A6D840080F3EF /* Vars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D0237A6D840080F3EF /* Vars.swift */; };
 		06541314237A6D840080F3EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D1237A6D840080F3EF /* AppDelegate.swift */; };
 		06541315237A6D840080F3EF /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412D2237A6D840080F3EF /* Tasks.swift */; };
+		066A7C25241A05B70082CA75 /* SetTopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A7C24241A05B70082CA75 /* SetTopVC.swift */; };
 		0678FC5C23DAA4E0009B25B8 /* ProcessTBs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678FC5B23DAA4E0009B25B8 /* ProcessTBs.swift */; };
 		0678FC5E23DAA6CB009B25B8 /* LoginInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0678FC5D23DAA6CB009B25B8 /* LoginInterval.swift */; };
 		067A844F23E92C090058E1B4 /* MLCellSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A844E23E92C090058E1B4 /* MLCellSetup.swift */; };
@@ -175,7 +175,6 @@
 		065412BA237A6D840080F3EF /* Attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
 		065412BB237A6D840080F3EF /* SizeEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeEnums.swift; sourceTree = "<group>"; };
 		065412BC237A6D840080F3EF /* ZIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZIndex.swift; sourceTree = "<group>"; };
-		065412BD237A6D840080F3EF /* SetTopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTopVC.swift; sourceTree = "<group>"; };
 		065412BE237A6D840080F3EF /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		065412BF237A6D840080F3EF /* Prepare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prepare.swift; sourceTree = "<group>"; };
 		065412C1237A6D840080F3EF /* TestSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSquare.swift; sourceTree = "<group>"; };
@@ -194,6 +193,7 @@
 		065412D0237A6D840080F3EF /* Vars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vars.swift; sourceTree = "<group>"; };
 		065412D1237A6D840080F3EF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		065412D2237A6D840080F3EF /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
+		066A7C24241A05B70082CA75 /* SetTopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTopVC.swift; sourceTree = "<group>"; };
 		0678FC5B23DAA4E0009B25B8 /* ProcessTBs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessTBs.swift; sourceTree = "<group>"; };
 		0678FC5D23DAA6CB009B25B8 /* LoginInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInterval.swift; sourceTree = "<group>"; };
 		067A844E23E92C090058E1B4 /* MLCellSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCellSetup.swift; sourceTree = "<group>"; };
@@ -368,7 +368,7 @@
 				0654129A237A6D830080F3EF /* Buttons.swift */,
 				0654129D237A6D830080F3EF /* Reload.swift */,
 				0654129E237A6D830080F3EF /* GoToVC.swift */,
-				065412BD237A6D840080F3EF /* SetTopVC.swift */,
+				066A7C24241A05B70082CA75 /* SetTopVC.swift */,
 			);
 			path = nav;
 			sourceTree = "<group>";
@@ -688,6 +688,7 @@
 				065412DF237A6D840080F3EF /* PLifeCycle.swift in Sources */,
 				065412FE237A6D840080F3EF /* DateRefresh.swift in Sources */,
 				065412E8237A6D840080F3EF /* GoToVC.swift in Sources */,
+				066A7C25241A05B70082CA75 /* SetTopVC.swift in Sources */,
 				06541311237A6D840080F3EF /* AppLifecycle.swift in Sources */,
 				06541313237A6D840080F3EF /* Vars.swift in Sources */,
 				0654130B237A6D840080F3EF /* DefaultLoad.swift in Sources */,
@@ -704,7 +705,6 @@
 				06541312237A6D840080F3EF /* TaskVars.swift in Sources */,
 				065412F4237A6D840080F3EF /* CollectionVC.swift in Sources */,
 				0654130F237A6D840080F3EF /* VCs.swift in Sources */,
-				06541303237A6D840080F3EF /* SetTopVC.swift in Sources */,
 				065412FF237A6D840080F3EF /* Sizes.swift in Sources */,
 				065412D4237A6D840080F3EF /* TFReturn.swift in Sources */,
 				06541302237A6D840080F3EF /* ZIndex.swift in Sources */,
