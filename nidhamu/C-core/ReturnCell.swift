@@ -39,8 +39,6 @@ extension CollectionVC {
         return centerCell
     }
     
-    /*func registerLeftCell(:) -- see comment block below (not currently using left aligned cells)*/
-    
     func registerRightCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> RightAlignedCell {
         collectionView.register(RightAlignedCell.self, forCellWithReuseIdentifier: RightAlignedCell.reuseIdentifier)
         
@@ -51,6 +49,8 @@ extension CollectionVC {
         singleLineCellSetup(rightCell, indexPath: indexPath, paths: paths)
         return rightCell
     }
+    
+    /*func registerLeftCell(:) -- see comment block below (not currently using left aligned cells)*/
     
     /*func registerAndReturnLeftCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> LeftAlignedCell {
      collectionView.register(LeftAlignedCell.self, forCellWithReuseIdentifier: LeftAlignedCell.reuseIdentifier)

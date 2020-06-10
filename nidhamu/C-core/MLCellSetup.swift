@@ -38,8 +38,8 @@ extension CollectionVC {
                 
                 getCellContents(cell: cell, column: column, row: row, layout: customLayout)
                 
-                if row == customLayout.rows - 1 && column == customLayout.cols - 1 {          /// so it's called on the FINAL cell dequeued
-                    processTimeBlocksSinceLastLogin(layout: customLayout)
+                if row == customLayout.rows - 1 && column == customLayout.cols - 1 {
+                    processTasksSinceLastLogin(layout: customLayout) /// called on the FINAL cell dequeued
                 }
             }
         }

@@ -5,19 +5,24 @@ extension PopupMenuVC {
     
     func addToArchives(_ taskBeingTagged: SimpleTask) {
         
-        /*var str = ""
+        /*
+         var str = ""
          if taskBeingTagged.taskStatus == .deferred {str = " (deferred)"}
-         print("adding task '\(taskBeingTagged.taskDescription)' to archives\(str)")*/
+         print("adding task '\(taskBeingTagged.taskDescription)' to archives\(str)")
+         */
         
         if !archiveTasks.contains(taskBeingTagged) {
-            archiveTasks.append(taskBeingTagged)
             
+            archiveTasks.append(taskBeingTagged)
             archiveTaskDescriptions.append(taskBeingTagged.taskDescription)
+            
             archiveTaskStatuses.append(taskBeingTagged.taskStatus.rawValue)
             archiveTaskStatusStrings.append(taskBeingTagged.taskStatus.caseName())
+            
             archiveTaskDateComponentArrays.append(getArchiveTaskDateComponents(taskBeingTagged))
             
-            archiveTaskDateStrings.append(formattedDateString(taskBeingTagged.deadline, roundDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
+            archiveTaskDateStrings.append(formattedDateString(taskBeingTagged.deadline, roundDown: false,
+                                                              showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
             
             ///let casename = taskBeingTagged.taskStatus.caseName()         ; print("archived: \(casename)\n")
             

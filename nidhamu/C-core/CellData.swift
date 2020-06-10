@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func getCellContents(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) { ///cell. titleLabel.text = "\(column),\(row)"
+    func getCellContents(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout) { //cell. titleLabel.text = "\(column),\(row)"
         
         if viewControllerType == .timetable || viewControllerType == .deferralDates {
             if let loopWeeks = loopWeeks, let demarcateWeeksByColour = demarcateWeeksByColour {

@@ -3,14 +3,15 @@ import UIKit ///TBs = Time Blocks
 
 extension CollectionVC {
     
-    func processTimeBlocksSinceLastLogin(layout: CustomFlowLayout) {
+    func processTasksSinceLastLogin(layout: CustomFlowLayout) {
+        
         guard viewControllerType == .timetable,
             !cachedBlocksAndTheirPaths else {
                 return
         }
         
         guard taskArraysToProcess.count > 0 else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // 1/2 second after you finish tagging tasks, screen becomes rotatable again
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { /// 1/2 second after you finish tagging tasks, screen becomes rotatable again
                 AppUtility.lockOrientation(.all)
             }
             return
@@ -24,7 +25,8 @@ extension CollectionVC {
         tasksInBlockToBeProcessed = taskArraysToProcess.first!.count
         cachedBlocksAndTheirPaths = true
         
-        if thereWillBeARowException {                               /// if any time-blocks are >= 4pm, timetable will need to shrink to accomodate wizard (window beside cell)
+        if thereWillBeARowException { /// if any time-blocks are near/at screen bottom, timetable will shrink to accomodate wizard (window beside task's cell)
+            
             let heightMinusBars = globalWindow.frame.height - CGFloat(navBarHeight + statusBarHeight)
             let cellHeight = layout.heightPlusSpace
             let extraRowspaceFromPopup = timeBlockSize == 1 ? CGFloat(7) : CGFloat(3)
@@ -38,10 +40,11 @@ extension CollectionVC {
                 && indexPathsToProcess[paths - 2] [1] < 21 {        /// ie, if second-last time block to process requires resizing (since cells could be swept over repeatedly...
                 taskTaggingViewController.dismissTaggingWizard()    /// ...within 1 session. (eg, user could leave timetable open for many hours -- it just automatically updates)
             }
+            
             thereWillBeARowException = false
         }
         
-        tagTasksSinceLastLogin()            ///; print("\(taskArraysToProcess.count) blocks remaining now, and \(tasksInBlockToBeProcessed) tasks remaining (tag #\(taskIndex + 1))\n")
+        tagTasksSinceLastLogin()///; print("\(taskArraysToProcess.count) blocks remaining now, and \(tasksInBlockToBeProcessed) tasks remaining (tag #\(taskIndex + 1))\n")
     }
 }
 

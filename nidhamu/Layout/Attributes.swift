@@ -23,10 +23,10 @@ extension CustomFlowLayout {
                 var scalar = CGFloat(0)
                 
                 if timeBlockSize == 1 {headerHeightFactor = 1}
-                else {headerHeightFactor = 0.4} /// if too small, last login date (shown in top-left cell, left-justified) no longer fits in landscape mode when keyboard presented
+                else {headerHeightFactor = 0.4} /// if too small, last login date (shown in top-left cell) no longer fits in landscape mode when keyboard presented
                 
                 var cellHeightIncrease = CGFloat(0)
-                if self == taskTaggingLayout {cellHeightIncrease = (one - headerHeightFactor) * CGFloat(5) / 4} /// (locked headers / regular rows) of timetable
+                if self == taskTaggingLayout {cellHeightIncrease = (one - headerHeightFactor) * CGFloat(5) / 4} /// (locked headers ÷ regular rows) 
                 else {
                     cellHeightIncrease = (one - headerHeightFactor) * CGFloat(lockedHeaderRows) / regularRows
                 }

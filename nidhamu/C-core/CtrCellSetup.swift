@@ -6,13 +6,14 @@ extension CollectionVC {
     func centerCellSetup(cell: CenterAlignedCell, indexPath: IndexPath) -> CenterAlignedCell  {
         
         let customLayout = downcastLayout!
-        let row = indexPath.item;                       ///let column = indexPath.section;
+        let row = indexPath.item;                       //; let column = indexPath.section
         let headerRows = customLayout.lockedHeaderRows  //; let headerSections = customLayout.lockedHeaderSections
         var fontSize = 0
         
         cell.backgroundColor = headerColour
         
         if row >= headerRows { /// time-of-day labels
+            
             if timeBlockSize == 1 {
                 var ampm = ""
                 if row < headerRows + 12 {ampm = "am"}

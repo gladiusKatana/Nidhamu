@@ -91,6 +91,7 @@
 		0699C04B23BB0F23009D1DD2 /* VCs_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699C04A23BB0F23009D1DD2 /* VCs_II.swift */; };
 		06A2035323D8096B00E4FA0A /* LongPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A2035223D8096B00E4FA0A /* LongPress.swift */; };
 		06A7CCD32491429A003E45BD /* Dates_cont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7CCD22491429A003E45BD /* Dates_cont.swift */; };
+		06A7CCD52491A638003E45BD /* BlockUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7CCD42491A638003E45BD /* BlockUpdate.swift */; };
 		06B6630923CD73A5001449D8 /* [Nidhamu] Task Archive.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */; };
 		06B6630A23CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 06B6630823CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx */; };
 		06C65B6D23EA2E9700E21C38 /* DateAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C65B6C23EA2E9700E21C38 /* DateAlert.swift */; };
@@ -204,6 +205,7 @@
 		0699C04A23BB0F23009D1DD2 /* VCs_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCs_II.swift; sourceTree = "<group>"; };
 		06A2035223D8096B00E4FA0A /* LongPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPress.swift; sourceTree = "<group>"; };
 		06A7CCD22491429A003E45BD /* Dates_cont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates_cont.swift; sourceTree = "<group>"; };
+		06A7CCD42491A638003E45BD /* BlockUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUpdate.swift; sourceTree = "<group>"; };
 		06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = "[Nidhamu] Task Archive.numbers"; sourceTree = "<group>"; };
 		06B6630823CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "[Nidhamu] Task Archive.xlsx"; sourceTree = "<group>"; };
 		06C65B6C23EA2E9700E21C38 /* DateAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAlert.swift; sourceTree = "<group>"; };
@@ -261,7 +263,7 @@
 				065412AF237A6D840080F3EF /* Dates */,
 				065412C4237A6D840080F3EF /* M */,
 				0654129F237A6D830080F3EF /* V */,
-				065412B8237A6D840080F3EF /* Vm */,
+				065412B8237A6D840080F3EF /* Layout */,
 				065412A6237A6D830080F3EF /* C-core */,
 				067A845023E92C790058E1B4 /* TaskProcessing */,
 				06541284237A6D830080F3EF /* C-more */,
@@ -393,8 +395,8 @@
 				065412A7237A6D830080F3EF /* VCLifecycle.swift */,
 				065412AD237A6D830080F3EF /* ReturnCell.swift */,
 				067A845323E934870058E1B4 /* CtrCellSetup.swift */,
-				067A845123E92D5D0058E1B4 /* SLCellSetup.swift */,
 				067A844E23E92C090058E1B4 /* MLCellSetup.swift */,
+				067A845123E92D5D0058E1B4 /* SLCellSetup.swift */,
 				065412AB237A6D830080F3EF /* CellData.swift */,
 			);
 			path = "C-core";
@@ -417,7 +419,7 @@
 			path = Dates;
 			sourceTree = "<group>";
 		};
-		065412B8237A6D840080F3EF /* Vm */ = {
+		065412B8237A6D840080F3EF /* Layout */ = {
 			isa = PBXGroup;
 			children = (
 				065412BE237A6D840080F3EF /* Layout.swift */,
@@ -427,7 +429,7 @@
 				065412BB237A6D840080F3EF /* SizeEnums.swift */,
 				065412BC237A6D840080F3EF /* ZIndex.swift */,
 			);
-			path = Vm;
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		065412C0237A6D840080F3EF /* Checks */ = {
@@ -477,6 +479,7 @@
 				065412AE237A6D830080F3EF /* Archiving.swift */,
 				065412A8237A6D830080F3EF /* UIMode.swift */,
 				065412A2237A6D830080F3EF /* BlockBorder.swift */,
+				06A7CCD42491A638003E45BD /* BlockUpdate.swift */,
 			);
 			path = TaskProcessing;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				065412D8237A6D840080F3EF /* TextField.swift in Sources */,
 				065412F1237A6D840080F3EF /* PrepareTBs.swift in Sources */,
 				06541301237A6D840080F3EF /* SizeEnums.swift in Sources */,
+				06A7CCD52491A638003E45BD /* BlockUpdate.swift in Sources */,
 				06541305237A6D840080F3EF /* Prepare.swift in Sources */,
 				067A845223E92D5D0058E1B4 /* SLCellSetup.swift in Sources */,
 				0699C04B23BB0F23009D1DD2 /* VCs_II.swift in Sources */,

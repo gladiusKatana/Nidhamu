@@ -4,17 +4,19 @@ import UIKit ///TBs = Time Blocks
 extension CollectionVC {
     
     func prepareToProcessTasksSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
+        
         if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))] {              ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
             
             if !cachedBlocksAndTheirPaths {
                 
-                var nonDeferredTasks = [SimpleTask]() /// called it this because...
+                var nonDeferredTasks = [SimpleTask]()
                 var taskDescriptions = [String]()
                 
                 for task in tasks {
                     
                     let deadlineIsWithinLoginDateSweep = sweepLoginInterval(dateToCheck: task.deadline, forEventDeadline: true,
                                                                             column: nil, row: nil, layout: nil)
+                    
                     //print("time block @ (\(column),\(row)), task: \(task.taskDescription), \(deadlineIsWithinLoginDateSweep)")
                     
                     if deadlineIsWithinLoginDateSweep {
