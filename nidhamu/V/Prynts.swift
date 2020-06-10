@@ -18,13 +18,13 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
             
             let title = task.taskDescription
             let titleCount = "\(title)".count
-            let titleBound = 22
+            let titleBound = 15
             var count = (titleCount < titleBound) ? titleBound - titleCount : 0 ///titleCount - bound
             let titleExcess = String(repeating: " ", count: count)
             
             let dateString = formattedDateString(task.deadline, roundedDown: false,
                                                  showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortFormNoDots)
-            let dateBound = 28
+            let dateBound = 20
             let dateStringCount = dateString.count
             count = (dateStringCount < dateBound) ? dateBound - dateStringCount : 0 ///dateStringCount - bound
             let dateExcess = String(repeating: " ", count: count)
@@ -43,11 +43,11 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
 }
 
 func pryntLastLoginDate() { /// spelling 'prynt' with a y so this function's existence does not override Xcode autocomplete for print statements
-    pryntDate(lastLoginDate, prefix: "last login              ")
+    pryntDate(lastLoginDate, prefix: "last login           ")
 }
 
 func pryntCurrentDate() {
-    pryntDate(Date(), prefix: "date right now          ")
+    pryntDate(Date(), prefix: "date right now       ")
 }
 
 func pryntArchiveEmailDate() {

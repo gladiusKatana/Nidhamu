@@ -49,6 +49,7 @@
   1st commit                                                         July 8 '19
   
   
+
   
   
   Notes
@@ -56,14 +57,10 @@
   
   > denotes tasks I'm working on most actively at present (may not always be marked) -gladiusKatana
   
-  
   ⁌o⁍ denotes bugfixes
-  
   
   * "type" labels may refer to development pattern categories M, V, C, VM etc. (VC = view controller)
   
-  
   * all .swift files in this version are aesthetically optimized for a 13" screen
-  
   
   * this is Open Source software. Contributors welcomed. https://github.com/gladiusKatana/Nidhamu */
