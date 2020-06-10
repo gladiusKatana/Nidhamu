@@ -11,14 +11,14 @@ struct TimeBlock<T: Hashable, U: Hashable>: Hashable {
 }
 
 func ==<T:Hashable,U:Hashable>(lhs: TimeBlock<T,U>,
-                               rhs: TimeBlock<T,U>) -> Bool {   /// comparison function for conforming to Equatable protocol
+                               rhs: TimeBlock<T,U>) -> Bool {                                   /// comparison function for conforming to Equatable protocol
     return lhs.values == rhs.values
 }
 
 extension CollectionVC {
     
     func addToTimeBlock(atColumn column: Int, atRow row: Int,
-                        textEntered: String, taskDeadline: Date, withStatus: TaskStatus?) {                     //print("adding task")
+                        textEntered: String, taskDeadline: Date, withStatus: TaskStatus?) {     //print("adding task")
         var status : TaskStatus
         if withStatus != nil {status = withStatus!} else {status = .upcoming}
         
@@ -35,7 +35,7 @@ extension CollectionVC {
     }
     
     func rewriteTask(atColumn column: Int, atRow row: Int, index: Int,
-                     textEntered: String, taskDeadline: Date, withStatus: TaskStatus?) {                        //print("editing task")
+                     textEntered: String, taskDeadline: Date, withStatus: TaskStatus?) {        //print("editing task")
         var status : TaskStatus
         if withStatus != nil {status = withStatus!} else {status = .upcoming}
         
@@ -48,7 +48,7 @@ extension CollectionVC {
     }
 }
 
-//struct ArchiveBlock<T: Hashable, U: Hashable, V: Hashable, W: Hashable>: Hashable {           /// used in tasksAtDate (not implemented (yet).)
+//struct ArchiveBlock<T: Hashable, U: Hashable, V: Hashable, W: Hashable>: Hashable {                   /// used in tasksAtDate (implement soon)
 //
 //    let values : (T, U, V, W)
 //    func hash(into hasher: inout Hasher) {

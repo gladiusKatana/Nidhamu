@@ -2,6 +2,7 @@
 import UIKit
 
 enum CollectionViewType: Int {
+    
     case initial = 0
     case timetable, taskList, archive, deferralDates,
     days, months, years /// not implemented (yet)-- see below comment
@@ -39,6 +40,7 @@ enum CollectionViewType: Int {
         case .years:
             return "shows the years of this century"
         }
+        
     }
 }
 

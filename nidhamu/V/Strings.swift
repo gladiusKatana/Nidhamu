@@ -46,7 +46,7 @@ extension String {
     func stringSize(font: UIFont) -> CGSize {
         let fontAttribute = [NSAttributedString.Key.font: font]
         /// for Single Line:
-        let size = self.size(withAttributes: fontAttribute)             ///let size = (myText as NSString).size(withAttributes: fontAttributes)
+        let size = self.size(withAttributes: fontAttribute)             //let size = (myText as NSString).size(withAttributes: fontAttributes)
         return size;
     }
 }
@@ -66,3 +66,4 @@ extension String {
 /*if row == 5 && column == 1 {
  if viewControllerType == .hours {findAverageLetterWidthWithCellLabelFont(cell: cell)} /// done here so it's only called once, but can access a cell
  }*/
+

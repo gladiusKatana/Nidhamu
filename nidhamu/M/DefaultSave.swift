@@ -3,7 +3,6 @@ import UIKit
 
 func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, pryntTasks: Bool) {
     if showDate {pryntDate(Date(), prefix: "✔︎saved")}
-    
     let defaults = UserDefaults.standard
     timeBlockPaths.removeAll(); taskDescriptionArrays.removeAll(); taskStatusArrays.removeAll(); taskDeadlineArrays.removeAll()
     
@@ -20,7 +19,7 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
             var taskDescriptions = [String]()
             var taskStatuses = [Int]()
             var taskDeadlineComponents = [[Int(), String(), Int(), String(), Int(), Int()]] as [[Any]]
-            taskDeadlineComponents.removeAll() /// keep this line, even though it looks like the above array-of-arrays is initialized empty on each iteration of the loop, it's not
+            taskDeadlineComponents.removeAll() /// keep this line; while it looks like above array-of-arrays initialized empty on each iteration of the loop, it's not
             
             for task in vals {
                 taskDescriptions.append(task.taskDescription)
@@ -28,6 +27,7 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
                 let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(task.deadline, roundedDown: true)
                 taskDeadlineComponents.append([year, month, day, weekday, hour, minute])
             }
+            
             taskDescriptionArrays.append(taskDescriptions)
             taskStatusArrays.append(taskStatuses)
             taskDeadlineArrays.append(taskDeadlineComponents)
@@ -38,6 +38,7 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
     taskDescriptionArrays = applySortingTransform(taskDescriptionArrays, transform: sortingTransform) as! [[String]]
     taskStatusArrays = applySortingTransform(taskStatusArrays, transform: sortingTransform) as! [[Int]]
     taskDeadlineArrays = applySortingTransform(taskDeadlineArrays, transform: sortingTransform) as! [[[Any]]]
+    
     if pryntTasks {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             printTasksTabularized()
@@ -47,7 +48,6 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
 }
 
 func setForKeys(_ defaults: UserDefaults, saveDate: Bool, resetLastLogin: Bool) {
-    
     let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(lastArchiveEmailDate, roundedDown: false)
     lastArchiveDateComponents = [year, month, day, weekday, hour, minute]
     lastArchiveEmailDate = dateFromComponents(lastArchiveDateComponents)
