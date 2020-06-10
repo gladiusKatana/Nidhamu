@@ -1,11 +1,11 @@
-// SetTopVC         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// SetTopVC         ･   collection-view-boilerplate   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-extension UICollectionViewController { 
+extension UICollectionViewController {
     
     func setTopViewController() {
         
-        guard let viewControllers = self.navigationController?.viewControllers else { // despite the s, should only contain 1 view controller
+        guard let viewControllers = self.navigationController?.viewControllers else { /// despite 's', should only contain 1 view controller at once (the one you go to)
             print("...could not bind view controller array")
             return
         }
@@ -22,7 +22,7 @@ extension UICollectionViewController {
             return
         }
         
-        topVC = customVC
+        topVC = customVC                        //; print("top vc is \(topVC.viewControllerType)")
     }
 }
 

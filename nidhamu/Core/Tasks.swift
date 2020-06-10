@@ -32,7 +32,7 @@
   
   checklogic, refactor, comments
   
-  readme                                                            APP STORE ASAP aim for: end Jan.
+  readme                                                            app store asap
   
   
   
