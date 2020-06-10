@@ -4,18 +4,18 @@ import UIKit
 extension CollectionVC {
     
     override func collectionView(_ collectionView: UICollectionView,
-                                 didSelectItemAt indexPath: IndexPath) {                ///print("tapped tt cell")
+                                 didSelectItemAt indexPath: IndexPath) {              //print("tapped tt cell")
         
         let layout = downcastLayout!;  let row = indexPath.item;  let column = indexPath.section
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
             
             let cell = collectionView.cellForItem(at: indexPath) as! CustomCell
-            ///print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "selected cell date: ", suffix: "", dateFormat: .fullDay))
+            //print(formattedDateString(cell.cellDate, roundedDown: false, showYear: true, prefix: "selected cell date: ", suffix: "", dateFormat: .fullDay))
             
             switch viewControllerType {
             case .timetable:
-                selectedCellDate = cell.cellDate + TimeInterval(3600 * timeBlockSize)   ///for task deadline: = start of the next time block after the one tapped
-                selectedTimeBlockPath = [column, row]                                   ///; print("selected time block path \(selectedTimeBlockPath)")
+                selectedCellDate = cell.cellDate + TimeInterval(3600 * timeBlockSize) ///for task deadline: = start of next time block after tb tapped
+                selectedTimeBlockPath = [column, row]                                 //; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
                 
                 if tasksAtIndexPath[timeBlock] == nil || textFieldDisplayed {
@@ -23,7 +23,9 @@ extension CollectionVC {
                     if textFieldDisplayed {presentTextFieldAndReload(after: 0)}
                     else {presentTextFieldAndReload(after: 0.05)}
                 } else {
-                    if let tasks = tasksAtIndexPath[timeBlock] {taskListVC.downcastLayout!.rows = tasks.count}
+                    if let tasks = tasksAtIndexPath[timeBlock] {
+                        taskListVC.downcastLayout!.rows = tasks.count // ; for task in tasks {print("*\(task.taskDescription)")}
+                    }
                     gotoView(vc: taskListVC)
                 }
                 
@@ -38,7 +40,7 @@ extension CollectionVC {
                     if let tasks = tasksAtIndexPath[timeBlock] {taskListVC.downcastLayout!.rows = tasks.count == 0 ? 1 : tasks.count}
                     reloadCV()
                     timetableVC.collectionView.reloadData()
-                    taskIsDeletable = false                         ///; print("taskDescriptionArrays: \(taskDescriptionArrays)")    ///print("timeBlockPaths: \(timeBlockPaths)")
+                    taskIsDeletable = false //; print("taskDescriptionArrays: \(taskDescriptionArrays)")    ///print("timeBlockPaths: \(timeBlockPaths)")
                 } else {presentTextFieldAndReload(after: 0)}
                 
             case .archive:          presentEmail() ///sendArchiveAsCsv()
@@ -51,7 +53,7 @@ extension CollectionVC {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     deferralPath = [column, row]
-                    self.gotoView(vc: timetableVC)                  ///; print("******************should be highlighting: \(earliestTaskAddress)")
+                    self.gotoView(vc: timetableVC)                  //; print("******************should be highlighting: \(earliestTaskAddress)")
                 }
                 
             default: print("unrecognized collection view type's cell selected")}

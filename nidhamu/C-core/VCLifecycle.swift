@@ -11,8 +11,8 @@ extension CollectionVC {
         statusBarHeightChangeNotificationSetup()
         keyboardNotificationSetup()
         
-        periodicDateRefresh(){kickoffTimer()}               /// checks the date then does the timer kickoff ('starts on the 0th callback')
-        ///kickoffTimer()                                                                                       // does the timer kickoff then checks the date ('starts on the 1st callback')
+        periodicDateRefresh(){kickoffTimer()}                   /// checks the date then does the timer kickoff ('starts on the 0th callback')
+        ///kickoffTimer()                                                   // does the timer kickoff then checks the date ('starts on the 1st callback')
         
         if viewControllerType == .taskList {
             let longPress : UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
@@ -29,8 +29,8 @@ extension CollectionVC {
         if !taskIsDeletable {setNavBarTitle(customString: nil)}
         setupNavBarButtons(grayTwo, greyIndex: colourIndex)
         
-        cellDefaultColour = icyBlue /// * this is the only time this global, ubiquitous colour is mutated; it was initially lighter-coloured only for visual simplicity/continuity (all cells looking alike)
-        backgroundVC.view.backgroundColor = cellDefaultColour
+        cellDefaultColour = icyBlue                             /// * this is the only time this global, ubiquitous colour is mutated; it was ...
+        backgroundVC.view.backgroundColor = cellDefaultColour   /// ...initially lighter-coloured only for visual simplicity/continuity (all cells looking alike)
         
         setTopViewController()
     }
@@ -38,6 +38,9 @@ extension CollectionVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if [.taskList, .archive].contains(viewControllerType) {setupPinchToExit()}
+        
+        reloadCV()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
