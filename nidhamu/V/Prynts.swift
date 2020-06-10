@@ -22,7 +22,7 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
             var count = (titleCount < titleBound) ? titleBound - titleCount : 0 ///titleCount - bound
             let titleExcess = String(repeating: " ", count: count)
             
-            let dateString = formattedDateString(task.deadline, roundedDown: false,
+            let dateString = formattedDateString(task.deadline, roundDown: false,
                                                  showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortFormNoDots)
             let dateBound = 20
             let dateStringCount = dateString.count
@@ -56,7 +56,7 @@ func pryntArchiveEmailDate() {
 
 func pryntDate(_ date: Date, prefix: String) {
     let dst = dstMarkerForConsole(date)
-    print(formattedDateString(date, roundedDown: false, showYear: true, prefix: prefix, suffix: " \(dst)", dateFormat: .fullDay)) //; print("")
+    print(formattedDateString(date, roundDown: false, showYear: true, prefix: prefix, suffix: " \(dst)", dateFormat: .fullDay)) //; print("")
 }
 
 func pryntTaskTaggingVariables() {

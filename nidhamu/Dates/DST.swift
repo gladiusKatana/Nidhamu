@@ -2,11 +2,11 @@
 import UIKit
 
 func searchForDST() {
-    let dateString = formattedDateString(Date(), roundedDown: true,
+    let dateString = formattedDateString(Date(), roundDown: true,
                                          showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
-    let fallBackDateString = formattedDateString(fallBackDate, roundedDown: true,
+    let fallBackDateString = formattedDateString(fallBackDate, roundDown: true,
                                                  showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
-    let springForwardDateString = formattedDateString(springForwardDate + TimeInterval(3600), roundedDown: true,
+    let springForwardDateString = formattedDateString(springForwardDate + TimeInterval(3600), roundDown: true,
                                                       showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear)
     
     if dateString == fallBackDateString || dateString == springForwardDateString {      //print("\nDST\n")
@@ -34,7 +34,7 @@ func findFallbackDate(startingDate: Date, printDSTDates: Bool) {
             
             if !foundNextFallBackDate {
                 fallBackDate = testDate
-                if printDSTDates {print("next fall-back day: \(formattedDateString(testDate, roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear))")}
+                if printDSTDates {print("next fall-back day: \(formattedDateString(testDate, roundDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayWithYear))")}
                 foundNextFallBackDate = true
             }
         }
@@ -57,7 +57,7 @@ func findSpringForwardDate(startingDate: Date, printDSTDates: Bool) {
             
             if !foundNextSpringForwardDate {
                 springForwardDate = testDate
-                if printDSTDates {print("next spring-forward day: \(formattedDateString(testDate, roundedDown: false, showYear: true, prefix: "", suffix: "\n", dateFormat: .fullDayWithYear))")}
+                if printDSTDates {print("next spring-forward day: \(formattedDateString(testDate, roundDown: false, showYear: true, prefix: "", suffix: "\n", dateFormat: .fullDayWithYear))")}
                 foundNextSpringForwardDate = true
             }
         }

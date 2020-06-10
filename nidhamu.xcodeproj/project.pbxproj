@@ -90,6 +90,7 @@
 		067BC42A23E4B85F008096AF /* CenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067BC42923E4B85F008096AF /* CenterCell.swift */; };
 		0699C04B23BB0F23009D1DD2 /* VCs_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0699C04A23BB0F23009D1DD2 /* VCs_II.swift */; };
 		06A2035323D8096B00E4FA0A /* LongPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A2035223D8096B00E4FA0A /* LongPress.swift */; };
+		06A7CCD32491429A003E45BD /* Dates_cont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7CCD22491429A003E45BD /* Dates_cont.swift */; };
 		06B6630923CD73A5001449D8 /* [Nidhamu] Task Archive.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */; };
 		06B6630A23CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 06B6630823CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx */; };
 		06C65B6D23EA2E9700E21C38 /* DateAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C65B6C23EA2E9700E21C38 /* DateAlert.swift */; };
@@ -202,6 +203,7 @@
 		067BC42923E4B85F008096AF /* CenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCell.swift; sourceTree = "<group>"; };
 		0699C04A23BB0F23009D1DD2 /* VCs_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCs_II.swift; sourceTree = "<group>"; };
 		06A2035223D8096B00E4FA0A /* LongPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPress.swift; sourceTree = "<group>"; };
+		06A7CCD22491429A003E45BD /* Dates_cont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates_cont.swift; sourceTree = "<group>"; };
 		06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = "[Nidhamu] Task Archive.numbers"; sourceTree = "<group>"; };
 		06B6630823CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "[Nidhamu] Task Archive.xlsx"; sourceTree = "<group>"; };
 		06C65B6C23EA2E9700E21C38 /* DateAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAlert.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				065412B4237A6D840080F3EF /* Dates.swift */,
+				06A7CCD22491429A003E45BD /* Dates_cont.swift */,
 				065412B6237A6D840080F3EF /* DateStrings.swift */,
 				065412B0237A6D840080F3EF /* FormatDate.swift */,
 				065412B7237A6D840080F3EF /* DateRefresh.swift */,
@@ -718,6 +721,7 @@
 				065412F0237A6D840080F3EF /* UIMode.swift in Sources */,
 				065412FD237A6D840080F3EF /* DateStrings.swift in Sources */,
 				065412F8237A6D840080F3EF /* SetCellDate.swift in Sources */,
+				06A7CCD32491429A003E45BD /* Dates_cont.swift in Sources */,
 				06541300237A6D840080F3EF /* Attributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

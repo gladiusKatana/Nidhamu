@@ -25,7 +25,7 @@ extension CollectionVC {
     
     func createArchiveUrl() -> URL {
         
-        dateString = formattedDateString(Date(), roundedDown: false, showYear: true,
+        dateString = formattedDateString(Date(), roundDown: false, showYear: true,
                                          prefix: "", suffix: "", dateFormat: .archiveCSVTitle)
         fileName = "Tagged tasks (\(dateString)).csv" ///don't insert a space after "as of" : formattedDateString(:) already builds one in
         

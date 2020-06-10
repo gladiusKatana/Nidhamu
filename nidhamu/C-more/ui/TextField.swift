@@ -8,7 +8,7 @@ extension CollectionVC {
         backgroundVC.view.backgroundColor = globalWindow.backgroundColor
         let pre = rowLongPressed == -1 ? "Add Task [Due:" : "Edit Task Due:"
         let suf = rowLongPressed == -1 ? "]" : ""
-        let dateStr = formattedDateString(selectedCellDate, roundedDown: false, showYear: false, prefix: pre, suffix: suf, dateFormat: .fullDayShortForm) /// ! probably needs smaller font on iPhone SE in portrait
+        let dateStr = formattedDateString(selectedCellDate, roundDown: false, showYear: false, prefix: pre, suffix: suf, dateFormat: .fullDayShortForm) /// ! probably needs smaller font on iPhone SE in portrait
         formatAndPresentTextField(dateStr)
     }
     

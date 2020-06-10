@@ -10,7 +10,7 @@ func testForCellBannerNotification(_ cell: BaseCell, row: Int, col: Int, notific
     if str != "" && (0...1).contains(row) && col > 0 {cell.backgroundColor = subtleBlue} /// highlights the daylight savings notification the same colour as the now-cell
     
     if (col, row) == (7,0) {
-        cell.titleLabel.text = formattedDateString(lastLoginDate, roundedDown: false, showYear: true,
+        cell.titleLabel.text = formattedDateString(lastLoginDate, roundDown: false, showYear: true,
                                                    prefix: " Last Login", suffix: " ", dateFormat: .fullDay); if str != "" {weight = .light}
     } else if (col, row) == (7,1) {
         dstNotificationCellPath = (col, row)

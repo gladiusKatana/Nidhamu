@@ -67,7 +67,7 @@ func populateArchivedDatesAndStatusesFromDefaults() {
     var i = 0
     for _ in archiveTaskStatuses {
         archiveTaskStatusStrings.append(TaskStatus(rawValue: archiveTaskStatuses[i])!.caseName())
-        archiveTaskDateStrings.append(formattedDateString(dateFromInts(archiveTaskDateComponentArrays[i]), roundedDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
+        archiveTaskDateStrings.append(formattedDateString(dateFromInts(archiveTaskDateComponentArrays[i]), roundDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .archiveFormat))
         i += 1
     }
 }

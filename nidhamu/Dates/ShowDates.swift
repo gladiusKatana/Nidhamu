@@ -23,12 +23,12 @@ extension CollectionVC {
     }
     
     func showDateInTitleLabels(date: Date, cell: CustomCell) {  /// for testing
-        cell.titleLabel.text = (formattedDateString(date, roundedDown: false, showYear: true,
+        cell.titleLabel.text = (formattedDateString(date, roundDown: false, showYear: true,
                                                     prefix: "", suffix: "", dateFormat: .monthAndDay))
     }
     
     func showTimeInTitleLabels(_ date: Date) -> String {
-        return formattedDateString(date, roundedDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .hourAndMinute)
+        return formattedDateString(date, roundDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .hourAndMinute)
     }
 }
 
