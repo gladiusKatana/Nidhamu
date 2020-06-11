@@ -1,5 +1,6 @@
 // Archiving        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
+import MessageUI
 
 extension PopupMenuVC {
     
@@ -29,5 +30,23 @@ extension PopupMenuVC {
             archiveTasks.removeAll()
         }
     }
+}
+
+func updateArchiveRelatedData(result: MFMailComposeResult) {
+    if result == .sent {
+        lastArchiveEmailDate = Date()
+        deleteArchivesLocally()
+        defaultSaveData(saveDate: false, resetLastLogin: false, showDate: true, pryntTasks: false)
+        topVC.reloadCV()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25 ) {
+            topVC.gotoView(vc: timetableVC)
+        }
+    }
+}
+
+func deleteArchivesLocally() {
+    archiveTaskDescriptions.removeAll()
+    archiveTaskStatuses.removeAll();            archiveTaskStatusStrings.removeAll()
+    archiveTaskDateComponentArrays.removeAll()
 }
 

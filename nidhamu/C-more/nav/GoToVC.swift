@@ -13,7 +13,7 @@ extension CollectionVC {
             backgroundVC.view.backgroundColor = globalWindow.backgroundColor
             
             setupTitleAndPresentViewController(vc: vc) { () -> () in
-                ///(empty; may remove the completion handler from this method)
+                ///(empty; may remove the completion handler from this method after some testing)
             }
             
         } else {print("you're already looking at the \(vc.viewControllerType)-view")}
@@ -36,7 +36,7 @@ extension CollectionVC {
             //}
             
             navController?.present(newVC, animated: tempRescalingBool, completion: nil)
-            self.setTopViewController()// try commenting this, you should see: vc of type 'initial' was root vc when this method was called
+            self.setTopViewController() /// try commenting this, should see vc of type 'initial' was root vc when this method was called
         }
     }
     

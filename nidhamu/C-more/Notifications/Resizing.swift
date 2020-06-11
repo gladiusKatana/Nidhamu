@@ -14,10 +14,11 @@ extension CollectionVC {
         }
     }
     
-    /// may not need the below method (which replaces the willChangeStatusBarFrameNotification observer above). The reloading after resizing affects the layout object, thus is done in prepare()
+    /// may not need the below method (which replaces the willChangeStatusBarFrameNotification observer above). The reloading after resizing affects the layout object, thus is done in the method prepare()
+    
     /*override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
      super.viewWillTransition(to: size, with: coordinator) /// If this line is missing your child will not get the delegate call in its viewWillTransition
-     reloadCV()    ; print("size changed")
+     reloadCV() ; print("size changed")
      }*/
     
     func keyboardNotificationSetup() {

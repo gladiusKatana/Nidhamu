@@ -20,7 +20,7 @@ extension PopupMenuVC {
         super.viewDidAppear(animated)                       //; collectionView.frame = downcastLayout!.customFrame!
         
         ///let hscale = timetableVC.downcastLayout!.autoFitHScale!
-        ///collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: self.downcastLayout!.cellHeight! * hscale, left: 0, bottom: 0, right: 0)  // obviated : all cells visible; no rotating in task-tagging mode
+        ///collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: self.downcastLayout!.cellHeight! * hscale, left: 0, bottom: 0, right: 0)  // obviated : cells sizes auto-fitted to fit the screen; no rotating in task-tagging mode
     }
     
     

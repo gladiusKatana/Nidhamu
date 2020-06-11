@@ -8,7 +8,7 @@ extension CollectionVC {
         
         let textEntered = textField.text!
         
-        if textEntered == "" || textEntered == " " || textEntered == "  " { // if user (for some reason) enters > 2 whitespaces, well, it's saved
+        if textEntered == "" || textEntered == " " || textEntered == "  " { /// if user (for some reason) enters > 2 whitespaces, well, it's saved
             ///see below: for animations /**/
             if !keyboardLocked {previousTimeBlockPathSelected = defaultPathOutOfView}
         }

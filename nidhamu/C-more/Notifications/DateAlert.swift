@@ -7,7 +7,7 @@ func testForCellBannerNotification(_ cell: BaseCell, row: Int, col: Int, notific
     
     let str = dateHeaderCellNotification(Date())
     
-    if str != "" && (0...1).contains(row) && col > 0 {cell.backgroundColor = subtleBlue} /// highlights the daylight savings notification the same colour as the now-cell
+    if str != "" && (0...1).contains(row) && col > 0 {cell.backgroundColor = subtleBlue} /// highlights DST notification same colour as the now-cell
     
     if (col, row) == (7,0) {
         cell.titleLabel.text = formattedDateString(lastLoginDate, roundDown: false, showYear: true,

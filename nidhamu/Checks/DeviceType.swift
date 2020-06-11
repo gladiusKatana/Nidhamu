@@ -2,7 +2,8 @@
 import UIKit
 
 /*
- Extension created by Stack Overflow User HAS (see answer: Nov 16 '14 by HAS): https://stackoverflow.com/questions/26028918/how-to-determine-the-current-iphone-device-model
+ Extension created by Stack Overflow User HAS:
+ https://stackoverflow.com/questions/26028918/how-to-determine-the-current-iphone-device-model
  */
 
 public extension UIDevice {

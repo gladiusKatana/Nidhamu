@@ -19,7 +19,7 @@ extension CollectionVC {
             else if viewControllerType == .deferralDates {
                 title = "Select date to defer '\(globalTaskIdentifier)'"
             }
-            else { /// ie if viewControllerType is the task list VC.   Note, will add more VCs soon (see Notes.swift)
+            else { /// ie if viewControllerType is the task list VC  (will add more VCs soon-- see Notes.swift)
                 title = formattedDateString(selectedCellDate, roundDown: true, showYear: false,
                                             prefix: "Tasks Due", suffix: "", dateFormat: .hourlyTimeBlock)
             }

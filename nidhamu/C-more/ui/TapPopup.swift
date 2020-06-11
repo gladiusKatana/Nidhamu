@@ -26,7 +26,7 @@ extension PopupMenuVC {
                 
                 tasksOfBlockBeingTagged[taskIndex].taskStatus = selectedStatus! ///; print("tagged as: \(casename)\n")
                 
-                if /*[TaskStatus.upcoming].contains(selectedStatus) ||*/  /// ability to tag an event as .recurring no longer enabled: .recurring is only default initial status
+                if /*[TaskStatus.upcoming].contains(selectedStatus) ||*/  /// tagging an event as .upcoming no longer enabled: .upcoming only default initial status
                     selectedTaskWillRecur {
                     taskWillShowUpNextWeek = true /// probably eliminate this variable soon
                 }
@@ -40,15 +40,15 @@ extension PopupMenuVC {
                 
                 ///pryntTaskTaggingVariables()
                 
-                if selectedStatus == .deferred { /// if task is deferred, but also marked recurring, recurring has no additional effect: task shows up just once next week, not twice
+                if selectedStatus == .deferred {/// if task deferred, but also marked recurring, the latter has no additional effect: task shows once next week, not twice
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         timetableVC.setNavBarTitle(customString: nil) /// call it on any of the CollectionVCs
                         
-//                        tempRescalingBool = true
-//                        deferralVC.downcastLayout?.autoFitHeightScale = timetableVC.downcastLayout?.autoFitHeightScale
+                        // tempRescalingBool = true
+                        //deferralVC.downcastLayout?.autoFitHeightScale = timetableVC.downcastLayout?.autoFitHeightScale
                         /// print("rescaled to \(deferralVC.downcastLayout?.autoFitHeightScale), tt scale is \(timetableVC.downcastLayout?.autoFitHeightScale)")
                         timetableVC.gotoView(vc: deferralVC)
-//                        tempRescalingBool = false
+                        //tempRescalingBool = false
                         deferredDescription = globalTaskIdentifier
                     }
                 }

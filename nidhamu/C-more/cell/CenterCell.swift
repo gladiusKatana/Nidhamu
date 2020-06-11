@@ -2,6 +2,7 @@
 import UIKit
 
 class CenterAlignedCell: BaseCell {
+    
     static let reuseIdentifier = "CustomCenterAlignedCell"
     static let popupReuseIdentifier = "CustomPopupCell"
     

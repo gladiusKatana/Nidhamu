@@ -5,6 +5,7 @@ class LeftAlignedCell: BaseCell {
     
     static let reuseIdentifier = "CustomLeftAlignedCell"
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

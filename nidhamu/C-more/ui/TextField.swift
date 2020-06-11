@@ -8,13 +8,14 @@ extension CollectionVC {
         backgroundVC.view.backgroundColor = globalWindow.backgroundColor
         let pre = rowLongPressed == -1 ? "Add Task [Due:" : "Edit Task Due:"
         let suf = rowLongPressed == -1 ? "]" : ""
-        let dateStr = formattedDateString(selectedCellDate, roundDown: false, showYear: false, prefix: pre, suffix: suf, dateFormat: .fullDayShortForm) /// ! probably needs smaller font on iPhone SE in portrait
+        let dateStr = formattedDateString(selectedCellDate, roundDown: false, showYear: false, prefix: pre, suffix: suf,
+                                          dateFormat: .fullDayShortForm) /// ! probably needs smaller font on iPhone SE in portrait
         formatAndPresentTextField(dateStr)
     }
     
-    func rePresentTextField() {         //print("re-presenting text field & keyboard")
+    func rePresentTextField() {             //print("re-presenting text field & keyboard")
         ///taskField.placeholder = "..."
-        ///taskField.removeFromSuperview()          /// do not uncomment: causes a blink if keyboard is locked (since it dismisses & re-presents the keyboard & text field on every  reload Data (). )
+        ///taskField.removeFromSuperview() /// do not uncomment: causes a blink if keyboard locked, since it dismisses & re-presents keyboard & text field on every reloadData().
         
         if viewControllerType != .archive {
             var contents = ""

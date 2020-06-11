@@ -8,9 +8,9 @@ extension CollectionVC {
         if emailComposer.canSendEmail() {
             emailComposer.emailComposeVC = emailComposer.configureEmailComposeVC()
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { ///Needs time, for configuration of email composer to complete, or top subject font can be seen resizing
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { ///delay for email composer configuration to complete (or top subject font can be seen resizing)
                 if currentOrientation == "portrait" {AppUtility.lockOrientation(.portrait)}
-                if currentOrientation == "landscape" {AppUtility.lockOrientation(.landscape)} /// will change this var to an enum case, not a string
+                if currentOrientation == "landscape" {AppUtility.lockOrientation(.landscape)} ///will change this var to an enum case, not a string
                 globalWindow.addSubview(emailComposer.emailComposeVC.view)
             }
         }

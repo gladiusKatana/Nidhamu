@@ -24,7 +24,7 @@ extension CollectionVC {
                     }
                 }
                 else {
-                    rowLongPressed = indexPath.row;                                         //print("long pressed task \(rowLongPressed)")
+                    rowLongPressed = indexPath.row                      //; print("long pressed task \(rowLongPressed)")
                     prepareAndPresentTextField()
                     reloadCV()
                 }

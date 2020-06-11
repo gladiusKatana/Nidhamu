@@ -44,13 +44,16 @@ extension CollectionVC {
                 } else {presentTextFieldAndReload(after: 0)}
                 
             case .archive:          presentEmail() ///sendArchiveAsCsv()
+                
             case .deferralDates:
                 cell.backgroundColor = taskAddingColour
                 
                 guard let firstPathToProcess = indexPathsToProcess.first else {print("no paths to process... ..."); return}
-                let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1]    /// components of path of current item being marked
-                taskTaggingViewController.updateBlockProcessingVariables(column: clm, row: rw, taskWillShowUpNextWeek: false, selectedStatus: .done)
                 
+                let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1] /// components of path of current item being marked
+                
+                taskTaggingViewController.updateBlockProcessingVariables(column: clm, row: rw,
+                                                                         taskWillShowUpNextWeek: false, selectedStatus: .done)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                     deferralPath = [column, row]
                     self.gotoView(vc: timetableVC)                  //; print("******************should be highlighting: \(earliestTaskAddress)")

@@ -1,5 +1,7 @@
 // CustomCell       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
-import UIKit /// may rename to MultiLineCell, as the cell's title label has a variable number of lines, set after the cell dimensions are (re)calulated in CustomFlowLayout.calculateAndResetSizes()
+import UIKit
+
+/// may rename to MultiLineCell, as the cell's title label has a variable number of lines, set after the cell dimensions are (re)calulated in CustomFlowLayout.calculateAndResetSizes()
 
 class CustomCell: BaseCell {
     
@@ -9,7 +11,6 @@ class CustomCell: BaseCell {
         super.init(frame: frame)
         
         self.addSubview(titleLabel)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
@@ -19,6 +20,7 @@ class CustomCell: BaseCell {
 extension CollectionVC {
     
     func resetTitleLabel(cell: BaseCell, row: Int, col: Int, layout: CustomFlowLayout) {              //print("resetting title label")
+        
         if let safeCell = cell as? CustomCell {
             
             if self.downcastLayout!.embeddedInNavController {

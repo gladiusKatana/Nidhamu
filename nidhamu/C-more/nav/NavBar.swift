@@ -10,7 +10,8 @@ extension CollectionVC {
         let lockKeyboardButton = setupButton(selector: #selector(keyboardLockWrapper), title: "wrench")
         
         let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
-        ///let barButtonColours = [graySeven, graySeven, graySeven, graySeven,]   /// hardcoding button colours (may be easier, depends how many more buttons & colour exceptions)
+        
+        ///let barButtonColours = [graySeven, graySeven, graySeven, graySeven,] /// hardcoding button colours (may be easier, depends how many more buttons & colour exceptions)
         
         var barButtonColours = [UIColor]()
         
@@ -19,7 +20,7 @@ extension CollectionVC {
         navigationItem.rightBarButtonItems = buttons
         
         for _ in buttons {
-            if barButtonColours.count <= buttons.count {barButtonColours.append(graySeven)} /// default colour, for the buttons that present all but the current vc
+            if barButtonColours.count <= buttons.count {barButtonColours.append(graySeven)} /// default colour, for buttons that present all but the current vc
         }
         
         for button in buttons {
