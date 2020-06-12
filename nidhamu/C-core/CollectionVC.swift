@@ -41,5 +41,9 @@ class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRe
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return (downcastLayout!.loadsHorizontally) ? downcastLayout!.rows : downcastLayout!.cols
     }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
+    }
 }
 

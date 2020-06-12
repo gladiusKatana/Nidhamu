@@ -20,8 +20,9 @@ extension CollectionVC {
                 
                 if tasksAtIndexPath[timeBlock] == nil || textFieldDisplayed {
                     cell.backgroundColor = taskAddingColour
-                    if textFieldDisplayed {presentTextFieldAndReload(after: 0)}
-                    else {presentTextFieldAndReload(after: 0.05)}
+                    setTaskFieldPlaceholder()
+                    if textFieldDisplayed {presentTextFieldAndReload(after: 0, forTaskAtRow: nil)}
+                    else {presentTextFieldAndReload(after: 0.05, forTaskAtRow: nil)}
                 } else {
                     if let tasks = tasksAtIndexPath[timeBlock] {
                         taskListVC.downcastLayout!.rows = tasks.count // ; for task in tasks {print("*\(task.taskDescription)")}
@@ -41,15 +42,15 @@ extension CollectionVC {
                     reloadCV()
                     timetableVC.collectionView.reloadData()
                     taskIsDeletable = false //; print("taskDescriptionArrays: \(taskDescriptionArrays)")    ///print("timeBlockPaths: \(timeBlockPaths)")
-                } else {presentTextFieldAndReload(after: 0)}
+                } else {
+                    setTaskFieldPlaceholder()
+                    presentTextFieldAndReload(after: 0, forTaskAtRow: nil)
+                }
                 
             case .archive:          presentEmail() ///sendArchiveAsCsv()
-                
             case .deferralDates:
                 cell.backgroundColor = taskAddingColour
-                
                 guard let firstPathToProcess = indexPathsToProcess.first else {print("no paths to process... ..."); return}
-                
                 let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1] /// components of path of current item being marked
                 
                 taskTaggingViewController.updateBlockProcessingVariables(column: clm, row: rw,

@@ -20,7 +20,7 @@ extension CustomFlowLayout {
         
         if textFieldDisplayed {
             topVC.rePresentTextField()
-            if topVC.viewControllerType == .taskList {topVC.reloadCollectionViewAfterDelay(0)}
+            ///if topVC.viewControllerType == .taskList {topVC.reloadCollectionViewAfterDelay(0)} ///probably cruft now; remove soon
         }
     }
     

@@ -43,6 +43,7 @@ extension CollectionVC {
         
         textField.text = ""
         rowLongPressed = -1
+        textFieldEditingMode = false
         if !keyboardLocked {exitTaskAddingMode()}
         
         reloadCV()

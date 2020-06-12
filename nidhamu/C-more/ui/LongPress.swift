@@ -14,19 +14,27 @@ extension CollectionVC {
             }
             
             if (gestureRecognizer.state == UIGestureRecognizer.State.ended) {
+                
                 let longPressDuration = Date().timeIntervalSince1970 - latestLongPressOnTask.timeIntervalSince1970
                 ///print("Long pressed for \(longPressDuration) seconds")
                 
                 if longPressDuration > TimeInterval(2) {
-                    if let task = tasksAtIndexPath[timeBlock] {
+                    
+                    if let tasks = tasksAtIndexPath[timeBlock] {
                         taskIsDeletable = true
-                        setNavBarTitle(customString: "Tap to Delete Task '\(task[indexPath.row].taskDescription)':")
+                        setNavBarTitle(customString: "Tap to Delete Task '\(tasks[indexPath.row].taskDescription)':")
                     }
-                }
-                else {
+                    
+                } else {
+                    
+                    textFieldEditingMode = true
+                    
                     rowLongPressed = indexPath.row                      //; print("long pressed task \(rowLongPressed)")
-                    prepareAndPresentTextField()
-                    reloadCV()
+                    
+                    ///prepareAndPresentTextField(forTaskAtRow: rowLongPressed)
+                    ///reloadCV()
+                    
+                    presentTextFieldAndReload(after: 0, forTaskAtRow: rowLongPressed)
                 }
             }
         }
