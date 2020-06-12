@@ -14,7 +14,7 @@ extension CollectionVC {
                 if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))] {
                     
                     let truncTrailSize = truncationTrail.stringSize(font: cell.titleLabel.font).width
-                    let limit = (layout.cellWidth! - truncTrailSize) * 0.9
+                    let limit = (layout.cellWidth! - truncTrailSize) * 0.75
                     ///print("limit: \(limit)")  ///; print("dots: \(truncTrailSize)  avgLetter:\(averageLetterWidth)")
                     
                     if !([column, row] == indexPathsToProcess.first) {
