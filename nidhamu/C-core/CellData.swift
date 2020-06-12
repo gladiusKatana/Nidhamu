@@ -22,7 +22,8 @@ extension CollectionVC {
                     }
                     else {
                         if !([column, row] == indexPathsToProcess.first) {
-                            cell.titleLabel.text = tasks.isEmpty ? "" : "(\(tasks.count))"
+                            cell.titleLabel.text = tasks.map {"\($0.taskDescription)"}.joined(separator: "\n")
+                            //tasks.isEmpty ? "" : "(\(tasks.count))"
                         }
                     }
                 }
