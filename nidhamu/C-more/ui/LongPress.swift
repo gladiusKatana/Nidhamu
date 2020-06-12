@@ -20,10 +20,14 @@ extension CollectionVC {
                 
                 if longPressDuration > TimeInterval(2) {
                     
-                    if let tasks = tasksAtIndexPath[timeBlock] {
+                    if tasksAtIndexPath[timeBlock] != nil {
+                        taskIsDeletable = true
+                        setNavBarTitle(customString: "Tap Task to Delete It")
+                    }
+                    /*if let tasks = tasksAtIndexPath[timeBlock] {
                         taskIsDeletable = true
                         setNavBarTitle(customString: "Tap to Delete Task '\(tasks[indexPath.row].taskDescription)':")
-                    }
+                    }*/
                     
                 } else {
                     
