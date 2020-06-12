@@ -14,7 +14,7 @@ extension CollectionVC {
                 if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))] {
                     
                     let truncTrailSize = truncationTrail.stringSize(font: cell.titleLabel.font).width
-                    let limit = (layout.cellWidth! - truncTrailSize) * 0.95
+                    let limit = (layout.cellWidth! - truncTrailSize) * 0.9
                     ///print("limit: \(limit)")  ///; print("dots: \(truncTrailSize)  avgLetter:\(averageLetterWidth)")
                     
                     if !([column, row] == indexPathsToProcess.first) {
@@ -26,7 +26,7 @@ extension CollectionVC {
                         for descr in taskDescriptions {
                             let truncDescr = truncateString(descr, sizeLimit: limit, font: cell.titleLabel.font)
                             let limit = currentOrientation == "portrait" ? 5 : 3
-                            if i <= limit {truncTaskDescr.append(truncDescr)}
+                            if i <= limit {truncTaskDescr.append(" \(truncDescr)")}
                             if i == limit + 1{truncTaskDescr.append("...")}
                             i += 1
                         }
@@ -61,7 +61,7 @@ extension CollectionVC {
             cell.titleLabel.textColor = .black
             
             if column == 0 {
-                cell.titleLabel.text = taskAtTimeBlock[row].taskDescription
+                cell.titleLabel.text = " \(taskAtTimeBlock[row].taskDescription)"
                 if status == .upcoming {cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)}
             }
                 
