@@ -13,8 +13,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
         if row >= layout.lockedHeaderRows {
             
             if [column, row] == selectedTimeBlockPath && textFieldDisplayed {
-                if viewControllerType != .deferralDates {cell.backgroundColor = taskAddingColour}
-                cell.titleLabel.text = "+"
+                if viewControllerType != .deferralDates {cell.backgroundColor = taskAddingColour} //; cell.titleLabel.text = "+"
             } else {
                 if viewControllerType == .timetable {
                     let cellDateIsBetweenLogins = sweepLoginInterval(dateToCheck: cell.cellDate, forEventDeadline: false,
