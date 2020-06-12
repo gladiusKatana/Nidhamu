@@ -42,6 +42,7 @@ extension CollectionVC {
                     reloadCV()
                     timetableVC.collectionView.reloadData()
                     taskIsDeletable = false //; print("taskDescriptionArrays: \(taskDescriptionArrays)")    ///print("timeBlockPaths: \(timeBlockPaths)")
+                    setNavBarTitle(customString: nil)
                 } else {
                     setTaskFieldPlaceholder()
                     presentTextFieldAndReload(after: 0, forTaskAtRow: nil)
