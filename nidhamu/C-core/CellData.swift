@@ -12,19 +12,26 @@ extension CollectionVC {
             
             if viewControllerType != .deferralDates {
                 if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))] {
-                    if tasks.count == 1 {
-                        let taskName = tasks[0].taskDescription
-                        cell.titleLabel.text = taskName
+                    
+                    let truncTrailSize = truncationTrail.stringSize(font: cell.titleLabel.font).width
+                    let limit = (layout.cellWidth! - truncTrailSize) * 0.95
+                    ///print("limit: \(limit)")  ///; print("dots: \(truncTrailSize)  avgLetter:\(averageLetterWidth)")
+                    
+                    if !([column, row] == indexPathsToProcess.first) {
                         
-                        let truncTrailSize = truncationTrail.stringSize(font: cell.titleLabel.font).width
-                        let limit = layout.cellWidth! - truncTrailSize ///print("limit: \(limit)")  ///; print("dots: \(truncTrailSize)  avgLetter:\(averageLetterWidth)")
-                        cell.titleLabel.text = truncateString(taskName, sizeLimit: limit, font: cell.titleLabel.font)
-                    }
-                    else {
-                        if !([column, row] == indexPathsToProcess.first) {
-                            cell.titleLabel.text = tasks.map {"\($0.taskDescription)"}.joined(separator: "\n")
-                            //tasks.isEmpty ? "" : "(\(tasks.count))"
+                        let taskDescriptions = tasks.map {"\($0.taskDescription)"}
+                        var truncTaskDescr = [String]()
+                        
+                        var i = 1
+                        for descr in taskDescriptions {
+                            let truncDescr = truncateString(descr, sizeLimit: limit, font: cell.titleLabel.font)
+                            let limit = currentOrientation == "portrait" ? 5 : 3
+                            if i <= limit {truncTaskDescr.append(truncDescr)}
+                            if i == limit + 1{truncTaskDescr.append("...")}
+                            i += 1
                         }
+                        
+                        cell.titleLabel.text = truncTaskDescr.joined(separator: "\n") //= tasks.isEmpty ? "" : "(\(tasks.count))"
                     }
                 }
                 
