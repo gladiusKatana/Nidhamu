@@ -45,9 +45,12 @@ extension CollectionVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if viewControllerType == .taskList && textFieldDisplayed {
-            exitTaskAddingMode()
-            textFieldDisplayed = false
+        if viewControllerType == .taskList {
+            taskIsDeletable = false
+            if textFieldDisplayed {
+                exitTaskAddingMode()
+                textFieldDisplayed = false
+            }
         }
         if viewControllerType == .deferralDates {collectionView.reloadData()}
     }
