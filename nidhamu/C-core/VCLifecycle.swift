@@ -38,9 +38,7 @@ extension CollectionVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if [.taskList, .archive].contains(viewControllerType) {setupPinchToExit()}
-        
         reloadCV()
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
