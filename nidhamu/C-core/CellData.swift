@@ -31,7 +31,7 @@ extension CollectionVC {
                             i += 1
                         }
                         
-                        cell.titleLabel.text = truncTaskDescr.joined(separator: "\n") //= tasks.isEmpty ? "" : "(\(tasks.count))"
+                        cell.titleLabel.text = truncTaskDescr.joined(separator: " \n") //= tasks.isEmpty ? "" : "(\(tasks.count))"
                     }
                 }
                 
