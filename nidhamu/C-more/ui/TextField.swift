@@ -40,7 +40,6 @@ extension CollectionVC {
         
         taskField.delegate = self
         taskField.frame = CGRect(x: eighthWidth, y: textFieldY, width: textFieldWidth, height: textFieldHeight)
-        ///taskField.attributedPlaceholder = NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         
         view.addSubview(taskField)
         taskField.becomeFirstResponder()

@@ -17,7 +17,6 @@ class CollectionVC: UICollectionViewController, UITextFieldDelegate, UIGestureRe
         taskField.autocorrectionType = UITextAutocorrectionType.no
         taskField.clearButtonMode = UITextField.ViewMode.whileEditing
         taskField.isEnabled = true
-        ///taskField.clearsOnBeginEditing = true
         return taskField
     }()
     

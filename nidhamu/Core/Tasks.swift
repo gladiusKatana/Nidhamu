@@ -3,9 +3,6 @@
   
   
   
-  
-  list tasks if time blocks > 1hr
-  
   list VC: entire day, week
   
   tasksAtDate Dictionary                                                                            M
@@ -49,9 +46,12 @@
   1st commit                                                         July 8 '19
   
   
+  
+  
+  
+  
 
   Notes
-  
   
   > denotes tasks I'm working on most actively at present (may not always be marked) -gladiusKatana
   
