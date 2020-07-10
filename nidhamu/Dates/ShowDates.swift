@@ -11,7 +11,7 @@ extension CollectionVC {
             
             cell.layer.borderColor = UIColor.white.cgColor                          //; print("highlighted cell white")
             
-            if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))], tasks.count > 1 {
+            if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))]/*, tasks.count > 1*/ {
                 
                 cell.titleLabel.text = "(\(taskIndex + 1)/\(tasks.count))"          ///= "(\(tasks.count - tasksInBlockToBeProcessed + 1)/\(tasks.count))"
                 cell.titleLabel.font = defaultTimetableCellFont
