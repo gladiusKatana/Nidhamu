@@ -58,6 +58,7 @@ extension CollectionVC {
                 
                 ///taskTaggingViewController.keepScrollIndicatorsVisible()
                 self.addBorderAroundTimeBlockCurrentlyBeingMarked()
+                self.reloadCV()                                     //; print("----------------reloading, from presentPopupViewToTagTasks()")
                 //pryntTaskTaggingVariables
             }
         }
