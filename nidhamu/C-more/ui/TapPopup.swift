@@ -40,7 +40,7 @@ extension PopupMenuVC {
                 
                 ///pryntTaskTaggingVariables()
                 
-                if selectedStatus == .deferred {/// if task deferred, but also marked recurring, the latter has no additional effect: task shows once next week, not twice
+                if selectedStatus == .deferred {/// if task deferred, but also marked recurring, latter has no additional effect: task shows once next week, not twice
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         timetableVC.setNavBarTitle(customString: nil) /// call it on any of the CollectionVCs
                         

@@ -4,6 +4,7 @@ import UIKit
 extension CollectionVC {
     
     func showKeyTimeBlockDates(cell: CustomCell, layout: CustomFlowLayout) {
+        
         let column = cell.xyCoordinate[0];  let row = cell.xyCoordinate[1]          /// for now: may pass in row & column from caller instead
         
         if row == earliestTaskAddress[1] && column == earliestTaskAddress[0] {

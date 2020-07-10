@@ -15,7 +15,6 @@ extension CollectionVC {
         
         keyboardHeight = 0; textFieldDisplayed = false
     }
-    
 }
 
 extension PopupMenuVC {
@@ -23,22 +22,30 @@ extension PopupMenuVC {
     func dismissPopupMenuAndSave(newTimeBlock: Bool) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {            ///print("now paths to process: \(pathsToProcess)")
+            
             if newTimeBlock {
+                
                 self.dismissTaggingWizard()
                 earliestTaskAddress = defaultPathOutOfView                  ///; print("******************earliest task address: \(earliestTaskAddress)")
-            } else {taskTaggingViewController.collectionView.reloadData()}
+                
+            } else {
+                taskTaggingViewController.collectionView.reloadData()
+            }
             
             selectedTaskWillRecur = false
             
             if indexPathsToProcess.isEmpty {
+                
                 defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntTasks: true)
                 AppUtility.lockOrientation(.all)
-            } else {defaultSaveData(saveDate: false, resetLastLogin: false, showDate: false, pryntTasks: false)}
+            
+            } else {
+                defaultSaveData(saveDate: false, resetLastLogin: false, showDate: false, pryntTasks: false)
+            }
             
             timetableVC.reloadCV()                                          ///; print("block tasks remaining now: \(tasksInBlockToBeProcessed)\n")
             timetableVC.tagTasksSinceLastLogin()
         }
     }
-    
 }
 
