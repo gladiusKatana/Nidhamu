@@ -1,7 +1,7 @@
 // VCs_II           ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-var deferralLayout = ///---------------------------------------------
+var deferralLayout =
     CustomFlowLayout(
         embeddedInNavController: true,
         customFrame: nil,
@@ -16,7 +16,7 @@ var deferralLayout = ///---------------------------------------------
 var deferralVC = CollectionVC(.deferralDates, backgroundColour: defaultColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: nil, collectionViewLayout: deferralLayout)
 
 
-var taskListLayout = ///------------------------------------------------
+var taskListLayout =
     CustomFlowLayout(
         embeddedInNavController: true,
         customFrame: globalWindow.frame,
@@ -30,7 +30,7 @@ var taskListLayout = ///------------------------------------------------
 var taskListVC = CollectionVC(.taskList, backgroundColour: defaultColour, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: taskListLayout)
 
 
-var archiveLayout = ///--------------------------------------------------
+var archiveLayout =
     CustomFlowLayout(
         embeddedInNavController: true,
         customFrame: globalWindow.frame,

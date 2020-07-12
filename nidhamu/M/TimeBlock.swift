@@ -11,7 +11,7 @@ struct TimeBlock<T: Hashable, U: Hashable>: Hashable {
 }
 
 func ==<T:Hashable,U:Hashable>(lhs: TimeBlock<T,U>,
-                               rhs: TimeBlock<T,U>) -> Bool {                                   /// comparison function for conforming to Equatable protocol
+                               rhs: TimeBlock<T,U>) -> Bool {   /// comparison function for conforming to Equatable protocol
     return lhs.values == rhs.values
 }
 

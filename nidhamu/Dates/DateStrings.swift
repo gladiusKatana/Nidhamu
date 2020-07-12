@@ -20,6 +20,7 @@ func getChosenDateComponents(_ inputDate: Date, roundedDown: Bool)
         let hour = Calendar.current.component(.hour, from: inputDate)
         
         var minute : Int
+        
         if roundedDown {
             minute = 0
         } else {

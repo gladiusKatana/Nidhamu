@@ -23,11 +23,12 @@ class CustomFlowLayout : UICollectionViewFlowLayout {
         self.embeddedInNavController = embeddedInNavController
         self.customFrame = customFrame
         
-        if !loadsHorizontally {self.rows = rows; self.cols = cols}
-        else {                 self.rows = cols; self.cols = rows}
+        if !loadsHorizontally {self.rows = rows;    self.cols = cols}
+        else {                 self.rows = cols;    self.cols = rows}
         
         self.lockedHeaderRows = lockedHeaderRows;   self.lockedHeaderSections = lockedHeaderSections
         self.cellWidth = cellWidth;                 self.cellHeight = cellHeight
+        
         self.autoFitHeightScale = (autoFitHScale != nil) ? autoFitHScale : 1
         self.autoFitWScale = (autoFitWScale != nil) ? autoFitWScale : 1
         
@@ -35,11 +36,11 @@ class CustomFlowLayout : UICollectionViewFlowLayout {
         self.loadsHorizontally = loadsHorizontally; self.squareCellMode = squareCellMode
         super.init()
         
-        if cellWidth != nil && cellHeight != nil        {cellDimensionsMode = .widthAndHeightHardcoded}
+        if cellWidth != nil && cellHeight != nil {cellDimensionsMode = .widthAndHeightHardcoded}
             
-        else if cellWidth == nil && cellHeight != nil   {cellDimensionsMode = .heightHardcoded}
+        else if cellWidth == nil && cellHeight != nil {cellDimensionsMode = .heightHardcoded}
             
-        else if cellWidth != nil && cellHeight == nil   {cellDimensionsMode = .widthHardcoded}
+        else if cellWidth != nil && cellHeight == nil {cellDimensionsMode = .widthHardcoded}
             
         else    {cellDimensionsMode = .neitherHardcoded}                                        //print(cellDimensionsMode.simpleDescription())
         //drawTestSquare()

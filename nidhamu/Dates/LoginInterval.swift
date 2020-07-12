@@ -7,7 +7,7 @@ extension CollectionVC {
                             column: Int?, row: Int?, layout: CustomFlowLayout?) -> Bool { /// last 3 parameters only used for print near method bottom
         
         springForwardExtraHour = 0.0; fallBackExtraHour = 0.0
-
+        
         var dstShift = TimeInterval(0)
         let roundedLastLoginRow = Calendar.current.component(.hour, from: lastLoginDate) / timeBlockSize
         let year = Calendar.current.component(.year, from: lastLoginDate)                 ///; print("last login row: \(roundedLastLoginRow)")

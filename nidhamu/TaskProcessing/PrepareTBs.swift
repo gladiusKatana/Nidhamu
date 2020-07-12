@@ -35,7 +35,9 @@ extension CollectionVC {
                     taskArraysToProcess.append(nonDeferredTasks)
                 } ///else {print("task array-of-arrays already contains tasks: \(tasks)")}
                 
-            }///else {print("already cached time blocks and their paths")}
+            }
+            
+            ///else {print("already cached time blocks and their paths")}
             
             if row >= 24 && timeBlockSize == 1      /// this is the row whose task deadlines are in the 7pm time block
                 || row >= 8 && timeBlockSize == 6   /// this is the row whose task deadlines are in the "Evening" time block

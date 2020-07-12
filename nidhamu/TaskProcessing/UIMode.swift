@@ -38,7 +38,7 @@ extension PopupMenuVC {
                 
                 defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntTasks: true)
                 AppUtility.lockOrientation(.all)
-            
+                
             } else {
                 defaultSaveData(saveDate: false, resetLastLogin: false, showDate: false, pryntTasks: false)
             }

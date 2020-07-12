@@ -36,9 +36,9 @@ extension CollectionVC {
             reloadCollectionViewAfterDelay(0)
             
             let paths = indexPathsToProcess.count
-            if paths >= 2                        /* row 21 = 4pm*/
-                && indexPathsToProcess[paths - 2] [1] < 21 {        /// ie, if second-last time block to process requires resizing (since cells could be swept over repeatedly...
-                taskTaggingViewController.dismissTaggingWizard()    /// ...within 1 session. (eg, user could leave timetable open for many hours -- it just automatically updates)
+            if paths >= 2                         /* row 21 = 4pm*/
+                && indexPathsToProcess[paths - 2] [1] < 21 {    /// ie if 2nd-last time block to process requires resizing (cells could be swept over repeatedly...
+                taskTaggingViewController.dismissTaggingWizard()///...within 1 session. (user could leave timetable open for many hours -- it just auto-updates)
             }
             
             thereWillBeARowException = false

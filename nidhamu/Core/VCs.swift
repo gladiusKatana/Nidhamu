@@ -13,7 +13,7 @@ var timetableRows = 24 / timeBlockSize + timetableHeaders
 var cellHeightFactor = CGFloat(1);  var headerHeightFactor = CGFloat(1)
 
 
-var timetableLayout = ///---------------------------------------------
+var timetableLayout =
     CustomFlowLayout(
         embeddedInNavController: true,      ///  if true, it's fullscreen (with a nav bar button to navigate to its collection view controller's view); ...
         ///                                  ... else it's a window with a custom frame
@@ -29,7 +29,7 @@ var timetableLayout = ///---------------------------------------------
 var timetableVC = CollectionVC(.timetable, backgroundColour: defaultColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: 0, collectionViewLayout: timetableLayout)
 
 
-var taskTaggingLayout = ///--------------------------------------------
+var taskTaggingLayout =
     CustomFlowLayout(
         embeddedInNavController: false,
         customFrame: nil,
