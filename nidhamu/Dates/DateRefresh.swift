@@ -18,7 +18,7 @@ func processCurrentDate() {
             lastLoginDate = dateFromComponents(lastLoginDateComponents)
             print("new week\n") ///pryntLastLoginDate(); pryntCurrentDate()
         }
-        else {print("new hour\n")}
+        else {print("\nnew hour")}
         reloadedFromHourTickingOver = true
     }
 }
@@ -40,7 +40,7 @@ extension CollectionVC {
                 DispatchQueue.main.asyncAfter(deadline: .now()) { /// keep on main queue: periodic callback inside completion handler called on a background thread
                     topVC.reloadCV()
                 }
-                pryntLastLoginDate(); pryntCurrentDate()
+//                pryntLastLoginDate(); pryntCurrentDate()
             }
         }
         completion()
