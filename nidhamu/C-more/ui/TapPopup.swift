@@ -16,7 +16,6 @@ extension PopupMenuVC {
                 else {print("no paths to process... even though popup was presented"); return}
             
             let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1]    /// components of path of current item being marked
-            
             var taskWillShowUpNextWeek = false
             
             if let tasksOfBlockBeingTagged = tasksAtIndexPath[TimeBlock(values:(clm, rw))] {  /// writing to the dictionary
@@ -39,7 +38,6 @@ extension PopupMenuVC {
                 } else {addToArchives(taskBeingTagged)}
                 
                 ///pryntTaskTaggingVariables()
-                
                 if selectedStatus == .deferred {/// if task deferred, but also marked recurring, latter has no additional effect: task shows once next week, not twice
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         timetableVC.setNavBarTitle(customString: nil) /// call it on any of the CollectionVCs
@@ -51,12 +49,10 @@ extension PopupMenuVC {
                         //tempRescalingBool = false
                         deferredDescription = globalTaskIdentifier
                     }
-                }
-                else {
+                } else {
                     let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1]    /// components of path of current item being marked
                     taskTaggingViewController.updateBlockProcessingVariables(column: clm, row: rw, taskWillShowUpNextWeek: taskWillShowUpNextWeek, selectedStatus: selectedStatus!)
                 }
-                
             } else {print("no task in dictionary at that index path")}
         } ///else {print("selected popup menu header")}
     }

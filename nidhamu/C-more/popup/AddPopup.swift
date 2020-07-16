@@ -37,7 +37,6 @@ extension CollectionVC {
                 taskTaggingViewController.downcastLayout?.customFrame = popupCollectionViewFrame
                 taskTaggingViewController.collectionView.frame = popupCollectionViewFrame
                 
-                
                 let hscale = timetableVC.downcastLayout!.autoFitHeightScale!     //* make sure this is extensible (ie,  if column >= 6 )
                 taskTaggingViewController.collectionView?.scrollIndicatorInsets =
                     UIEdgeInsets(top: taskTaggingViewController.downcastLayout!.cellHeight! * hscale, left: 0, bottom: 0, right: 0)

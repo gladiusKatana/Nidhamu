@@ -8,7 +8,8 @@ extension CollectionVC {
         if emailComposer.canSendEmail() {
             emailComposer.emailComposeVC = emailComposer.configureEmailComposeVC()
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { ///delay for email composer configuration to complete (or top subject font can be seen resizing)
+            ///delay for email composer configuration to complete (or else, top subject font can be seen resizing)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 if currentOrientation == "portrait" {AppUtility.lockOrientation(.portrait)}
                 if currentOrientation == "landscape" {AppUtility.lockOrientation(.landscape)} ///will change this var to an enum case, not a string
                 globalWindow.addSubview(emailComposer.emailComposeVC.view)
@@ -45,8 +46,7 @@ extension CollectionVC {
             do {
                 try csvText.write(to: path, atomically: true, encoding: String.Encoding.utf8)
             } catch {
-                print("Failed to create csv file")
-                print("\(error)")
+                print("Failed to create csv file; error: \(error)")
             }
             
             returnPath = path

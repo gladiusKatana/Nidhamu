@@ -33,7 +33,8 @@ func testForCellBannerNotification(_ cell: BaseCell, row: Int, col: Int, notific
     else {cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: weight)}
 }
 
-func dateHeaderCellNotification(_ date: Date) -> String { /// creates a string notifying if input date is a daylight-savings date, OR if user has not backed up past-task archives in > 30 days
+/// creates a string notifying if input date is a daylight-savings date, OR if user has not backed up past-task archives in > 30 days
+func dateHeaderCellNotification(_ date: Date) -> String {
     
     let fbk = (truncateMins(date) != truncateMins(fallBackDate)) ? "" :
     "🌖 Daylight Savings (fall-back): the 1am time-block lasts for 2 hours "
@@ -48,7 +49,6 @@ func dateHeaderCellNotification(_ date: Date) -> String { /// creates a string n
     {
         archiveIntervalNotification = "⌛️Note: Your Past-Event Archives were last updated \(daysSinceLastArchiveEmail) days ago... " //⭐️
     }
-    
     return "\(fbk)\(spf)\(archiveIntervalNotification)"
 }
 

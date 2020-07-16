@@ -11,16 +11,16 @@ extension CollectionVC {
         
         let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
         
-        ///let barButtonColours = [graySeven, graySeven, graySeven, graySeven,] /// hardcoding button colours (may be easier, depends how many more buttons & colour exceptions)
-        
         var barButtonColours = [UIColor]()
+        ///hardcoding button colours (may be easier, depends how many more buttons & colour exceptions)
+        //let barButtonColours = [graySeven, graySeven, graySeven, graySeven,]
         
         let buttons = [timetableButton, archiveButton, lockKeyboardButton, reloadButton]
         
         navigationItem.rightBarButtonItems = buttons
         
         for _ in buttons {
-            if barButtonColours.count <= buttons.count {barButtonColours.append(graySeven)} /// default colour, for buttons that present all but the current vc
+            if barButtonColours.count <= buttons.count {barButtonColours.append(graySeven)} /// default colour, for buttons that present all but current vc
         }
         
         for button in buttons {

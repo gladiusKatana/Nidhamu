@@ -25,9 +25,9 @@ extension CollectionVC {
                         setNavBarTitle(customString: "Tap Task to Delete It")
                     }
                     /*if let tasks = tasksAtIndexPath[timeBlock] {
-                        taskIsDeletable = true
-                        setNavBarTitle(customString: "Tap to Delete Task '\(tasks[indexPath.row].taskDescription)':")
-                    }*/
+                     taskIsDeletable = true
+                     setNavBarTitle(customString: "Tap to Delete Task '\(tasks[indexPath.row].taskDescription)':")
+                     }*/
                     
                 } else {
                     
