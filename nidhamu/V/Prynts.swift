@@ -29,11 +29,11 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
             count = (dateStringCount < dateBound) ? dateBound - dateStringCount : 0 //dateStringCount - bound
             let dateExcess = String(repeating: " ", count: count)
             
-            let restOfString = "\(gap)\(excess)\(title)\(titleExcess)\(dateString)\(dateExcess)\(task.taskStatus)"
+            let restOfString = "\(excess)\(dateString)\(dateExcess)\(task.taskStatus)\(gap)\(gap)\(gap)\(title)"
             
             if j == 0  { print("\(pathString)\(restOfString)")}
             else {       print("\(spaces)\(restOfString)")}
-            
+            //\(titleExcess)
             //if j == tasks.count - 1 {print("")}
             j += 1
         }
