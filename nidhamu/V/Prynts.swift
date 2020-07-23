@@ -20,7 +20,7 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
             let titleCount = "\(title)".count
             let titleBound = 15
             var count = (titleCount < titleBound) ? titleBound - titleCount : 0 //titleCount - bound
-            let titleExcess = String(repeating: " ", count: count)
+            //let titleExcess = String(repeating: " ", count: count)
             
             let dateString = formattedDateString(task.deadline, roundDown: false,
                                                  showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortFormNoDots)
@@ -33,7 +33,7 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
             
             if j == 0  { print("\(pathString)\(restOfString)")}
             else {       print("\(spaces)\(restOfString)")}
-            //\(titleExcess)
+
             //if j == tasks.count - 1 {print("")}
             j += 1
         }
