@@ -14,7 +14,7 @@ extension CollectionVC {
                 title = "Timetable"
             }
             else if viewControllerType == .archive {
-                title = "Past-Due Tasks"
+                title = "Recent Tasks"
             }
             else if viewControllerType == .deferralDates {
                 title = "Select date to defer '\(globalTaskIdentifier)'"

@@ -3,6 +3,8 @@
   
   
   
+  mark task early during time block?
+  
   list VC: entire day, week
   
   tasksAtDate Dictionary                                                                            M
