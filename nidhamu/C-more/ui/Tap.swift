@@ -25,20 +25,21 @@ extension CollectionVC {
                     else {presentTextFieldAndReload(after: 0.05, forTaskAtRow: nil)}
                 } else {
                     if let tasks = tasksAtIndexPath[timeBlock] {
-                        taskListVC.downcastLayout!.rows = tasks.count // ; for task in tasks {print("*\(task.taskDescription)")}
+                        taskListVC.downcastLayout!.rows = tasks.count + minTaskListRows// ; for task in tasks {print("*\(task.taskDescription)")}
                     }
                     gotoView(vc: taskListVC)
                 }
                 
             case .taskList:
                 if tasksAtIndexPath[timeBlock] != nil && taskIsDeletable {
-                    tasksAtIndexPath[timeBlock]!.remove(at: row)
+                    tasksAtIndexPath[timeBlock]!.remove(at: row - taskListOffset)
                     
                     if tasksAtIndexPath[timeBlock]!.isEmpty {
                         tasksAtIndexPath.remove(at: tasksAtIndexPath.index(forKey: timeBlock)!)
                     }
                     
-                    if let tasks = tasksAtIndexPath[timeBlock] {taskListVC.downcastLayout!.rows = tasks.count == 0 ? 1 : tasks.count}
+                    if let tasks = tasksAtIndexPath[timeBlock] {
+                        taskListVC.downcastLayout!.rows = tasks.count == 0 ? minTaskListRows : tasks.count + minTaskListRows}
                     reloadCV()
                     timetableVC.collectionView.reloadData()
                     taskIsDeletable = false //; print("taskDescriptionArrays: \(taskDescriptionArrays)")    ///print("timeBlockPaths: \(timeBlockPaths)")

@@ -43,7 +43,7 @@ extension CollectionVC {
         let simpleTask = SimpleTask(taskDescription: textEntered, deadline: taskDeadline, taskStatus: status)
         
         if tasksAtIndexPath[timeBlockToAdd] != nil {
-            tasksAtIndexPath[timeBlockToAdd]![index] = simpleTask
+            tasksAtIndexPath[timeBlockToAdd]![index - taskListOffset] = simpleTask
         }
     }
 }

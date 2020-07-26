@@ -15,12 +15,13 @@ var deferralLayout =
 
 var deferralVC = CollectionVC(.deferralDates, backgroundColour: defaultColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: nil, collectionViewLayout: deferralLayout)
 
+var minTaskListRows = 8;    var taskListOffset = 2
 
 var taskListLayout =
     CustomFlowLayout(
         embeddedInNavController: true,
         customFrame: globalWindow.frame,
-        rows: 1, cols: 3, lockedHeaderRows: 0, lockedHeaderSections: 0,
+        rows: minTaskListRows + 1, cols: 3, lockedHeaderRows: 0, lockedHeaderSections: 0,
         cellWidth: nil, cellHeight: nil,
         autoFitWScale: 1, autoFitHScale: 1,
         hSpace: cellGap, vSpace: cellGap,

@@ -34,8 +34,8 @@ extension CollectionVC {
                     addToTimeBlock(atColumn: selectedTimeBlockPath[0], atRow: selectedTimeBlockPath[1],
                                    textEntered: textEntered, taskDeadline: selectedCellDate, withStatus: nil)
                     
-                    if let tasks = tasksAtIndexPath[timeBlock] {  /// if time-block is not empty
-                        taskListVC.downcastLayout!.rows = tasks.count
+                    if let tasks = tasksAtIndexPath[timeBlock] { /// if time-block is not empty
+                        taskListVC.downcastLayout!.rows = tasks.count + minTaskListRows
                     }
                 }
             }

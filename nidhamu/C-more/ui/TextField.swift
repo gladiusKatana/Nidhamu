@@ -22,7 +22,7 @@ extension CollectionVC {
         }
         
         if row != nil {
-            let taskDescription = tasks[row!].taskDescription
+            let taskDescription = tasks[row! - taskListOffset].taskDescription
             str = taskDescription
         }
         

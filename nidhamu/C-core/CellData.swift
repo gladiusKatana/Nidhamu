@@ -57,19 +57,26 @@ extension CollectionVC {
             guard let taskAtTimeBlock = tasksAtIndexPath[timeBlock], !taskAtTimeBlock.isEmpty else {
                 cell.titleLabel.text = "(no items yet)"; return
             }
-            let status = taskAtTimeBlock[row].taskStatus
+            
             cell.titleLabel.textColor = .black
             
-            if column == 0 {
-                cell.titleLabel.text = " \(taskAtTimeBlock[row].taskDescription)"
-                if status == .upcoming {cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)}
-            }
+            if (taskListOffset ... taskAtTimeBlock.count - 1 + taskListOffset).contains(row) {
+                let status = taskAtTimeBlock[row - taskListOffset].taskStatus
                 
-            else if column == 1 {
-                cell.titleLabel.text = formattedDateString(taskAtTimeBlock[row].deadline, roundDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
-            }
+                if column == 0 {
+                    cell.titleLabel.text = " \(taskAtTimeBlock[row - taskListOffset].taskDescription)"
+                    if status == .upcoming {cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)}
+                }
+                    
+                else if column == 1 {
+                    cell.titleLabel.text = formattedDateString(taskAtTimeBlock[row - taskListOffset].deadline, roundDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
+                }
+                    
+                else {cell.titleLabel.text = "\(taskAtTimeBlock[row - taskListOffset].taskStatus)"}
                 
-            else {cell.titleLabel.text = "\(taskAtTimeBlock[row].taskStatus)"}
+            } else {
+                cell.titleLabel.text = ""
+            }
         }
             
         else if viewControllerType == .archive {
