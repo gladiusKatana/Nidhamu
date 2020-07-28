@@ -3,7 +3,7 @@
   
   
   
-  mark task early during time block?
+  mark task early during time block?  ...probably not
   
   list VC: entire day, week
   
@@ -16,14 +16,17 @@
   
   
   
+
   
-  app intro
+  ⁌o⁍ text resizing (slight visual bug)
   
   buttons                                                                                           UI
   
   icon
   
   launch screen
+  
+  app intro
   
   
   

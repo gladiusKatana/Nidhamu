@@ -45,9 +45,6 @@ extension CollectionVC {
         }
         
         resetTitleLabel(cell: cell, row: row, col: column, layout: customLayout)
-        
-        if viewControllerType == .archive {cell.backgroundColor = defaultColour}
-        
         testForCellBannerNotification(cell, row: row, col: column, notificationColour: nil, notificationText: nil)
         return cell
     }
