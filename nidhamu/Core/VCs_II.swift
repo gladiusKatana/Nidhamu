@@ -15,7 +15,8 @@ var deferralLayout =
 
 var deferralVC = CollectionVC(.deferralDates, backgroundColour: defaultColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: nil, collectionViewLayout: deferralLayout)
 
-var minTaskListRows = 8;    var taskListOffset = 2
+//var minTaskListRows = 0;    var taskListOffset = 0
+var minTaskListRows = 8;    var taskListOffset = 3
 
 var taskListLayout =
     CustomFlowLayout(

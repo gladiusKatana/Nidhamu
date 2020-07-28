@@ -4,7 +4,7 @@ import UIKit
 extension CollectionVC {
     
     override func collectionView(_ collectionView: UICollectionView,
-                                 didSelectItemAt indexPath: IndexPath) {              //print("tapped tt cell")
+                                 didSelectItemAt indexPath: IndexPath) {              //print("tapped cell")
         
         let layout = downcastLayout!;  let row = indexPath.item;  let column = indexPath.section
         if row >= layout.lockedHeaderRows && column >= layout.lockedHeaderSections {
@@ -46,7 +46,7 @@ extension CollectionVC {
                     setNavBarTitle(customString: nil)
                 } else {
                     setTaskFieldPlaceholder()
-                    presentTextFieldAndReload(after: 0, forTaskAtRow: nil)
+                    if !textFieldDisplayed {presentTextFieldAndReload(after: 0, forTaskAtRow: nil)}
                 }
                 
             case .archive:          presentEmail() ///sendArchiveAsCsv()
