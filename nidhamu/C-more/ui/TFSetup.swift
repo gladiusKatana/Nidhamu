@@ -24,7 +24,15 @@ extension CollectionVC {
     }
     
     func setTaskFieldPlaceholder() {
-        let pre = "Add Task [Due:" ; let suf = "]"
+        
+        var pre = ""
+        let suf = "]"
+        
+        if textFieldEditingMode {
+            pre = "New Task Name ["
+        }
+        else {pre = "Add Task [Due:"}
+        
         let str = formattedDateString(selectedCellDate, roundDown: false, showYear: false, prefix: pre, suffix: suf,
                                       dateFormat: .fullDayShortForm)/// ! probably needs smaller font on iPhone SE in portrait
         taskField.placeholder = str

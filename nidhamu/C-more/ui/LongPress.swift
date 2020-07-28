@@ -38,6 +38,7 @@ extension CollectionVC {
                     ///prepareAndPresentTextField(forTaskAtRow: rowLongPressed)
                     ///reloadCV()
                     
+                    setTaskFieldPlaceholder()
                     presentTextFieldAndReload(after: 0, forTaskAtRow: rowLongPressed)
                 }
             }
