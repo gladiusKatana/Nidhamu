@@ -29,7 +29,7 @@ var taskListLayout =
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
-var taskListVC = CollectionVC(.taskList, backgroundColour: icyBlue, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: taskListLayout)
+var taskListVC = CollectionVC(.taskList, backgroundColour: skyBlue, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: taskListLayout)
 
 
 var archiveLayout =
@@ -43,5 +43,5 @@ var archiveLayout =
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
-var archiveVC = CollectionVC(.archive, backgroundColour: icyBlue, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: 1, collectionViewLayout: archiveLayout)
+var archiveVC = CollectionVC(.archive, backgroundColour: skyBlue, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: 1, collectionViewLayout: archiveLayout)
 

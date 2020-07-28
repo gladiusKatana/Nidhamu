@@ -52,7 +52,7 @@ extension CollectionVC {
             
         else if viewControllerType == .taskList {
             cell.cellDate = selectedCellDate
-            cell.backgroundColor = icyBlue//defaultColour
+            cell.backgroundColor = skyBlue//defaultColour
             
             guard let taskAtTimeBlock = tasksAtIndexPath[timeBlock], !taskAtTimeBlock.isEmpty else {
                 cell.titleLabel.text = "(no items yet)"; return

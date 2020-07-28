@@ -18,7 +18,7 @@ import UIKit
         /// may move further down app lifecycle, to applicationDidBecomeActive(:); but this further accommodates 'going back in time' via device settings, without glitches
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = icyBlue//cellDefaultColour
+        window?.backgroundColor = skyBlue//cellDefaultColour
         window?.makeKeyAndVisible()
         globalWindow = window!
         

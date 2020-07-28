@@ -29,7 +29,7 @@ extension CollectionVC {
         if !taskIsDeletable {setNavBarTitle(customString: nil)}
         setupNavBarButtons(grayTwo, greyIndex: colourIndex)
         
-        cellDefaultColour = icyBlue                             /// * this is the only time this global, ubiquitous colour is mutated; it was ...
+        cellDefaultColour = skyBlue                             /// * this is the only time this global, ubiquitous colour is mutated; it was ...
         backgroundVC.view.backgroundColor = cellDefaultColour   /// ...initially lighter-coloured only for visual simplicity/continuity (all cells looking alike)
         
         setTopViewController()
