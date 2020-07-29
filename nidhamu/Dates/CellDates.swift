@@ -5,6 +5,8 @@ extension CollectionVC { /// probably will refactor this whole file soon
     
     func setHourlyCellDates(cell: CustomCell, column: Int, row: Int, layout: CustomFlowLayout, looping: Bool, withColours: Bool) {
         
+        guard viewControllerType != .archive else {return}
+        
         let offset = (row < layout.lockedHeaderRows) ? layout.lockedHeaderRows - row : 0
         var cellDateIsNextWeek = false; var cellDateIsLastLogin = false
         
