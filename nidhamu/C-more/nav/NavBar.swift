@@ -6,8 +6,13 @@ extension CollectionVC {
     func setupNavBarButtons(_ greyoutColour: UIColor?, greyIndex: Int?) {  //print("setting up nav bar buttons")
         
         let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableImage")
-        let archiveButton = setupButton(selector: #selector(buttonWrapperMethodforArchiveVC), title: "calendarImage")
-        let lockKeyboardButton = setupButton(selector: #selector(keyboardLockWrapper), title: "wrench")
+        let archiveButton = setupButton(selector: #selector(buttonWrapperMethodforArchiveVC), title: "historyButton")
+        
+        var lockKeyboardButton = UIBarButtonItem()
+        
+        if !keyboardLocked {
+            lockKeyboardButton = setupButton(selector: #selector(keyboardLockWrapper), title: "keyboardLockButtons.001 copy")
+        } else {lockKeyboardButton = setupButton(selector: #selector(keyboardLockWrapper), title: "keyboardLockButtons.002 copy")}
         
         let reloadButton = setupButton(selector: #selector(reloadCVWrapperMethod), title: "reloadButton")
         
