@@ -45,8 +45,9 @@ extension CollectionVC {
                 else {button.tintColor = defaultColour}
             }
             
-            if button == reloadButton {button.tintColor = grayBarelyThere}
-            
+            if button == reloadButton {
+                button.tintColor = .clear//grayBarelyThere
+            }
         }
     }
 }
