@@ -1,52 +1,54 @@
- /* Tasks            ･   nidhamu   ･                                deadline                        type *          comments
+ /* Tasks            ･   nidhamu   ･                                phase/deadline                                  comments
   
   
+  > ⁌o⁍ text resizing (slight visual bug)                           I                                               22 tasks
+  
+  > ⁌o⁍ wizard text 'Mark...'
+  
+  > rearrange buttons
+  
+  > switch column 0 labels
+  
+  > improve deferral vc look&feel
+  
+  > improve text colours
+  
+  > now-cell outlined, not coloured
   
   
-  mark task early during time block?  ...probably not
+  taskListVC II: day                                                II
   
-  list VC: entire day, week
-  
-  tasksAtDate Dictionary                                                                            M
-  
-  week-navigation buttons                                                                           UI
+  taskListVC III: week
+
+  week-navigation buttons
   
   prevent user changing date
   
+  tasksAtDate Dictionary?
   
   
-  
-
-  
-  ⁌o⁍ text resizing (slight visual bug)
-  
-  buttons                                                                                           UI
-  
-  icon
+  app intro                                                         III
   
   launch screen
   
-  app intro
+  icon
+  
+  readme
+  
+  domain
+  
+  app store
   
   
+  + calendarVC                                                      IV
   
-  
-  
-  checklogic, refactor, comments
-  
-  readme                                                            app store asap
-  
-  
-  
-  
-  
-  + calendarVC
   + login date interval outlined/animated, not perma-coloured
+  
   + device specific fonts; orientation enum
-  + complete orientation independence (consult apple engineer)
   
+  + orientation independence even w/ task-tagging wizard presented
   
-  
+
   
   1st commit                                                         July 8 '19
   
@@ -58,12 +60,8 @@
 
   Notes
   
-  > denotes tasks I'm working on most actively at present (may not always be marked) -gladiusKatana
+  >   =  tasks I'm working on most actively at present (may not always be marked) -gladiusKatana
   
-  ⁌o⁍ denotes bugfixes
+  ⁌o⁍  =  bugfixes
   
-  * "type" labels may refer to development pattern categories M, V, C, VM etc. (VC = view controller)
-  
-  * all .swift files in this version are aesthetically optimized for a 13" screen
-  
-  * this is Open Source software. Contributors welcomed. https://github.com/gladiusKatana/Nidhamu */
+  .swift files in this version are aesthetically optimized for a 13" macbook screen*/
