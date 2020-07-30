@@ -29,25 +29,14 @@ extension CollectionVC {
         }
         
         for button in buttons {
-            
             guard let greyout = greyoutColour else {print("no greyout colour"); return}
             guard let index = buttons.firstIndex(of: button) else {print("error finding button index"); return}
             
             let defaultColour = barButtonColours[index]
             button.tintColor = defaultColour
             
-            if index == greyIndex {
-                button.tintColor = greyout
-            }
-            
-            if index == buttons.firstIndex(of: lockKeyboardButton) {
-                if keyboardLocked {button.tintColor = greyout}
-                else {button.tintColor = defaultColour}
-            }
-            
-            if button == reloadButton {
-                button.tintColor = .clear//grayBarelyThere
-            }
+            if index == greyIndex && button != lockKeyboardButton {button.tintColor = greyout}
+            if button == reloadButton {button.tintColor = .clear} //grayBarelyThere
         }
     }
 }
