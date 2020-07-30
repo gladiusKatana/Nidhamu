@@ -5,7 +5,7 @@ extension CollectionVC {
     
     func setupNavBarButtons(_ greyoutColour: UIColor?, greyIndex: Int?) {  //print("setting up nav bar buttons")
         
-        let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableImage")
+        let timetableButton = setupButton(selector: #selector(buttonWrapperMethodforTimetableVC), title: "timetableButton.001 copy")
         let archiveButton = setupButton(selector: #selector(buttonWrapperMethodforArchiveVC), title: "historyButton")
         
         var lockKeyboardButton = UIBarButtonItem()
