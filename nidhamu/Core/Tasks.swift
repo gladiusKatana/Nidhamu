@@ -1,14 +1,6 @@
  /* Tasks            ･   nidhamu   ･                                phase/deadline                                  comments
   
   
-  > ⁌o⁍ text resizing (slight visual bug)                           I                                               22 tasks
-  
-  > ⁌o⁍ wizard text 'Mark...'
-  
-  > rearrange buttons
-  
-  > switch column 0 labels
-  
   > improve deferral vc look&feel
   
   > improve text colours
