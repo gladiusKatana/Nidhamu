@@ -26,7 +26,7 @@ var timetableLayout =
         loadsHorizontally: false,           ///❗️if loadsHorizontally is true, 'rows' look like columns
         squareCellMode: .noAutoSquare)
 
-var timetableVC = CollectionVC(.timetable, backgroundColour: defaultColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: 0, collectionViewLayout: timetableLayout)
+var timetableVC = CollectionVC(.timetable, backgroundColour: defaultColour, loopWeeks: true, demarcateWeeksByColour: true, colourIndex: 2, collectionViewLayout: timetableLayout)
 
 
 var taskTaggingLayout =

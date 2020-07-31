@@ -20,7 +20,7 @@ extension CollectionVC {
         ///hardcoding button colours (may be easier, depends how many more buttons & colour exceptions)
         //let barButtonColours = [graySeven, graySeven, graySeven, graySeven,]
         
-        let buttons = [timetableButton, archiveButton, lockKeyboardButton, reloadButton]
+        let buttons = [lockKeyboardButton, archiveButton, timetableButton, reloadButton]
         
         navigationItem.rightBarButtonItems = buttons
         
