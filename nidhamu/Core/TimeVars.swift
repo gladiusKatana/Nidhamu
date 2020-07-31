@@ -43,5 +43,5 @@ var fullWeekdaysDefaultOrder = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thu
 var fullWeekdaysDisplayedOrder = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 var amPmHours = ["12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
-var dayQuarters = ["Nite", "Morn", "Aft", "Eve"]
+var dayQuarters = ["Morn", "Aft", "Eve", "Nite"]
 
