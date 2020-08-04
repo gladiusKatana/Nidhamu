@@ -85,12 +85,19 @@ extension CollectionVC {
             
             guard row < archiveTaskDateComponentArrays.count - 1 else {return}
             
+            var text = ""
+            
             if column == 0 {
-                cell.titleLabel.text = archiveTaskDateComponentArrays.isEmpty ? "" : formattedDateString(dateFromInts(archiveTaskDateComponentArrays[row]), roundDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
+                text = archiveTaskDateComponentArrays.isEmpty ? "" : formattedDateString(dateFromInts(archiveTaskDateComponentArrays[row]), roundDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
             }
                 
-            else if column == 1 {cell.titleLabel.text = archiveTaskDescriptions.isEmpty ? "" : "\(archiveTaskDescriptions[row])"}
-            else {cell.titleLabel.text = archiveTaskStatusStrings.isEmpty ? "" : "\(archiveTaskStatusStrings[row])"}
+            else if column == 1 {text = archiveTaskDescriptions.isEmpty ? "" : "\(archiveTaskDescriptions[row])"}
+            else {text = archiveTaskStatusStrings.isEmpty ? "" : "\(archiveTaskStatusStrings[row])"}
+            
+            let truncTrailSize = truncationTrail.stringSize(font: cell.titleLabel.font).width
+            let limit = (layout.cellWidth! - truncTrailSize) * 0.75
+            let truncDescr = truncateString(text, sizeLimit: limit, font: cell.titleLabel.font)
+            cell.titleLabel.text = truncDescr
         }
             
         else {print("[timeBlockDateSetup(:)] unrecognized collection view type")}
