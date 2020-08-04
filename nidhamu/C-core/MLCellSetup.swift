@@ -47,10 +47,6 @@ extension CollectionVC {
         resetTitleLabel(cell: cell, row: row, col: column, layout: customLayout)
         testForCellBannerNotification(cell, row: row, col: column, notificationColour: nil, notificationText: nil)
         
-        if viewControllerType == .archive {
-            cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .regular)
-        }
-        
         return cell
     }
 }

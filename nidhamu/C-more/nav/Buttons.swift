@@ -31,7 +31,7 @@ extension CollectionVC {
     
     
     @objc func buttonWrapperMethodforArchiveVC() {
-        archiveVC.downcastLayout!.rows = archiveTaskDescriptions.count
+        archiveVC.downcastLayout!.rows = archiveTaskDescriptions.count + 1
         gotoView(vc: archiveVC)
     }
     

@@ -35,7 +35,7 @@ var taskListVC = CollectionVC(.taskList, backgroundColour: skyBlue, loopWeeks: n
 var archiveLayout =
     CustomFlowLayout(
         embeddedInNavController: true,
-        customFrame: globalWindow.frame,
+        customFrame: nil,//globalWindow.frame,
         rows: 1, cols: 3, lockedHeaderRows: 0, lockedHeaderSections: 0,
         cellWidth: nil, cellHeight: 30,
         autoFitWScale: 1, autoFitHScale: 1,
