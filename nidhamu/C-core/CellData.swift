@@ -13,18 +13,14 @@ extension CollectionVC {
             if viewControllerType != .deferralDates {
                 if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))] {
                     
-                    let truncTrailSize = truncationTrail.stringSize(font: cell.titleLabel.font).width
-                    let limit = (layout.cellWidth! - truncTrailSize) * 0.75
-                    ///print("limit: \(limit)")  ///; print("dots: \(truncTrailSize)  avgLetter:\(averageLetterWidth)")
-                    
-                    if !([column, row] == indexPathsToProcess.first) {
+                    if [column, row] != indexPathsToProcess.first {
                         
                         let taskDescriptions = tasks.map {"\($0.taskDescription)"}
                         var truncTaskDescr = [String]()
                         
                         var i = 1
                         for descr in taskDescriptions {
-                            let truncDescr = truncateString(descr, sizeLimit: limit, font: cell.titleLabel.font)
+                            let truncDescr = truncateString(descr, cell: cell, layout: layout)
                             let limit = currentOrientation == "portrait" ? 5 : 3
                             if i <= limit {truncTaskDescr.append(" \(truncDescr)")}
                             if i == limit + 1{truncTaskDescr.append("...")}
@@ -74,9 +70,7 @@ extension CollectionVC {
                     
                 else {cell.titleLabel.text = "\(taskAtTimeBlock[row - taskListOffset].taskStatus)"}
                 
-            } else {
-                cell.titleLabel.text = ""
-            }
+            } else {cell.titleLabel.text = ""}
         }
             
         else if viewControllerType == .archive {
@@ -94,9 +88,7 @@ extension CollectionVC {
             else if column == 1 {text = archiveTaskDescriptions.isEmpty ? "" : "\(archiveTaskDescriptions[row])"}
             else {text = archiveTaskStatusStrings.isEmpty ? "" : "\(archiveTaskStatusStrings[row])"}
             
-            let truncTrailSize = truncationTrail.stringSize(font: cell.titleLabel.font).width
-            let limit = (layout.cellWidth! - truncTrailSize) * 0.75
-            let truncDescr = truncateString(text, sizeLimit: limit, font: cell.titleLabel.font)
+            let truncDescr = truncateString(text, cell: cell, layout: layout)
             cell.titleLabel.text = truncDescr
         }
             
