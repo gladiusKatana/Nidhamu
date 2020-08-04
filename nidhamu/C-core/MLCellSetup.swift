@@ -15,7 +15,7 @@ extension CollectionVC {
         if viewControllerType == .timetable || viewControllerType == .deferralDates {
             if currentOrientation == "landscape" {
                 if textFieldDisplayed{fontSize = 7} else {fontSize = 9}
-                cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .ultraLight)
+                cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .regular)
             }
         }
         
@@ -30,7 +30,7 @@ extension CollectionVC {
                     cell.titleLabel.text = headerWeekdayTitles[column - 1]
                     
                     if textFieldDisplayed && currentOrientation == "landscape" {fontSize = 7} else {fontSize = 12}
-                    cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .light)
+                    cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .regular)
                 }
             }
             
@@ -46,6 +46,11 @@ extension CollectionVC {
         
         resetTitleLabel(cell: cell, row: row, col: column, layout: customLayout)
         testForCellBannerNotification(cell, row: row, col: column, notificationColour: nil, notificationText: nil)
+        
+        if viewControllerType == .archive {
+            cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .regular)
+        }
+        
         return cell
     }
 }

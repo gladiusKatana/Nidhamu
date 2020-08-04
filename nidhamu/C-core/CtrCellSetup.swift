@@ -22,8 +22,13 @@ extension CollectionVC {
             }
             else {cell.titleLabel.text = dayQuarters[row - headerRows]}
             
-            if timeBlockSize == 1 && textFieldDisplayed && currentOrientation == "landscape" {fontSize = 7} else {fontSize = 11}
-            cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .light)
+            if timeBlockSize == 1 && textFieldDisplayed && currentOrientation == "landscape" {
+                fontSize = 7
+            } else {
+                fontSize = 12
+            }
+            
+            cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .regular)
             
         }
         

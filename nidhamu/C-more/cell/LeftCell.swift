@@ -10,6 +10,7 @@ class LeftAlignedCell: BaseCell {
         super.init(frame: frame)
         
         addTitleLabelConstraints(titleLabel, attribute: .left)
+//        addTitleLabelConstraints(titleLabel, attribute: .height)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     

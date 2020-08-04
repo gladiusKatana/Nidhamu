@@ -16,6 +16,7 @@ class BaseCell: UICollectionViewCell {
         
         titleLabel.textColor = defaultCellTextColour
         titleLabel.font = defaultTimetableCellFont
+//        titleLabel.backgroundColor = .red
     }
     
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}

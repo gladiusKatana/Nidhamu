@@ -37,7 +37,7 @@ var archiveLayout =
         embeddedInNavController: true,
         customFrame: globalWindow.frame,
         rows: 1, cols: 3, lockedHeaderRows: 0, lockedHeaderSections: 0,
-        cellWidth: nil, cellHeight: 20,
+        cellWidth: nil, cellHeight: 30,
         autoFitWScale: 1, autoFitHScale: 1,
         hSpace: cellGap, vSpace: cellGap,
         loadsHorizontally: false,

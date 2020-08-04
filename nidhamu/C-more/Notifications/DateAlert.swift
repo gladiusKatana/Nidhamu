@@ -3,7 +3,7 @@ import UIKit
 
 func testForCellBannerNotification(_ cell: BaseCell, row: Int, col: Int, notificationColour: UIColor?, notificationText: String?) {
     
-    var weight = UIFont.Weight.ultraLight
+    var weight = UIFont.Weight.light
     
     let str = dateHeaderCellNotification(Date())
     
@@ -26,11 +26,11 @@ func testForCellBannerNotification(_ cell: BaseCell, row: Int, col: Int, notific
     
     if currentOrientation == "landscape" {
         var size = 0
-        if textFieldDisplayed{size = 7} else {size = 9}
+        if textFieldDisplayed{size = 7} else {size = row == timetableHeaders - 1 ? 11 : 9}
         cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(size), weight: weight)
     }
         
-    else {cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: weight)}
+    else {cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(12), weight: weight)}
 }
 
 /// creates a string notifying if input date is a daylight-savings date, OR if user has not backed up past-task archives in > 30 days

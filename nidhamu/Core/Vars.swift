@@ -37,7 +37,7 @@ var firstTimeLoaded = false /// one-way bool: only flipped to  true once in enti
 ///var firstBecameActive = false
 ///var rotatedFromResignActive = false
 
-var defaultTimetableCellFont = UIFont.systemFont(ofSize: 12, weight: .ultraLight) /// UIFont(name: "Helvetica Neue", size: 12)
+var defaultTimetableCellFont = UIFont.systemFont(ofSize: 12, weight: .regular) /// UIFont(name: "Helvetica Neue", size: 12)
 
 var currentOrientation = "orientation (landscape or portrait) for prepare-layout logic"             //* will change this to an enum at some point
 var previousOrientation = "previous orientation (landscape or portrait) for prepare-layout logic"   //* " "
@@ -45,7 +45,7 @@ var lastActiveOrientation = "orientation (landscape or portrait) before sending 
 var launchOrientation = "orientation at the moment of launch"                                       //* " "
 var loadSymbolLegend = "                                        💾 = view loaded"
 ///var appearSymbolLegend = "                                        🏞 = view appeared"  /// console legend
-var truncationTrail = "…";                      ///var averageLetterWidth = CGFloat(0)
+var truncationTrail = "...";                      ///var averageLetterWidth = CGFloat(0)
 var dateString = "global csv date string";      var fileName = "global csv file name"
 var modelName = "device you're running on"
 var phones = ["iPhone4", "iPhone 4s", "iPhone 5", "iPhone 5c", "iPhone 5s", "iPhone 6", "iPhone 6 Plus", "iPhone 6s", "iPhone 6s Plus", "iPhone 7", "iPhone 7 Plus", "iPhone SE", "iPhone 8", "iPhone 8 Plus", "iPhone X", "iPhone XS", "iPhone XS Max", "iPhone XR"]

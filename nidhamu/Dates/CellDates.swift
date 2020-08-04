@@ -32,7 +32,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
                     } else {
                         if cellDateIsBetweenLogins {
                             if cellDateIsLastLogin {
-                                cell.titleLabel.text = "last login"; cell.titleLabel.font = UIFont.systemFont(ofSize: 9, weight: .ultraLight)
+                                cell.titleLabel.text = "last\nlogin"
                             }
                             cell.backgroundColor = lastLoginDimOrange; cell.cellColour = lastLoginDimOrange
                             

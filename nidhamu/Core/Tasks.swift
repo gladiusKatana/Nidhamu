@@ -1,9 +1,9 @@
  /* Tasks            ･   nidhamu   ･                                phase/deadline                                  comments
   
   
-  > improve deferral vc look&feel
+  > improve text colours                                            I                                               18 tasks
   
-  > improve text colours
+  > improve deferral vc look&feel
   
   > now-cell outlined, not coloured
   
