@@ -77,7 +77,7 @@ extension CollectionVC {
             cell.backgroundColor = .lightGray
             cell.titleLabel.textColor = .black;  //cell.titleLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
             
-            guard row < archiveTaskDateComponentArrays.count - 1 else {return}
+            guard row < archiveTaskDateComponentArrays.count else {return}
             
             var text = ""
             
