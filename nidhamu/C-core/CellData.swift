@@ -75,7 +75,7 @@ extension CollectionVC {
             
         else if viewControllerType == .archive {
             cell.backgroundColor = .lightGray
-            cell.titleLabel.textColor = .black;  //cell.titleLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
+            cell.titleLabel.textColor = .black
             
             guard row < archiveTaskDateComponentArrays.count else {return}
             
