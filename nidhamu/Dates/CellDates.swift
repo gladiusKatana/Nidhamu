@@ -18,7 +18,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
                 if viewControllerType != .deferralDates {cell.backgroundColor = taskAddingColour} //; cell.titleLabel.text = "+"
             } else {
                 if viewControllerType == .timetable {
-                    let cellDateIsBetweenLogins = sweepLoginInterval(dateToCheck: cell.cellDate, forEventDeadline: false,
+                    let cellDateIsBetweenLogins = sweepLoginInterval(dateToCheck: cell.cellDate, forTaskDeadline: false,
                                                                      column: column, row: row, layout: layout)
                     if truncateMins(cell.cellDate) == truncateMins(Date())
                         || row == nowRow && column == nowColumn         /// these 2 conditionals are equivalent but the latter is calculated faster

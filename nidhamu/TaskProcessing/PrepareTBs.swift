@@ -14,7 +14,7 @@ extension CollectionVC {
                 
                 for task in tasks {
                     
-                    let deadlineIsWithinLoginDateSweep = sweepLoginInterval(dateToCheck: task.deadline, forEventDeadline: true,
+                    let deadlineIsWithinLoginDateSweep = sweepLoginInterval(dateToCheck: task.deadline, forTaskDeadline: true,
                                                                             column: nil, row: nil, layout: nil)
                     
                     //print("time block @ (\(column),\(row)), task: \(task.taskDescription), \(deadlineIsWithinLoginDateSweep)")

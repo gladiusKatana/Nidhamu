@@ -25,7 +25,7 @@ extension PopupMenuVC {
                 
                 tasksOfBlockBeingTagged[taskIndex].taskStatus = selectedStatus! ///; print("tagged as: \(casename)\n")
                 
-                if /*[TaskStatus.upcoming].contains(selectedStatus) ||*/  /// tagging an event as .upcoming no longer enabled: .upcoming only default initial status
+                if /*[TaskStatus.upcoming].contains(selectedStatus) ||*/  /// tagging a task as .upcoming no longer enabled: .upcoming only default initial status
                     selectedTaskWillRecur {
                     taskWillShowUpNextWeek = true /// probably eliminate this variable soon
                 }

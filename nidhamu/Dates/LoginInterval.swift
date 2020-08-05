@@ -3,7 +3,7 @@ import UIKit
 
 extension CollectionVC {
     
-    func sweepLoginInterval(dateToCheck: Date, forEventDeadline: Bool,
+    func sweepLoginInterval(dateToCheck: Date, forTaskDeadline: Bool,
                             column: Int?, row: Int?, layout: CustomFlowLayout?) -> Bool { /// last 3 parameters only used for print near method bottom
         
         springForwardExtraHour = 0.0; fallBackExtraHour = 0.0
@@ -32,13 +32,13 @@ extension CollectionVC {
         
         dstShift = (dstOffset + springForwardExtraHour + fallBackExtraHour) * TimeInterval(3600)
         
-        let weekOffset = forEventDeadline ? 0 : TimeInterval(86400 * 7)
+        let weekOffset = forTaskDeadline ? 0 : TimeInterval(86400 * 7)
         let oneWeekAgo = truncateMins(dateToCheck) - weekOffset     /// * truncate only the cell's cell-date-- not the large time interval term
         
         let lowerDateBound = timeBlockRoundedLastLogin + dstShift
         let upperDateBound = truncateMins(Date() + dstShift)        /// could round current date too (based on time block size, as with last login date);...
         /// entire commented block of code below is for printing                                                                           ///... should not change logic
-        /*let deadlineBoolString = forEventDeadline ? " (for event deadline)" : ""
+        /*let deadlineBoolString = forTaskDeadline ? " (for task deadline)" : ""
          let upperDateBoundString = formattedDateString(upperDateBound, roundedDown: false,
          showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortFormNoDots)
          let lowerDateBoundString = formattedDateString(lowerDateBound, roundedDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortFormNoDots)
