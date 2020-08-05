@@ -1,7 +1,7 @@
- /* Tasks            ･   nidhamu   ･                                phase/deadline                                  comments
+ /* Tasks            ･   nidhamu   ･                                phase/deadline                                  17 tasks
   
   
-  
+                                                                    I
   > now-cell outlined, not coloured
   
   > improve deferral vc look&feel
