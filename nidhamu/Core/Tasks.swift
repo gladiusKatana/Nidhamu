@@ -1,7 +1,9 @@
- /* Tasks            ･   nidhamu   ･                                phase/deadline                                  17 tasks
+ /* Tasks            ･   nidhamu   ･                                phase/deadline                                  18 tasks
   
   
                                                                     I
+  > default empty history message
+  
   > now-cell outlined, not coloured
   
   > improve deferral vc look&feel
