@@ -26,7 +26,7 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         let messageText = "\(count) new Task\(s)\nFrom \(archiveTaskDateStrings.first!)\nTo \(archiveTaskDateStrings.last!)"
         
         emailComposeVC.setMessageBody(messageText, isHTML: false)
-        emailComposeVC.setSubject("[Nidhamu] Export to Excel") /// No point in using multiple spaces between words here, Gmail prevents > 1 consecutive spaces
+        emailComposeVC.setSubject("[Nidhamu] Past Tasks") /// No point in using multiple spaces between words here, Gmail prevents > 1 consecutive spaces
         
         do {
             let attachmentData = try Data(contentsOf: path)
