@@ -43,6 +43,8 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {      //print("\nEMAIL dismissed📪\n")
         AppUtility.lockOrientation(.all)
+        archiveVC.downcastLayout!.cols = 1
+        topVC.gotoView(vc: archiveVC)
         emailComposer.emailComposeVC.view.removeFromSuperview() ///; backgroundVC.view.removeFromSuperview()
         updateArchiveRelatedData(result: result)
         ///print("handled email with result \(result.rawValue)")

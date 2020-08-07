@@ -77,21 +77,28 @@ extension CollectionVC {
             cell.backgroundColor = .lightGray
             cell.titleLabel.textColor = .black
             
-            guard row < archiveTaskDateComponentArrays.count else {return}
+            let archivedTasks = archiveTaskDateComponentArrays.count
+            var text = ""; let defaultText = "  History empty (your Tasks appear here after you tag them)"
+            cell.titleLabel.text = defaultText
             
-            var text = ""
-            
-            if column == 0 {
-                text = archiveTaskDateComponentArrays.isEmpty ? "" : formattedDateString(dateFromInts(archiveTaskDateComponentArrays[row]), roundDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
+            if archivedTasks == 0 {
+                if row == downcastLayout!.rows / 2 {cell.titleLabel.text = defaultText} else {cell.titleLabel.text = "."}
             }
-                
-            else if column == 1 {text = archiveTaskDescriptions.isEmpty ? "" : "\(archiveTaskDescriptions[row])"}
-            else {text = archiveTaskStatusStrings.isEmpty ? "" : "\(archiveTaskStatusStrings[row])"}
-            
-            let truncDescr = truncateString(text, cell: cell, layout: layout)
-            cell.titleLabel.text = truncDescr
+            else {
+                if row < archivedTasks {
+                    
+                    if column == 0 {
+                        text = formattedDateString(dateFromInts(archiveTaskDateComponentArrays[row]), roundDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
+                    }
+                        
+                    else if column == 1 {text = "\(archiveTaskDescriptions[row])"}
+                    else {text = "\(archiveTaskStatusStrings[row])"}
+                    
+                    let truncDescr = truncateString(text, cell: cell, layout: layout)
+                    cell.titleLabel.text = truncDescr
+                }
+            }
         }
-            
         else {print("[timeBlockDateSetup(:)] unrecognized collection view type")}
     }
 }

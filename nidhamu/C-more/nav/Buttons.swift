@@ -11,8 +11,8 @@ extension CollectionVC {
     
     
     @objc func reloadCVWrapperMethod() {
-//        print("↺(button)")
-//        reloadCV()
+        //print("↺(button)")
+        // reloadCV()
     }
     
     
@@ -31,7 +31,10 @@ extension CollectionVC {
     
     
     @objc func buttonWrapperMethodforArchiveVC() {
-        archiveVC.downcastLayout!.rows = archiveTaskDescriptions.count
+        if archiveTaskDescriptions.count != 0 {
+            archiveVC.downcastLayout!.rows = archiveTaskDescriptions.count
+            archiveVC.downcastLayout!.cols = 3
+        }
         gotoView(vc: archiveVC)
     }
     

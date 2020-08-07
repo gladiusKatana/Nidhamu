@@ -38,9 +38,9 @@ func updateArchiveRelatedData(result: MFMailComposeResult) {
         deleteArchivesLocally()
         defaultSaveData(saveDate: false, resetLastLogin: false, showDate: true, pryntTasks: false)
         topVC.reloadCV()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25 ) {
-            topVC.gotoView(vc: timetableVC)
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25 ) {
+//            topVC.gotoView(vc: timetableVC)
+//        }
     }
 }
 
