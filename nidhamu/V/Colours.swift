@@ -21,7 +21,7 @@ var lastWeekColour = extraLightNavy;                                var popupMen
 var defaultCellTextColour = UIColor.black;                          ///var headerTextDefaultColour = UIColor.black
 
 
-var lastLoginDimOrange = UIColor.rgb(180, g: 70, b: 0, a: 0.4)
+var lastLoginDimOrange = UIColor.rgb(180, g: 70, b: 0, a: 0.5)
 ///var niceOrangeDark = UIColor.rgb(228, g: 100, b: 44, a: 0.75);   ///var orangeForBlocksSinceLastLogin = UIColor.rgb(180, g: 70, b: 0, a: 0.5) ///(220, g: 70, b: 20, a: 0.5)
 ///var jadeGreenLight = UIColor.rgb(60, g: 120, b: 79, a: 0.3);     ///var jadeGreen = UIColor.rgb(22, g: 134, b: 79, a: 1)
 

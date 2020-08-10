@@ -36,7 +36,15 @@ extension CollectionVC { /// probably will refactor this whole file soon
                             if cellDateIsLastLogin {
                                 cell.titleLabel.text = "last\nlogin"
                             }
-                            cell.backgroundColor = lastLoginDimOrange; cell.cellColour = lastLoginDimOrange
+                            
+                            cell.backgroundColor = lastLoginDimOrange//; cell.cellColour = lastLoginDimOrange
+                            
+                            UIView.animate(
+                                withDuration: 7, delay: 5,
+                                usingSpringWithDamping: 1, initialSpringVelocity: 0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                                    cell.backgroundColor = lastWeekColour
+                            }, completion: nil /*{(finished:Bool) in insertfunctionhere()}*/
+                            )
                             
                             prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
                             
