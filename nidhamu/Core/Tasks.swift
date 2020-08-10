@@ -2,8 +2,6 @@
   
   
                                                                     I
-  > default empty history message
-  
   > now-cell outlined, not coloured
   
   > improve deferral vc look&feel

@@ -20,10 +20,12 @@ extension CollectionVC { /// probably will refactor this whole file soon
                 if viewControllerType == .timetable {
                     let cellDateIsBetweenLogins = sweepLoginInterval(dateToCheck: cell.cellDate, forTaskDeadline: false,
                                                                      column: column, row: row, layout: layout)
-                    if truncateMins(cell.cellDate) == truncateMins(Date())
-                        || row == nowRow && column == nowColumn         /// these 2 conditionals are equivalent but the latter is calculated faster
+                    if //truncateMins(cell.cellDate) == truncateMins(Date())
+                        //||
+                        row == nowRow && column == nowColumn         /// these 2 conditionals are equivalent but the latter is calculated faster
                     {
-                        cell.backgroundColor = subtleBlue
+                        cell.backgroundColor = skyBlue
+                        cell.layer.borderColor = UIColor.darkGray.cgColor; cell.layer.borderWidth = 2; cell.layer.cornerRadius = 3
                         showNowCell(cell, column: column, row: row, forSpringForward: false)
                         
                         if truncateMins(Date()) == truncateMins(springForwardDate) && (column, row) == (nowColumn, nowRow + 1) {

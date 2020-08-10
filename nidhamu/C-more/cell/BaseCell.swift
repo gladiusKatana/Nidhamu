@@ -25,6 +25,7 @@ class BaseCell: UICollectionViewCell {
         super.prepareForReuse()
         
         layer.borderWidth = 1
+        layer.cornerRadius = 0
         layer.borderColor = UIColor.clear.cgColor
         
         titleLabel.text = "" /// use if title label text is ever set to a non-blank string
@@ -32,7 +33,7 @@ class BaseCell: UICollectionViewCell {
         titleLabel.textColor = defaultCellTextColour
         titleLabel.font = defaultTimetableCellFont
         
-        self.backgroundColor = .orange
+        self.backgroundColor = .black
     }
     
     func addTitleLabelConstraints(_ titleLabel: UILabel, attribute: NSLayoutConstraint.Attribute) {

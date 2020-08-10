@@ -27,7 +27,7 @@ var lastLoginDimOrange = UIColor.rgb(180, g: 70, b: 0, a: 0.4)
 
 var subtleBlue = UIColor.rgb(100, g: 140, b: 190, a: 1)             ///a: 0.6 ///(150, g: 180, b: 220, a: 0.7) //(120, g: 150, b: 180, a: 1)
 var skyBlue = UIColor.rgb(140, g: 170, b: 200, a: 1)                ///(180, g: 210, b: 240, a: 1) ///(150, g: 180, b: 220, a: 1)
-var navyBlue = UIColor.rgb(0, g: 50, b: 96, a: 1);                  var darkNavy = UIColor.rgb(0, g: 36, b: 82, a: 1)
+var darkNavy = UIColor.rgb(0, g: 36, b: 82, a: 1)                   ///var navyBlue = UIColor.rgb(0, g: 50, b: 96, a: 1);
 var extraLightNavy = UIColor.rgb(0, g: 56, b: 116, a: 0.4);         ///var taskTextBlue = UIColor.rgb(50, g: 50, b: 250, a: 1)
 ///var lightNavy = UIColor.rgb(0, g: 56, b: 116, a: 0.6);                         ///var halfIcyBlue = UIColor.rgb(150, g: 180, b: 220, a: 0.25)
 ///var bluishGray = UIColor.rgb(20, g: 80, b: 120, a: 1)
