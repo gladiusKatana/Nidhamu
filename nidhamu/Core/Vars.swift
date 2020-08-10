@@ -32,7 +32,7 @@ var keyboardLocked = false;                     ///var firstPortraitKeyboardPres
 var textFieldDisplayed = false;                 var rowLongPressed = -1;                    var textFieldEditingMode = false
 var taggingViewDisplayed = false;               var selectedTaskWillRecur = false;          var justPinched = false
 var tempRescalingBool = false;                  var thereWillBeARowException = false;       var showConsoleLegend = true
-var reloadedFromHourTickingOver = true;         var cachedBlocksAndTheirPaths = false
+var reloadedFromHourTickingOver = true;         var cachedBlocksAndTheirPaths = false;      var taglessSavingFlag = false
 var firstTimeLoaded = false /// one-way bool: only flipped to  true once in entire app lifecycle
 ///var firstBecameActive = false
 ///var rotatedFromResignActive = false

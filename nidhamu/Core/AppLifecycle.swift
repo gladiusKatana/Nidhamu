@@ -10,12 +10,7 @@ extension AppDelegate {
         /*if firstBecameActive {print("🔅became active")}
          else {firstBecameActive = true}*/
         
-        findFallbackDate(startingDate: Date() - TimeInterval(3600), printDSTDates: showDSTDates) /// generally want =true for testing timetable around DST
-        findSpringForwardDate(startingDate: Date(), printDSTDates: showDSTDates)                 /// see above.  (DST = daylight savings time)
-        
-        checkOrientation()
-        defaultLoadData(showDate: true)
-        topVC.reloadCV()
+        wakeupDateReset(withReload: true)
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {                 print("🌔will enter foreground\n")
@@ -24,7 +19,9 @@ extension AppDelegate {
     }
     
     func applicationWillResignActive(_ application: UIApplication) {                    ///customApplicationStatusPrint("⏸will resign active")
+        taglessSavingFlag = false
         thereWillBeARowException = false
+        
         if !taggingViewDisplayed {
             defaultSaveData(saveDate: true, resetLastLogin: false, showDate: false, pryntTasks: true)
         }
@@ -48,5 +45,14 @@ extension AppDelegate {
     }
     
     func customApplicationStatusPrint(_ applicationState: String) { print("\n\(applicationState)")}
+}
+
+func wakeupDateReset(withReload: Bool) {
+    findFallbackDate(startingDate: Date() - TimeInterval(3600), printDSTDates: showDSTDates) /// generally want =true for testing timetable around DST
+    findSpringForwardDate(startingDate: Date(), printDSTDates: showDSTDates)                 /// see above.  (DST = daylight savings time)
+    
+    checkOrientation()
+    defaultLoadData(showDate: true)
+    topVC.reloadCV()
 }
 
