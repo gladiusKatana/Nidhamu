@@ -46,23 +46,7 @@ extension CollectionVC {
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            if indexPathsToProcess.isEmpty {
-                UIView.animate(
-                    withDuration: 7, delay: 0,
-                    usingSpringWithDamping: 1, initialSpringVelocity: 0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-                        cell.backgroundColor = lastWeekColour
-                }, completion: {(finished:Bool) in
-                    if !taglessSavingFlag {
-                        defaultSaveData(saveDate: true, resetLastLogin: false, showDate: false, pryntTasks: true)
-                        print("\n(autosaved)\n")
-                        wakeupDateReset(withReload: false)
-                        taglessSavingFlag = true
-                    }
-                }
-                )
-            }
-        }
+        animateLoginIntervalCells(cell: cell)
         
     }
 }

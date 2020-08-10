@@ -385,6 +385,7 @@
 			children = (
 				065412A4237A6D830080F3EF /* Prynts.swift */,
 				065412A0237A6D830080F3EF /* Strings.swift */,
+				065412A3237A6D830080F3EF /* Animations.swift */,
 				065412A1237A6D830080F3EF /* Colours.swift */,
 				065412A5237A6D830080F3EF /* RotateLock.swift */,
 			);
@@ -490,7 +491,6 @@
 		0688C38E23481D45007DC878 /* Inactive */ = {
 			isa = PBXGroup;
 			children = (
-				065412A3237A6D830080F3EF /* Animations.swift */,
 				06473CA72346DF00009397AE /* SendMsg.swift */,
 				0625168E22D6CF4200EBB4C8 /* ScrollBars.swift */,
 			);
