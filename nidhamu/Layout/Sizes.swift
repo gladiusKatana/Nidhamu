@@ -27,10 +27,13 @@ extension CustomFlowLayout {
             } //* default frame is overridden anyway (see above comment); hence its initialization with all 0's
         }
         
+        let del = modelName == "iPhone12,5" ? CGFloat(85 - 30) : CGFloat(0)
         let gap = CGFloat(7) /// extra gap for better aesthetics
-        let autofitWidth = CGFloat(frame.width) / CGFloat(cols) - hSpace
         let barsHeight = navBarHeight + statusBarHeight
-        let autoFitHeight = CGFloat(Double(frame.height - keyboardHeight /*- textFieldHeight*/ - gap) - barsHeight) / CGFloat(rows) - vSpace
+        
+        let autofitWidth = frame.width / CGFloat(cols) - hSpace
+        let h = frame.height - keyboardHeight - del/*- textFieldHeight*/ - gap
+        let autoFitHeight = (h - CGFloat(barsHeight)) / CGFloat(rows) - vSpace
         
         switch cellDimensionsMode {
         case .widthAndHeightHardcoded:  cellWd = cellWidth!;                        cellHt = cellHeight!

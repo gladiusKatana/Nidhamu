@@ -28,6 +28,15 @@ import UIKit
         
         getOrientationAtLaunch()                                    ; print("launching on \(modelName) in \(launchOrientation) orientation")
         
+        switch modelName { // will handle all other device sizes (& update UIDevice.mapToDevice(:)) soon
+        case "iPhone12,5" :
+            portraitKeyboardHeight = 216
+            landscapeKeyboardHeight = 162
+        default:
+            portraitKeyboardHeight = 246
+            landscapeKeyboardHeight = 192
+        }
+        
         if statusBarUIView!.responds(to:#selector(setter: UIView.backgroundColor)) {
             statusBarUIView!.backgroundColor = .clear
         }

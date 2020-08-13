@@ -42,8 +42,9 @@ extension CustomFlowLayout {
     }
     
     func compensateForNavigationAndStatusBars(forCollectionVC collectVC: UICollectionViewController, withDelta delta: Double) {
+        let del = modelName == "iPhone12,5" ? CGFloat(85) : CGFloat(0)
         yOffset = collectVC.collectionView!.contentOffset.y + CGFloat(navBarHeight + statusBarHeight - delta)  //print("yo: \(yOffSet)")
-        textFieldY = globalWindow.frame.height - keyboardHeight //- textFieldHeight // shows just above keyboard
+        textFieldY = globalWindow.frame.height - keyboardHeight - del//- textFieldHeight // shows just above keyboard
         xOffSet = collectVC.collectionView!.contentOffset.x
     }
 }
