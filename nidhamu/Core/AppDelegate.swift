@@ -28,7 +28,7 @@ import UIKit
         
         getOrientationAtLaunch()                                    ; print("launching on \(modelName) in \(launchOrientation) orientation")
         
-        switch modelName { // will handle all other device sizes (& update UIDevice.mapToDevice(:)) soon
+        switch modelName { /// will handle all other device sizes (& update UIDevice.mapToDevice(:)) soon
         case "iPhone12,5" :
             portraitKeyboardHeight = 216
             landscapeKeyboardHeight = 162

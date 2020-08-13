@@ -19,7 +19,7 @@ extension AppDelegate {
     }
     
     func applicationWillResignActive(_ application: UIApplication) {                    ///customApplicationStatusPrint("⏸will resign active")
-        taglessSavingFlag = false
+        taglessSavingFlag = false /// maybe add conditional based on login date interval (time elapsed). if so, maybe move this to applicaatnDidBecomeActive(:)
         thereWillBeARowException = false
         
         if !taggingViewDisplayed {
