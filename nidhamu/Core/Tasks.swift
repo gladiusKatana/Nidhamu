@@ -2,6 +2,8 @@
   
 
                                                                     I
+  > better colour scheme (try bluish background)
+  
   > improve deferral vc look&feel
   
   

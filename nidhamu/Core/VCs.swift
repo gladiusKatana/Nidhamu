@@ -2,7 +2,7 @@
 import UIKit
 
 
-var defaultCellGap = CGFloat(0)                    // if nonzero, do not make this smaller than: 0.5 (iphone7), or lines drawn inconsistently
+var defaultCellGap = CGFloat(0)                    // if nonzero, do not make this smaller than: 0.5-0.6 (iphone7), or lines drawn inconsistently
 var backgroundVC = UIViewController()
 var topVC = CollectionVC(.initial, backgroundColour: UIColor.clear, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: timetableLayout)
 
