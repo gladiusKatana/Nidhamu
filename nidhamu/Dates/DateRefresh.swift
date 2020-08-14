@@ -18,20 +18,31 @@ func processCurrentDate() {
             lastLoginDate = dateFromComponents(lastLoginDateComponents)
             print("new week\n") ///pryntLastLoginDate(); pryntCurrentDate()
         }
-        else {print("\nnew hour")}
+        else {print("\nnew minute")}
         reloadedFromHourTickingOver = true
     }
 }
 
 extension CollectionVC {
     
-    func periodicDateRefresh(completion: () -> ()) {            //print("·", terminator: "")
+    func periodicDateRefresh(completion: () -> ()) {                    //print("Date: \(Date())") //print("·", terminator: "")
         
-        if "\(Date())".contains(":59:5") {                      //print("DATE: \(Date())")
-            reloadedFromHourTickingOver = false
+        let finalSeconds = [56,57,58,59]
+        var finalSecondStrings = [String]()
+        
+        var i=0
+        for secs in finalSeconds {
+            finalSecondStrings.append(":\(secs) +")
+            
+            if "\(Date())".contains(finalSecondStrings[i]) {            //print("DATE: \(Date())")
+                reloadedFromHourTickingOver = false
+            }
+            
+            i+=1
         }
         
-        if "\(Date())".contains(":00:") {
+        
+        if "\(Date())".contains(":0") { ///or :00: for hourly
             if !reloadedFromHourTickingOver {
                 
                 cachedBlocksAndTheirPaths = false
