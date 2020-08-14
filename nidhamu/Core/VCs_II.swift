@@ -9,7 +9,7 @@ var deferralLayout =
         lockedHeaderRows: timetableHeaders, lockedHeaderSections: 1,
         cellWidth: nil, cellHeight: nil,
         autoFitWScale: 1, autoFitHScale: 1,
-        hSpace: cellGap, vSpace: cellGap,
+        hSpace: defaultCellGap, vSpace: defaultCellGap,
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
@@ -25,7 +25,7 @@ var taskListLayout =
         rows: minTaskListRows + 1, cols: 3, lockedHeaderRows: 0, lockedHeaderSections: 0,
         cellWidth: nil, cellHeight: nil,
         autoFitWScale: 1, autoFitHScale: 1,
-        hSpace: cellGap, vSpace: cellGap,
+        hSpace: defaultCellGap, vSpace: defaultCellGap,
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
@@ -39,7 +39,7 @@ var archiveLayout =
         rows: 5, cols: 1, lockedHeaderRows: 0, lockedHeaderSections: 0,
         cellWidth: nil, cellHeight: 30,
         autoFitWScale: 1, autoFitHScale: 1,
-        hSpace: cellGap, vSpace: cellGap,
+        hSpace: defaultCellGap, vSpace: defaultCellGap,
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 

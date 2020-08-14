@@ -2,7 +2,7 @@
 import UIKit
 
 
-var cellGap = CGFloat(0)                    // if nonzero, do not make this smaller than: 0.5 (iphone7), or lines drawn inconsistently
+var defaultCellGap = CGFloat(0)                    // if nonzero, do not make this smaller than: 0.5 (iphone7), or lines drawn inconsistently
 var backgroundVC = UIViewController()
 var topVC = CollectionVC(.initial, backgroundColour: UIColor.clear, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: timetableLayout)
 
@@ -13,6 +13,7 @@ var timetableRows = 24 / timeBlockSize + timetableHeaders
 var cellHeightFactor = CGFloat(1);  var headerHeightFactor = CGFloat(1)
 
 
+let gap = CGFloat(0.6)
 var timetableLayout =
     CustomFlowLayout(
         embeddedInNavController: true,      ///  if true, it's fullscreen (with a nav bar button to navigate to its collection view controller's view); ...
@@ -22,7 +23,7 @@ var timetableLayout =
         lockedHeaderRows: timetableHeaders, lockedHeaderSections: 1,
         cellWidth: nil, cellHeight: nil,    ///  if either parameter =nil, screen width &/or height is autofitted (else, auto-fit scalars below ignored, ie set to 1.0)
         autoFitWScale: 1, autoFitHScale: 1, ///  if either of these parameters are nil, they default to 1.0
-        hSpace: cellGap, vSpace: cellGap,   ///  gaps between the cells
+        hSpace: gap, vSpace: gap,   ///  gaps between the cells
         loadsHorizontally: false,           ///❗️if loadsHorizontally is true, 'rows' look like columns
         squareCellMode: .noAutoSquare)
 
@@ -36,7 +37,7 @@ var taskTaggingLayout =
         rows: 5, cols: 1, lockedHeaderRows: 1, lockedHeaderSections: 0,
         cellWidth: 80, cellHeight: 20,
         autoFitWScale: nil, autoFitHScale: nil,
-        hSpace: cellGap, vSpace: cellGap,
+        hSpace: defaultCellGap, vSpace: defaultCellGap,
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
