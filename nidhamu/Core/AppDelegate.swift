@@ -43,7 +43,7 @@ import UIKit
             statusBarUIView!.backgroundColor = .clear
         }
         
-        UINavigationBar.appearance().barTintColor = defaultColour
+        UINavigationBar.appearance().barTintColor = grayOneConverted
         UINavigationBar.appearance().shadowImage = UIImage()
         //print(formattedDateString(Date(), roundedDown: false, prefix: "                      on", suffix: "", short: false))
         return true
