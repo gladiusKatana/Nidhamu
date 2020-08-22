@@ -48,7 +48,7 @@ extension CollectionVC {
             
         else if viewControllerType == .taskList {
             cell.cellDate = selectedCellDate
-            cell.backgroundColor = skyBlue//defaultColour
+            cell.backgroundColor = .clear
             
             guard let taskAtTimeBlock = tasksAtIndexPath[timeBlock], !taskAtTimeBlock.isEmpty else {
                 cell.titleLabel.text = "(no items yet)"; return
@@ -74,7 +74,7 @@ extension CollectionVC {
         }
             
         else if viewControllerType == .archive {
-            cell.backgroundColor = .lightGray
+            cell.backgroundColor = greyoutForTimeBlocksPassedThisWeek
             cell.titleLabel.textColor = .black
             
             let archivedTasks = archiveTaskDateComponentArrays.count

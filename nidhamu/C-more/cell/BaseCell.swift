@@ -14,9 +14,12 @@ class BaseCell: UICollectionViewCell {
         
         self.backgroundColor = cellDefaultColour
         
+        layer.borderWidth = 1
+        layer.cornerRadius = 8
+        layer.borderColor = UIColor.clear.cgColor
+        
         titleLabel.textColor = defaultCellTextColour
         titleLabel.font = defaultTimetableCellFont
-//        titleLabel.backgroundColor = .red
     }
     
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
@@ -24,8 +27,6 @@ class BaseCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        layer.borderWidth = 1
-        layer.cornerRadius = 0
         layer.borderColor = UIColor.clear.cgColor
         
         titleLabel.text = "" /// use if title label text is ever set to a non-blank string

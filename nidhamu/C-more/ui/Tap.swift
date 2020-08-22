@@ -57,7 +57,7 @@ extension CollectionVC {
                 
                 taskTaggingViewController.updateBlockProcessingVariables(column: clm, row: rw,
                                                                          taskWillShowUpNextWeek: false, selectedStatus: .done)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                DispatchQueue.main.asyncAfter(deadline: .now()) {//now() + 0.25
                     deferralPath = [column, row]
                     self.gotoView(vc: timetableVC)                  //; print("******************should be highlighting: \(earliestTaskAddress)")
                 }

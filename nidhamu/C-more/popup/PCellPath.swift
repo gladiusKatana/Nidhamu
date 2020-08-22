@@ -27,7 +27,7 @@ extension PopupMenuVC {
             cell.backgroundColor = popupMenuLightGray
             
         } else {
-            cell.backgroundColor = platinum
+            cell.backgroundColor = cellDefaultColour
             cell.titleLabel.text = TaskStatus.allCases[row].caseName()
             cell.titleLabel.textColor = .black
         }

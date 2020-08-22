@@ -2,7 +2,9 @@
   
 
                                                                     I
-  > better colour scheme (try bluish background)
+  > temporary nav bar button for task list vc
+  
+  > alert colour for lock-keyboard button when enabled
   
   > improve deferral vc look&feel
   

@@ -24,8 +24,8 @@ extension CollectionVC { /// probably will refactor this whole file soon
                         //||
                         row == nowRow && column == nowColumn         /// these 2 conditionals are equivalent but the latter is calculated faster
                     {
-                        cell.backgroundColor = skyBlue
-                        cell.layer.borderColor = UIColor.white.cgColor; cell.layer.borderWidth = 2
+                        cell.backgroundColor = cellDefaultColour
+                        cell.layer.borderColor = dimOrange.cgColor; cell.layer.borderWidth = 3
                         showNowCell(cell, column: column, row: row, forSpringForward: false)
                         
                         if truncateMins(Date()) == truncateMins(springForwardDate) && (column, row) == (nowColumn, nowRow + 1) {
@@ -37,10 +37,8 @@ extension CollectionVC { /// probably will refactor this whole file soon
                                 cell.titleLabel.text = "last\nlogin"
                             }
                             
-                            cell.backgroundColor = lastLoginDimOrange//; cell.cellColour = lastLoginDimOrange
-                            
+                            cell.backgroundColor = dimOrange//; cell.cellColour = lastLoginDimOrange
                             prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
-                            
                         } else {setCellColourBasedOnWeek(cell: cell, cellDateIsNextWeek: cellDateIsNextWeek)}
                     }
                     
@@ -62,7 +60,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
                 if column <= nowColumn {
                     if !(nowRow == layout.lockedHeaderRows && column == nowColumn) {
                         showDateInTitleLabels(date: cell.cellDate, cell: cell)
-                        cell.backgroundColor = lastWeekColour
+                        cell.backgroundColor = greyoutForTimeBlocksPassedThisWeek
                     } else {cell.backgroundColor = cellDefaultColour}
                 } else {cell.backgroundColor = cellDefaultColour}
             }
@@ -72,7 +70,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
                     showDateInTitleLabels(date: cell.cellDate, cell: cell)
                     cell.backgroundColor = cellDefaultColour
                 }
-                else {cell.backgroundColor = lastWeekColour}
+                else {cell.backgroundColor = greyoutForTimeBlocksPassedThisWeek}
             }
             
             ///if row == 4 {cell.backgroundColor = .orange} /// so that it isn't white (indistinguishable from what might be below it: no cell at that position)
@@ -86,7 +84,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
     }
     
     func setCellColourBasedOnWeek(cell: CustomCell, cellDateIsNextWeek: Bool) {
-        if cellDateIsNextWeek {cell.backgroundColor = lastWeekColour; cell.cellColour = lastWeekColour}
+        if cellDateIsNextWeek {cell.backgroundColor = greyoutForTimeBlocksPassedThisWeek; cell.cellColour = greyoutForTimeBlocksPassedThisWeek}
         else {cell.backgroundColor = cellDefaultColour;  cell.cellColour = cellDefaultColour}
     }
 }

@@ -18,12 +18,14 @@ import UIKit
         /// may move further down app lifecycle, to applicationDidBecomeActive(:); but this further accommodates 'going back in time' via device settings, without glitches
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = skyBlue//cellDefaultColour
+        window?.backgroundColor = defaultColour
         window?.makeKeyAndVisible()
+        
         globalWindow = window!
+        globalWindow.backgroundColor = defaultColour
         
         backgroundVC = UIViewController()
-        backgroundVC.view.backgroundColor = cellDefaultColour       /// must match window's background colour, for rotating landscape->portrait
+        backgroundVC.view.backgroundColor = .clear //defaultColour /// must match window's background colour, for rotating landscape->portrait
         backgroundVC.view.frame = globalWindow.frame
         
         getOrientationAtLaunch()                                    ; print("launching on \(modelName) in \(launchOrientation) orientation")

@@ -25,14 +25,10 @@ extension CollectionVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         if !taskIsDeletable {setNavBarTitle(customString: nil)}
         setupNavBarButtons(grayTwo, greyIndex: colourIndex)
-        
-        cellDefaultColour = skyBlue                             /// * this is the only time this global, ubiquitous colour is mutated; it was ...
-        backgroundVC.view.backgroundColor = cellDefaultColour   /// ...initially lighter-coloured only for visual simplicity/continuity (all cells looking alike)
-        
         setTopViewController()
+        if viewControllerType == .taskList {reloadCV()}
     }
     
     override func viewDidAppear(_ animated: Bool) {
