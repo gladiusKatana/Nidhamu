@@ -31,7 +31,7 @@ var platinum = UIColor.rgb(214, g: 214, b: 214, a: 1);          var midPlatinum 
 var graySeven = UIColor.rgb(0, g: 0, b: 0, a: 0.7);             ///var grayBarelyThere = UIColor.rgb(0, g: 0, b: 0, a: 0.03)
 
 var grayOne = UIColor.rgb(0, g: 0, b: 0, a: 0.1);               var grayTwo = UIColor.rgb(0, g: 0, b: 0, a: 0.2)
-var grayOneConverted = UIColor.rgb(138, g: 176, b: 210, a: 1)
+var grayOneConverted = UIColor.rgb(138, g: 176, b: 210, a: 1)/// Got alpha=1 equivalent of grayOne*, via screenshot + this app: https://tinyurl.com/y2e4smph
 
 ///var grayFour = UIColor.rgb(0, g: 0, b: 0, a: 0.4);                         ///var grayThree = UIColor.rgb(0, g: 0, b: 0, a: 0.3)
 ///var clearGlass = UIColor.rgb(255, g: 255, b: 255, a: 0.05)                 ///; var frostedGlass = UIColor.rgb(230, g: 230, b: 230, a: 0.7) //(255,g: 255,b: 255,a: 0.4)
@@ -48,3 +48,14 @@ extension UIColor {
     }
 }
 
+/* *Some more explanation re. the alpha-conversion comment above:
+ my colour  grayOne  is transparent, so cells using it show some of the background photo (blue sky) used throughout this app.  But, 'transparent mixture' color effects (with alpha < 1) can't be easily matched in the navigation bar's background color (since the background behind the nav bar is default black).   But— there's an easy solution.  To get a solid (alpha=1) version of any 'transparent mixture' color, you only need to screenshot the app on your device, crop the color-area you want, then upload that image to the web app linked above. That app gives you the rgb variables, you can use these with alpha = 1)
+ 
+ ...here's the full app link (again):
+ 
+ https://www.ginifab.com/feeds/pms/pms_color_in_image.php   // full link
+ 
+ https://www.ginifab.com/feeds/                                // main site with some other useful design tools)
+ 
+ (Nice way to shill their free tools right ;)
+ */
