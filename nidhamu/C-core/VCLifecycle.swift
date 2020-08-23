@@ -5,7 +5,7 @@ extension CollectionVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.backgroundColor = backgroundColour
+        collectionView.backgroundColor = .clear
         collectionView.bounces = false
         setTopViewController()
         statusBarHeightChangeNotificationSetup()
