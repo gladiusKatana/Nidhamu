@@ -4,8 +4,6 @@
                                                                     I
   > multiple cloud photo backgrounds randomized based on login date
   
-  > shorten taskField placeholder (instructions) text
-  
   > shorten task list vc nav bar title (eg, 'Thursday afternoon')
   
   > temporary nav bar button for task list vc
