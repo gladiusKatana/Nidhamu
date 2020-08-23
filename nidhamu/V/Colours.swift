@@ -26,8 +26,8 @@ var darkNavy = UIColor.rgb(0, g: 36, b: 82, a: 1);              ///var navyBlue 
 ///var bluishGray = UIColor.rgb(20, g: 80, b: 120, a: 1)
 ///var darkerIce = UIColor.rgb(130, g: 160, b: 200, a: 1)                    ///a: 0.6 ///(150, g: 180, b: 220, a: 0.7); //(120, g: 150, b: 180, a: 1)
 
-var lightWhite = UIColor.rgb(255, g: 255, b: 255, a: 0.3);      var midWhite = UIColor.rgb(255, g: 255, b: 255, a: 0.7)/*****************/
-var platinum = UIColor.rgb(214, g: 214, b: 214, a: 1);          var midPlatinum = UIColor.rgb(214, g: 214, b: 214, a: 0.5)
+var lightWhite = UIColor.rgb(255, g: 255, b: 255, a: 0.3);      var midWhite = UIColor.rgb(255, g: 255, b: 255, a: 0.5)/*****************/
+var platinum = UIColor.rgb(214, g: 214, b: 214, a: 1);          ///var midPlatinum = UIColor.rgb(214, g: 214, b: 214, a: 0.5)
 var graySeven = UIColor.rgb(0, g: 0, b: 0, a: 0.7);             ///var grayBarelyThere = UIColor.rgb(0, g: 0, b: 0, a: 0.03)
 
 var grayOne = UIColor.rgb(0, g: 0, b: 0, a: 0.1);               var grayTwo = UIColor.rgb(0, g: 0, b: 0, a: 0.2)
@@ -36,7 +36,7 @@ var grayOneConverted = UIColor.rgb(138, g: 176, b: 210, a: 1)/// Got alpha=1 equ
 ///var grayFour = UIColor.rgb(0, g: 0, b: 0, a: 0.4);                         ///var grayThree = UIColor.rgb(0, g: 0, b: 0, a: 0.3)
 ///var clearGlass = UIColor.rgb(255, g: 255, b: 255, a: 0.05)                 ///; var frostedGlass = UIColor.rgb(230, g: 230, b: 230, a: 0.7) //(255,g: 255,b: 255,a: 0.4)
 
-var backgroundImage = UIImage(named: "blueSkyWithoutTree0.5")?.withRenderingMode(.alwaysTemplate) /// sky background (blue with light clouds)
+var backgroundImage = UIImage(named: "(big)sky1")?.withRenderingMode(.alwaysTemplate) /// sky background (blue with light clouds)
 var skyBackgroundColour = UIColor(patternImage: backgroundImage!) ///looks nice, but can slow scrolling performance (if collection view scrolls)
 
 var randomColours = /// used in TestSquare.swift
@@ -63,8 +63,12 @@ extension UIColor {
 
 /*background image sources:
  
- background image id string:                        link:
+ background image id string:                link:
  
- blueSkyWithoutTree0.5                              https://www.maineaudubon.org/news/sky-bluer-fall/
+ (big)sky1                                  https://depositphotos.com/228431962/stock-video-beautiful-almost-clear-blue-sky.html  **
+ (big)sky2                                  https://depositphotos.com/228431962/stock-video-beautiful-almost-clear-blue-sky.html
+ 
+ ** note - 1st image is a timelapse video; the image frame used, can be found in the attached .keynote (for now). See 2nd slide
  
  */
+
