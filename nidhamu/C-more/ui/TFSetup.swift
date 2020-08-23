@@ -36,12 +36,17 @@ extension CollectionVC {
 //        let str = formattedDateString(selectedCellDate, roundDown: false, showYear: false, prefix: pre, suffix: suf,
 //                                      dateFormat: .fullDayShortForm)/// ! probably needs smaller font on iPhone SE in portrait
         
+        let timeBlockDescriptor = getSelectedTimeBlockDescriptor()
+        taskField.placeholder = "Add Task: \(timeBlockDescriptor)"
+    }
+    
+    func getSelectedTimeBlockDescriptor() -> String {
         let date = selectedCellDate - TimeInterval(3600 * timeBlockSize)///text field text below refers to date of timeblock task is on (not deadline)
         let dayOfWeek = customWkdysDefaultOrder[Calendar.current.component(.weekday, from: date) - 1]
         let dateAndMonth = formattedDateString(date, roundDown: false, showYear: true,
         prefix: "", suffix: "", dateFormat: .monthAndDay)
         let str = dayQuartersLong[selectedTimeBlockPath[1] - 5]
-        taskField.placeholder = "Add Task: \(dayOfWeek). \(str) (\(dateAndMonth))"
+        return "\(dayOfWeek). \(str) (\(dateAndMonth))"
     }
 }
 
