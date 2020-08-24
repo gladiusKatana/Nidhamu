@@ -5,8 +5,8 @@ var iosSettingsGray = UIColor.rgb(240, g: 240, b: 247, a: 1)
 
 //var iosKeyboardDefaultColourApprox = UIColor.rgb(206, g: 213, b: 219, a: 1) ///b: 218 // (207, g: 212, b: 225, a: 1)
 
-var defaultColour = skyBackgroundColour;                        var cellDefaultColour = lightWhite//UIColor.clear//skyBlue//
-var headerColour = UIColor.clear;                               var taskAddingColour = UIColor.darkGray
+var defaultColour = skyBackgroundColour;                        var cellDefaultColour = lightWhite
+var headerColour = UIColor.clear;                               var taskAddingColour = platinum
 
 var greyoutForTimeBlocksPassedThisWeek = grayOne;               var popupMenuLightGray = UIColor.lightGray
 
