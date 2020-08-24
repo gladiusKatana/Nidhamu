@@ -11,7 +11,7 @@ var dismissPinch = UIPinchGestureRecognizer()
 
 var emailComposer = EmailComposer();            ///var timerForShowingScrollIndicator: Timer?
 
-
+var testRectanglelayer = CAShapeLayer()
 var currentCellWidth: CGFloat?;                 var currentCellHeight: CGFloat?
 var statusBarHeight = 0.0;                      var lastStatusBarHeight = 0.0
 var navBarHeight = 0.0;                         var launchWidth = 0.0

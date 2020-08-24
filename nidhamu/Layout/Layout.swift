@@ -43,7 +43,6 @@ class CustomFlowLayout : UICollectionViewFlowLayout {
         else if cellWidth != nil && cellHeight == nil {cellDimensionsMode = .widthHardcoded}
             
         else    {cellDimensionsMode = .neitherHardcoded}                                        //print(cellDimensionsMode.simpleDescription())
-        //drawTestSquare()
     }
     
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}
