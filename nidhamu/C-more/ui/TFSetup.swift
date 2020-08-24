@@ -25,27 +25,29 @@ extension CollectionVC {
     
     func setTaskFieldPlaceholder() {
         
-//        var pre = ""
-//        let suf = "]"
-//
-//        if textFieldEditingMode {
-//            pre = "New Task Name ["
-//        }
-//        else {pre = "Add Task [Due:"}
-//
-//        let str = formattedDateString(selectedCellDate, roundDown: false, showYear: false, prefix: pre, suffix: suf,
-//                                      dateFormat: .fullDayShortForm)/// ! probably needs smaller font on iPhone SE in portrait
+        //        var pre = ""
+        //        let suf = "]"
+        //
+        //        if textFieldEditingMode {
+        //            pre = "New Task Name ["
+        //        }
+        //        else {pre = "Add Task [Due:"}
+        //
+        //        let str = formattedDateString(selectedCellDate, roundDown: false, showYear: false, prefix: pre, suffix: suf,
+        //                                      dateFormat: .fullDayShortForm)/// ! probably needs smaller font on iPhone SE in portrait
         
         let timeBlockDescriptor = getSelectedTimeBlockDescriptor()
         taskField.placeholder = "Add Task: \(timeBlockDescriptor)"
     }
     
     func getSelectedTimeBlockDescriptor() -> String {
+        
         let date = selectedCellDate - TimeInterval(3600 * timeBlockSize)///text field text below refers to date of timeblock task is on (not deadline)
         let dayOfWeek = customWkdysDefaultOrder[Calendar.current.component(.weekday, from: date) - 1]
         let dateAndMonth = formattedDateString(date, roundDown: false, showYear: true,
-        prefix: "", suffix: "", dateFormat: .monthAndDay)
+                                               prefix: "", suffix: "", dateFormat: .monthAndDay)
         let str = dayQuartersLong[selectedTimeBlockPath[1] - 5]
+        
         return "\(dayOfWeek). \(str) (\(dateAndMonth))"
     }
 }

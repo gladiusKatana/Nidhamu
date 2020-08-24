@@ -6,11 +6,9 @@ extension PopupMenuVC {
     
     func addToArchives(_ taskBeingTagged: SimpleTask) {
         
-        /*
-         var str = ""
+        /*var str = ""
          if taskBeingTagged.taskStatus == .deferred {str = " (deferred)"}
-         print("adding task '\(taskBeingTagged.taskDescription)' to archives\(str)")
-         */
+         print("adding task '\(taskBeingTagged.taskDescription)' to archives\(str)")*/
         
         if !archiveTasks.contains(taskBeingTagged) {
             
@@ -33,18 +31,21 @@ extension PopupMenuVC {
 }
 
 func updateArchiveRelatedData(result: MFMailComposeResult) {
+    
     if result == .sent {
         lastArchiveEmailDate = Date()
         deleteArchivesLocally()
         defaultSaveData(saveDate: false, resetLastLogin: false, showDate: true, pryntTasks: false)
         topVC.reloadCV()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25 ) {
-//            topVC.gotoView(vc: timetableVC)
-//        }
+        
+        /*DispatchQueue.main.asyncAfter(deadline: .now() + 0.25 ) {
+            topVC.gotoView(vc: timetableVC)
+        }*/
     }
 }
 
 func deleteArchivesLocally() {
+    
     archiveTaskDescriptions.removeAll()
     archiveTaskStatuses.removeAll();            archiveTaskStatusStrings.removeAll()
     archiveTaskDateComponentArrays.removeAll()

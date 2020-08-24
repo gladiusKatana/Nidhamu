@@ -47,12 +47,5 @@ extension AppDelegate {
     func customApplicationStatusPrint(_ applicationState: String) { print("\n\(applicationState)")}
 }
 
-func wakeupDateReset(withReload: Bool) {
-    findFallbackDate(startingDate: Date() - TimeInterval(3600), printDSTDates: showDSTDates) /// generally want =true for testing timetable around DST
-    findSpringForwardDate(startingDate: Date(), printDSTDates: showDSTDates)                 /// see above.  (DST = daylight savings time)
-    
-    checkOrientation()
-    defaultLoadData(showDate: true)
-    topVC.reloadCV()
-}
+
 

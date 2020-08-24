@@ -12,8 +12,8 @@ extension CollectionVC {
     
     func prepareAndPresentTextField(forTaskAtRow row: Int?) {
         
-//        globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
-//        backgroundVC.view.backgroundColor = globalWindow.backgroundColor
+        /*globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
+        backgroundVC.view.backgroundColor = globalWindow.backgroundColor*/
         
         var str = "(initial text)"
         

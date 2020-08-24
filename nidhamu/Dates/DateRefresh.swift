@@ -4,7 +4,6 @@ import UIKit
 func processCurrentDate() {
     
     let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(Date(), roundedDown: true)
-    
     let timeOfDay = Calendar.current.component(.hour, from: Date()) / timeBlockSize
     
     nowRow = timeOfDay + timetableLayout.lockedHeaderRows /// for 'nowCell': tabular position of current date
@@ -40,7 +39,6 @@ extension CollectionVC {
             
             i+=1
         }
-        
         
         if "\(Date())".contains(":0") { ///or :00: for hourly
             if !reloadedFromHourTickingOver {

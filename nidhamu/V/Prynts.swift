@@ -33,7 +33,7 @@ func printTasksTabularized() { // optimized for console printing on an iPad Mini
             
             if j == 0  { print("\(pathString)\(restOfString)")}
             else {       print("\(spaces)\(restOfString)")}
-
+            
             //if j == tasks.count - 1 {print("")}
             j += 1
         }

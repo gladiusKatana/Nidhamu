@@ -19,8 +19,9 @@ extension PopupMenuVC {
             let col = indexPathsToProcess.first![0]; let rw = indexPathsToProcess.first![1]
             guard let tasks = tasksAtIndexPath[TimeBlock(values:(col, rw))] else {print("error casting task array from popup wizard"); return cell}
             
-//            let taskId = globalTaskIdentifier
-//            cell.titleLabel.text = taskId == defaultTaskIdentifier ? "Mark \(defaultTaskIdentifier):" : "Mark '\(taskId)':"
+            /*let taskId = globalTaskIdentifier
+            cell.titleLabel.text = taskId == defaultTaskIdentifier ? "Mark \(defaultTaskIdentifier):" : "Mark '\(taskId)':"*/
+            
             cell.titleLabel.text = "Tag Task \(tasks.count - tasksInBlockToBeProcessed + 1) of \(tasks.count)"
             cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .thin)
             

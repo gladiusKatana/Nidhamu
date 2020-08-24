@@ -9,8 +9,7 @@ class LeftAlignedCell: BaseCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addTitleLabelConstraints(titleLabel, attribute: .left)
-//        addTitleLabelConstraints(titleLabel, attribute: .height)
+        addTitleLabelConstraints(titleLabel, attribute: .left) //addTitleLabelConstraints(titleLabel, attribute: .height)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
