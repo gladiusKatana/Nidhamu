@@ -4,8 +4,6 @@
                                                                     I
   > multiple cloud photo backgrounds randomized based on login date
   
-  > shorten task list vc nav bar title (eg, 'Thursday afternoon')
-  
   > temporary nav bar button for task list vc
   
   > alert-colour for lock-keyboard button when enabled

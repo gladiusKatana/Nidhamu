@@ -17,7 +17,7 @@ extension CollectionVC {
                 if textFieldDisplayed{fontSize = 7} else {fontSize = 9}
                 cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .regular)
             }
-        }
+        } else {cell.layer.cornerRadius = 0}
         
         if column < headerSections {
             cell.backgroundColor = headerColour
