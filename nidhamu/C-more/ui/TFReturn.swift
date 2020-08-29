@@ -44,7 +44,8 @@ extension CollectionVC {
         textField.text = ""
         rowLongPressed = -1
         textFieldEditingMode = false
-        if !keyboardLocked {exitTaskAddingMode()}
+        
+        if !keyboardLocked || tasksAtIndexPath[timeBlock] == nil {exitTaskAddingMode()}
         
         reloadCV()
         topVC.setNavBarTitle(customString: nil)
