@@ -25,7 +25,7 @@ extension CollectionVC {
         navigationItem.rightBarButtonItems = buttons
         
         for _ in buttons {
-            if barButtonColours.count <= buttons.count {barButtonColours.append(graySeven)} /// default colour, for buttons that present all but current vc
+            if barButtonColours.count <= buttons.count {barButtonColours.append(.black)} /// default colour, for buttons that present all but current vc
         }
         
         for button in buttons {
@@ -36,7 +36,10 @@ extension CollectionVC {
             button.tintColor = defaultColour
             
             if index == greyIndex && button != lockKeyboardButton {button.tintColor = greyout}
+            
             if button == reloadButton {button.tintColor = .clear} //grayBarelyThere
+            
+            if button == lockKeyboardButton && keyboardLocked {button.tintColor = darkRed}
         }
     }
 }

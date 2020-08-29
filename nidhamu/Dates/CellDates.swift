@@ -25,7 +25,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
                         row == nowRow && column == nowColumn         /// these 2 conditionals are equivalent but the latter is calculated faster
                     {
                         cell.backgroundColor = cellDefaultColour
-                        cell.layer.borderColor = dimOrange.cgColor; cell.layer.borderWidth = 3
+                        cell.layer.borderColor = grayFour.cgColor; cell.layer.borderWidth = 3
                         showNowCell(cell, column: column, row: row, forSpringForward: false)
                         
                         if truncateMins(Date()) == truncateMins(springForwardDate) && (column, row) == (nowColumn, nowRow + 1) {

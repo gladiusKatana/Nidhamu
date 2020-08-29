@@ -12,7 +12,7 @@ var greyoutForTimeBlocksPassedThisWeek = grayOne;               var popupMenuLig
 
 var defaultCellTextColour = UIColor.black;                      ///var headerTextDefaultColour = UIColor.black
 
-var dimOrange = UIColor.rgb(180, g: 70, b: 0, a: 0.5)
+var dimOrange = UIColor.rgb(180, g: 70, b: 0, a: 0.5);          var darkRed = UIColor.rgb(150, g: 0, b: 0, a: 1)
 ///var niceOrangeDark = UIColor.rgb(228, g: 100, b: 44, a: 0.75);   ///var orangeForBlocksSinceLastLogin = UIColor.rgb(180, g: 70, b: 0, a: 0.5) ///(220, g: 70, b: 20, a: 0.5)
 ///var jadeGreenLight = UIColor.rgb(60, g: 120, b: 79, a: 0.3);     ///var jadeGreen = UIColor.rgb(22, g: 134, b: 79, a: 1)
 
@@ -31,7 +31,7 @@ var graySeven = UIColor.rgb(0, g: 0, b: 0, a: 0.7);             ///var grayBarel
 var grayOne = UIColor.rgb(0, g: 0, b: 0, a: 0.1);               var grayTwo = UIColor.rgb(0, g: 0, b: 0, a: 0.2)
 var grayOneConverted = UIColor.rgb(138, g: 176, b: 210, a: 1)/// Got alpha=1 equivalent of grayOne*, via screenshot + this app: https://tinyurl.com/y2e4smph
 
-///var grayFour = UIColor.rgb(0, g: 0, b: 0, a: 0.4);                         ///var grayThree = UIColor.rgb(0, g: 0, b: 0, a: 0.3)
+var grayFour = UIColor.rgb(0, g: 0, b: 0, a: 0.4);                         ///var grayThree = UIColor.rgb(0, g: 0, b: 0, a: 0.3)
 ///var clearGlass = UIColor.rgb(255, g: 255, b: 255, a: 0.05)                 ///; var frostedGlass = UIColor.rgb(230, g: 230, b: 230, a: 0.7) //(255,g: 255,b: 255,a: 0.4)
 
 var backgroundImage = UIImage(named: "(big)sky2")?.withRenderingMode(.alwaysTemplate) /// sky background (blue with light clouds)
