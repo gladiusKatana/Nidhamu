@@ -4,9 +4,7 @@
                                                                     I
   > multiple cloud photo backgrounds randomized based on login date
   
-  > temporary nav bar button for task list vc
-  
-  > alert-colour for lock-keyboard button when enabled
+  > temporary nav bar button for task list vc?
   
   > improve deferral vc look&feel
   

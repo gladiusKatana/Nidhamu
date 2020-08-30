@@ -12,7 +12,7 @@ class BaseCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = cellDefaultColour
+        self.backgroundColor = .clear
         
         layer.borderWidth = 1
         layer.cornerRadius = 8
