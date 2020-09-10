@@ -1,5 +1,6 @@
-// ProcessTBs       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
-import UIKit ///TBs = Time Blocks
+// ProcessTBs*      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+///*TBs = Time Blocks
+import UIKit
 
 extension CollectionVC {
     
@@ -36,8 +37,8 @@ extension CollectionVC {
             reloadCollectionViewAfterDelay(0)
             
             let paths = indexPathsToProcess.count
-            if paths >= 2                         /* row 21 = 4pm*/
-                && indexPathsToProcess[paths - 2] [1] < 21 {    /// ie if 2nd-last time block to process requires resizing (cells could be swept over repeatedly...
+            if paths >= 2                         /// row 21 = 4pm
+                && indexPathsToProcess[paths - 2] [1] < 21 {    /// ie if last time block to process requires resizing (cells could be swept over repeatedly...
                 taskTaggingViewController.dismissTaggingWizard()///...within 1 session. (user could leave timetable open for many hours -- it just auto-updates)
             }
             
