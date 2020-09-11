@@ -12,6 +12,8 @@ extension PopupMenuVC {
         
         let row = indexPath.item                            //; let column = indexPath.section
         
+        cell.layer.cornerRadius = 0
+        
         if row < customLayout.lockedHeaderRows
             //|| column < customLayout.lockedHeaderSections {    // our popup menu has no need for header columns
         {
