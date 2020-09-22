@@ -10,7 +10,7 @@ extension CollectionVC {
                 UIView.animate(
                     withDuration: 7, delay: 0,
                     usingSpringWithDamping: 1, initialSpringVelocity: 0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-                        cell.backgroundColor = greyoutForTimeBlocksPassedThisWeek
+                        cell.backgroundColor = cell.xyCoordinate[0] > nowColumn ? cellDefaultColour : greyoutForTimeBlocksPassedThisWeek
                 }, completion: {(finished:Bool) in
                     if !taglessSavingFlag {
                         defaultSaveData(saveDate: true, resetLastLogin: false, showDate: false, pryntTasks: true)
