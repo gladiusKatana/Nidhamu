@@ -10,7 +10,7 @@ extension CollectionVC {
         let headerRows = customLayout.lockedHeaderRows  //; let headerSections = customLayout.lockedHeaderSections
         var fontSize = 0
         
-        cell.backgroundColor = headerColour
+        cell.backgroundColor = headerColour; cell.cellColour = headerColour
         
         if row >= headerRows { /// time-of-day labels
             

@@ -5,7 +5,7 @@ func singleLineCellSetup(_ cell: BaseCell, indexPath: IndexPath, paths: [(Int, I
     
     let row = indexPath.row; let col = indexPath.section
     
-    cell.backgroundColor = headerColour
+    cell.backgroundColor = headerColour; cell.cellColour = headerColour
     
     cell.xyCoordinate = [col, row]
     

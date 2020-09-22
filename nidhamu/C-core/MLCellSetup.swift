@@ -20,11 +20,11 @@ extension CollectionVC {
         } else {cell.layer.cornerRadius = 0}
         
         if column < headerSections {
-            cell.backgroundColor = headerColour
+            cell.backgroundColor = headerColour; cell.cellColour = headerColour
         }
         else {
             if row < headerRows {
-                cell.backgroundColor = headerColour
+                cell.backgroundColor = headerColour; cell.cellColour = headerColour
                 if row == 4 && viewControllerType == .timetable
                     || row == 4  && viewControllerType == .deferralDates {
                     cell.titleLabel.text = headerWeekdayTitles[column - 1]

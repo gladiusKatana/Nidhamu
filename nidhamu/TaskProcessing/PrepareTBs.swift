@@ -5,7 +5,7 @@ extension CollectionVC {
     
     func prepareToProcessTasksSinceLastLogin(cell: CustomCell, column: Int, row: Int) {
         
-        if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))] {              ///cell.backgroundColor = jadeGreen; cell.cellColour = jadeGreen
+        if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))] {
             
             if !cachedBlocksAndTheirPaths {
                 

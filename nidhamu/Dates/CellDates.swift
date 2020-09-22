@@ -24,7 +24,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
                         //||
                         row == nowRow && column == nowColumn         /// these 2 conditionals are equivalent but the latter is calculated faster
                     {
-                        cell.backgroundColor = cellDefaultColour
+                        cell.backgroundColor = cellDefaultColour; cell.cellColour = cellDefaultColour
                         cell.layer.borderColor = grayFour.cgColor; cell.layer.borderWidth = 3
                         showNowCell(cell, column: column, row: row, forSpringForward: false)
                         
@@ -33,11 +33,8 @@ extension CollectionVC { /// probably will refactor this whole file soon
                         }
                     } else {
                         if cellDateIsBetweenLogins {
-                            if cellDateIsLastLogin {
-                                cell.titleLabel.text = "last\nlogin"
-                            }
-                            
-                            cell.backgroundColor = dimOrange//; cell.cellColour = lastLoginDimOrange
+                            if cellDateIsLastLogin {cell.titleLabel.text = "last\nlogin"}
+                            cell.backgroundColor = dimOrange
                             prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
                         } else {setCellColourBasedOnWeek(cell: cell, cellDateIsNextWeek: cellDateIsNextWeek)}
                     }
@@ -60,17 +57,17 @@ extension CollectionVC { /// probably will refactor this whole file soon
                 if column <= nowColumn {
                     if !(nowRow == layout.lockedHeaderRows && column == nowColumn) {
                         showDateInTitleLabels(date: cell.cellDate, cell: cell)
-                        cell.backgroundColor = greyoutForTimeBlocksPassedThisWeek
-                    } else {cell.backgroundColor = cellDefaultColour}
-                } else {cell.backgroundColor = cellDefaultColour}
+                        cell.backgroundColor = greyoutForTimeBlocksPassedThisWeek; cell.cellColour = greyoutForTimeBlocksPassedThisWeek
+                    } else {cell.backgroundColor = cellDefaultColour; cell.cellColour = cellDefaultColour}
+                } else {cell.backgroundColor = cellDefaultColour; cell.cellColour = cellDefaultColour}
             }
             
             if row == 3 {
                 if column >= nowColumn {
                     showDateInTitleLabels(date: cell.cellDate, cell: cell)
-                    cell.backgroundColor = cellDefaultColour
+                    cell.backgroundColor = cellDefaultColour; cell.cellColour = cellDefaultColour
                 }
-                else {cell.backgroundColor = greyoutForTimeBlocksPassedThisWeek}
+                else {cell.backgroundColor = greyoutForTimeBlocksPassedThisWeek; cell.cellColour = greyoutForTimeBlocksPassedThisWeek}
             }
             
             ///if row == 4 {cell.backgroundColor = .orange} /// so that it isn't white (indistinguishable from what might be below it: no cell at that position)
