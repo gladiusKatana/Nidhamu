@@ -46,8 +46,10 @@ extension CollectionVC {
                 cachedBlocksAndTheirPaths = false
                 searchForDST()
                 
-                DispatchQueue.main.asyncAfter(deadline: .now()) { /// keep on main queue: periodic callback inside completion handler called on a background thread
-                    topVC.reloadCV()
+                if !animating {
+                    DispatchQueue.main.asyncAfter(deadline: .now()) { /// keep on main queue: periodic callback inside completion handler called on a background thread
+                        topVC.reloadCV()
+                    }
                 }
                 //pryntLastLoginDate(); pryntCurrentDate()
             }

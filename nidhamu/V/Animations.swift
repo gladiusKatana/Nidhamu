@@ -3,7 +3,8 @@ import UIKit
 
 extension CollectionVC {
     
-    func animateLoginIntervalCells(cell: CustomCell) {
+    func animateLoginIntervalCells(cell: CustomCell) {              print("|", terminator: "")
+        animating = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             if indexPathsToProcess.isEmpty {
                 UIView.animate(
@@ -17,6 +18,7 @@ extension CollectionVC {
                         wakeupDateReset(withReload: false)
                         taglessSavingFlag = true
                     }
+                    animating = false
                 }
                 )
             }
