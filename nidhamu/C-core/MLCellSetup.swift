@@ -8,13 +8,13 @@ extension CollectionVC {
         let customLayout = downcastLayout!
         let row = indexPath.item;                       let column = indexPath.section;
         let headerRows = customLayout.lockedHeaderRows; let headerSections = customLayout.lockedHeaderSections
-        var fontSize = 0
+        let fontSize = 12
         
         cell.xyCoordinate = [column, row]
         
         if viewControllerType == .timetable || viewControllerType == .deferralDates {
             if currentOrientation == "landscape" {
-                if textFieldDisplayed{fontSize = 7} else {fontSize = 9}
+//                if textFieldDisplayed{fontSize = 7} else {fontSize = 12}
                 cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .regular)
             }
         } else {cell.layer.cornerRadius = 0}
@@ -29,7 +29,7 @@ extension CollectionVC {
                     || row == 4  && viewControllerType == .deferralDates {
                     cell.titleLabel.text = headerWeekdayTitles[column - 1]
                     
-                    if textFieldDisplayed && currentOrientation == "landscape" {fontSize = 7} else {fontSize = 12}
+//                    if textFieldDisplayed && currentOrientation == "landscape" {fontSize = 7} else {fontSize = 12}
                     cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .regular)
                 }
             }

@@ -13,7 +13,7 @@ extension CustomFlowLayout {
             previousOrientation = currentOrientation
             
             topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in
-                topVC.reloadCV() /// only really useful for cell font size readjustment upon rotations / other layout scaling changes
+//                topVC.reloadCV() /// only really useful for cell font size readjustment upon rotations / other layout scaling changes
             }
             
         } else {if topVC.viewControllerType == .timetable {processCurrentDate()}}

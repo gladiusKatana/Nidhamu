@@ -24,10 +24,8 @@ func testForCellBannerNotification(_ cell: BaseCell, row: Int, col: Int, notific
         }
     }
     
-    if currentOrientation == "landscape" {
-        var size = 0
-        if textFieldDisplayed{size = 7} else {size = row == timetableHeaders - 1 ? 11 : 9}
-        cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(size), weight: weight)
+    if textFieldDisplayed && currentOrientation == "landscape" {
+        cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(7), weight: weight)
     }
         
     else {cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(12), weight: weight)}

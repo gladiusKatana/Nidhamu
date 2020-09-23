@@ -34,7 +34,9 @@ extension CollectionVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if [.taskList, .archive].contains(viewControllerType) {setupPinchToExit()}
-        reloadCV()
+        if !animating {
+            reloadCV()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -51,7 +53,7 @@ extension CollectionVC {
 }
 
 /// for printing console-symbol, in viewDidLoad(:)
-///let str = (showConsoleLegend) ? loadSymbolLegend : "" //; print("💾\(topVC.viewControllerType)\(str)")// disk emoji means loaded 💾
+//let str = (showConsoleLegend) ? loadSymbolLegend : "" //; print("💾\(topVC.viewControllerType)\(str)")// disk emoji means loaded 💾
 
 /// for printing console-legend / symbols, in viewDid(/Will)Appear(:)
 /*if !showLoadAndAppearIndicationInConsole { /// if the below print hasn't been done already for this vc

@@ -11,8 +11,8 @@ extension CollectionVC {
     
     
     @objc func reloadCVWrapperMethod() {
-        //print("↺(button)")
-        // reloadCV()
+        print("↺(button)")
+        reloadCV()
     }
     
     

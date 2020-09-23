@@ -17,7 +17,7 @@ func processCurrentDate() {
             lastLoginDate = dateFromComponents(lastLoginDateComponents)
             print("new week\n") ///pryntLastLoginDate(); pryntCurrentDate()
         }
-        else {print("\nnew minute")}
+        else {print("new minute")}
         reloadedFromHourTickingOver = true
     }
 }

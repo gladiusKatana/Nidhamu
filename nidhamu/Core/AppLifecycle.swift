@@ -19,7 +19,7 @@ extension AppDelegate {
     }
     
     func applicationWillResignActive(_ application: UIApplication) {                    ///customApplicationStatusPrint("⏸will resign active")
-        taglessSavingFlag = false /// maybe add conditional based on login date interval (time elapsed). if so, maybe move this to applicaatnDidBecomeActive(:)
+        taglessSavingFlag = false /// maybe add conditional based on login date interval (time elapsed). if so, maybe move this to applicatnDidBecomeActive(:)
         thereWillBeARowException = false
         
         if !taggingViewDisplayed {
@@ -36,7 +36,7 @@ extension AppDelegate {
         } //else {print("no task items yet")}
     }
     
-    func applicationDidEnterBackground(_ application: UIApplication) {                  print("\n🌘entered background")
+    func applicationDidEnterBackground(_ application: UIApplication) {                  print("🌘entered background")
         lastActiveOrientation = currentOrientation                                      //customApplicationStatusPrint("🌘entered background")
     }
     
@@ -46,6 +46,4 @@ extension AppDelegate {
     
     func customApplicationStatusPrint(_ applicationState: String) { print("\n\(applicationState)")}
 }
-
-
 
