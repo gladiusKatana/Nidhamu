@@ -26,7 +26,7 @@ func formattedDateString(_ date: Date, roundDown: Bool, showYear: Bool, prefix: 
     case .fullDayShortForm:         return "\(prx)\(wkdy) \(mnth) \(day)\(yearString), \(hr)\(ampm)\(suffix)"
     case .hourOnly:                 return "\(hr)\(ampm)"
     case .hourAndMinute:            return " \(hr):\(minTwoDigits)\(ampm)"
-    case .hourAndMinuteNewlined:    return " \(hr):\(minTwoDigits)\n \(ampm)"
+    case .hourAndMinuteNewlined:    return "\n  \(hr):\(minTwoDigits)\n  \(ampm)"
         
     case .fullDayShortFormNoDots:   return "\(prx)\(weekday.prefix(3)) \(month.prefix(3)) \(day)\(yearString), \(hr)\(ampm)\(suffix)"
         
