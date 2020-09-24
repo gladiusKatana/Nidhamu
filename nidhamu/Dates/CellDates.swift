@@ -33,7 +33,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
                         }
                     } else {
                         if cellDateIsBetweenLogins {
-                            if cellDateIsLastLogin {cell.titleLabel.text = "last\nlogin"}
+                            if cellDateIsLastLogin {cell.titleLabel.text = "\n  last\n  login"}
                             cell.backgroundColor = dimOrange
                             prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
                         } else {setCellColourBasedOnWeek(cell: cell, cellDateIsNextWeek: cellDateIsNextWeek)}
