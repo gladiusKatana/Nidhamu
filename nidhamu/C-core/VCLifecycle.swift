@@ -28,12 +28,14 @@ extension CollectionVC {
         if !taskIsDeletable {setNavBarTitle(customString: nil)}
         setupNavBarButtons(grayTwo, greyIndex: colourIndex)
         setTopViewController()
-        if viewControllerType == .taskList {reloadCV()}
+        if [.taskList, .archive].contains(viewControllerType) {
+            setupPinchToExit()
+            reloadCV()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if [.taskList, .archive].contains(viewControllerType) {setupPinchToExit()}
         if !animating {
             reloadCV()
         }
