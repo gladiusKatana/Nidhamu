@@ -17,7 +17,7 @@ extension CollectionVC {
         
         if looping {weekAheadInt = setCellWeek(cell: cell, column: column, row: row, layout: layout, withColours: withColours)}
         
-        let oneHour = TimeInterval(3600); let oneWeek = TimeInterval(86400 * 7)
+        let oneHour = TimeInterval(3600) //; let oneWeek = TimeInterval(86400 * 7)
         let potentialWeekAhead = TimeInterval(86400 * 7 * weekAheadInt)
         let date = baseDate + hoursFromNow + daysFromNow + potentialWeekAhead //+ TimeInterval(3600 * cellOffset)
         
@@ -46,10 +46,24 @@ extension CollectionVC {
             if hrsIntoTimeBlock > 0 {cellDate = truncateMins(cellDate - TimeInterval(3600 * hrsIntoTimeBlock))}
         }
         
-        var isLastLogin = false /// *probably will do some refactoring with below  if  ...
-        if  truncateMins(cellDate) - (dstOffset + springForwardExtraHour + fallBackExtraHour) * oneHour - oneWeek
-            == truncateMins(timeBlockRoundedLastLogin)
-        { isLastLogin = true }
+        var isLastLogin = false
+        
+        if Calendar.current.component(.weekday, from: truncateMins(cellDate)) == Calendar.current.component(.weekday, from: timeBlockRoundedLastLogin)
+            && Calendar.current.component(.hour, from: truncateMins(cellDate)) == Calendar.current.component(.hour, from: timeBlockRoundedLastLogin)
+            && row >= downcastLayout!.rows - 4 /// 4 bottom rows represent (morn, aft, eve, nite) ... header rows have same cellDates as top nonheader row
+            && sweepLoginInterval(dateToCheck: truncateMins(cellDate), forTaskDeadline: false,
+                                  column: column, row: row, layout: layout)
+        {
+            var n=1
+            while !isLastLogin {
+                let oneWeekTimesN = TimeInterval(86400 * 7 * n)
+                if  truncateMins(cellDate) - (dstOffset + springForwardExtraHour + fallBackExtraHour) * oneHour - oneWeekTimesN
+                    == truncateMins(timeBlockRoundedLastLogin)
+                {isLastLogin = true} //; print("date set on last-login-like cell \(column),\(row)")
+                n+=1
+            }
+        }
+        
         return (cellDate, isNextWeek, isLastLogin)
     }
     

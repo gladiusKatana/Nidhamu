@@ -33,7 +33,16 @@ extension CollectionVC { /// probably will refactor this whole file soon
                         }
                     } else {
                         if cellDateIsBetweenLogins {
-                            if cellDateIsLastLogin {cell.titleLabel.text = "\n  last\n  login"}
+                            if cellDateIsLastLogin {
+                                let lastLoginString = "\n  last\n  login"
+                                ///print("[\(truncateMins(Date()).timeIntervalSince1970 - truncateMins(lastLoginDate).timeIntervalSince1970) seconds since last login]")
+                                cell.titleLabel.text =
+                                    column > nowColumn
+                                    || column == nowColumn && row > nowRow
+                                    || truncateMins(Date()).timeIntervalSince1970 - truncateMins(lastLoginDate).timeIntervalSince1970 >= TimeInterval(86400 * 7)
+                                    ? formattedDateString(cell.cellDate, roundDown: false, showYear: false, prefix: "\(lastLoginString)\n\n", suffix: "", dateFormat: .monthAndDay)
+                                    : lastLoginString
+                            }
                             cell.backgroundColor = dimOrange
                             prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
                         } else {setCellColourBasedOnWeek(cell: cell, cellDateIsNextWeek: cellDateIsNextWeek)}
