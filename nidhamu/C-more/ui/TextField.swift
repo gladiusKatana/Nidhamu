@@ -4,7 +4,9 @@ import UIKit
 extension CollectionVC {
     
     func presentTextFieldAndReload(after delay: Double, forTaskAtRow row: Int?) {
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            self.setupNavBarButtons(grayTwo, greyIndex: self.colourIndex, disabler: true)
             self.prepareAndPresentTextField(forTaskAtRow: row)
             self.reloadCV()
         }
@@ -13,7 +15,7 @@ extension CollectionVC {
     func prepareAndPresentTextField(forTaskAtRow row: Int?) {
         
         /*globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
-        backgroundVC.view.backgroundColor = globalWindow.backgroundColor*/
+         backgroundVC.view.backgroundColor = globalWindow.backgroundColor*/
         
         var str = "(initial text)"
         
@@ -31,6 +33,7 @@ extension CollectionVC {
     }
     
     func formatAndPresentTextField(_ textFieldContents: String) {
+        
         let width = globalWindow.frame.width
         textFieldWidth = width * 3 / 4 /// 3/4 = 6/8 e.g. 8 - 2 columns (1 right, 1 left of text field)
         let eighthWidth = width / 8
@@ -41,7 +44,6 @@ extension CollectionVC {
         
         taskField.delegate = self
         taskField.frame = CGRect(x: eighthWidth, y: textFieldY, width: textFieldWidth, height: textFieldHeight)
-        
         view.addSubview(taskField)
         taskField.becomeFirstResponder()
         textFieldDisplayed = true

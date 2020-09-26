@@ -26,7 +26,7 @@ extension CollectionVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if !taskIsDeletable {setNavBarTitle(customString: nil)}
-        setupNavBarButtons(grayTwo, greyIndex: colourIndex)
+        setupNavBarButtons(grayTwo, greyIndex: colourIndex, disabler: false)
         setTopViewController()
         if [.taskList, .archive].contains(viewControllerType) {
             setupPinchToExit()

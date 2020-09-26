@@ -3,21 +3,27 @@ import UIKit
 
 extension CollectionVC {
     
-    func setupButton(selector: Selector, title: String) -> UIBarButtonItem {
+    func setupButton(disabler: Bool, title: String, selector: Selector) -> UIBarButtonItem {
+        
         let image = UIImage(named: title)?.withRenderingMode(.alwaysTemplate)
-        let button = UIBarButtonItem(image: image, landscapeImagePhone: image, style: .plain, target: self, action: selector)
-        return button
+        
+        return UIBarButtonItem(image: image, landscapeImagePhone: image, style: .plain, target: self,
+                               action: disabler && ![#selector(keyboardLockWrapper), #selector(reloadCVWrapperMethod)].contains(selector)
+                                ? #selector(nullSelector)
+                                : selector)
     }
     
+    @objc func nullSelector() {
+        print("button disabled")
+    }
     
     @objc func reloadCVWrapperMethod() {
-        print("↺(button)")
+        print("↺ reload collection view via button")
         reloadCV()
     }
     
     
     @objc func keyboardLockWrapper() {
-        
         if textFieldDisplayed && keyboardLocked {
             exitTaskAddingMode()
             previousTimeBlockPathSelected = defaultPathOutOfView
@@ -25,8 +31,7 @@ extension CollectionVC {
         }
         
         keyboardLocked = !keyboardLocked
-        
-        setupNavBarButtons(grayTwo, greyIndex: colourIndex)
+        setupNavBarButtons(grayTwo, greyIndex: colourIndex, disabler: textFieldDisplayed)
     }
     
     

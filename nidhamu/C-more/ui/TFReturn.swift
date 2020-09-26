@@ -5,6 +5,7 @@ extension CollectionVC {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {          //print("text field returned")
         ///textField.removeFromSuperview(); textField.resignFirstResponder()
+        setupNavBarButtons(grayTwo, greyIndex: colourIndex, disabler: false)
         
         let textEntered = textField.text!
         
@@ -17,7 +18,6 @@ extension CollectionVC {
                 
                 addToTimeBlock(atColumn: selectedTimeBlockPath[0], atRow: selectedTimeBlockPath[1],
                                textEntered: textEntered, taskDeadline: selectedCellDate, withStatus: nil)
-                
                 if !keyboardLocked {
                     selectedTimeBlockPath = defaultPathOutOfView
                     previousTimeBlockPathSelected = defaultPathOutOfView
