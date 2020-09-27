@@ -5,13 +5,11 @@ extension CollectionVC {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {          //print("text field returned")
         ///textField.removeFromSuperview(); textField.resignFirstResponder()
-        setupNavBarButtons(grayTwo, greyIndex: colourIndex, disabler: false)
-        
         let textEntered = textField.text!
-        
         if textEntered == "" || textEntered == " " || textEntered == "  " { /// if user (for some reason) enters > 2 whitespaces, well, it's saved
             ///see below: for animations /**/
-            if !keyboardLocked {previousTimeBlockPathSelected = defaultPathOutOfView}
+            previousTimeBlockPathSelected = defaultPathOutOfView
+            exitTaskAddingMode()
         }
         else {
             if viewControllerType == .timetable {
@@ -45,7 +43,9 @@ extension CollectionVC {
         rowLongPressed = -1
         textFieldEditingMode = false
         
-        if !keyboardLocked || tasksAtIndexPath[timeBlock] == nil {exitTaskAddingMode()}
+        if !keyboardLocked || tasksAtIndexPath[timeBlock] == nil {
+            exitTaskAddingMode()
+        }
         
         reloadCV()
         topVC.setNavBarTitle(customString: nil)

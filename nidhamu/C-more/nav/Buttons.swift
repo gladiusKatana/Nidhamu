@@ -24,12 +24,6 @@ extension CollectionVC {
     
     
     @objc func keyboardLockWrapper() {
-        if textFieldDisplayed && keyboardLocked {
-            exitTaskAddingMode()
-            previousTimeBlockPathSelected = defaultPathOutOfView
-            reloadCV()
-        }
-        
         keyboardLocked = !keyboardLocked
         setupNavBarButtons(grayTwo, greyIndex: colourIndex, disabler: textFieldDisplayed)
     }

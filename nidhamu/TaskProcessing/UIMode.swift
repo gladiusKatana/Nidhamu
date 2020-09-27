@@ -14,6 +14,7 @@ extension CollectionVC {
         }*/
         
         keyboardHeight = 0; textFieldDisplayed = false
+        setupNavBarButtons(grayTwo, greyIndex: colourIndex, disabler: false)
     }
 }
 
