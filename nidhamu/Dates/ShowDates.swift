@@ -35,7 +35,7 @@ extension CollectionVC {
     }
     
     func showTimeInTitleLabels(_ date: Date) -> String {
-        let dateFormat = currentOrientation == "portrait" ? CustomDateFormat.hourAndMinuteNewlined : CustomDateFormat.hourAndMinute
+        let dateFormat = CustomDateFormat.hourAndMinuteNewlined
         return formattedDateString(date, roundDown: false, showYear: false, prefix: "", suffix: "", dateFormat: dateFormat)
     }
 }
