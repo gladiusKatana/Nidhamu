@@ -45,7 +45,7 @@ func dateHeaderCellNotification(_ date: Date) -> String {
         && archiveTaskDescriptions.count > 0
         && fbk == "" && spf == ""
     {
-        archiveIntervalNotification = "⌛️Note: Your Past-Event Archives were last updated \(daysSinceLastArchiveEmail) days ago... " //⭐️
+        archiveIntervalNotification = "⌛️Note: Archives were last updated \(daysSinceLastArchiveEmail) days ago... " //⭐️
     }
     return "\(fbk)\(spf)\(archiveIntervalNotification)"
 }
