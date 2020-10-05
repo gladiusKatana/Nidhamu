@@ -14,7 +14,9 @@ extension CollectionVC {
             if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))]/*, tasks.count > 1*/ {
                 
                 //cell.titleLabel.text = "(\(taskIndex + 1)/\(tasks.count))" ///= "(\(tasks.count - tasksInBlockToBeProcessed + 1)/\(tasks.count))"
-                cell.titleLabel.text = " \(tasks[taskIndex].taskDescription)"
+                let description = taskIndex <= tasks.count - 1 ? " \(tasks[taskIndex].taskDescription)" : "⭐️"
+                
+                cell.titleLabel.text = description
                 cell.titleLabel.font = defaultTimetableCellFont
                 
             }

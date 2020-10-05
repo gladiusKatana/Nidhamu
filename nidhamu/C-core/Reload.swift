@@ -6,9 +6,14 @@ extension CollectionVC {
     
     @objc func reloadCV() {
         
-        //print("↺")
+        if !reloadLock {
+            self.collectionView.reloadData()
+            reloadLock = true /// prevents concurrent reload-Data()s
+            //print("↺")
+            
+        }
+        //else {print("🔒reloadLock")}
         
-        collectionView.reloadData()
     }
     
     
@@ -17,7 +22,7 @@ extension CollectionVC {
         //print("↺d")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + timeDelay) {
-            self.collectionView.reloadData()
+            self.reloadCV()
         }
     }
     

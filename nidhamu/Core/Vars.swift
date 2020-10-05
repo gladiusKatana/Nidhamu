@@ -34,7 +34,7 @@ var taggingViewDisplayed = false;               var selectedTaskWillRecur = fals
 var tempRescalingBool = false;                  var thereWillBeARowException = false;       var showConsoleLegend = true
 var reloadedFromHourTickingOver = true;         var cachedBlocksAndTheirPaths = false;      var taglessSavingFlag = false
 var firstTimeLoaded = false /// one-way bool: only flipped to  true once in entire app lifecycle
-var animating = false
+var reloadLock = false;                         var animating = false
 ///var firstBecameActive = false; ///var rotatedFromResignActive = false
 
 var defaultTimetableCellFont = UIFont.systemFont(ofSize: 12, weight: .regular) /// UIFont(name: "Helvetica Neue", size: 12)

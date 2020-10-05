@@ -318,12 +318,12 @@
 		06541284237A6D830080F3EF /* C-more */ = {
 			isa = PBXGroup;
 			children = (
-				062B56E923EA045D00654AE9 /* Notifications */,
+				06541299237A6D830080F3EF /* nav */,
 				06541295237A6D830080F3EF /* cell */,
 				06541285237A6D830080F3EF /* ui */,
 				0654128F237A6D830080F3EF /* popup */,
 				06A2035423D809EC00E4FA0A /* messages */,
-				06541299237A6D830080F3EF /* nav */,
+				062B56E923EA045D00654AE9 /* Notifications */,
 			);
 			path = "C-more";
 			sourceTree = "<group>";
@@ -373,9 +373,8 @@
 				0654129C237A6D830080F3EF /* NavBar.swift */,
 				0654129B237A6D830080F3EF /* NavTitle.swift */,
 				0654129A237A6D830080F3EF /* Buttons.swift */,
-				0654129D237A6D830080F3EF /* Reload.swift */,
-				0654129E237A6D830080F3EF /* GoToVC.swift */,
 				066A7C24241A05B70082CA75 /* SetTopVC.swift */,
+				0654129E237A6D830080F3EF /* GoToVC.swift */,
 			);
 			path = nav;
 			sourceTree = "<group>";
@@ -383,10 +382,10 @@
 		0654129F237A6D830080F3EF /* V */ = {
 			isa = PBXGroup;
 			children = (
-				065412A1237A6D830080F3EF /* Colours.swift */,
-				065412A4237A6D830080F3EF /* Prynts.swift */,
-				065412A0237A6D830080F3EF /* Strings.swift */,
 				065412A3237A6D830080F3EF /* Animations.swift */,
+				065412A4237A6D830080F3EF /* Prynts.swift */,
+				065412A1237A6D830080F3EF /* Colours.swift */,
+				065412A0237A6D830080F3EF /* Strings.swift */,
 				065412A5237A6D830080F3EF /* RotateLock.swift */,
 			);
 			path = V;
@@ -402,6 +401,7 @@
 				067A844E23E92C090058E1B4 /* MLCellSetup.swift */,
 				067A845123E92D5D0058E1B4 /* SLCellSetup.swift */,
 				065412AB237A6D830080F3EF /* CellData.swift */,
+				0654129D237A6D830080F3EF /* Reload.swift */,
 			);
 			path = "C-core";
 			sourceTree = "<group>";

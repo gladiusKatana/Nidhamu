@@ -2,7 +2,6 @@
 import UIKit
 
 func processCurrentDate() {
-    
     let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(Date(), roundedDown: true)
     let timeOfDay = Calendar.current.component(.hour, from: Date()) / timeBlockSize
     
@@ -12,20 +11,17 @@ func processCurrentDate() {
     
     if !reloadedFromHourTickingOver {
         if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections {  /// if the now-cell is at Monday, 12am
-            
             lastLoginDateComponents = [year, month, day, weekday, hour, minute]
             lastLoginDate = dateFromComponents(lastLoginDateComponents)
-            print("new week\n") ///pryntLastLoginDate(); pryntCurrentDate()
-        }
-        else {print("new minute")}
+            //print("new week") ///pryntLastLoginDate(); pryntCurrentDate()
+        } //else {print("\nnew minute")}
         reloadedFromHourTickingOver = true
     }
 }
 
 extension CollectionVC {
-    
     func periodicDateRefresh(completion: () -> ()) {                    //print("Date: \(Date())") //print("·", terminator: "")
-        
+        //        print(formattedDateString(Date(), roundDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .second), terminator: ",")
         let finalSeconds = [56,57,58,59]
         var finalSecondStrings = [String]()
         
@@ -35,24 +31,23 @@ extension CollectionVC {
             
             if "\(Date())".contains(finalSecondStrings[i]) {            //print("DATE: \(Date())")
                 reloadedFromHourTickingOver = false
+                if !taggingViewDisplayed {
+                    defaultSaveData(saveDate: true, resetLastLogin: false, showDate: false, pryntTasks: true)
+                }
             }
-            
             i+=1
         }
         
-        if "\(Date())".contains(":0") { ///or :00: for hourly
-            if !reloadedFromHourTickingOver {
-                
-                cachedBlocksAndTheirPaths = false
-                searchForDST()
-                
-                if !animating {
-                    DispatchQueue.main.asyncAfter(deadline: .now()) { /// keep on main queue: periodic callback inside completion handler called on a background thread
-                        topVC.reloadCV()
-                    }
+        if ("\(Date())".contains(":0") ///or :00: for hourly
+            && !reloadedFromHourTickingOver) {
+            searchForDST()
+            if !animating {
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    /// keep on main queue: periodic callback in completion handler called on a background thread
+                    topVC.reloadCV()
                 }
-                //pryntLastLoginDate(); pryntCurrentDate()
             }
+            //pryntLastLoginDate(); pryntCurrentDate()
         }
         completion()
     }

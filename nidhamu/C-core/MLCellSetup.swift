@@ -14,10 +14,10 @@ extension CollectionVC {
         
         if viewControllerType == .timetable || viewControllerType == .deferralDates {
             if currentOrientation == "landscape" {
-//                if textFieldDisplayed{fontSize = 7} else {fontSize = 12}
                 cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .regular)
             }
-        } else {cell.layer.cornerRadius = 0}
+        }
+        else {cell.layer.cornerRadius = 0}
         
         if column < headerSections {
             cell.backgroundColor = headerColour; cell.cellColour = headerColour
@@ -28,8 +28,6 @@ extension CollectionVC {
                 if row == 4 && viewControllerType == .timetable
                     || row == 4  && viewControllerType == .deferralDates {
                     cell.titleLabel.text = headerWeekdayTitles[column - 1]
-                    
-//                    if textFieldDisplayed && currentOrientation == "landscape" {fontSize = 7} else {fontSize = 12}
                     cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(fontSize), weight: .regular)
                 }
             }
@@ -40,13 +38,13 @@ extension CollectionVC {
                 
                 if row == customLayout.rows - 1 && column == customLayout.cols - 1 {
                     processTasksSinceLastLogin(layout: customLayout) /// called on the FINAL cell dequeued
+                    reloadLock = false
                 }
             }
         }
         
         resetTitleLabel(cell: cell, row: row, col: column, layout: customLayout)
         testForCellBannerNotification(cell, row: row, col: column, notificationColour: nil, notificationText: nil)
-        
         return cell
     }
 }

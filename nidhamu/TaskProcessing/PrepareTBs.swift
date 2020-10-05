@@ -46,7 +46,9 @@ extension CollectionVC {
             }
         }
         
-        animateLoginIntervalCells(cell: cell)
+        if taskArraysToProcess.isEmpty { ///if !taggingViewDisplayed {
+            animateLoginIntervalCells(cell: cell)     /// disable for now : experimental feature; and login date saving & loading not perfectly robust
+        }
         
     }
 }

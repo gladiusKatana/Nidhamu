@@ -2,7 +2,7 @@
 import UIKit
 
 func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, pryntTasks: Bool) {
-    if showDate {pryntDate(Date(), prefix: "\n✔︎saved")}
+    if showDate {pryntDate(Date(), prefix: "\n               ✔︎saved")}
     let defaults = UserDefaults.standard
     timeBlockPaths.removeAll(); taskDescriptionArrays.removeAll(); taskStatusArrays.removeAll(); taskDeadlineArrays.removeAll()
     

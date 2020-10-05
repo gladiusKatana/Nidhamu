@@ -10,7 +10,7 @@ extension AppDelegate {
         /*if firstBecameActive {print("🔅became active")}
          else {firstBecameActive = true}*/
         
-        wakeupDateReset(withReload: true)
+        wakeupDateReset(withReload: true, showDate: true)
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {                 print("🌔will enter foreground\n")
@@ -23,7 +23,9 @@ extension AppDelegate {
         thereWillBeARowException = false
         
         if !taggingViewDisplayed {
-            defaultSaveData(saveDate: true, resetLastLogin: false, showDate: false, pryntTasks: true)
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                defaultSaveData(saveDate: true, resetLastLogin: false, showDate: false, pryntTasks: true)
+            }
         }
         
         cachedBlocksAndTheirPaths = false

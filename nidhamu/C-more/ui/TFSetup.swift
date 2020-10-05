@@ -6,7 +6,7 @@ extension CollectionVC {
     func rePresentTextField() {                                     //print("re-presenting text field & keyboard")
         
         ///taskField.placeholder = "..."
-        ///taskField.removeFromSuperview() ///comment out: causes a blink if keyboard locked, since it dismisses & re-presents keyboard & text field on every reloadData().
+        ///taskField.removeFromSuperview() ///comment out: causes a blink if keyboard locked, since it dismisses & re-presents keyboard & text field on every reload-Data().
         
         taskField.becomeFirstResponder()
         

@@ -3,26 +3,42 @@ import UIKit
 
 extension CollectionVC {
     
-    func animateLoginIntervalCells(cell: CustomCell) {              print("|", terminator: "")
+    func animateLoginIntervalCells(cell: CustomCell) {              //print(",")//print("|", terminator: "")
+        
+        let column = cell.xyCoordinate[0]; let row = cell.xyCoordinate[1]
+        
         animating = true
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
             if indexPathsToProcess.isEmpty {
+                
                 UIView.animate(
-                    withDuration: 7, delay: 0,
-                    usingSpringWithDamping: 1, initialSpringVelocity: 0, options: UIView.AnimationOptions.curveEaseIn, animations: {
-                        cell.backgroundColor =
-                            cell.xyCoordinate[0] > nowColumn
-                            || cell.xyCoordinate[0] == nowColumn && cell.xyCoordinate[1] > nowRow && cell.cellDate > Date()
-                            ? cellDefaultColour
-                            : greyoutForTimeBlocksPassedThisWeek
-                }, completion: {(finished:Bool) in
-                    if !taglessSavingFlag {
-                        defaultSaveData(saveDate: true, resetLastLogin: false, showDate: false, pryntTasks: true)
-                        print("\n(autosaved)\n")
-                        wakeupDateReset(withReload: false)
-                        taglessSavingFlag = true
-                    }
-                    animating = false
+                    withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                        
+                        if row >= timetableHeaders {
+                            cell.backgroundColor =
+                                column > nowColumn
+                                || column == nowColumn && row > nowRow && cell.cellDate > Date()
+                                ? cellDefaultColour
+                                : greyoutForTimeBlocksPassedThisWeek
+                        }
+                },
+                    completion: {(finished:Bool) in
+                        
+                        //if column == nowColumn && row == nowRow - 1 {
+                        if !taglessSavingFlag {
+                            
+                            //DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntTasks: false)
+                            //print("\n(autosaved)\n")
+                            wakeupDateReset(withReload: true, showDate: false)
+                            //self.reloadCV()
+                            taglessSavingFlag = true
+                            animating = false
+                            //}
+                        }
+                        //}
                 }
                 )
             }

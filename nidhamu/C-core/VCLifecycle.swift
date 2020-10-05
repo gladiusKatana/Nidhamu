@@ -50,7 +50,7 @@ extension CollectionVC {
                 textFieldDisplayed = false
             }
         }
-        if viewControllerType == .deferralDates {collectionView.reloadData()}
+        if viewControllerType == .deferralDates {reloadCV()}
     }
 }
 

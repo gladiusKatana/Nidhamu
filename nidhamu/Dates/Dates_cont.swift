@@ -1,13 +1,16 @@
 // Dates_cont       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
-import UIKit
+import UIKit ///cont = continued
 
-func wakeupDateReset(withReload: Bool) {
+func wakeupDateReset(withReload: Bool, showDate: Bool) {
     findFallbackDate(startingDate: Date() - TimeInterval(3600), printDSTDates: showDSTDates) /// generally want =true for testing timetable around DST
     findSpringForwardDate(startingDate: Date(), printDSTDates: showDSTDates)                 /// see above.  (DST = daylight savings time)
     
     checkOrientation()
-    defaultLoadData(showDate: true)
-    topVC.reloadCV()
+    defaultLoadData(showDate: showDate)
+    
+    if withReload {
+        topVC.reloadCV()
+    }
 }
 
 func truncateMins(_ inputDate: Date) -> Date {
