@@ -44,7 +44,9 @@ extension CollectionVC {
         }
         
         resetTitleLabel(cell: cell, row: row, col: column, layout: customLayout)
-        testForCellBannerNotification(cell, row: row, col: column, notificationColour: nil, notificationText: nil)
+        if viewControllerType == .timetable {
+            testForCellBannerNotification(cell, row: row, col: column, notificationColour: nil, notificationText: nil)
+        }
         return cell
     }
 }

@@ -29,7 +29,7 @@ extension CollectionVC {
                 
                 if let currentWidth = currentCellWidth, let currentHeight = currentCellHeight {
                     safeCell.titleLabel.frame.size.width = currentWidth
-                    safeCell.titleLabel.frame.size.height = currentHeight   ///print("just sized title label width to \(currentWidth), height to \(currentHeight)")
+                    safeCell.titleLabel.frame.size.height = currentHeight ///print("just sized title label width to \(currentWidth), height to \(currentHeight)")
                 }
                 
                 safeCell.titleLabel.sizeToFit()
