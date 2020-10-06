@@ -38,7 +38,8 @@ extension CollectionVC {
             
             var i = 0
             for _ in archiveTaskDescriptions { /// Comma Separated Values is a misnomer, when exporting to Numbers -- must separate columns by semicolon, not comma
-                let timestamp = dateFromInts(archiveTaskDateComponentArrays[i]).timeIntervalSince1970
+                let plus59 = TimeInterval(3600 - 60)
+                let timestamp = (dateFromInts(archiveTaskDateComponentArrays[i]) + plus59).timeIntervalSince1970
                 csvText.append("\(archiveTaskDescriptions[i]);\(archiveTaskStatusStrings[i]);\(timestamp)\n") ///;\(archiveTaskDateStrings[i])
                 i += 1
             }
