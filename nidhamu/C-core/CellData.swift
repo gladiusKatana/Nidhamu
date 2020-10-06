@@ -74,8 +74,9 @@ extension CollectionVC {
         }
             
         else if viewControllerType == .archive {
-            cell.backgroundColor = greyoutForTimeBlocksPassedThisWeek
-            cell.titleLabel.textColor = .black
+            cell.backgroundColor = .clear
+            cell.titleLabel.textColor = grayThree
+            cell.titleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
             
             let archivedTasks = archiveTaskDateComponentArrays.count
             var text = ""; let defaultText = "  History empty (your Tasks appear here after you tag them)"

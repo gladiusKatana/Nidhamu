@@ -31,7 +31,7 @@ var graySeven = UIColor.rgb(0, g: 0, b: 0, a: 0.7);             ///var grayBarel
 var grayOne = UIColor.rgb(0, g: 0, b: 0, a: 0.1);               var grayTwo = UIColor.rgb(0, g: 0, b: 0, a: 0.2)
 var grayOneConverted = UIColor.rgb(138, g: 176, b: 210, a: 1)/// Got alpha=1 equivalent of grayOne*, via screenshot + this app: https://tinyurl.com/y2e4smph
 
-var grayFour = UIColor.rgb(0, g: 0, b: 0, a: 0.4);                         ///var grayThree = UIColor.rgb(0, g: 0, b: 0, a: 0.3)
+var grayThree = UIColor.rgb(0, g: 0, b: 0, a: 0.3);             var grayFour = UIColor.rgb(0, g: 0, b: 0, a: 0.4)
 ///var clearGlass = UIColor.rgb(255, g: 255, b: 255, a: 0.05)                 ///; var frostedGlass = UIColor.rgb(230, g: 230, b: 230, a: 0.7) //(255,g: 255,b: 255,a: 0.4)
 
 var backgroundImage = UIImage(named: "(big)sky2")?.withRenderingMode(.alwaysTemplate) /// sky background (blue with light clouds)
