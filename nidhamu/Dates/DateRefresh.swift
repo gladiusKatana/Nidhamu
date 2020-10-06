@@ -42,10 +42,7 @@ extension CollectionVC {
             && !reloadedFromHourTickingOver) {
             searchForDST()
             if !animating {
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    /// keep on main queue: periodic callback in completion handler called on a background thread
-                    topVC.reloadCV()
-                }
+                topVC.reloadCollectionViewAfterDelay(0) /// keep on main queue: periodic callback in completion handler called on a background thread
             }
             //pryntLastLoginDate(); pryntCurrentDate()
         }
