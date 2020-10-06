@@ -1,7 +1,7 @@
 // DefaultSave      ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, pryntTasks: Bool) {
+func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, pryntTasks: Bool) {  //print("saving")
     if showDate {pryntDate(Date(), prefix: "\n               ✔︎saved")}
     let defaults = UserDefaults.standard
     timeBlockPaths.removeAll(); taskDescriptionArrays.removeAll(); taskStatusArrays.removeAll(); taskDeadlineArrays.removeAll()
@@ -48,6 +48,7 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
 }
 
 func setForKeys(_ defaults: UserDefaults, saveDate: Bool, resetLastLogin: Bool) {
+    
     let (year, _, month, _ , day, weekday, _, hour, minute, _) = getChosenDateComponents(lastArchiveEmailDate, roundedDown: false)
     lastArchiveDateComponents = [year, month, day, weekday, hour, minute]
     lastArchiveEmailDate = dateFromComponents(lastArchiveDateComponents)
@@ -70,9 +71,5 @@ func setForKeys(_ defaults: UserDefaults, saveDate: Bool, resetLastLogin: Bool) 
     defaults.set(archiveTaskDateComponentArrays, forKey: "savedArchiveTaskDateComponentArrays")
 }
 
-func getArchiveTaskDateComponents(_ task: SimpleTask) -> [Int] {
-    let (year, monthInt, _, _ , day, _, _, hour, _, _) = getChosenDateComponents(task.deadline, roundedDown: false)
-    
-    return [year, monthInt, day, hour]
-}
+
 
