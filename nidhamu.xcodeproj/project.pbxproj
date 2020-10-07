@@ -93,9 +93,9 @@
 		06A7CCD32491429A003E45BD /* Dates_cont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7CCD22491429A003E45BD /* Dates_cont.swift */; };
 		06A7CCD52491A638003E45BD /* BlockUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7CCD42491A638003E45BD /* BlockUpdate.swift */; };
 		06A7CCD724954A76003E45BD /* TFSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7CCD624954A76003E45BD /* TFSetup.swift */; };
-		06B6630923CD73A5001449D8 /* [Nidhamu] Task Archive.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */; };
-		06B6630A23CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 06B6630823CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx */; };
 		06C65B6D23EA2E9700E21C38 /* DateAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C65B6C23EA2E9700E21C38 /* DateAlert.swift */; };
+		06EA6566252D75AC00935500 /* Task Archive.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 06EA6564252D75AC00935500 /* Task Archive.numbers */; };
+		06EA6567252D75AC00935500 /* Task Archive.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 06EA6565252D75AC00935500 /* Task Archive.xlsx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,9 +208,9 @@
 		06A7CCD22491429A003E45BD /* Dates_cont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates_cont.swift; sourceTree = "<group>"; };
 		06A7CCD42491A638003E45BD /* BlockUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUpdate.swift; sourceTree = "<group>"; };
 		06A7CCD624954A76003E45BD /* TFSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFSetup.swift; sourceTree = "<group>"; };
-		06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = "[Nidhamu] Task Archive.numbers"; sourceTree = "<group>"; };
-		06B6630823CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "[Nidhamu] Task Archive.xlsx"; sourceTree = "<group>"; };
 		06C65B6C23EA2E9700E21C38 /* DateAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAlert.swift; sourceTree = "<group>"; };
+		06EA6564252D75AC00935500 /* Task Archive.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Task Archive.numbers"; sourceTree = "<group>"; };
+		06EA6565252D75AC00935500 /* Task Archive.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Task Archive.xlsx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -509,8 +509,8 @@
 		06B6630623CD73A5001449D8 /* Spreadsheets */ = {
 			isa = PBXGroup;
 			children = (
-				06B6630723CD73A5001449D8 /* [Nidhamu] Task Archive.numbers */,
-				06B6630823CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx */,
+				06EA6564252D75AC00935500 /* Task Archive.numbers */,
+				06EA6565252D75AC00935500 /* Task Archive.xlsx */,
 			);
 			path = Spreadsheets;
 			sourceTree = "<group>";
@@ -622,9 +622,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				062516BD22D6CF4200EBB4C8 /* LaunchScreen.storyboard in Resources */,
-				06B6630923CD73A5001449D8 /* [Nidhamu] Task Archive.numbers in Resources */,
 				062516BC22D6CF4200EBB4C8 /* Assets.xcassets in Resources */,
-				06B6630A23CD73A5001449D8 /* [Nidhamu] Task Archive.xlsx in Resources */,
+				06EA6566252D75AC00935500 /* Task Archive.numbers in Resources */,
+				06EA6567252D75AC00935500 /* Task Archive.xlsx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
