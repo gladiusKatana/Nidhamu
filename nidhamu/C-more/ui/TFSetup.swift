@@ -45,7 +45,7 @@ extension CollectionVC {
         let date = selectedCellDate - TimeInterval(3600 * timeBlockSize)///text field text below refers to date of timeblock task is on (not deadline)
         let dayOfWeek = customWkdysDefaultOrder[Calendar.current.component(.weekday, from: date) - 1]
         let dateAndMonth = formattedDateString(date, roundDown: false, showYear: true,
-                                               prefix: "", suffix: "", dateFormat: .monthAndDay)
+                                               prefix: "", suffix: "", dateFormat: .monthAndDayNoPrefix)
         let str = dayQuartersLong[selectedTimeBlockPath[1] - 5]
         
         return "\(dayOfWeek). \(str) (\(dateAndMonth))"

@@ -38,6 +38,7 @@ func formattedDateString(_ date: Date, roundDown: Bool, showYear: Bool, prefix: 
         
     case .archiveCSVTitle:          return "\(weekday.prefix(3)) \(month.prefix(3)) \(day), \(year), \(hr)꞉\(minTwoDigits)\(ampm)"/// see  **  above
     case .monthAndDay:              return "\(prx)\(month.prefix(3)) \(day)"
+    case .monthAndDayNoPrefix:      return "\(month.prefix(3)) \(day)"
     case .second:                   return "\(sec2Digs)"
         
     default:    return "\(prx)\(weekday) \(hr)\(ampm)" // for hourly or quarter-day time-blocks
@@ -46,7 +47,7 @@ func formattedDateString(_ date: Date, roundDown: Bool, showYear: Bool, prefix: 
 }
 
 enum CustomDateFormat: Int {
-    case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayWithYear, fullDayWithSeconds, fullDayShortForm, fullDayShortFormNoDots, archiveFormat, archiveCSVTitle, hourOnly, hourAndMinute, hourAndMinuteNewlined, monthAndDay, second
+    case hourlyTimeBlock = 0; case quarterDayTimeBlock, fullDay, fullDayWithYear, fullDayWithSeconds, fullDayShortForm, fullDayShortFormNoDots, archiveFormat, archiveCSVTitle, hourOnly, hourAndMinute, hourAndMinuteNewlined, monthAndDay, monthAndDayNoPrefix, second
 }
 
 
