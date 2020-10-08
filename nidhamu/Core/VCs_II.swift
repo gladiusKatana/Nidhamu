@@ -43,5 +43,5 @@ var archiveLayout =
         loadsHorizontally: false,
         squareCellMode: .noAutoSquare)
 
-var archiveVC = CollectionVC(.archive, backgroundColour: defaultColour, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: 1, collectionViewLayout: archiveLayout)
+var archiveVC = CollectionVC(.archive, backgroundColour: defaultColour, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: 0, collectionViewLayout: archiveLayout)
 

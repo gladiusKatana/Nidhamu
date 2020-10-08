@@ -11,22 +11,12 @@ extension CollectionVC {
         let archiveButton = setupButton(disabler: disabler, title: "historyButton",
                                         selector: #selector(buttonWrapperMethodforArchiveVC))
         
-        var lockKeyboardButton = UIBarButtonItem()
-        
-        if !keyboardLocked {
-            lockKeyboardButton = setupButton(disabler: disabler, title: "keyboardLockButtons.001 copy",
-                                             selector: #selector(keyboardLockWrapper))
-            
-        } else {lockKeyboardButton = setupButton(disabler: disabler, title: "keyboardLockButtons.002 copy",
-                                                 selector: #selector(keyboardLockWrapper))}
-        
         let reloadButton = setupButton(disabler: disabler, title: "reloadButton",
                                        selector: #selector(reloadCVWrapperMethod))
         
         var barButtonColours = [UIColor]()
-        ///hardcoding button colours (may be easier, depends how many more buttons & colour exceptions)
-        //let barButtonColours = [graySeven, graySeven, graySeven, graySeven,]
-        let buttons = [lockKeyboardButton, archiveButton, timetableButton, reloadButton]
+        
+        let buttons = [archiveButton, timetableButton, reloadButton]
         navigationItem.rightBarButtonItems = buttons
         
         for _ in buttons {
@@ -40,11 +30,11 @@ extension CollectionVC {
             let defaultColour = barButtonColours[index]
             button.tintColor = defaultColour
             
-            if index == greyIndex && button != lockKeyboardButton {button.tintColor = greyout}
-            if button == reloadButton {button.tintColor = .clear} //grayBarelyThere
-            if button == lockKeyboardButton && keyboardLocked {button.tintColor = darkRed}
+            if index == greyIndex {button.tintColor = greyout}
             
-            if disabler && ![lockKeyboardButton, reloadButton].contains(button) {button.tintColor = greyout}
+            if button == reloadButton {button.tintColor = .clear} //grayBarelyThere
+            
+            if disabler && ![reloadButton].contains(button) {button.tintColor = greyout}
         }
     }
 }

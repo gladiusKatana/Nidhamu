@@ -28,7 +28,7 @@ var landscapeKeyboardHeight = CGFloat(192)/// ** why manually determined?  These
 ///var portraitKeyboardHeight = CGFloat(0)                ///; var landscapeKeyboardHeight = CGFloat(0)
 
 
-var keyboardLocked = false;                     ///var firstPortraitKeyboardPresented = false;        var firstLandscapeKeyboardPresented = false
+///var firstPortraitKeyboardPresented = false;            var firstLandscapeKeyboardPresented = false
 var textFieldDisplayed = false;                 var rowLongPressed = -1;                    var textFieldEditingMode = false
 var taggingViewDisplayed = false;               var selectedTaskWillRecur = false;          var justPinched = false
 var tempRescalingBool = false;                  var thereWillBeARowException = false;       var showConsoleLegend = true

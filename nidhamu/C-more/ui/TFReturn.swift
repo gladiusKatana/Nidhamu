@@ -7,7 +7,7 @@ extension CollectionVC {
         ///textField.removeFromSuperview(); textField.resignFirstResponder()
         let textEntered = textField.text!
         if textEntered == "" || textEntered == " " || textEntered == "  " { /// if user (for some reason) enters > 2 whitespaces, well, it's saved
-            ///see below: for animations /**/
+            
             previousTimeBlockPathSelected = defaultPathOutOfView
             exitTaskAddingMode()
         }
@@ -16,10 +16,6 @@ extension CollectionVC {
                 
                 addToTimeBlock(atColumn: selectedTimeBlockPath[0], atRow: selectedTimeBlockPath[1],
                                textEntered: textEntered, taskDeadline: selectedCellDate, withStatus: nil)
-                if !keyboardLocked {
-                    selectedTimeBlockPath = defaultPathOutOfView
-                    previousTimeBlockPathSelected = defaultPathOutOfView
-                }
             }
             
             if viewControllerType == .taskList {
@@ -43,7 +39,7 @@ extension CollectionVC {
         rowLongPressed = -1
         textFieldEditingMode = false
         
-        if !keyboardLocked || tasksAtIndexPath[timeBlock] == nil {
+        if tasksAtIndexPath[timeBlock] == nil {
             exitTaskAddingMode()
         }
         
@@ -52,6 +48,9 @@ extension CollectionVC {
         return true
     }
 }
+
+
+///for animations:
 
 /*for cell in self.collectionView.visibleCells as! [BaseCell] {
  if cell.xyCoordinate == selectedTimeBlockPath {
