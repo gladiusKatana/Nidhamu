@@ -36,6 +36,7 @@ extension PopupMenuVC {
             selectedTaskWillRecur = false
             
             if indexPathsToProcess.isEmpty {
+                
                 defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntTasks: true)
                 AppUtility.lockOrientation(.all)
                 
