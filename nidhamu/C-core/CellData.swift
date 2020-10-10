@@ -83,7 +83,7 @@ extension CollectionVC {
             cell.titleLabel.text = defaultText
             
             if archivedTasks == 0 {
-                if row == downcastLayout!.rows / 2 {cell.titleLabel.text = defaultText} else {cell.titleLabel.text = "."}
+                if row == downcastLayout!.rows / 2 {cell.titleLabel.text = defaultText} else {cell.titleLabel.text = ""}
             }
             else {
                 if row < archivedTasks {
