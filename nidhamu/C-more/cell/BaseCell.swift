@@ -15,7 +15,6 @@ class BaseCell: UICollectionViewCell {
         self.backgroundColor = .clear
         
         layer.borderWidth = 1
-        layer.cornerRadius = 8
         layer.borderColor = UIColor.clear.cgColor
         
         titleLabel.textColor = defaultCellTextColour

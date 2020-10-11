@@ -28,6 +28,7 @@ extension CollectionVC {
         collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.reuseIdentifier)
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
         cell = multiLineCellSetup(cell: cell, indexPath: indexPath)
+        cell.layer.cornerRadius = indexPath.row >= downcastLayout!.lockedHeaderRows ? 4 : 0
         return cell
     }
     
