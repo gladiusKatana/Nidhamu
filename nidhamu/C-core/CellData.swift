@@ -79,7 +79,7 @@ extension CollectionVC {
             cell.titleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
             
             let archivedTasks = archiveTaskDateComponentArrays.count
-            var text = ""; let defaultText = "  History empty \n  (your Tasks appear here after you tag them)"
+            var text = ""; let defaultText = "  History empty \n  (Tasks appear here after you tag them)"
             cell.titleLabel.text = defaultText
             
             if archivedTasks == 0 {
