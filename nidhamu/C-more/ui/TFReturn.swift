@@ -13,13 +13,11 @@ extension CollectionVC {
         }
         else {
             if viewControllerType == .timetable {
-                
                 addToTimeBlock(atColumn: selectedTimeBlockPath[0], atRow: selectedTimeBlockPath[1],
                                textEntered: textEntered, taskDeadline: selectedCellDate, withStatus: nil)
             }
             
             if viewControllerType == .taskList {
-                
                 if rowLongPressed != -1 {
                     rewriteTask(atColumn: selectedTimeBlockPath[0], atRow: selectedTimeBlockPath[1], index: rowLongPressed,
                                 textEntered: textEntered, taskDeadline: selectedCellDate, withStatus: nil)

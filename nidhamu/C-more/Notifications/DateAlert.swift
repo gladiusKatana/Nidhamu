@@ -4,11 +4,9 @@ import UIKit
 func testForCellBannerNotification(_ cell: BaseCell, row: Int, col: Int, notificationColour: UIColor?, notificationText: String?) {
     
     var weight = UIFont.Weight.light
-    
     let str = dateHeaderCellNotification(Date())
     
     if str != "" && (0...1).contains(row) && col > 0 {cell.backgroundColor = dimOrange} /// highlights DST notification same colour as the now-cell
-    
     if (col, row) == (7,0) {
         cell.titleLabel.text = formattedDateString(lastLoginDate, roundDown: false, showYear: true,
                                                    prefix: " Last Login", suffix: " ", dateFormat: .fullDay); if str != "" {weight = .light}
@@ -17,7 +15,6 @@ func testForCellBannerNotification(_ cell: BaseCell, row: Int, col: Int, notific
         cell.titleLabel.text = str
         cell.titleLabel.textColor = darkNavy; weight = .medium
     }
-        
     else {
         if notificationColour != nil && notificationText != nil {
             cell.titleLabel.textColor = notificationColour; cell.titleLabel.text = notificationText
@@ -27,7 +24,6 @@ func testForCellBannerNotification(_ cell: BaseCell, row: Int, col: Int, notific
     if textFieldDisplayed && currentOrientation == "landscape" {
         cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(7), weight: weight)
     }
-        
     else {cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(12), weight: weight)}
 }
 
@@ -35,9 +31,9 @@ func testForCellBannerNotification(_ cell: BaseCell, row: Int, col: Int, notific
 func dateHeaderCellNotification(_ date: Date) -> String {
     
     let fbk = (truncateMins(date) != truncateMins(fallBackDate)) ? "" :
-    "🌖 Daylight Savings (fall-back): the 1am time-block lasts for 2 hours "
+        "🌖 Daylight Savings (fall-back): the 1am time-block lasts for 2 hours "
     let spf = (truncateMins(date) != truncateMins(springForwardDate)) ? "" :
-    "🌔 Daylight Savings (spring-forward): the 2am time-block gets skipped "  //(1:59→ 3:00)"
+        "🌔 Daylight Savings (spring-forward): the 2am time-block gets skipped "  //(1:59→ 3:00)"
     var archiveIntervalNotification = ""
     let daysSinceLastArchiveEmail = Int(Date().timeIntervalSince(lastArchiveEmailDate) / 86400)
     

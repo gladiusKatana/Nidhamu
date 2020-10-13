@@ -23,7 +23,7 @@ extension CollectionVC {
                                 ? cellDefaultColour
                                 : greyoutForTimeBlocksPassedThisWeek
                         }
-                },
+                    },
                     completion: {(finished:Bool) in
                         
                         //if column == nowColumn && row == nowRow - 1 {
@@ -39,7 +39,7 @@ extension CollectionVC {
                             //}
                         }
                         //}
-                }
+                    }
                 )
             }
         }

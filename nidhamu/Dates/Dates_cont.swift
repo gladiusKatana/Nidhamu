@@ -7,10 +7,7 @@ func wakeupDateReset(withReload: Bool, showDate: Bool) {
     
     checkOrientation()
     defaultLoadData(showDate: showDate)
-    
-    if withReload {
-        topVC.reloadCV()
-    }
+    if withReload {topVC.reloadCV()}
 }
 
 func truncateMins(_ inputDate: Date) -> Date {

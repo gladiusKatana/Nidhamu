@@ -2,31 +2,29 @@
 import UIKit
 
 extension CollectionVC {
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let row = indexPath.row; let col = indexPath.section
         let layout = downcastLayout!
         
         if viewControllerType == .timetable {
-            
             if (0...1).contains(row) && col == layout.cols - 1 {
                 return registerRightCell(collectionView, at: indexPath)
             }
-                
             else {
-                if col < layout.lockedHeaderSections {return registerCenterCell(collectionView, at: indexPath)}
-                else {
+                if col < layout.lockedHeaderSections {
+                    return registerCenterCell(collectionView, at: indexPath)
+                } else {
                     return registerCell(collectionView, at: indexPath)
                 }
             }
-            
         } else {return registerCell(collectionView, at: indexPath)}
     }
     
     func registerCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> CustomCell {
         collectionView.register(CustomCell.self, forCellWithReuseIdentifier: CustomCell.reuseIdentifier)
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier:
+                                                        CustomCell.reuseIdentifier, for: indexPath) as! CustomCell
         cell = multiLineCellSetup(cell: cell, indexPath: indexPath)
         cell.layer.cornerRadius = indexPath.row >= downcastLayout!.lockedHeaderRows ? 4 : 0
         return cell
@@ -35,17 +33,15 @@ extension CollectionVC {
     func registerCenterCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> CenterAlignedCell {
         collectionView.register(CenterAlignedCell.self, forCellWithReuseIdentifier: CenterAlignedCell.reuseIdentifier)
         var centerCell = collectionView.dequeueReusableCell(withReuseIdentifier:
-            CenterAlignedCell.reuseIdentifier, for: indexPath) as! CenterAlignedCell
+                                                                CenterAlignedCell.reuseIdentifier, for: indexPath) as! CenterAlignedCell
         centerCell = centerCellSetup(cell: centerCell, indexPath: indexPath)
         return centerCell
     }
     
     func registerRightCell(_ collectionView: UICollectionView, at indexPath: IndexPath) -> RightAlignedCell {
         collectionView.register(RightAlignedCell.self, forCellWithReuseIdentifier: RightAlignedCell.reuseIdentifier)
-        
         let rightCell = collectionView.dequeueReusableCell(withReuseIdentifier:
-            RightAlignedCell.reuseIdentifier, for: indexPath) as! RightAlignedCell
-        
+                                                            RightAlignedCell.reuseIdentifier, for: indexPath) as! RightAlignedCell
         let paths = [(7,0), (7,1)]
         singleLineCellSetup(rightCell, indexPath: indexPath, paths: paths)
         return rightCell

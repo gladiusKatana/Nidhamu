@@ -12,12 +12,10 @@ var fallBackDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 var lastArchiveDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 
-
 var oneHour = TimeInterval(3600)
 
-
-
 var springForwardExtraHour = 0.0;               var fallBackExtraHour = 0.0
+
 var dstOffset = 0.0
 
 var nowRow = 0;                                 var nowColumn = 0
@@ -25,10 +23,8 @@ var nowRow = 0;                                 var nowColumn = 0
 var dstNotificationCellPath = (-1, -1)
 
 
-
 var showDSTDates = false
 var foundNextFallBackDate = false;              var foundNextSpringForwardDate = false
-
 
 
 var selectedTimeBlockDateDescription = "(selected date)"

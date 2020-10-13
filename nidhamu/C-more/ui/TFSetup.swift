@@ -4,10 +4,8 @@ import UIKit
 extension CollectionVC {
     
     func rePresentTextField() {                                     //print("re-presenting text field & keyboard")
-        
         ///taskField.placeholder = "..."
-        ///taskField.removeFromSuperview() ///comment out: causes a blink if keyboard locked, since it dismisses & re-presents keyboard & text field on every reload-Data().
-        
+        ///taskField.removeFromSuperview() ///causes a blink if keyboard locked, since it dismisses & re-presents keyboard & text field on every reload-Data().
         taskField.becomeFirstResponder()
         
         if viewControllerType != .archive {
@@ -24,15 +22,12 @@ extension CollectionVC {
     }
     
     func setTaskFieldPlaceholder() {
-        
         //        var pre = ""
         //        let suf = "]"
-        //
         //        if textFieldEditingMode {
         //            pre = "New Task Name ["
         //        }
         //        else {pre = "Add Task [Due:"}
-        //
         //        let str = formattedDateString(selectedCellDate, roundDown: false, showYear: false, prefix: pre, suffix: suf,
         //                                      dateFormat: .fullDayShortForm)/// ! probably needs smaller font on iPhone SE in portrait
         
@@ -47,7 +42,6 @@ extension CollectionVC {
         let dateAndMonth = formattedDateString(date, roundDown: false, showYear: true,
                                                prefix: "", suffix: "", dateFormat: .monthAndDayNoPrefix)
         let str = dayQuartersLong[selectedTimeBlockPath[1] - 5]
-        
         return "\(dayOfWeek). \(str) (\(dateAndMonth))"
     }
 }

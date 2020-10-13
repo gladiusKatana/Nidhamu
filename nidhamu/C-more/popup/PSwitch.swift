@@ -31,16 +31,12 @@ class PopupSwitchView: UIView {
         /**/
         addConstraint(NSLayoutConstraint(item: popupSwitch, attribute: .centerY, relatedBy: .equal,
                                          toItem: self, attribute: .centerY, multiplier: 1, constant: quarterHeight / 2))
-        
         addConstraint(NSLayoutConstraint(item: popupLabel, attribute: .centerY, relatedBy: .equal,
                                          toItem: self, attribute: .centerY, multiplier: 1, constant: -quarterHeight))
-        
         addConstraint(NSLayoutConstraint(item: popupSwitch, attribute: .centerX, relatedBy: .equal,
                                          toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
-        
         addConstraint(NSLayoutConstraint(item: popupLabel, attribute: .centerX, relatedBy: .equal,
                                          toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
-        
         popupSwitch.isOn = selectedTaskWillRecur
     }
     

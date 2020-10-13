@@ -31,7 +31,6 @@ var taskListLayout =
 
 var taskListVC = CollectionVC(.taskList, backgroundColour: defaultColour, loopWeeks: nil, demarcateWeeksByColour: nil, colourIndex: nil, collectionViewLayout: taskListLayout)
 
-
 var archiveLayout =
     CustomFlowLayout(
         embeddedInNavController: true,

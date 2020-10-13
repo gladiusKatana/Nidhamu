@@ -11,7 +11,6 @@ func findSortingTransform(_ input: [[Int]], output: [[Int]]) -> [Int] {         
     return transform
 }
 
-
 func findDateSortingTransform(_ input: [[Date]], output: [[Date]]) -> [Int] {
     var transform = [Int]()                                                     // see comments above
     
@@ -20,7 +19,6 @@ func findDateSortingTransform(_ input: [[Date]], output: [[Date]]) -> [Int] {
     }
     return transform
 }
-
 
 func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
     var output = [Any]()
@@ -35,7 +33,6 @@ func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
     }
     return output
 }
-
 
 func lastTaskFromPath(_ path: [Int]) -> SimpleTask {
     

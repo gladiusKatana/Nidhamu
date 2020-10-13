@@ -3,7 +3,7 @@ import UIKit
 
 extension CustomFlowLayout { 
     
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {         //print("layout for elements...")
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {     //print("layout for elements...")
         var attributesForElements = [UICollectionViewLayoutAttributes]()
         
         for j in 0 ..< cols {
@@ -19,14 +19,14 @@ extension CustomFlowLayout {
                 let regularRows = CGFloat(rows - lockedHeaderRows)
                 let one = CGFloat(1)
                 
-                var xO = CGFloat(0);    var yO = CGFloat(0)                                                     //; print("*", terminator: "")
+                var xO = CGFloat(0);    var yO = CGFloat(0)                                                 //; print("*", terminator: "")
                 var scalar = CGFloat(0)
                 
                 if timeBlockSize == 1 {headerHeightFactor = 1}
-                else {headerHeightFactor = 0.4} /// if too small, last login date (shown in top-left cell) no longer fits in landscape mode when keyboard presented
+                else {headerHeightFactor = 0.4}/// if too small, last login date (shown in top-left cell) no longer fits in landscape mode when keyboard presented
                 
                 var cellHeightIncrease = CGFloat(0)
-                if self == taskTaggingLayout {cellHeightIncrease = (one - headerHeightFactor) * CGFloat(5) / 4} /// (locked headers ÷ regular rows) 
+                if self == taskTaggingLayout {cellHeightIncrease = (one - headerHeightFactor) * CGFloat(5) / 4} /// (locked headers/regular rows)
                 else {
                     cellHeightIncrease = (one - headerHeightFactor) * CGFloat(lockedHeaderRows) / regularRows
                 }

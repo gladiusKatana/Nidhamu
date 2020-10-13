@@ -12,7 +12,6 @@ extension CollectionVC {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             if !taggingViewDisplayed {
-                
                 let layout = self.downcastLayout!
                 let popupMenuLayout = taskTaggingViewController.downcastLayout!
                 

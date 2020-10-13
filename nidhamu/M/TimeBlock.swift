@@ -1,7 +1,6 @@
 // TimeBlock        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-
 struct TimeBlock<T: Hashable, U: Hashable>: Hashable {
     let values : (T, U)
     func hash(into hasher: inout Hasher) {
@@ -28,7 +27,7 @@ extension CollectionVC {
         if tasksAtIndexPath[timeBlockToAdd] != nil {
             tasksAtIndexPath[timeBlockToAdd]!.append(simpleTask)
         }
-            
+        
         else {
             tasksAtIndexPath[timeBlockToAdd] = [simpleTask]
         }

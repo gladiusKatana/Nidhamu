@@ -7,12 +7,12 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
     timeBlockPaths.removeAll(); taskDescriptionArrays.removeAll(); taskStatusArrays.removeAll(); taskDeadlineArrays.removeAll()
     
     for key in tasksAtIndexPath.keys {
-        let (a, b) = key.values                                                                     //; print("key: [\(key)  values \((a, b))")
+        let (a, b) = key.values                                                             //; print("key: [\(key)  values \((a, b))")
         timeBlockPaths.append([a, b])
     }
     
     sortedTimeBlockPaths = timeBlockPaths.sorted(by: {lastTaskFromPath($0).deadline < lastTaskFromPath($1).deadline})
-    sortingTransform = findSortingTransform(timeBlockPaths, output: sortedTimeBlockPaths)           //; print("T:\(sortingTransform)\n")
+    sortingTransform = findSortingTransform(timeBlockPaths, output: sortedTimeBlockPaths)   //; print("T:\(sortingTransform)\n")
     
     for vals in tasksAtIndexPath.values {
         if vals.count >= 1 {

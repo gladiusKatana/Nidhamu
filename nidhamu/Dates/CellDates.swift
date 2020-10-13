@@ -35,7 +35,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
                         if cellDateIsBetweenLogins {
                             if cellDateIsLastLogin {
                                 let lastLoginString = "\n  last\n  login"
-                                ///print("[\(truncateMins(Date()).timeIntervalSince1970 - truncateMins(lastLoginDate).timeIntervalSince1970) seconds since last login]")
+                                ///print("[\(truncateMins(Date()).timeIntervalSince1970 - truncateMins(lastLoginDate).timeIntervalSince1970) sec. since last login]")
                                 cell.titleLabel.text =
                                     column > nowColumn
                                     || column == nowColumn && row > nowRow

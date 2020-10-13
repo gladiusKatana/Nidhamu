@@ -10,7 +10,7 @@ func processCurrentDate() {
     //print("finding current date (now-cell [\(nowColumn),\(nowRow)])")
     
     if !reloadedFromHourTickingOver {
-        if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections {  /// if the now-cell is at Monday, 12am
+        if nowRow == timetableLayout.lockedHeaderRows && nowColumn == timetableLayout.lockedHeaderSections { /// if the now-cell is at Monday, 12am
             lastLoginDateComponents = [year, month, day, weekday, hour, minute]
             lastLoginDate = dateFromComponents(lastLoginDateComponents)
             //print("new week") ///pryntLastLoginDate(); pryntCurrentDate()
@@ -21,7 +21,7 @@ func processCurrentDate() {
 
 extension CollectionVC {
     func periodicDateRefresh(completion: () -> ()) {                    //print("Date: \(Date())") //print("·", terminator: "")
-        //        print(formattedDateString(Date(), roundDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .second), terminator: ",")
+        ///        print(formattedDateString(Date(), roundDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .second), terminator: ",")
         let finalSeconds = [56,57,58,59]
         var finalSecondStrings = [String]()
         
@@ -39,7 +39,7 @@ extension CollectionVC {
         }
         
         if ("\(Date())".contains(":0") ///or :00: for hourly
-            && !reloadedFromHourTickingOver) {
+                && !reloadedFromHourTickingOver) {
             searchForDST()
             if !animating {
                 topVC.reloadCollectionViewAfterDelay(0) /// keep on main queue: periodic callback in completion handler called on a background thread

@@ -3,17 +3,16 @@ import UIKit
 
 extension CustomFlowLayout {
     
-    override func prepare() {                                                               //print("◆", terminator: "")
-        
+    override func prepare() {                                                   //print("◆", terminator: "")
         checkOrientation()
         resetKeyboardHeight()
         calculateAndResetSizes()
         
-        if previousOrientation != currentOrientation {                                      //print("prepare(rotated to \(currentOrientation)):")
+        if previousOrientation != currentOrientation {                          //print("prepare(rotated to \(currentOrientation)):")
             previousOrientation = currentOrientation
             
             topVC.setupTitleAndPresentViewController(vc: topVC) { () -> () in
-//                topVC.reloadCV() /// only really useful for cell font size readjustment upon rotations / other layout scaling changes
+                //topVC.reloadCV() /// only really useful for cell font size readjustment upon rotations / other layout scaling changes
             }
             
         } else {if topVC.viewControllerType == .timetable {processCurrentDate()}}
@@ -22,7 +21,6 @@ extension CustomFlowLayout {
             topVC.rePresentTextField()
             ///if topVC.viewControllerType == .taskList {topVC.reloadCollectionViewAfterDelay(0)} ///probably cruft now; remove soon
         }
-        
         //drawTestSquare()
     }
     
@@ -38,7 +36,6 @@ extension CustomFlowLayout {
             if statusBarTestHeight > 20 {
                 statusBarDelta = Double(statusBarTestHeight - 20)
             }
-            
             compensateForNavigationAndStatusBars(forCollectionVC: topVC, withDelta: statusBarDelta)
         }
     }

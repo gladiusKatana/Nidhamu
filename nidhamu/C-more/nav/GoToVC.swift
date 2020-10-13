@@ -10,7 +10,7 @@ extension CollectionVC {
         if topVC != vc {
             
             /*globalWindow.backgroundColor = defaultColour
-            backgroundVC.view.backgroundColor = globalWindow.backgroundColor*/
+             backgroundVC.view.backgroundColor = globalWindow.backgroundColor*/
             
             setupTitleAndPresentViewController(vc: vc) { () -> () in
                 ///(empty; may remove the completion handler from this method after some testing)

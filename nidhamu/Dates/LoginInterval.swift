@@ -37,18 +37,24 @@ extension CollectionVC {
         
         let lowerDateBound = timeBlockRoundedLastLogin + dstShift
         let upperDateBound = truncateMins(Date() + dstShift)        /// could round current date too (based on time block size, as with last login date);...
-        /// entire commented block of code below is for printing                                                                           ///... should not change logic
-        /*let deadlineBoolString = forTaskDeadline ? " (for task deadline)" : ""
-         let upperDateBoundString = formattedDateString(upperDateBound, roundedDown: false,
-         showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortFormNoDots)
-         let lowerDateBoundString = formattedDateString(lowerDateBound, roundedDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortFormNoDots)
-         
-         if let layout = layout, let row = row, let column = column {
-         if (layout.cols - 1, layout.rows - 1) == (column, row) && lowerDateBoundString != upperDateBoundString {
-         print("\nsweeping date interval\(deadlineBoolString),\nbetween & including:\(lowerDateBoundString) & \(upperDateBoundString)")
-         }
-         } else {print("\nsweeping date interval\(deadlineBoolString),\nbetween & including:\(lowerDateBoundString) & \(upperDateBoundString)")}*/
+        /**/
+        
         return oneWeekAgo.isBetween(lowerDateBound, and: upperDateBound)
     }
 }
+
+
+/*
+ /// entire commented section below is for printing
+ 
+ let deadlineBoolString = forTaskDeadline ? " (for task deadline)" : ""
+ let upperDateBoundString = formattedDateString(upperDateBound, roundedDown: false,
+ showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortFormNoDots)
+ let lowerDateBoundString = formattedDateString(lowerDateBound, roundedDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortFormNoDots)
+ 
+ if let layout = layout, let row = row, let column = column {
+ if (layout.cols - 1, layout.rows - 1) == (column, row) && lowerDateBoundString != upperDateBoundString {
+ print("\nsweeping date interval\(deadlineBoolString),\nbetween & including:\(lowerDateBoundString) & \(upperDateBoundString)")
+ }
+ } else {print("\nsweeping date interval\(deadlineBoolString),\nbetween & including:\(lowerDateBoundString) & \(upperDateBoundString)")}*/
 

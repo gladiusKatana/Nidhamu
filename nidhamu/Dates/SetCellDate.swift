@@ -23,27 +23,26 @@ extension CollectionVC {
         
         if date > springForwardDate + oneHour {
             dstOffset = -1
-        }
-        else {
+        } else {
             if date > fallBackDate {dstOffset = 1}
             else {dstOffset = 0}
         }
         
-        if truncateMins(Date()) > truncateMins(springForwardDate) {         ///print("finding next spring-forward date, to prevent off-by-1-hour bug")
+        if truncateMins(Date()) > truncateMins(springForwardDate) {      ///print("finding next spring-forward date, to prevent off-by-1-hour bug")
             foundNextSpringForwardDate = false
             findSpringForwardDate(startingDate: Date(), printDSTDates: showDSTDates)
             reloadCollectionViewAfterDelay(0)
         }
         
-        let minTrunkDate = timeBlockSize > 1 ? truncateMins(date) : date    /// truncates MINUTES of cell dates, when multi-hour-length time blocks are enabled
+        let minTrunkDate = timeBlockSize > 1 ? truncateMins(date) : date /// truncates MINUTES of cell dates, when multi-hour-length time blocks are enabled
         var cellDate = minTrunkDate + dstOffset * oneHour
         let isNextWeek = weekAheadInt == 1 ? true : false
         
         let timeBlockStartHr = (row - headers) * timeBlockSize - headerOffset / 3600
-        let hrsIntoTimeBlock = Calendar.current.component(.hour, from: cellDate) - timeBlockStartHr ///print("\(hrsIntoTimeBlock) hrs into this block")
+        let hrsIntoBlock = Calendar.current.component(.hour, from: cellDate) - timeBlockStartHr ///print("\(hrsIntoBlock) hrs into this block")
         
         if timeBlockSize > 1 {  /// *probably refactor below line w/ time block size conditional
-            if hrsIntoTimeBlock > 0 {cellDate = truncateMins(cellDate - TimeInterval(3600 * hrsIntoTimeBlock))}
+            if hrsIntoBlock > 0 {cellDate = truncateMins(cellDate - TimeInterval(3600 * hrsIntoBlock))}
         }
         
         var isLastLogin = false
@@ -58,12 +57,11 @@ extension CollectionVC {
             while !isLastLogin {
                 let oneWeekTimesN = TimeInterval(86400 * 7 * n)
                 if  truncateMins(cellDate) - (dstOffset + springForwardExtraHour + fallBackExtraHour) * oneHour - oneWeekTimesN
-                    == truncateMins(timeBlockRoundedLastLogin)
+                        == truncateMins(timeBlockRoundedLastLogin)
                 {isLastLogin = true} //; print("date set on last-login-like cell \(column),\(row)")
                 n+=1
             }
         }
-        
         return (cellDate, isNextWeek, isLastLogin)
     }
     

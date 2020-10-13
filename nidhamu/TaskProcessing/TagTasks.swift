@@ -7,9 +7,9 @@ extension CollectionVC {
         
         if !indexPathsToProcess.isEmpty {                           /// already (sort of) checked for this, in the caller (but used  taskArraysToProcess )
             
-            let column = indexPathsToProcess.first![0]; let row = indexPathsToProcess.first![1]     ///; print("presenting popup at (\(column), \(row))")
+            let column = indexPathsToProcess.first![0]; let row = indexPathsToProcess.first![1] ///; print("presenting popup at (\(column), \(row))")
             
-            if let firstTaskArrayToProcess = taskArraysToProcess.first {                            ///if taskArraysToProcess.count > 1 {
+            if let firstTaskArrayToProcess = taskArraysToProcess.first {                        ///if taskArraysToProcess.count > 1 {
                 
                 if taskIndex < firstTaskArrayToProcess.count {
                     globalTaskIdentifier = "\(firstTaskArrayToProcess[taskIndex].taskDescription)"

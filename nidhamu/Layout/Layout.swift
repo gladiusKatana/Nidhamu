@@ -37,12 +37,9 @@ class CustomFlowLayout : UICollectionViewFlowLayout {
         super.init()
         
         if cellWidth != nil && cellHeight != nil {cellDimensionsMode = .widthAndHeightHardcoded}
-            
         else if cellWidth == nil && cellHeight != nil {cellDimensionsMode = .heightHardcoded}
-            
         else if cellWidth != nil && cellHeight == nil {cellDimensionsMode = .widthHardcoded}
-            
-        else    {cellDimensionsMode = .neitherHardcoded}                                        //print(cellDimensionsMode.simpleDescription())
+        else    {cellDimensionsMode = .neitherHardcoded} //; print(cellDimensionsMode.simpleDescription())
     }
     
     required init?(coder aDecoder: NSCoder) {fatalError("init(coder:) has not been implemented")}

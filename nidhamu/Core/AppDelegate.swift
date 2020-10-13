@@ -13,11 +13,8 @@ import UIKit
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         modelName = UIDevice.modelName
-        
-        processCurrentDate()
-        /// may move further down app lifecycle, to applicationDidBecomeActive(:); but this further accommodates 'going back in time' via device settings, without glitches
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
+        processCurrentDate()                            /// may move further down app lifecycle, to applicationDidBecomeActive(:)...
+        window = UIWindow(frame: UIScreen.main.bounds)  /// ...but this further accommodates 'going back in time' via device settings, without glitches
         window?.backgroundColor = defaultColour
         window?.makeKeyAndVisible()
         
@@ -25,10 +22,10 @@ import UIKit
         globalWindow.backgroundColor = defaultColour
         
         backgroundVC = UIViewController()
-        backgroundVC.view.backgroundColor = .clear //defaultColour /// must match window's background colour, for rotating landscape->portrait
+        backgroundVC.view.backgroundColor = .clear      ///defaultColour /// must match window's background colour, for rotating landscape->portrait
         backgroundVC.view.frame = globalWindow.frame
         
-        getOrientationAtLaunch()                                    ; print("launching on \(modelName) in \(launchOrientation) orientation")
+        getOrientationAtLaunch()                        ; print("launching on \(modelName) in \(launchOrientation) orientation")
         
         switch modelName { /// will handle all other device sizes (& update UIDevice.mapToDevice(:)) soon
         case "iPhone12,5" :

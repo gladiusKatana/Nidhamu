@@ -15,7 +15,7 @@ extension CollectionVC {
             switch viewControllerType {
             case .timetable:
                 selectedCellDate = cell.cellDate + TimeInterval(3600 * timeBlockSize) ///for task deadline: = start of next time block after tb tapped
-                selectedTimeBlockPath = [column, row]                                 //; print("selected time block path \(selectedTimeBlockPath)")
+                selectedTimeBlockPath = [column, row]                       //; print("selected time block path \(selectedTimeBlockPath)")
                 timeBlock = TimeBlock(values:(column, row))
                 
                 if tasksAtIndexPath[timeBlock] == nil || textFieldDisplayed {
@@ -41,7 +41,7 @@ extension CollectionVC {
                     if let tasks = tasksAtIndexPath[timeBlock] {
                         taskListVC.downcastLayout!.rows = tasks.count == 0 ? minTaskListRows : tasks.count + minTaskListRows}
                     reloadCV()
-                    taskIsDeletable = false //; print("taskDescriptionArrays: \(taskDescriptionArrays)")    ///print("timeBlockPaths: \(timeBlockPaths)")
+                    taskIsDeletable = false ///; print("taskDescriptionArrays: \(taskDescriptionArrays)") ///print("timeBlockPaths: \(timeBlockPaths)")
                     setNavBarTitle(customString: nil)
                 } else {
                     setTaskFieldPlaceholder()
@@ -58,7 +58,7 @@ extension CollectionVC {
                                                                          taskWillShowUpNextWeek: false, selectedStatus: .done)
                 DispatchQueue.main.asyncAfter(deadline: .now()) {//now() + 0.25
                     deferralPath = [column, row]
-                    self.gotoView(vc: timetableVC)                  //; print("******************should be highlighting: \(earliestTaskAddress)")
+                    self.gotoView(vc: timetableVC)  //; print("******************should be highlighting: \(earliestTaskAddress)")
                 }
                 
             default: print("unrecognized collection view type's cell selected")}

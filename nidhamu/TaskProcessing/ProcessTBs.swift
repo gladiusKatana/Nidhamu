@@ -7,8 +7,8 @@ extension CollectionVC {
     func processTasksSinceLastLogin(layout: CustomFlowLayout) {
         
         guard viewControllerType == .timetable,
-            !cachedBlocksAndTheirPaths else {
-                return
+              !cachedBlocksAndTheirPaths else {
+            return
         }
         
         guard taskArraysToProcess.count > 0 else {
@@ -38,14 +38,12 @@ extension CollectionVC {
             
             let paths = indexPathsToProcess.count
             if paths >= 2                         /// row 21 = 4pm
-                && indexPathsToProcess[paths - 2] [1] < 21 {    /// ie if last time block to process requires resizing (cells could be swept over repeatedly...
-                taskTaggingViewController.dismissTaggingWizard()///...within 1 session. (user could leave timetable open for many hours -- it just auto-updates)
+                && indexPathsToProcess[paths - 2] [1] < 21 {  /// ie if last time block to process requires resizing (cells could be swept over repeatedly...
+                taskTaggingViewController.dismissTaggingWizard()///...within 1 session (ie user leaves timetable open for many hours -- it just auto-updates)
             }
-            
             thereWillBeARowException = false
         }
-        
-        tagTasksSinceLastLogin()///; print("\(taskArraysToProcess.count) blocks remaining now, and \(tasksInBlockToBeProcessed) tasks remaining (tag #\(taskIndex + 1))\n")
+        tagTasksSinceLastLogin()///; print("\(taskArraysToProcess.count) blocks remaining now & \(tasksInBlockToBeProcessed) tasks left (tag #\(taskIndex + 1))\n")
     }
 }
 

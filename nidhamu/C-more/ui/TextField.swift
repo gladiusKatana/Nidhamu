@@ -4,7 +4,6 @@ import UIKit
 extension CollectionVC {
     
     func presentTextFieldAndReload(after delay: Double, forTaskAtRow row: Int?) {
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             self.setupNavBarButtons(grayTwo, greyIndex: self.colourIndex, disabler: true)
             self.prepareAndPresentTextField(forTaskAtRow: row)
@@ -13,7 +12,6 @@ extension CollectionVC {
     }
     
     func prepareAndPresentTextField(forTaskAtRow row: Int?) {
-        
         /*globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
          backgroundVC.view.backgroundColor = globalWindow.backgroundColor*/
         
@@ -28,7 +26,6 @@ extension CollectionVC {
             let taskDescription = tasks[row! - taskListOffset].taskDescription
             str = taskDescription
         }
-        
         formatAndPresentTextField(str)
     }
     

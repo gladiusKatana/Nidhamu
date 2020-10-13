@@ -20,8 +20,8 @@ extension CollectionVC {
                 cell.titleLabel.font = defaultTimetableCellFont
                 
             }
-                
-            else {cell.titleLabel.text = globalTaskIdentifier}          /// when evets.count == 1, can just use previously set task's description via this var
+            
+            else {cell.titleLabel.text = globalTaskIdentifier}      /// when evets.count == 1, can just use previously set task's description via this var
         }
     }
     

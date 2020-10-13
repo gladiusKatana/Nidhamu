@@ -40,12 +40,12 @@ extension CollectionVC {
                     
                     cell.titleLabel.text = deferredDescription
                     addToTimeBlock(atColumn: column, atRow: row, textEntered: "\(deferredDescription)",
-                        taskDeadline: deadline, withStatus: .deferred)
+                                   taskDeadline: deadline, withStatus: .deferred)
                     deferralPath = defaultPathOutOfView
                 }
             }
         }
-            
+        
         else if viewControllerType == .taskList {
             cell.cellDate = selectedCellDate
             cell.backgroundColor = .clear
@@ -63,16 +63,16 @@ extension CollectionVC {
                     cell.titleLabel.text = " \(taskAtTimeBlock[row - taskListOffset].taskDescription)"
                     if status == .upcoming {cell.titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)}
                 }
-                    
+                
                 else if column == 1 {
                     cell.titleLabel.text = formattedDateString(taskAtTimeBlock[row - taskListOffset].deadline, roundDown: false, showYear: false, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
                 }
-                    
+                
                 else {cell.titleLabel.text = "\(taskAtTimeBlock[row - taskListOffset].taskStatus)"}
                 
             } else {cell.titleLabel.text = ""}
         }
-            
+        
         else if viewControllerType == .archive {
             cell.backgroundColor = .clear
             cell.titleLabel.textColor = grayThree
@@ -91,7 +91,7 @@ extension CollectionVC {
                     if column == 0 {
                         text = formattedDateString(dateFromInts(archiveTaskDateComponentArrays[row]), roundDown: false, showYear: true, prefix: "", suffix: "", dateFormat: .fullDayShortForm)
                     }
-                        
+                    
                     else if column == 1 {text = "\(archiveTaskDescriptions[row])"}
                     else {text = "\(archiveTaskStatusStrings[row])"}
                     

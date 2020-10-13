@@ -21,7 +21,7 @@ extension CollectionVC {
             }
             else { /// ie if viewControllerType is the task list VC  (will add more VCs soon-- see Notes.swift)
                 /*title = formattedDateString(selectedCellDate, roundDown: true, showYear: false,
-                                            prefix: "Tasks Due", suffix: "", dateFormat: .hourlyTimeBlock)*/
+                 prefix: "Tasks Due", suffix: "", dateFormat: .hourlyTimeBlock)*/
                 title = getSelectedTimeBlockDescriptor()
             }
         }

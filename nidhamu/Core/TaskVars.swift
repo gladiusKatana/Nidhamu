@@ -10,7 +10,6 @@ var tasksAtIndexPath = Dictionary<TimeBlock<Int,Int>,[SimpleTask]>() /// Diction
 
 ///var tasksAtDate = Dictionary<ArchiveBlock<Int,Int,Int,Int>,[SimpleTask]>() /// Dict. lookup for arrays of archived tasks, keyed by task-date components (y,m,d,h)
 
-
 ///adding tasks to time-blocks (ie cells, visually speaking) --------------------------------------------------------------------
 var timeBlock = TimeBlock(values:(0, 0))
 var defaultPathOutOfView = [-1, -1];                var earliestTaskAddress = defaultPathOutOfView
@@ -21,14 +20,12 @@ var selectedTimeBlockPath = defaultPathOutOfView;   var previousTimeBlockPathSel
 var taskArraysToProcess = [[SimpleTask]]();         var taskDescriptionsToProcess = [[String]]()
 var indexPathsToProcess = [[Int]]()
 
-
 ///deferring tasks --------------------------------------------------------------------------------------------------------------
 var deferralPath = [Int]();                         var deferredDescription = ""
 
 
-///deleting tasks (literally: not to be confused with classifying the actions done on them as .deleted)
+///deleting tasks (not to be confused with classifying the actions done on them as .deleted)
 var taskIsDeletable = false
-
 
 ///saving tasks' components via separate UserDefaults arrays ---------------------------------------------------------------------
 ///* will rewrite this construct to save the whole dictionary to NSUserDefaults
@@ -38,7 +35,6 @@ var sortedTimeBlockPaths = [[Int]]();               var sortingTransform = [Int]
 var taskDeadlineArrays = [[[Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]]]
 var taskDescriptionArrays = [[String]]()
 var taskStatusArrays = [[Int]]() /// populated with raw values of enum TaskStatus*/
-
 
 ///saving ARCHIVED tasks' components via separate UserDefaults arrays -------------------------------------------------------------
 ///* will rewrite this construct to save the whole dictionary to NSUserDefaults

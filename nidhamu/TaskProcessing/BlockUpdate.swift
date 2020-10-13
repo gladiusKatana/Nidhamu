@@ -5,18 +5,15 @@ extension PopupMenuVC {
     
     func updateBlockProcessingVariables(column: Int, row: Int, taskWillShowUpNextWeek: Bool, selectedStatus: TaskStatus) {
         
-        
         ///if taskIndex <= tasksInBlockToBeProcessed + 1 {
         taskIndex += 1
         ///}
-        
         
         if selectedStatus != .deferred {
             if tasksInBlockToBeProcessed > 0 {
                 tasksInBlockToBeProcessed -= 1
             }
         }
-        
         
         if tasksInBlockToBeProcessed == 0 {
             

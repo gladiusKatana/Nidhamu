@@ -5,7 +5,6 @@ import MessageUI
 class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
     
     lazy var emailComposeVC = MFMailComposeViewController()
-    
     override func viewDidLoad() {                                                   //print("email Composer didLoad")
         super.viewDidLoad()
     }
@@ -31,11 +30,9 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         do {
             let attachmentData = try Data(contentsOf: path)
             emailComposeVC.addAttachmentData(attachmentData, mimeType: "text/csv", fileName: "Tagged tasks (\(dateString)).csv")
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25 ) {
                 self.present(self.emailComposeVC, animated: true, completion: nil)
             }
-            
         } catch let error {print("We have encountered error \(error.localizedDescription)")}
         return emailComposeVC
     }
@@ -46,8 +43,7 @@ class EmailComposer: UIViewController, MFMailComposeViewControllerDelegate {
         archiveVC.downcastLayout!.cols = 1
         topVC.gotoView(vc: archiveVC)
         emailComposer.emailComposeVC.view.removeFromSuperview() ///; backgroundVC.view.removeFromSuperview()
-        updateArchiveRelatedData(result: result)
-        ///print("handled email with result \(result.rawValue)")
+        updateArchiveRelatedData(result: result)                //; print("handled email with result \(result.rawValue)")
     }
 }
 

@@ -3,16 +3,16 @@ import UIKit
 
 extension CustomFlowLayout {
     
-    override var collectionViewContentSize: CGSize {                                    //print("size = \(contentSize)")
+    override var collectionViewContentSize: CGSize {                            //print("size = \(contentSize)")
         let w = CGFloat(cols) * widthPlusSpace
         let h = CGFloat(rows) * heightPlusSpace
         return CGSize(width: w, height: h)
     }
     
-    func calculateSizes() -> (CGFloat, CGFloat) {                                       //print("resizing cells")
+    func calculateSizes() -> (CGFloat, CGFloat) {                               //print("resizing cells")
         
         var cellWd = CGFloat(0); var cellHt = CGFloat(0)
-        navBarHeight = Double((navController?.navigationBar.frame.height)!)             //; print("nav bar: \(navBarHeight)")
+        navBarHeight = Double((navController?.navigationBar.frame.height)!)     //; print("nav bar: \(navBarHeight)")
         statusBarHeight = Double((globalWindow.windowScene?.statusBarManager!.statusBarFrame)!.height)///Double(UIApplication.shared.statusBarFrame.size.height)
         
         var frame: CGRect
@@ -23,7 +23,7 @@ extension CustomFlowLayout {
             if let safeFrame = customFrame {
                 frame = safeFrame
             } else {
-                frame = zeroFrame                                                       //;print("\n\nit's the nil catcher frame, rows \(rows)")
+                frame = zeroFrame                                               //;print("\n\nit's the nil catcher frame, rows \(rows)")
             } //* default frame is overridden anyway (see above comment); hence its initialization with all 0's
         }
         

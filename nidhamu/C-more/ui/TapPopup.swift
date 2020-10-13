@@ -13,7 +13,7 @@ extension PopupMenuVC {
             cell.backgroundColor = taskAddingColour
             
             guard let firstPathToProcess = indexPathsToProcess.first
-                else {print("no paths to process... even though popup was presented"); return}
+            else {print("no paths to process... even though popup was presented"); return}
             
             let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1]    /// components of path of current item being marked
             var taskWillShowUpNextWeek = false
@@ -25,8 +25,7 @@ extension PopupMenuVC {
                 
                 tasksOfBlockBeingTagged[taskIndex].taskStatus = selectedStatus! ///; print("tagged as: \(casename)\n")
                 
-                if /*[TaskStatus.upcoming].contains(selectedStatus) ||*/  /// tagging a task as .upcoming no longer enabled: .upcoming only default initial status
-                    selectedTaskWillRecur {
+                if selectedTaskWillRecur {
                     taskWillShowUpNextWeek = true /// probably eliminate this variable soon
                 }
                 
@@ -38,7 +37,7 @@ extension PopupMenuVC {
                 } else {addToArchives(taskBeingTagged)}
                 
                 ///pryntTaskTaggingVariables()
-                if selectedStatus == .deferred {/// if task deferred, but also marked recurring, latter has no additional effect: task shows once next week, not twice
+                if selectedStatus == .deferred {/// if task deferred, but also marked recurring, latter has no additional effect: task shows only once next-week
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         timetableVC.setNavBarTitle(customString: nil) /// call it on any of the CollectionVCs
                         
