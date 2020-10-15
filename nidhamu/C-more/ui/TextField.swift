@@ -14,23 +14,23 @@ extension CollectionVC {
     func prepareAndPresentTextField(forTaskAtRow row: Int?) {
         /*globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
          backgroundVC.view.backgroundColor = globalWindow.backgroundColor*/
-        
         var str = "(initial text)"
-        
         guard let tasks = tasksAtIndexPath[timeBlock] else {
             formatAndPresentTextField(str)
             return
         }
         
         if row != nil {
-            let taskDescription = tasks[row! - taskListOffset].taskDescription
-            str = taskDescription
+            let index = row! - taskListOffset
+            if index < tasks.count {
+                let taskDescription = tasks[index].taskDescription // *
+                str = taskDescription
+            }
         }
         formatAndPresentTextField(str)
     }
     
     func formatAndPresentTextField(_ textFieldContents: String) {
-        
         let width = globalWindow.frame.width
         textFieldWidth = width * 3 / 4 /// 3/4 = 6/8 e.g. 8 - 2 columns (1 right, 1 left of text field)
         let eighthWidth = width / 8
@@ -38,7 +38,6 @@ extension CollectionVC {
         if textFieldEditingMode {
             taskField.text = textFieldContents
         }
-        
         taskField.delegate = self
         taskField.frame = CGRect(x: eighthWidth, y: textFieldY, width: textFieldWidth, height: textFieldHeight)
         view.addSubview(taskField)
