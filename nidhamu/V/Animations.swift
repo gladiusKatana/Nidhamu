@@ -14,7 +14,7 @@ extension CollectionVC {
             if indexPathsToProcess.isEmpty {
                 
                 UIView.animate(
-                    withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+                    withDuration: lastLoginTextFadeLength * 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: UIView.AnimationOptions.curveLinear, animations: {
                         
                         if row >= timetableHeaders {
                             cell.backgroundColor =

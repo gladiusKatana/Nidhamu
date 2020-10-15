@@ -12,6 +12,7 @@ var fallBackDate = makeDateFrom(year: 1970, month: 1, day: 1, hr: 1, min: 1, sec
 var lastLoginDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 var lastArchiveDateComponents = [Int(), String(), Int(), String(), String(), Int(), Int()] as [Any]
 
+var lastLoginTextFadeLength = TimeInterval(1.5)
 var oneHour = TimeInterval(3600)
 
 var springForwardExtraHour = 0.0;               var fallBackExtraHour = 0.0

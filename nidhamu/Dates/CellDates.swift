@@ -42,6 +42,13 @@ extension CollectionVC { /// probably will refactor this whole file soon
                                     || truncateMins(Date()).timeIntervalSince1970 - truncateMins(lastLoginDate).timeIntervalSince1970 >= TimeInterval(86400 * 7)
                                     ? formattedDateString(cell.cellDate, roundDown: false, showYear: false, prefix: "\(lastLoginString)\n\n", suffix: "", dateFormat: .monthAndDay)
                                     : lastLoginString
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + lastLoginTextFadeLength) {
+                                    UILabel.transition(with: cell.titleLabel, duration: 1, options: .transitionCrossDissolve, animations: {
+                                        cell.titleLabel.textColor = UIColor.clear
+                                    }, completion: nil)
+                                }
+                                
                             }
                             cell.backgroundColor = dimOrange
                             prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)
