@@ -271,7 +271,6 @@
 				065412A6237A6D830080F3EF /* C-core */,
 				06541284237A6D830080F3EF /* C-more */,
 				065412C0237A6D840080F3EF /* Checks */,
-				067A845023E92C790058E1B4 /* TaskProcessing */,
 				06B6630623CD73A5001449D8 /* Spreadsheets */,
 				0688C38E23481D45007DC878 /* Inactive */,
 				0625168922D6CF4100EBB4C8 /* Base.lproj */,
@@ -308,13 +307,13 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
-		062B56E923EA045D00654AE9 /* Notifications */ = {
+		062B56E923EA045D00654AE9 /* notifications */ = {
 			isa = PBXGroup;
 			children = (
 				0654128C237A6D830080F3EF /* Resizing.swift */,
 				06C65B6C23EA2E9700E21C38 /* DateAlert.swift */,
 			);
-			path = Notifications;
+			path = notifications;
 			sourceTree = "<group>";
 		};
 		06541284237A6D830080F3EF /* C-more */ = {
@@ -324,8 +323,9 @@
 				06541295237A6D830080F3EF /* cell */,
 				06541285237A6D830080F3EF /* ui */,
 				0654128F237A6D830080F3EF /* popup */,
+				067A845023E92C790058E1B4 /* taskProcessing */,
 				06A2035423D809EC00E4FA0A /* messages */,
-				062B56E923EA045D00654AE9 /* Notifications */,
+				062B56E923EA045D00654AE9 /* notifications */,
 			);
 			path = "C-more";
 			sourceTree = "<group>";
@@ -477,7 +477,7 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		067A845023E92C790058E1B4 /* TaskProcessing */ = {
+		067A845023E92C790058E1B4 /* taskProcessing */ = {
 			isa = PBXGroup;
 			children = (
 				065412A9237A6D830080F3EF /* PrepareTBs.swift */,
@@ -488,7 +488,7 @@
 				065412A2237A6D830080F3EF /* BlockBorder.swift */,
 				06A7CCD42491A638003E45BD /* BlockUpdate.swift */,
 			);
-			path = TaskProcessing;
+			path = taskProcessing;
 			sourceTree = "<group>";
 		};
 		0688C38E23481D45007DC878 /* Inactive */ = {
