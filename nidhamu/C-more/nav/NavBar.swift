@@ -19,8 +19,10 @@ extension CollectionVC {
         let buttons = [archiveButton, timetableButton, reloadButton]
         navigationItem.rightBarButtonItems = buttons
         
+        let color = graySeven
+        
         for _ in buttons {
-            if barButtonColours.count <= buttons.count {barButtonColours.append(.black)} /// default colour, for buttons that present all but current vc
+            if barButtonColours.count <= buttons.count {barButtonColours.append(color)} /// default colour, for buttons that present all but current vc
         }
         
         for button in buttons {

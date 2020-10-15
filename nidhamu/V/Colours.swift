@@ -16,6 +16,7 @@ var lightWhite = UIColor.rgb(255, g: 255, b: 255, a: 0.3);      var platinum = U
 var grayOne = UIColor.rgb(0, g: 0, b: 0, a: 0.1);               var grayTwo = UIColor.rgb(0, g: 0, b: 0, a: 0.2)
 var grayOneConverted = UIColor.rgb(138, g: 176, b: 210, a: 1) /// Got alpha=1 equivalent of grayOne*, via screenshot + this app:  tinyurl.com/y2e4smph
 var grayThree = UIColor.rgb(0, g: 0, b: 0, a: 0.3);             var grayFour = UIColor.rgb(0, g: 0, b: 0, a: 0.4)
+var graySeven = UIColor.rgb(0, g: 0, b: 0, a: 0.7)
 var greyoutForTimeBlocksPassedThisWeek = grayOne;               var popupMenuLightGray = UIColor.lightGray
 
 var backgroundImage = UIImage(named: "(big)sky2")?.withRenderingMode(.alwaysTemplate) /// sky background (blue with light clouds)
@@ -42,10 +43,9 @@ extension UIColor {
 ///var lightNavy = UIColor.rgb(0, g: 56, b: 116, a: 0.6);                    ///var halfIcyBlue = UIColor.rgb(150, g: 180, b: 220, a: 0.25)
 ///var darkerIce = UIColor.rgb(130, g: 160, b: 200, a: 1)                    ///a: 0.6 ///(150, g: 180, b: 220, a: 0.7); //(120, g: 150, b: 180, a: 1)
 
-///var midPlatinum = UIColor.rgb(214, g: 214, b: 214, a: 0.5)
-///var graySeven = UIColor.rgb(0, g: 0, b: 0, a: 0.7);                        ///var grayBarelyThere = UIColor.rgb(0, g: 0, b: 0, a: 0.03)
+///var midPlatinum = UIColor.rgb(214, g: 214, b: 214, a: 0.5)                ///var grayBarelyThere = UIColor.rgb(0, g: 0, b: 0, a: 0.03)
 ///var midWhite = UIColor.rgb(255, g: 255, b: 255, a: 0.5)/*****************/
-///var clearGlass = UIColor.rgb(255, g: 255, b: 255, a: 0.05)                 ///; var frostedGlass = UIColor.rgb(230, g: 230, b: 230, a: 0.7) //(255,g: 255,b: 255,a: 0.4)
+///var clearGlass = UIColor.rgb(255, g: 255, b: 255, a: 0.05)                ///; var frostedGlass = UIColor.rgb(230, g: 230, b: 230, a: 0.7) //(255,g: 255,b: 255,a: 0.4)
 
 
 /* *Some more explanation re. the alpha-conversion comment above:
