@@ -10,15 +10,15 @@ extension CollectionVC {
         if row == earliestTaskAddress[1] && column == earliestTaskAddress[0] {
             
             cell.layer.borderColor = UIColor.white.cgColor                          //; print("highlighted cell white")
+            cell.layer.borderWidth = 4
             
             if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))]/*, tasks.count > 1*/ {
                 
                 //cell.titleLabel.text = "(\(taskIndex + 1)/\(tasks.count))" ///= "(\(tasks.count - tasksInBlockToBeProcessed + 1)/\(tasks.count))"
-                let description = taskIndex <= tasks.count - 1 ? " \(tasks[taskIndex].taskDescription)" : "⭐️"
+                let description = taskIndex <= tasks.count - 1 ? "\n   \(tasks[taskIndex].taskDescription)" : "⭐️"
                 
                 cell.titleLabel.text = description
                 cell.titleLabel.font = defaultTimetableCellFont
-                
             }
             
             else {cell.titleLabel.text = globalTaskIdentifier}      /// when evets.count == 1, can just use previously set task's description via this var
