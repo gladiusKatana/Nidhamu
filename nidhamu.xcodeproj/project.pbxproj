@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060F481625380462008CD299 /* AnimateText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F481525380462008CD299 /* AnimateText.swift */; };
 		0625163E22D6C71900EBB4C8 /* nidhamu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0625163C22D6C71900EBB4C8 /* nidhamu.xcdatamodeld */; };
 		0625164E22D6C71B00EBB4C8 /* nidhamuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625164D22D6C71B00EBB4C8 /* nidhamuTests.swift */; };
 		0625165922D6C71B00EBB4C8 /* nidhamuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625165822D6C71B00EBB4C8 /* nidhamuUITests.swift */; };
@@ -41,7 +42,7 @@
 		065412E9237A6D840080F3EF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A0237A6D830080F3EF /* Strings.swift */; };
 		065412EA237A6D840080F3EF /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A1237A6D830080F3EF /* Colours.swift */; };
 		065412EB237A6D840080F3EF /* BlockBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A2237A6D830080F3EF /* BlockBorder.swift */; };
-		065412EC237A6D840080F3EF /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A3237A6D830080F3EF /* Animations.swift */; };
+		065412EC237A6D840080F3EF /* AnimateCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A3237A6D830080F3EF /* AnimateCells.swift */; };
 		065412ED237A6D840080F3EF /* Prynts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A4237A6D830080F3EF /* Prynts.swift */; };
 		065412EE237A6D840080F3EF /* RotateLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A5237A6D830080F3EF /* RotateLock.swift */; };
 		065412EF237A6D840080F3EF /* VCLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065412A7237A6D830080F3EF /* VCLifecycle.swift */; };
@@ -116,6 +117,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		060F481525380462008CD299 /* AnimateText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateText.swift; sourceTree = "<group>"; };
 		0625163222D6C71900EBB4C8 /* nidhamu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nidhamu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0625163D22D6C71900EBB4C8 /* nidhamu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nidhamu.xcdatamodel; sourceTree = "<group>"; };
 		0625164422D6C71A00EBB4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,7 +158,7 @@
 		065412A0237A6D830080F3EF /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		065412A1237A6D830080F3EF /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		065412A2237A6D830080F3EF /* BlockBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockBorder.swift; sourceTree = "<group>"; };
-		065412A3237A6D830080F3EF /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		065412A3237A6D830080F3EF /* AnimateCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateCells.swift; sourceTree = "<group>"; };
 		065412A4237A6D830080F3EF /* Prynts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prynts.swift; sourceTree = "<group>"; };
 		065412A5237A6D830080F3EF /* RotateLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateLock.swift; sourceTree = "<group>"; };
 		065412A7237A6D830080F3EF /* VCLifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCLifecycle.swift; sourceTree = "<group>"; };
@@ -382,7 +384,8 @@
 		0654129F237A6D830080F3EF /* V */ = {
 			isa = PBXGroup;
 			children = (
-				065412A3237A6D830080F3EF /* Animations.swift */,
+				065412A3237A6D830080F3EF /* AnimateCells.swift */,
+				060F481525380462008CD299 /* AnimateText.swift */,
 				065412A4237A6D830080F3EF /* Prynts.swift */,
 				065412A1237A6D830080F3EF /* Colours.swift */,
 				065412A0237A6D830080F3EF /* Strings.swift */,
@@ -707,7 +710,7 @@
 				0654130E237A6D840080F3EF /* DefaultSave.swift in Sources */,
 				0654130D237A6D840080F3EF /* VCType.swift in Sources */,
 				06541315237A6D840080F3EF /* Tasks.swift in Sources */,
-				065412EC237A6D840080F3EF /* Animations.swift in Sources */,
+				065412EC237A6D840080F3EF /* AnimateCells.swift in Sources */,
 				06541307237A6D840080F3EF /* Orientation.swift in Sources */,
 				065412D6237A6D840080F3EF /* EmailVC.swift in Sources */,
 				065412EA237A6D840080F3EF /* Colours.swift in Sources */,
@@ -737,6 +740,7 @@
 				06541312237A6D840080F3EF /* TaskVars.swift in Sources */,
 				065412F4237A6D840080F3EF /* CollectionVC.swift in Sources */,
 				0654130F237A6D840080F3EF /* VCs.swift in Sources */,
+				060F481625380462008CD299 /* AnimateText.swift in Sources */,
 				065412FF237A6D840080F3EF /* Sizes.swift in Sources */,
 				065412D4237A6D840080F3EF /* TFReturn.swift in Sources */,
 				06541302237A6D840080F3EF /* ZIndex.swift in Sources */,

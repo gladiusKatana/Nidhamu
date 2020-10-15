@@ -43,14 +43,7 @@ extension CollectionVC { /// probably will refactor this whole file soon
                                     ? formattedDateString(cell.cellDate, roundDown: false, showYear: false, prefix: "\(lastLoginString)\n\n", suffix: "", dateFormat: .monthAndDay)
                                     : lastLoginString
                                 
-                                if taskArraysToProcess.isEmpty {
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + lastLoginTextFadeLength) {
-                                        UILabel.transition(with: cell.titleLabel, duration: 1, options: .transitionCrossDissolve, animations: {
-                                            cell.titleLabel.textColor = UIColor.clear
-                                        }, completion: nil)
-                                    }
-                                }
-                                
+                                conditionalTextAnimation(cell: cell)
                             }
                             cell.backgroundColor = dimOrange
                             prepareToProcessTasksSinceLastLogin(cell: cell, column: column, row: row)

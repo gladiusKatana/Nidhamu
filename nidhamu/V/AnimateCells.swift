@@ -1,4 +1,4 @@
-// Animations       ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// AnimateCells     ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 extension CollectionVC {
