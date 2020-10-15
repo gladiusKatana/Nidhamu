@@ -9,6 +9,7 @@ func testForCellBannerNotification(_ cell: BaseCell, row: Int, col: Int, notific
     if (col, row) == (7,0) {
         cell.titleLabel.text = formattedDateString(lastLoginDate, roundDown: false, showYear: true,
                                                    prefix: " Last Login", suffix: " ", dateFormat: .fullDayShortWithMins)
+        cell.titleLabel.textColor = graySeven
         if str != "" {weight = .light}
     } else if (col, row) == (7,1) {
         dstNotificationCellPath = (col, row)
