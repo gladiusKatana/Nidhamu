@@ -10,7 +10,6 @@ extension CollectionVC {
             self.collectionView.reloadData()
             reloadLock = true /// prevents concurrent reload-Data()s
             //print("↺")
-            
         }
         //else {print("🔒reloadLock")}
         
