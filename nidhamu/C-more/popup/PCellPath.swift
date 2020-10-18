@@ -17,10 +17,10 @@ extension PopupMenuVC {
         {
             let col = indexPathsToProcess.first![0]; let rw = indexPathsToProcess.first![1]
             guard let tasks = tasksAtIndexPath[TimeBlock(values:(col, rw))] else {print("error casting task array from popup wizard"); return cell}
-
+            
             cell.titleLabel.text = "Tag Task (\(tasks.count) left)"
             
-            if tasks.count == 0 && indexPathsToProcess.count > 0 {                      print("autosaving")
+            if tasks.count == 0 && indexPathsToProcess.count > 0 {                      //print("autosaving")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
                     tasksAtIndexPath.remove(at: tasksAtIndexPath.index(forKey: TimeBlock(values:(col, rw)))!)

@@ -2,7 +2,7 @@
 import UIKit
 
 func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, pryntTasks: Bool) {  //print("saving")
-    if showDate {pryntDate(Date(), prefix: "\n               ✔︎saved")}
+    if showDate {pryntDate(Date(), prefix: "               ✔︎saved")}
     let defaults = UserDefaults.standard
     timeBlockPaths.removeAll(); taskDescriptionArrays.removeAll(); taskStatusArrays.removeAll(); taskDeadlineArrays.removeAll()
     
@@ -34,10 +34,12 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
         }///else {print("\n!descriptions array at this time block contains only default (\(defaultEmptTaskDescription)), and it's: \(vals[0].taskDescription)")}
     }
     
-    timeBlockPaths = sortedTimeBlockPaths
-    taskDescriptionArrays = applySortingTransform(taskDescriptionArrays, transform: sortingTransform) as? [[String]] ?? taskDescriptionArrays
-    taskStatusArrays = applySortingTransform(taskStatusArrays, transform: sortingTransform) as? [[Int]] ?? taskStatusArrays
-    taskDeadlineArrays = applySortingTransform(taskDeadlineArrays, transform: sortingTransform) as? [[[Any]]] ?? taskDeadlineArrays
+    if taskDescriptionArrays.count > 1 {
+        timeBlockPaths = sortedTimeBlockPaths
+        taskDescriptionArrays = applySortingTransform(taskDescriptionArrays, transform: sortingTransform) as? [[String]] ?? taskDescriptionArrays
+        taskStatusArrays = applySortingTransform(taskStatusArrays, transform: sortingTransform) as? [[Int]] ?? taskStatusArrays
+        taskDeadlineArrays = applySortingTransform(taskDeadlineArrays, transform: sortingTransform) as? [[[Any]]] ?? taskDeadlineArrays
+    }
     
     if pryntTasks {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {

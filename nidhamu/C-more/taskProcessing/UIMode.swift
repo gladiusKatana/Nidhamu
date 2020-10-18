@@ -30,17 +30,15 @@ extension PopupMenuVC {
             
             selectedTaskWillRecur = false
             
-            if indexPathsToProcess.isEmpty || autoSave {
-                defaultSaveData(saveDate: true, resetLastLogin: true, showDate: true, pryntTasks: true)
+            if indexPathsToProcess.isEmpty {
+                defaultSaveData(saveDate: true, resetLastLogin: autoSave, showDate: true, pryntTasks: true)
                 AppUtility.lockOrientation(.all)
                 
             } else {
                 defaultSaveData(saveDate: false, resetLastLogin: false, showDate: false, pryntTasks: true)
             }
-            
-            if !autoSave {
-                timetableVC.tagTasksSinceLastLogin()
-            }
+
+            timetableVC.tagTasksSinceLastLogin()
             
             timetableVC.reloadCV()                                          ///; print("block tasks remaining now: \(tasksInBlockToBeProcessed)\n")
         }
