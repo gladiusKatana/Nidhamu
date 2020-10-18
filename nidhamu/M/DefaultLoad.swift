@@ -40,7 +40,6 @@ func defaultLoadData(showDate: Bool) {                                          
 }
 
 func populateDictionaryFromDefaults() {                                     //print("task description count: \(taskDescriptionArrays.count)")
-    //    if taskDescriptionArrays.count > 0 {
     var i = 0
     for path in timeBlockPaths {                                                            //print("path: \(path)")
         let taskDescriptions = taskDescriptionArrays[i] //!*
@@ -60,7 +59,6 @@ func populateDictionaryFromDefaults() {                                     //pr
         tasksAtIndexPath[TimeBlock(values: (path[0], path[1]))] = tasks
         i += 1
     }
-    //    }
 }
 
 func populateArchivedDatesAndStatusesFromDefaults() {

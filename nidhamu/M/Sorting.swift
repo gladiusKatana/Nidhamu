@@ -1,7 +1,6 @@
 // Sorting          ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
-
 func findSortingTransform(_ input: [[Int]], output: [[Int]]) -> [Int] {         /// Only called on index-path array here (index paths are unique)...
     var transform = [Int]()                                                     /// ...so duplication when looping over elements is not an issue
     
@@ -35,7 +34,6 @@ func applySortingTransform(_ input: [Any], transform: [Int]) -> [Any] {
 }
 
 func lastTaskFromPath(_ path: [Int]) -> SimpleTask {
-    
     let err = "no item @ path [sort attempt]"
     
     guard let tasksToProcess = tasksAtIndexPath[TimeBlock(values:(path[0], path[1]))],

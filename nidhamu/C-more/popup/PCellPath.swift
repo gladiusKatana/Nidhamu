@@ -17,27 +17,18 @@ extension PopupMenuVC {
         {
             let col = indexPathsToProcess.first![0]; let rw = indexPathsToProcess.first![1]
             guard let tasks = tasksAtIndexPath[TimeBlock(values:(col, rw))] else {print("error casting task array from popup wizard"); return cell}
-            
-            /*let taskId = globalTaskIdentifier
-             cell.titleLabel.text = taskId == defaultTaskIdentifier ? "Mark \(defaultTaskIdentifier):" : "Mark '\(taskId)':"*/
-            
-            //cell.titleLabel.text = "Tag Task \(tasks.count - tasksInBlockToBeProcessed + 1) of \(tasks.count)"
+
             cell.titleLabel.text = "Tag Task (\(tasks.count) left)"
             
             if tasks.count == 0 && indexPathsToProcess.count > 0 {                      print("autosaving")
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
-                    //if !taskWillShowUpNextWeek || selectedStatus == .deferred {
                     tasksAtIndexPath.remove(at: tasksAtIndexPath.index(forKey: TimeBlock(values:(col, rw)))!)
-                    //}
-                    
-                    //taskIndex = 0
                     indexPathsToProcess.removeFirst(); taskArraysToProcess.removeFirst(); taskDescriptionsToProcess.removeFirst()
                     
                     if !taskArraysToProcess.isEmpty {
                         tasksInBlockToBeProcessed = taskArraysToProcess.first!.count
                     }
-                    
                     self.dismissPopupMenuAndSave(newTimeBlock: true, autoSave: true)
                 }
             }

@@ -11,10 +11,8 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
         timeBlockPaths.append([a, b])
     }
     
-    //    if timeBlockPaths.count > 1 {
     sortedTimeBlockPaths = timeBlockPaths.sorted(by: {lastTaskFromPath($0).deadline < lastTaskFromPath($1).deadline})
     sortingTransform = findSortingTransform(timeBlockPaths, output: sortedTimeBlockPaths)   //; print("T:\(sortingTransform)\n")
-    //    }
     
     for vals in tasksAtIndexPath.values {
         if vals.count >= 1 {
@@ -36,12 +34,10 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
         }///else {print("\n!descriptions array at this time block contains only default (\(defaultEmptTaskDescription)), and it's: \(vals[0].taskDescription)")}
     }
     
-    //    if timeBlockPaths.count > 1 {
     timeBlockPaths = sortedTimeBlockPaths
     taskDescriptionArrays = applySortingTransform(taskDescriptionArrays, transform: sortingTransform) as? [[String]] ?? taskDescriptionArrays
     taskStatusArrays = applySortingTransform(taskStatusArrays, transform: sortingTransform) as? [[Int]] ?? taskStatusArrays
     taskDeadlineArrays = applySortingTransform(taskDeadlineArrays, transform: sortingTransform) as? [[[Any]]] ?? taskDeadlineArrays
-    //    }
     
     if pryntTasks {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
