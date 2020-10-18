@@ -16,7 +16,7 @@ extension CollectionVC {
                 if tasks.count != 0 {
                     description = "\(newLineAndSpace)\(tasks[0].taskDescription)"
                 } else {
-                    description = "\(newLineAndSpace)✔︎"
+                    description = indexPathsToProcess.count > 1 ? "\(newLineAndSpace)..." : "\(newLineAndSpace)✔︎"
                     if downcastLayout?.autoFitHeightScale != 1 {
                         downcastLayout?.autoFitHeightScale = 1      //; print("reset hScale to 1 on \(topVC.viewControllerType)")
                     }
