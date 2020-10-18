@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		060F481625380462008CD299 /* AnimateText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F481525380462008CD299 /* AnimateText.swift */; };
+		0624AC26253C19DC00C48DF2 /* ProcessCurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0624AC25253C19DC00C48DF2 /* ProcessCurrent.swift */; };
 		0625163E22D6C71900EBB4C8 /* nidhamu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0625163C22D6C71900EBB4C8 /* nidhamu.xcdatamodeld */; };
 		0625164E22D6C71B00EBB4C8 /* nidhamuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625164D22D6C71B00EBB4C8 /* nidhamuTests.swift */; };
 		0625165922D6C71B00EBB4C8 /* nidhamuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625165822D6C71B00EBB4C8 /* nidhamuUITests.swift */; };
@@ -118,6 +119,7 @@
 
 /* Begin PBXFileReference section */
 		060F481525380462008CD299 /* AnimateText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateText.swift; sourceTree = "<group>"; };
+		0624AC25253C19DC00C48DF2 /* ProcessCurrent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessCurrent.swift; sourceTree = "<group>"; };
 		0625163222D6C71900EBB4C8 /* nidhamu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nidhamu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0625163D22D6C71900EBB4C8 /* nidhamu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nidhamu.xcdatamodel; sourceTree = "<group>"; };
 		0625164422D6C71A00EBB4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 				065412B6237A6D840080F3EF /* DateStrings.swift */,
 				065412B0237A6D840080F3EF /* FormatDate.swift */,
 				065412B7237A6D840080F3EF /* DateRefresh.swift */,
+				0624AC25253C19DC00C48DF2 /* ProcessCurrent.swift */,
 				065412B5237A6D840080F3EF /* CellDates.swift */,
 				065412B1237A6D840080F3EF /* SetCellDate.swift */,
 				065412B3237A6D840080F3EF /* ShowDates.swift */,
@@ -691,6 +694,7 @@
 				065412E3237A6D840080F3EF /* BaseCell.swift in Sources */,
 				06C65B6D23EA2E9700E21C38 /* DateAlert.swift in Sources */,
 				065412ED237A6D840080F3EF /* Prynts.swift in Sources */,
+				0624AC26253C19DC00C48DF2 /* ProcessCurrent.swift in Sources */,
 				0678FC5E23DAA6CB009B25B8 /* LoginInterval.swift in Sources */,
 				065412DA237A6D840080F3EF /* Keyboard.swift in Sources */,
 				06541304237A6D840080F3EF /* Layout.swift in Sources */,
