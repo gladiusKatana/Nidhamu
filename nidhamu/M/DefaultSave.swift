@@ -11,8 +11,10 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
         timeBlockPaths.append([a, b])
     }
     
-    sortedTimeBlockPaths = timeBlockPaths.sorted(by: {lastTaskFromPath($0).deadline < lastTaskFromPath($1).deadline})
-    sortingTransform = findSortingTransform(timeBlockPaths, output: sortedTimeBlockPaths)   //; print("T:\(sortingTransform)\n")
+    if timeBlockPaths.count > 1 {
+        sortedTimeBlockPaths = timeBlockPaths.sorted(by: {lastTaskFromPath($0).deadline < lastTaskFromPath($1).deadline})
+        sortingTransform = findSortingTransform(timeBlockPaths, output: sortedTimeBlockPaths)   //; print("T:\(sortingTransform)\n")
+    }
     
     for vals in tasksAtIndexPath.values {
         if vals.count >= 1 {
