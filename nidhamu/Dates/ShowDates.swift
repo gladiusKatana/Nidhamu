@@ -6,22 +6,25 @@ extension CollectionVC {
     func showKeyTimeBlockDates(cell: CustomCell, layout: CustomFlowLayout) {
         
         let column = cell.xyCoordinate[0];  let row = cell.xyCoordinate[1]          /// for now: may pass in row & column from caller instead
-        
         if row == earliestTaskAddress[1] && column == earliestTaskAddress[0] {
             
             cell.layer.borderColor = UIColor.white.cgColor                          //; print("highlighted cell white")
             cell.layer.borderWidth = 4
             
             if let tasks = tasksAtIndexPath[TimeBlock(values:(column, row))]/*, tasks.count > 1*/ {
-                
-                //cell.titleLabel.text = "(\(taskIndex + 1)/\(tasks.count))" ///= "(\(tasks.count - tasksInBlockToBeProcessed + 1)/\(tasks.count))"
-                let description = taskIndex <= tasks.count - 1 ? "\n   \(tasks[taskIndex].taskDescription)" : "⭐️"
+                var description = ""; let newLineAndSpace = "\n   "
+                if tasks.count != 0 {
+                    description = "\(newLineAndSpace)\(tasks[0].taskDescription)"
+                } else {
+                    description = "\(newLineAndSpace)✔︎"
+                    if downcastLayout?.autoFitHeightScale != 1 {
+                        downcastLayout?.autoFitHeightScale = 1      //; print("reset hScale to 1 on \(topVC.viewControllerType)")
+                    }
+                }
                 
                 cell.titleLabel.text = description
                 cell.titleLabel.font = defaultTimetableCellFont
-            }
-            
-            else {cell.titleLabel.text = globalTaskIdentifier}      /// when evets.count == 1, can just use previously set task's description via this var
+            } else {cell.titleLabel.text = globalTaskIdentifier}   /// when evets.count == 1, can just use previously set task's description via this var
         }
     }
     

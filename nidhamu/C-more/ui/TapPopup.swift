@@ -21,9 +21,9 @@ extension PopupMenuVC {
             if let tasksOfBlockBeingTagged = tasksAtIndexPath[TimeBlock(values:(clm, rw))] {  /// writing to the dictionary
                 
                 let selectedStatus = TaskStatus(rawValue: row)
-                let taskBeingTagged = tasksOfBlockBeingTagged[taskIndex]
+                let taskBeingTagged = tasksOfBlockBeingTagged[0]
                 
-                tasksOfBlockBeingTagged[taskIndex].taskStatus = selectedStatus! ///; print("tagged as: \(casename)\n")
+                tasksOfBlockBeingTagged[0].taskStatus = selectedStatus! ///; print("tagged as: \(casename)\n")
                 
                 if selectedTaskWillRecur {
                     taskWillShowUpNextWeek = true /// probably eliminate this variable soon

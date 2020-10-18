@@ -2,7 +2,6 @@
 import UIKit
 
 func defaultLoadData(showDate: Bool) {                                                      //print("(load using defaults)\n")
-    
     let defaults = UserDefaults.standard
     
     if let components = defaults.array(forKey: "savedLastLoginDate") {
@@ -40,9 +39,9 @@ func defaultLoadData(showDate: Bool) {                                          
     firstTimeLoaded = true
 }
 
-func populateDictionaryFromDefaults() {
+func populateDictionaryFromDefaults() {                                     //print("task description count: \(taskDescriptionArrays.count)")
+    //    if taskDescriptionArrays.count > 0 {
     var i = 0
-    
     for path in timeBlockPaths {                                                            //print("path: \(path)")
         let taskDescriptions = taskDescriptionArrays[i] //!*
         var tasks = [SimpleTask]()
@@ -61,6 +60,7 @@ func populateDictionaryFromDefaults() {
         tasksAtIndexPath[TimeBlock(values: (path[0], path[1]))] = tasks
         i += 1
     }
+    //    }
 }
 
 func populateArchivedDatesAndStatusesFromDefaults() {

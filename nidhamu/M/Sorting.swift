@@ -6,7 +6,7 @@ func findSortingTransform(_ input: [[Int]], output: [[Int]]) -> [Int] {         
     var transform = [Int]()                                                     /// ...so duplication when looping over elements is not an issue
     
     for element in input {                                                      /// Note, index path array (input) is date-sorted)...
-        transform.append(output.firstIndex(of: element)!)                       /// ...that's why it's used to find the sorting transform
+        transform.append(output.firstIndex(of: element)!) ///* monitor for crash     /// ...that's why it's used to find the sorting transform
     }
     return transform
 }
@@ -38,7 +38,9 @@ func lastTaskFromPath(_ path: [Int]) -> SimpleTask {
     
     let err = "no item @ path [sort attempt]"
     
-    guard let tasksToProcess = tasksAtIndexPath[TimeBlock(values:(path[0], path[1]))] else {
+    guard let tasksToProcess = tasksAtIndexPath[TimeBlock(values:(path[0], path[1]))],
+          tasksAtIndexPath[TimeBlock(values:(path[0], path[1]))]!.count > 0
+    else {
         print(err)
         return SimpleTask(taskDescription: err, deadline: Date(), taskStatus: .done)
     }

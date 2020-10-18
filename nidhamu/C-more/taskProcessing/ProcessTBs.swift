@@ -18,7 +18,7 @@ extension CollectionVC {
             return
         }
         
-        if indexPathsToProcess.count > 1 && taskArraysToProcess.count > 1 {
+        if indexPathsToProcess.count > 1 && taskArraysToProcess.count > 1 {  // * * *
             indexPathsToProcess = indexPathsToProcess.sorted(by: {lastTaskFromPath($0).deadline < lastTaskFromPath($1).deadline})
             taskArraysToProcess = taskArraysToProcess.sorted(by: {$0.last!.deadline < $1.last!.deadline})
         }
@@ -43,7 +43,7 @@ extension CollectionVC {
             }
             thereWillBeARowException = false
         }
-        tagTasksSinceLastLogin()///; print("\(taskArraysToProcess.count) blocks remaining now & \(tasksInBlockToBeProcessed) tasks left (tag #\(taskIndex + 1))\n")
+        tagTasksSinceLastLogin()///; print("\(taskArraysToProcess.count) blocks remaining now & \(tasksInBlockToBeProcessed) tasks left\n")
     }
 }
 

@@ -11,14 +11,12 @@ extension CollectionVC {
             
             if let firstTaskArrayToProcess = taskArraysToProcess.first {                        ///if taskArraysToProcess.count > 1 {
                 
-                if taskIndex < firstTaskArrayToProcess.count {
-                    globalTaskIdentifier = "\(firstTaskArrayToProcess[taskIndex].taskDescription)"
+                if 0 < firstTaskArrayToProcess.count {
+                    globalTaskIdentifier = "\(firstTaskArrayToProcess[0].taskDescription)"
                 }
                 else {print("task index exceeds task array size")}
                 
             } else {print("could not cast to task array first item")}
-            
-            /*} else {globalTaskIdentifier = "\(taskArraysToProcess[0][taskIndex].taskDescription)"}*/
             
             presentPopupViewToTagTasks(column: column, row: row)
             

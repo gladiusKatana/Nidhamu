@@ -11,15 +11,17 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
         timeBlockPaths.append([a, b])
     }
     
+    //    if timeBlockPaths.count > 1 {
     sortedTimeBlockPaths = timeBlockPaths.sorted(by: {lastTaskFromPath($0).deadline < lastTaskFromPath($1).deadline})
     sortingTransform = findSortingTransform(timeBlockPaths, output: sortedTimeBlockPaths)   //; print("T:\(sortingTransform)\n")
+    //    }
     
     for vals in tasksAtIndexPath.values {
         if vals.count >= 1 {
             var taskDescriptions = [String]()
             var taskStatuses = [Int]()
             var taskDeadlineComponents = [[Int(), String(), Int(), String(), Int(), Int()]] as [[Any]]
-            taskDeadlineComponents.removeAll() /// keep this line; while it looks like above array-of-arrays initialized empty on each iteration of the loop, it's not
+            taskDeadlineComponents.removeAll() /// keep this line; above array-of-arrays looks like it's initialized empty on each iteration of the loop; it's not
             
             for task in vals {
                 taskDescriptions.append(task.taskDescription)
@@ -34,10 +36,12 @@ func defaultSaveData(saveDate: Bool, resetLastLogin: Bool, showDate: Bool, prynt
         }///else {print("\n!descriptions array at this time block contains only default (\(defaultEmptTaskDescription)), and it's: \(vals[0].taskDescription)")}
     }
     
+    //    if timeBlockPaths.count > 1 {
     timeBlockPaths = sortedTimeBlockPaths
-    taskDescriptionArrays = applySortingTransform(taskDescriptionArrays, transform: sortingTransform) as! [[String]]
-    taskStatusArrays = applySortingTransform(taskStatusArrays, transform: sortingTransform) as! [[Int]]
-    taskDeadlineArrays = applySortingTransform(taskDeadlineArrays, transform: sortingTransform) as! [[[Any]]]
+    taskDescriptionArrays = applySortingTransform(taskDescriptionArrays, transform: sortingTransform) as? [[String]] ?? taskDescriptionArrays
+    taskStatusArrays = applySortingTransform(taskStatusArrays, transform: sortingTransform) as? [[Int]] ?? taskStatusArrays
+    taskDeadlineArrays = applySortingTransform(taskDeadlineArrays, transform: sortingTransform) as? [[[Any]]] ?? taskDeadlineArrays
+    //    }
     
     if pryntTasks {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {

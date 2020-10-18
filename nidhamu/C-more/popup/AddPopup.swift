@@ -12,6 +12,7 @@ extension CollectionVC {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             if !taggingViewDisplayed {
+//                print("presenting tagging view, \(indexPathsToProcess.count) path(s) to process")
                 let layout = self.downcastLayout!
                 let popupMenuLayout = taskTaggingViewController.downcastLayout!
                 
@@ -50,7 +51,7 @@ extension CollectionVC {
                 timetableVC.view.addSubview(taskTaggingViewController.view)     //; print("----------------adding popup")
                 timetableVC.view.addSubview(taskRecurringSwitchView)            //; print("adding switch")
                 
-                taskTaggingViewController.becomeFirstResponder()
+//                taskTaggingViewController.becomeFirstResponder()
                 taggingViewDisplayed = true
                 taskTaggingViewController.collectionView.reloadData()
                 
