@@ -5,10 +5,6 @@ extension PopupMenuVC {
     
     func updateBlockProcessingVariables(column: Int, row: Int, taskWillShowUpNextWeek: Bool, selectedStatus: TaskStatus) {
         
-        if taskIndex <= tasksInBlockToBeProcessed {
-            taskIndex += 1
-        }
-        
         if selectedStatus != .deferred {
             if tasksInBlockToBeProcessed > 0 {
                 tasksInBlockToBeProcessed -= 1
@@ -22,7 +18,7 @@ extension PopupMenuVC {
         
         dismissPopupMenuAndSave(newTimeBlock: false, autoSave: false)
         
-        ///print("\(taskArraysToProcess.count) blocks now; \(tasksInBlockToBeProcessed) tasks; tag #\(taskIndex + 1)\n")
+        ///print("\(taskArraysToProcess.count) blocks now; \(tasksInBlockToBeProcessed) tasks\n")
     }
 }
 

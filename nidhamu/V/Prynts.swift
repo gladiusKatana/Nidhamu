@@ -60,6 +60,6 @@ func pryntDate(_ date: Date, prefix: String) {
 }
 
 func pryntTaskTaggingVariables() {
-    print("\n\(taskArraysToProcess.count) task arrays to process;\ndescriptions to process: \(taskDescriptionsToProcess);\npaths to process: \(indexPathsToProcess)\nindex \(taskIndex) of \(tasksInBlockToBeProcessed) tasks in block")
+    print("\n\(taskArraysToProcess.count) task arrays to process;\ndescriptions to process: \(taskDescriptionsToProcess);\npaths to process: \(indexPathsToProcess)\n\(tasksInBlockToBeProcessed) tasks in block")
 }
 

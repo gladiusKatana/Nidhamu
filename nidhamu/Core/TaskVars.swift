@@ -2,7 +2,7 @@
 import UIKit
 
 
-var taskIndex = 0;                      var tasksInBlockToBeProcessed = 0
+var tasksInBlockToBeProcessed = 0
 
 var globalTaskIdentifier = "Task";      var defaultTaskIdentifier = "Task"
 
