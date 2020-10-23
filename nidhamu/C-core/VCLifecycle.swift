@@ -30,7 +30,6 @@ extension CollectionVC {
         setTopViewController()
         if [.taskList, .archive].contains(viewControllerType) {
             setupPinchToExit()
-            reloadCV()
         }
     }
     
