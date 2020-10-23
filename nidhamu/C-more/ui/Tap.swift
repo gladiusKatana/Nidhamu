@@ -41,6 +41,8 @@ extension CollectionVC {
                     if let tasks = tasksAtIndexPath[timeBlock] {
                         taskListVC.downcastLayout!.rows = tasks.count == 0 ? minTaskListRows : tasks.count + minTaskListRows}
                     reloadCV()
+                    reloadLock = false
+                    timetableVC.reloadCV()
                     taskIsDeletable = false ///; print("taskDescriptionArrays: \(taskDescriptionArrays)") ///print("timeBlockPaths: \(timeBlockPaths)")
                     setNavBarTitle(customString: nil)
                 } else {

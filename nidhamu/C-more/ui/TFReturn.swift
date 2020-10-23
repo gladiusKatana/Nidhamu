@@ -10,8 +10,7 @@ extension CollectionVC {
             
             previousTimeBlockPathSelected = defaultPathOutOfView
             exitTaskAddingMode()
-        }
-        else {
+        } else {
             if viewControllerType == .timetable {
                 addToTimeBlock(atColumn: selectedTimeBlockPath[0], atRow: selectedTimeBlockPath[1],
                                textEntered: textEntered, taskDeadline: selectedCellDate, withStatus: nil)
@@ -21,8 +20,7 @@ extension CollectionVC {
                 if rowLongPressed != -1 {
                     rewriteTask(atColumn: selectedTimeBlockPath[0], atRow: selectedTimeBlockPath[1], index: rowLongPressed,
                                 textEntered: textEntered, taskDeadline: selectedCellDate, withStatus: nil)
-                }
-                else {
+                } else {
                     addToTimeBlock(atColumn: selectedTimeBlockPath[0], atRow: selectedTimeBlockPath[1],
                                    textEntered: textEntered, taskDeadline: selectedCellDate, withStatus: nil)
                     
@@ -42,6 +40,11 @@ extension CollectionVC {
         }
         
         reloadCV()
+        if viewControllerType == .taskList {
+            reloadLock = false
+            timetableVC.reloadCV()
+        }
+        
         topVC.setNavBarTitle(customString: nil)
         return true
     }
