@@ -13,11 +13,6 @@ extension CollectionVC {
             
             if "\(Date())".contains(finalSecondStrings[i]) {            //print("DATE: \(Date())")
                 reloadedFromHourTickingOver = false
-                if !taggingViewDisplayed {
-                    defaultSaveData(saveDate: true, resetLastLogin: false, showDate: false, pryntTasks: false)
-                } else {
-                    defaultSaveData(saveDate: false, resetLastLogin: false, showDate: false, pryntTasks: false)
-                }
             }
             i+=1
         }
