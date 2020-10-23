@@ -14,7 +14,7 @@ extension CollectionVC {
     func prepareAndPresentTextField(forTaskAtRow row: Int?) {
         /*globalWindow.backgroundColor = iosKeyboardDefaultColourApprox
          backgroundVC.view.backgroundColor = globalWindow.backgroundColor*/
-        var str = "(initial text)"
+        var str = ""
         guard let tasks = tasksAtIndexPath[timeBlock] else {
             formatAndPresentTextField(str)
             return
