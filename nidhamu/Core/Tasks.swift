@@ -1,34 +1,51 @@
- /* Tasks            ･   nidhamu   ･                                        deadline                                  15 + 5 tasks
+ /* Tasks            ･   nidhamu   ･                                        deadline                                  28 tasks
   
   
-  multiple cloud photo backgrounds randomized based on login date
-  improve deferral vc look&feel
-  task-list view controller as single-field view (not collection view)?
+  ⁌o⁍ “edit task” header but text field says “add task…”
+  ⁌o⁍ deferral wrong task
+  ⁌o⁍ title label offset w/ keyboard present
   
-  taskListVC II: day
-  taskListVC III: week
+  
+  cell highlighting animation during “…”                            UI
+  about-to-update notification + countdown
+  export-history button
+  
+  
+  view titles in top cells
+  improve task list vc look
+  improve archive vc look
+  multiple date-randomized cloudy sky backgrounds
+  
+
+  insert task to task list                                          UI+
+  orientation enum
+  eliminate text blink on reloadData()?
+  orientation independence even w/ wizard presented
+  app intro
+  
+  
+  appointments
+  track-record charts                                               V
+  taskListVCs: day, week
+  calendarVC
   week-navigation buttons
   
-  prevent user changing date
-  tasksAtDate Dictionary?
   
-  app intro
-  launch screen
-  icon
+  prevent user changing date                                        M
+  tasksAtDate Dictionary?
+  backend data; private mode
+  
   
   rebrand
   readme
   domain
+  icon
+  launch screen
   app store
   
   
-  + calendarVC
-  + login date interval outlined/animated, not perma-coloured
-  + device specific fonts; orientation enum
-  + orientation independence even w/ task-tagging wizard presented
-  + bluetooth sync between devices (private mode)
-  
-  
+  * bluetooth sync between devices (private mode)
+  * task-list view controller as single-field view (not collection view)?
   
   
   
