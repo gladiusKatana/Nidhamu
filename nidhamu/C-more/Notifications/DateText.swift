@@ -1,4 +1,4 @@
-// DateAlert        ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
+// DateText         ･   nidhamu   ･     created by Garth Snyder   aka   gladiusKatana  ⚔️
 import UIKit
 
 func testForCellBannerNotification(_ cell: BaseCell, row: Int, col: Int, notificationColour: UIColor?, notificationText: String?) {
@@ -22,7 +22,7 @@ func testForCellBannerNotification(_ cell: BaseCell, row: Int, col: Int, notific
     }
     
     if textFieldDisplayed && currentOrientation == "landscape" {
-        cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(7), weight: weight)
+        cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(8), weight: weight)
     }
     else {cell.titleLabel.font = UIFont.systemFont(ofSize: CGFloat(12), weight: weight)}
 }

@@ -95,7 +95,7 @@
 		06A7CCD32491429A003E45BD /* Dates_cont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7CCD22491429A003E45BD /* Dates_cont.swift */; };
 		06A7CCD52491A638003E45BD /* BlockUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7CCD42491A638003E45BD /* BlockUpdate.swift */; };
 		06A7CCD724954A76003E45BD /* TFSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7CCD624954A76003E45BD /* TFSetup.swift */; };
-		06C65B6D23EA2E9700E21C38 /* DateAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C65B6C23EA2E9700E21C38 /* DateAlert.swift */; };
+		06B814412546062A007F332F /* DateText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B814402546062A007F332F /* DateText.swift */; };
 		06EA6566252D75AC00935500 /* Task Archive.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 06EA6564252D75AC00935500 /* Task Archive.numbers */; };
 		06EA6567252D75AC00935500 /* Task Archive.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 06EA6565252D75AC00935500 /* Task Archive.xlsx */; };
 /* End PBXBuildFile section */
@@ -212,7 +212,7 @@
 		06A7CCD22491429A003E45BD /* Dates_cont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates_cont.swift; sourceTree = "<group>"; };
 		06A7CCD42491A638003E45BD /* BlockUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUpdate.swift; sourceTree = "<group>"; };
 		06A7CCD624954A76003E45BD /* TFSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFSetup.swift; sourceTree = "<group>"; };
-		06C65B6C23EA2E9700E21C38 /* DateAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAlert.swift; sourceTree = "<group>"; };
+		06B814402546062A007F332F /* DateText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateText.swift; sourceTree = "<group>"; };
 		06EA6564252D75AC00935500 /* Task Archive.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Task Archive.numbers"; sourceTree = "<group>"; };
 		06EA6565252D75AC00935500 /* Task Archive.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Task Archive.xlsx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -313,7 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				0654128C237A6D830080F3EF /* Resizing.swift */,
-				06C65B6C23EA2E9700E21C38 /* DateAlert.swift */,
+				06B814402546062A007F332F /* DateText.swift */,
 			);
 			path = notifications;
 			sourceTree = "<group>";
@@ -677,6 +677,7 @@
 			files = (
 				065412E4237A6D840080F3EF /* Buttons.swift in Sources */,
 				065412E2237A6D840080F3EF /* LeftCell.swift in Sources */,
+				06B814412546062A007F332F /* DateText.swift in Sources */,
 				065412FA237A6D840080F3EF /* ShowDates.swift in Sources */,
 				065412DD237A6D840080F3EF /* AddPopup.swift in Sources */,
 				065412D7237A6D840080F3EF /* Pinch.swift in Sources */,
@@ -692,7 +693,6 @@
 				065412F7237A6D840080F3EF /* FormatDate.swift in Sources */,
 				065412D9237A6D840080F3EF /* Resizing.swift in Sources */,
 				065412E3237A6D840080F3EF /* BaseCell.swift in Sources */,
-				06C65B6D23EA2E9700E21C38 /* DateAlert.swift in Sources */,
 				065412ED237A6D840080F3EF /* Prynts.swift in Sources */,
 				0624AC26253C19DC00C48DF2 /* ProcessCurrent.swift in Sources */,
 				0678FC5E23DAA6CB009B25B8 /* LoginInterval.swift in Sources */,
