@@ -1,7 +1,5 @@
- /* Tasks            ･   nidhamu   ･                                        deadline                                  26 tasks
+ /* Tasks            ･   nidhamu   ･                                        deadline
   
-  
-  ⁌o⁍ title label offset w/ keyboard present
   
   
   cell highlighting animation during “…”                            UI
