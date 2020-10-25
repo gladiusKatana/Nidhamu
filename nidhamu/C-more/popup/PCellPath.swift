@@ -21,7 +21,7 @@ extension PopupMenuVC {
             cell.titleLabel.text = "Tag Task (\(tasks.count) left)"
             
             if tasks.count == 0 && indexPathsToProcess.count > 0 {                      //print("autosaving")
-                
+                taskIndex = 0
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
                     tasksAtIndexPath.remove(at: tasksAtIndexPath.index(forKey: TimeBlock(values:(col, rw)))!)
                     indexPathsToProcess.removeFirst(); taskArraysToProcess.removeFirst(); taskDescriptionsToProcess.removeFirst()

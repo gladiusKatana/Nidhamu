@@ -1,8 +1,6 @@
- /* Tasks            ･   nidhamu   ･                                        deadline                                  28 tasks
+ /* Tasks            ･   nidhamu   ･                                        deadline                                  26 tasks
   
   
-  ⁌o⁍ “edit task” header but text field says “add task…”
-  ⁌o⁍ deferral wrong task
   ⁌o⁍ title label offset w/ keyboard present
   
   

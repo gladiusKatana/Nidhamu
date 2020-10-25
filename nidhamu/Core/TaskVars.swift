@@ -15,6 +15,7 @@ var timeBlock = TimeBlock(values:(0, 0))
 var defaultPathOutOfView = [-1, -1];                var earliestTaskAddress = defaultPathOutOfView
 var selectedTimeBlockPath = defaultPathOutOfView;   var previousTimeBlockPathSelected = defaultPathOutOfView    /// for animations: see Tap.swift
 
+var taskIndex = 0
 
 ///processing time blocks for tagging -------------------------------------------------------------------------------------------
 var taskArraysToProcess = [[SimpleTask]]();         var taskDescriptionsToProcess = [[String]]()

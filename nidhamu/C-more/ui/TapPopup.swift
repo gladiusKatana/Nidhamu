@@ -46,7 +46,7 @@ extension PopupMenuVC {
                         /// print("rescaled to \(deferralVC.downcastLayout?.autoFitHeightScale), tt scale is \(timetableVC.downcastLayout?.autoFitHeightScale)")
                         timetableVC.gotoView(vc: deferralVC)
                         //tempRescalingBool = false
-                        deferredDescription = globalTaskIdentifier
+                        deferredDescription =  "\(taskArraysToProcess.first![taskIndex].taskDescription)"
                     }
                 } else {
                     let clm = firstPathToProcess[0];  let rw = firstPathToProcess[1]    /// components of path of current item being marked
