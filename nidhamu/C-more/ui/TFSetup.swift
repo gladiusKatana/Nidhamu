@@ -32,7 +32,8 @@ extension CollectionVC {
         //                                      dateFormat: .fullDayShortForm)/// ! probably needs smaller font on iPhone SE in portrait
         
         let timeBlockDescriptor = getSelectedTimeBlockDescriptor()
-        taskField.placeholder = "Add Task: \(timeBlockDescriptor)"
+        let taskInstruction = rowLongPressed != -1 ? "Edit Task" : "Add Task"
+        taskField.placeholder = "\(taskInstruction): \(timeBlockDescriptor)"
     }
     
     func getSelectedTimeBlockDescriptor() -> String {
