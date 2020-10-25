@@ -40,7 +40,7 @@ extension CollectionVC {
     }
     
     func showTimeInTitleLabels(_ date: Date) -> String {
-        let dateFormat = CustomDateFormat.hourAndMinuteNewlined
+        let dateFormat = textFieldDisplayed ? CustomDateFormat.hourAndMinute : CustomDateFormat.hourAndMinuteNewlined
         return formattedDateString(date, roundDown: false, showYear: false, prefix: "", suffix: "", dateFormat: dateFormat)
     }
 }
