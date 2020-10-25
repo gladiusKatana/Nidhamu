@@ -50,7 +50,7 @@ extension CollectionVC {
                     if !textFieldDisplayed {presentTextFieldAndReload(after: 0, forTaskAtRow: nil)}
                 }
                 
-            case .archive:          presentEmail() ///sendArchiveAsCsv()
+            case .archive:          if archiveTasks.count > 0 {presentEmail()} ///sendArchiveAsCsv()
             case .deferralDates:
                 cell.backgroundColor = taskAddingColour
                 guard let firstPathToProcess = indexPathsToProcess.first else {print("no paths to process... ..."); return}
