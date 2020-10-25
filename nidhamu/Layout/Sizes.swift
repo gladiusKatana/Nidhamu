@@ -28,7 +28,7 @@ extension CustomFlowLayout {
         }
         
         let del = modelName == "iPhone12,5" ? CGFloat(85 - 30) : CGFloat(0)
-        let gap = CGFloat(7) /// extra gap for better aesthetics
+        let gap = CGFloat(3) /// extra gap for aesthetics
         let barsHeight = navBarHeight + statusBarHeight
         
         let autofitWidth = frame.width / CGFloat(cols) - hSpace

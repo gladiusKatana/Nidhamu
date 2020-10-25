@@ -25,7 +25,9 @@ extension CustomFlowLayout {
                 var scalar = CGFloat(0)
                 
                 if timeBlockSize == 1 {headerHeightFactor = 1}
-                else {headerHeightFactor = 0.4}/// if too small, last login date (shown in top-left cell) no longer fits in landscape mode when keyboard presented
+                else {
+                    headerHeightFactor = textFieldDisplayed && currentOrientation == "landscape" ? 0.7 : 0.4
+                }/// if too small, last login date (shown in top-left cell) no longer fits in landscape mode when keyboard presented
                 
                 var cellHeightIncrease = CGFloat(0)
                 if self == taskTaggingLayout {cellHeightIncrease = (one - headerHeightFactor) * CGFloat(5) / 4} /// (locked headers/regular rows)
